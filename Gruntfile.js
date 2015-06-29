@@ -84,7 +84,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'sass',
-          src: ['*.sass'],
+          src: ['*.sass', '*.scss'],
           dest: 'sphinx_rtd_theme/static/css',
           ext: '.css'
         }]
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
     watch: {
       /* Compile sass changes into theme directory */
       sass: {
-        files: ['sass/*.sass', 'bower_components/**/*.sass'],
+        files: ['sass/*.sass', 'sass/*.scss', 'bower_components/**/*.sass'],
         tasks: ['sass:dev']
       },
       /* Changes in theme dir rebuild sphinx */
