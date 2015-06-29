@@ -1,0 +1,18 @@
+
+// In our theme maxwidth is much larger than the original ReadTheDocs theme.
+// In the demo_docs we see that because of that 'sidebars' may slip side
+// to side of each other. They are 40% wide and in that case there's
+// only 20% left for normal content. So let's try to prevent that this by
+// adding this 'clear'.
+
++media($desktop-wider)
+  h1, h2
+    clear: both
+
+
+// for the generic admonition
+
+.admonition
+  padding-left: $base-line-height / 2
+  padding-right: $base-line-height / 2
+

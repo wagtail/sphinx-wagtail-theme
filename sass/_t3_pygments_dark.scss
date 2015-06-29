@@ -1,0 +1,100 @@
+//@formatter:off
+
+.codeblock {
+  border: 1px solid lighten($menu-background-color, 10%);
+  color: $text-invert;
+  padding: 0px;
+  width: 100%;
+  overflow-x: auto;
+  background: $menu-background-color;
+  // 1px hack otherwise border won't show. lame
+  margin: 1px 0 $base-line-height 0;
+}
+
+
+
+// line numbers of lineos block
+.codeblock,
+div[class^='highlight'],
+div[class^='highlight'] pre
+{
+  background-color: $base16-base00;
+  color: $base16-base03;
+}
+.linenodiv pre {
+  border-right: solid 1px $base16-base03;
+  padding-left: $code-font-size / 6;
+  padding-right: $code-font-size / 6;
+}
+
+
+.hll { background-color: $base16-base02 }
+.c   { color: $base16-base04 } /* Comment */
+.c1  { color: $base16-base04 } /* Comment.Single */
+.cm  { color: $base16-base04 } /* Comment.Multiline */
+.cp  { color: $base16-base04 } /* Comment.Preproc */
+.cs  { color: $base16-base04 } /* Comment.Special */
+.err { color: $base16-base08 } /* Error */
+.k   { color: $base16-base0E } /* Keyword */
+.l   { color: $base16-base09 } /* Literal */
+.n   { color: $base16-base07 } /* Name */
+.na  { color: $base16-base0D } /* Name.Attribute */
+.nb  { color: $base16-base07 } /* Name.Builtin */
+.nc  { color: $base16-base0A } /* Name.Class */
+.nd  { color: $base16-base0C } /* Name.Decorator */
+.ne  { color: $base16-base08 } /* Name.Exception */
+.nf  { color: $base16-base0D } /* Name.Function */
+.ni  { color: $base16-base07 } /* Name.Entity */
+.nl  { color: $base16-base07 } /* Name.Label */
+.nn  { color: $base16-base0A } /* Name.Namespace */
+.no  { color: $base16-base08 } /* Name.Constant */
+.nt  { color: $base16-base0C } /* Name.Tag */
+.nv  { color: $base16-base08 } /* Name.Variable */
+.nx  { color: $base16-base0D } /* Name.Other */
+.py  { color: $base16-base07 } /* Name.Property */
+.bp  { color: $base16-base07 } /* Name.Builtin.Pseudo */
+.vc  { color: $base16-base08 } /* Name.Variable.Class */
+.vg  { color: $base16-base08 } /* Name.Variable.Global */
+.vi  { color: $base16-base08 } /* Name.Variable.Instance */
+.o   { color: $base16-base0C } /* Operator */
+.p   { color: $base16-base07 } /* Punctuation */
+.gd  { color: $base16-base08 } /* Generic.Deleted */
+.gh  { color: $base16-base07 } /* Generic.Heading */
+.gi  { color: $base16-base0B } /* Generic.Inserted */
+.gp  { color: $base16-base04 } /* Generic.Prompt */
+.gu  { color: $base16-base0C } /* Generic.Subheading */
+.kc  { color: $base16-base0E } /* Keyword.Constant */
+.kd  { color: $base16-base0E } /* Keyword.Declaration */
+.kn  { color: $base16-base0C } /* Keyword.Namespace */
+.kp  { color: $base16-base0E } /* Keyword.Pseudo */
+.kr  { color: $base16-base0E } /* Keyword.Reserved */
+.kt  { color: $base16-base0A } /* Keyword.Type */
+.il  { color: $base16-base09 } /* Literal.Number.Integer.Long */
+.ld  { color: $base16-base0B } /* Literal.Date */
+.m   { color: $base16-base09 } /* Literal.Number */
+.mf  { color: $base16-base09 } /* Literal.Number.Float */
+.mh  { color: $base16-base09 } /* Literal.Number.Hex */
+.mi  { color: $base16-base09 } /* Literal.Number.Integer */
+.mo  { color: $base16-base09 } /* Literal.Number.Oct */
+.s   { color: $base16-base0B } /* Literal.String */
+.s1  { color: $base16-base0B } /* Literal.String.Single */
+.s2  { color: $base16-base0B } /* Literal.String.Double */
+.sb  { color: $base16-base0B } /* Literal.String.Backtick */
+.sc  { color: $base16-base07 } /* Literal.String.Char */
+.sd  { color: $base16-base04 } /* Literal.String.Doc */
+.se  { color: $base16-base09 } /* Literal.String.Escape */
+.sh  { color: $base16-base0B } /* Literal.String.Heredoc */
+.si  { color: $base16-base09 } /* Literal.String.Interpol */
+.sr  { color: $base16-base0B } /* Literal.String.Regex */
+.ss  { color: $base16-base0B } /* Literal.String.Symbol */
+.sx  { color: $base16-base0B } /* Literal.String.Other */
+.ow  { color: $base16-base0C } /* Operator.Word */
+.w   { color: $base16-base07 } /* Text.Whitespace */
+
+.ge  { font-style : italic } /* Generic.Emph */
+.gh  { font-weight: bold   } /* Generic.Heading */
+.gp  { font-weight: bold   } /* Generic.Prompt */
+.gs  { font-weight: bold   } /* Generic.Strong */
+.gu  { font-weight: bold   } /* Generic.Subheading */
+
+//@formatter:on

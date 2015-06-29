@@ -163,9 +163,14 @@
       span.toctree-expand
         color: $white
 
+html.js.flexbox.canvas.canvastext.webgl.no-touch.geolocation.postmessage.no-websqldatabase.indexeddb.hashchange.history.draganddrop.websockets.rgba.hsla.multiplebgs.backgroundsize.borderimage.borderradius.boxshadow.textshadow.opacity.cssanimations.csscolumns.cssgradients.no-cssreflections.csstransforms.csstransforms3d.csstransitions.fontface.generatedcontent.video.audio.localstorage.sessionstorage.webworkers.applicationcache.svg.inlinesvg.smil.svgclippaths body.wy-body-for-nav div.wy-grid-for-nav nav.wy-nav-side
+div.wy-side-nav-search
+a.icon.icon-home
+
 .wy-side-nav-search
   z-index: $z-index-popover
   background-color: $link-color
+  background-color: $typo3-key-color
   text-align: center
   padding: $gutter / 2
   display: block
@@ -199,12 +204,19 @@
       margin: 0 auto
       height: auto  // undo badge styling above
       width: auto
+      width: 100%  // 'auto' does not work for Firefox
       border-radius: 0
       max-width: 100%  // shrink on mobile, if appropriate
       background: rgba(0,0,0,0)  // make hover background of parent show up properly
     &.icon
       img.logo
         margin-top: 0.85em  // space it away from the title text
+
+.wy-side-nav-search
+  a
+    &:hover
+      background-color: $typo3-key-color
+
 
 .wy-nav .wy-menu-vertical
   header
@@ -261,6 +273,7 @@
 .wy-nav-top
   display: none
   background: $link-color
+  background: $typo3-key-color
   color: $white
   padding: $gutter / 4 $gutter / 2
   position: relative
@@ -293,6 +306,7 @@
   padding: $gutter $gutter * 2
   height: 100%
   max-width: 800px
+  max-width: $wy-nav-content-width
   margin: auto
 
 .wy-body-mask

@@ -1,0 +1,65 @@
+.codeblock-example
+  border: 1px solid $table-border-color
+  border-bottom: none
+  padding: $code-line-height
+  padding-top: $code-line-height * 2
+  font-weight: 500
+  background: $white
+  position: relative
+  &:after
+    content: "Example"
+    position: absolute
+    top: 0px
+    left: 0px
+    background: $purple
+    color: lighten(purple, 80%)
+  &.prettyprint-example-only
+    border: 1px solid $table-border-color
+    margin-bottom: $code-line-height
+
+
+.codeblock, div[class^='highlight']
+  border: 1px solid $table-border-color
+  padding: 0px
+  overflow-x: auto
+  background: $white
+
+  // 1px hack otherwise border won't show. lame
+  margin: 1px 0 $code-line-height 0
+
+  div[class^='highlight']
+    border: none
+    background: none
+    margin: 0
+
+// Needs 100% width for line highlighting to work properly
+div[class^='highlight'] td.code
+  width: 100%
+
+.linenodiv pre
+  border-right: solid 1px lighten($table-border-color, 2%)
+  margin: 0
+  padding: $code-line-height / 2 $code-line-height / 2
+  font-family: $code-font-family
+  font-size: $code-font-size
+  line-height: $code-line-height
+  color: $text-lighter
+
+div[class^='highlight'] pre
+  white-space: pre
+  margin: 0
+  padding: $code-line-height / 2 $code-line-height / 2
+  font-family: $code-font-family
+  font-size: $code-font-size
+  line-height: $code-line-height
+  display: block
+  overflow: auto
+  color: $text-color
+
+pre.literal-block
+  @extend .codeblock
+
+@media print
+  .codeblock, div[class^='highlight'], div[class^='highlight'] pre
+    white-space: pre-wrap
+

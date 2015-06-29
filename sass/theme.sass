@@ -2,8 +2,13 @@
 // CONTRIBUTORS, PLEASE READ THIS!
 // ------------------------------------------------------------
 // This theme pulls from other frontend projects. The only
-// things you should edit are the sass files that start with
-// "theme_*.sass". All other files are loaded through bower.
+// things you should edit are
+//
+// - the sass files that start with "theme_*.sass"
+// - the sass files that start with "_t3_*.sass"
+// - the sass files that start with "_source-*.sass"
+//
+// All other files are loaded through bower.
 // ------------------------------------------------------------
 
 // Variable defaults set by Wyrm
@@ -41,8 +46,11 @@
 @import wyrm_core/type
 
 // Pygments styling
-@import wyrm_addons/pygments/pygments
-@import wyrm_addons/pygments/pygments_light
+//@import wyrm_addons/pygments/pygments
+@import t3_pygments
+//@import wyrm_addons/pygments/pygments_light
+@import t3_pygments_dark
+//@import t3_pygments_light
 
 // Theme specific styles. These are likely the files you want to edit.
 @import theme_breadcrumbs
@@ -52,3 +60,15 @@
 @import theme_mathjax
 @import theme_font_awesome_compatibility
 @import theme_font_local
+@import source-sans-pro
+@import source-code-pro
+
+
+// necessary
+@import t3_tablerows
+
+// needed for demo_docs
+@import t3_colors
+
+// more tweaks
+@import t3_addons
