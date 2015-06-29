@@ -6,6 +6,17 @@
 {%- else %}
   {%- set titlesuffix = "" %}
 {%- endif %}
+{%- set logo = "img/typo3-white.svg" %}
+{#- set css_files = css_files + ["http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700"] #}
+{%- set css_files = css_files + ['_static/jquery-ui/jquery-ui.css'] %}
+{%- set css_files = css_files + ['_static/css/t3more.css'] %}
+{%- set script_files = script_files + ['_static/jquery-ui/jquery-ui.js'] %}
+{%- set script_files = script_files + ["_static/js/theme.js"] %}
+{%- if pagename == "search" %}
+  {%- set script_files = script_files + ['_static/js/t3autocomplete2.js'] %}
+{%- else %}
+  {%- set script_files = script_files + ['_static/js/t3autocomplete.js'] %}
+{%- endif %}
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -32,8 +43,8 @@
     {% endif %}
 
   {% endif %}
-
   {# RTD hosts this file, so just load on non RTD builds #}
+
   {% if not READTHEDOCS %}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
   {% endif %}
@@ -73,10 +84,8 @@
     {%- endif %}
   {%- endblock %}
   {%- block extrahead %} {% endblock %}
-
-  {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
+  {#- Keep modernizr in head - http://modernizr.com/docs/#installing #}
   <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
-
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -107,7 +116,7 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         {% block menu %}
-          {% set toctree = toctree(maxdepth=4, collapse=False, includehidden=True) %}
+          {% set toctree = toctree(maxdepth=8, collapse=False, includehidden=True) %}
           {% if toctree %}
               {{ toctree }}
           {% else %}
@@ -164,8 +173,10 @@
   {% endif %}
 
   {# RTD hosts this file, so just load on non RTD builds #}
-  {% if not READTHEDOCS %}
-    <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
+  {% if 0 %}
+    {% if not READTHEDOCS %}
+      <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script>
+    {% endif %}
   {% endif %}
 
   {# STICKY NAVIGATION #}
