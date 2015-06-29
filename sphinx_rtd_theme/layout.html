@@ -75,7 +75,7 @@
   {%- block extrahead %} {% endblock %}
 
   {# Keep modernizr in head - http://modernizr.com/docs/#installing #}
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 
 </head>
 
@@ -132,8 +132,10 @@
       <div class="wy-nav-content">
         <div class="rst-content">
           {% include "breadcrumbs.html" %}
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             {% block body %}{% endblock %}
+           </div>
           </div>
           {% include "footer.html" %}
         </div>
