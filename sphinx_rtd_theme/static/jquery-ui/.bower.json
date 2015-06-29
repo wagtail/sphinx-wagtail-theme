@@ -1,0 +1,14 @@
+{
+  "name": "jquery-ui-1.11.3",
+  "_cacheHeaders": {
+    "ETag": "\"54dd0919-61c35\"",
+    "Last-Modified": "Thu, 12 Feb 2015 20:12:09 GMT",
+    "Content-Length": "400437",
+    "Content-Type": "application/zip"
+  },
+  "_release": "e-tag:54dd0919-",
+  "_source": "http://jqueryui.com/resources/download/jquery-ui-1.11.3.zip",
+  "_target": "*",
+  "_originalSource": "http://jqueryui.com/resources/download/jquery-ui-1.11.3.zip",
+  "_direct": true
+}
