@@ -253,3 +253,79 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+
+
+import t3SphinxThemeRtd
+
+html_theme = "t3SphinxThemeRtd"
+
+html_theme_path = [t3SphinxThemeRtd.get_html_theme_path()]
+
+
+latex_documents = [(
+    'Index',
+    't3demodocs.tex',
+    u'TYPO3 Demo Docs',
+    u'Documentation Team',
+    'manual')]
+
+latex_elements = {
+    'papersize': 'a4paper',
+    'pointsize': '10pt',
+    'preamble': '\\usepackage{typo3}',
+}
+for item in [
+    'sphinx.ext.extlinks',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinxcontrib.t3targets',
+    'sphinxcontrib.t3tablerows',
+    'sphinxcontrib.t3fieldlisttable',
+    ]:
+    if not item in extensions:
+        extensions.append(item)
+
+exclude_patterns = ['_make']
+extlinks = {}
+extlinks['forge'] = ('https://forge.typo3.org/issues/%s', 'forge: ')
+highlight_language = 'php'
+master_doc = 'index'
+pygments_style = 'friendly'
+today_fmt = '%Y-%m-%d %H:%M'
+
+# $ pygmentize -L
+# manni:          A colorful style, inspired by the terminal highlighting style.
+# igor:           Pygments version of the official colors for Igor Pro procedures.
+# xcode:          Style similar to the Xcode default colouring theme.
+# vim:            Styles somewhat like vim 7.0
+# autumn:         A colorful style, inspired by the terminal highlighting style.
+# vs:
+# rrt:            Minimalistic "rrt" theme, based on Zap and Emacs defaults.
+# native:         Pygments version of the "native" vim theme.
+# perldoc:        Style similar to the style used in the perldoc code blocks.
+# borland:        Style similar to the style used in the borland IDEs.
+# tango:          The Crunchy default Style inspired from the color palette from the Tango Icon Theme Guidelines.
+# emacs:          The default style (inspired by Emacs 22).
+# friendly:       A modern style based on the VIM pyte theme.
+# monokai:        This style mimics the Monokai color scheme.
+# paraiso-dark:
+# colorful:       A colorful style, inspired by CodeRay.
+# murphy:         Murphy's style from CodeRay.
+# bw:
+# pastie:         Style similar to the pastie default style.
+# paraiso-light:
+# trac:           Port of the default trac highlighter design.
+# default:        The default style (inspired by Emacs 22).
+# fruity:         Pygments version of the "native" vim theme.
+# solarizeddark:  The Solarized Dark style, inspired by Schoonover.
+# solarizedlight: The Solarized Light style, inspired by Schoonover.
+
+# friendly ?
+# sphinx ?
+
+pygments_style = 'sphinx'
+
+html_use_opensearch = 'http://demo_docs.de'
+
