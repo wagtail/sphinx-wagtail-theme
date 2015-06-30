@@ -1,191 +1,228 @@
-.. _readthedocs.org: http://www.readthedocs.org
-.. _bower: http://www.bower.io
-.. _sphinx: http://www.sphinx-doc.org
-.. _compass: http://www.compass-style.org
-.. _sass: http://www.sass-lang.com
-.. _wyrm: http://www.github.com/snide/wyrm/
-.. _grunt: http://www.gruntjs.com
-.. _node: http://www.nodejs.com
-.. _demo: http://docs.readthedocs.org
-.. _hidden: http://sphinx-doc.org/markup/toctree.html
 
-**************************
-Read the Docs Sphinx Theme
-**************************
+==============================
+A new theme for Docs.TYPO3.Org
+==============================
 
-.. contents:: 
+:Project:  t3SphinxThemeRtd
+:Team:     TYPO3 Documentation Team
+:Author:   Martin Bless <martin.bless@typo3.org>
+:License:  MIT
 
-View a working demo_ over on readthedocs.org_.
+This work builds on top of v0.1.8 of `https://github.com/snide/sphinx_rtd_theme
+<https://github.com/snide/sphinx_rtd_theme>`__.
 
-This is a mobile-friendly sphinx_ theme I made for readthedocs.org_. It's
-currently in development there and includes some rtd variable checks that can be ignored
-if you're just trying to use it on your project outside of that site.
+Find notes about the state of development `in this blogpost
+<http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html>`__.
 
-**This repo also exists as a submodule within the readthedocs itself**, so please make your edits to
-the SASS files here, rather than the .css files on RTD.
+Navigate this page:
 
-.. image:: screen_mobile.png
-    :width: 100%
+.. default-role:: bash
+
+.. contents::
+   :local:
+   :depth: 3
+   :backlinks: top
+
 
 Installation
 ============
 
-Via package
------------
+Install the Theme Using PIP
+---------------------------
 
-Download the package or add it to your ``requirements.txt`` file:
+`PIP <https://pip.pypa.io/en/stable/>`__ is the
+`Python <https://www.python.org/>`__ packet manager for
+`PyPi <https://pypi.python.org/pypi>`__.
 
-.. code:: bash
+Examples of ``pip`` usage::
 
-    $ pip install sphinx_rtd_theme
+   # search PyPi, the Python packet index
+   pip search t3SphinxThemeRtd
+   pip search sphinx
 
-In your ``conf.py`` file:
+   pip install --help
+   (sudo) pip install --upgrade t3SphinxThemeRtd
 
-.. code:: python
+   # install locally for this user only
+   pip install --upgrade --user t3SphinxThemeRtd
 
-    import sphinx_rtd_theme
+   pip uninstall t3SphinxThemeRtd
 
-    html_theme = "sphinx_rtd_theme"
 
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+Install directly using 'setup.py'
+---------------------------------
 
-Via git or download
--------------------
+To install directly from the package::
 
-Symlink or subtree the ``sphinx_rtd_theme/sphinx_rtd_theme`` repository into your documentation at
-``docs/_themes/sphinx_rtd_theme`` then add the following two settings to your Sphinx
-conf.py file:
+   git clone https://github.com/TYPO3-Documentation/t3SphinxThemeRtd.git
+   cd t3SphinxThemeRtd
+   (sudo) python setup.py install
 
-.. code:: python
+   # or install locally in user's home:
+   python setup.py --user install
 
-    html_theme = "sphinx_rtd_theme"
-    html_theme_path = ["_themes", ]
+
+Usage
+=====
+
+In the ``conf.py`` file of your documentation project:
+
+Load the module::
+
+   import t3SphinxThemeRtd
+
+Choose the theme::
+
+   html_theme = "t3SphinxThemeRtd"
+
+Set the theme path::
+
+   html_theme_path = [t3SphinxThemeRtd.get_html_theme_path()]
+
+Or, if that's better in your case, add the theme path to an existing one::
+
+   html_theme_path = []
+   html_theme_path.append(t3SphinxThemeRtd.get_html_theme_path())
+
+
+Special Information for TYPO3 Users
+-----------------------------------
+
+1. Disable or remove any existing "TYPO3 codeblock"
+
+   If the "TYPO3 codeblock" is part of your ``conf.py`` file
+   then you need to remove or disable that code.
+   You can do that easily by writing ``if 0`` instead of ``if 1``.
+
+   .. figure:: Documentation/Images/disable-typo3-codeblock.png
+      :alt: How to disable an existing TYPO3 codeblock in conf.py
+
+      Disable any "TYPO3 codeblock" in your ``conf.py`` by
+      writing ``if 0``.
+
+2. Once the "TYPO3 codeblock" is disabled the old `t3sphinx module
+   <https://git.typo3.org/Documentation/RestTools.git/tree/HEAD:/ExtendingSphinxForTYPO3/src/t3sphinx>`__
+   IS NOT used any more. So you finally are free from old ballast
+   and get rid of those old and annoying errors. Rendering of Sphinx Json
+   format will just work fine with the new theme.
+
+3. On the other hand: Since the ``t3sphinx module`` isn't loaded any more
+   there is no processing of Yaml files for configuration at the moment. This
+   means, at least for now:
+
+   - You have to use a ``conf.py`` file for configuration.
+   - You need to move all necessary settings from possible ``GlobalSettings.yml``
+     and ``Settings.yml`` files into the ``conf.py``.
+
+4. Maybe we add Yaml processing in the future. At the moment this doesn't exist.
+
+5. **To quickly get going:** Feel free to copy from this
+   `Typoscript Reference conf.py example file
+   <Documentation/Examples/TyposcriptReferenceExample-conf.py>`__.
+   The relevant parts are at the end.
+
+
+To be done
+==========
+
+Check this `list in the blogpost
+<http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html#to-be-done>`__
+
 
 Changelog
 =========
 
-
-v0.1.8
+v3.0.0
 ------
 
-* Start keeping changelog :)
-* Support for third and fourth level headers in the sidebar
-* Add support for Sphinx 1.3
-* Add sidebar headers for :caption: in Sphinx toctree
-* Clean up sidebar scrolling behavior so it never scrolls out of view
+First public version.
+We start numbering this TYPO3 fork of the RTD theme with version number 3.0.0
+to be clearly different from the original ``sphinx_rtd_theme``
+which is v0.1.8
+
+Already done
+------------
+
+Check this `list in the blogpost
+<http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html#already-done>`__
+
 
 How the Table of Contents builds
 ================================
 
-Currently the left menu will build based upon any ``toctree(s)`` defined in your index.rst file.
-It outputs 2 levels of depth, which should give your visitors a high level of access to your
-docs. If no toctrees are set the theme reverts to sphinx's usual local toctree.
+Read about this in the `original README <https://github.com/snide/sphinx_rtd_theme>`__.
 
-It's important to note that if you don't follow the same styling for your rST headers across
-your documents, the toctree will misbuild, and the resulting menu might not show the correct
-depth when it renders.
-
-Also note that the table of contents is set with ``includehidden=true``. This allows you
-to set a hidden toc in your index file with the hidden_ property that will allow you
-to build a toc without it rendering in your index.
-
-By default, the navigation will "stick" to the screen as you scroll. However if your toc
-is vertically too large, it revert to static positioning. To disable the sticky nav
-alltogether change the setting in ``conf.py``.
 
 Contributing or modifying the theme
 ===================================
 
-The sphinx_rtd_theme is primarily a sass_ project that requires a few other sass libraries. I'm
-using bower_ to manage these dependencies and sass_ to build the css. The good news is
-I have a very nice set of grunt_ operations that will not only load these dependecies, but watch
-for changes, rebuild the sphinx demo docs and build a distributable version of the theme.
-The bad news is this means you'll need to set up your environment similar to that
-of a front-end developer (vs. that of a python developer). That means installing node and ruby.
+This chapter is taken from the `original README <https://github.com/snide/sphinx_rtd_theme>`__
+(and then modified)::
 
-Set up your environment
------------------------
+The ``t3SphinxThemeRtd`` is primarily a `Sass <http://sass-lang.com/>`__ project that
+requires a few other Sass libraries. We are using `Bower <http://bower.io/>`__ to
+manage these dependencies and Sass to build the css. The good news is that there is
+a nice set of `Grunt <http://gruntjs.com/>`__ operations that will not only load
+these dependecies, but watch for changes, rebuild the sphinx demo docs and build
+a distributable version of the theme. The bad news is this means you'll need to
+set up your environment similar to that of a front-end developer (versus that of
+a python developer). That means installing `Node <https://nodejs.org/>`__
+and `Ruby <https://www.ruby-lang.org/>`__.
 
-1. Install sphinx_ into a virtual environment.
+Set up a development environment
+--------------------------------
 
-.. code::
+1. Install `Sphinx <http://sphinx-doc.org/>`__.
+   It is a good idea - but not a requirement - to install into a `virtual environment
+   <https://virtualenv.pypa.io/en/latest/>`__::
 
-    pip install sphinx
 
-2. Install sass
+      # Maybe activate virtualenv first. Then:
 
-.. code::
+      pip install sphinx
 
-    gem install sass
+2. Install Sass::
 
-2. Install node, bower and grunt.
+      gem install sass
 
-.. code::
+3. Install Node, Bower and Grunt::
 
-    // Install node
-    brew install node
+      # Install node
+      brew install node
 
-    // Install bower and grunt
-    npm install -g bower grunt-cli
+      # Install bower and grunt
+      npm install -g bower grunt-cli
 
-    // Now that everything is installed, let's install the theme dependecies.
-    npm install
+      # Now that everything is installed, let's install the theme's dependecies.
+      cd t3SphinxThemeRtd
+      npm install
 
-Now that our environment is set up, make sure you're in your virtual environment, go to
-this repository in your terminal and run grunt:
 
-.. code::
+5. You may want to add the `Livereload Addons <http://livereload.com/>`__ to your
+   Firefox and Chrome browser.
 
-    grunt
+6. Now that our environment is set up, make sure you're in your virtual environment, go to
+   our package in the terminal and run Grunt::
+
+      cd t3SphinxThemeRtd
+      grunt
 
 This default task will do the following **very cool things that make it worth the trouble**.
 
 1. It'll install and update any bower dependencies.
-2. It'll run sphinx and build new docs.
-3. It'll watch for changes to the sass files and build css from the changes.
-4. It'll rebuild the sphinx docs anytime it notices a change to .rst, .html, .js
+2. It'll run sphinx and build the demo_docs.
+3. It'll watch for changes to the Sass files and build css from the changes.
+4. It'll rebuild the sphinx demo_docs anytime it notices a change to .rst, .html, .js
    or .css files.
+5. It'll start a local web server at localhost:1919.
+6. It'll show the demo_docs in the browser.
+7. It'll refresh the browser for localhost:1919 automatically if LiveReload is enabled.
 
+There is a `grunt copy` command as well that copies files from the components
+that bower fetches into the actual theme directory. For example fonts are move to the
+right place that way.
 
-Before you create an issue
---------------------------
+**Note:** I you want that copy action you need to run ``grunt copy`` manually.
+It is not run by default.
 
-I don't have a lot of time to maintain this project due to other responsibilities.
-I know there are a lot of Python engineers out there that can't code sass / css and
-are unable to submit pull requests. That said, submitting random style bugs without
-at least providing sample documentation that replicates your problem is a good
-way for me to ignore your request. RST unfortunately can spit out a lot of things
-in a lot of ways. I don't have time to research your problem for you, but I do
-have time to fix the actual styling issue if you can replicate the problem for me.
-
-
-Before you send a Pull Request
-------------------------------
-
-When you're done with your edits, you can run ``grunt build`` to clean out the old
-files and rebuild a new distribution, compressing the css and cleaning out
-extraneous files. Please do this before you send in a PR.
-
-Using this theme locally, then building on Read the Docs?
-==========================================================
-
-Currently if you import sphinx_rtd_theme in your local sphinx build, then pass
-that same config to Read the Docs, it will fail, since RTD gets confused. If
-you want to run this theme locally and then also have it build on RTD, then
-you can add something like this to your config. Thanks to Daniel Oaks for this.
-
-.. code:: python
-
-    # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-    on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-    if not on_rtd:  # only import and set the theme if we're building docs locally
-        import sphinx_rtd_theme
-        html_theme = 'sphinx_rtd_theme'
-        html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-    # otherwise, readthedocs.org uses their theme by default, so no need to specify it
-
-TODO
-====
-* Separate some sass variables at the theme level so you can overwrite some basic colors.
+End of README.
