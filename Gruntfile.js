@@ -23,39 +23,39 @@ module.exports = function(grunt) {
       fonts: {
         files: [
           // includes files within path
-          {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'],                                dest: 'sphinx_rtd_theme/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/TYPO3_Share_Complete/Share-TTF/Share-Bold.ttf'],       dest: 'sphinx_rtd_theme/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/TYPO3_Share_Complete/Share-TTF/Share-BoldItalic.ttf'], dest: 'sphinx_rtd_theme/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/TYPO3_Share_Complete/Share-TTF/Share-Italic.ttf'],     dest: 'sphinx_rtd_theme/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/TYPO3_Share_Complete/Share-TTF/Share-Regular.ttf'],    dest: 'sphinx_rtd_theme/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/TYPO3_Share_Complete/Share-TTF/Share-TechMono.ttf'],   dest: 'sphinx_rtd_theme/static/fonts/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'],                                dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/TYPO3_Share_Complete/Share-TTF/Share-Bold.ttf'],       dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/TYPO3_Share_Complete/Share-TTF/Share-BoldItalic.ttf'], dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/TYPO3_Share_Complete/Share-TTF/Share-Italic.ttf'],     dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/TYPO3_Share_Complete/Share-TTF/Share-Regular.ttf'],    dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/TYPO3_Share_Complete/Share-TTF/Share-TechMono.ttf'],   dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
 
           // {src: ['bower_components/font-source-sans-pro-sass/source-sans-pro.scss'], dest: 'sass/_source-sans-pro.scss'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/eot/*-It*' ],     dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/eot/*Bold*' ],    dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/eot/*Regular*' ], dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/otf/*-It*' ],     dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/otf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/otf/*Bold*' ],    dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/otf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/otf/*Regular*' ], dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/otf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/ttf/*-It*' ],     dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/ttf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/ttf/*Bold*' ],    dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/ttf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/ttf/*Regular*' ], dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/ttf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/woff/*-It*'],     dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/woff/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/woff/*Bold*'],    dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/woff/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/woff/*Regular*'], dest: 'sphinx_rtd_theme/static/fonts/SourceSansPro/woff/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/eot/*-It*' ],     dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/eot/*Bold*' ],    dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/eot/*Regular*' ], dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/otf/*-It*' ],     dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/otf/',  filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/otf/*Bold*' ],    dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/otf/',  filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/otf/*Regular*' ], dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/otf/',  filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/ttf/*-It*' ],     dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/ttf/',  filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/ttf/*Bold*' ],    dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/ttf/',  filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/ttf/*Regular*' ], dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/ttf/',  filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/woff/*-It*'],     dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/woff/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/woff/*Bold*'],    dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/woff/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['bower_components/font-source-sans-pro-sass/woff/*Regular*'], dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/woff/', filter: 'isFile'},
 
-          {src: ['bower_components/1.017R/EOT/SourceCodePro-Bold.eot'],              dest: 'sphinx_rtd_theme/static/fonts/SourceCodePro/eot/SourceCodePro-Bold.eot'},
-          {src: ['bower_components/1.017R/EOT/SourceCodePro-Regular.eot'],           dest: 'sphinx_rtd_theme/static/fonts/SourceCodePro/eot/SourceCodePro-Regular.eot'},
-          {src: ['bower_components/1.017R/OTF/SourceCodePro-Bold.otf'],              dest: 'sphinx_rtd_theme/static/fonts/SourceCodePro/otf/SourceCodePro-Bold.otf'},
-          {src: ['bower_components/1.017R/OTF/SourceCodePro-Regular.otf'],           dest: 'sphinx_rtd_theme/static/fonts/SourceCodePro/otf/SourceCodePro-Regular.otf'},
-          {src: ['bower_components/1.017R/SVG/SourceCodePro-Bold.svg'],              dest: 'sphinx_rtd_theme/static/fonts/SourceCodePro/svg/SourceCodePro-Bold.svg'},
-          {src: ['bower_components/1.017R/SVG/SourceCodePro-Regular.svg'],           dest: 'sphinx_rtd_theme/static/fonts/SourceCodePro/svg/SourceCodePro-Regular.svg'},
-          {src: ['bower_components/1.017R/TTF/SourceCodePro-Bold.ttf'],              dest: 'sphinx_rtd_theme/static/fonts/SourceCodePro/ttf/SourceCodePro-Bold.ttf'},
-          {src: ['bower_components/1.017R/TTF/SourceCodePro-Regular.ttf'],           dest: 'sphinx_rtd_theme/static/fonts/SourceCodePro/ttf/SourceCodePro-Regular.ttf'},
-          {src: ['bower_components/1.017R/WOFF/TTF/SourceCodePro-Bold.ttf.woff'],    dest: 'sphinx_rtd_theme/static/fonts/SourceCodePro/woff/SourceCodePro-Bold.woff'},
-          {src: ['bower_components/1.017R/WOFF/TTF/SourceCodePro-Regular.ttf.woff'], dest: 'sphinx_rtd_theme/static/fonts/SourceCodePro/woff/SourceCodePro-Regular.woff'},
+          {src: ['bower_components/1.017R/EOT/SourceCodePro-Bold.eot'],              dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/eot/SourceCodePro-Bold.eot'},
+          {src: ['bower_components/1.017R/EOT/SourceCodePro-Regular.eot'],           dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/eot/SourceCodePro-Regular.eot'},
+          {src: ['bower_components/1.017R/OTF/SourceCodePro-Bold.otf'],              dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/otf/SourceCodePro-Bold.otf'},
+          {src: ['bower_components/1.017R/OTF/SourceCodePro-Regular.otf'],           dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/otf/SourceCodePro-Regular.otf'},
+          {src: ['bower_components/1.017R/SVG/SourceCodePro-Bold.svg'],              dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/svg/SourceCodePro-Bold.svg'},
+          {src: ['bower_components/1.017R/SVG/SourceCodePro-Regular.svg'],           dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/svg/SourceCodePro-Regular.svg'},
+          {src: ['bower_components/1.017R/TTF/SourceCodePro-Bold.ttf'],              dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/ttf/SourceCodePro-Bold.ttf'},
+          {src: ['bower_components/1.017R/TTF/SourceCodePro-Regular.ttf'],           dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/ttf/SourceCodePro-Regular.ttf'},
+          {src: ['bower_components/1.017R/WOFF/TTF/SourceCodePro-Bold.ttf.woff'],    dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/woff/SourceCodePro-Bold.woff'},
+          {src: ['bower_components/1.017R/WOFF/TTF/SourceCodePro-Regular.ttf.woff'], dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/woff/SourceCodePro-Regular.woff'},
 
-          {expand: true, flatten: true, src: ['bower_components/jquery/dist/*'], dest: 'sphinx_rtd_theme/static/', filter: 'isFile'}
+          {expand: true, flatten: true, src: ['bower_components/jquery/dist/*'], dest: 't3SphinxThemeRtd/static/', filter: 'isFile'}
           // todo: jquery-ui!
 
         ]
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'sass',
           src: ['*.sass'],
-          dest: 'sphinx_rtd_theme/static/css',
+          dest: 't3SphinxThemeRtd/static/css',
           ext: '.css'
         }]
       },
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'sass',
           src: ['*.sass', '*.scss'],
-          dest: 'sphinx_rtd_theme/static/css',
+          dest: 't3SphinxThemeRtd/static/css',
           ext: '.css'
         }]
       }
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
     },
     clean: {
       build: ["demo_docs/build"],
-      fonts: ["sphinx_rtd_theme/static/fonts"]
+      fonts: ["t3SphinxThemeRtd/static/fonts"]
     },
 
     watch: {
@@ -112,7 +112,7 @@ module.exports = function(grunt) {
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
-        files: ['sphinx_rtd_theme/**/*', 'demo_docs/**/*.rst', 'demo_docs/**/*.py'],
+        files: ['t3SphinxThemeRtd/**/*', 'demo_docs/**/*.rst', 'demo_docs/**/*.py'],
         tasks: ['clean:build','exec:build_sphinx']
       },
       /* live-reload the demo_docs if sphinx re-builds */
