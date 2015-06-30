@@ -1,39 +1,42 @@
 # -*- coding: utf-8 -*-
-"""`sphinx_rtd_theme` lives on `Github`_.
+"""`t3SphinxThemeRtd` lives on `Github`_.
 
-.. _github: https://www.github.com/snide/sphinx_rtd_theme
+.. _github: https://github.com/TYPO3-Documentation/t3SphinxThemeRtd
 
 """
 from setuptools import setup
-from sphinx_rtd_theme import __version__
-
+from t3SphinxThemeRtd import __version__
 
 setup(
-    name='sphinx_rtd_theme',
+    name='t3SphinxThemeRtd',
     version=__version__,
-    url='https://github.com/snide/sphinx_rtd_theme/',
+    url='https://github.com/TYPO3-Documentation/t3SphinxThemeRtd',
     license='MIT',
-    author='Dave Snider',
-    author_email='dave.snider@gmail.com',
-    description='ReadTheDocs.org theme for Sphinx, 2013 version.',
+    author='Martin Bless',
+    author_email='martin@mbless.de',
+    description='Docs.TYPO3.Org theme for Sphinx, starting 2015.',
     long_description=open('README.rst').read(),
     zip_safe=False,
-    packages=['sphinx_rtd_theme'],
-    package_data={'sphinx_rtd_theme': [
-        'theme.conf',
-        '*.html',
-        'static/css/*.css',
-        'static/js/*.js',
-        'static/font/*.*'
-    ]},
+    packages=['t3SphinxThemeRtd'],
+    package_data={'t3SphinxThemeRtd': ['*.*']},
     include_package_data=True,
     install_requires=open('requirements.txt').read().splitlines(),
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'License :: OSI Approved :: BSD License',
-        'Environment :: Console',
-        'Environment :: Web Environment',
-        'Intended Audience :: Developers',
+        # How mature is this project? Common values are
+        #   3 - Alpha
+        #   4 - Beta
+        #   5 - Production/Stable
+        'Development Status :: 5 - Production/Stable',
+
+        # Indicate who your project is intended for
+        'Intended Audience :: End Users/Desktop',
+        'Framework :: Sphinx :: Extension',
+
+        # Pick your license as you wish (should match "license" above)
+        'License :: OSI Approved :: MIT License',
+
+        # Specify the Python versions you support here. In particular, ensure
+        # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
