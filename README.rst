@@ -134,6 +134,8 @@ Changelog
 
 v3.1.0
 ------
+- publish as 3.1.0
+- use minified jQuery
 - add our "Edit me on GitHub" button
 
 v3.0.0
