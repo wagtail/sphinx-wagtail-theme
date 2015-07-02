@@ -7,7 +7,16 @@
     <li>{{ title }}</li>
       <li class="wy-breadcrumbs-aside">
         {%- if pagename != "search" %}
-          {%- if display_github %}
+          {%- if theme_github_repository and theme_github_branch %}
+            {%- if theme_github_sphinx_locale %}
+              {%- set localizationprefix = "Localization." + theme_github_sphinx_locale + "/" %}
+            {%- else %}
+              {%- set localizationprefix = "" %}
+            {%- endif %}
+          <a id="EditMeOnGitHub"
+href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/Documentation/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|e }}"
+target="_blank" class="fa fa-github"> Edit me on GitHub</a>
+          {%- elif display_github %}
             <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}" class="fa fa-github"> Edit on GitHub</a>
           {%- elif display_bitbucket %}
             <a href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}" class="fa fa-bitbucket"> Edit on Bitbucket</a>

@@ -5194,34 +5194,6 @@ span[id*='MathJax-Span'] {
 }
 @font-face {
   font-family: 'Source Sans Pro';
-  font-weight: 200;
-  font-style: normal;
-  font-stretch: normal;
-  src: local("SourceSansPro-ExtraLight"), local("Source Sans Pro"), url("../fonts/SourceSansPro/eot/SourceSansPro-ExtraLight.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-ExtraLight.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-ExtraLight.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-ExtraLight.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 200;
-  font-style: italic;
-  font-stretch: normal;
-  src: local("SourceSansPro-ExtraLightIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro/eot/SourceSansPro-ExtraLightIt.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-ExtraLightIt.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-ExtraLightIt.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-ExtraLightIt.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  src: local("SourceSansPro-Light"), local("Source Sans Pro"), url("../fonts/SourceSansPro/eot/SourceSansPro-Light.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-Light.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-Light.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 300;
-  font-style: italic;
-  font-stretch: normal;
-  src: local("SourceSansPro-LightIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro/eot/SourceSansPro-LightIt.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-LightIt.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-LightIt.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-LightIt.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Source Sans Pro';
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
@@ -5236,20 +5208,6 @@ span[id*='MathJax-Span'] {
 }
 @font-face {
   font-family: 'Source Sans Pro';
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  src: local("SourceSansPro-Semibold"), local("Source Sans Pro Semibold"), url("../fonts/SourceSansPro/eot/SourceSansPro-Semibold.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-Semibold.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-Semibold.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-Semibold.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 600;
-  font-style: italic;
-  font-stretch: normal;
-  src: local("SourceSansPro-SemiboldIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro/eot/SourceSansPro-SemiboldIt.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-SemiboldIt.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-SemiboldIt.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-SemiboldIt.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Source Sans Pro';
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
@@ -5261,20 +5219,6 @@ span[id*='MathJax-Span'] {
   font-style: italic;
   font-stretch: normal;
   src: local("SourceSansPro-BoldIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro/eot/SourceSansPro-BoldIt.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-BoldIt.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-BoldIt.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-BoldIt.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 900;
-  font-style: normal;
-  font-stretch: normal;
-  src: local("SourceSansPro-Black"), local("Source Sans Pro Black"), url("../fonts/SourceSansPro/eot/SourceSansPro-Black.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-Black.woff") format("woff"), url("../fonts/SourceSansPro/otf/SourceSansPro-Black.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-Black.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 900;
-  font-style: italic;
-  font-stretch: normal;
-  src: local("SourceSansPro-BlackIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro/eot/SourceSansPro-BlackIt.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-BlackIt.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-BlackIt.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-BlackIt.ttf") format("truetype");
 }
 @font-face {
   font-family: 'Source Code Pro';
@@ -5565,6 +5509,11 @@ span[id*='MathJax-Span'] {
 .admonition {
   padding-left: 12px;
   padding-right: 12px;
+}
+
+#EditMeOnGitHub {
+  color: white;
+  background-color: #ff8700;
 }
 
 /*# sourceMappingURL=theme.css.map */

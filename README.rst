@@ -132,13 +132,16 @@ Check this `list in the blogpost
 Changelog
 =========
 
+v3.1.0
+------
+- add our "Edit me on GitHub" button
+
 v3.0.0
 ------
 
-First public version.
-We start numbering this TYPO3 fork of the RTD theme with version number 3.0.0
-to be clearly different from the original ``sphinx_rtd_theme``
-which is v0.1.8
+- First public version.
+  We start numbering this TYPO3 fork of the RTD theme with version number 3.0.0
+  to be clearly different from the original ``sphinx_rtd_theme`` which is v0.1.8.
 
 Already done
 ------------
