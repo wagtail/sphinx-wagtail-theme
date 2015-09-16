@@ -44,6 +44,14 @@
     margin-bottom: $base-line-height
   .literal-block, pre.literal-block
     @extend .codeblock
+    background: transparent
+    border: 1px solid $text-code-border-color
+    color: $text-color
+    padding: 4px
+    font-family: $code-font-family
+    font-size: $code-font-size
+    line-height: $code-line-height
+
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
     @extend .wy-alert
@@ -136,7 +144,7 @@
     width: 40%
     display: block
     margin: 0 0 $base-line-height $base-line-height
-    padding: $base-line-height
+    padding: $base-line-height / 2
     background: $table-stripe-color
     border: solid 1px $table-border-color
     // Sidebar content is usually less relevant, so adjust the margins and sizes.
@@ -150,7 +158,7 @@
       font-weight: bold
       background: $table-border-color
       padding: $base-line-height / 4 $base-line-height / 2
-      margin: -$base-line-height
+      margin: -$base-line-height / 2
       margin-bottom: $base-line-height
       font-size: 100%
   // Sphinx can highlight searched text with ?highlighted=searchterm
@@ -170,7 +178,7 @@
   table.docutils.citation, table.docutils.footnote
     background: none
     border: none
-    color: $gray-light
+    color: $gray
     td, tr
       border: none
       background-color: transparent !important

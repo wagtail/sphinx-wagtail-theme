@@ -19,8 +19,7 @@
 
 
 .codeblock, div[class^='highlight']
-  border: 1px solid $table-border-color
-  padding: 0px
+  padding: 0
   overflow-x: auto
   background: $white
 
@@ -46,15 +45,19 @@ div[class^='highlight'] td.code
   color: $text-lighter
 
 div[class^='highlight'] pre
-  white-space: pre
-  margin: 0
-  padding: $code-line-height / 2 $code-line-height / 2
+  border: solid 1px $base16-base03
+  color: $text-invert
+  display: block
   font-family: $code-font-family
   font-size: $code-font-size
   line-height: $code-line-height
-  display: block
+  margin: 0
   overflow: auto
-  color: $text-color
+  padding: 3px
+  white-space: pre
+
+div[class='highlight']
+  padding: 1px
 
 pre.literal-block
   @extend .codeblock

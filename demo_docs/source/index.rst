@@ -10,6 +10,18 @@ Demo Docs
 :Status: WIP - work in progress
 :Description: See `A New Theme For Doc.TYPO3.Org <http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html>`__
 
+
+Contents
+========
+
+.. toctree::
+   :maxdepth: 5
+   :titlesonly:
+   :glob:
+
+   *
+
+
 Maaaaath!
 =========
 
@@ -108,9 +120,9 @@ Sidebar
 
 .. sidebar:: Ch'ien / The Creative
 
-    .. image:: static/yi_jing_01_chien.jpg
-
     *Above* CH'IEN THE CREATIVE, HEAVEN
+
+    .. image:: static/yi_jing_01_chien.jpg
 
     *Below* CH'IEN THE CREATIVE, HEAVEN
 
@@ -326,23 +338,6 @@ with the link-parameters (lowercased)!
 
 
 
-Contents
-========
-
-.. toctree::
-    :maxdepth: 2
-
-    highlight/highlight
-    demo
-    list
-
-Contents:
-
-.. toctree::
-    :maxdepth: 2
-
-    long
-    api
 
 Tables
 ======

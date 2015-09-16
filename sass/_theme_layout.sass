@@ -151,21 +151,19 @@
     position: relative
     font-size: 90%
     color: $text-light
+    color: white
     &:hover
       background-color: lighten($menu-background-color, 10%)
       cursor: pointer
       span.toctree-expand
         color: $text-light
     &:active
-      background-color: $menu-logo-color
+      // background-color: $menu-logo-color
       cursor: pointer
       color: $white
       span.toctree-expand
         color: $white
 
-html.js.flexbox.canvas.canvastext.webgl.no-touch.geolocation.postmessage.no-websqldatabase.indexeddb.hashchange.history.draganddrop.websockets.rgba.hsla.multiplebgs.backgroundsize.borderimage.borderradius.boxshadow.textshadow.opacity.cssanimations.csscolumns.cssgradients.no-cssreflections.csstransforms.csstransforms3d.csstransitions.fontface.generatedcontent.video.audio.localstorage.sessionstorage.webworkers.applicationcache.svg.inlinesvg.smil.svgclippaths body.wy-body-for-nav div.wy-grid-for-nav nav.wy-nav-side
-div.wy-side-nav-search
-a.icon.icon-home
 
 .wy-side-nav-search
   z-index: $z-index-popover
@@ -173,6 +171,7 @@ a.icon.icon-home
   background-color: $typo3-key-color
   text-align: center
   padding: $gutter / 2
+  padding-top: 0
   display: block
   color: $section-background-color
   margin-bottom: $gutter / 2
@@ -188,6 +187,7 @@ a.icon.icon-home
     width: 45px
     background-color: $menu-logo-color
     padding: 5px
+    padding: 0
     border-radius: 100%
   > a, .wy-dropdown > a
     color: $section-background-color
@@ -204,19 +204,27 @@ a.icon.icon-home
       margin: 0 auto
       height: auto  // undo badge styling above
       width: auto
-      width: 100%  // 'auto' does not work for Firefox
+      width: 50%  // 'auto' does not work for Firefox
       border-radius: 0
-      max-width: 100%  // shrink on mobile, if appropriate
+      max-width: 50%  // shrink on mobile, if appropriate
       background: rgba(0,0,0,0)  // make hover background of parent show up properly
     &.icon
       img.logo
         margin-top: 0.85em  // space it away from the title text
+        margin-top: 0       // space it away from the title text. No!
+  a.logo
+    margin: 0
+    padding: 0
+  a.project
+    margin: 0 0 1em 0
+    padding: 1em 0
+
+
 
 .wy-side-nav-search
   a
     &:hover
       background-color: $typo3-key-color
-
 
 .wy-nav .wy-menu-vertical
   header
@@ -226,6 +234,7 @@ a.icon.icon-home
     &:hover
       background-color: $link-color
       color: $white
+
 
 [data-menu-wrap]
   +transition(all .2s ease-in)

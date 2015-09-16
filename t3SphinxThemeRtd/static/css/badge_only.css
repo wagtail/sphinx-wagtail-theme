@@ -156,7 +156,7 @@ ul.fas li .fa-large:before {
 .rst-versions .rst-other-versions {
   font-size: 90%;
   padding: 12px;
-  color: gray;
+  color: #737373;
   display: none;
 }
 .rst-versions .rst-other-versions hr {
