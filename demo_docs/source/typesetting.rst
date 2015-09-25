@@ -20,6 +20,15 @@ types[1] or the digital equivalents. Stored letters and other symbols
 are retrieved and ordered according to a language's orthography for
 visual display.
 
+- one
+- two Typesetting requires the prior process of designing a
+  font (which is widely but erroneously confused with and substituted for
+  typeface). One significant effect of typesetting was that authorship of
+  works could be spotted more easily; making it difficult for copiers who
+  have not gained permission.
+
+- three
+
 Typesetting requires the prior process of designing a
 font (which is widely but erroneously confused with and substituted for
 typeface). One significant effect of typesetting was that authorship of

@@ -328,7 +328,9 @@ big, small {
     page-break-after: avoid;
   }
 }
-.fa:before, .wy-menu-vertical li span.toctree-expand:before, .wy-menu-vertical li.on a span.toctree-expand:before, .wy-menu-vertical li.current > a span.toctree-expand:before, .rst-content .admonition-title:before, .rst-content h1 .headerlink:before, .rst-content h2 .headerlink:before, .rst-content p.caption .headerlink:before, .rst-content h3 .headerlink:before, .rst-content h4 .headerlink:before, .rst-content h5 .headerlink:before, .rst-content h6 .headerlink:before, .rst-content dl dt .headerlink:before, .rst-content tt.download span:first-child:before, .rst-content code.download span:first-child:before, .icon:before, .wy-dropdown .caret:before, .wy-inline-validate.wy-inline-validate-success .wy-input-context:before, .wy-inline-validate.wy-inline-validate-danger .wy-input-context:before, .wy-inline-validate.wy-inline-validate-warning .wy-input-context:before, .wy-inline-validate.wy-inline-validate-info .wy-input-context:before, .wy-alert, .rst-content .note, .rst-content .attention, .rst-content .caution, .rst-content .danger, .rst-content .error, .rst-content .hint, .rst-content .important, .rst-content .tip, .rst-content .warning, .rst-content .seealso, .rst-content .admonition-todo, .btn, input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], input[type="month"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="week"], input[type="number"], input[type="search"], input[type="tel"], input[type="color"], select, textarea, .wy-menu-vertical li.on a, .wy-menu-vertical li.current > a, .wy-side-nav-search > a, .wy-side-nav-search .wy-dropdown > a, .wy-nav-top a {
+.fa:before, .wy-menu-vertical li span.toctree-expand:before, .wy-menu-vertical li.on a span.toctree-expand:before,
+.wy-menu-vertical li.current > a span.toctree-expand:before, .rst-content .admonition-title:before, .rst-content h1 .headerlink:before, .rst-content h2 .headerlink:before, .rst-content p.caption .headerlink:before, .rst-content h3 .headerlink:before, .rst-content h4 .headerlink:before, .rst-content h5 .headerlink:before, .rst-content h6 .headerlink:before, .rst-content dl dt .headerlink:before, .rst-content tt.download span:first-child:before, .rst-content code.download span:first-child:before, .icon:before, .wy-dropdown .caret:before, .wy-inline-validate.wy-inline-validate-success .wy-input-context:before, .wy-inline-validate.wy-inline-validate-danger .wy-input-context:before, .wy-inline-validate.wy-inline-validate-warning .wy-input-context:before, .wy-inline-validate.wy-inline-validate-info .wy-input-context:before, .wy-alert, .rst-content .note, .rst-content .attention, .rst-content .caution, .rst-content .danger, .rst-content .error, .rst-content .hint, .rst-content .important, .rst-content .tip, .rst-content .warning, .rst-content .seealso, .rst-content .admonition-todo, .btn, input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], input[type="month"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="week"], input[type="number"], input[type="search"], input[type="tel"], input[type="color"], select, textarea, .wy-menu-vertical li.on a,
+.wy-menu-vertical li.current > a, .wy-side-nav-search > a, .wy-side-nav-search .wy-dropdown > a, .wy-nav-top a {
   -webkit-font-smoothing: antialiased;
 }
 
@@ -356,7 +358,8 @@ big, small {
   font-weight: normal;
   font-style: normal;
 }
-.fa, .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.current > a span.toctree-expand, .rst-content .admonition-title, .rst-content h1 .headerlink, .rst-content h2 .headerlink, .rst-content p.caption .headerlink, .rst-content h3 .headerlink, .rst-content h4 .headerlink, .rst-content h5 .headerlink, .rst-content h6 .headerlink, .rst-content dl dt .headerlink, .rst-content tt.download span:first-child, .rst-content code.download span:first-child, .icon {
+.fa, .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li.on a span.toctree-expand,
+.wy-menu-vertical li.current > a span.toctree-expand, .rst-content .admonition-title, .rst-content h1 .headerlink, .rst-content h2 .headerlink, .rst-content p.caption .headerlink, .rst-content h3 .headerlink, .rst-content h4 .headerlink, .rst-content h5 .headerlink, .rst-content h6 .headerlink, .rst-content dl dt .headerlink, .rst-content tt.download span:first-child, .rst-content code.download span:first-child, .icon {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -427,10 +430,12 @@ big, small {
   float: left;
 }
 
-.fa.pull-left, .wy-menu-vertical li span.pull-left.toctree-expand, .wy-menu-vertical li.on a span.pull-left.toctree-expand, .wy-menu-vertical li.current > a span.pull-left.toctree-expand, .rst-content .pull-left.admonition-title, .rst-content h1 .pull-left.headerlink, .rst-content h2 .pull-left.headerlink, .rst-content p.caption .pull-left.headerlink, .rst-content h3 .pull-left.headerlink, .rst-content h4 .pull-left.headerlink, .rst-content h5 .pull-left.headerlink, .rst-content h6 .pull-left.headerlink, .rst-content dl dt .pull-left.headerlink, .rst-content tt.download span.pull-left:first-child, .rst-content code.download span.pull-left:first-child, .pull-left.icon {
+.fa.pull-left, .wy-menu-vertical li span.pull-left.toctree-expand, .wy-menu-vertical li.on a span.pull-left.toctree-expand,
+.wy-menu-vertical li.current > a span.pull-left.toctree-expand, .rst-content .pull-left.admonition-title, .rst-content h1 .pull-left.headerlink, .rst-content h2 .pull-left.headerlink, .rst-content p.caption .pull-left.headerlink, .rst-content h3 .pull-left.headerlink, .rst-content h4 .pull-left.headerlink, .rst-content h5 .pull-left.headerlink, .rst-content h6 .pull-left.headerlink, .rst-content dl dt .pull-left.headerlink, .rst-content tt.download span.pull-left:first-child, .rst-content code.download span.pull-left:first-child, .pull-left.icon {
   margin-right: .3em;
 }
-.fa.pull-right, .wy-menu-vertical li span.pull-right.toctree-expand, .wy-menu-vertical li.on a span.pull-right.toctree-expand, .wy-menu-vertical li.current > a span.pull-right.toctree-expand, .rst-content .pull-right.admonition-title, .rst-content h1 .pull-right.headerlink, .rst-content h2 .pull-right.headerlink, .rst-content p.caption .pull-right.headerlink, .rst-content h3 .pull-right.headerlink, .rst-content h4 .pull-right.headerlink, .rst-content h5 .pull-right.headerlink, .rst-content h6 .pull-right.headerlink, .rst-content dl dt .pull-right.headerlink, .rst-content tt.download span.pull-right:first-child, .rst-content code.download span.pull-right:first-child, .pull-right.icon {
+.fa.pull-right, .wy-menu-vertical li span.pull-right.toctree-expand, .wy-menu-vertical li.on a span.pull-right.toctree-expand,
+.wy-menu-vertical li.current > a span.pull-right.toctree-expand, .rst-content .pull-right.admonition-title, .rst-content h1 .pull-right.headerlink, .rst-content h2 .pull-right.headerlink, .rst-content p.caption .pull-right.headerlink, .rst-content h3 .pull-right.headerlink, .rst-content h4 .pull-right.headerlink, .rst-content h5 .pull-right.headerlink, .rst-content h6 .pull-right.headerlink, .rst-content dl dt .pull-right.headerlink, .rst-content tt.download span.pull-right:first-child, .rst-content code.download span.pull-right:first-child, .pull-right.icon {
   margin-left: .3em;
 }
 
@@ -1738,7 +1743,8 @@ big, small {
   content: "";
 }
 
-.fa-minus-square-o:before, .wy-menu-vertical li.on a span.toctree-expand:before, .wy-menu-vertical li.current > a span.toctree-expand:before {
+.fa-minus-square-o:before, .wy-menu-vertical li.on a span.toctree-expand:before,
+.wy-menu-vertical li.current > a span.toctree-expand:before {
   content: "";
 }
 
@@ -2519,10 +2525,12 @@ big, small {
   content: "";
 }
 
-.fa, .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.current > a span.toctree-expand, .rst-content .admonition-title, .rst-content h1 .headerlink, .rst-content h2 .headerlink, .rst-content p.caption .headerlink, .rst-content h3 .headerlink, .rst-content h4 .headerlink, .rst-content h5 .headerlink, .rst-content h6 .headerlink, .rst-content dl dt .headerlink, .rst-content tt.download span:first-child, .rst-content code.download span:first-child, .icon, .wy-dropdown .caret, .wy-inline-validate.wy-inline-validate-success .wy-input-context, .wy-inline-validate.wy-inline-validate-danger .wy-input-context, .wy-inline-validate.wy-inline-validate-warning .wy-input-context, .wy-inline-validate.wy-inline-validate-info .wy-input-context {
+.fa, .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li.on a span.toctree-expand,
+.wy-menu-vertical li.current > a span.toctree-expand, .rst-content .admonition-title, .rst-content h1 .headerlink, .rst-content h2 .headerlink, .rst-content p.caption .headerlink, .rst-content h3 .headerlink, .rst-content h4 .headerlink, .rst-content h5 .headerlink, .rst-content h6 .headerlink, .rst-content dl dt .headerlink, .rst-content tt.download span:first-child, .rst-content code.download span:first-child, .icon, .wy-dropdown .caret, .wy-inline-validate.wy-inline-validate-success .wy-input-context, .wy-inline-validate.wy-inline-validate-danger .wy-input-context, .wy-inline-validate.wy-inline-validate-warning .wy-input-context, .wy-inline-validate.wy-inline-validate-info .wy-input-context {
   font-family: inherit;
 }
-.fa:before, .wy-menu-vertical li span.toctree-expand:before, .wy-menu-vertical li.on a span.toctree-expand:before, .wy-menu-vertical li.current > a span.toctree-expand:before, .rst-content .admonition-title:before, .rst-content h1 .headerlink:before, .rst-content h2 .headerlink:before, .rst-content p.caption .headerlink:before, .rst-content h3 .headerlink:before, .rst-content h4 .headerlink:before, .rst-content h5 .headerlink:before, .rst-content h6 .headerlink:before, .rst-content dl dt .headerlink:before, .rst-content tt.download span:first-child:before, .rst-content code.download span:first-child:before, .icon:before, .wy-dropdown .caret:before, .wy-inline-validate.wy-inline-validate-success .wy-input-context:before, .wy-inline-validate.wy-inline-validate-danger .wy-input-context:before, .wy-inline-validate.wy-inline-validate-warning .wy-input-context:before, .wy-inline-validate.wy-inline-validate-info .wy-input-context:before {
+.fa:before, .wy-menu-vertical li span.toctree-expand:before, .wy-menu-vertical li.on a span.toctree-expand:before,
+.wy-menu-vertical li.current > a span.toctree-expand:before, .rst-content .admonition-title:before, .rst-content h1 .headerlink:before, .rst-content h2 .headerlink:before, .rst-content p.caption .headerlink:before, .rst-content h3 .headerlink:before, .rst-content h4 .headerlink:before, .rst-content h5 .headerlink:before, .rst-content h6 .headerlink:before, .rst-content dl dt .headerlink:before, .rst-content tt.download span:first-child:before, .rst-content code.download span:first-child:before, .icon:before, .wy-dropdown .caret:before, .wy-inline-validate.wy-inline-validate-success .wy-input-context:before, .wy-inline-validate.wy-inline-validate-danger .wy-input-context:before, .wy-inline-validate.wy-inline-validate-warning .wy-input-context:before, .wy-inline-validate.wy-inline-validate-info .wy-input-context:before {
   font-family: "FontAwesome";
   display: inline-block;
   font-style: normal;
@@ -2531,12 +2539,17 @@ big, small {
   text-decoration: inherit;
 }
 
-a .fa, a .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li a span.toctree-expand, .wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.current > a span.toctree-expand, a .rst-content .admonition-title, .rst-content a .admonition-title, a .rst-content h1 .headerlink, .rst-content h1 a .headerlink, a .rst-content h2 .headerlink, .rst-content h2 a .headerlink, a .rst-content p.caption .headerlink, .rst-content p.caption a .headerlink, a .rst-content h3 .headerlink, .rst-content h3 a .headerlink, a .rst-content h4 .headerlink, .rst-content h4 a .headerlink, a .rst-content h5 .headerlink, .rst-content h5 a .headerlink, a .rst-content h6 .headerlink, .rst-content h6 a .headerlink, a .rst-content dl dt .headerlink, .rst-content dl dt a .headerlink, a .rst-content tt.download span:first-child, .rst-content tt.download a span:first-child, a .rst-content code.download span:first-child, .rst-content code.download a span:first-child, a .icon {
+a .fa, a .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li a span.toctree-expand, .wy-menu-vertical li.on a span.toctree-expand,
+.wy-menu-vertical li.current > a span.toctree-expand, a .rst-content .admonition-title, .rst-content a .admonition-title, a .rst-content h1 .headerlink, .rst-content h1 a .headerlink, a .rst-content h2 .headerlink, .rst-content h2 a .headerlink, a .rst-content p.caption .headerlink, .rst-content p.caption a .headerlink, a .rst-content h3 .headerlink, .rst-content h3 a .headerlink, a .rst-content h4 .headerlink, .rst-content h4 a .headerlink, a .rst-content h5 .headerlink, .rst-content h5 a .headerlink, a .rst-content h6 .headerlink, .rst-content h6 a .headerlink, a .rst-content dl dt .headerlink, .rst-content dl dt a .headerlink, a .rst-content tt.download span:first-child, .rst-content tt.download a span:first-child, a .rst-content code.download span:first-child, .rst-content code.download a span:first-child, a .icon {
   display: inline-block;
   text-decoration: inherit;
 }
 
-.btn .fa, .btn .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li .btn span.toctree-expand, .btn .wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.on a .btn span.toctree-expand, .btn .wy-menu-vertical li.current > a span.toctree-expand, .wy-menu-vertical li.current > a .btn span.toctree-expand, .btn .rst-content .admonition-title, .rst-content .btn .admonition-title, .btn .rst-content h1 .headerlink, .rst-content h1 .btn .headerlink, .btn .rst-content h2 .headerlink, .rst-content h2 .btn .headerlink, .btn .rst-content p.caption .headerlink, .rst-content p.caption .btn .headerlink, .btn .rst-content h3 .headerlink, .rst-content h3 .btn .headerlink, .btn .rst-content h4 .headerlink, .rst-content h4 .btn .headerlink, .btn .rst-content h5 .headerlink, .rst-content h5 .btn .headerlink, .btn .rst-content h6 .headerlink, .rst-content h6 .btn .headerlink, .btn .rst-content dl dt .headerlink, .rst-content dl dt .btn .headerlink, .btn .rst-content tt.download span:first-child, .rst-content tt.download .btn span:first-child, .btn .rst-content code.download span:first-child, .rst-content code.download .btn span:first-child, .btn .icon, .nav .fa, .nav .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li .nav span.toctree-expand, .nav .wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.on a .nav span.toctree-expand, .nav .wy-menu-vertical li.current > a span.toctree-expand, .wy-menu-vertical li.current > a .nav span.toctree-expand, .nav .rst-content .admonition-title, .rst-content .nav .admonition-title, .nav .rst-content h1 .headerlink, .rst-content h1 .nav .headerlink, .nav .rst-content h2 .headerlink, .rst-content h2 .nav .headerlink, .nav .rst-content p.caption .headerlink, .rst-content p.caption .nav .headerlink, .nav .rst-content h3 .headerlink, .rst-content h3 .nav .headerlink, .nav .rst-content h4 .headerlink, .rst-content h4 .nav .headerlink, .nav .rst-content h5 .headerlink, .rst-content h5 .nav .headerlink, .nav .rst-content h6 .headerlink, .rst-content h6 .nav .headerlink, .nav .rst-content dl dt .headerlink, .rst-content dl dt .nav .headerlink, .nav .rst-content tt.download span:first-child, .rst-content tt.download .nav span:first-child, .nav .rst-content code.download span:first-child, .rst-content code.download .nav span:first-child, .nav .icon {
+.btn .fa, .btn .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li .btn span.toctree-expand, .btn .wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.on a .btn span.toctree-expand,
+.btn .wy-menu-vertical li.current > a span.toctree-expand,
+.wy-menu-vertical li.current > a .btn span.toctree-expand, .btn .rst-content .admonition-title, .rst-content .btn .admonition-title, .btn .rst-content h1 .headerlink, .rst-content h1 .btn .headerlink, .btn .rst-content h2 .headerlink, .rst-content h2 .btn .headerlink, .btn .rst-content p.caption .headerlink, .rst-content p.caption .btn .headerlink, .btn .rst-content h3 .headerlink, .rst-content h3 .btn .headerlink, .btn .rst-content h4 .headerlink, .rst-content h4 .btn .headerlink, .btn .rst-content h5 .headerlink, .rst-content h5 .btn .headerlink, .btn .rst-content h6 .headerlink, .rst-content h6 .btn .headerlink, .btn .rst-content dl dt .headerlink, .rst-content dl dt .btn .headerlink, .btn .rst-content tt.download span:first-child, .rst-content tt.download .btn span:first-child, .btn .rst-content code.download span:first-child, .rst-content code.download .btn span:first-child, .btn .icon, .nav .fa, .nav .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li .nav span.toctree-expand, .nav .wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.on a .nav span.toctree-expand,
+.nav .wy-menu-vertical li.current > a span.toctree-expand,
+.wy-menu-vertical li.current > a .nav span.toctree-expand, .nav .rst-content .admonition-title, .rst-content .nav .admonition-title, .nav .rst-content h1 .headerlink, .rst-content h1 .nav .headerlink, .nav .rst-content h2 .headerlink, .rst-content h2 .nav .headerlink, .nav .rst-content p.caption .headerlink, .rst-content p.caption .nav .headerlink, .nav .rst-content h3 .headerlink, .rst-content h3 .nav .headerlink, .nav .rst-content h4 .headerlink, .rst-content h4 .nav .headerlink, .nav .rst-content h5 .headerlink, .rst-content h5 .nav .headerlink, .nav .rst-content h6 .headerlink, .rst-content h6 .nav .headerlink, .nav .rst-content dl dt .headerlink, .rst-content dl dt .nav .headerlink, .nav .rst-content tt.download span:first-child, .rst-content tt.download .nav span:first-child, .nav .rst-content code.download span:first-child, .rst-content code.download .nav span:first-child, .nav .icon {
   display: inline;
 }
 .btn .fa.fa-large, .btn .wy-menu-vertical li span.fa-large.toctree-expand, .wy-menu-vertical li .btn span.fa-large.toctree-expand, .btn .rst-content .fa-large.admonition-title, .rst-content .btn .fa-large.admonition-title, .btn .rst-content h1 .fa-large.headerlink, .rst-content h1 .btn .fa-large.headerlink, .btn .rst-content h2 .fa-large.headerlink, .rst-content h2 .btn .fa-large.headerlink, .btn .rst-content p.caption .fa-large.headerlink, .rst-content p.caption .btn .fa-large.headerlink, .btn .rst-content h3 .fa-large.headerlink, .rst-content h3 .btn .fa-large.headerlink, .btn .rst-content h4 .fa-large.headerlink, .rst-content h4 .btn .fa-large.headerlink, .btn .rst-content h5 .fa-large.headerlink, .rst-content h5 .btn .fa-large.headerlink, .btn .rst-content h6 .fa-large.headerlink, .rst-content h6 .btn .fa-large.headerlink, .btn .rst-content dl dt .fa-large.headerlink, .rst-content dl dt .btn .fa-large.headerlink, .btn .rst-content tt.download span.fa-large:first-child, .rst-content tt.download .btn span.fa-large:first-child, .btn .rst-content code.download span.fa-large:first-child, .rst-content code.download .btn span.fa-large:first-child, .btn .fa-large.icon, .nav .fa.fa-large, .nav .wy-menu-vertical li span.fa-large.toctree-expand, .wy-menu-vertical li .nav span.fa-large.toctree-expand, .nav .rst-content .fa-large.admonition-title, .rst-content .nav .fa-large.admonition-title, .nav .rst-content h1 .fa-large.headerlink, .rst-content h1 .nav .fa-large.headerlink, .nav .rst-content h2 .fa-large.headerlink, .rst-content h2 .nav .fa-large.headerlink, .nav .rst-content p.caption .fa-large.headerlink, .rst-content p.caption .nav .fa-large.headerlink, .nav .rst-content h3 .fa-large.headerlink, .rst-content h3 .nav .fa-large.headerlink, .nav .rst-content h4 .fa-large.headerlink, .rst-content h4 .nav .fa-large.headerlink, .nav .rst-content h5 .fa-large.headerlink, .rst-content h5 .nav .fa-large.headerlink, .nav .rst-content h6 .fa-large.headerlink, .rst-content h6 .nav .fa-large.headerlink, .nav .rst-content dl dt .fa-large.headerlink, .rst-content dl dt .nav .fa-large.headerlink, .nav .rst-content tt.download span.fa-large:first-child, .rst-content tt.download .nav span.fa-large:first-child, .nav .rst-content code.download span.fa-large:first-child, .rst-content code.download .nav span.fa-large:first-child, .nav .fa-large.icon {
@@ -2631,7 +2644,7 @@ a .fa, a .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li a span.t
   background: #ded9d3;
 }
 .wy-alert.wy-alert-neutral a, .rst-content .note a, .rst-content .wy-alert-neutral.attention a, .rst-content .wy-alert-neutral.caution a, .rst-content .wy-alert-neutral.danger a, .rst-content .wy-alert-neutral.error a, .rst-content .wy-alert-neutral.hint a, .rst-content .wy-alert-neutral.important a, .rst-content .wy-alert-neutral.tip a, .rst-content .wy-alert-neutral.warning a, .rst-content .wy-alert-neutral.seealso a, .rst-content .wy-alert-neutral.admonition-todo a {
-  color: #d67100;
+  color: #804400;
 }
 
 .wy-alert p:last-child, .rst-content .note p:last-child, .rst-content .attention p:last-child, .rst-content .caution p:last-child, .rst-content .danger p:last-child, .rst-content .error p:last-child, .rst-content .hint p:last-child, .rst-content .important p:last-child, .rst-content .tip p:last-child, .rst-content .warning p:last-child, .rst-content .seealso p:last-child, .rst-content .admonition-todo p:last-child {
@@ -2740,7 +2753,7 @@ button[disabled] {
 }
 
 .btn-hover {
-  background: #f07f00;
+  background: #995100;
   color: #fff;
 }
 
@@ -2843,22 +2856,22 @@ button[disabled] {
 
 .btn-link {
   background-color: transparent !important;
-  color: #d67100;
+  color: #804400;
   box-shadow: none;
   border-color: transparent !important;
 }
 .btn-link:hover {
   background-color: transparent !important;
-  color: #ff8c0a !important;
+  color: #b35f00 !important;
   box-shadow: none;
 }
 .btn-link:active {
   background-color: transparent !important;
-  color: #ff8c0a !important;
+  color: #b35f00 !important;
   box-shadow: none;
 }
 .btn-link:visited {
-  color: #d67100;
+  color: #804400;
 }
 
 .wy-btn-group .btn, .wy-control .btn {
@@ -2909,7 +2922,7 @@ button[disabled] {
   cursor: pointer;
 }
 .wy-dropdown-menu > dd > a:hover {
-  background: #d67100;
+  background: #804400;
   color: #fff;
 }
 .wy-dropdown-menu > dd.divider {
@@ -2950,7 +2963,7 @@ button[disabled] {
   padding: 6px 12px;
 }
 .wy-dropdown.wy-dropdown-bubble .wy-dropdown-menu a:hover {
-  background: #d67100;
+  background: #804400;
   color: #fff;
 }
 
@@ -3624,7 +3637,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled] {
 }
 
 a {
-  color: #d67100;
+  color: #804400;
   text-decoration: none;
   cursor: pointer;
 }
@@ -3632,7 +3645,7 @@ a:hover {
   color: #ff8700;
 }
 a:visited {
-  color: #d67100;
+  color: #804400;
 }
 
 html {
@@ -3822,6 +3835,10 @@ code.code-large, .rst-content tt.code-large {
   list-style: disc;
 }
 
+code, .rst-content tt, .rst-content code {
+  font-size: 14px;
+}
+
 .codeblock-example {
   border: 1px solid #ded9d3;
   border-bottom: none;
@@ -3906,7 +3923,7 @@ div[class='highlight'] {
 div[class^='highlight'],
 div[class^='highlight'] pre {
   background-color: #151515;
-  color: #777777;
+  color: #E0E0E0;
 }
 
 .linenodiv pre {
@@ -3950,17 +3967,17 @@ div[class^='highlight'] pre {
 
 /* Error */
 .k {
-  color: #dfcba3;
+  color: #82d3c6;
 }
 
 /* Keyword */
 .kc {
-  color: #dfcba3;
+  color: #82d3c6;
 }
 
 /* Keyword.Constant */
 .kd {
-  color: #dfcba3;
+  color: #82d3c6;
 }
 
 /* Keyword.Declaration */
@@ -3970,12 +3987,12 @@ div[class^='highlight'] pre {
 
 /* Keyword.Namespace */
 .kp {
-  color: #dfcba3;
+  color: #82d3c6;
 }
 
 /* Keyword.Pseudo */
 .kr {
-  color: #dfcba3;
+  color: #82d3c6;
 }
 
 /* Keyword.Reserved */
@@ -3985,12 +4002,12 @@ div[class^='highlight'] pre {
 
 /* Keyword.Type */
 .l {
-  color: #a781ac;
+  color: #4b88b4;
 }
 
 /* Literal */
 .il {
-  color: #a781ac;
+  color: #4b88b4;
 }
 
 /* Literal.Number.Integer.Long */
@@ -4055,7 +4072,7 @@ div[class^='highlight'] pre {
 
 /* Literal.String.Doc */
 .se {
-  color: #a781ac;
+  color: #4b88b4;
 }
 
 /* Literal.String.Escape */
@@ -4065,7 +4082,7 @@ div[class^='highlight'] pre {
 
 /* Literal.String.Heredoc */
 .si {
-  color: #a781ac;
+  color: #4b88b4;
 }
 
 /* Literal.String.Interpol */
@@ -4180,7 +4197,7 @@ div[class^='highlight'] pre {
 
 /* Name.Variable.Instance */
 .o {
-  color: #4b88b4;
+  color: #ffe16b;
 }
 
 /* Operator */
@@ -4224,6 +4241,11 @@ div[class^='highlight'] pre {
 }
 
 /* Text.Whitespace */
+.x {
+  color: #E0E0E0;
+}
+
+/* ? */
 .ge {
   font-style: italic;
 }
@@ -4349,6 +4371,7 @@ div[class^='highlight'] pre {
 }
 .wy-menu-vertical li.current a {
   color: #737373;
+  color: #333333;
   border-right: solid 1px #c9c9c9;
   padding: 0.4045em 2.427em;
 }
@@ -4370,7 +4393,8 @@ div[class^='highlight'] pre {
   line-height: 1.6em;
   color: #404040;
 }
-.wy-menu-vertical li.on a, .wy-menu-vertical li.current > a {
+.wy-menu-vertical li.on a,
+.wy-menu-vertical li.current > a {
   color: #333333;
   padding: 0.4045em 1.618em;
   font-weight: bold;
@@ -4381,32 +4405,37 @@ div[class^='highlight'] pre {
   border-top: solid 1px #c9c9c9;
   padding-left: 1.618em -4px;
 }
-.wy-menu-vertical li.on a:hover, .wy-menu-vertical li.current > a:hover {
+.wy-menu-vertical li.on a:hover,
+.wy-menu-vertical li.current > a:hover {
   background: #fcfcfc;
 }
-.wy-menu-vertical li.on a:hover span.toctree-expand, .wy-menu-vertical li.current > a:hover span.toctree-expand {
+.wy-menu-vertical li.on a:hover span.toctree-expand,
+.wy-menu-vertical li.current > a:hover span.toctree-expand {
   color: #737373;
 }
-.wy-menu-vertical li.on a span.toctree-expand, .wy-menu-vertical li.current > a span.toctree-expand {
+.wy-menu-vertical li.on a span.toctree-expand,
+.wy-menu-vertical li.current > a span.toctree-expand {
   display: block;
   font-size: 0.8em;
   line-height: 1.6em;
   color: #262626;
 }
-.wy-menu-vertical li.toctree-l1.current li.toctree-l2 > ul, .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > ul {
+.wy-menu-vertical li.toctree-l1.current li.toctree-l2 > ul,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > ul,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > ul,
+.wy-menu-vertical li.toctree-l4.current li.toctree-l5 > ul,
+.wy-menu-vertical li.toctree-l5.current li.toctree-l6 > ul {
   display: none;
 }
-.wy-menu-vertical li.toctree-l1.current li.toctree-l2.current > ul, .wy-menu-vertical li.toctree-l2.current li.toctree-l3.current > ul {
+.wy-menu-vertical li.toctree-l1.current li.toctree-l2.current > ul,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3.current > ul,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4.current > ul,
+.wy-menu-vertical li.toctree-l4.current li.toctree-l5.current > ul,
+.wy-menu-vertical li.toctree-l5.current li.toctree-l6.current > ul {
   display: block;
-}
-.wy-menu-vertical li.toctree-l2.current > a {
-  background: #c9c9c9;
-  padding: 0.4045em 2.427em;
 }
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
   display: block;
-  background: #c9c9c9;
-  padding: 0.4045em 4.045em;
 }
 .wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand {
   color: #737373;
@@ -4414,19 +4443,8 @@ div[class^='highlight'] pre {
 .wy-menu-vertical li.toctree-l2 span.toctree-expand {
   color: #a3a3a3;
 }
-.wy-menu-vertical li.toctree-l3 {
-  font-size: 0.9em;
-}
-.wy-menu-vertical li.toctree-l3.current > a {
-  background: #bdbdbd;
-  padding: 0.4045em 4.045em;
-}
 .wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
   display: block;
-  background: #bdbdbd;
-  padding: 0.4045em 5.663em;
-  border-top: none;
-  border-bottom: none;
 }
 .wy-menu-vertical li.toctree-l3 a:hover span.toctree-expand {
   color: #737373;
@@ -4434,8 +4452,32 @@ div[class^='highlight'] pre {
 .wy-menu-vertical li.toctree-l3 span.toctree-expand {
   color: #969696;
 }
-.wy-menu-vertical li.toctree-l4 {
-  font-size: 0.9em;
+.wy-menu-vertical li.toctree-l4.current li.toctree-l5 > a {
+  display: block;
+}
+.wy-menu-vertical li.toctree-l4 a:hover span.toctree-expand {
+  color: #737373;
+}
+.wy-menu-vertical li.toctree-l4 span.toctree-expand {
+  color: #969696;
+}
+.wy-menu-vertical li.toctree-l5.current li.toctree-l6 > a {
+  display: block;
+}
+.wy-menu-vertical li.toctree-l5 a:hover span.toctree-expand {
+  color: #737373;
+}
+.wy-menu-vertical li.toctree-l5 span.toctree-expand {
+  color: #969696;
+}
+.wy-menu-vertical li.toctree-l6.current li.toctree-l7 > a {
+  display: block;
+}
+.wy-menu-vertical li.toctree-l6 a:hover span.toctree-expand {
+  color: #737373;
+}
+.wy-menu-vertical li.toctree-l6 span.toctree-expand {
+  color: #969696;
 }
 .wy-menu-vertical li.current ul {
   display: block;
@@ -4450,20 +4492,21 @@ div[class^='highlight'] pre {
 .wy-menu-vertical li ul li a {
   margin-bottom: 0;
   color: #a6a6a6;
+  color: red;
   font-weight: normal;
 }
 .wy-menu-vertical a {
   display: inline-block;
   line-height: 18px;
-  padding: 0.4045em 1.618em;
+  padding: 0.4045em 0.809em 0.4045em 1.618em;
   display: block;
   position: relative;
-  font-size: 90%;
   color: #a6a6a6;
   color: white;
 }
 .wy-menu-vertical a:hover {
   background-color: #4e4a4a;
+  background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
 .wy-menu-vertical a:hover span.toctree-expand {
@@ -4476,14 +4519,38 @@ div[class^='highlight'] pre {
 .wy-menu-vertical a:active span.toctree-expand {
   color: #fff;
 }
+.wy-menu-vertical li.toctree-l2 > a {
+  padding-left: 2.427em;
+  padding-left: 2.5539em;
+  font-size: 0.9em;
+}
+.wy-menu-vertical li.toctree-l3 > a {
+  padding-left: 4.045em;
+  padding-left: 3.58242em;
+  font-size: 0.92em;
+}
+.wy-menu-vertical li.toctree-l4 > a {
+  padding-left: 5.2585em;
+  padding-left: 4.4495em;
+  font-size: 0.94em;
+}
+.wy-menu-vertical li.toctree-l5 > a {
+  padding-left: 6.0675em;
+  padding-left: 5.21342em;
+  font-size: 0.96em;
+}
+.wy-menu-vertical li.toctree-l6 > a {
+  padding-left: 6.472em;
+  padding-left: 5.90405em;
+  font-size: 0.98em;
+}
 
 .wy-side-nav-search {
   z-index: 200;
-  background-color: #d67100;
+  background-color: #804400;
   background-color: #ff8700;
-  text-align: center;
-  padding: 0.809em;
-  padding-top: 0;
+  text-align: left;
+  padding: 0;
   display: block;
   color: #fcfcfc;
   margin-bottom: 0.809em;
@@ -4492,17 +4559,7 @@ div[class^='highlight'] pre {
   width: 100%;
   border-radius: 50px;
   padding: 6px 12px;
-  border-color: #bd6400;
-}
-.wy-side-nav-search img {
-  display: block;
-  margin: auto auto 0.809em auto;
-  height: 45px;
-  width: 45px;
-  background-color: #ff8700;
-  padding: 5px;
-  padding: 0;
-  border-radius: 100%;
+  border-color: #663600;
 }
 .wy-side-nav-search > a, .wy-side-nav-search .wy-dropdown > a {
   color: #fcfcfc;
@@ -4529,27 +4586,51 @@ div[class^='highlight'] pre {
   margin-top: 0.85em;
   margin-top: 0;
 }
-.wy-side-nav-search a.logo {
-  margin: 0;
-  padding: 0;
-}
-.wy-side-nav-search a.project {
-  margin: 0 0 1em 0;
-  padding: 1em 0;
-}
 
-.wy-side-nav-search a:hover {
-  background-color: #ff8700;
+.wy-side-nav-search ul.sidebartop {
+  color: white;
+  font-size: 20px;
+}
+.wy-side-nav-search ul.sidebartop li.search {
+  font-size: 16px;
+}
+.wy-side-nav-search ul.sidebartop a {
+  display: block;
+  padding: 0.6472em 0.809em;
+  color: white;
+}
+.wy-side-nav-search ul.sidebartop a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.wy-side-nav-search li.docsite {
+  font-family: Share, sans-serif;
+}
+.wy-side-nav-search li.docsite a {
+  padding-right: 2.2652em;
+}
+.wy-side-nav-search li.nolink {
+  padding: 0.6472em 0.809em;
+}
+.wy-side-nav-search li.project a {
+  padding-left: 2.209em;
+  position: relative;
+}
+.wy-side-nav-search li.project a:before {
+  position: absolute;
+  font-family: FontAwesome;
+  top: 0.77664em;
+  left: 0.87372em;
+  content: "";
 }
 
 .wy-nav .wy-menu-vertical header {
-  color: #d67100;
+  color: #804400;
 }
 .wy-nav .wy-menu-vertical a {
   color: #a6a6a6;
 }
 .wy-nav .wy-menu-vertical a:hover {
-  background-color: #d67100;
+  background-color: #804400;
   color: #fff;
 }
 
@@ -4606,7 +4687,7 @@ div[class^='highlight'] pre {
 
 .wy-nav-top {
   display: none;
-  background: #d67100;
+  background: #804400;
   background: #ff8700;
   color: #fff;
   padding: 0.4045em 0.809em;
@@ -4676,6 +4757,8 @@ footer p {
 
 .rst-footer-buttons {
   *zoom: 1;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 .rst-footer-buttons:before, .rst-footer-buttons:after {
   display: table;
@@ -4759,15 +4842,15 @@ footer p {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 300px;
+  width: 285px;
   color: #fcfcfc;
   background: #1f1d1d;
-  border-top: solid 10px #343131;
+  border-top: 2px solid #804400;
   font-family: "Source Sans Pro", "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
   z-index: 400;
 }
 .rst-versions a {
-  color: #d67100;
+  color: #804400;
   text-decoration: none;
 }
 .rst-versions .rst-badge-small {
@@ -4790,13 +4873,16 @@ footer p {
 .rst-versions .rst-current-version:after {
   clear: both;
 }
-.rst-versions .rst-current-version .fa, .rst-versions .rst-current-version .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li .rst-versions .rst-current-version span.toctree-expand, .rst-versions .rst-current-version .rst-content .admonition-title, .rst-content .rst-versions .rst-current-version .admonition-title, .rst-versions .rst-current-version .rst-content h1 .headerlink, .rst-content h1 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content h2 .headerlink, .rst-content h2 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content p.caption .headerlink, .rst-content p.caption .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content h3 .headerlink, .rst-content h3 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content h4 .headerlink, .rst-content h4 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content h5 .headerlink, .rst-content h5 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content h6 .headerlink, .rst-content h6 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content dl dt .headerlink, .rst-content dl dt .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content tt.download span:first-child, .rst-content tt.download .rst-versions .rst-current-version span:first-child, .rst-versions .rst-current-version .rst-content code.download span:first-child, .rst-content code.download .rst-versions .rst-current-version span:first-child, .rst-versions .rst-current-version .icon {
+.rst-versions .rst-current-version .fa, .rst-versions .rst-current-version .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li .rst-versions .rst-current-version span.toctree-expand, .rst-versions .rst-current-version .rst-content .admonition-title, .rst-content .rst-versions .rst-current-version .admonition-title, .rst-versions .rst-current-version .rst-content h1 .headerlink, .rst-content h1 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content h2 .headerlink, .rst-content h2 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content p.caption .headerlink, .rst-content p.caption .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content h3 .headerlink, .rst-content h3 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content h4 .headerlink, .rst-content h4 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content h5 .headerlink, .rst-content h5 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content h6 .headerlink, .rst-content h6 .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content dl dt .headerlink, .rst-content dl dt .rst-versions .rst-current-version .headerlink, .rst-versions .rst-current-version .rst-content tt.download span:first-child, .rst-content tt.download .rst-versions .rst-current-version span:first-child, .rst-versions .rst-current-version .rst-content code.download span:first-child, .rst-content code.download .rst-versions .rst-current-version span:first-child, .rst-versions .rst-current-version .icon, .rst-versions .rst-current-version #relatedLinksText {
   color: #fcfcfc;
 }
-.rst-versions .rst-current-version .fa-book, .rst-versions .rst-current-version .icon-book {
+.rst-versions .rst-current-version #relatedLinksText {
+  padding-left: 0.4em;
+}
+.rst-versions .rst-current-version .fa-book, .rst-versions .rst-current-version .icon-book, .rst-versions .rst-current-version .fa-spinner, .rst-versions .rst-current-version #relatedLinksText {
   float: left;
 }
-.rst-versions .rst-current-version .icon-book {
+.rst-versions .rst-current-version .icon-book, .rst-versions .rst-current-version .icon-spinner, .rst-versions .rst-current-version #relatedLinksText {
   float: left;
 }
 .rst-versions .rst-current-version.rst-out-of-date {
@@ -4824,14 +4910,29 @@ footer p {
   padding: 0;
   border-top: solid 1px #413d3d;
 }
+.rst-versions .rst-other-versions dt {
+  padding: 12px 6px 3px 0;
+}
 .rst-versions .rst-other-versions dd {
   display: inline-block;
-  margin: 0;
 }
 .rst-versions .rst-other-versions dd a {
-  display: inline-block;
-  padding: 6px;
+  display: block;
+  padding: 2px 12px 2px 17px;
   color: #fcfcfc;
+}
+.rst-versions .rst-other-versions dd a:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.rst-versions .rst-other-versions dd.nolink {
+  padding: 2px 12px;
+}
+.rst-versions .rst-other-versions dl.versions {
+  max-height: 260px;
+  overflow: auto;
+}
+.rst-versions .rst-other-versions dl.versions dd {
+  display: block;
 }
 .rst-versions.rst-badge {
   width: auto;
@@ -4918,6 +5019,11 @@ footer p {
 .rst-content .admonition table td, .rst-content .admonition table th {
   background: transparent !important;
   border-color: rgba(0, 0, 0, 0.1) !important;
+}
+.rst-content .section ul li,
+.rst-content .section ol li {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 .rst-content .section ol.loweralpha, .rst-content .section ol.loweralpha li {
   list-style: lower-alpha;
@@ -5045,7 +5151,7 @@ footer p {
   font-weight: bold;
 }
 .rst-content a tt, .rst-content a tt, .rst-content a code {
-  color: #d67100;
+  color: #804400;
 }
 .rst-content dl {
   margin-bottom: 24px;
@@ -5262,7 +5368,7 @@ span[id*='MathJax-Span'] {
   margin-top: 30px;
   margin-bottom: 30px;
   border: 1px none #888;
-  border-top: 2px solid #ad5c00;
+  border-top: 2px solid #572e00;
   border-top: 2px solid #988d81;
   background-color: #f2ebe3;
   padding: 0;
@@ -5278,7 +5384,7 @@ span[id*='MathJax-Span'] {
 .t3-cell p.term {
   font-size: 9px;
   font-weight: normal;
-  color: #d67100;
+  color: #804400;
   margin: 0;
   padding: 0 0 3px 0;
 }
@@ -5486,11 +5592,11 @@ span[id*='MathJax-Span'] {
 }
 
 .bg-link-color {
-  background-color: #d67100 !important;
+  background-color: #804400 !important;
 }
 
 .bg-link-color-visited {
-  background-color: #d67100 !important;
+  background-color: #804400 !important;
 }
 
 .bg-link-color-hover {
@@ -5510,7 +5616,7 @@ span[id*='MathJax-Span'] {
 }
 
 .bg-spinner-color {
-  background-color: #d67100 !important;
+  background-color: #804400 !important;
 }
 
 .bg-menu-top-link-color {
@@ -5543,6 +5649,13 @@ h1, h2, .rst-content p.caption, h3, h4, h5, h6, legend {
 #EditMeOnGitHub {
   color: white;
   background-color: #ff8700;
+  display: block;
+  padding: 6px 10px;
+  border-radius: 15px;
+}
+
+input[type="text"] {
+  font-size: 100%;
 }
 
 /*# sourceMappingURL=theme.css.map */

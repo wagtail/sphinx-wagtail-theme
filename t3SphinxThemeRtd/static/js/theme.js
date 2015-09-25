@@ -1,3 +1,10 @@
+// T3Docs
+
+// Ensure our own namespace
+if (typeof window.T3Docs === 'undefined') {
+	window.T3Docs = {};
+}
+
 function toggleCurrent (elem) {
     var parent_li = elem.closest('li');
     parent_li.siblings('li.current').removeClass('current');
@@ -7,6 +14,26 @@ function toggleCurrent (elem) {
 }
 
 $(document).ready(function() {
+
+    var fillInRelatedLinks = function () {
+        $("#relatedLinksFaSpan").attr('class', 'fa fa-spinner fa-spin');
+        $('#ajaxversions').load(
+            'https://docs.typo3.org/services/ajaxversions.php?url=' + encodeURI(document.URL),
+            false,
+            function (responseText, textStatus, jqXHR) {
+                $("#relatedLinksFaSpan").attr('class', 'fa fa-book');
+                window.T3Docs['fillInRelatedLinks'] = {'dest':'ajaxversions.php', 'responseText':responseText, 'textStatus':textStatus};
+            }
+        );
+        $('#ajaxdownloads').load(
+            'https://docs.typo3.org/services/ajaxdownloads.php?url=' + encodeURI(document.URL),
+            false,
+            function (responseText, textStatus, jqXHR) {
+                window.T3Docs['fillInRelatedLinks'] = {'dest':'ajaxdownloads.php', 'responseText':responseText, 'textStatus':textStatus};
+            }
+        );
+    }
+
     // Shift nav in mobile when clicking the menu.
     $(document).on('click', "[data-toggle='wy-nav-top']", function() {
         $("[data-toggle='wy-nav-shift']").toggleClass("shift");
@@ -25,6 +52,9 @@ $(document).ready(function() {
         }
     });
     $(document).on('click', "[data-toggle='rst-current-version']", function() {
+        if (typeof window.T3Docs['fillInRelatedLinks'] === 'undefined') {
+            fillInRelatedLinks();
+        }
         $("[data-toggle='rst-versions']").toggleClass("shift-up");
     });
     // Make tables responsive
@@ -89,6 +119,8 @@ window.SphinxRtdTheme = (function (jquery) {
                         link.closest('li.toctree-l2').addClass('current');
                         link.closest('li.toctree-l3').addClass('current');
                         link.closest('li.toctree-l4').addClass('current');
+                        link.closest('li.toctree-l5').addClass('current');
+                        link.closest('li.toctree-l6').addClass('current');
                     }
                     catch (err) {
                         console.log("Error expanding nav for anchor", err);

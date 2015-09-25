@@ -7,6 +7,8 @@
   {%- set titlesuffix = "" %}
 {%- endif %}
 {%- set logo = "img/typo3-white.svg" %}
+{%- set logo = "img/typo3-documentation.png" %}
+{%- set urlTypo3Documentation = "https://docs.typo3.org" %}
 {#- set css_files = css_files + ["http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700"] #}
 {%- set css_files = css_files + ['_static/jquery-ui/jquery-ui.min.css'] %}
 {%- set css_files = css_files + ['_static/css/t3more.css'] %}
@@ -97,18 +99,34 @@
       <div class="wy-side-nav-search">
         {% block sidebartitle %}
 
-        {% if logo %}
-          {# Not strictly valid HTML, but it's the only way to display/scale it properly, without weird scripting or heaps of work #}
-          <a href="{{ pathto(master_doc) }}" class="logo"><img src="{{ pathto('_static/' + logo, 1) }}" class="logo" /></a>
-        {% endif %}
+        <ul class="sidebartop">
 
-        {% if logo and theme_logo_only %}
-          <!-- pass -->
-        {% else %}
-          <a href="{{ pathto(master_doc) }}" class="icon icon-home project"> {{ project }}</a>
-        {% endif %}
+          <li class="docsite">
+            <a href="{{ urlTypo3Documentation }}"><img src="{{ pathto('_static/' + logo, 1) }}" class="logo" /></a>
+          </li>
 
-        {% include "searchbox.html" %}
+          <li class="project">
+            <a href="{{ pathto(master_doc) }}">
+              {{ project|e }}
+              {%- if release -%}
+                <br>{{ release|e }}
+              {%- elif version -%}
+                <br>{{ release|e }}
+              {%- endif -%}
+            </a>
+          </li>
+
+          {%- if 0 -%}
+            <li class="nolink">
+              For example: Help
+            </li>
+          {%- endif -%}
+
+          <li class="nolink search">
+            {%- include "searchbox.html" -%}
+          </li>
+
+        </ul>
 
         {% endblock %}
       </div>
@@ -141,9 +159,9 @@
         <div class="rst-content">
           {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+           <div itemprop="articleBody" class="toBeIndexed">
             {% block body %}{% endblock %}
-           </div>
+           </div><!-- /.toBeIndexed -->
           </div>
           {% include "footer.html" %}
         </div>

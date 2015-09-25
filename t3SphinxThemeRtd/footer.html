@@ -2,35 +2,61 @@
   {% if next or prev %}
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       {% if next %}
-        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="Accesskey Alt(+Shift)+n" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       {% endif %}
       {% if prev %}
-        <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="{{ prev.link|e }}" class="btn btn-neutral" title="Accesskey Alt(+Shift)+p" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       {% endif %}
     </div>
   {% endif %}
 
   <hr/>
 
-  <div role="contentinfo">
-    <p>
-    {%- if show_copyright %}
-      {%- if hasdoc('copyright') %}
-        {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-      {%- else %}
-        {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
-      {%- endif %}
+  <div role="contentinfo" class="contentinfo">
+
+    {%- if theme_show_sourcelink and has_source and sourcename %}
+      <p class="show_source">
+        <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
+          <span class="fa fa-binoculars"></span>&#32;View page source
+        </a>
+      </p>
     {%- endif %}
 
-    {%- if last_updated %}
-      {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+    {%- if theme_show_copyright %}
+      <p class="show_copyright">
+        {%- if hasdoc('Copyright') %}
+          <a href="{{ pathto('Copyright') }}">
+            &copy; Copyright {{ copyright }}
+          </a>
+        {%- elif hasdoc('copyright') %}
+          <a href="{{ pathto('copyright') }}">
+            &copy; Copyright {{ copyright }}
+          </a>
+        {%- else %}
+            &copy; Copyright {{ copyright }}
+        {%- endif %}
+      </p>
     {%- endif %}
-    </p>
+
+    {%- if theme_show_last_updated and last_updated%}
+      <p class="last_updated">
+        Last rendered on {{ last_updated }}
+      </p>
+    {%- endif %}
+
+    {%- if theme_show_sphinx %}
+      <p class="show_sphinx">
+        Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
+        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd</a>
+      </p>
+    {%- endif %}
+
+    {%- if theme_show_revision and theme_github_revision_msg %}
+      <p class="show_revision">
+        Revision {{ theme_github_revision_msg }}
+      </p>
+    {%- endif %}
+
   </div>
 
-  {%- if show_sphinx %}
-  {% trans %}Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>{% endtrans %}.
-  {%- endif %}
-
 </footer>
-

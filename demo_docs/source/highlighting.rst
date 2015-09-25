@@ -26,22 +26,29 @@ Navigate this page:
 Active Scheme
 =============
 
-Here's a screenshot of the color scheme of a dark version
-of `Summerfruit <https://github.com/chriskempson/base16-builder/blob/master/schemes/summerfruit.yml>`__.
-Meanwhile something else is active though. The colors are not final yet.
-We can easily change colors by switching to another list of 16 colors
-as available from the `Base16 Builder <https://github.com/chriskempson/base16-builder>`__.
+Here's a screenshot of the color scheme used for highlighting.
+Development of that scheme started with the 'Prism higher lightness' scheme.
 
-.. figure:: images/scheme-summerfruit.png
-   :alt: colors of the 'summerfruit' scheme
-   :target: https://github.com/chriskempson/base16-builder/blob/master/schemes/summerfruit.yml
+.. figure:: images/scheme-prism-higher-lightness.png
+   :alt: colors and values of the scheme
+   :target: https://github.com/chriskempson/base16-builder/blob/master/schemes/
 
-.. note::
-
+.. comment:
+   Here's a screenshot of the color scheme of a dark version
+   of `Summerfruit <https://github.com/chriskempson/base16-builder/blob/master/schemes/summerfruit.yml>`__.
+   Meanwhile something else is active though. The colors are not final yet.
    We can easily change colors by switching to another list of 16 colors
    as available from the `Base16 Builder <https://github.com/chriskempson/base16-builder>`__.
 
-   The current color scheme is not final yet.
+   .. figure:: images/scheme-summerfruit.png
+      :alt: colors of the 'summerfruit' scheme
+      :target: https://github.com/chriskempson/base16-builder/blob/master/schemes/summerfruit.yml
+
+.. note::
+
+   We could easily change colors by switching to another list of 16 colors
+   as available from the `Base16 Builder <https://github.com/chriskempson/base16-builder>`__.
+   As it turned out however some color tweaking usually seems necessary.
 
 
 Apache

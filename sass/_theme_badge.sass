@@ -2,10 +2,11 @@
   position: fixed
   bottom: 0
   left: 0
-  width: $nav-desktop-width
+  width: $nav-desktop-width - 15px
   color: $section-background-color
   background: darken($menu-background-color, 8%)
-  border-top: solid 10px $menu-background-color
+  // border-top: solid 10px $menu-background-color
+  border-top: 2px solid $link-color
   font-family: $base-font-family
   z-index: $z-index-tray
   a
@@ -13,6 +14,8 @@
     text-decoration: none
   .rst-badge-small
     display: none
+
+
   .rst-current-version
     padding: $base-line-height / 2
     background-color: darken($menu-background-color, 5%)
@@ -22,11 +25,13 @@
     cursor: pointer
     color: $green
     +clearfix
-    .fa
+    .fa, #relatedLinksText
       color: $section-background-color
-    .fa-book
+    #relatedLinksText
+      padding-left: 0.4em
+    .fa-book, .fa-spinner, #relatedLinksText
       float: left
-    .icon-book
+    .icon-book, .icon-spinner, #relatedLinksText
       float: left
     &.rst-out-of-date
       background-color: $red
@@ -36,6 +41,7 @@
       color: $black
   &.shift-up .rst-other-versions
     display: block
+
   .rst-other-versions
     font-size: 90%
     padding: $base-line-height / 2
@@ -48,13 +54,25 @@
       margin: 20px 0
       padding: 0
       border-top: solid 1px lighten($menu-background-color, 5%)
+    dt
+      padding: $base-line-height/2  $base-line-height/4 $base-line-height/8  0
     dd
       display: inline-block
-      margin: 0
       a
-        display: inline-block
-        padding: $base-line-height / 4
+        display: block
+        padding: $base-line-height/12  $base-line-height/2 $base-line-height/12 17px
         color: $section-background-color
+        &:hover
+          background-color: rgba(255,255,255,0.4)
+      &.nolink
+        padding: $base-line-height/12  $base-line-height/2
+    dl.versions
+      max-height: 260px
+      overflow: auto
+      dd
+        display: block
+
+
   &.rst-badge
     width: auto
     bottom: 20px
@@ -89,5 +107,4 @@
   img
     width: 100%
     height: auto
-
 

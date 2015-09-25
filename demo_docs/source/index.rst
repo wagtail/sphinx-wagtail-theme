@@ -3,23 +3,30 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-=================================================
+=========
 Demo Docs
-=================================================
+=========
 
 :Status: WIP - work in progress
 :Description: See `A New Theme For Doc.TYPO3.Org <http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html>`__
 
 
-Contents
-========
-
 .. toctree::
-   :maxdepth: 5
-   :titlesonly:
    :glob:
+   :hidden:
+   :maxdepth: 3
+   :titlesonly:
 
-   *
+   highlighting
+   typesetting
+   demo-of-lists
+   long
+   reStructuredText Demonstration from the Docutils Docs <reStructuredText-Demonstration>
+   api
+   1/*
+
+
+:ref:`Sitemap`
 
 
 Maaaaath!

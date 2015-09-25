@@ -96,7 +96,7 @@ module.exports = function(grunt) {
         cmd: 'bower update'
       },
       build_sphinx: {
-        cmd: 'sphinx-build demo_docs/source demo_docs/build'
+        cmd: './my-sphinx-build.sh demo_docs/source demo_docs/build'
       }
     },
     clean: {

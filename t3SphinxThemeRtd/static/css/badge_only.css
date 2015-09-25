@@ -102,15 +102,15 @@ ul.fas li .fa-large:before {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 300px;
+  width: 285px;
   color: #fcfcfc;
   background: #1f1d1d;
-  border-top: solid 10px #343131;
+  border-top: 2px solid #804400;
   font-family: "Source Sans Pro", "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
   z-index: 400;
 }
 .rst-versions a {
-  color: #d67100;
+  color: #804400;
   text-decoration: none;
 }
 .rst-versions .rst-badge-small {
@@ -133,13 +133,16 @@ ul.fas li .fa-large:before {
 .rst-versions .rst-current-version:after {
   clear: both;
 }
-.rst-versions .rst-current-version .fa {
+.rst-versions .rst-current-version .fa, .rst-versions .rst-current-version #relatedLinksText {
   color: #fcfcfc;
 }
-.rst-versions .rst-current-version .fa-book {
+.rst-versions .rst-current-version #relatedLinksText {
+  padding-left: 0.4em;
+}
+.rst-versions .rst-current-version .fa-book, .rst-versions .rst-current-version .fa-spinner, .rst-versions .rst-current-version #relatedLinksText {
   float: left;
 }
-.rst-versions .rst-current-version .icon-book {
+.rst-versions .rst-current-version .icon-book, .rst-versions .rst-current-version .icon-spinner, .rst-versions .rst-current-version #relatedLinksText {
   float: left;
 }
 .rst-versions .rst-current-version.rst-out-of-date {
@@ -167,14 +170,29 @@ ul.fas li .fa-large:before {
   padding: 0;
   border-top: solid 1px #413d3d;
 }
+.rst-versions .rst-other-versions dt {
+  padding: 12px 6px 3px 0;
+}
 .rst-versions .rst-other-versions dd {
   display: inline-block;
-  margin: 0;
 }
 .rst-versions .rst-other-versions dd a {
-  display: inline-block;
-  padding: 6px;
+  display: block;
+  padding: 2px 12px 2px 17px;
   color: #fcfcfc;
+}
+.rst-versions .rst-other-versions dd a:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.rst-versions .rst-other-versions dd.nolink {
+  padding: 2px 12px;
+}
+.rst-versions .rst-other-versions dl.versions {
+  max-height: 260px;
+  overflow: auto;
+}
+.rst-versions .rst-other-versions dl.versions dd {
+  display: block;
 }
 .rst-versions.rst-badge {
   width: auto;
