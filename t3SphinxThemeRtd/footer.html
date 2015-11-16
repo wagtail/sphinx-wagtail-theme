@@ -14,7 +14,7 @@
 
   <div role="contentinfo" class="contentinfo">
 
-    {%- if theme_show_sourcelink and has_source and sourcename %}
+    {%- if show_source and has_source and sourcename %}
       <p class="show_source">
         <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
           <span class="fa fa-binoculars"></span>&#32;View page source
@@ -47,7 +47,8 @@
     {%- if theme_show_sphinx %}
       <p class="show_sphinx">
         Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
-        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd</a>
+        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd.</a>
+        Report theme issues <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues" target="_blank">here.</a>
       </p>
     {%- endif %}
 
