@@ -1,30 +1,32 @@
-{# TEMPLATE VAR SETTINGS #}
-{%- set url_root = pathto('', 1) %}
-{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
+{#- TEMPLATE VAR SETTINGS -#}
+{%- set url_root = pathto('', 1) -%}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif -%}
 {%- if not embedded and docstitle %}
-  {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+  {%- set titlesuffix = " &mdash; "|safe + docstitle|e -%}
 {%- else %}
-  {%- set titlesuffix = "" %}
-{%- endif %}
-{%- set logo = "img/typo3-white.svg" %}
-{%- set logo = "img/typo3-documentation.png" %}
-{%- set urlTypo3Documentation = "https://docs.typo3.org" %}
-{#- set css_files = css_files + ["http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700"] #}
-{%- set css_files = css_files + ['_static/jquery-ui/jquery-ui.min.css'] %}
-{%- set css_files = css_files + ['_static/css/t3more.css'] %}
-{%- set script_files = script_files + ['_static/jquery-ui/jquery-ui.min.js'] %}
-{%- set script_files = script_files + ["_static/js/theme.js"] %}
-{%- if pagename == "search" %}
+  {%- set titlesuffix = "" -%}
+{%- endif -%}
+{%- set logo = "img/typo3-documentation.png" -%}
+{%- set urlTypo3Documentation = "https://docs.typo3.org" -%}
+{#- set css_files = css_files + ["http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700"] -#}
+{%- set css_files = css_files + ['_static/jquery-ui/jquery-ui.min.css'] -%}
+{%- set css_files = css_files + ['_static/css/t3more.css'] -%}
+{%- set script_files = script_files + ['_static/jquery-ui/jquery-ui.min.js'] -%}
+{%- set script_files = script_files + ["_static/js/theme.js"] -%}
+{%- if pagename == "search" -%}
   {%- set script_files = script_files + ['_static/js/t3autocomplete2.js'] %}
-{%- else %}
+{%- else -%}
   {%- set script_files = script_files + ['_static/js/t3autocomplete.js'] %}
-{%- endif %}
+{%- endif -%}
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  {%- if 0 -%}
+    {%- include "var_dump.html" -%}
+  {%- endif -%}
   {{ metatags }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block htmltitle %}
@@ -38,13 +40,10 @@
 
   {# CSS #}
 
-  {# OPENSEARCH #}
-  {% if not embedded %}
-    {% if use_opensearch %}
-      <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
-    {% endif %}
-
+  {% if use_opensearch %}
+    <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
   {% endif %}
+
   {# RTD hosts this file, so just load on non RTD builds #}
 
   {% if not READTHEDOCS %}
