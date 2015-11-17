@@ -18,6 +18,7 @@ Demo Docs
    :titlesonly:
 
    highlighting
+   textroles
    typesetting
    demo-of-lists
    long
