@@ -2578,6 +2578,7 @@ a .fa, a .wy-menu-vertical li span.toctree-expand, .wy-menu-vertical li a span.t
 .wy-alert, .rst-content .note, .rst-content .attention, .rst-content .caution, .rst-content .danger, .rst-content .error, .rst-content .hint, .rst-content .important, .rst-content .tip, .rst-content .warning, .rst-content .seealso, .rst-content .admonition-todo {
   padding: 12px;
   line-height: 24px;
+  margin-top: 24px;
   margin-bottom: 24px;
   background: white;
   background: #dbedff;
@@ -3780,7 +3781,7 @@ code, .rst-content tt, .rst-content code {
   white-space: nowrap;
   max-width: 100%;
   background: #fff;
-  border: solid 1px #e1e4e5;
+  border: solid 1px #bbc1c4;
   font-size: 75%;
   padding: 0 5px;
   font-family: "Source Code Pro", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
@@ -4863,7 +4864,6 @@ footer p {
   text-align: right;
   font-size: 90%;
   cursor: pointer;
-  color: #5abc55;
   *zoom: 1;
 }
 .rst-versions .rst-current-version:before, .rst-versions .rst-current-version:after {
@@ -5000,7 +5000,7 @@ footer p {
 }
 .rst-content .literal-block, .rst-content pre.literal-block {
   background: transparent;
-  border: 1px solid #e1e4e5;
+  border: 1px solid #bbc1c4;
   color: #333333;
   padding: 4px;
   font-family: "Source Code Pro", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
@@ -5532,7 +5532,7 @@ span[id*='MathJax-Span'] {
 }
 
 .bg-text-code-border-color {
-  background-color: #e1e4e5 !important;
+  background-color: #bbc1c4 !important;
 }
 
 .bg-text-dark {
@@ -5656,6 +5656,31 @@ h1, h2, .rst-content p.caption, h3, h4, h5, h6, legend {
 
 input[type="text"] {
   font-size: 100%;
+}
+
+code, .rst-content tt, .rst-content code {
+  background-color: #fffcf0;
+  border-color: #ffe999;
+}
+code.php, .rst-content tt.php {
+  color: #004d00;
+  border: none;
+  background-color: inherit;
+}
+code.file, .rst-content tt.file {
+  color: #ff0088;
+  border: none;
+  background-color: inherit;
+}
+code.py-class, .rst-content tt.py-class {
+  color: #004080;
+  border: none;
+  background-color: inherit;
+}
+code.typoscript, .rst-content tt.typoscript {
+  color: #661400;
+  border-color: #ffc2b3;
+  background-color: inherit;
 }
 
 /*# sourceMappingURL=theme.css.map */
