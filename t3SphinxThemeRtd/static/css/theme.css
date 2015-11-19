@@ -5637,8 +5637,8 @@ span[id*='MathJax-Span'] {
   }
 }
 h1, h2, .rst-content p.caption, h3, h4, h5, h6, legend {
-  margin-top: 0.8em;
-  margin-bottom: 0.8em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
 }
 
 .admonition {
@@ -5662,25 +5662,52 @@ code, .rst-content tt, .rst-content code {
   background-color: #fffcf0;
   border-color: #ffe999;
 }
-code.php, .rst-content tt.php {
-  color: #004d00;
-  border: none;
-  background-color: inherit;
-}
 code.file, .rst-content tt.file {
   color: #ff0088;
   border: none;
   background-color: inherit;
 }
-code.py-class, .rst-content tt.py-class {
-  color: #004080;
+code.html, .rst-content tt.html {
+  color: #7700cc;
   border: none;
   background-color: inherit;
+  font-weight: normal;
+}
+code.js, .rst-content tt.js {
+  color: #00660e;
+  border: none;
+  background-color: inherit;
+  font-weight: normal;
+}
+code.method, .rst-content tt.method {
+  color: #0059b3;
+  border: none;
+  background-color: inherit;
+  font-weight: bold;
+}
+code.php, .rst-content tt.php {
+  color: #0059b3;
+  border: none;
+  background-color: inherit;
+  font-weight: normal;
+}
+code.py-class, .rst-content tt.py-class {
+  color: #007fff;
+  border: none;
+  background-color: inherit;
+  font-weight: bold;
 }
 code.typoscript, .rst-content tt.typoscript {
   color: #661400;
   border-color: #ffc2b3;
   background-color: inherit;
+}
+
+em.aspect {
+  background-color: inherit;
+  color: #bf4040;
+  font-weight: normal;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=theme.css.map */
