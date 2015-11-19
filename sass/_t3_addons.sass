@@ -10,8 +10,8 @@
     clear: both
 
 h1,h2,h3,h4,h5,h6, legend
-  margin-top: 0.8em
-  margin-bottom: 0.8em
+  margin-top: 2.0em
+  margin-bottom: 0.5em
 
 
 // for the generic admonition
@@ -35,21 +35,44 @@ input
 code
   background-color: lighten(#ffc800,47%)
   border-color: lighten(#ffc800,30%)
-  &.php
-    color: hsl(120, 100%, 15%)
-    border: none
-    background-color: inherit
   &.file
     color: hsl(328, 100%, 50%)
     border: none
     background-color: inherit
-  &.py-class
-    color: hsl(210, 100%, 25%)
+  &.html
+    color: hsl(275, 100%, 40%)
     border: none
     background-color: inherit
+    font-weight: normal
+  &.js
+    color: hsl(128, 100%, 20%)
+    border: none
+    background-color: inherit
+    font-weight: normal
+  &.method
+    color: hsl(210, 100%, 35%)
+    border: none
+    background-color: inherit
+    font-weight: bold
+  &.php
+    color: hsl(210, 100%, 35%)
+    border: none
+    background-color: inherit
+    font-weight: normal
+  &.py-class
+    color: hsl(210, 100%, 50%)
+    border: none
+    background-color: inherit
+    font-weight: bold
   &.ts
   &.typoscript
     color: hsl(12, 100%, 20%)
     border-color: hsl(12, 100%, 85%)
     background-color: inherit
 
+em
+  &.aspect
+    background-color: inherit
+    color: hsl(0, 50%, 50%)
+    font-weight: normal
+    font-style: italic
