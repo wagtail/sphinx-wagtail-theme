@@ -76,11 +76,11 @@ $SourceSansProPath: "." !default;
     font-style: italic;
     font-stretch: normal;
     src: local('SourceSansPro-It'),
-         local('Source Sans Pro'),
+         local('Source Sans Pro Italic'),
          url('#{$SourceSansProPath}/eot/SourceSansPro-It.eot') format('embedded-opentype'),
          url('#{$SourceSansProPath}/woff/SourceSansPro-It.woff') format('woff'),
-         url('#{$SourceSansProPath}/OTF/SourceSansPro-It.otf') format('opentype'),
-         url('#{$SourceSansProPath}/ttf/SourceSansPro-It.ttf') format('truetype');
+         url('#{$SourceSansProPath}/OTF/SourceSansPro-It.otf')   format('opentype'),
+         url('#{$SourceSansProPath}/ttf/SourceSansPro-It.ttf')   format('truetype');
 }
 
 //@font-face{
@@ -128,7 +128,7 @@ $SourceSansProPath: "." !default;
     font-style: italic;
     font-stretch: normal;
     src: local('SourceSansPro-BoldIt'),
-         local('Source Sans Pro'),
+         local('Source Sans Pro Bold Italic'),
          url('#{$SourceSansProPath}/eot/SourceSansPro-BoldIt.eot') format('embedded-opentype'),
          url('#{$SourceSansProPath}/woff/SourceSansPro-BoldIt.woff') format('woff'),
          url('#{$SourceSansProPath}/OTF/SourceSansPro-BoldIt.otf') format('opentype'),
