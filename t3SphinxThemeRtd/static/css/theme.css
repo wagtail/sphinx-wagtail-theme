@@ -5334,7 +5334,7 @@ span[id*='MathJax-Span'] {
   font-weight: 400;
   font-style: italic;
   font-stretch: normal;
-  src: local("SourceSansPro-It"), local("Source Sans Pro"), url("../fonts/SourceSansPro/eot/SourceSansPro-It.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-It.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-It.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-It.ttf") format("truetype");
+  src: local("SourceSansPro-It"), local("Source Sans Pro Italic"), url("../fonts/SourceSansPro/eot/SourceSansPro-It.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-It.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-It.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-It.ttf") format("truetype");
 }
 @font-face {
   font-family: 'Source Sans Pro';
@@ -5348,7 +5348,7 @@ span[id*='MathJax-Span'] {
   font-weight: 700;
   font-style: italic;
   font-stretch: normal;
-  src: local("SourceSansPro-BoldIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro/eot/SourceSansPro-BoldIt.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-BoldIt.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-BoldIt.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-BoldIt.ttf") format("truetype");
+  src: local("SourceSansPro-BoldIt"), local("Source Sans Pro Bold Italic"), url("../fonts/SourceSansPro/eot/SourceSansPro-BoldIt.eot") format("embedded-opentype"), url("../fonts/SourceSansPro/woff/SourceSansPro-BoldIt.woff") format("woff"), url("../fonts/SourceSansPro/OTF/SourceSansPro-BoldIt.otf") format("opentype"), url("../fonts/SourceSansPro/ttf/SourceSansPro-BoldIt.ttf") format("truetype");
 }
 @font-face {
   font-family: 'Source Code Pro';
