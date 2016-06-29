@@ -9,7 +9,7 @@
   h1, h2
     clear: both
 
-h1,h2,h3,h4,h5,h6, legend
+h1, h2, h3, h4, h5, h6, legend
   margin-top: 2.0em
   margin-bottom: 0.5em
 
@@ -39,31 +39,37 @@ code
     color: hsl(328, 100%, 50%)
     border: none
     background-color: inherit
+    padding: 0
   &.html
     color: hsl(275, 100%, 40%)
     border: none
     background-color: inherit
     font-weight: normal
+    padding: 0
   &.js
     color: hsl(128, 100%, 20%)
     border: none
     background-color: inherit
     font-weight: normal
+    padding: 0
   &.method
     color: hsl(210, 100%, 35%)
     border: none
     background-color: inherit
     font-weight: bold
+    padding: 0
   &.php
     color: hsl(210, 100%, 35%)
     border: none
     background-color: inherit
     font-weight: normal
+    padding: 0
   &.py-class
     color: hsl(210, 100%, 50%)
     border: none
     background-color: inherit
     font-weight: bold
+    padding: 0
   &.ts
   &.typoscript
     color: hsl(12, 100%, 20%)
@@ -76,3 +82,50 @@ em
     color: hsl(0, 50%, 50%)
     font-weight: normal
     font-style: italic
+
+
+
+.wy-table
+  thead
+    white-space: normal
+
+.wy-table-responsive
+  table
+    td, th
+      white-space: normal
+
+.rst-content
+  table.field-list
+    td > strong
+    .field-name
+      white-space: normal
+
+
+
+div[class^='highlight']
+  pre
+    // margin-top: $base-line-height
+    margin-bottom: $base-line-height
+
+
+
+.rst-content
+  p.caption
+    &::before
+      content: "Figure: "
+    font-size: 14px
+    line-height: 18px
+    width: 60%
+    margin: 0
+    padding: 0
+    font-weight: normal
+    font-style: normal
+    color: #000
+    .caption-text
+      font-style: normal
+      color: #000000
+
+
+td.field-body
+  p.first
+    margin-top: 0
