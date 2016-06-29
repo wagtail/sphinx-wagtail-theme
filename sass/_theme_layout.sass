@@ -63,6 +63,9 @@ $padding-b: -1.5
         padding: $gutter / 4 $gutter * 1.5
         &:hover
           background: darken($section-background-color, 15%)
+    a:hover
+      span.toctree-expand
+        color: white
     code
       border: none
       background: inherit
@@ -78,7 +81,7 @@ $padding-b: -1.5
       @extend .fa-plus-square-o
       font-size: .8em
       line-height: 1.6em
-      color: darken($text-medium, 20%)
+      color: $text-light
 
   // On state for the first level
   li.on a,
@@ -111,7 +114,10 @@ $padding-b: -1.5
   li.toctree-l2.current li.toctree-l3,
   li.toctree-l3.current li.toctree-l4,
   li.toctree-l4.current li.toctree-l5,
-  li.toctree-l5.current li.toctree-l6
+  li.toctree-l5.current li.toctree-l6,
+  li.toctree-l6.current li.toctree-l7,
+  li.toctree-l7.current li.toctree-l8,
+  li.toctree-l8.current li.toctree-l6
     > ul
       display: none
     &.current > ul
@@ -171,6 +177,39 @@ $padding-b: -1.5
     span.toctree-expand
       color: darken($section-background-color, 40%)
 
+  li.toctree-l7
+    &.current
+      li.toctree-l8 > a
+        display: block
+        //border-top: none
+        // border-bottom: none
+    a:hover span.toctree-expand
+      color: $text-medium
+    span.toctree-expand
+      color: darken($section-background-color, 40%)
+
+  li.toctree-l8
+    &.current
+      li.toctree-l9 > a
+        display: block
+        //border-top: none
+        // border-bottom: none
+    a:hover span.toctree-expand
+      color: $text-medium
+    span.toctree-expand
+      color: darken($section-background-color, 40%)
+
+  li.toctree-l9
+    &.current
+      li.toctree-l10 > a
+        display: block
+        //border-top: none
+        // border-bottom: none
+    a:hover span.toctree-expand
+      color: $text-medium
+    span.toctree-expand
+      color: darken($section-background-color, 40%)
+
   li.current ul
     display: block
   li ul
@@ -210,15 +249,14 @@ $padding-b: -1.5
     > a
       padding-left: $gutter * 1.5
       padding-left: ($sqrt2 * $padding-factor + $padding-b) * $gutter + $gutter * $padding-a
-      font-size: .90em
+      font-size: .98em
       // background-color: red
 
   li.toctree-l3
     > a
       padding-left: $gutter * 2.5
       padding-left: ($sqrt3 * $padding-factor + $padding-b) * $gutter + $gutter * $padding-a
-
-      font-size: .92em
+      font-size: .96em
       // background-color: green
 
 
@@ -226,7 +264,6 @@ $padding-b: -1.5
     > a
       padding-left: $gutter * 3.25
       padding-left: ($sqrt4 * $padding-factor + $padding-b) * $gutter + $gutter * $padding-a
-
       font-size: .94em
       // background-color: blue
 
@@ -234,14 +271,28 @@ $padding-b: -1.5
     > a
       padding-left: $gutter * 3.75
       padding-left: ($sqrt5 * $padding-factor + $padding-b) * $gutter + $gutter * $padding-a
-
-      font-size: .96em
+      font-size: .92em
 
   li.toctree-l6
     > a
       padding-left: $gutter * 4.0
       padding-left: ($sqrt6 * $padding-factor + $padding-b) * $gutter + $gutter * $padding-a
-      font-size: .98em
+      font-size: .90em
+
+  li.toctree-l7
+    > a
+      padding-left: ($sqrt7 * $padding-factor + $padding-b) * $gutter + $gutter * $padding-a
+      font-size: .88em
+
+  li.toctree-l8
+    > a
+      padding-left: ($sqrt8 * $padding-factor + $padding-b) * $gutter + $gutter * $padding-a
+      font-size: .86em
+
+  li.toctree-l9
+    > a
+      padding-left: ($sqrt9 * $padding-factor + $padding-b) * $gutter + $gutter * $padding-a
+      font-size: .84em
 
 
 
