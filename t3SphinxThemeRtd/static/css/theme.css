@@ -3739,6 +3739,7 @@ h1, h2, .rst-content p.caption, h3, h4, h5, h6, legend {
 
 p {
   line-height: 24px;
+  margin: 0;
   font-size: 16px;
   margin-bottom: 24px;
 }
@@ -3839,6 +3840,11 @@ code, .rst-content tt, .rst-content code {
   font-size: 14px;
 }
 
+p {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
 .codeblock-example {
   border: 1px solid #ded9d3;
   border-bottom: none;
@@ -3864,7 +3870,7 @@ code, .rst-content tt, .rst-content code {
 .codeblock, pre.literal-block, .rst-content .literal-block, .rst-content pre.literal-block, div[class^='highlight'] {
   padding: 0;
   overflow-x: auto;
-  background: #fff;
+  background: transparent;
   margin: 1px 0 1.3 0;
 }
 .codeblock div[class^='highlight'], pre.literal-block div[class^='highlight'], .rst-content .literal-block div[class^='highlight'], div[class^='highlight'] div[class^='highlight'] {
@@ -3920,7 +3926,6 @@ div[class='highlight'] {
 }
 
 .codeblock, pre.literal-block, .rst-content .literal-block, .rst-content pre.literal-block,
-div[class^='highlight'],
 div[class^='highlight'] pre {
   background-color: #151515;
   color: #E0E0E0;
@@ -4378,6 +4383,9 @@ div[class^='highlight'] pre {
 .wy-menu-vertical li.current a:hover {
   background: #d6d6d6;
 }
+.wy-menu-vertical li a:hover span.toctree-expand {
+  color: white;
+}
 .wy-menu-vertical li code, .wy-menu-vertical li .rst-content tt, .rst-content .wy-menu-vertical li tt {
   border: none;
   background: inherit;
@@ -4391,7 +4399,7 @@ div[class^='highlight'] pre {
   margin-left: -1.2em;
   font-size: 0.8em;
   line-height: 1.6em;
-  color: #404040;
+  color: #a6a6a6;
 }
 .wy-menu-vertical li.on a,
 .wy-menu-vertical li.current > a {
@@ -4424,14 +4432,20 @@ div[class^='highlight'] pre {
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > ul,
 .wy-menu-vertical li.toctree-l3.current li.toctree-l4 > ul,
 .wy-menu-vertical li.toctree-l4.current li.toctree-l5 > ul,
-.wy-menu-vertical li.toctree-l5.current li.toctree-l6 > ul {
+.wy-menu-vertical li.toctree-l5.current li.toctree-l6 > ul,
+.wy-menu-vertical li.toctree-l6.current li.toctree-l7 > ul,
+.wy-menu-vertical li.toctree-l7.current li.toctree-l8 > ul,
+.wy-menu-vertical li.toctree-l8.current li.toctree-l6 > ul {
   display: none;
 }
 .wy-menu-vertical li.toctree-l1.current li.toctree-l2.current > ul,
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3.current > ul,
 .wy-menu-vertical li.toctree-l3.current li.toctree-l4.current > ul,
 .wy-menu-vertical li.toctree-l4.current li.toctree-l5.current > ul,
-.wy-menu-vertical li.toctree-l5.current li.toctree-l6.current > ul {
+.wy-menu-vertical li.toctree-l5.current li.toctree-l6.current > ul,
+.wy-menu-vertical li.toctree-l6.current li.toctree-l7.current > ul,
+.wy-menu-vertical li.toctree-l7.current li.toctree-l8.current > ul,
+.wy-menu-vertical li.toctree-l8.current li.toctree-l6.current > ul {
   display: block;
 }
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
@@ -4479,6 +4493,33 @@ div[class^='highlight'] pre {
 .wy-menu-vertical li.toctree-l6 span.toctree-expand {
   color: #969696;
 }
+.wy-menu-vertical li.toctree-l7.current li.toctree-l8 > a {
+  display: block;
+}
+.wy-menu-vertical li.toctree-l7 a:hover span.toctree-expand {
+  color: #737373;
+}
+.wy-menu-vertical li.toctree-l7 span.toctree-expand {
+  color: #969696;
+}
+.wy-menu-vertical li.toctree-l8.current li.toctree-l9 > a {
+  display: block;
+}
+.wy-menu-vertical li.toctree-l8 a:hover span.toctree-expand {
+  color: #737373;
+}
+.wy-menu-vertical li.toctree-l8 span.toctree-expand {
+  color: #969696;
+}
+.wy-menu-vertical li.toctree-l9.current li.toctree-l10 > a {
+  display: block;
+}
+.wy-menu-vertical li.toctree-l9 a:hover span.toctree-expand {
+  color: #737373;
+}
+.wy-menu-vertical li.toctree-l9 span.toctree-expand {
+  color: #969696;
+}
 .wy-menu-vertical li.current ul {
   display: block;
 }
@@ -4521,13 +4562,13 @@ div[class^='highlight'] pre {
 }
 .wy-menu-vertical li.toctree-l2 > a {
   padding-left: 2.427em;
-  padding-left: 2.5539em;
-  font-size: 0.9em;
+  padding-left: 2.55389em;
+  font-size: 0.98em;
 }
 .wy-menu-vertical li.toctree-l3 > a {
   padding-left: 4.045em;
   padding-left: 3.58242em;
-  font-size: 0.92em;
+  font-size: 0.96em;
 }
 .wy-menu-vertical li.toctree-l4 > a {
   padding-left: 5.2585em;
@@ -4537,12 +4578,24 @@ div[class^='highlight'] pre {
 .wy-menu-vertical li.toctree-l5 > a {
   padding-left: 6.0675em;
   padding-left: 5.21342em;
-  font-size: 0.96em;
+  font-size: 0.92em;
 }
 .wy-menu-vertical li.toctree-l6 > a {
   padding-left: 6.472em;
   padding-left: 5.90405em;
-  font-size: 0.98em;
+  font-size: 0.9em;
+}
+.wy-menu-vertical li.toctree-l7 > a {
+  padding-left: 6.53915em;
+  font-size: 0.88em;
+}
+.wy-menu-vertical li.toctree-l8 > a {
+  padding-left: 7.13029em;
+  font-size: 0.86em;
+}
+.wy-menu-vertical li.toctree-l9 > a {
+  padding-left: 7.6855em;
+  font-size: 0.84em;
 }
 
 .wy-side-nav-search {
@@ -5400,6 +5453,7 @@ span[id*='MathJax-Span'] {
   font-weight: bold;
   min-width: 30%;
   border-right: 4px solid white;
+  margin-right: 8px;
 }
 
 .bg-typo3-key-color {
@@ -5665,36 +5719,42 @@ code.file, .rst-content tt.file {
   color: #ff0088;
   border: none;
   background-color: inherit;
+  padding: 0;
 }
 code.html, .rst-content tt.html {
   color: #7700cc;
   border: none;
   background-color: inherit;
   font-weight: normal;
+  padding: 0;
 }
 code.js, .rst-content tt.js {
   color: #00660e;
   border: none;
   background-color: inherit;
   font-weight: normal;
+  padding: 0;
 }
 code.method, .rst-content tt.method {
   color: #0059b3;
   border: none;
   background-color: inherit;
   font-weight: bold;
+  padding: 0;
 }
 code.php, .rst-content tt.php {
   color: #0059b3;
   border: none;
   background-color: inherit;
   font-weight: normal;
+  padding: 0;
 }
 code.py-class, .rst-content tt.py-class {
   color: #007fff;
   border: none;
   background-color: inherit;
   font-weight: bold;
+  padding: 0;
 }
 code.typoscript, .rst-content tt.typoscript {
   color: #661400;
@@ -5707,6 +5767,44 @@ em.aspect {
   color: #bf4040;
   font-weight: normal;
   font-style: italic;
+}
+
+.wy-table thead, .rst-content table.docutils thead, .rst-content table.field-list thead {
+  white-space: normal;
+}
+
+.wy-table-responsive table td, .wy-table-responsive table th {
+  white-space: normal;
+}
+
+.rst-content table.field-list .field-name {
+  white-space: normal;
+}
+
+div[class^='highlight'] pre {
+  margin-bottom: 24px;
+}
+
+.rst-content p.caption {
+  font-size: 14px;
+  line-height: 18px;
+  width: 60%;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-style: normal;
+  color: #000;
+}
+.rst-content p.caption::before {
+  content: "Figure: ";
+}
+.rst-content p.caption .caption-text {
+  font-style: normal;
+  color: #000000;
+}
+
+td.field-body p.first {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=theme.css.map */
