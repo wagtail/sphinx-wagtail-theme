@@ -7,6 +7,9 @@ A new theme for Docs.TYPO3.Org
 :Team:     TYPO3 Documentation Team
 :Author:   Martin Bless <martin.bless@typo3.org>
 :License:  MIT
+:Demo:     See this demo docs `t3SphinxThemeRtdDemoDocs
+           <https://docs.typo3.org/typo3cms/drafts/github/TYPO3-Documentation/t3SphinxThemeRtdDemoDocs/>`__
+           which are kind of a "stresstest" and demonstrate what's possible and how the theme can be used.
 
 This work builds on top of v0.1.8 of `https://github.com/snide/sphinx_rtd_theme
 <https://github.com/snide/sphinx_rtd_theme>`__.
