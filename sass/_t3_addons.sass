@@ -133,3 +133,44 @@ div[class^='highlight']
 td.field-body
   p.first
     margin-top: 0
+
+// well (like http://getbootstrap.com/components/#default-well)
+// (experimental: it's unclear whether this is needed)
+
+// .well
+//   background-color: #f5f5f5
+//   border: 1px solid #e3e3e3
+//   border-radius: 4px
+//   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset
+//   margin-bottom: 20px
+//   min-height: 20px
+//   padding: 19px
+//   &.well-green
+//     background-color: #def5dc // 115 10 96
+//     border: 1px solid #cee3cc // 115 10 89
+
+
+// panel (like http://getbootstrap.com/components/#panels)
+
+.panel
+  background-color: #ffffff
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  border-radius: 4px
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.00)
+  margin-bottom: 20px
+
+.panel-default
+  & > *
+    padding-left: 15px
+    padding-right: 15px
+  & > span
+    padding: 0
+  & > h1, & > h2, & > h3, & > h4, & > h5, & > h6
+    background-color: #e8e8e8
+    // color: #333333
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+    border-top-left-radius: 3px
+    border-top-right-radius: 3px
+    margin: 0
+    padding-top: 10px
+    padding-bottom: 10px
