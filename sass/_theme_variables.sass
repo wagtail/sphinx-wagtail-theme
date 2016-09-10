@@ -1,6 +1,6 @@
 // From the TYPO3 styleguide
 
-$typo3-key-color:                     #ff8700
+$typo3-key-color:                     #ff8700 // hsl(32, 100%, 50%)
 $typo3-support-orange-dark:           #e67a00
 $typo3-support-orange-light:          #ff9926
 $typo3-marker-orange:                 #ffd095
@@ -114,7 +114,8 @@ $input-focus-color:                   $gray-dark
 $link-color:                          $blue
 $link-color:                          $typo3-key-color
 $link-color:                          darken($typo3-key-color, 8%)
-$link-color:                          darken($typo3-key-color, 25%)
+$link-color:                          darken($typo3-key-color, 25%) // until 2016-09-09
+$link-color:                          hsl(24, 100%, 35%)            // until 2016-09-09
 $link-color-visited:                  $purple
 $link-color-visited:                  $link-color
 $link-color-hover:                    lighten($link-color, 8%)

@@ -45,7 +45,9 @@ div[class^='highlight'] td.code
   color: $text-lighter
 
 div[class^='highlight'] pre
-  border: solid 1px $base16-base03
+  border: 1px solid $base16-base03 // until 2016-09-09
+  border: 2px solid #888 // since 2016-09-10
+  border-radius: 4px
   color: $text-invert
   display: block
   font-family: $code-font-family
