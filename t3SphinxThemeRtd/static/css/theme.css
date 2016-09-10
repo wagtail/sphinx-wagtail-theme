@@ -5154,6 +5154,7 @@ footer p {
   display: inline-block;
   font-weight: bold;
   padding: 0 6px;
+  color: black;
 }
 .rst-content .footnote-reference, .rst-content .citation-reference {
   vertical-align: super;
@@ -5837,6 +5838,33 @@ td.field-body p.first {
 
 .with-border {
   border: 1px solid #d9d9d9;
+}
+
+.section .sitemap ul li {
+  margin-bottom: 0;
+  margin-top: 0;
+  background-color: #f2f2f2;
+}
+.section .sitemap ul li li {
+  background-color: #e6e6e6;
+}
+.section .sitemap ul li li li {
+  background-color: #d9d9d9;
+}
+.section .sitemap ul li li li li {
+  background-color: #cccccc;
+}
+.section .sitemap ul li li li li li {
+  background-color: #bfbfbf;
+}
+.section .sitemap ul li li li li li li {
+  background-color: #b3b3b3;
+}
+.section .sitemap ul li li li li li li li {
+  background-color: #a6a6a6;
+}
+.section .sitemap ul li li li li li li li li {
+  background-color: #999999;
 }
 
 /*# sourceMappingURL=theme.css.map */
