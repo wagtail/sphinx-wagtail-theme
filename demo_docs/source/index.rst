@@ -11,6 +11,7 @@ Demo Docs
 :Description: See `A New Theme For Doc.TYPO3.Org <http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html>`__
 
 
+.. rst-class:: compactlist
 .. toctree::
    :glob:
    :hidden:

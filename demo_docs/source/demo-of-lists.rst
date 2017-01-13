@@ -33,9 +33,29 @@ A list
     - `yahoo <http://www.yahoo.com>`_
     - ``huh``
 - how
-- ``inline literall``
-- ``inline literall``
-- ``inline literall``
+- ``inline literal``
+- ``inline literal``
+- ``inline literal``
+
+
+A 'compact' list
+================
+
+.. rst-class:: compactlist
+
+- here
+
+  - is
+  - some
+
+    - list
+    - items
+    - `yahoo <http://www.yahoo.com>`_
+    - ``huh``
+- how
+- ``inline literal``
+- ``inline literal``
+- ``inline literal``
 
 Another list
 ============

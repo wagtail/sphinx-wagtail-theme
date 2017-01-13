@@ -5867,4 +5867,13 @@ td.field-body p.first {
   background-color: #999999;
 }
 
+.rst-content .compactlist li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.rst-content .section ol.compactlist li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /*# sourceMappingURL=theme.css.map */
