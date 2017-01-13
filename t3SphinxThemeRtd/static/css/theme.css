@@ -5871,7 +5871,8 @@ td.field-body p.first {
   margin-top: 0;
   margin-bottom: 0;
 }
-.rst-content .section ol.compactlist li {
+.rst-content .section .compactlist ul li,
+.rst-content .section .compactlist ol li {
   margin-top: 0;
   margin-bottom: 0;
 }

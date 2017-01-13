@@ -43,6 +43,7 @@ A 'compact' list
 
 .. rst-class:: compactlist
 
+
 - here
 
   - is
