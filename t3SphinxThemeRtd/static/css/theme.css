@@ -5856,7 +5856,7 @@ td.field-body p.first {
 }
 
 .with-shadow {
-  box-shadow: 0 2px 10px #cccccc;
+  box-shadow: 0 2px 10px #bababa;
 }
 
 .section .sitemap ul {
@@ -5900,7 +5900,7 @@ td.field-body p.first {
 }
 
 .rst-content h3 {
-  border-bottom: 2px solid #bababa;
+  border-bottom: 2px solid #cccccc;
 }
 .rst-content .figure > img.with-shadow {
   margin-bottom: 10px;
