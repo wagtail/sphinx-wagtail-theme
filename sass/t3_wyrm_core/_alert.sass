@@ -36,21 +36,43 @@
   padding: $base-line-height / 4 $base-line-height / 2
   margin-bottom: $base-line-height / 2
 
+
+
+$horizbuttons-attention-color: lighten($blue,08%)
+
+
 .wy-alert.wy-alert-danger
   background: lighten($red, 40%)
   background: lighten($typo3-message-warning, 35%)
+  background: hsl(22, 100%, 88%)
   .wy-alert-title
     color: $white
     background: lighten($red,20%)
     background: lighten($typo3-message-warning,00%)
+    background: hsl(22, 100%, 50%)
+
+$horizbuttons-important-color: lighten($typo3-message-warning,00%)
+$horizbuttons-important-color: hsl(22, 100%, 50%)
+
+
+
 
 .wy-alert.wy-alert-warning
   background: lighten(orange,40%)
   background: lighten($typo3-message-error,40%)
+  background: hsl(354, 100%, 89%)
   .wy-alert-title
     color: $white
     background: lighten($orange,20%)
     background: lighten($typo3-message-error,00%)
+    background: hsl(354, 100%, 50%)
+
+$horizbuttons-warning-color: lighten($typo3-message-error,00%)
+$horizbuttons-warning-color: hsl(354, 100%, 50%)
+
+
+
+
 
 .wy-alert.wy-alert-info
   background: lighten($blue, 50%)
@@ -60,12 +82,18 @@
     background: lighten($blue,20%)
     background: lighten($blue,08%)
 
+
+
 .wy-alert.wy-alert-success
   background: lighten($offgreen, 50%)
   background: lighten($offgreen, 35%)
   .wy-alert-title
     color: $white
     background: lighten($offgreen,0%)
+
+$horizbuttons-tip-color: lighten($offgreen,0%)
+
+
 
 .wy-alert.wy-alert-neutral
   background: $table-stripe-color
@@ -74,6 +102,10 @@
     background: $table-border-color
   a
     color: $link-color
+
+// we need it darker than $table-border-color
+$horizbuttons-note-color: $typo3-mid-grey
+
 
 .wy-alert p:last-child
   margin-bottom: 0

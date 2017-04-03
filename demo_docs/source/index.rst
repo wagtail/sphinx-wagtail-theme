@@ -18,6 +18,7 @@ Demo Docs
    :maxdepth: 3
    :titlesonly:
 
+   bignums
    highlighting
    textroles
    typesetting
