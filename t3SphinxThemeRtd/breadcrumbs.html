@@ -15,7 +15,7 @@
             {%- endif %}
 
             {%- if theme_path_to_documentation_dir %}
-                <a id="EditMeOnGitHub" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}{{ theme_path_to_documentation_dir|e }}/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|e }}" target="_blank" class="fa fa-github"> Edit me on GitHub</a>
+                <a id="EditMeOnGitHub" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/{{ theme_path_to_documentation_dir|e }}/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|e }}" target="_blank" class="fa fa-github"> Edit me on GitHub</a>
             {%- else %}
                 <a id="EditMeOnGitHub" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/Documentation/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|e }}" target="_blank" class="fa fa-github"> Edit me on GitHub</a>
             {%- endif %}
