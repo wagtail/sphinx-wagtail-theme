@@ -5049,7 +5049,6 @@ footer p {
   }
 
   img {
-    width: 100%;
     height: auto;
   }
 }
@@ -5463,13 +5462,15 @@ span[id*='MathJax-Span'] {
   padding: 0 0 3px 0;
 }
 
-.doc .t3-cell {
+.doc .t3-cell,
+.t3-cell {
   clear: both;
 }
 
 .t3-cell-property,
 .t3-cell-datatype,
-.t3-cell-key {
+.t3-cell-key,
+.t3-cell-default {
   float: left;
   clear: none;
   font-weight: bold;
@@ -6166,6 +6167,22 @@ td.field-body p.first {
 }
 .rst-content ol.bignums-warning > li::before {
   background-color: #ff001a;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.float-left {
+  float: left;
+  margin-right: 24px;
+  margin-bottom: 12px;
+}
+
+.float-right {
+  float: right;
+  margin-left: 24px;
+  margin-bottom: 12px;
 }
 
 /*# sourceMappingURL=theme.css.map */
