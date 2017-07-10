@@ -150,3 +150,40 @@ typeface). One significant effect of typesetting was that authorship of
 works could be spotted more easily; making it difficult for copiers who
 have not gained permission.
 
+
+Example of a left-floating image
+--------------------------------
+
+.. |teaser-image-core-extension| image:: https://docs.typo3.org/services/dummyimage/code.php?x=216x1.63:1/2994ff/fff&text=core
+   :class: float-left with-shadow
+   :target: https://docs.typo3.org/typo3cms/extensions/core/
+   :alt: The manual of system extension 'core'
+
+|teaser-image-core-extension|
+
+This is an example of a left-floating image.
+
+<-- Click teaser.
+
+.. rst-class:: clear-both
+
+Here we are below the image and the floating has been cancelled.
+
+
+Example of a right-floating image
+---------------------------------
+
+.. |teaser-image-css_styled_content-extension| image:: https://docs.typo3.org/services/dummyimage/code.php?x=216x1.63:1/2994ff/fff&text=css_styled_content
+   :class: float-right with-shadow
+   :target: https://docs.typo3.org/typo3cms/extensions/css_styled_content/
+   :alt: The manual of system extension 'css_styled_content'
+
+|teaser-image-css_styled_content-extension|
+
+This is an example of a right-floating image.
+
+<-- Click teaser.
+
+.. rst-class:: clear-both
+
+Here we are below the image and the floating has been cancelled.
