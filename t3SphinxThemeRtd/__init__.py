@@ -5,7 +5,7 @@ From https://github.com/ryan-roemer/sphinx-bootstrap-theme.
 """
 import os
 
-VERSION = (3, 6, 9)
+VERSION = (3, 6, 10)
 
 __version__ = ".".join(str(v) for v in VERSION)
 __version_full__ = __version__
