@@ -1,1 +1,4 @@
-2017-08-30  xxxxxxx  [RELEASE] v3.6.11
+2017-08-31           [RELEASE] v3.6.12
+2017-08-31  3c3ab32  Add option 'show_legalinfo' and 'Legal Info' to for footer
+
+2017-08-30  477bf41  [RELEASE] v3.6.11
