@@ -40,7 +40,7 @@
     <ul>
     {% for href, caption, context in search_results %}
       <li>
-        <a href="{{ pathto(item.href) }}">{{ caption }}</a>
+        <a href="{{ pathto(item.href|replace('.rst.txt','.txt')|replace('.md.txt','.txt') }}">{{ caption }}</a>
         <p class="context">{{ context|e }}</p>
       </li>
     {% endfor %}
