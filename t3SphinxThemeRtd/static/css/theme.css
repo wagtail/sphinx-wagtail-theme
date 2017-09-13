@@ -4554,7 +4554,7 @@ div[class^='highlight'] pre {
 .wy-menu-vertical li ul li a {
   margin-bottom: 0;
   color: #a6a6a6;
-  color: red;
+  /* color: $text-should-not-happen */
   font-weight: normal;
 }
 .wy-menu-vertical a {
