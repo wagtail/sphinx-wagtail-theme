@@ -418,6 +418,8 @@ var Search = {
       // results left, load the summary and display it
       if (results.length) {
         var item = results.pop();
+        // mb, 2017-09-14
+        item[0] = item[0].replace(/(\.rst|\.md)$/, '');
         var listItem = $('<li style="display:none"></li>');
         if (DOCUMENTATION_OPTIONS.FILE_SUFFIX === '') {
           // dirhtml builder
