@@ -1,0 +1,95 @@
+/* Text-Related Elements */ 
+p {
+	margin-bottom: $space;
+    line-height: 130%;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+/* Blockquote */
+blockquote {
+    font-style:italic;
+    border-left: 5px solid $typo3-orange-light;
+    color: $grey-medium;
+	padding-left: $pad;
+	margin-bottom: $space;
+}
+
+blockquote.blockquote-neos {
+    font-style:italic;
+    border-left: 5px solid $neos-blue-light;
+    color: $grey-medium;
+	padding-left: $pad;
+	margin-bottom: $space;
+}
+blockquote.blockquote-flow {
+    font-style:italic;
+    border-left: 5px solid $flow-red-light;
+    color: $grey-medium;
+	padding-left: $pad;
+	margin-bottom: $space;
+}
+
+/* Horizontal Rule */ 
+hr {
+	border: 0;
+    height: 1px;
+    background: $grey-light;
+    margin: $space-double 0;
+}
+hr.hr-typo3 {
+	border: 0;
+    height: 1px;
+    background: $typo3-orange;
+    margin: $space-double 0;
+}
+hr.hr-neos {
+	border: 0;
+    height: 1px;
+    background: $neos-blue;
+    margin: $space-double 0;
+}
+hr.hr-flow {
+	border: 0;
+    height: 1px;
+    background: $flow-red;
+    margin: $space-double 0;
+}
+
+abbr {
+    border-bottom: 1px dotted $gray;
+    cursor: help;
+}
+
+/* Marker */
+
+.mark-typo3 {
+    background-color: $typo3-mark;
+}
+.mark-neos {
+    background-color: $neos-mark;
+}
+.mark-flow {
+    background-color: $flow-mark;
+}
+
+/* Small text */
+
+small {
+  font-size: 0.8125rem;
+}
+
+/* Source Code */
+
+code, pre, samp {
+  font-family: "Source Code Pro", "Courier New", Courier, monospace;
+  border-left: 5px solid $grey-superlight;
+  padding-left: 1em;
+}
+
+/* Time */
+time {
+  color: $grey-medium;
+}

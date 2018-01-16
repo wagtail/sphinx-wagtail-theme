@@ -1,0 +1,39 @@
+/* Links */
+
+a {
+	color: $grey-dark;
+	text-decoration: none;
+	outline: 0;
+
+	&:hover, &:focus, &:visited {
+      text-decoration: none;
+	}
+}
+
+a.link-typo3 {
+	color: $typo3-orange;
+	text-decoration: underline;
+	outline: 0;
+
+	&:hover, &:focus, &:visited {
+      text-decoration: none;
+	}
+}
+a.link-neos {
+	color: $neos-blue;
+	text-decoration: underline;
+	outline: 0;
+
+	&:hover, &:focus, &:visited {
+      text-decoration: none;
+	}
+}
+a.link-flow {
+	color: $flow-red;
+	text-decoration: underline;
+	outline: 0;
+
+	&:hover, &:focus, &:visited {
+      text-decoration: none;
+	}
+}
