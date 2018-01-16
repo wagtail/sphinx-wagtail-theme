@@ -53,7 +53,7 @@
     line-height: $code-line-height
 
   // These are the various note pullouts that sphinx applies
-  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
+  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition-generic-admonition
     @extend .wy-alert
     .last
       margin-bottom: 0
@@ -64,6 +64,8 @@
     &:before
       margin-right: 4px
 
+  .admonition-generic-admonition
+    @extend .wy-alert.wy-alert-neutral
   .attention
     @extend .wy-alert.wy-alert-info
   .caution
@@ -77,6 +79,8 @@
   .important
     @extend .wy-alert.wy-alert-danger
   .note
+    @extend .wy-alert.wy-alert-neutral
+  .seealso
     @extend .wy-alert.wy-alert-neutral
   .tip
     @extend .wy-alert.wy-alert-success
