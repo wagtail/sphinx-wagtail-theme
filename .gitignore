@@ -7,10 +7,10 @@
 .coverage
 .ruby-version
 .tox
-bower_components/
 dist/
 node_modules/
 npm-debug.log
 
-.idea
+*GENERATED*
 *NOT_VERSIONED*
+.idea
