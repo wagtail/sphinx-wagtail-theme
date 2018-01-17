@@ -1,0 +1,16 @@
+3.6.14
+======
+
+-  Generic admonition needs styling `#31
+   <https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/31>`__
+
+-  Update font stack `#55
+   <https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/55>`__
+
+-  Tables are sometimes broken `#56
+   <https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/56>`__,
+   `#52 <https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/52>`__
+
+-  Add meta information for the indexer `#58
+   <https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/58>`__
+

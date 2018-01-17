@@ -1,0 +1,9 @@
+
+3.6.14
+
+Update files:
+
+- CHANGELOG.txt
+- t3SphinxThemeRtd/__init__.py
+- t3SphinxThemeRtd/static/t3SphinxThemeRtd-3.6.14.txt
+
