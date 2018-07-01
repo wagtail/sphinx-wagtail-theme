@@ -1,3 +1,7 @@
+3.6.15
+======
+
+-  Add buttons 'Previous' and 'Next' to the top ("stealth-btn-text"
 
 3.6.14
 ======
