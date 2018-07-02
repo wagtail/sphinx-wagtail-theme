@@ -75,6 +75,12 @@ code
     color: hsl(12, 100%, 20%)
     border-color: hsl(12, 100%, 85%)
     background-color: inherit
+  &.yaml
+    color: hsl(170, 80%, 30%)
+    border: none
+    background-color: inherit
+    font-weight: bold
+    padding: 0
 
 em
   &.aspect
@@ -555,3 +561,24 @@ kbd
   margin: 0 0.1em -0.5em
   padding: 0.2em 0.5em
   text-shadow: 0 1px 0 #fff
+
+// 2018-07-01
+// previous and next links for the page top
+
+// set margin-bottom of hr to 0
+.before-stealth-btn
+  margin-bottom: 0
+
+// text we want to hide unless hovered
+.stealth-btn-text
+  color: $text-invert
+
+// show in link color when hovered
+.stealth-btn,
+.stealth-btn:visited
+  color: $link-color-hover
+
+// show only the icon
+.stealth-btn:hover,
+.stealth-btn:hover .stealth-btn-text
+  color: $gray-ultra-light
