@@ -109,7 +109,7 @@
             <a href="{{ urlTypo3Documentation }}"><img src="{{ pathto('_static/' + logo, 1) }}" class="logo" /></a>
           </li>
 
-        {%- if not is_homepage -%}
+        {%- if not theme_is_homepage -%}
           <li class="project">
             <a href="{{ pathto(master_doc) }}">
               {{ project|e }}
