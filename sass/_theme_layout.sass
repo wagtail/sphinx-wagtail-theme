@@ -314,8 +314,6 @@ $padding-b: -1.5
 
 .wy-side-nav-search
   z-index: $z-index-popover
-  background-color: $link-color
-  background-color: $typo3-key-color
   text-align: left
   padding: 0
   display: block
@@ -350,10 +348,9 @@ $padding-b: -1.5
         margin-top: 0.85em  // space it away from the title text
         margin-top: 0       // space it away from the title text. No!
 
-
-
 .wy-side-nav-search
-
+  border-bottom: 1px solid hsl(0, 0%, 40%)
+  padding-bottom: 6px
   ul.sidebartop
     color: white
     font-size: $base-font-size / 16 * 20
@@ -369,6 +366,7 @@ $padding-b: -1.5
     // border-bottom: 1px solid rgba(255,255,255,0.4)
     &.docsite
       font-family: Share, sans-serif
+      background-color: $typo3-key-color
       a
         padding-right: $gutter/10*14
     &.nolink
