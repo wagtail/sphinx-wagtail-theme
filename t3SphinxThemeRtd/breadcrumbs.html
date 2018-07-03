@@ -20,9 +20,9 @@
                 <a id="EditMeOnGitHub" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/Documentation/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|replace('.rst.rst', '.rst')|e }}" target="_blank" class="fa fa-github"> Edit me on GitHub</a>
             {%- endif %}
 
-          {%- elif display_github %}
+          {%- elif display_github and builder == 'html' %}
             <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}" class="fa fa-github"> Edit on GitHub</a>
-          {%- elif display_bitbucket %}
+          {%- elif display_bitbucket and builder == 'html' %}
             <a href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}" class="fa fa-bitbucket"> Edit on Bitbucket</a>
           {%- elif show_source and source_url_prefix %}
             <a href="{{ source_url_prefix }}{{ pagename }}{{ source_suffix }}">View page source</a>
