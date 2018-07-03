@@ -109,6 +109,7 @@
             <a href="{{ urlTypo3Documentation }}"><img src="{{ pathto('_static/' + logo, 1) }}" class="logo" /></a>
           </li>
 
+        {%- if not is_homepage -%}
           <li class="project">
             <a href="{{ pathto(master_doc) }}">
               {{ project|e }}
@@ -126,9 +127,13 @@
             </li>
           {%- endif -%}
 
+          {%- if builder == 'html' %}
           <li class="nolink search">
             {%- include "searchbox.html" -%}
           </li>
+          {%- endif %}
+
+        {%- endif -%}
 
         </ul>
 
