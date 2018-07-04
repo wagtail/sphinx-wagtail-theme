@@ -1,7 +1,20 @@
 3.6.15
 ======
 
--  Add buttons 'Previous' and 'Next' to the top ("stealth-btn-text"
+-  Give :yaml: text role a style
+
+-  Add "stealth" buttons 'Previous' and 'Next' to the top
+
+-  Add theme option "is_homepage". Used for homepage. If set, projectname,
+   version, searchbox are not shown.
+
+-  Display project title and searchbox in the left navi with dark background
+
+-  Show "Edit me on Github" button only for html output. Especially that means:
+   do not show for singlehtml output
+
+-  Fix small css issues
+
 
 3.6.14
 ======
