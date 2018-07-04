@@ -48,6 +48,7 @@ $gray-dark:                           #333
 $gray:                                #555
 $gray-light:                          #999
 $gray-lighter:                        #ccc
+$gray-ultra-light:                    #eee
 $white:                               #fff
 
 $green:                               hsl(145, 63%, 42%)  // #27AE60
@@ -67,21 +68,17 @@ $shell:                               hsl(192, 15%, 94%)  // #ECF0F1
 
 // Typography
 $base-font-size:                      16px
-$base-font-family:                    "Helvetica Neue", Arial, sans-serif
-$base-font-family:                    "Source Sans Pro", "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif
+$base-font-family:                    "Source Sans Pro", Helvetica, Arial, sans-serif
 $base-font-family-bold:               bold
 $base-line-height:                    24px
-$custom-font-family:                  "Georgia", serif
-$custom-font-family:                  "Share", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
-$custom-font-family2:                 "Georgia", serif
+$custom-font-family:                  Share, Helvetica, Arial, sans-serif
 $custom-font-family2:                 Georgia, serif
-$code-font-family:                    "Consolas", "Monaco", monospace
-$code-font-family:                    "Source Code Pro", Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
+$code-font-family:                    "Source Code Pro", monospace
 
 $code-font-size:                      $base-font-size *14/16
 $code-line-height:                    1.3
 
-$icon-font-family:                    "FontAwesome"
+$icon-font-family:                    FontAwesome
 $text-color:                          hsl(0,0%,20%)
 $text-invert:                         hsl(0,0%,100%)
 $text-code-color:                     $red
@@ -119,10 +116,10 @@ $link-color:                          darken($typo3-key-color, 25%) // until 201
 $link-color:                          hsl(24, 100%, 35%)            // until 2016-09-09
 $link-color-visited:                  $purple
 $link-color-visited:                  $link-color
-$link-color-hover:                    lighten($link-color, 8%)
-$link-color-hover:                    lighten($link-color, 25%)
+//$link-color-hover:                    lighten($link-color, 8%)
+//$link-color-hover:                    lighten($link-color, 25%)
 $link-color-hover:                    $typo3-key-color
-$link-color-alt:                      hsl(33, 100%, 51%)
+//$link-color-alt:                      hsl(33, 100%, 51%)
 $link-color-alt:                      #ff0000
 
 
@@ -244,3 +241,13 @@ $base16-base0D: #9ac147 // atrule, attr-value, keyword, string
 $base16-base0E: #82d3c6 // selector
 $base16-base0F: #4b88b4 // not from prism
 $base16-base0F: #ffe16b // property,boolean,number
+
+// 2818-04-27
+$dl-parameters-dd-aspect: #996833 // hsl(31  , 50%  , 40%  )
+$dl-parameters-dd-bg:     #f9f2ec // hsl(31  , 50%  , 95%  )
+$dl-parameters-dd-bt:     white
+$dl-parameters-dd-sep:    #996833 // hsl(31  , 50%  , 40%  )
+$dl-parameters-dt-bb:     white
+$dl-parameters-dt-bg:     #e8dcce // hsl(31  , 36.6%, 86%  )
+$dl-parameters-dt-bt:     #988d81 // hsl(31.3, 10%  , 55.1%)
+$dl-parameters-dt-col:    #661400 // hsl(11.8, 100% , 20%  )

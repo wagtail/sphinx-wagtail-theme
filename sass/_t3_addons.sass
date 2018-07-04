@@ -1,4 +1,6 @@
 
+@import theme_variables
+
 // In our theme maxwidth is much larger than the original ReadTheDocs theme.
 // In the demo_docs we see that because of that 'sidebars' may slip side
 // to side of each other. They are 40% wide and in that case there's
@@ -75,6 +77,12 @@ code
     color: hsl(12, 100%, 20%)
     border-color: hsl(12, 100%, 85%)
     background-color: inherit
+  &.yaml
+    color: hsl(170, 80%, 30%)
+    border: none
+    background-color: inherit
+    font-weight: bold
+    padding: 0
 
 em
   &.aspect
@@ -506,5 +514,73 @@ $bignums-factor: 16
   margin-left: $base-line-height // = 24px
   margin-bottom: $base-line-height / 2
 
+// 2018-01-16
+// fix: https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/56
+.cc
+  clear: both
+
+// 2018-04-27
+// https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/76
+
+.rst-content
+  dl.dl-parameters
+    dt
+      background-color: $dl-parameters-dt-bg
+      border-bottom: 1px solid $dl-parameters-dt-bb
+      border-top: 2px solid $dl-parameters-dt-bt
+      color: $dl-parameters-dt-col
+      font-weight: normal
+      margin: 30px 0 0 0
+      padding: 6px 12px
+    dd
+      background-color: $dl-parameters-dd-bg
+      border-top: 2px solid $dl-parameters-dd-bt
+      margin: 0 0 30px 0
+      padding: 6px 12px
+      p.first
+        .aspect
+          color: $dl-parameters-dd-aspect
+          font-style: normal
+        .sep
+          color: $dl-parameters-dd-sep
+          font-weight: normal
+          margin: 0 0.4em
+          &:nth-of-type(1)
+            margin-left: 0
 
 
+// 2017-04-27
+// https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/69
+code.kbd,
+kbd
+  background-color: #f0f0f0
+  border-radius: 5px
+  border: 1px solid #ccc
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 0 0 2px #fff inset
+  color: black
+  display: inline-block
+  line-height: 1.2
+  margin: 0 0.1em -0.5em
+  padding: 0.2em 0.5em
+  text-shadow: 0 1px 0 #fff
+
+// 2018-07-01
+// previous and next links for the page top
+
+// set margin-bottom of hr to 0
+.before-stealth-btn
+  margin-bottom: 0
+
+// text we want to hide unless hovered
+.stealth-btn-text
+  color: $text-invert
+
+// show in link color when hovered
+.stealth-btn,
+.stealth-btn:visited
+  color: $gray-ultra-light
+
+// show only the icon
+.stealth-btn:hover,
+.stealth-btn:hover .stealth-btn-text
+  color: $typo3-key-color

@@ -1,0 +1,52 @@
+3.6.15
+======
+
+-  Give :yaml: text role a style
+
+-  Add "stealth" buttons 'Previous' and 'Next' to the top
+
+-  Add theme option "is_homepage". Used for homepage. If set, projectname,
+   version, searchbox are not shown.
+
+-  Display project title and searchbox in the left navi with dark background
+
+-  Show "Edit me on Github" button only for html output. Especially that means:
+   do not show for singlehtml output
+
+-  Fix small css issues
+
+
+3.6.14
+======
+
+-  Add styles for dl.dl-parameters #76
+   https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/76
+
+-  Style text role 'kbd' #69
+   https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/69
+
+-  Generic admonition needs styling #31, #67
+   https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/31
+   https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/67
+
+-  Update font stack `#55
+   <https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/55>`__
+
+-  Tables are sometimes broken `#56
+   <https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/56>`__,
+   `#52 <https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/52>`__
+
+-  Add meta information for the indexer `#58
+   <https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/58>`__
+
+3.6.12
+======
+
+- 2017-08-31  3c3ab32
+- Add theme options 'show_legalinfo' and 'Legal Info' for display in the footer
+
+
+3.6.11
+======
+
+- 2017-08-30  477bf41

@@ -80,12 +80,14 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book" id="relatedLinksFaSpan">&#32;</span>
       <span id="relatedLinksText">Related Links</span>
+      {%- if not theme_is_homepage %}
         {%- if release %}
           v: {{ release }}
         {%- elif version %}
           v: {{ version }}
         {%- endif %}
       <span class="fa fa-caret-down"></span>
+      {%- endif %}
     </span>
 </div><!-- /.rst-versions -->
 

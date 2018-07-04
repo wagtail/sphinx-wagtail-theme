@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    $MESSAGING
+\*------------------------------------*/
+
+// Alerts
+.alert {
+	text-align: center;
+	padding: $pad;
+	margin-bottom: $space-half;
+	background: $grey-light;
+    color: $white;
+}
+
+.alert-error {
+	background: $error;
+}
+.alert-warning {
+	background: $warning;
+}
+.alert-valid {
+	background: $valid;
+}
+.alert-information {
+	background: $information;
+}

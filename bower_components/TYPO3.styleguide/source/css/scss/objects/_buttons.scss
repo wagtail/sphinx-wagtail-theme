@@ -1,0 +1,161 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+.btn {
+	display: inline-block;
+	background: $gray-dark;
+	color: $white;
+	line-height: 1;
+	font-weight: bold;
+	padding: $pad;
+	border: 0;
+	text-align: center;
+	
+	&:hover, &:focus {
+		background: $gray;
+		color: $white;
+	}
+
+	&.disabled {
+		background: $grey-superlight;
+		color: $gray;
+	}
+}
+
+.btn-small {
+	padding: $pad-half;
+}
+
+.btn-large {
+	padding: $pad-half;
+	text-transform: uppercase;
+	background: $gray;
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+
+
+.text-btn {
+	font-style: italic;
+}
+
+/*------------------------------------*\
+    TYPO3 $BUTTONS
+\*------------------------------------*/
+.typo3.btn {
+	display: inline-block;
+	background: $typo3-orange;
+	color: $white;
+	line-height: 1;
+	font-weight: bold;
+	padding: $pad;
+	border: 0;
+	text-align: center;
+
+	&:hover, &:focus {
+		background: $typo3-orange-dark;
+		color: $white;
+	}
+
+	&.disabled {
+		background: $grey-superlight;
+		color: $gray;
+	}
+}
+
+.typo3.btn-small {
+	padding: $pad-half;
+}
+
+.typo3.btn-large {
+	padding: $pad-half;
+	text-transform: uppercase;
+	background: $gray;
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+
+
+.typo3.text-btn {
+	font-style: italic;
+}
+/*------------------------------------*\
+    NEOS $BUTTONS
+\*------------------------------------*/
+.neos.btn {
+	display: inline-block;
+	background: $neos-blue;
+	color: $white;
+	line-height: 1;
+	font-weight: bold;
+	padding: $pad;
+	border: 0;
+	text-align: center;
+
+	&:hover, &:focus {
+		background: $neos-blue-dark;
+		color: $white;
+	}
+
+	&.disabled {
+		background: $grey-superlight;
+		color: $gray;
+	}
+}
+
+.neos.btn-small {
+	padding: $pad-half;
+}
+
+.neos.btn-large {
+	padding: $pad-half;
+	text-transform: uppercase;
+	background: $gray;
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+
+
+.neos.text-btn {
+	font-style: italic;
+}
+/*------------------------------------*\
+    FLOW $BUTTONS
+\*------------------------------------*/
+.flow.btn {
+	display: inline-block;
+	background: $flow-red;
+	color: $white;
+	line-height: 1;
+	font-weight: bold;
+	padding: $pad;
+	border: 0;
+	text-align: center;
+
+	&:hover, &:focus {
+		background: $flow-red-dark;
+		color: $white;
+	}
+
+	&.disabled {
+		background: $grey-superlight;
+		color: $gray;
+	}
+}
+
+.flow.btn-small {
+	padding: $pad-half;
+}
+
+.flow.btn-large {
+	padding: $pad-half;
+	text-transform: uppercase;
+	background: $gray;
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+
+
+.flow.text-btn {
+	font-style: italic;
+}
