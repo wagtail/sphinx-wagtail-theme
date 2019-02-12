@@ -28,7 +28,7 @@
   ],
   "devDependencies": {
     "wyrm": "~0.0.x",
-    "TYPO3_Share_Complete": "https://sourceforge.net/projects/typo3/files/TYPO3%20Resources/TYPO3_Share_Complete.ziphttps://sourceforge.net/projects/typo3/files/TYPO3%20Resources/TYPO3_Share_Complete.zip/download"
+    "TYPO3_Share_Complete": "https://sourceforge.net/projects/typo3/files/TYPO3%20Resources/TYPO3_Share_Complete.zip"
   },
   "dependencies": {
     "font-source-sans-pro-sass": "~2.10.0",
