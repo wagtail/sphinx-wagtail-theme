@@ -213,9 +213,6 @@ Set up a development environment
       # Install node
       brew install node
 
-      # Install bower and grunt
-      npm install -g bower grunt-cli
-
       # Now that everything is installed, let's install the theme's dependecies.
       cd t3SphinxThemeRtd
       npm install
@@ -224,16 +221,21 @@ Set up a development environment
 5. You may want to add the `Livereload Addons <http://livereload.com/>`__ to your
    Firefox and Chrome browser.
 
-6. Now that our environment is set up, make sure you're in your virtual environment, go to
-   our package in the terminal and run Grunt::
+6. Now that our environment is set up, go to our package in the terminal and run Grunt::
 
       cd t3SphinxThemeRtd
-      grunt
+      ./node_modules/.bin/grunt assets
+
+7. If you want to compile an example documentation using the new assets run the
+   following Grunt task, make sure you're in your virtual environment::
+
+      cd t3SphinxThemeRtd
+      ./node_modules/.bin/grunt assets
 
    Or, mabe even better, run Grunt in the background::
 
       cd t3SphinxThemeRtd
-      grunt &
+      ./node_modules/.bin/grunt &
 
 This default task will do the following **very cool things that make it worth the trouble**.
 
