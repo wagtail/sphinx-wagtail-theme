@@ -31,7 +31,7 @@
     "TYPO3_Share_Complete": "https://sourceforge.net/projects/typo3/files/TYPO3%20Resources/TYPO3_Share_Complete.zip"
   },
   "dependencies": {
-    "font-source-sans-pro-sass": "~2.10.0",
+    "fontface-source-sans-pro": "*",
     "TYPO3.styleguide": "https://github.com/web-vision/TYPO3.styleguide.git",
     "jquery": "1.11.3",
     "jquery-ui-1.11.3": "http://jqueryui.com/resources/download/jquery-ui-1.11.3.zip",
