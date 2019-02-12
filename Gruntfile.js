@@ -133,6 +133,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
 
   grunt.registerTask('fonts', ['clean:fonts','copy:fonts']);
+  grunt.registerTask('assets', ['exec:bower_update','clean:build','sass:build']);
   grunt.registerTask('default', ['exec:bower_update','clean:build','sass:dev','exec:build_sphinx','connect','open','watch']);
   grunt.registerTask('build', ['exec:bower_update','clean:build','sass:build','exec:build_sphinx']);
 }
