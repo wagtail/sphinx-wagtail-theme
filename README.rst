@@ -183,7 +183,7 @@ This chapter is taken from the `original README <https://github.com/snide/sphinx
 (and then modified)::
 
 The ``t3SphinxThemeRtd`` is primarily a `Sass <http://sass-lang.com/>`__ project that
-requires a few other Sass libraries. We are using `Bower <http://bower.io/>`__ to
+requires a few other Sass libraries. We are using yarn to
 manage these dependencies and Sass to build the css. The good news is that there is
 a nice set of `Grunt <http://gruntjs.com/>`__ operations that will not only load
 these dependecies, but watch for changes, rebuild the sphinx demo docs and build
@@ -208,7 +208,7 @@ Set up a development environment
 
       gem install sass
 
-3. Install Node, Bower and Grunt::
+3. Install Node, yarn and Grunt::
 
       # Install node
       brew install node
@@ -239,17 +239,16 @@ Set up a development environment
 
 This default task will do the following **very cool things that make it worth the trouble**.
 
-1. It'll install and update any bower dependencies.
-2. It'll run sphinx and build the demo_docs.
-3. It'll watch for changes to the Sass files and build css from the changes.
-4. It'll rebuild the sphinx demo_docs anytime it notices a change to .rst, .html, .js
+1. It'll run sphinx and build the demo_docs.
+2. It'll watch for changes to the Sass files and build css from the changes.
+3. It'll rebuild the sphinx demo_docs anytime it notices a change to .rst, .html, .js
    or .css files.
-5. It'll start a local web server at localhost:1919.
-6. It'll show the demo_docs in the browser.
-7. It'll refresh the browser for localhost:1919 automatically if LiveReload is enabled.
+4. It'll start a local web server at localhost:1919.
+5. It'll show the demo_docs in the browser.
+6. It'll refresh the browser for localhost:1919 automatically if LiveReload is enabled.
 
 There is a `grunt copy` command as well that copies files from the components
-that bower fetches into the actual theme directory. For example fonts are move to the
+that yarn fetches into the actual theme directory. For example fonts are move to the
 right place that way.
 
 **Note:** I you want that copy action you need to run ``grunt copy`` manually.

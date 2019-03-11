@@ -15,3 +15,5 @@ npm-debug.log
 *GENERATED*
 *NOT_VERSIONED*
 .idea
+t3SphinxThemeRtd/static/css/*.map
+/yarn-error.log

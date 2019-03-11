@@ -65,7 +65,7 @@ $SourceSansProPath: "." !default;
     src: local('SourceSansPro-Regular'),
          local('Source Sans Pro'),
          url('#{$SourceSansProPath}/eot/SourceSansPro-Regular.eot') format('embedded-opentype'),
-         url('#{$SourceSansProPath}/woff/SourceSansPro-Regular.woff') format('woff'),
+         url('#{$SourceSansProPath}/woff/SourceSansPro-Regular.otf.woff') format('woff'),
          url('#{$SourceSansProPath}/OTF/SourceSansPro-Regular.otf') format('opentype'),
          url('#{$SourceSansProPath}/ttf/SourceSansPro-Regular.ttf') format('truetype');
 }
@@ -78,7 +78,7 @@ $SourceSansProPath: "." !default;
     src: local('SourceSansPro-It'),
          local('Source Sans Pro Italic'),
          url('#{$SourceSansProPath}/eot/SourceSansPro-It.eot') format('embedded-opentype'),
-         url('#{$SourceSansProPath}/woff/SourceSansPro-It.woff') format('woff'),
+         url('#{$SourceSansProPath}/woff/SourceSansPro-It.otf.woff') format('woff'),
          url('#{$SourceSansProPath}/OTF/SourceSansPro-It.otf')   format('opentype'),
          url('#{$SourceSansProPath}/ttf/SourceSansPro-It.ttf')   format('truetype');
 }
@@ -117,7 +117,7 @@ $SourceSansProPath: "." !default;
     src: local('SourceSansPro-Bold'),
          local('Source Sans Pro Bold'),
          url('#{$SourceSansProPath}/eot/SourceSansPro-Bold.eot') format('embedded-opentype'),
-         url('#{$SourceSansProPath}/woff/SourceSansPro-Bold.woff') format('woff'),
+         url('#{$SourceSansProPath}/woff/SourceSansPro-Bold.otf.woff') format('woff'),
          url('#{$SourceSansProPath}/OTF/SourceSansPro-Bold.otf') format('opentype'),
          url('#{$SourceSansProPath}/ttf/SourceSansPro-Bold.ttf') format('truetype');
 }
@@ -130,7 +130,7 @@ $SourceSansProPath: "." !default;
     src: local('SourceSansPro-BoldIt'),
          local('Source Sans Pro Bold Italic'),
          url('#{$SourceSansProPath}/eot/SourceSansPro-BoldIt.eot') format('embedded-opentype'),
-         url('#{$SourceSansProPath}/woff/SourceSansPro-BoldIt.woff') format('woff'),
+         url('#{$SourceSansProPath}/woff/SourceSansPro-BoldIt.otf.woff') format('woff'),
          url('#{$SourceSansProPath}/OTF/SourceSansPro-BoldIt.otf') format('opentype'),
          url('#{$SourceSansProPath}/ttf/SourceSansPro-BoldIt.ttf') format('truetype');
 }
