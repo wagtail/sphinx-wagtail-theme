@@ -92,9 +92,6 @@ module.exports = function(grunt) {
     },
 
     exec: {
-      bower_update: {
-        cmd: './node_modules/.bin/bower update'
-      },
       build_sphinx: {
         cmd: './my-sphinx-build.sh demo_docs/source demo_docs/build'
       }
@@ -133,8 +130,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
 
   grunt.registerTask('fonts', ['clean:fonts','copy:fonts']);
-  grunt.registerTask('assets', ['exec:bower_update','clean:build','sass:build']);
-  grunt.registerTask('default', ['exec:bower_update','clean:build','sass:dev','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('build', ['exec:bower_update','clean:build','sass:build','exec:build_sphinx']);
+  grunt.registerTask('assets', ['clean:build','sass:build']);
+  grunt.registerTask('default', ['clean:build','sass:dev','exec:build_sphinx','connect','open','watch']);
+  grunt.registerTask('build', ['clean:build','sass:build','exec:build_sphinx']);
 }
 
