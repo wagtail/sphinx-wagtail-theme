@@ -96,11 +96,6 @@ base@^0.11.1:
   version "4.0.2"
   resolved "https://github.com/thoughtbot/bourbon/#0ecd499848c618e4dc5779772246bf9753312308"
 
-bower@^1.8.8:
-  version "1.8.8"
-  resolved "https://registry.yarnpkg.com/bower/-/bower-1.8.8.tgz#82544be34a33aeae7efb8bdf9905247b2cffa985"
-  integrity sha512-1SrJnXnkP9soITHptSO+ahx3QKp3cVzn8poI6ujqc5SeOkg5iqM1pK9H+DSc2OQ8SnO0jC/NG4Ur/UIwy7574A==
-
 braces@^2.3.1:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/braces/-/braces-2.3.2.tgz#5979fd3f14cd531565e5fa2df1abfff1dfaee729"

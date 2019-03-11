@@ -6,7 +6,6 @@
   "devDependencies": {
     "TYPO3.styleguide": "web-vision/TYPO3.styleguide",
     "bourbon": "https://github.com/thoughtbot/bourbon/#4.0.2",
-    "bower": "^1.8.8",
     "connect-livereload": "~0.3.0",
     "font-awesome": "https://github.com/FortAwesome/Font-Awesome#4.2.0",
     "fontface-source-sans-pro": "https://github.com/qorbani/fontface-source-sans-pro",
