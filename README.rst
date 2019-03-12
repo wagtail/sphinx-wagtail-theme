@@ -150,8 +150,20 @@ Check this `list in the blogpost
 Changelog
 =========
 
+v3.2.0
+------
+
+- Publish as 3.2.0
+- Remove bower
+- Introduce Yarn
+- Require all dependencies, this includes Grunt
+- Provide Grunt task to create a new theme version, without need to have Sphinx setup
+  locally
+- Support node version manager
+
 v3.1.0
 ------
+
 - publish as 3.1.0
 - use minified jQuery
 - add our "Edit me on GitHub" button
