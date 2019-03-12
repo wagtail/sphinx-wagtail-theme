@@ -204,49 +204,72 @@ set up your environment similar to that of a front-end developer (versus that of
 a python developer). That means installing `Node <https://nodejs.org/>`__
 and `Ruby <https://www.ruby-lang.org/>`__.
 
-Set up a development environment
---------------------------------
+Setup minimal development environment
+-------------------------------------
 
-1. Install `Sphinx <http://sphinx-doc.org/>`__.
-   It is a good idea - but not a requirement - to install into a `virtual environment
-   <https://virtualenv.pypa.io/en/latest/>`__::
-
-
-      # Maybe activate virtualenv first. Then:
-
-      pip install sphinx
+1. Install Ruby
 
 2. Install Sass::
 
       gem install sass
 
-3. Install Node, yarn and Grunt::
+3. Install Node
 
-      # Install node
-      brew install node
+4. Install Yarn::
 
-      # Now that everything is installed, let's install the theme's dependecies.
-      cd t3SphinxThemeRtd
-      npm install
+      npm install yarn
 
+5. Install project dependencies::
 
-5. You may want to add the `Livereload Addons <http://livereload.com/>`__ to your
+      yarn install
+
+6. Compile::
+
+      ./node_modules/.bin/grunt
+
+Build local TYPO3 Documentation Docker container using local theme
+------------------------------------------------------------------
+
+Once changes were made to the theme and were compiled, these changes have to be
+tested. Most probably there is already a manual where these changes should be tested.
+Therefore it's possible to build the TYPO3 Documentation Docker container using the
+local version of the theme. This can then be used to render the manual to test
+changes made to the theme.
+
+There is also an example documentation and local development setup without Docker. In
+case that suits better, follow the "Render provided Sphinx with theme" approach in
+next section. Otherwise follow the next steps.
+
+1. Follow instructions at
+   https://github.com/t3docs/docker-render-documentation/blob/master/CONTRIBUTING.rst#test-changes-to-docker-image-locally
+   to build the docker container.
+
+2. There you'll find also instructions how to include a local version of the theme to
+   test changes.
+
+Render provided Sphinx with theme
+---------------------------------
+
+Follow "Setup minimal development environment" and run the following additional steps:
+
+1. Install `Sphinx <http://sphinx-doc.org/>`__.
+   It is a good idea - but not a requirement - to install into a `virtual environment
+   <https://virtualenv.pypa.io/en/latest/>`__::
+
+      # Maybe activate virtualenv first. Then:
+
+      pip install sphinx
+
+2. You may want to add the `Livereload Addons <http://livereload.com/>`__ to your
    Firefox and Chrome browser.
 
-6. Now that our environment is set up, go to our package in the terminal and run Grunt::
-
-      cd t3SphinxThemeRtd
-      ./node_modules/.bin/grunt assets
-
-7. If you want to compile an example documentation using the new assets run the
+3. If you want to compile an example documentation using the new assets run the
    following Grunt task, make sure you're in your virtual environment::
 
-      cd t3SphinxThemeRtd
       ./node_modules/.bin/grunt assets
 
-   Or, mabe even better, run Grunt in the background::
+   Or, maybe even better, run Grunt in the background::
 
-      cd t3SphinxThemeRtd
       ./node_modules/.bin/grunt &
 
 This default task will do the following **very cool things that make it worth the trouble**.
@@ -258,12 +281,5 @@ This default task will do the following **very cool things that make it worth th
 4. It'll start a local web server at localhost:1919.
 5. It'll show the demo_docs in the browser.
 6. It'll refresh the browser for localhost:1919 automatically if LiveReload is enabled.
-
-There is a `grunt copy` command as well that copies files from the components
-that yarn fetches into the actual theme directory. For example fonts are move to the
-right place that way.
-
-**Note:** I you want that copy action you need to run ``grunt copy`` manually.
-It is not run by default.
 
 End of README.
