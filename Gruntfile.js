@@ -132,9 +132,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-open');
 
-  grunt.registerTask('fonts', ['clean:fonts','copy:fonts']);
-  grunt.registerTask('assets', ['clean:build', 'clean:fonts','copy:fonts', 'sass:build']);
-  grunt.registerTask('default', ['clean:build','sass:dev','exec:build_sphinx','connect','open','watch']);
-  grunt.registerTask('build', ['clean:build','sass:build','exec:build_sphinx']);
+  grunt.registerTask('default', ['clean:build', 'clean:fonts', 'copy:fonts', 'sass:build']);
+  grunt.registerTask('build', ['clean:build', 'clean:fonts', 'copy:fonts', 'sass:build', 'exec:build_sphinx']);
+  grunt.registerTask('full', ['clean:build', 'clean:fonts', 'copy:fonts', 'sass:dev', 'exec:build_sphinx', 'connect', 'open', 'watch']);
 }
 
