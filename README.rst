@@ -150,10 +150,10 @@ Check this `list in the blogpost
 Changelog
 =========
 
-v3.2.0
+v3.7.0
 ------
 
-- Publish as 3.2.0
+- Publish as 3.7.0
 - Remove bower
 - Introduce Yarn
 - Require all dependencies, this includes Grunt
