@@ -147,22 +147,6 @@ Check this `list in the blogpost
 <http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html#to-be-done>`__
 
 
-Changelog
-=========
-
-v3.1.0
-------
-- publish as 3.1.0
-- use minified jQuery
-- add our "Edit me on GitHub" button
-
-v3.0.0
-------
-
-- First public version.
-  We start numbering this TYPO3 fork of the RTD theme with version number 3.0.0
-  to be clearly different from the original ``sphinx_rtd_theme`` which is v0.1.8.
-
 Already done
 ------------
 
@@ -183,7 +167,7 @@ This chapter is taken from the `original README <https://github.com/snide/sphinx
 (and then modified)::
 
 The ``t3SphinxThemeRtd`` is primarily a `Sass <http://sass-lang.com/>`__ project that
-requires a few other Sass libraries. We are using `Bower <http://bower.io/>`__ to
+requires a few other Sass libraries. We are using yarn to
 manage these dependencies and Sass to build the css. The good news is that there is
 a nice set of `Grunt <http://gruntjs.com/>`__ operations that will not only load
 these dependecies, but watch for changes, rebuild the sphinx demo docs and build
@@ -192,65 +176,82 @@ set up your environment similar to that of a front-end developer (versus that of
 a python developer). That means installing `Node <https://nodejs.org/>`__
 and `Ruby <https://www.ruby-lang.org/>`__.
 
-Set up a development environment
---------------------------------
+Setup minimal development environment
+-------------------------------------
 
-1. Install `Sphinx <http://sphinx-doc.org/>`__.
-   It is a good idea - but not a requirement - to install into a `virtual environment
-   <https://virtualenv.pypa.io/en/latest/>`__::
-
-
-      # Maybe activate virtualenv first. Then:
-
-      pip install sphinx
+1. Install Ruby
 
 2. Install Sass::
 
       gem install sass
 
-3. Install Node, Bower and Grunt::
+3. Install Node
 
-      # Install node
-      brew install node
+4. Install Yarn::
 
-      # Install bower and grunt
-      npm install -g bower grunt-cli
+      npm install yarn
 
-      # Now that everything is installed, let's install the theme's dependecies.
-      cd t3SphinxThemeRtd
-      npm install
+5. Install project dependencies::
 
+      yarn install
 
-5. You may want to add the `Livereload Addons <http://livereload.com/>`__ to your
+6. Compile::
+
+      ./node_modules/.bin/grunt
+
+Build local TYPO3 Documentation Docker container using local theme
+------------------------------------------------------------------
+
+Once changes were made to the theme and were compiled, these changes have to be
+tested. Most probably there is already a manual where these changes should be tested.
+Therefore it's possible to build the TYPO3 Documentation Docker container using the
+local version of the theme. This can then be used to render the manual to test
+changes made to the theme.
+
+There is also an example documentation and local development setup without Docker. In
+case that suits better, follow the "Render provided Sphinx with theme" approach in
+next section. Otherwise follow the next steps.
+
+1. Follow instructions at
+   https://github.com/t3docs/docker-render-documentation/blob/master/CONTRIBUTING.rst#test-changes-to-docker-image-locally
+   to build the docker container.
+
+2. There you'll find also instructions how to include a local version of the theme to
+   test changes.
+
+Render provided Sphinx with theme
+---------------------------------
+
+Follow "Setup minimal development environment" and run the following additional steps:
+
+1. Install `Sphinx <http://sphinx-doc.org/>`__.
+   It is a good idea - but not a requirement - to install into a `virtual environment
+   <https://virtualenv.pypa.io/en/latest/>`__::
+
+      # Maybe activate virtualenv first. Then:
+
+      pip install sphinx
+
+2. You may want to add the `Livereload Addons <http://livereload.com/>`__ to your
    Firefox and Chrome browser.
 
-6. Now that our environment is set up, make sure you're in your virtual environment, go to
-   our package in the terminal and run Grunt::
+3. If you want to compile an example documentation using the new assets run the
+   following Grunt task, make sure you're in your virtual environment::
 
-      cd t3SphinxThemeRtd
-      grunt
+      ./node_modules/.bin/grunt assets
 
-   Or, mabe even better, run Grunt in the background::
+   Or, maybe even better, run Grunt in the background::
 
-      cd t3SphinxThemeRtd
-      grunt &
+      ./node_modules/.bin/grunt &
 
 This default task will do the following **very cool things that make it worth the trouble**.
 
-1. It'll install and update any bower dependencies.
-2. It'll run sphinx and build the demo_docs.
-3. It'll watch for changes to the Sass files and build css from the changes.
-4. It'll rebuild the sphinx demo_docs anytime it notices a change to .rst, .html, .js
+1. It'll run sphinx and build the demo_docs.
+2. It'll watch for changes to the Sass files and build css from the changes.
+3. It'll rebuild the sphinx demo_docs anytime it notices a change to .rst, .html, .js
    or .css files.
-5. It'll start a local web server at localhost:1919.
-6. It'll show the demo_docs in the browser.
-7. It'll refresh the browser for localhost:1919 automatically if LiveReload is enabled.
-
-There is a `grunt copy` command as well that copies files from the components
-that bower fetches into the actual theme directory. For example fonts are move to the
-right place that way.
-
-**Note:** I you want that copy action you need to run ``grunt copy`` manually.
-It is not run by default.
+4. It'll start a local web server at localhost:1919.
+5. It'll show the demo_docs in the browser.
+6. It'll refresh the browser for localhost:1919 automatically if LiveReload is enabled.
 
 End of README.

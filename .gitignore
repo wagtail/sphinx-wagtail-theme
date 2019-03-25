@@ -9,8 +9,10 @@
 .tox
 dist/
 node_modules/
+bower_components/
 npm-debug.log
 
 *GENERATED*
 *NOT_VERSIONED*
 .idea
+/yarn-error.log
