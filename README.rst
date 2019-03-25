@@ -147,34 +147,6 @@ Check this `list in the blogpost
 <http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html#to-be-done>`__
 
 
-Changelog
-=========
-
-v3.7.0
-------
-
-- Publish as 3.7.0
-- Remove bower
-- Introduce Yarn
-- Require all dependencies, this includes Grunt
-- Provide Grunt task to create a new theme version, without need to have Sphinx setup
-  locally
-- Support node version manager
-
-v3.1.0
-------
-
-- publish as 3.1.0
-- use minified jQuery
-- add our "Edit me on GitHub" button
-
-v3.0.0
-------
-
-- First public version.
-  We start numbering this TYPO3 fork of the RTD theme with version number 3.0.0
-  to be clearly different from the original ``sphinx_rtd_theme`` which is v0.1.8.
-
 Already done
 ------------
 
