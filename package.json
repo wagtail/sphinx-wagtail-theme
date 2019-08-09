@@ -26,6 +26,11 @@
     "source-code-pro": "https://github.com/adobe-fonts/source-code-pro#1.017R",
     "wyrm": "https://github.com/snide/wyrm/#0.0.229"
   },
+  "scripts": {
+      "default": "grunt default",
+      "build": "grunt build",
+      "build-full": "grunt full"
+  },
   "engines": {
     "node": ">=10.16",
     "yarn": ">= 1.0.0"

@@ -190,7 +190,7 @@ Setup minimal development environment
 
 4. Compile::
 
-      ./node_modules/.bin/grunt
+      yarn run default
 
 Build local TYPO3 Documentation Docker container using local theme
 ------------------------------------------------------------------
