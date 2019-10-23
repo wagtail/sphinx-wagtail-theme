@@ -8,13 +8,14 @@ $typo3-dark-grey:                     #515151
 $typo3-mid-grey:                      #8c8c8c
 $typo3-light-grey:                    #b9b9b9
 $typo3-marker-grey:                   #f4f4f4
-$typo3-message-valid:                 #5abc55
-$typo3-message-error:                 #dd123d
-$typo3-message-warning:               #ffc800
-$typo3-message-information:           #0080ff
 
-// Share Bold for headings
-// Share Regular for subheadings
+$typo3-message-valid:                 #37BD74
+$typo3-message-error:                 #FF304F
+$typo3-message-warning:               #FF9B37
+$typo3-message-information:           #27A2FC
+
+// Source Sans Pro for headings
+// Source Sans Pro for subheadings
 // Source Sans Pro Light for continuous text
 // Source Sans Pro Bold for teasers and to highlight
 // Source Sans Pro Italic for quotation
@@ -71,7 +72,7 @@ $base-font-size:                      16px
 $base-font-family:                    "Source Sans Pro", Helvetica, Arial, sans-serif
 $base-font-family-bold:               bold
 $base-line-height:                    24px
-$custom-font-family:                  Share, Helvetica, Arial, sans-serif
+$custom-font-family:                  "Source Sans Pro", Helvetica, Arial, sans-serif
 $custom-font-family2:                 Georgia, serif
 $code-font-family:                    "Source Code Pro", monospace
 
@@ -109,17 +110,9 @@ $input-shadow-color:                  #ddd
 $input-focus-color:                   $gray-dark
 
 // Links
-$link-color:                          $blue
-$link-color:                          $typo3-key-color
 $link-color:                          darken($typo3-key-color, 8%)
-$link-color:                          darken($typo3-key-color, 25%) // until 2016-09-09
-$link-color:                          hsl(24, 100%, 35%)            // until 2016-09-09
-$link-color-visited:                  $purple
 $link-color-visited:                  $link-color
-//$link-color-hover:                    lighten($link-color, 8%)
-//$link-color-hover:                    lighten($link-color, 25%)
 $link-color-hover:                    $typo3-key-color
-//$link-color-alt:                      hsl(33, 100%, 51%)
 $link-color-alt:                      #ff0000
 
 
@@ -151,96 +144,26 @@ $mathjax-color:                       $text-color
 
 
 // 800px is set as default in _theme_layout.sass
-$wy-nav-content-width:                800px
-$wy-nav-content-width:                1600px
+$wy-nav-content-width:                1000px
 
 
-
-// scheme: "Tomorrow"
-// author: "Chris Kempson (http://chriskempson.com)"
-$base16-base00: #1d1f21
-$base16-base01: #282a2e
-$base16-base02: #373b41
-$base16-base03: #969896
-$base16-base04: #b4b7b4
-$base16-base05: #c5c8c6
-$base16-base06: #e0e0e0
-$base16-base07: #ffffff
-$base16-base08: #cc6666
-$base16-base09: #de935f
-$base16-base0A: #f0c674
-$base16-base0B: #b5bd68
-$base16-base0C: #8abeb7
-$base16-base0D: #81a2be
-$base16-base0E: #b294bb
-$base16-base0F: #a3685a
-
-
-// scheme: "Summerfruit"
-// author: "Christopher Corley (http://cscorley.github.io/)"
-$base16-base00: #151515
-$base16-base01: #202020
-$base16-base02: #303030
-$base16-base03: #505050
-$base16-base03: #808080
-$base16-base04: #B0B0B0
-$base16-base05: #D0D0D0
-$base16-base06: #E0E0E0
+// Base 16 Scheme
+$base16-base00: #212121
+$base16-base01: #2E3C43
+$base16-base02: #314549
+$base16-base03: #546E7A
+$base16-base04: #B2CCD6
+$base16-base05: #EEFFFF
+$base16-base06: #EEFFFF
 $base16-base07: #FFFFFF
-$base16-base08: #FF0086
-$base16-base09: #FD8900
-$base16-base0A: #ABA800
-$base16-base0B: #00C918
-$base16-base0C: #1faaaa
-$base16-base0D: #3777E6
-$base16-base0E: #AD00A1
-$base16-base0F: #cc6633
-
-
-// scheme: made from prism, low lightness
-// seen at https://css-tricks.com/yay-for-hsla/ */
-
-$base16-base00: #151515 // not from prism
-$base16-base01: #202020 // not from prism
-$base16-base02: #303030 // not from prism
-$base16-base03: #777777 // comment, prolog, doctype, cdata
-$base16-base04: #B0B0B0 // not from prism
-$base16-base05: #D0D0D0 // not from prism
-$base16-base06: #E0E0E0 // not from prism
-$base16-base07: #ab875d // punctuation,tag,attr-name
-$base16-base08: #af5083 // not from prism
-$base16-base09: #9b869c // property,boolean,number
-$base16-base0A: #cd6a51 // punctuation, color: white;
-$base16-base0B: #a67f59 // operator,entity,url,language-css, string,style, string {
-$base16-base0E: #dfc48c // selector
-$base16-base0D: #8f9c6c // atrule, attr-value, keyword, string
-$base16-base0C: #ee9900 // regex, important
-$base16-base0F: #5986a6 // not from prism
-
-
-$base16-base09: #a781ac // property,boolean,number
-$base16-base0E: #dfcba3 // selector
-
-// scheme: made from prism, higher lightness
-// seen at https://css-tricks.com/yay-for-hsla/ */
-
-$base16-base00: #151515 // not from prism
-$base16-base01: #202020 // not from prism
-$base16-base02: #303030 // not from prism
-$base16-base03: #777777 // comment, prolog, doctype, cdata
-$base16-base04: #B0B0B0 // not from prism
-$base16-base05: #D0D0D0 // not from prism
-$base16-base06: #E0E0E0 // not from prism
-$base16-base07: #bf8e55 // punctuation,tag,attr-name
-$base16-base08: #af5786 // not from prism
-$base16-base09: #4b88b4 // not from prism
-$base16-base0A: #ec6341 // punctuation, color: white;
-$base16-base0B: #d27f2d // operator,entity,url,language-css, string,style, string {
-$base16-base0C: #ee9900 // regex, important
-$base16-base0D: #9ac147 // atrule, attr-value, keyword, string
-$base16-base0E: #82d3c6 // selector
-$base16-base0F: #4b88b4 // not from prism
-$base16-base0F: #ffe16b // property,boolean,number
+$base16-base08: #F07178
+$base16-base09: #F78C6C
+$base16-base0A: #FFCB6B
+$base16-base0B: #C3E88D
+$base16-base0C: #89DDFF
+$base16-base0D: #82AAFF
+$base16-base0E: #C792EA
+$base16-base0F: #FF5370
 
 // 2818-04-27
 $dl-parameters-dd-aspect: #996833 // hsl(31  , 50%  , 40%  )

@@ -96,6 +96,8 @@
 
 <body class="wy-body-for-nav" role="document">
 
+  <!--#include file="/header.shtml"-->
+
   <div class="wy-grid-for-nav">
 
     {# SIDE NAV, TOGGLES ON MOBILE #}
@@ -106,7 +108,7 @@
         <ul class="sidebartop">
 
           <li class="docsite">
-            <a href="{{ urlTypo3Documentation }}"><img src="{{ pathto('_static/' + logo, 1) }}" class="logo" /></a>
+            <a href="{{ urlTypo3Documentation }}" title="TYPO3 Documentation"><img src="{{ pathto('_static/' + logo, 1) }}" class="logo" /></a>
           </li>
 
         {%- if not theme_is_homepage -%}
@@ -166,6 +168,11 @@
       {# PAGE CONTENT #}
       <div class="wy-nav-content">
         <div class="rst-content">
+
+          {% if theme_docstypo3org -%}
+          <!--# include virtual="/includes/header.html" -->
+          {% endif %}
+
           {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody" class="toBeIndexed">
@@ -173,6 +180,11 @@
            </div><!-- /.toBeIndexed -->
           </div>
           {% include "footer.html" %}
+
+          {% if theme_docstypo3org -%}
+          <!--# include virtual="/includes/footer.html" -->
+          {% endif %}
+
         </div>
       </div>
 

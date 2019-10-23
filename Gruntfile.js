@@ -20,12 +20,7 @@ module.exports = function(grunt) {
       fonts: {
         files: [
           // includes files within path
-          {expand: true, flatten: true, src: ['node_modules/font-awesome/fonts/*'],                                dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/TYPO3.styleguide/public/fonts/TYPO3_Share_Complete/Share-TTF/Share-Bold.ttf'],       dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/TYPO3.styleguide/public/fonts/TYPO3_Share_Complete/Share-TTF/Share-BoldItalic.ttf'], dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/TYPO3.styleguide/public/fonts/TYPO3_Share_Complete/Share-TTF/Share-Italic.ttf'],     dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/TYPO3.styleguide/public/fonts/TYPO3_Share_Complete/Share-TTF/Share-Regular.ttf'],    dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/TYPO3.styleguide/public/fonts/TYPO3_Share_Complete/Share-TTF/Share-TechMono.ttf'],   dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['node_modules/font-awesome/fonts/*'], dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
 
           // {src: ['node_modules/fontface-source-sans-pro/scss/source-sans-pro.scss'], dest: 'sass/_source-sans-pro.scss'},
           {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/EOT/*-It*' ],     dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
@@ -65,7 +60,13 @@ module.exports = function(grunt) {
     sass: {
       options: {
         sourceMap: false,
-        includePaths: ['node_modules/bourbon/dist', 'node_modules/neat/app/assets/stylesheets', 'node_modules/font-awesome/scss', 'node_modules/wyrm/sass']
+        implementation: sass,
+        includePaths: [
+          'node_modules/bourbon/dist',
+          'node_modules/neat/app/assets/stylesheets',
+          'node_modules/font-awesome/scss',
+          'node_modules/wyrm/sass'
+        ]
       },
       dev: {
         options: {

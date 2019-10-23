@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "TYPO3.styleguide": "web-vision/TYPO3.styleguide",
     "bourbon": "https://github.com/thoughtbot/bourbon/#4.0.2",
     "connect-livereload": "~0.3.0",
     "font-awesome": "https://github.com/FortAwesome/Font-Awesome#4.2.0",
@@ -27,9 +26,9 @@
     "wyrm": "https://github.com/snide/wyrm/#0.0.229"
   },
   "scripts": {
-      "default": "grunt default",
-      "build": "grunt build",
-      "build-full": "grunt full"
+    "default": "grunt default",
+    "build": "grunt build",
+    "build-full": "grunt full"
   },
   "engines": {
     "node": ">=10.16",
