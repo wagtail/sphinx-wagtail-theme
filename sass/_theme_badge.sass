@@ -1,12 +1,10 @@
 .rst-versions
-  position: fixed
+  position: absolute
   bottom: 0
   left: 0
-  width: $nav-desktop-width - 15px
+  width: 100%
   color: $section-background-color
   background: darken($menu-background-color, 8%)
-  // border-top: solid 10px $menu-background-color
-  border-top: 2px solid $link-color
   font-family: $base-font-family
   z-index: $z-index-tray
   a
@@ -97,15 +95,3 @@
       padding: 0 $base-line-height / 4
       display: block
       text-align: center
-
-+media($tablet)
-  .rst-versions
-    width: 85%
-    display: none
-    &.shift
-      display: block
-  img
-    // The next line would upscale images in tablet mode (<= 768). Don't do that.
-    // width: 100%
-    height: auto
-

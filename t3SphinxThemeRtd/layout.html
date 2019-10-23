@@ -153,7 +153,8 @@
           {% endif %}
         {% endblock %}
       </div>
-      &nbsp;
+
+      {% include "versions.html" %}
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -191,7 +192,6 @@
     </section>
 
   </div>
-  {% include "versions.html" %}
 
   {% if not embedded %}
 
