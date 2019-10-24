@@ -199,8 +199,8 @@ Setup minimal development environment
 
       ./node_modules/.bin/grunt
 
-Build local TYPO3 Documentation Docker container using local theme
-------------------------------------------------------------------
+Use local theme
+---------------
 
 Once changes were made to the theme and were compiled, these changes have to be
 tested. Most probably there is already a manual where these changes should be tested.
