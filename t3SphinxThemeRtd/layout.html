@@ -29,10 +29,12 @@
   {%- endif -%}
   {{ metatags }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="book-name"    content="{{ project|striptags|e }}"/>
-  <meta name="book-version" content="{{ version|striptags|e }}"/>
-  <meta name="book-release" content="{{ release|striptags|e }}"/>
-  <meta name="book-type"    content="{{ 'Manual' }}"/>
+  <meta name="book-version"      content="{{ version|striptags|e }}"/>
+  <meta name="book-release"      content="{{ release|striptags|e }}"/>
+  <meta name="docsearch:name"    content="{{ project|striptags|e }}" />
+  <meta name="docsearch:version" content="{{ release|striptags|e }}" />
+  <meta name="docsearch:package_type" content="{{ package_type|striptags|e }}" />
+
 
   {% block htmltitle %}
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
@@ -237,3 +239,4 @@
   {%- endif -%}
 </body>
 </html>
+<!--3.6.17-->
