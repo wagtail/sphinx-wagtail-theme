@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
-        sourceMap: false,
+        sourceMap: true,
         includePaths: [
           'node_modules/bourbon/dist',
           'node_modules/neat/app/assets/stylesheets',
