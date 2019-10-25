@@ -14,7 +14,7 @@
 {%- set script_files = script_files + ['_static/jquery-ui/jquery-ui.min.js'] -%}
 {%- set script_files = script_files + ["_static/js/theme.js"] -%}
 {%- if pagename == "search" -%}
-  {%- set script_files = script_files + ['_static/js/t3auocomplete2.js'] %}
+  {%- set script_files = script_files + ['_static/js/t3autocomplete2.js'] %}
 {%- else -%}
   {%- set script_files = script_files + ['_static/js/t3autocomplete.js'] %}
 {%- endif -%}
@@ -29,10 +29,12 @@
   {%- endif -%}
   {{ metatags }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="book-name"    content="{{ project|striptags|e }}"/>
-  <meta name="book-version" content="{{ version|striptags|e }}"/>
-  <meta name="book-release" content="{{ release|striptags|e }}"/>
-  <meta name="book-type"    content="{{ 'Manual' }}"/>
+  <meta name="book-version"      content="{{ version|striptags|e }}"/>
+  <meta name="book-release"      content="{{ release|striptags|e }}"/>
+  <meta name="docsearch:name"    content="{{ project|striptags|e }}" />
+  <meta name="docsearch:version" content="{{ release|striptags|e }}" />
+  <meta name="docsearch:package_type" content="{{ package_type|striptags|e }}" />
+
 
   {% block htmltitle %}
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
@@ -96,6 +98,8 @@
 
 <body class="wy-body-for-nav" role="document">
 
+  <!--#include file="/header.shtml"-->
+
   <div class="wy-grid-for-nav">
 
     {# SIDE NAV, TOGGLES ON MOBILE #}
@@ -106,7 +110,7 @@
         <ul class="sidebartop">
 
           <li class="docsite">
-            <a href="{{ urlTypo3Documentation }}"><img src="{{ pathto('_static/' + logo, 1) }}" class="logo" /></a>
+            <a href="{{ urlTypo3Documentation }}" title="TYPO3 Documentation"><img src="{{ pathto('_static/' + logo, 1) }}" alt="TYPO3 Documentation Logo" class="logo" /></a>
           </li>
 
         {%- if not theme_is_homepage -%}
@@ -151,7 +155,8 @@
           {% endif %}
         {% endblock %}
       </div>
-      &nbsp;
+
+      {% include "versions.html" %}
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -166,6 +171,11 @@
       {# PAGE CONTENT #}
       <div class="wy-nav-content">
         <div class="rst-content">
+
+          {% if theme_docstypo3org -%}
+          <!--# include virtual="/includes/header.html" -->
+          {% endif %}
+
           {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody" class="toBeIndexed">
@@ -173,13 +183,17 @@
            </div><!-- /.toBeIndexed -->
           </div>
           {% include "footer.html" %}
+
+          {% if theme_docstypo3org -%}
+          <!--# include virtual="/includes/footer.html" -->
+          {% endif %}
+
         </div>
       </div>
 
     </section>
 
   </div>
-  {% include "versions.html" %}
 
   {% if not embedded %}
 
@@ -225,3 +239,4 @@
   {%- endif -%}
 </body>
 </html>
+<!--3.6.17-->

@@ -20,58 +20,36 @@
   line-height: $base-line-height
   margin-top: $base-line-height
   margin-bottom: $base-line-height
-  background: lighten($blue, 50%)
-  background: lighten($blue, 43%)
-  background: $table-stripe-color
   +font-smooth
+
 .wy-alert-title
   color: $white
   color: $text-color
   font-weight: bold
   display: block
-  background: lighten($blue,20%)
-  background: lighten($blue,8%)
-  background: $table-border-color
   margin: -$base-line-height / 2
   padding: $base-line-height / 4 $base-line-height / 2
   margin-bottom: $base-line-height / 2
-
-
 
 $horizbuttons-attention-color: lighten($blue,08%)
 
 
 .wy-alert.wy-alert-danger
-  background: lighten($red, 40%)
-  background: lighten($typo3-message-warning, 35%)
-  background: hsl(22, 100%, 88%)
+  background: lighten($typo3-message-error, 40%)
   .wy-alert-title
     color: $white
-    background: lighten($red,20%)
-    background: lighten($typo3-message-warning,00%)
-    background: hsl(22, 100%, 50%)
+    background: lighten($typo3-message-error,00%)
 
 $horizbuttons-important-color: lighten($typo3-message-warning,00%)
-$horizbuttons-important-color: hsl(22, 100%, 50%)
-
-
 
 
 .wy-alert.wy-alert-warning
-  background: lighten(orange,40%)
-  background: lighten($typo3-message-error,40%)
-  background: hsl(354, 100%, 89%)
+  background: lighten($typo3-message-warning,40%)
   .wy-alert-title
     color: $white
-    background: lighten($orange,20%)
-    background: lighten($typo3-message-error,00%)
-    background: hsl(354, 100%, 50%)
+    background: lighten($typo3-message-warning,00%)
 
 $horizbuttons-warning-color: lighten($typo3-message-error,00%)
-$horizbuttons-warning-color: hsl(354, 100%, 50%)
-
-
-
 
 
 .wy-alert.wy-alert-info
@@ -81,7 +59,6 @@ $horizbuttons-warning-color: hsl(354, 100%, 50%)
     color: $white
     background: lighten($blue,20%)
     background: lighten($blue,08%)
-
 
 
 .wy-alert.wy-alert-success
@@ -94,7 +71,6 @@ $horizbuttons-warning-color: hsl(354, 100%, 50%)
 $horizbuttons-tip-color: lighten($offgreen,0%)
 
 
-
 .wy-alert.wy-alert-neutral
   background: $table-stripe-color
   .wy-alert-title
@@ -103,7 +79,6 @@ $horizbuttons-tip-color: lighten($offgreen,0%)
   a
     color: $link-color
 
-// we need it darker than $table-border-color
 $horizbuttons-note-color: $typo3-mid-grey
 
 

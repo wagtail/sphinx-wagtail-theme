@@ -1,8 +1,4 @@
 module.exports = function(grunt) {
-
-  // load all grunt tasks
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
   grunt.initConfig({
     open : {
       dev: {
@@ -19,16 +15,12 @@ module.exports = function(grunt) {
         }
       }
     },
+
     copy: {
       fonts: {
         files: [
           // includes files within path
-          {expand: true, flatten: true, src: ['node_modules/font-awesome/fonts/*'],                                dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/TYPO3.styleguide/public/fonts/TYPO3_Share_Complete/Share-TTF/Share-Bold.ttf'],       dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/TYPO3.styleguide/public/fonts/TYPO3_Share_Complete/Share-TTF/Share-BoldItalic.ttf'], dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/TYPO3.styleguide/public/fonts/TYPO3_Share_Complete/Share-TTF/Share-Italic.ttf'],     dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/TYPO3.styleguide/public/fonts/TYPO3_Share_Complete/Share-TTF/Share-Regular.ttf'],    dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/TYPO3.styleguide/public/fonts/TYPO3_Share_Complete/Share-TTF/Share-TechMono.ttf'],   dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['node_modules/font-awesome/fonts/*'], dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
 
           // {src: ['node_modules/fontface-source-sans-pro/scss/source-sans-pro.scss'], dest: 'sass/_source-sans-pro.scss'},
           {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/EOT/*-It*' ],     dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
@@ -66,31 +58,36 @@ module.exports = function(grunt) {
     },
 
     sass: {
+      options: {
+        sourceMap: true,
+        includePaths: [
+          'node_modules/bourbon/dist',
+          'node_modules/neat/app/assets/stylesheets',
+          'node_modules/font-awesome/scss',
+          'node_modules/wyrm/sass'
+        ]
+      },
       dev: {
         options: {
-          style: 'expanded',
-          loadPath: ['node_modules/bourbon/dist', 'node_modules/neat/app/assets/stylesheets', 'node_modules/font-awesome/scss', 'node_modules/wyrm/sass']
+          outputStyle: 'expanded'
         },
-        files: [{
-          expand: true,
-          cwd: 'sass',
-          src: ['*.sass'],
-          dest: 't3SphinxThemeRtd/static/css',
-          ext: '.css'
-        }]
+        files: {
+          't3SphinxThemeRtd/static/css/badge_only.css': 'sass/badge_only.sass',
+          't3SphinxThemeRtd/static/css/t3more.css': 'sass/t3more.sass',
+          't3SphinxThemeRtd/static/css/theme.css': 'sass/theme.sass',
+          't3SphinxThemeRtd/static/css/theme-no-fonts.css': 'sass/theme-no-fonts.sass'
+        }
       },
       build: {
         options: {
-          style: 'compressed',
-          loadPath: ['node_modules/bourbon/dist', 'node_modules/neat/app/assets/stylesheets', 'node_modules/font-awesome/scss', 'node_modules/wyrm/sass']
+          outputStyle: 'compressed'
         },
-        files: [{
-          expand: true,
-          cwd: 'sass',
-          src: ['*.sass', '*.scss'],
-          dest: 't3SphinxThemeRtd/static/css',
-          ext: '.css'
-        }]
+        files: {
+          't3SphinxThemeRtd/static/css/badge_only.css': 'sass/badge_only.sass',
+          't3SphinxThemeRtd/static/css/t3more.css': 'sass/t3more.sass',
+          't3SphinxThemeRtd/static/css/theme.css': 'sass/theme.sass',
+          't3SphinxThemeRtd/static/css/theme-no-fonts.css': 'sass/theme-no-fonts.sass'
+        }
       }
     },
 
@@ -99,6 +96,7 @@ module.exports = function(grunt) {
         cmd: './my-sphinx-build.sh demo_docs/source demo_docs/build'
       }
     },
+
     clean: {
       build: ["demo_docs/build"],
       fonts: ["t3SphinxThemeRtd/static/fonts"]
@@ -127,7 +125,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-open');
@@ -135,5 +133,4 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['clean:build', 'clean:fonts', 'copy:fonts', 'sass:build']);
   grunt.registerTask('build', ['clean:build', 'clean:fonts', 'copy:fonts', 'sass:build', 'exec:build_sphinx']);
   grunt.registerTask('full', ['clean:build', 'clean:fonts', 'copy:fonts', 'sass:dev', 'exec:build_sphinx', 'connect', 'open', 'watch']);
-}
-
+};

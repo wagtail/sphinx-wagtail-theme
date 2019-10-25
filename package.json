@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "TYPO3.styleguide": "web-vision/TYPO3.styleguide",
     "bourbon": "https://github.com/thoughtbot/bourbon/#4.0.2",
     "connect-livereload": "~0.3.0",
     "font-awesome": "https://github.com/FortAwesome/Font-Awesome#4.2.0",
@@ -14,18 +13,25 @@
     "grunt-contrib-clean": "0.5.0",
     "grunt-contrib-connect": "0.5.0",
     "grunt-contrib-copy": "0.5.0",
-    "grunt-contrib-sass": "~0.7.2",
     "grunt-contrib-watch": "~0.4.3",
     "grunt-exec": "~0.4.2",
     "grunt-open": "0.2.2",
+    "grunt-sass": "2.1.0",
     "jquery": "1.11.3",
     "jquery-ui": "https://github.com/jquery/jquery-ui#1.11.3",
     "matchdep": "~0.1.2",
     "neat": "https://github.com/thoughtbot/neat/#d65e306a3ce6fcfd52962fac4cd92729c544d7d0",
+    "node-sass": "^4.12.0",
     "source-code-pro": "https://github.com/adobe-fonts/source-code-pro#1.017R",
     "wyrm": "https://github.com/snide/wyrm/#0.0.229"
   },
+  "scripts": {
+    "default": "grunt default",
+    "build": "grunt build",
+    "build-full": "grunt full"
+  },
   "engines": {
+    "node": ">=10.16",
     "yarn": ">= 1.0.0"
   }
 }

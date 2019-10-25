@@ -17,11 +17,51 @@ h1, h2, h3, h4, h5, h6, legend
 
 
 // for the generic admonition
-
 .admonition
-  padding-left: $base-line-height / 2
-  padding-right: $base-line-height / 2
+  background-color: #f2f2f2
+  margin: 1em 0
+  padding: 1em
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15)
+  border-radius: 4px
+  overflow: hidden
+  .last
+    margin-bottom: 0 !important
 
+.admonition-title
+  display: block
+  padding: 0.75em 1em
+  margin: -1em
+  margin-bottom: 1em
+  background-color: #464646
+  color: #ffffff
+  @extend .fa
+  @extend .fa-exclamation-circle
+  &:before
+    margin-right: .5em
+
+.admonition.caution,
+.admonition.warning
+  background-color: lighten($typo3-message-warning, 35%)
+  .admonition-title
+    background-color: $typo3-message-warning
+
+.admonition.danger,
+.admonition.important,
+.admonition.attention
+  background-color: lighten($typo3-message-error, 35%)
+  .admonition-title
+    background-color: $typo3-message-error
+
+.admonition.hint
+  background-color: lighten($typo3-message-information, 40%)
+  .admonition-title
+    background-color: $typo3-message-information
+
+.admonition.seealso,
+.admonition.tip
+  background-color: lighten($typo3-message-valid, 45%)
+  .admonition-title
+    background-color: $typo3-message-valid
 
 #EditMeOnGitHub
   color: white
@@ -109,15 +149,6 @@ em
     .field-name
       white-space: normal
 
-
-// have a bottom margin after code blocks
-
-div[class^='highlight']
-  pre
-    // margin-top: $base-line-height
-    margin-bottom: $base-line-height
-
-
 // captions of figures
 
 .rst-content
@@ -128,6 +159,7 @@ div[class^='highlight']
     line-height: 18px
     width: 60%
     margin: 0
+    margin-top: 0.25em
     padding: 0
     font-weight: normal
     font-style: normal
@@ -187,7 +219,7 @@ td.field-body
   border: 1px solid hsl(0, 0%, 85%)
 
 .with-shadow
-  box-shadow: 0 $base-line-height/12 $base-line-height/2.4 hsl(0, 0%, 73%)
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15)
 
 
 .section
@@ -230,7 +262,9 @@ td.field-body
 
 .rst-content
   h3
-    border-bottom: 2px solid hsl(0, 0%, 80%)
+    border-bottom: 1px solid #e2e2e2
+    padding-bottom: 0.25em
+    margin-bottom: 1em
 
   .figure
     > img.with-shadow
@@ -578,7 +612,7 @@ kbd
 // show in link color when hovered
 .stealth-btn,
 .stealth-btn:visited
-  color: $gray-ultra-light
+  color: $gray-lighter
 
 // show only the icon
 .stealth-btn:hover,

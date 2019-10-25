@@ -14,13 +14,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-// 2017-04-27
-// https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/67
-// background of generic admonition
-.admonition
-  background-color: hsl(32, 100%, 94%)
-
-
 .rst-content
   // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
   img
@@ -59,44 +52,6 @@
     font-family: $code-font-family
     font-size: $code-font-size
     line-height: $code-line-height
-
-  // These are the various note pullouts that sphinx applies
-  .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo, .admonition-generic-admonition
-    @extend .wy-alert
-    .last
-      margin-bottom: 0
-  .admonition-title
-    @extend .wy-alert-title
-    @extend .fa
-    @extend .fa-exclamation-circle
-    &:before
-      margin-right: 4px
-
-  .admonition-generic-admonition
-    @extend .wy-alert.wy-alert-neutral
-  .attention
-    @extend .wy-alert.wy-alert-info
-  .caution
-    @extend .wy-alert.wy-alert-warning
-  .danger
-    @extend .wy-alert.wy-alert-warning
-  .error
-    @extend .wy-alert.wy-alert-danger
-  .hint
-    @extend .wy-alert.wy-alert-success
-  .important
-    @extend .wy-alert.wy-alert-danger
-  .note
-    @extend .wy-alert.wy-alert-neutral
-  .seealso
-    @extend .wy-alert.wy-alert-neutral
-  .tip
-    @extend .wy-alert.wy-alert-success
-  .warning
-    @extend .wy-alert.wy-alert-warning
-
-
-
 
   // Some people put tables in notes. Let's give them very basic support.
   .admonition table

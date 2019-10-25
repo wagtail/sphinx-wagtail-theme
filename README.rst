@@ -170,34 +170,27 @@ The ``t3SphinxThemeRtd`` is primarily a `Sass <http://sass-lang.com/>`__ project
 requires a few other Sass libraries. We are using yarn to
 manage these dependencies and Sass to build the css. The good news is that there is
 a nice set of `Grunt <http://gruntjs.com/>`__ operations that will not only load
-these dependecies, but watch for changes, rebuild the sphinx demo docs and build
+these dependencies, but watch for changes, rebuild the sphinx demo docs and build
 a distributable version of the theme. The bad news is this means you'll need to
 set up your environment similar to that of a front-end developer (versus that of
-a python developer). That means installing `Node <https://nodejs.org/>`__
-and `Ruby <https://www.ruby-lang.org/>`__.
+a python developer). That means installing `Node <https://nodejs.org/>`__.
 
 Setup minimal development environment
 -------------------------------------
 
-1. Install Ruby
+1. Install Node
 
-2. Install Sass::
-
-      gem install sass
-
-3. Install Node
-
-4. Install Yarn::
+2. Install Yarn::
 
       npm install yarn
 
-5. Install project dependencies::
+3. Install project dependencies::
 
       yarn install
 
-6. Compile::
+4. Compile::
 
-      ./node_modules/.bin/grunt
+      yarn run default
 
 Use local theme
 ---------------
