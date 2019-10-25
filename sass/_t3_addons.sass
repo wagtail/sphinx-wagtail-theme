@@ -152,21 +152,22 @@ em
 // captions of figures
 
 .rst-content
-  p.caption
-    &::before
-      content: "Figure: "
-    font-size: 14px
-    line-height: 18px
-    width: 60%
-    margin: 0
-    margin-top: 0.25em
-    padding: 0
-    font-weight: normal
-    font-style: normal
-    color: #000
-    .caption-text
+  .figure
+    p.caption
+      &::before
+        content: "Figure: "
+      font-size: 14px
+      line-height: 18px
+      width: 60%
+      margin: 0
+      margin-top: 0.25em
+      padding: 0
+      font-weight: normal
       font-style: normal
-      color: #000000
+      color: #000
+      .caption-text
+        font-style: normal
+        color: #000000
 
 // field-list: move content to the top of the table cell
 
