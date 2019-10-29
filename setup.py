@@ -13,7 +13,7 @@ setup(
     url='https://github.com/TYPO3-Documentation/t3SphinxThemeRtd',
     license='MIT',
     author='Martin Bless',
-    author_email='martin@mbless.de',
+    author_email='martin.bless@mbless.de',
     description='Docs.TYPO3.Org theme for Sphinx, starting 2015.',
     long_description=open('README.rst').read(),
     zip_safe=False,
