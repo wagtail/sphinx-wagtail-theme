@@ -658,3 +658,13 @@ a:visited .xref.std-term
 // https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/101
 abbr[title]
   text-decoration: none
+
+
+// 2019-10-29
+// https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/136
+.rst-content
+  dl:not(.docutils)
+    dt
+      &:before
+        color: hsl(120, 100%, 32%)
+      border-top: solid 4px hsl(120, 100%, 32%)
