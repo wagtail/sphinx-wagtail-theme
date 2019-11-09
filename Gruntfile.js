@@ -1,3 +1,5 @@
+const sass = require('node-sass');
+
 module.exports = function(grunt) {
   grunt.initConfig({
     open : {
@@ -59,6 +61,7 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
+        implementation: sass,
         sourceMap: true,
         includePaths: [
           'node_modules/bourbon/dist',
