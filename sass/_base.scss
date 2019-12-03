@@ -1,0 +1,13 @@
+body {
+    font-family: $font-family-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $text-color;
+    text-align: left;
+    background-color: $background-color;
+}
+code,
+pre {
+    font-family: $font-family-monospace;
+}

@@ -6,11 +6,9 @@
 {%- else %}
   {%- set titlesuffix = "" -%}
 {%- endif -%}
-{%- set logo = "img/typo3-documentation.png" -%}
+{%- set logo = "img/typo3-logo.svg" -%}
 {%- set urlTypo3Documentation = "https://docs.typo3.org" -%}
-{#- set css_files = css_files + ["http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700"] -#}
 {%- set css_files = css_files + ['_static/jquery-ui/jquery-ui.min.css'] -%}
-{%- set css_files = css_files + ['_static/css/t3more.css'] -%}
 {%- set script_files = script_files + ['_static/jquery-ui/jquery-ui.min.js'] -%}
 {%- set script_files = script_files + ["_static/js/theme.js"] -%}
 {%- if pagename == "search" -%}
@@ -94,109 +92,128 @@
   {%- block extrahead %} {% endblock %}
   {#- Keep modernizr in head - http://modernizr.com/docs/#installing #}
   <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
+
+  {% if theme_docstypo3org -%}
+    <!-- UNIVERSE BAR START -->
+    <script src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/webcomponents-loader.js"></script>
+    <script type="module" src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/typo3-universe.js"></script>
+    <!-- UNIVERSE BAR END -->
+  {% endif %}
+
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body>
 
-  <!--#include file="/header.shtml"-->
-
-  <div class="wy-grid-for-nav">
-
-    {# SIDE NAV, TOGGLES ON MOBILE #}
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        {% block sidebartitle %}
-
-        <ul class="sidebartop">
-
-          <li class="docsite">
-            <a href="{{ urlTypo3Documentation }}" title="TYPO3 Documentation"><img src="{{ pathto('_static/' + logo, 1) }}" alt="TYPO3 Documentation Logo" class="logo" /></a>
-          </li>
-
-        {%- if not theme_is_homepage -%}
-          <li class="project">
-            <a href="{{ pathto(master_doc) }}">
-              {{ project|e }}
-              {%- if release -%}
-                <br>{{ release|e }}
-              {%- elif version -%}
-                <br>{{ version|e }}
-              {%- endif -%}
-            </a>
-          </li>
-
-          {%- if 0 -%}
-            <li class="nolink">
-              For example: Help
-            </li>
-          {%- endif -%}
-
-          {%- if builder == 'html' %}
-          <li class="nolink search">
-            {%- include "searchbox.html" -%}
-          </li>
-          {%- endif %}
-
-        {%- endif -%}
-
-        </ul>
-
-        {% endblock %}
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        {% block menu %}
-          {% set toctree = toctree(maxdepth=8, collapse=False, includehidden=True) %}
-          {% if toctree %}
-              {{ toctree }}
-          {% else %}
-              <!-- Local TOC -->
-              <div class="local-toc">{{ toc }}</div>
-          {% endif %}
-        {% endblock %}
-      </div>
-
-      {% include "versions.html" %}
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="{{ pathto(master_doc) }}">{{ project }}</a>
-      </nav>
-
-
-      {# PAGE CONTENT #}
-      <div class="wy-nav-content">
-        <div class="rst-content">
-
-          {% if theme_docstypo3org -%}
-          <!--# include virtual="/includes/header.html" -->
-          {% endif %}
-
-          {% include "breadcrumbs.html" %}
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody" class="toBeIndexed">
-            {% block body %}{% endblock %}
-           </div><!-- /.toBeIndexed -->
-          </div>
-          {% include "footer.html" %}
-
-          {% if theme_docstypo3org -%}
-          <!--# include virtual="/includes/footer.html" -->
-          {% endif %}
-
+  <div class="page">
+    {% if theme_docstypo3org -%}
+      <div class="page-topbar">
+        <div class="page-topbar-inner">
+          <!-- UNIVERSE BAR START -->
+          <typo3-universe active="documentation">
+              <div style="display: block; height: 44px; background-color: #313131;"></div>
+          </typo3-universe>
+          <!-- UNIVERSE BAR END -->
         </div>
       </div>
+    {% endif %}
+    <div class="page-header">
+      <div class="page-header-inner">
+        <a href="{{ urlTypo3Documentation }}" title="TYPO3 Documentation" class="logo">
+          <img src="{{ pathto('_static/' + logo, 1) }}" width="484" height="130" alt="TYPO3 Logo" class="logo-image" />
+        </a>
+      </div>
+    </div>
 
-    </section>
+    {% if theme_docstypo3org -%}
+    <!--# include virtual="/includes/header.html" -->
+    {% endif %}
+
+    <div class="page-main">
+      <div class="page-main-inner">
+
+        <div class="page-main-navigation">
+            <nav>
+              {% block sidebartitle %}
+                <div class="sidebartop">
+                  <ul class="sidebartop">
+                    {%- if not theme_is_homepage -%}
+                      <li class="project">
+                        <a href="{{ pathto(master_doc) }}">
+                          {{ project|e }}
+                          {%- if release -%}
+                            <br>{{ release|e }}
+                          {%- elif version -%}
+                            <br>{{ version|e }}
+                          {%- endif -%}
+                        </a>
+                      </li>
+                      {%- if 0 -%}
+                        <li class="nolink">
+                          For example: Help
+                        </li>
+                      {%- endif -%}
+                      {%- if builder == 'html' %}
+                        <li class="nolink search">
+                          {%- include "searchbox.html" -%}
+                        </li>
+                      {%- endif %}
+                    {%- endif -%}
+                  </ul>
+                </div>
+              {% endblock %}
+    
+              <div class="toc" role="navigation" aria-label="main navigation">
+                {% block menu %}
+                  {% set toctree = toctree(maxdepth=8, collapse=true, includehidden=True) %}
+                  {% if toctree %}
+                      {{ toctree }}
+                  {% else %}
+                      <!-- Local TOC -->
+                      <div class="local-toc">{{ toc }}</div>
+                  {% endif %}
+                {% endblock %}
+              </div>
+    
+              {% include "versions.html" %}
+            </nav>
+    
+          <section>
+            {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+            <nav role="navigation" aria-label="top navigation">
+              <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+              <a href="{{ pathto(master_doc) }}">{{ project }}</a>
+            </nav>
+          </section>
+        </div>
+        <div class="page-main-content">
+          <div class="breadcrumb">
+            {% include "breadcrumbs.html" %}
+          </div>
+          <div class="rst-content">
+            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+              <div itemprop="articleBody">
+                {% block body %}{% endblock %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {% if theme_docstypo3org -%}
+    <!--# include virtual="/includes/footer.html" -->
+    {% endif %}
+
+    <div class="page-footer">
+      <div class="page-footer-inner">
+        {% include "footer.html" %}
+      </div>
+    </div>
 
   </div>
 
   {% if not embedded %}
-
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'{{ url_root }}',
