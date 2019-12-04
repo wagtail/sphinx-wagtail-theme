@@ -2,238 +2,225 @@
 {%- set url_root = pathto('', 1) -%}
 {%- if url_root == '#' %}{% set url_root = '' %}{% endif -%}
 {%- if not embedded and docstitle %}
-  {%- set titlesuffix = " &mdash; "|safe + docstitle|e -%}
+    {%- set titlesuffix = " &mdash; "|safe + docstitle|e -%}
 {%- else %}
-  {%- set titlesuffix = "" -%}
+    {%- set titlesuffix = "" -%}
 {%- endif -%}
 {%- set logo = "img/typo3-logo.svg" -%}
 {%- set urlTypo3Documentation = "https://docs.typo3.org" -%}
 {%- set css_files = css_files + ["_static/css/webfonts.css"] -%}
 {%- set script_files = script_files + ["_static/js/theme.min.js"] -%}
 {%- if pagename == "search" -%}
-  {%- set script_files = script_files + ['_static/js/t3autocomplete2.min.js'] %}
+    {%- set script_files = script_files + ['_static/js/t3autocomplete2.min.js'] %}
 {%- else -%}
-  {%- set script_files = script_files + ['_static/js/t3autocomplete.min.js'] %}
+    {%- set script_files = script_files + ['_static/js/t3autocomplete.min.js'] %}
 {%- endif -%}
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
-  <meta charset="utf-8"/>
-  {%- if 0 -%}
-    {%- include "var_dump.html" -%}
-  {%- endif -%}
-  {{ metatags }}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="book-version"      content="{{ version|striptags|e }}"/>
-  <meta name="book-release"      content="{{ release|striptags|e }}"/>
-  <meta name="docsearch:name"    content="{{ project|striptags|e }}" />
-  <meta name="docsearch:version" content="{{ release|striptags|e }}" />
-  <meta name="docsearch:package_type" content="{{ package_type|striptags|e }}" />
+    <meta charset="utf-8" />
+    {%- if 0 -%}
+        {%- include "var_dump.html" -%}
+    {%- endif -%}
+    {{ metatags }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="book-version" content="{{ version|striptags|e }}" />
+    <meta name="book-release" content="{{ release|striptags|e }}" />
+    <meta name="docsearch:name" content="{{ project|striptags|e }}" />
+    <meta name="docsearch:version" content="{{ release|striptags|e }}" />
+    <meta name="docsearch:package_type" content="{{ package_type|striptags|e }}" />
 
+    {% block htmltitle %}
+        <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+    {% endblock %}
+    {% if favicon %}
+        <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
+    {% endif %}
+    {% if use_opensearch %}
+        <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}" />
+    {% endif %}
 
-  {% block htmltitle %}
-  <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
-  {% endblock %}
-
-  {# FAVICON #}
-  {% if favicon %}
-    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
-  {% endif %}
-
-  {# CSS #}
-
-  {% if use_opensearch %}
-    <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
-  {% endif %}
-
-  {# RTD hosts this file, so just load on non RTD builds #}
-
-  {% if not READTHEDOCS %}
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  {% endif %}
+    {% for cssfile in css_files %}
+        <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+    {% endfor %}
+    {% for cssfile in extra_css_files %}
+        <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+    {% endfor %}
 
-  {% for cssfile in css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-  {% endfor %}
+    {%- block linktags %}
+        {%- if hasdoc('about') %}
+            <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+        {%- endif %}
+        {%- if hasdoc('genindex') %}
+            <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+        {%- endif %}
+        {%- if hasdoc('search') %}
+            <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+        {%- endif %}
+        {%- if hasdoc('copyright') %}
+            <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+        {%- endif %}
+        <link rel="top" title="{{ docstitle|e }}" href="{{ pathto(pagename) }}" />
 
-  {% for cssfile in extra_css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
-  {% endfor %}
+        {%- if parents %}
+            <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}" />
+        {%- endif %}
+        {%- if next %}
+            <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+        {%- endif %}
+        {%- if prev %}
+            <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+        {%- endif %}
+    {%- endblock %}
+    {%- block extrahead %}{% endblock %}
 
-  {%- block linktags %}
-    {%- if hasdoc('about') %}
-        <link rel="author" title="{{ _('About these documents') }}"
-              href="{{ pathto('about') }}"/>
-    {%- endif %}
-    {%- if hasdoc('genindex') %}
-        <link rel="index" title="{{ _('Index') }}"
-              href="{{ pathto('genindex') }}"/>
-    {%- endif %}
-    {%- if hasdoc('search') %}
-        <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}"/>
-    {%- endif %}
-    {%- if hasdoc('copyright') %}
-        <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}"/>
-    {%- endif %}
-    <link rel="top" title="{{ docstitle|e }}" href="{{ pathto(pagename) }}"/>
-    {%- if parents %}
-        <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}"/>
-    {%- endif %}
-    {%- if next %}
-        <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}"/>
-    {%- endif %}
-    {%- if prev %}
-        <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
-    {%- endif %}
-  {%- endblock %}
-  {%- block extrahead %} {% endblock %}
-  {#- Keep modernizr in head - http://modernizr.com/docs/#installing #}
-  <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
+    <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 
-  {% if theme_docstypo3org -%}
-    <!-- UNIVERSE BAR START -->
-    <script src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/webcomponents-loader.js"></script>
-    <script type="module" src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/typo3-universe.js"></script>
-    <!-- UNIVERSE BAR END -->
-  {% endif %}
+    {% if theme_docstypo3org -%}
+        <!-- UNIVERSE BAR START -->
+        <script src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/webcomponents-loader.js"></script>
+        <script type="module" src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/typo3-universe.js"></script>
+        <!-- UNIVERSE BAR END -->
+    {% endif %}
 
 </head>
 
 <body>
 
-  <div class="page">
-    {% if theme_docstypo3org -%}
-      <div class="page-topbar">
-        <div class="page-topbar-inner">
-          <!-- UNIVERSE BAR START -->
-          <typo3-universe active="documentation">
-              <div style="display: block; height: 44px; background-color: #313131;"></div>
-          </typo3-universe>
-          <!-- UNIVERSE BAR END -->
-        </div>
-      </div>
-    {% endif %}
-    <div class="page-header">
-      <div class="page-header-inner">
-        <a href="{{ urlTypo3Documentation }}" title="TYPO3 Documentation" class="logo">
-          <img src="{{ pathto('_static/' + logo, 1) }}" width="484" height="130" alt="TYPO3 Logo" class="logo-image" />
-        </a>
-      </div>
-    </div>
-
-    {% if theme_docstypo3org -%}
-    <!--# include virtual="/includes/header.html" -->
-    {% endif %}
-
-    <div class="page-main">
-      <div class="page-main-inner">
-
-        <div class="page-main-navigation">
-            <nav>
-              {% block sidebartitle %}
-                <div class="sidebartop">
-                  <ul class="sidebartop">
-                    {%- if not theme_is_homepage -%}
-                      <li class="project">
-                        <a href="{{ pathto(master_doc) }}">
-                          {{ project|e }}
-                          {%- if release -%}
-                            <br>{{ release|e }}
-                          {%- elif version -%}
-                            <br>{{ version|e }}
-                          {%- endif -%}
-                        </a>
-                      </li>
-                      {%- if 0 -%}
-                        <li class="nolink">
-                          For example: Help
-                        </li>
-                      {%- endif -%}
-                      {%- if builder == 'html' %}
-                        <li class="nolink search">
-                          {%- include "searchbox.html" -%}
-                        </li>
-                      {%- endif %}
-                    {%- endif -%}
-                  </ul>
+    <div class="page">
+        {% if theme_docstypo3org -%}
+            <div class="page-topbar">
+                <div class="page-topbar-inner">
+                    <!-- UNIVERSE BAR START -->
+                    <typo3-universe active="documentation">
+                        <div style="display: block; height: 44px; background-color: #313131;"></div>
+                    </typo3-universe>
+                    <!-- UNIVERSE BAR END -->
                 </div>
-              {% endblock %}
-
-              <div class="toc" role="navigation" aria-label="main navigation">
-                {% block menu %}
-                  {% set toctree = toctree(maxdepth=8, collapse=true, includehidden=True) %}
-                  {% if toctree %}
-                      {{ toctree }}
-                  {% else %}
-                      <!-- Local TOC -->
-                      <div class="local-toc">{{ toc }}</div>
-                  {% endif %}
-                {% endblock %}
-              </div>
-
-              {% include "versions.html" %}
-            </nav>
-
-          <section>
-            {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-            <nav role="navigation" aria-label="top navigation">
-              <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-              <a href="{{ pathto(master_doc) }}">{{ project }}</a>
-            </nav>
-          </section>
-        </div>
-        <div class="page-main-content">
-          <div class="breadcrumb">
-            {% include "breadcrumbs.html" %}
-          </div>
-          <div class="rst-content">
-            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-              <div itemprop="articleBody">
-                {% block body %}{% endblock %}
-              </div>
             </div>
-          </div>
+        {% endif %}
+        <div class="page-header">
+            <div class="page-header-inner">
+                <a href="{{ urlTypo3Documentation }}" title="TYPO3 Documentation" class="logo">
+                    <img src="{{ pathto('_static/' + logo, 1) }}" width="484" height="130" alt="TYPO3 Logo" class="logo-image" />
+                </a>
+            </div>
         </div>
 
-      </div>
+        {% if theme_docstypo3org -%}
+            <!--# include virtual="/includes/header.html" -->
+        {% endif %}
+
+        <div class="page-main">
+            <div class="page-main-inner">
+
+                <div class="page-main-navigation">
+                    <nav>
+                        {% block sidebartitle %}
+                            <div class="sidebartop">
+                                <ul class="sidebartop">
+                                    {%- if not theme_is_homepage -%}
+                                        <li class="project">
+                                            <a href="{{ pathto(master_doc) }}">
+                                                {{ project|e }}
+                                                {%- if release -%}
+                                                    <br>{{ release|e }}
+                                                {%- elif version -%}
+                                                    <br>{{ version|e }}
+                                                {%- endif -%}
+                                            </a>
+                                        </li>
+                                        {%- if 0 -%}
+                                            <li class="nolink">
+                                                For example: Help
+                                            </li>
+                                        {%- endif -%}
+                                        {%- if builder == 'html' %}
+                                            <li class="nolink search">
+                                                {%- include "searchbox.html" -%}
+                                            </li>
+                                        {%- endif %}
+                                    {%- endif -%}
+                                </ul>
+                            </div>
+                        {% endblock %}
+
+                        <div class="toc" role="navigation" aria-label="main navigation">
+                            {% block menu %}
+                                {% set toctree = toctree(maxdepth=8, collapse=true, includehidden=True) %}
+                                {% if toctree %}
+                                    {{ toctree }}
+                                {% else %}
+                                    <!-- Local TOC -->
+                                    <div class="local-toc">{{ toc }}</div>
+                                {% endif %}
+                            {% endblock %}
+                        </div>
+
+                        {% include "versions.html" %}
+                    </nav>
+
+                    <section>
+                        {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+                        <nav role="navigation" aria-label="top navigation">
+                            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                            <a href="{{ pathto(master_doc) }}">{{ project }}</a>
+                        </nav>
+                    </section>
+                </div>
+                <div class="page-main-content">
+                    <div class="breadcrumb">
+                        {% include "breadcrumbs.html" %}
+                    </div>
+                    <div class="rst-content">
+                        <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                            <div itemprop="articleBody">
+                                {% block body %}{% endblock %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        {% if theme_docstypo3org -%}
+            <!--# include virtual="/includes/footer.html" -->
+        {% endif %}
+
+        <div class="page-footer">
+            <div class="page-footer-inner">
+                {% include "footer.html" %}
+            </div>
+        </div>
+
     </div>
 
-    {% if theme_docstypo3org -%}
-    <!--# include virtual="/includes/footer.html" -->
+    {% if not embedded %}
+        <script type="text/javascript">
+            var DOCUMENTATION_OPTIONS = {
+                URL_ROOT: '{{ url_root }}',
+                VERSION: '{{ release|e }}',
+                COLLAPSE_INDEX: false,
+                FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
+                HAS_SOURCE: {{ has_source| lower }}
+            };
+        </script>
+        {%- for scriptfile in script_files %}
+            <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+        {%- endfor %}
     {% endif %}
 
-    <div class="page-footer">
-      <div class="page-footer-inner">
-        {% include "footer.html" %}
-      </div>
-    </div>
+    {%- block scripts2 %} {% endblock -%}
+    {%- block footer %} {% endblock %}
 
-  </div>
-
-  {% if not embedded %}
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'{{ url_root }}',
-            VERSION:'{{ release|e }}',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'{{ '' if no_search_suffix else file_suffix }}',
-            HAS_SOURCE:  {{ has_source|lower }}
-        };
-    </script>
-    {%- for scriptfile in script_files %}
-      <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
-    {%- endfor %}
-  {% endif %}
-
-  {%- block scripts2 %} {% endblock -%}
-  {%- block footer %} {% endblock %}
-
-  {%- if theme_add_piwik -%}
-    <script type="text/javascript" id="idPiwikScript" src="/js/piwik.js" ></script>
-  {%- else -%}
-    <script type="text/javascript" id="idPiwikScriptPlaceholder"></script>
-  {%- endif -%}
+    {%- if theme_add_piwik -%}
+        <script type="text/javascript" id="idPiwikScript" src="/js/piwik.js"></script>
+    {%- else -%}
+        <script type="text/javascript" id="idPiwikScriptPlaceholder"></script>
+    {%- endif -%}
 </body>
+
 </html>
