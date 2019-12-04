@@ -21,11 +21,10 @@
 }
 .page-main {
     flex-grow: 1;
-    overflow: hidden;
 }
 .page-main-inner {
-    max-width: 70rem;
-    width: 100%;
+    max-width: 100%;
+    width: 70rem;
     margin: 0 auto;
     padding: 0 1.25rem;
     display: flex;
