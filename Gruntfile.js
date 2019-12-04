@@ -1,9 +1,25 @@
-const fs = require('fs');
-const rimraf = require('rimraf');
 const path = require('path');
 const sass = require('node-sass');
 
 module.exports = function (grunt) {
+
+  /**
+   * Grunt task for modernizr
+   */
+  grunt.registerMultiTask("modernizr", "Respond to your user’s browser features.", function () {
+    var options = this.options(),
+      done = this.async(),
+      modernizr = require("modernizr"),
+      dest = this.data.dest;
+    modernizr.build(options, function (output) {
+      grunt.file.write(dest, output);
+      done();
+    });
+  });
+
+  /**
+   * Project configuration.
+   */
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -22,12 +38,6 @@ module.exports = function (grunt) {
             cwd: 'fonts',
             src: ['**/*'],
             dest: 't3SphinxThemeRtd/static/fonts/'
-          },
-          {
-            expand: true,
-            cwd: 'node_modules/jquery/dist',
-            src: ['**/*'],
-            dest: 't3SphinxThemeRtd/static/js/'
           }
         ]
       }
@@ -56,6 +66,55 @@ module.exports = function (grunt) {
       }
     },
 
+    // modernizr
+    modernizr: {
+      main: {
+        'dest': 't3SphinxThemeRtd/static/js/modernizr.min.js',
+        'options': {
+          'options': [
+            'domPrefixes',
+            'prefixes',
+            'addTest',
+            'hasEvent',
+            'mq',
+            'prefixedCSSValue',
+            'testAllProps',
+            'testProp',
+            'testStyles',
+            'setClasses'
+          ],
+          'feature-detects': [
+            'custom-elements',
+            'history',
+            'pointerevents',
+            'postmessage',
+            'webgl',
+            'websockets',
+            'css/animations',
+            'css/columns',
+            'css/flexbox',
+            'elem/picture',
+            'img/sizes',
+            'img/srcset',
+            'workers/webworkers'
+          ]
+        }
+      }
+    },
+
+    // uglify
+    uglify: {
+      options: {
+        output: {
+          comments: false
+        }
+      },
+      modernizr: {
+        src: 't3SphinxThemeRtd/static/js/modernizr.min.js',
+        dest: 't3SphinxThemeRtd/static/js/modernizr.min.js'
+      },
+    },
+
     // exec
     exec: {
       build_sphinx: {
@@ -68,17 +127,6 @@ module.exports = function (grunt) {
           + '-c make_singlehtml 0 '
           + '-c jobfile /PROJECT/jobfile.json '
           + ';'
-      },
-      build_symlink: {
-        command: function () {
-          var source = 't3SphinxThemeRtd/static';
-          var target = 'demo_docs/build/Result/project/0.0.0/_static';
-          rimraf.sync(target);
-          fs.symlink(path.resolve(source), path.resolve(target), function (error) {
-            console.log(error || "Symlink: " + source + ' => ' + target);
-          });
-          return 'echo Done';
-        }
       }
     },
 
@@ -103,9 +151,7 @@ module.exports = function (grunt) {
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
         files: [
-          't3SphinxThemeRtd/**/.py',
-          "t3SphinxThemeRtd/**/.html",
-          "t3SphinxThemeRtd/**/.conf",
+          't3SphinxThemeRtd/**/*',
           'demo_docs/**/*.rst',
           'demo_docs/**/*.py',
         ],
@@ -122,21 +168,22 @@ module.exports = function (grunt) {
 
   });
 
+  /**
+   * Load tasks
+   */
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-stylelint');
 
-  grunt.registerTask('default', [
-    'clean',
-    'copy',
-    'stylelint',
-    'sass'
-  ]);
-  grunt.registerTask('build', [
-    'default',
-    'exec'
-  ]);
+  /**
+   * Register tasks
+   */
+  grunt.registerTask('update', ['copy', 'modernizr']);
+  grunt.registerTask('js', ['uglify']);
+  grunt.registerTask('default', ['clean', 'update', 'stylelint', 'sass', 'js']);
+  grunt.registerTask('build', ['default', 'exec']);
 };
