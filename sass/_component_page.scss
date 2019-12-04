@@ -21,6 +21,7 @@
 }
 .page-main {
     flex-grow: 1;
+    overflow: hidden;
 }
 .page-main-inner {
     max-width: 70rem;
@@ -38,6 +39,7 @@
 }
 .page-main-content {
     flex-grow: 1;
+    overflow: hidden;
 }
 .page-footer {
     color: #ffffff;
