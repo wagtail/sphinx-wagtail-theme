@@ -61,6 +61,7 @@ module.exports = function (grunt) {
       build: {
         files: {
           't3SphinxThemeRtd/static/css/theme.css': 'sass/theme.scss',
+          't3SphinxThemeRtd/static/css/webfonts.css': 'sass/webfonts.scss',
         }
       }
     },
