@@ -190,7 +190,7 @@ Setup minimal development environment
 
 4. Compile::
 
-      yarn run default
+      yarn build
 
 Use local theme
 ---------------

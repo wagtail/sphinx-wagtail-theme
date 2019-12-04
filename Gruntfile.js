@@ -7,24 +7,6 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    // open
-    open: {
-      dev: {
-        path: 'http://localhost:1919'
-      }
-    },
-
-    // connect
-    connect: {
-      server: {
-        options: {
-          port: 1919,
-          base: 'demo_docs/build/Result/project/0.0.0',
-          livereload: true
-        }
-      }
-    },
-
     // copy
     copy: {
       fonts: {
@@ -141,12 +123,10 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-stylelint');
 
   grunt.registerTask('default', [
@@ -158,11 +138,5 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'default',
     'exec'
-  ]);
-  grunt.registerTask('full', [
-    'build',
-    'connect',
-    'open',
-    'watch'
   ]);
 };
