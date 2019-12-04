@@ -113,6 +113,18 @@ module.exports = function (grunt) {
         src: 't3SphinxThemeRtd/static/js/modernizr.min.js',
         dest: 't3SphinxThemeRtd/static/js/modernizr.min.js'
       },
+      theme: {
+        src: 'js/theme.js',
+        dest: 't3SphinxThemeRtd/static/js/theme.min.js'
+      },
+      t3autocomplete: {
+        src: 'js/t3autocomplete.js',
+        dest: 't3SphinxThemeRtd/static/js/t3autocomplete.min.js'
+      },
+      t3autocomplete2: {
+        src: 'js/t3autocomplete2.js',
+        dest: 't3SphinxThemeRtd/static/js/t3autocomplete2.min.js'
+      },
     },
 
     // exec

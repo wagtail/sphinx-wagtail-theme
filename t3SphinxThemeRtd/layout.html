@@ -8,11 +8,11 @@
 {%- endif -%}
 {%- set logo = "img/typo3-logo.svg" -%}
 {%- set urlTypo3Documentation = "https://docs.typo3.org" -%}
-{%- set script_files = script_files + ["_static/js/theme.js"] -%}
+{%- set script_files = script_files + ["_static/js/theme.min.js"] -%}
 {%- if pagename == "search" -%}
-  {%- set script_files = script_files + ['_static/js/t3autocomplete2.js'] %}
+  {%- set script_files = script_files + ['_static/js/t3autocomplete2.min.js'] %}
 {%- else -%}
-  {%- set script_files = script_files + ['_static/js/t3autocomplete.js'] %}
+  {%- set script_files = script_files + ['_static/js/t3autocomplete.min.js'] %}
 {%- endif -%}
 
 <!DOCTYPE html>
