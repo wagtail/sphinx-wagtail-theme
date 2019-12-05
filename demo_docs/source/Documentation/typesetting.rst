@@ -154,7 +154,7 @@ have not gained permission.
 Example of a left-floating image
 --------------------------------
 
-.. |teaser-image-core-extension| image:: https://docs.typo3.org/services/dummyimage/code.php?x=216x1.63:1/2994ff/fff&text=core
+.. |teaser-image-core-extension| image:: https://via.placeholder.com/216/ff8700/ffffff?text=core
    :class: float-left with-shadow
    :target: https://docs.typo3.org/typo3cms/extensions/core/
    :alt: The manual of system extension 'core'
@@ -173,7 +173,7 @@ Here we are below the image and the floating has been cancelled.
 Example of a right-floating image
 ---------------------------------
 
-.. |teaser-image-css_styled_content-extension| image:: https://docs.typo3.org/services/dummyimage/code.php?x=216x1.63:1/2994ff/fff&text=css_styled_content
+.. |teaser-image-css_styled_content-extension| image:: https://via.placeholder.com/216/ff8700/ffffff?text=css_styled_content
    :class: float-right with-shadow
    :target: https://docs.typo3.org/typo3cms/extensions/css_styled_content/
    :alt: The manual of system extension 'css_styled_content'
