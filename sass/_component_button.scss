@@ -1,0 +1,11 @@
+.btn {
+    display: inline-flex;
+}
+.btn-icon {
+    &:first-child {
+        margin-right: ($spacer / 4);
+    }
+    &:last-child {
+        margin-left: ($spacer / 4);
+    }
+}

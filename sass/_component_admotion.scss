@@ -1,0 +1,76 @@
+//
+// Colors are matching Read the Docs
+// DO NOT ADJUST
+//
+// Similar:
+// - Admotion
+// - Bignums
+//
+.admonition {
+    background-color: theme-color-level('dark', -11);
+    margin: $spacer 0;
+    padding: $spacer;
+    box-shadow: $box-shadow-sm;
+    border-radius: $border-radius;
+    overflow: hidden;
+    *:last-child {
+        margin-bottom: 0;
+    }
+}
+.admonition-title {
+    display: block;
+    padding: ($spacer / 2) $spacer;
+    margin: -$spacer;
+    margin-bottom: $spacer;
+    color: color-yiq(theme-color('dark'));
+    background-color: theme-color('dark');
+    &:before {
+        @include fa-icon;
+        content: fa-content($fa-var-info-circle);
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: ($spacer / 2);
+    }
+}
+.admonition {
+    &.hint,
+    &.note {
+        background-color: theme-color-level('info', -11);
+        .admonition-title {
+            color: color-yiq(theme-color('info'));
+            background-color: theme-color('info');
+        }
+    }
+    &.caution,
+    &.warning,
+    &.attention {
+        background-color: theme-color-level('warning', -11);
+        .admonition-title {
+            color: color-yiq(theme-color('warning'));
+            background-color: theme-color('warning');
+            &:before {
+                content: fa-content($fa-var-exclamation-triangle);
+            }
+        }
+    }
+    &.danger,
+    &.error {
+        background-color: theme-color-level('danger', -11);
+        .admonition-title {
+            color: color-yiq(theme-color('danger'));
+            background-color: theme-color('danger');
+            &:before {
+                content: fa-content($fa-var-exclamation-triangle);
+            }
+        }
+    }
+    &.important,
+    &.seealso,
+    &.tip {
+        background-color: theme-color-level('success', -11);
+        .admonition-title {
+            color: color-yiq(theme-color('success'));
+            background-color: theme-color('success');
+        }
+    }
+}

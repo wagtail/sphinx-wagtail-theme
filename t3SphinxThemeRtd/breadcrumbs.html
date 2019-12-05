@@ -1,55 +1,54 @@
 <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="{{ pathto(master_doc) }}">Docs</a> &raquo;</li>
-      {%- for doc in parents %}
-          <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
-      {%- endfor %}
-    <li>{{ title }}</li>
-      <li class="wy-breadcrumbs-aside">
-        {%- if pagename != "search" %}
-          {%- if theme_github_repository and theme_github_branch %}
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ pathto(master_doc) }}">Docs</a></li>
+        {%- for doc in parents %}
+            <li class="breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+        {%- endfor %}
+        <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
+    </ol>
+
+    {%- if pagename != "search" %}
+        {%- if theme_github_repository and theme_github_branch %}
             {%- if theme_github_sphinx_locale %}
-              {%- set localizationprefix = "Localization." + theme_github_sphinx_locale + "/" %}
+                {%- set localizationprefix = "Localization." + theme_github_sphinx_locale + "/" %}
             {%- else %}
-              {%- set localizationprefix = "" %}
+                {%- set localizationprefix = "" %}
             {%- endif %}
 
             {%- if theme_path_to_documentation_dir %}
-                <a id="EditMeOnGitHub" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/{{ theme_path_to_documentation_dir|e }}/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|replace('.rst.rst', '.rst')|e }}" target="_blank" class="fa fa-github"> Edit on GitHub</a>
+                <a id="EditMeOnGitHub" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/{{ theme_path_to_documentation_dir|e }}/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|replace('.rst.rst', '.rst')|e }}" target="_blank">
+                    <span class="btn-icon"><span class="fab fa-github"></span></span>
+                    <span class="btn-text">Edit on GitHub</span>
+                </a>
             {%- else %}
-                <a id="EditMeOnGitHub" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/Documentation/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|replace('.rst.rst', '.rst')|e }}" target="_blank" class="fa fa-github"> Edit on GitHub</a>
+                <a id="EditMeOnGitHub" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/Documentation/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|replace('.rst.rst', '.rst')|e }}" target="_blank">
+                    <span class="btn-icon"><span class="fab fa-github"></span></span>
+                    <span class="btn-text">Edit on GitHub</span>
+                </a>
             {%- endif %}
 
-          {%- elif display_github and builder == 'html' %}
-            <a href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}" class="fa fa-github"> Edit on GitHub</a>
-          {%- elif display_bitbucket and builder == 'html' %}
-            <a href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}" class="fa fa-bitbucket"> Edit on Bitbucket</a>
-          {%- elif show_source and source_url_prefix %}
-            <a href="{{ source_url_prefix }}{{ pagename }}{{ source_suffix }}">View page source</a>
-          {%- elif show_source and has_source and sourcename %}
-            <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
-                <span class="fa fa-binoculars"></span>&#32;View page source
+        {%- elif display_github and builder == 'html' %}
+            <a class="btn btn-light" href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}">
+                <span class="btn-icon"><span class="fab fa-github"></span></span>
+                <span class="btn-text">Edit on GitHub</span>
             </a>
-          {%- endif %}
+        {%- elif display_bitbucket and builder == 'html' %}
+            <a class="btn btn-light" href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}">
+                <span class="btn-icon"><span class="fab fa-github"></span></span>
+                <span class="btn-text">Edit on Bitbucket</span>
+            </a>
+        {%- elif show_source and source_url_prefix %}
+            <a class="btn btn-light" href="{{ source_url_prefix }}{{ pagename }}{{ source_suffix }}">
+                <span class="btn-icon"><span class="fa fa-binoculars"></span></span>
+                <span class="btn-text">View page source</span>
+            </a>
+        {%- elif show_source and has_source and sourcename %}
+            <a class="btn btn-light" href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
+                <span class="btn-icon"><span class="fa fa-binoculars"></span></span>
+                <span class="btn-text">View page source</span>
+            </a>
         {%- endif %}
-      </li>
-  </ul>
-  {% if next or prev %}
-    <hr class="before-stealth-btn clear-both" />
-    {% if next %}
-      <a href="{{ next.link|e }}" class="stealth-btn float-right" title="Accesskey Alt(+Shift)+n">
-          <span class="stealth-btn-text">Next</span>
-          <span class="fa fa-arrow-circle-right"></span>
-      </a>
-    {% endif %}
-    {% if prev %}
-      <a href="{{ prev.link|e }}" class="stealth-btn" title="Accesskey Alt(+Shift)+p">
-          <span class="fa fa-arrow-circle-left"></span>
-          <span class="stealth-btn-text">Previous</span>
-      </a>
-    {% endif %}
-  {%- else %}
-  <hr class="clear-both"/>
-  {%- endif %}
+    {%- endif %}
 
 </div>

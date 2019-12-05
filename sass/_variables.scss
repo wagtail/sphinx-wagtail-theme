@@ -1,16 +1,18 @@
 // colors
-$text-color: #212121 !default;
-$background-color: #f2f2f2 !default;
+$primary:       #ff8700;
+$success:       #37bd74;
+$info:          #27a2fc;
+$warning:       #ff9b37;
+$danger:        #ff304f;
+
+$yiq-contrasted-threshold: 160;
 
 // fonts
-$font-family-serif: 'Source Sans Pro', sans-serif;
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
 $font-family-monospace: 'Source Code Pro', monospace;
 
-// spacing
-$spacer: 1.25rem;
-
-// radius
-$border-radius: 4px;
+// components
+$box-shadow-sm: 0 2px 2px 0 rgba(0, 0, 0, .15);
 
 // Base 16 Scheme
 $base16-base00: #212121;

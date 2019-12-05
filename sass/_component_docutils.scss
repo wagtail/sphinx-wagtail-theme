@@ -1,0 +1,49 @@
+/**
+* Misc
+*/
+.clear-both {
+    clear: both;
+}
+
+/**
+* Sections
+*/
+.section {
+    @include clearfix;
+    margin-top: ($spacer * 2);
+    margin-bottom: ($spacer * 2);
+}
+
+/**
+* Headerlink
+*/
+.headerlink {
+    position: relative;
+    font-size: .65em;
+    visibility: hidden;
+    top: -.15em;
+    &:after {
+        @include fa-icon;
+        content: fa-content($fa-var-link);
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-left: -.35em;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+*:hover > .headerlink:after {
+    visibility: visible;
+}
+
+/**
+* Tables
+*/
+table.docutils {
+    border: 0;
+    @extend .table;
+    thead {
+        @extend .thead-light;
+    }
+}

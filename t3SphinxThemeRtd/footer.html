@@ -1,17 +1,4 @@
 <footer>
-  {% if next or prev %}
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      {% if next %}
-        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="Accesskey Alt(+Shift)+n" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      {% endif %}
-      {% if prev %}
-        <a href="{{ prev.link|e }}" class="btn btn-neutral" title="Accesskey Alt(+Shift)+p" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      {% endif %}
-    </div>
-  {% endif %}
-
-  <hr/>
-
   <div class="contentinfo">
 
     {%- if show_source and has_source and sourcename %}
@@ -67,9 +54,5 @@
       </p>
     {%- endif %}
 
-
-
-
   </div>
-
 </footer>

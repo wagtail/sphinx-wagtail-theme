@@ -172,15 +172,15 @@
                     </section>
                 </div>
                 <div class="page-main-content">
-                    <div class="breadcrumb">
-                        {% include "breadcrumbs.html" %}
-                    </div>
+                    {% include "breadcrumbs.html" %}
                     <div class="rst-content">
+                        {% include "pager.html" %}
                         <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
                             <div itemprop="articleBody">
                                 {% block body %}{% endblock %}
                             </div>
                         </div>
+                        {% include "pager.html" %}
                     </div>
                 </div>
 

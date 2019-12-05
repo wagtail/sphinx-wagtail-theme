@@ -1,51 +1,25 @@
+.linenodiv,
 .highlight {
-    overflow: auto;
+    pre {
+        color: $base16-base06;
+        padding: $spacer;
+        border-radius: $border-radius;
+        background-color: $base16-base00;
+    }
 }
-.highlight,
 .linenodiv {
     pre {
-        padding: $spacer;
-        margin: 0;
-        border-radius: $border-radius;
-    }
-}
-.codeblock,
-.highlight pre,
-.linenodiv pre {
-    background-color: $base16-base00;
-    color: $base16-base06;
-}
-.highlight pre {
-    overflow: auto;
-}
-.highlighttable {
-    overflow: auto;
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    td {
-        padding: 0;
-    }
-    td.code {
-        width: 100%;
-    }
-    .linenodiv pre {
+        background-color: lighten($base16-base00, 5%);
+        border-right: 1px solid lighten($base16-base00, 10%);
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
+}
+.highlighttable {
     .highlight pre {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
-}
-.codeblock {
-    padding: 0;
-    width: 100%;
-    overflow-x: auto;
-}
-.linenodiv pre {
-    border-right: solid 1px lighten($base16-base00, 10%);
-    background-color: lighten($base16-base00, 5%) !important;
 }
 .hll { background-color: $base16-base02; }
 .c { color: $base16-base05; } /* Comment */
