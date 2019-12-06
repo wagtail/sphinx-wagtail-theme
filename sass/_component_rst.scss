@@ -58,6 +58,27 @@
     }
 
     /**
+     * Keyboard Shortcuts
+     */
+    kbd {
+        color: $body-color;
+        background-color: theme-color('light');
+        border: 1px solid theme-color-level('light', 2);
+        box-shadow: $box-shadow-sm, inset 0 0 0 2px #ffffff;
+    }
+
+    /**
+     * GUI-Label
+     */
+    .guilabel {
+        font-size: 75%;
+        padding: .25em .5em;
+        background-color: theme-color-level('info', -8);
+        color: theme-color-level('info', 3);
+        border-radius: $border-radius;
+    }
+
+    /**
      * Images
      */
     img {
