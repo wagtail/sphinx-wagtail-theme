@@ -64,6 +64,14 @@
             margin-bottom: $spacer;
         }
     }
+    .section > img,
+    .section > a > img,
+    .figure img {
+        margin-bottom: $spacer;
+    }
+    .figure {
+        display: block;
+    }
 
     /**
      * Definition Lists

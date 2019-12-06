@@ -33,9 +33,6 @@ $sqrt7: 2.6457513;
 $sqrt8: 2.8284271;
 $sqrt9: 3;
 
-// Locations
-$static-img:                          "img/";
-
 // Colors
 $background-color:                    #edf0f2;
 $section-background-color:            hsl(0, 0%, 99%);
@@ -134,7 +131,6 @@ $nav-desktop-position:                left;
 $font-awesome-dir:                    "../font/";
 $SourceCodeProPath:                   "../fonts/SourceCodePro";
 $SourceSansProPath:                   "../fonts/SourceSansPro";
-$static-img:                          "../img/";
 
 // 800px is set as default in _theme_layout.sass
 $wy-nav-content-width:                1000px;

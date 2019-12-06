@@ -15,20 +15,9 @@
 
 
 .rst-content
-  // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
-  img
-    max-width: 100%
-    height: auto !important
-
   div.figure
     margin-bottom: $base-line-height
 
-  div.figure.align-center
-    text-align: center
-
-  // Usually it's a good idea to give images some space.
-  .section > img,   .section > a > img
-    margin-bottom: $base-line-height
   // Questionable whether this is nice or not. It styles eternal links, but comes with some baggage.
   // a.reference.external:after
   //   font-family: FontAwesome
@@ -94,44 +83,6 @@
   p.caption
     @extend h2
 
-  // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
-  h1, h2, h3, h4, h5, h6, dl dt, p.caption
-    .headerlink
-      display: none
-      visibility: hidden
-      font-size: 14px
-      @extend .fa
-      &:after
-        visibility: visible
-        content: "\f0c1"
-        font-family: FontAwesome
-        display: inline-block
-    &:hover .headerlink
-      display: inline-block
-
-  // Sidebar content. You'll see at the bottom of this file I change it in mobile.
-  .sidebar
-    float: right
-    width: 40%
-    display: block
-    margin: 0 0 $base-line-height $base-line-height
-    padding: $base-line-height / 2
-    background: $table-stripe-color
-    border: solid 1px $table-border-color
-    // Sidebar content is usually less relevant, so adjust the margins and sizes.
-    p, ul, dl
-      font-size: 90%
-    .last
-      margin-bottom: 0
-    .sidebar-title
-      display: block
-      font-family: $custom-font-family
-      font-weight: bold
-      background: $table-border-color
-      padding: $base-line-height / 4 $base-line-height / 2
-      margin: -$base-line-height / 2
-      margin-bottom: $base-line-height
-      font-size: 100%
   // Sphinx can highlight searched text with ?highlighted=searchterm
   .highlighted
     background: $yellow
@@ -285,9 +236,3 @@
       @extend .fa-download
       &:before
         margin-right: 4px
-
-// Mobile specific
-+media($mobile)
-  .rst-content
-    .sidebar
-      width: 100%

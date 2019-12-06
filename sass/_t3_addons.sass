@@ -11,10 +11,6 @@
   h1, h2
     clear: both
 
-h1, h2, h3, h4, h5, h6, legend
-  margin-top: 2.0em
-  margin-bottom: 0.5em
-
 #EditMeOnGitHub
   color: white
   background-color: $typo3-key-color
@@ -109,13 +105,6 @@ td.field-body
     padding-top: $base-line-height / 2
     padding-bottom: $base-line-height / 2
 
-.with-border
-  border: 1px solid hsl(0, 0%, 85%)
-
-.with-shadow
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15)
-
-
 .section
   .sitemap
     ul
@@ -151,23 +140,7 @@ td.field-body
         margin-bottom: 0
 
 
-
-// 2017-03-10 in context of TCA manual
-
-.rst-content
-  h3
-    border-bottom: 1px solid #e2e2e2
-    padding-bottom: 0.25em
-    margin-bottom: 1em
-
-  .figure
-    > img.with-shadow
-      margin-bottom: $base-line-height/2.4
-
-
 // 2017-03-24 turn 'ul li' into buttons
-
-
 // find the other color definitions for horizbuttons in t3_wyrm_core/_alert.sass
 $horizbuttons-primary-color: $typo3-key-color
 $horizbuttons-striking-color: $purple
@@ -288,11 +261,6 @@ $horizbuttons-typo3-color: $typo3-key-color
       > a
         color: white
         font-weight: bold
-
-// 2018-01-16
-// fix: https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/56
-.cc
-  clear: both
 
 // 2018-04-27
 // https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/76
