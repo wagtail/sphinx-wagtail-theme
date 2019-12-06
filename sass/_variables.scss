@@ -1,11 +1,22 @@
 // colors
-$primary:       #ff8700;
-$success:       #37bd74;
-$info:          #27a2fc;
-$warning:       #ff9b37;
-$danger:        #ff304f;
+$primary:           #ff8700;
+$success:           #37bd74;
+$info:              #27a2fc;
+$warning:           #ff9b37;
+$danger:            #ff304f;
 
 $yiq-contrasted-threshold: 160;
+
+// code colors
+$code-color:        #ff5370;
+$code-color-file:   hsl(328, 100%, 50%);
+$code-color-html:   hsl(275, 100%, 40%);
+$code-color-js:     hsl(128, 100%, 20%);
+$code-color-method: hsl(210, 100%, 35%);
+$code-color-php:    hsl(210, 100%, 35%);
+$code-color-py:     hsl(210, 100%, 50%);
+$code-color-ts:     hsl(12, 100%, 20%);
+$code-color-yaml:   hsl(170, 80%, 30%);
 
 // fonts
 $font-family-sans-serif: 'Source Sans Pro', sans-serif;
@@ -18,19 +29,19 @@ $box-shadow-sm: 0 2px 2px 0 rgba(0, 0, 0, .15);
 $grid-gutter-width: 40px;
 
 // Base 16 Scheme
-$base16-base00: #212121;
-$base16-base01: #2e3c43;
-$base16-base02: #314549;
-$base16-base03: #546e7a;
-$base16-base04: #b2ccd6;
-$base16-base05: #eeffff;
-$base16-base06: #eeffff;
-$base16-base07: #ffffff;
-$base16-base08: #f07178;
-$base16-base09: #f78c6c;
-$base16-base0A: #ffcb6b;
-$base16-base0B: #c3e88d;
-$base16-base0C: #89ddff;
-$base16-base0D: #82aaff;
-$base16-base0E: #c792ea;
-$base16-base0F: #ff5370;
+$base16-base00:     #212121;
+$base16-base01:     #2e3c43;
+$base16-base02:     #314549;
+$base16-base03:     #546e7a;
+$base16-base04:     #b2ccd6;
+$base16-base05:     #eeffff;
+$base16-base06:     #eeffff;
+$base16-base07:     #ffffff;
+$base16-base08:     #f07178;
+$base16-base09:     #f78c6c;
+$base16-base0A:     #ffcb6b;
+$base16-base0B:     #c3e88d;
+$base16-base0C:     #89ddff;
+$base16-base0D:     #82aaff;
+$base16-base0E:     #c792ea;
+$base16-base0F:     #ff5370;

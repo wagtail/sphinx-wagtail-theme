@@ -1,0 +1,60 @@
+.rst-content {
+
+    /**
+     * Headlines
+     */
+    h3 {
+        padding-bottom: .5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, .15);
+    }
+
+    /**
+     * Code
+     */
+    tt,
+    code {
+        font-family: $font-family-monospace;
+        padding: .25em .5em;
+        font-size: 75%;
+        border-radius: $border-radius;
+        background-color: theme-color('light');
+        border: 1px solid theme-color-level('light', 1);
+    }
+    code {
+        &.file {
+            color: $code-color-file;
+        }
+        &.html {
+            color: $code-color-html;
+        }
+        &.js {
+            color: $code-color-js;
+        }
+        &.method {
+            color: $code-color-method;
+        }
+        &.php {
+            color: $code-color-php;
+        }
+        &.py-class {
+            color: $code-color-py;
+        }
+        &.ts,
+        &.typoscript {
+            color: $code-color-ts;
+        }
+        &.yaml {
+            color: $code-color-yaml;
+        }
+    }
+
+    /**
+     * Images
+     */
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: $spacer;
+    }
+}
