@@ -1,7 +1,7 @@
 :orphan: True
 
 
-.. _Copyright:
+.. _copyright:
 
 =========
 Copyright

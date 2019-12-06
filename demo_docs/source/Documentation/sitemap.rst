@@ -2,7 +2,7 @@
 
 .. only:: html
 
-   .. _Sitemap:
+   .. _sitemap:
 
    =======
    Sitemap
