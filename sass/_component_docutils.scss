@@ -47,3 +47,20 @@ table.docutils {
         @extend .thead-light;
     }
 }
+.table-responsive {
+    table.docutils {
+        margin-bottom: 0;
+    }
+}
+
+/**
+ * RST Content
+ */
+.rst-content {
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: $spacer;
+    }
+}

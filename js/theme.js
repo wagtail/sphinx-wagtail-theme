@@ -13,6 +13,17 @@ function toggleCurrent (elem) {
     parent_li.toggleClass('current');
 }
 
+function makeTablesResponsive() {
+  var tables = document.querySelectorAll('.rst-content table.docutils');
+  tables.forEach(function (table) {
+    wrapper = document.createElement('div');
+    wrapper.classList.add("table-responsive");
+    table.parentNode.appendChild(wrapper);
+    wrapper.appendChild(table);
+  });
+}
+makeTablesResponsive();
+
 $(document).ready(function() {
 
     var fillInRelatedLinks = function () {

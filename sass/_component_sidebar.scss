@@ -1,0 +1,24 @@
+.sidebar {
+    margin: 0;
+    margin-bottom: $spacer;
+    padding: $spacer;
+    border-radius: $border-radius;
+    overflow: hidden;
+    background: theme-color-level('dark', -11);
+    @include media-breakpoint-up(sm) {
+        float: right;
+        width: 18rem;
+        margin-left: $spacer;
+    }
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+.sidebar-title {
+    font-weight: bold;
+    color: color-yiq(theme-color('dark'));
+    background-color: theme-color('dark');
+    padding: $spacer;
+    margin: -$spacer;
+    margin-bottom: $spacer;
+}

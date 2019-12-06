@@ -1,3 +1,12 @@
+div[class^='highlight-'] {
+    overflow-x: auto;
+    margin-bottom: $spacer;
+    pre {
+        margin: 0;
+        display: block;
+        overflow: auto;
+    }
+}
 .linenodiv,
 .highlight {
     pre {
@@ -16,6 +25,9 @@
     }
 }
 .highlighttable {
+    td {
+        padding: 0;
+    }
     .highlight pre {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
