@@ -49,6 +49,15 @@
     }
 
     /**
+     * Literals
+     */
+    .literal-block {
+        background-color: theme-color('light');
+        border-radius: $border-radius;
+        padding: $spacer;
+    }
+
+    /**
      * Images
      */
     img {

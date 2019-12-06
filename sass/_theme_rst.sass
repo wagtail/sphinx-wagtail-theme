@@ -15,9 +15,6 @@
 
 
 .rst-content
-  div.figure
-    margin-bottom: $base-line-height
-
   // Questionable whether this is nice or not. It styles eternal links, but comes with some baggage.
   // a.reference.external:after
   //   font-family: FontAwesome
@@ -32,22 +29,7 @@
     margin-left: $base-line-height
     line-height: $base-line-height
     margin-bottom: $base-line-height
-  .literal-block, pre.literal-block
-    @extend .codeblock
-    background: transparent
-    border: 1px solid $text-code-border-color
-    color: $text-color
-    padding: 4px
-    font-family: $code-font-family
-    font-size: $code-font-size
-    line-height: $code-line-height
 
-  // Some people put tables in notes. Let's give them very basic support.
-  .admonition table
-    border-color: rgba(0,0,0,.1)
-    td, th
-      background: transparent !important
-      border-color: rgba(0,0,0,.1) !important
   .section ul li,
   .section ol li
     margin-top: $base-line-height / 2
