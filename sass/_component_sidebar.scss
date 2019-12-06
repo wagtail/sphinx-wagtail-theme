@@ -15,7 +15,7 @@
     }
 }
 .sidebar-title {
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     color: color-yiq(theme-color('dark'));
     background-color: theme-color('dark');
     padding: $spacer;

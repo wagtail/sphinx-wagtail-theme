@@ -101,7 +101,7 @@ div[class^='highlight-'] {
 .w { color: $base16-base07; } /* Text.Whitespace */
 .x { color: $base16-base06; } /* ? */
 .ge { font-style: italic; } /* Generic.Emph */
-.gh { font-weight: bold; } /* Generic.Heading */
-.gp { font-weight: bold; } /* Generic.Prompt */
-.gs { font-weight: bold; } /* Generic.Strong */
-.gu { font-weight: bold; } /* Generic.Subheading */
+.gh { font-weight: $font-weight-bold; } /* Generic.Heading */
+.gp { font-weight: $font-weight-bold; } /* Generic.Prompt */
+.gs { font-weight: $font-weight-bold; } /* Generic.Strong */
+.gu { font-weight: $font-weight-bold; } /* Generic.Subheading */

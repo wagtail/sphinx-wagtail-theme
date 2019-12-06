@@ -56,5 +56,11 @@
         max-width: 100%;
         height: auto;
         margin-bottom: $spacer;
+        &.float-left {
+            margin-right: $spacer;
+        }
+        &.float-right {
+            margin-left: $spacer;
+        }
     }
 }

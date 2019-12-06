@@ -21,6 +21,9 @@ $code-color-yaml:   hsl(170, 80%, 30%);
 // fonts
 $font-family-sans-serif: 'Source Sans Pro', sans-serif;
 $font-family-monospace: 'Source Code Pro', monospace;
+$font-weight-bold: 600;
+$headings-font-weight: $font-weight-bold;
+$headings-margin-bottom: .5em;
 
 // components
 $box-shadow-sm: 0 2px 2px 0 rgba(0, 0, 0, .15);

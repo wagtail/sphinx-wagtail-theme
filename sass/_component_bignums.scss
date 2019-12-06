@@ -25,7 +25,7 @@ $bignum-xxl:    1.5rem !default;
         min-height: (($bignum-normal * 2) + $spacer * 2);
         border-radius: $border-radius;
         > .first {
-            font-weight: bold;
+            font-weight: $font-weight-bold;
             font-size: $bignum-normal;
         }
         *:last-child {
@@ -46,7 +46,7 @@ $bignum-xxl:    1.5rem !default;
             border-radius: 50%;
             content: counter(li-counter, decimal);
             counter-increment: li-counter;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
         }
         + li {
             margin-top: $spacer;
