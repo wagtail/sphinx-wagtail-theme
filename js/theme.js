@@ -18,7 +18,7 @@ function makeTablesResponsive() {
   tables.forEach(function (table) {
     wrapper = document.createElement('div');
     wrapper.classList.add("table-responsive");
-    table.parentNode.appendChild(wrapper);
+    table.parentNode.insertBefore(wrapper, table);
     wrapper.appendChild(table);
   });
 }
