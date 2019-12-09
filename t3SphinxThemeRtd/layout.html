@@ -116,35 +116,23 @@
 
         <div class="page-main">
             <div class="page-main-inner">
-
                 <div class="page-main-navigation">
                     <nav>
                         {% block sidebartitle %}
                             <div class="sidebartop">
-                                <ul class="sidebartop">
-                                    {%- if not theme_is_homepage -%}
-                                        <li class="project">
-                                            <a href="{{ pathto(master_doc) }}">
-                                                {{ project|e }}
-                                                {%- if release -%}
-                                                    <br>{{ release|e }}
-                                                {%- elif version -%}
-                                                    <br>{{ version|e }}
-                                                {%- endif -%}
-                                            </a>
-                                        </li>
-                                        {%- if 0 -%}
-                                            <li class="nolink">
-                                                For example: Help
-                                            </li>
+                                {%- if not theme_is_homepage -%}
+                                    <a href="{{ pathto(master_doc) }}">
+                                        {{ project|e }}
+                                        {%- if release -%}
+                                            <br>{{ release|e }}
+                                        {%- elif version -%}
+                                            <br>{{ version|e }}
                                         {%- endif -%}
-                                        {%- if builder == 'html' %}
-                                            <li class="nolink search">
-                                                {%- include "searchbox.html" -%}
-                                            </li>
-                                        {%- endif %}
-                                    {%- endif -%}
-                                </ul>
+                                    </a>
+                                    {%- if builder == 'html' %}
+                                        {%- include "searchbox.html" -%}
+                                    {%- endif %}
+                                {%- endif -%}
                             </div>
                         {% endblock %}
 

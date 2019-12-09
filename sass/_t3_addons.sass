@@ -7,32 +7,7 @@
 // only 20% left for normal content. So let's try to prevent that this by
 // adding this 'clear'.
 
-+media($desktop-wider)
-  h1, h2
-    clear: both
-
-input
-  &[type="text"]
-    font-size: 100%
-
-// give content in tables the freedom to wrap
-.wy-table
-  thead
-    white-space: normal
-
-.wy-table-responsive
-  table
-    td, th
-      white-space: normal
-
-.rst-content
-  table.field-list
-    td > strong,
-    .field-name
-      white-space: normal
-
 // captions of figures
-
 .rst-content
   .figure
     p.caption
@@ -80,40 +55,6 @@ td.field-body
     margin: 0
     padding-top: $base-line-height / 2
     padding-bottom: $base-line-height / 2
-
-.section
-  .sitemap
-    ul
-      border-left: 2px solid hsl(0, 0%, 80%)
-      li
-        margin-bottom: 0
-        margin-top: 0
-        list-style: none
-        li
-          list-style: none
-          li
-            list-style: none
-            li
-              list-style: none
-              li
-                list-style: none
-                li
-                  list-style: none
-                  li
-                    list-style: none
-                    li
-                      list-style: none
-
-
-// implement class 'compact-list' to remove top- and bottom-margins
-.rst-content
-  .section
-    ul.compact-list,
-    ol.compact-list,
-    div.compact-list
-      li
-        margin-top: 0
-        margin-bottom: 0
 
 
 // 2017-03-24 turn 'ul li' into buttons

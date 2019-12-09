@@ -49,6 +49,8 @@
         flex-shrink: 0;
         width: 14rem;
         margin-right: $grid-gutter-width;
+        padding-right: ($grid-gutter-width / 2);
+        border-right: 1px solid rgba(0, 0, 0, .15);
     }
 }
 .page-main-content {
