@@ -1,5 +1,57 @@
 .toc {
+    margin: $spacer 0;
     display: block;
+    .caption {
+        font-weight: bold;
+        margin: 0;
+    }
+    a {
+        position: relative;
+        display: block;
+        padding: ($spacer / 4) $spacer;
+        line-height: 1.25;
+        padding-left: ($spacer * 2);
+        color: inherit;
+        &:hover {
+            text-decoration: none;
+            color: color-yiq(theme-color('light'));
+            background-color: theme-color('light');
+        }
+        .toctree-expand {
+            position: absolute;
+            top: (($spacer / 4) + ($font-size-base * 1.25 / 2));
+            left: ($spacer / 2);
+            transform: translate(0, -50%);
+            height: 1em;
+            width: 1em;
+            display: block;
+            background-color: #ff0000;
+        }
+    }
+    ul {
+        padding-left: ($spacer * 1.5);
+        list-style-type: none;
+    }
+    li {
+        border-radius: $border-radius;
+        overflow: hidden;
+    }
+    > ul {
+        padding-left: 0;
+        li {
+            &.current {
+                background-color: theme-color-level('light', 1);
+            }
+        }
+        .current {
+            > ul {
+                display: block !important;
+            }
+        }
+    }
+    > ul > li ul {
+        display: none;
+    }
 }
 .toc-backref {
     color: inherit;

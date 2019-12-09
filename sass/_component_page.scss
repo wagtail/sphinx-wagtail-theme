@@ -16,6 +16,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     background: #ffffff;
+    box-shadow: $box-shadow-sm;
 }
 .page-header-inner {
     max-width: 100%;
@@ -43,6 +44,8 @@
     }
 }
 .page-main-navigation {
+    padding-top: ($spacer * 2);
+    padding-bottom: ($spacer * 2);
     width: 100%;
     @include media-breakpoint-up(lg) {
         flex-grow: 0;
@@ -54,6 +57,8 @@
     }
 }
 .page-main-content {
+    padding-top: ($spacer * 2);
+    padding-bottom: ($spacer * 2);
     width: 100%;
     min-width: 0;
     flex-grow: 1;

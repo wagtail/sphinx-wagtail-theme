@@ -5,22 +5,38 @@ if (typeof window.T3Docs === 'undefined') {
 	window.T3Docs = {};
 }
 
-function toggleCurrent (elem) {
-    var parent_li = elem.closest('li');
-    parent_li.siblings('li.current').removeClass('current');
-    parent_li.siblings().find('li.current').removeClass('current');
-    parent_li.find('> ul li.current').removeClass('current');
-    parent_li.toggleClass('current');
+function toggleCurrent(event) {
+  event.preventDefault();
+  console.log(event);
+  // var parent_li = elem.closest('li');
+  // parent_li.siblings('li.current').removeClass('current');
+  // parent_li.siblings().find('li.current').removeClass('current');
+  // parent_li.find('> ul li.current').removeClass('current');
+  // parent_li.toggleClass('current');
 }
 
+// Inject collapsible menu
+function makeMenuExpandable() {
+  var toc = document.querySelector('.toc');
+  var links = toc.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++){
+    var expand = document.createElement('span');
+    expand.classList.add('toctree-expand');
+    expand.addEventListener('click', toggleCurrent, true);
+    links[i].prepend(expand);
+  }
+}
+makeMenuExpandable();
+
+// Wrap tables to make them responsive
 function makeTablesResponsive() {
   var tables = document.querySelectorAll('.rst-content table.docutils');
-  tables.forEach(function (table) {
+  for (var i = 0; i < tables.length; i++){
     wrapper = document.createElement('div');
-    wrapper.classList.add("table-responsive");
-    table.parentNode.insertBefore(wrapper, table);
-    wrapper.appendChild(table);
-  });
+    wrapper.classList.add('table-responsive');
+    tables[i].parentNode.insertBefore(wrapper, tables[i]);
+    wrapper.appendChild(tables[i]);
+  }
 }
 makeTablesResponsive();
 
