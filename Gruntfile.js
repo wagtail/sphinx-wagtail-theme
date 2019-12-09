@@ -132,20 +132,21 @@ module.exports = function (grunt) {
     exec: {
       build_sphinx: {
         command: 'docker run --rm '
-          + '-v ' + path.resolve('./demo_docs/source') + ':/PROJECT/:ro '
-          + '-v ' + path.resolve('./demo_docs/build') + ':/RESULT/ '
+          + '-v ' + path.resolve('./node_modules/TYPO3CMS-Guide-HowToDocument') + ':/PROJECT/:ro '
+          + '-v ' + path.resolve('./config') + ':/CONFIG/:ro '
+          + '-v ' + path.resolve('./build') + ':/RESULT/ '
           + '-v ' + path.resolve('./t3SphinxThemeRtd') + ':/ALL/userhome/.local/share/virtualenvs/venv-y0waPz_e/lib/python2.7/site-packages/t3SphinxThemeRtd:ro '
           + 't3docs/render-documentation makehtml '
           + '-c make_latex 0 '
           + '-c make_singlehtml 0 '
-          + '-c jobfile /PROJECT/jobfile.json '
+          + '-c jobfile /CONFIG/jobfile.json '
           + ';'
       }
     },
 
     // build
     clean: {
-      build: ['demo_docs/build/*', '!demo_docs/build/.gitignore'],
+      build: ['build/*', '!build/.gitignore'],
       fonts: ['t3SphinxThemeRtd/static/fonts']
     },
 
@@ -165,15 +166,13 @@ module.exports = function (grunt) {
       sphinx: {
         files: [
           't3SphinxThemeRtd/**/*',
-          'demo_docs/**/*.rst',
-          'demo_docs/**/*.py',
         ],
         tasks: ['clean:build', 'exec']
       },
       /* live-reload the demo_docs if sphinx re-builds */
       livereload: {
         files: [
-          'demo_docs/build/**/*'
+          'build/**/*'
         ],
         options: { livereload: true }
       }

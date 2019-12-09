@@ -186,6 +186,10 @@
   resolved "https://registry.yarnpkg.com/@zeit/schemas/-/schemas-2.6.0.tgz#004e8e553b4cd53d538bd38eac7bcbf58a867fe3"
   integrity sha512-uUrgZ8AxS+Lio0fZKAipJjAh415JyrOZowliZAzmnJSsf7piVL5w+G0+gFJ0KSu3QRhvui/7zuvpLz03YjXAhg==
 
+"TYPO3CMS-Guide-HowToDocument@github:TYPO3-Documentation/TYPO3CMS-Guide-HowToDocument":
+  version "0.0.0"
+  resolved "https://codeload.github.com/TYPO3-Documentation/TYPO3CMS-Guide-HowToDocument/tar.gz/4616f4e411cdf76c4bc951d5508f380b46a1c516"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"

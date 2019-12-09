@@ -5,6 +5,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@fortawesome/fontawesome-free": "^5.11.2",
+		"TYPO3CMS-Guide-HowToDocument": "github:TYPO3-Documentation/TYPO3CMS-Guide-HowToDocument",
 		"bootstrap": "^4.4.1",
 		"connect-livereload": "^0.6.1",
 		"grunt": "^1.0.4",
@@ -27,7 +28,7 @@
 	"scripts": {
 		"watch": "grunt watch",
 		"build": "grunt build",
-		"serve": "serve ./demo_docs/build/Result/project/0.0.0/"
+		"serve": "serve ./build/Result/project/0.0.0/"
 	},
 	"engines": {
 		"node": ">=10.16",
