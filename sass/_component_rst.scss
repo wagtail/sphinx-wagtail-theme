@@ -138,4 +138,33 @@
             color: $body-color;
         }
     }
+    dl.dl-parameters {
+        dt {
+            border-top: 2px solid theme-color-level('light', 3);
+            background-color: theme-color-level('light', 1);
+            color: color-yiq(theme-color-level('light', 1));
+            font-weight: normal;
+            padding: ($spacer / 2) $spacer;
+            margin-left: ($spacer * 2);
+        }
+        dd {
+            background-color: theme-color('light');
+            color: color-yiq(theme-color('light'));
+            padding: $spacer;
+            margin-left: ($spacer * 2);
+            *:last-child {
+                margin-bottom: 0;
+            }
+            p.first {
+                .sep {
+                    opacity: .5;
+                    margin: 0 .25em;
+                    &:first-child,
+                    &:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
