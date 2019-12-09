@@ -17,43 +17,43 @@
             {%- endif %}
 
             {%- if theme_path_to_documentation_dir %}
-                <a id="EditMeOnGitHub" class="btn btn-primary" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/{{ theme_path_to_documentation_dir|e }}/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|replace('.rst.rst', '.rst')|e }}" target="_blank">
+                <a class="btn btn-sm btn-primary" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/{{ theme_path_to_documentation_dir|e }}/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|replace('.rst.rst', '.rst')|e }}" target="_blank">
                     <span class="btn-icon"><span class="fab fa-github"></span></span>
                     <span class="btn-text">Edit on GitHub</span>
                 </a>
             {%- else %}
-                <a id="EditMeOnGitHub" class="btn btn-primary" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/Documentation/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|replace('.rst.rst', '.rst')|e }}" target="_blank">
+                <a class="btn btn-sm btn-primary" href="https://github.com/{{ theme_github_repository|e }}/edit/{{ theme_github_branch|e }}/Documentation/{{ localizationprefix|e }}{{ sourcename|replace('.txt', '.rst')|replace('.rst.rst', '.rst')|e }}" target="_blank">
                     <span class="btn-icon"><span class="fab fa-github"></span></span>
                     <span class="btn-text">Edit on GitHub</span>
                 </a>
             {%- endif %}
 
         {%- elif display_github and builder == 'html' %}
-            <a class="btn btn-light" href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}">
+            <a class="btn btn-sm btn-light" href="https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}">
                 <span class="btn-icon"><span class="fab fa-github"></span></span>
                 <span class="btn-text">Edit on GitHub</span>
             </a>
         {%- elif display_bitbucket and builder == 'html' %}
-            <a class="btn btn-light" href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}">
-                <span class="btn-icon"><span class="fab fa-github"></span></span>
+            <a class="btn btn-sm btn-light" href="https://bitbucket.org/{{ bitbucket_user }}/{{ bitbucket_repo }}/src/{{ bitbucket_version}}{{ conf_py_path }}{{ pagename }}{{ source_suffix }}">
+                <span class="btn-icon"><span class="fab fa-bitbucket"></span></span>
                 <span class="btn-text">Edit on Bitbucket</span>
             </a>
         {%- elif show_source and source_url_prefix %}
-            <a class="btn btn-light" href="{{ source_url_prefix }}{{ pagename }}{{ source_suffix }}">
-                <span class="btn-icon"><span class="fa fa-binoculars"></span></span>
-                <span class="btn-text">View page source</span>
+            <a class="btn btn-sm btn-light" href="{{ source_url_prefix }}{{ pagename }}{{ source_suffix }}">
+                <span class="btn-icon"><span class="fas fa-code"></span></span>
+                <span class="btn-text">View source</span>
             </a>
         {%- elif show_source and has_source and sourcename %}
-            <a class="btn btn-light" href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
-                <span class="btn-icon"><span class="fa fa-binoculars"></span></span>
-                <span class="btn-text">View page source</span>
+            <a class="btn btn-sm btn-light" href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
+                <span class="btn-icon"><span class="fas fa-code"></span></span>
+                <span class="btn-text">View source</span>
             </a>
         {%- endif %}
 
         {%- if show_source and has_source and sourcename %}
-            <a class="btn btn-light" href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
-                <span class="btn-icon"><span class="fas fa-binoculars"></span></span>
-                <span class="btn-text">View page source</span>
+            <a class="btn btn-sm btn-light" href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
+                <span class="btn-icon"><span class="fas fa-code"></span></span>
+                <span class="btn-text">View source</span>
             </a>
         {%- endif %}
 

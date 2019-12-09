@@ -119,23 +119,20 @@
                 <div class="page-main-navigation">
                     <nav>
                         {% block sidebartitle %}
-                            <div class="sidebartop">
-                                {%- if not theme_is_homepage -%}
-                                    <a href="{{ pathto(master_doc) }}">
-                                        {{ project|e }}
-                                        {%- if release -%}
-                                            <br>{{ release|e }}
-                                        {%- elif version -%}
-                                            <br>{{ version|e }}
-                                        {%- endif -%}
-                                    </a>
-                                    {%- if builder == 'html' %}
-                                        {%- include "searchbox.html" -%}
-                                    {%- endif %}
-                                {%- endif -%}
-                            </div>
+                            {%- if not theme_is_homepage -%}
+                                <div class="toc-title">
+                                    <a class="toc-title-project" href="{{ pathto(master_doc) }}">{{ project|e }}</a>
+                                    {%- if release -%}
+                                        <span class="toc-title-version">Release: {{ release|e }}</span>
+                                    {%- elif version -%}
+                                        <span class="toc-title-version">Version: {{ version|e }}</span>
+                                    {%- endif -%}
+                                </div>
+                                {%- if builder == 'html' %}
+                                    {%- include "searchbox.html" -%}
+                                {%- endif %}
+                            {%- endif -%}
                         {% endblock %}
-
                         <div class="toc" role="navigation" aria-label="main navigation">
                             {% block menu %}
                                 {% set toctree = toctree(maxdepth=8, collapse=False, includehidden=True, titles_only=True) %}
@@ -147,17 +144,8 @@
                                 {% endif %}
                             {% endblock %}
                         </div>
-
                         {% include "versions.html" %}
                     </nav>
-
-                    <section>
-                        {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-                        <nav role="navigation" aria-label="top navigation">
-                            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-                            <a href="{{ pathto(master_doc) }}">{{ project }}</a>
-                        </nav>
-                    </section>
                 </div>
                 <div class="page-main-content">
                     {% include "breadcrumbs.html" %}
@@ -170,7 +158,6 @@
                     </div>
                     {% include "pager.html" %}
                 </div>
-
             </div>
         </div>
 
