@@ -18,7 +18,7 @@ jobs:
       run: |
         yarn build
     - name: Archive Demo
-        uses: actions/upload-artifact@v1
-        with:
-          name: demo
-          path: demo_docs/build/Result/project/0.0.0
+      uses: actions/upload-artifact@v1
+      with:
+        name: demo
+        path: demo_docs/build/Result/project/0.0.0
