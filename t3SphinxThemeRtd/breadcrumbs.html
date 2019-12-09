@@ -49,6 +49,14 @@
                 <span class="btn-text">View page source</span>
             </a>
         {%- endif %}
+
+        {%- if show_source and has_source and sourcename %}
+            <a class="btn btn-light" href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
+                <span class="btn-icon"><span class="fas fa-binoculars"></span></span>
+                <span class="btn-text">View page source</span>
+            </a>
+        {%- endif %}
+
     {%- endif %}
 
 </div>

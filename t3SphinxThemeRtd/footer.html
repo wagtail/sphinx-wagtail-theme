@@ -1,14 +1,6 @@
 <footer>
   <div class="contentinfo">
 
-    {%- if show_source and has_source and sourcename %}
-      <p class="show_source">
-        <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
-          <span class="fa fa-binoculars"></span>&#32;View page source
-        </a>
-      </p>
-    {%- endif %}
-
     {%- if theme_show_copyright %}
       <p class="show_copyright">
         {%- if hasdoc('Copyright') %}
