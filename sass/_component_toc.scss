@@ -8,25 +8,11 @@
     a {
         position: relative;
         display: block;
-        padding: ($spacer / 4) $spacer;
-        line-height: 1.25;
-        padding-left: ($spacer * 2);
         color: inherit;
-        &:hover {
-            text-decoration: none;
-            color: color-yiq(theme-color('light'));
-            background-color: theme-color('light');
-        }
-        .toctree-expand {
-            position: absolute;
-            top: (($spacer / 4) + ($font-size-base * 1.25 / 2));
-            left: ($spacer / 2);
-            transform: translate(0, -50%);
-            height: 1em;
-            width: 1em;
-            display: block;
-            background-color: #ff0000;
-        }
+        line-height: 1.25;
+        padding: ($spacer / 4) 0;
+        padding-right: 1.5em;
+        text-decoration: none;
     }
     ul {
         padding-left: ($spacer * 1.5);
@@ -36,21 +22,60 @@
         border-radius: $border-radius;
         overflow: hidden;
     }
-    > ul {
-        padding-left: 0;
-        li {
-            &.current {
-                background-color: theme-color-level('light', 1);
+    .toctree-expand {
+        position: absolute;
+        display: block;
+        top: (($spacer / 4) + ($font-size-base * 1.25 / 2));
+        right: 0;
+        transform: translate(0, -50%);
+        height: 1em;
+        width: 1em;
+        background-color: theme-color('light');
+        border-radius: $border-radius;
+        &:after,
+        &:before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+        }
+        &:after {
+            width: 10px;
+            height: 0;
+            border-top: 2px solid;
+            transform: translate(-50%, -50%);
+        }
+        &:before {
+            width: 0;
+            height: 10px;
+            border-left: 2px solid;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .current > a {
+        color: theme-color('primary');
+        > .toctree-expand {
+            background-color: theme-color('primary');
+            color: color-yiq(theme-color('primary'));
+            &:before {
+                display: none;
             }
         }
+    }
+    > ul {
+        padding-left: 0;
         .current {
             > ul {
                 display: block !important;
             }
         }
+        > li ul {
+            display: none;
+        }
     }
-    > ul > li ul {
-        display: none;
+    > ul:not(:last-child) {
+        padding-bottom: $spacer;
+        border-bottom: 1px solid rgba(0, 0, 0, .15);
     }
 }
 .toc-backref {

@@ -5,6 +5,7 @@ if (typeof window.T3Docs === 'undefined') {
 	window.T3Docs = {};
 }
 
+// Inject collapsible menu
 function toggleCurrent(event) {
   event.preventDefault();
   var link = event.currentTarget.parentElement;
@@ -17,8 +18,6 @@ function toggleCurrent(event) {
   }
   element.classList.toggle('current');
 }
-
-// Inject collapsible menu
 function makeMenuExpandable() {
   var toc = document.querySelector('.toc');
   var links = toc.getElementsByTagName('a');
@@ -32,6 +31,7 @@ function makeMenuExpandable() {
   }
 }
 makeMenuExpandable();
+
 
 // Wrap tables to make them responsive
 function makeTablesResponsive() {
