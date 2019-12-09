@@ -104,6 +104,13 @@
     }
 
     /**
+     * Blockquote
+     */
+    blockquote {
+        margin-left: ($spacer * 2);
+    }
+
+    /**
      * Definition Lists
      */
     dl {
@@ -165,6 +172,12 @@
                     }
                 }
             }
+        }
+    }
+    blockquote dl.dl-parameters {
+        dt,
+        dd {
+            margin-left: 0;
         }
     }
 }
