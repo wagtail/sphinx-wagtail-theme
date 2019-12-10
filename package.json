@@ -17,18 +17,18 @@
 		"grunt-exec": "^3.0.0",
 		"grunt-sass": "^3.1.0",
 		"grunt-stylelint": "^0.12.0",
+		"http-server": "^0.12.0",
 		"matchdep": "^2.0.0",
 		"modernizr": "^3.8.0",
 		"node-sass": "^4.13.0",
 		"normalize.css": "^8.0.1",
-		"serve": "^11.2.0",
 		"stylelint": "^11.1.1",
 		"wyrm": "https://github.com/snide/wyrm/#0.0.229"
 	},
 	"scripts": {
 		"watch": "grunt watch",
 		"build": "grunt build",
-		"serve": "serve ./build/Result/project/0.0.0/"
+		"serve": "http-server ./build/Result/project/0.0.0/"
 	},
 	"engines": {
 		"node": ">=10.16",
