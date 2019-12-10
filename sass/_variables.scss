@@ -1,4 +1,6 @@
-// colors
+//
+// Colors
+// --------------------------------------------------
 $white:             #ffffff;
 $gray-100:          #f2f2f2;
 $gray-200:          #e9e9e9;
@@ -17,9 +19,16 @@ $info:              #5bc0de;
 $warning:           #f0ad4e;
 $danger:            #d9534f;
 
+$link-color:                   $primary;
+$link-hover-color:             darken($link-color, 15%);
+$link-alternate-color:         #ffffff;
+$link-alternate-hover-color:   darken($link-alternate-color, 15%);
+
 $yiq-contrasted-threshold: 160;
 
-// code colors
+//
+// Code Colors
+// --------------------------------------------------
 $code-color:        #ff5370;
 $code-color-file:   hsl(328, 100%, 50%);
 $code-color-html:   hsl(275, 100%, 40%);
@@ -30,7 +39,9 @@ $code-color-py:     hsl(210, 100%, 50%);
 $code-color-ts:     hsl(12, 100%, 20%);
 $code-color-yaml:   hsl(170, 80%, 30%);
 
-// fonts
+//
+// Fonts
+// --------------------------------------------------
 $font-family-sans-serif: 'Source Sans Pro', sans-serif;
 $font-family-monospace: 'Source Code Pro', monospace;
 $font-weight-bold: 600;
@@ -45,16 +56,24 @@ $h6-font-size: .85em;
 $headings-font-weight: $font-weight-bold;
 $headings-margin-bottom: .5em;
 
-// components
+//
+// Components
+// --------------------------------------------------
 $box-shadow-sm: 0 2px 2px 0 rgba(0, 0, 0, .15);
 
-// table
+//
+// Table
+// --------------------------------------------------
 $table-bg:          $white;
 
-// grid
+//
+// Grid
+// --------------------------------------------------
 $grid-gutter-width: 40px;
 
+//
 // Base 16 Scheme
+// --------------------------------------------------
 $base16-base00:     #212121;
 $base16-base01:     #2e3c43;
 $base16-base02:     #314549;

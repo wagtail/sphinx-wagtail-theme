@@ -1,50 +1,49 @@
 <footer>
-  <div class="contentinfo">
+    <div class="frame frame-background-dark">
+        <div class="frame-container">
+            <div class="frame-inner">
 
-    {%- if theme_show_copyright %}
-      <p class="show_copyright">
-        {%- if hasdoc('Copyright') %}
-          <a href="{{ pathto('Copyright') }}">
-            &copy; Copyright {{ copyright }}
-          </a>
-        {%- elif hasdoc('copyright') %}
-          <a href="{{ pathto('copyright') }}">
-            &copy; Copyright {{ copyright }}
-          </a>
-        {%- else %}
-            &copy; Copyright {{ copyright }}
-        {%- endif %}
-      </p>
-    {%- endif %}
+                <div class="contentinfo">
+                    {%- if theme_show_copyright %}
+                        <p class="show_copyright">
+                            {%- if hasdoc('Copyright') %}
+                                <a href="{{ pathto('Copyright') }}">&copy; Copyright {{ copyright }}</a>
+                            {%- elif hasdoc('copyright') %}
+                                <a href="{{ pathto('copyright') }}">&copy; Copyright {{ copyright }}</a>
+                            {%- else %}
+                                &copy; Copyright {{ copyright }}
+                            {%- endif %}
+                        </p>
+                    {%- endif %}
 
-    {%- if theme_show_last_updated and last_updated%}
-      <p class="last_updated">
-        Last rendered on {{ last_updated }}
-      </p>
-    {%- endif %}
+                    {%- if theme_show_last_updated and last_updated%}
+                        <p class="last_updated">Last rendered on {{ last_updated }}</p>
+                    {%- endif %}
 
-    {%- if theme_show_sphinx %}
-      <p class="show_sphinx">
-        Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
-        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd.</a>
-        Report theme issues <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues" target="_blank">here.</a>
-      </p>
-    {%- endif %}
+                    {%- if theme_show_sphinx %}
+                        <p class="show_sphinx">
+                            Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
+                            <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd.</a>
+                            Report theme issues <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues" target="_blank">here.</a>
+                        </p>
+                    {%- endif %}
 
-    {%- if theme_show_revision and theme_github_revision_msg %}
-      <p class="show_revision">
-        Revision {{ theme_github_revision_msg }}
-      </p>
-    {%- endif %}
+                    {%- if theme_show_revision and theme_github_revision_msg %}
+                        <p class="show_revision">Revision {{ theme_github_revision_msg }}</p>
+                    {%- endif %}
 
 
-    {%- if theme_show_legalinfo %}
-      <p class="show_legalinfo">
-        <a href="https://typo3.org/legal-info/" rel="nofollow">
-          <span class="fa fa-legal"></span>&#32;Legal Info
-        </a>
-      </p>
-    {%- endif %}
+                    {%- if theme_show_legalinfo %}
+                        <p class="show_legalinfo">
+                            <a href="https://typo3.org/legal-info/" rel="nofollow">
+                                <span class="fa fa-balance-scale"></span> Legal Info
+                            </a>
+                        </p>
+                    {%- endif %}
 
-  </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </footer>
