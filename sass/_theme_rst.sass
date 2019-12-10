@@ -15,68 +15,20 @@
 
 
 .rst-content
-  // Questionable whether this is nice or not. It styles eternal links, but comes with some baggage.
-  // a.reference.external:after
-  //   font-family: FontAwesome
-  //   content: " \f08e "
-  //   color: $text-light
-  //   vertical-align: super
-  //   font-size: 60%
 
-  // For the most part, its safe to assume that sphinx wants you to use a blockquote as an indent. It gets
-  // used in many different ways, so don't assume you can apply some fancy style, just leave it be.
-  blockquote
-    margin-left: $base-line-height
-    line-height: $base-line-height
-    margin-bottom: $base-line-height
+    // Sphinx can highlight searched text with ?highlighted=searchterm
+    .highlighted
+        background: $yellow
+        display: inline-block
+        font-weight: bold
+        padding: 0 $base-line-height / 4
+        color: black
 
-  .section ul li,
-  .section ol li
-    margin-top: $base-line-height / 2
-    margin-bottom: $base-line-height / 2
-  .section ul, .toctree-wrapper ul
-    @extend .wy-plain-list-disc
-  .section ol.loweralpha, .section ol.loweralpha li
-    list-style: lower-alpha
-  .section ol.upperalpha, .section ol.upperalpha li
-    list-style: upper-alpha
-  .section ol, ol.arabic
-    @extend .wy-plain-list-decimal
-  .section ol p, .section ul p
-    margin-bottom: $base-line-height / 2
-  .line-block
-    margin-left: $base-line-height
-
-  // Generics handling of headings and toc stuff.
-  .topic-title
-    font-weight: bold
-    margin-bottom: $base-line-height / 2
-  .toc-backref
-    color: $text-color
-  .align-right
-    float: right
-    margin: 0px 0px $base-line-height $base-line-height
-  .align-left
-    float: left
-    margin: 0px $base-line-height $base-line-height 0px
-  .align-center
-    margin: auto
-    display: block
-  p.caption
-    @extend h2
-
-  // Sphinx can highlight searched text with ?highlighted=searchterm
-  .highlighted
-    background: $yellow
-    display: inline-block
-    font-weight: bold
-    padding: 0 $base-line-height / 4
-    color: black
-
-  // These are the little citation links [1] that show up within paragraphs.
-  .footnote-reference, .citation-reference
-    vertical-align: super
-    font-size: 90%
+    // These are the little citation links [1] that show up within paragraphs.
+    .footnote-reference,
+    .citation-reference
+        vertical-align: super
+        font-size: 90%
 
   // Tables! Sphinx LOVES TABLES. Most of wyrm assumes you're only going to use a table as a table
   // so I have to write a bunch of unique stuff for Sphinx to style them up differently like it's 2003.
@@ -138,6 +90,7 @@
     // rST seems to want dds to be treated as the browser would, indented.
     dd
       margin: 0  0 $base-line-height / 2 $base-line-height
+
   // This is what Sphinx spits out for it's autodocs. Depending upon what language the person is referencing
   // these things usually have a class of "method" or "class" or something similar, but really who knows.
   // Sphinx doesn't give me a generic class on these, so unfortunately I have to apply it to the root dl.

@@ -1,6 +1,16 @@
 .rst-content {
 
     /**
+     * Breadcrumb
+     */
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        padding-bottom: $spacer;
+        border-bottom: 1px solid rgba(0, 0, 0, .15);
+    }
+
+    /**
      * Headlines
      */
     h3 {
@@ -74,7 +84,7 @@
         font-size: 75%;
         padding: .25em .5em;
         background-color: theme-color-level('info', -8);
-        color: theme-color-level('info', 3);
+        color: theme-color-level('info', 8);
         border-radius: $border-radius;
     }
 

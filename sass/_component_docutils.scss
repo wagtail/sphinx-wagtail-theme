@@ -41,10 +41,18 @@
 * Tables
 */
 table.docutils {
-    border: 0;
-    @extend .table;
-    thead {
-        @extend .thead-light;
+    &:not(.field-list) {
+        border: 0;
+        @extend .table;
+        @extend .table-striped;
+        thead {
+            @extend .thead-light;
+        }
+    }
+    &.field-list {
+        .field-name {
+            padding-right: 1rem;
+        }
     }
 }
 .table-responsive {
