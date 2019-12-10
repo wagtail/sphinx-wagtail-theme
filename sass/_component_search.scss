@@ -1,0 +1,54 @@
+/**
+ * Autocomplete
+ */
+.autocomplete {
+    background-color: $input-bg;
+    background-clip: padding-box;
+    border: $input-border-width solid $input-border-color;
+    box-shadow: $box-shadow-sm;
+    > div {
+        padding: $input-padding-y $input-padding-x;
+        &:not(.empty) {
+            cursor: pointer;
+        }
+    }
+    .selected {
+        color: color-yiq(theme-color('primary'));
+        background-color: theme-color('primary');
+    }
+}
+
+/**
+ * Highlight
+ */
+.highlighted {
+    color: color-yiq($yellow) !important;
+    background-color: $yellow !important;
+}
+
+/**
+ * Search Results
+ */
+.search {
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+    li {
+        margin-top: ($spacer * 1.5);
+        margin-bottom: ($spacer * 1.5);
+        padding-bottom: ($spacer * 1.5);
+        border-bottom: solid 1px rgba(0, 0, 0, .15);
+        &:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+    }
+    a {
+        @include font-size($h4-font-size);
+        display: block;
+        margin-bottom: $headings-margin-bottom;
+        font-family: $headings-font-family;
+        font-weight: $headings-font-weight;
+        line-height: $headings-line-height;
+    }
+}

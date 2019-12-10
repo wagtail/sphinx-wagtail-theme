@@ -110,6 +110,10 @@ module.exports = function (grunt) {
           comments: false
         }
       },
+      autocomplete: {
+        src: 'node_modules/autocompleter/autocomplete.js',
+        dest: 't3SphinxThemeRtd/static/js/autocomplete.min.js'
+      },
       modernizr: {
         src: 't3SphinxThemeRtd/static/js/modernizr.min.js',
         dest: 't3SphinxThemeRtd/static/js/modernizr.min.js'
@@ -117,14 +121,6 @@ module.exports = function (grunt) {
       theme: {
         src: 'js/theme.js',
         dest: 't3SphinxThemeRtd/static/js/theme.min.js'
-      },
-      t3autocomplete: {
-        src: 'js/t3autocomplete.js',
-        dest: 't3SphinxThemeRtd/static/js/t3autocomplete.min.js'
-      },
-      t3autocomplete2: {
-        src: 'js/t3autocomplete2.js',
-        dest: 't3SphinxThemeRtd/static/js/t3autocomplete2.min.js'
       },
     },
 
@@ -147,7 +143,9 @@ module.exports = function (grunt) {
     // build
     clean: {
       build: ['build/*', '!build/.gitignore'],
-      fonts: ['t3SphinxThemeRtd/static/fonts']
+      css: ['t3SphinxThemeRtd/static/css'],
+      fonts: ['t3SphinxThemeRtd/static/fonts'],
+      js: ['t3SphinxThemeRtd/static/js'],
     },
 
     // watch

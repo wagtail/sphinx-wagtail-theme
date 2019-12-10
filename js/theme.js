@@ -2,8 +2,9 @@
 
 // Ensure our own namespace
 if (typeof window.T3Docs === 'undefined') {
-	window.T3Docs = {};
+  window.T3Docs = {};
 }
+
 
 // Inject collapsible menu
 function toggleCurrent(event) {
@@ -44,6 +45,38 @@ function makeTablesResponsive() {
   }
 }
 makeTablesResponsive();
+
+
+// Search
+document.addEventListener('DOMContentLoaded', function() {
+  autocomplete({
+    input: document.getElementById("searchinput"),
+    fetch: function(text, update) {
+      if (typeof window.T3Docs.autocomplete === 'undefined') {
+        window.T3Docs.autocomplete = new Array();
+        Object.keys(Search._index.terms).forEach(function (item, index) {
+          window.T3Docs.autocomplete[index] = { label: item };
+        });
+      }
+      var suggestions = window.T3Docs.autocomplete.filter(function(entry){
+        return entry.label.toLowerCase().startsWith(text.toLowerCase());
+      });
+      update(suggestions);
+    },
+    minLength: 4,
+    emptyMsg: 'No elements found',
+    render: function(item) {
+      var div = document.createElement("div");
+      div.textContent = item.label;
+      return div;
+    },
+    onSelect: function(item) {
+      document.getElementById("searchinput").value = item.label;
+      document.getElementById("search-form").submit();
+    }
+  });
+});
+
 
 $(document).ready(function() {
 
