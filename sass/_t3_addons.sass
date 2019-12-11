@@ -1,61 +1,9 @@
 
-@import theme_variables
-
-// In our theme maxwidth is much larger than the original ReadTheDocs theme.
-// In the demo_docs we see that because of that 'sidebars' may slip side
-// to side of each other. They are 40% wide and in that case there's
-// only 20% left for normal content. So let's try to prevent that this by
-// adding this 'clear'.
-
-// captions of figures
-.rst-content
-  .figure
-    p.caption
-      &::before
-        content: "Figure: "
-      font-size: 14px
-      line-height: 18px
-      width: 60%
-      margin: 0
-      margin-top: 0.25em
-      padding: 0
-      font-weight: normal
-      font-style: normal
-      color: #000
-      .caption-text
-        font-style: normal
-        color: #000000
-
 // field-list: move content to the top of the table cell
 
 td.field-body
   p.first
     margin-top: 0
-
-// panel (like http://getbootstrap.com/components/#panels)
-.panel
-  background-color: #ffffff
-  border: 1px solid rgba(0, 0, 0, 0.15)
-  border-radius: 4px
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.00)
-  margin-bottom: 20px
-
-.panel-default
-  & > *
-    padding-left: 15px
-    padding-right: 15px
-  & > span
-    padding: 0
-  & > h1, & > h2, & > h3, & > h4, & > h5, & > h6
-    background-color: #e8e8e8
-    // color: #333333
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-    border-top-left-radius: 3px
-    border-top-right-radius: 3px
-    margin: 0
-    padding-top: $base-line-height / 2
-    padding-bottom: $base-line-height / 2
-
 
 // 2019-10-28
 // https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues/132
