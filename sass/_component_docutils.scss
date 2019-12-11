@@ -10,8 +10,8 @@
 */
 .section {
     @include clearfix;
-    margin-top: ($spacer * 2);
-    margin-bottom: ($spacer * 2);
+    margin-top: ($spacer * 2.5);
+    margin-bottom: ($spacer * 2.5);
 }
 
 /**

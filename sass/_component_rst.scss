@@ -15,7 +15,7 @@
      */
     h3 {
         padding-bottom: .5rem;
-        border-bottom: 1px solid rgba(0, 0, 0, .15);
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
     }
 
     /**
@@ -68,6 +68,18 @@
     }
 
     /**
+     * Lists
+     */
+    .toctree-wrapper ul,
+    .toctree-wrapper ol,
+    ul.simple,
+    ol.simple {
+        li + li {
+            margin-top: ($spacer * .5);
+        }
+    }
+
+    /**
      * Keyboard Shortcuts
      */
     kbd {
@@ -111,6 +123,12 @@
     }
     .figure {
         display: block;
+        .caption {
+            font-size: $font-size-sm;
+            &:before {
+                content: 'Figure: ';
+            }
+        }
     }
 
     /**
