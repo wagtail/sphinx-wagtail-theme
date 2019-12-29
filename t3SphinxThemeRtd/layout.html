@@ -8,12 +8,21 @@
 {%- endif -%}
 {%- set logo = "img/typo3-logo.svg" -%}
 {%- set urlTypo3Documentation = "https://docs.typo3.org" -%}
+
+{%- set css_files = [] -%}
 {%- set css_files = css_files + ["_static/css/webfonts.css"] -%}
 {%- set css_files = css_files + ["_static/css/fontawesome.css"] -%}
+
+{%- set script_files = [] -%}
+{%- set script_files = script_files + ["_static/js/jquery.min.js"] -%}
+{%- set script_files = script_files + ['_static/js/underscore.min.js'] -%}
+{%- set script_files = script_files + ['_static/js/doctools.min.js'] -%}
+{%- set script_files = script_files + ["_static/js/popper.min.js"] -%}
+{%- set script_files = script_files + ["_static/js/bootstrap.min.js"] -%}
 {%- set script_files = script_files + ["_static/js/theme.min.js"] -%}
 
 {#- SEARCH -#}
-{%- set script_files = script_files + ['_static/searchtools.js'] -%}
+{%- set script_files = script_files + ['_static/js/searchtools.min.js'] -%}
 {%- set script_files = script_files + ['_static/js/autocomplete.min.js'] -%}
 
 <!DOCTYPE html>
@@ -36,9 +45,6 @@
     {% endblock %}
     {% if favicon %}
         <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
-    {% endif %}
-    {% if use_opensearch %}
-        <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}" />
     {% endif %}
 
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />

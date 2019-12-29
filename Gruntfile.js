@@ -4,6 +4,26 @@ const sass = require('node-sass');
 module.exports = function (grunt) {
 
   /**
+   * Grunt task to remove source map comment
+   */
+  grunt.registerMultiTask('removesourcemap', 'Grunt task to remove sourcemp comment from files', function () {
+    var done = this.async(),
+      files = this.filesSrc.filter(function (file) {
+        return grunt.file.isFile(file);
+      }),
+      counter = 0;
+    this.files.forEach(function (file) {
+      file.src.filter(function (filepath) {
+        var content = grunt.file.read(filepath).replace(/\/\/# sourceMappingURL=\S+/, '');
+        grunt.file.write(file.dest, content);
+        grunt.log.success('Source file "' + filepath + '" was processed.');
+        counter++;
+        if (counter >= files.length) done(true);
+      });
+    });
+  });
+
+  /**
    * Grunt task for modernizr
    */
   grunt.registerMultiTask("modernizr", "Respond to your user’s browser features.", function () {
@@ -38,6 +58,22 @@ module.exports = function (grunt) {
             cwd: 'fonts',
             src: ['**/*'],
             dest: 't3SphinxThemeRtd/static/fonts/'
+          }
+        ]
+      },
+      libs: {
+        files: [
+          {
+            src: 'node_modules/jquery/dist/jquery.min.js',
+            dest: 't3SphinxThemeRtd/static/js/jquery.min.js'
+          },
+          {
+            src: 'node_modules/popper.js/dist/umd/popper.min.js',
+            dest: 't3SphinxThemeRtd/static/js/popper.min.js'
+          },
+          {
+            src: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            dest: 't3SphinxThemeRtd/static/js/bootstrap.min.js'
           }
         ]
       }
@@ -114,14 +150,39 @@ module.exports = function (grunt) {
         src: 'node_modules/autocompleter/autocomplete.js',
         dest: 't3SphinxThemeRtd/static/js/autocomplete.min.js'
       },
+      underscore: {
+        src: 'node_modules/underscore/underscore.js',
+        dest: 't3SphinxThemeRtd/static/js/underscore.min.js'
+      },
       modernizr: {
         src: 't3SphinxThemeRtd/static/js/modernizr.min.js',
         dest: 't3SphinxThemeRtd/static/js/modernizr.min.js'
+      },
+      // SOURCE: https://github.com/sphinx-doc/sphinx/blob/master/sphinx/themes/basic/static/doctools.js
+      doctools: {
+        src: 'js/doctools.js',
+        dest: 't3SphinxThemeRtd/static/js/doctools.min.js'
+      },
+      // SOURCE: https://github.com/sphinx-doc/sphinx/blob/master/sphinx/themes/basic/static/searchtools.js
+      searchtools: {
+        src: 'js/searchtools.js',
+        dest: 't3SphinxThemeRtd/static/js/searchtools.min.js'
       },
       theme: {
         src: 'js/theme.js',
         dest: 't3SphinxThemeRtd/static/js/theme.min.js'
       },
+    },
+
+    // remmove sourcemaps of used dist files
+    removesourcemap: {
+      contrib: {
+        files: {
+          't3SphinxThemeRtd/static/js/jquery.min.js': 't3SphinxThemeRtd/static/js/jquery.min.js',
+          't3SphinxThemeRtd/static/js/bootstrap.min.js': 't3SphinxThemeRtd/static/js/bootstrap.min.js',
+          't3SphinxThemeRtd/static/js/popper.min.js': 't3SphinxThemeRtd/static/js/popper.min.js'
+        }
+      }
     },
 
     // exec
@@ -194,6 +255,6 @@ module.exports = function (grunt) {
    */
   grunt.registerTask('update', ['copy', 'modernizr']);
   grunt.registerTask('js', ['uglify']);
-  grunt.registerTask('default', ['clean', 'update', 'stylelint', 'sass', 'js']);
+  grunt.registerTask('default', ['clean', 'update', 'stylelint', 'sass', 'js', 'removesourcemap']);
   grunt.registerTask('build', ['default', 'exec']);
 };
