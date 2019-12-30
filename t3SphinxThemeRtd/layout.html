@@ -121,7 +121,8 @@
             <div class="page-main-inner">
                 <div class="page-main-navigation">
                     <nav>
-                        {% block sidebartitle %}
+                        <input type="checkbox" id="toggleToc" class="toc-checkbox">
+                        <div class="toc-header">
                             {%- if not theme_is_homepage -%}
                                 <div class="toc-title">
                                     <a class="toc-title-project" href="{{ pathto(master_doc) }}">{{ project|e }}</a>
@@ -131,23 +132,30 @@
                                         <span class="toc-title-version">Version: {{ version|e }}</span>
                                     {%- endif -%}
                                 </div>
-                                {%- if builder == 'html' %}
-                                    {%- include "searchbox.html" -%}
-                                {%- endif %}
                             {%- endif -%}
-                        {% endblock %}
-                        <div class="toc" role="navigation" aria-label="main navigation">
-                            {% block menu %}
-                                {% set toctree = toctree(maxdepth=8, collapse=False, includehidden=True, titles_only=True) %}
-                                {% if toctree %}
-                                    {{ toctree }}
-                                {% else %}
-                                    <!-- Local TOC -->
-                                    <div class="local-toc">{{ toc }}</div>
-                                {% endif %}
-                            {% endblock %}
+                            <div class="toc-actions">
+                                <label for="toggleToc" class="toc-toggle">
+                                    Menu
+                                </label>
+                            </div>
                         </div>
-                        {% include "versions.html" %}
+                        <div class="toc-collapse">
+                            {%- if not theme_is_homepage and builder == 'html' -%}
+                                {%- include "searchbox.html" -%}
+                            {%- endif -%}
+                            <div class="toc" role="navigation" aria-label="main navigation">
+                                {% block menu %}
+                                    {% set toctree = toctree(maxdepth=8, collapse=False, includehidden=True, titles_only=True) %}
+                                    {% if toctree %}
+                                        {{ toctree }}
+                                    {% else %}
+                                        <!-- Local TOC -->
+                                        <div class="local-toc">{{ toc }}</div>
+                                    {% endif %}
+                                {% endblock %}
+                            </div>
+                            {% include "versions.html" %}
+                        </div>
                     </nav>
                 </div>
                 <div class="page-main-content">

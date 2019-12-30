@@ -1,3 +1,27 @@
+.toc-checkbox {
+    display: none;
+}
+.toc-collapse {
+    display: none;
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+}
+.toc-checkbox:checked ~ .toc-collapse {
+    display: block;
+}
+.toc-toggle {
+    margin: 0;
+    @extend .btn;
+    @extend .btn-light;
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+.toc-header {
+    display: flex;
+    justify-content: space-between;
+}
 .toc {
     margin: $spacer 0;
     display: block;
@@ -78,9 +102,6 @@
         border-bottom: 1px solid rgba(0, 0, 0, .15);
     }
 }
-.toc-title {
-    margin-bottom: ($spacer * 2);
-}
 .toc-title-project {
     display: block;
     font-size: 1.5em;
@@ -91,6 +112,7 @@
     font-weight: bold;
 }
 .toc-search {
+    margin-top: ($spacer * 2);
     margin-bottom: ($spacer * 2);
 }
 .toc-backref {

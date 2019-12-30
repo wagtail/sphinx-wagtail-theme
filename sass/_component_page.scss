@@ -13,6 +13,8 @@
  * Header
  */
 .page-header {
+    position: relative;
+    z-index: 1;
     flex-grow: 0;
     flex-shrink: 0;
     background: #ffffff;
@@ -44,15 +46,20 @@
     }
 }
 .page-main-navigation {
-    padding-top: ($spacer * 2);
-    padding-bottom: ($spacer * 2);
-    width: 100%;
+    flex-grow: 1;
+    margin-left: -($grid-gutter-width / 2);
+    margin-right: -($grid-gutter-width / 2);
+    padding: ($grid-gutter-width / 2);
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
     @include media-breakpoint-up(lg) {
+        padding: ($spacer * 2) 0;
         flex-grow: 0;
         flex-shrink: 0;
         width: 15rem;
+        margin: 0;
         margin-right: $grid-gutter-width;
         padding-right: ($grid-gutter-width / 2);
+        border-bottom: none;
         border-right: 1px solid rgba(0, 0, 0, .15);
     }
 }
