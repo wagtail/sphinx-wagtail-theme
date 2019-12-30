@@ -22,6 +22,7 @@
 {%- set script_files = script_files + ["_static/js/theme.min.js"] -%}
 
 {#- SEARCH -#}
+{%- set script_files = script_files + ['_static/language_data.js'] -%}
 {%- set script_files = script_files + ['_static/js/searchtools.min.js'] -%}
 {%- set script_files = script_files + ['_static/js/autocomplete.min.js'] -%}
 
@@ -29,9 +30,6 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8" />
-    {%- if 0 -%}
-        {%- include "var_dump.html" -%}
-    {%- endif -%}
     {{ metatags }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="book-version" content="{{ version|striptags|e }}" />

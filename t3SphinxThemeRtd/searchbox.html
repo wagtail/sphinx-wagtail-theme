@@ -1,4 +1,4 @@
-{%- if pagename != "search" and builder != "singlehtml" %}
+{%- if builder != "singlehtml" %}
 <div class="toc-search" role="search">
     <form id="search-form" action="{{ pathto('search') }}" autocomplete="off" method="get">
         <input class="form-control" type="text" name="q" placeholder="Search this project" aria-label="Search this project" id="searchinput" />
