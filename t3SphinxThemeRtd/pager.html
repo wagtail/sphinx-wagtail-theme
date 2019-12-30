@@ -3,14 +3,14 @@
         <ul class="pagination justify-content-center">
             {% if prev %}
                 <li class="page-item">
-                    <a class="page-link" href="{{ prev.link|e }}" title="Accesskey Alt(+Shift)+p">
+                    <a accesskey="p" class="page-link" href="{{ prev.link|e }}" title="Accesskey Alt(+Shift)+p">
                         Previous
                     </a>
                 </li>
             {% endif %}
             {% if next %}
                 <li class="page-item">
-                    <a class="page-link" href="{{ next.link|e }}" title="Accesskey Alt(+Shift)+n">
+                    <a accesskey="n" class="page-link" href="{{ next.link|e }}" title="Accesskey Alt(+Shift)+n">
                         Next
                     </a>
                 </li>
