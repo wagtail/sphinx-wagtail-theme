@@ -48,29 +48,29 @@ makeTablesResponsive();
 
 
 // Search
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   autocomplete({
     input: document.getElementById("searchinput"),
-    fetch: function(text, update) {
+    fetch: function (text, update) {
       if (typeof window.T3Docs.autocomplete === 'undefined') {
         window.T3Docs.autocomplete = new Array();
         Object.keys(Search._index.terms).forEach(function (item, index) {
           window.T3Docs.autocomplete[index] = { label: item };
         });
       }
-      var suggestions = window.T3Docs.autocomplete.filter(function(entry){
+      var suggestions = window.T3Docs.autocomplete.filter(function (entry) {
         return entry.label.toLowerCase().startsWith(text.toLowerCase());
       });
       update(suggestions);
     },
     minLength: 4,
     emptyMsg: 'No elements found',
-    render: function(item) {
+    render: function (item) {
       var div = document.createElement("div");
       div.textContent = item.label;
       return div;
     },
-    onSelect: function(item) {
+    onSelect: function (item) {
       document.getElementById("searchinput").value = item.label;
       document.getElementById("search-form").submit();
     }
@@ -78,48 +78,37 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-$(document).ready(function() {
-
-    var fillInRelatedLinks = function () {
-        $("#relatedLinksFaSpan").attr('class', 'fa fa-spinner fa-spin');
-        $('#ajaxversions').load(
-            'https://docs.typo3.org/services/ajaxversions.php?url=' + encodeURI(document.URL),
-            false,
-            function (responseText, textStatus, jqXHR) {
-                $("#relatedLinksFaSpan").attr('class', 'fa fa-book');
-                window.T3Docs['fillInRelatedLinks'] = {'dest':'ajaxversions.php', 'responseText':responseText, 'textStatus':textStatus};
-            }
-        );
-        $('#ajaxdownloads').load(
-            'https://docs.typo3.org/services/ajaxdownloads.php?url=' + encodeURI(document.URL),
-            false,
-            function (responseText, textStatus, jqXHR) {
-                window.T3Docs['fillInRelatedLinks'] = {'dest':'ajaxdownloads.php', 'responseText':responseText, 'textStatus':textStatus};
-            }
-        );
-    }
-
-    // Shift nav in mobile when clicking the menu.
-    $(document).on('click', "[data-toggle='wy-nav-top']", function() {
-        $("[data-toggle='wy-nav-shift']").toggleClass("shift");
-        $("[data-toggle='rst-versions']").toggleClass("shift");
+// Version Selector
+$(document).ready(function () {
+  function setVersionContent(content) {
+    options = document.createElement('dl');
+    options.innerHTML = content;
+    versionOptions = document.getElementById("toc-version-options");
+    versionOptions.innerHTML = '';
+    versionOptions.appendChild(options);
+  }
+  versionNode = document.getElementById("toc-version");
+  if (versionNode) {
+    versionNode.addEventListener('click', function () {
+      versionWrapper = document.getElementById("toc-version-wrapper");
+      versionWrapper.classList.toggle('toc-version-wrapper-active');
+      versionOptions = document.getElementById("toc-version-options");
+      if (!versionOptions.dataset.ready) {
+        versionsUri = 'https://docs.typo3.org/services/ajaxversions.php?url=' + encodeURI(document.URL);
+        $.ajax({
+          url: versionsUri,
+          success: function (result) {
+            setVersionContent(result);
+            versionOptions = document.getElementById("toc-version-options");
+            versionOptions.dataset.ready = true;
+          },
+          error: function () {
+            setVersionContent('<p>No data available.</p>');
+            versionOptions = document.getElementById("toc-version-options");
+            versionOptions.dataset.ready = true;
+          }
+        });
+      }
     });
-    // Nav menu link click operations
-    $(document).on('click', ".wy-menu-vertical .current ul li a", function() {
-        var target = $(this);
-        // Close menu when you click a link.
-        $("[data-toggle='wy-nav-shift']").removeClass("shift");
-        $("[data-toggle='rst-versions']").toggleClass("shift");
-        // Handle dynamic display of l3 and l4 nav lists
-        toggleCurrent(target);
-        if (typeof(window.SphinxRtdTheme) != 'undefined') {
-            window.SphinxRtdTheme.StickyNav.hashChange();
-        }
-    });
-    $(document).on('click', "[data-toggle='rst-current-version']", function() {
-        if (typeof window.T3Docs['fillInRelatedLinks'] === 'undefined') {
-            fillInRelatedLinks();
-        }
-        $("[data-toggle='rst-versions']").toggleClass("shift-up");
-    });
+  }
 });

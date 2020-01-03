@@ -15,5 +15,9 @@
     }
     .breadcrumb-additions {
         margin-bottom: $spacer;
+        display: none;
+        @include media-breakpoint-up('md') {
+            display: block;
+        }
     }
 }

@@ -76,12 +76,7 @@ $frame-backgrounds: map-merge(
 // --------------------------------------------------
 .frame-ruler-before {
     border-top: 1px solid rgba(0, 0, 0, .125);
-    @each $breakpoint in map-keys($frame-inner-spacing-scaling) {
-        @include media-breakpoint-up($breakpoint) {
-            $scaling: map-get($frame-inner-spacing-scaling, $breakpoint);
-            margin-top: ($frame-inner-spacing * $scaling);
-        }
-    }
+    margin-top: 0;
 }
 .frame-ruler-after {
     border-bottom: 1px solid rgba(0, 0, 0, .125);
