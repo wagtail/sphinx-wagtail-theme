@@ -189,7 +189,7 @@ module.exports = function (grunt) {
     exec: {
       build_sphinx: {
         command: 'docker run --rm '
-          + '-v ' + path.resolve('./node_modules/TYPO3CMS-Guide-HowToDocument') + ':/PROJECT/:ro '
+          + '-v ' + path.resolve((grunt.option('source') ? grunt.option('source') : './node_modules/TYPO3CMS-Guide-HowToDocument')) + ':/PROJECT/:ro '
           + '-v ' + path.resolve('./config') + ':/CONFIG/:ro '
           + '-v ' + path.resolve('./build') + ':/RESULT/ '
           + '-v ' + path.resolve('./t3SphinxThemeRtd') + ':/ALL/userhome/.local/share/virtualenvs/venv-y0waPz_e/lib/python2.7/site-packages/t3SphinxThemeRtd:ro '
@@ -257,4 +257,5 @@ module.exports = function (grunt) {
   grunt.registerTask('js', ['uglify']);
   grunt.registerTask('default', ['clean', 'update', 'stylelint', 'sass', 'js', 'removesourcemap']);
   grunt.registerTask('build', ['default', 'exec']);
+  grunt.registerTask('render', ['clean:build', 'exec']);
 };

@@ -29,6 +29,7 @@
 	"scripts": {
 		"watch": "grunt watch",
 		"build": "grunt build",
+		"render": "grunt render",
 		"serve": "http-server ./build/Result/project/0.0.0/"
 	},
 	"engines": {
