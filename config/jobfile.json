@@ -2,8 +2,6 @@
     "Overrides_cfg": {
         "html_theme_options": {
             "docstypo3org": "yes",
-            "add_piwik": "no",
-            "show_legalinfo": "yes"
         }
     }
 }
