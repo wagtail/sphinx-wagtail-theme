@@ -224,11 +224,10 @@
     {%- block scripts2 %} {% endblock -%}
     {%- block footer %} {% endblock %}
 
-    {%- if theme_add_piwik -%}
-        <script type="text/javascript" id="idPiwikScript" src="/js/piwik.js"></script>
-    {%- else -%}
-        <script type="text/javascript" id="idPiwikScriptPlaceholder"></script>
+    {% if theme_docstypo3org -%}
+        <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="R9wBKTwzv"></script>
+        <script type="text/plain" data-usercentrics="Matomo" src="/js/piwik.js"></script>
     {%- endif -%}
-</body>
 
+</body>
 </html>
