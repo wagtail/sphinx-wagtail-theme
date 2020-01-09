@@ -188,16 +188,26 @@ module.exports = function (grunt) {
     // exec
     exec: {
       build_sphinx: {
-        command: 'docker run --rm '
-          + '-v ' + path.resolve((grunt.option('source') ? grunt.option('source') : './node_modules/TYPO3CMS-Guide-HowToDocument')) + ':/PROJECT/:ro '
-          + '-v ' + path.resolve('./config') + ':/CONFIG/:ro '
-          + '-v ' + path.resolve('./build') + ':/RESULT/ '
-          + '-v ' + path.resolve('./t3SphinxThemeRtd') + ':/ALL/userhome/.local/share/virtualenvs/venv-y0waPz_e/lib/python2.7/site-packages/t3SphinxThemeRtd:ro '
-          + 't3docs/render-documentation makehtml '
-          + '-c make_latex 0 '
-          + '-c make_singlehtml 0 '
-          + '-c jobfile /CONFIG/jobfile.json '
-          + ';'
+        command: () => {
+          systemSpecific = '';
+          switch (process.platform) {
+            case 'linux':
+              systemSpecific = '--user=$(id -u):$(id -g) ';
+              break;
+          }
+          command = 'docker run --rm '
+            + systemSpecific
+            + '--volume ' + path.resolve((grunt.option('source') ? grunt.option('source') : './node_modules/TYPO3CMS-Guide-HowToDocument')) + ':/PROJECT/:ro '
+            + '--volume ' + path.resolve('./config') + ':/CONFIG/:ro '
+            + '--volume ' + path.resolve('./build') + ':/RESULT/ '
+            + '--volume ' + path.resolve('./t3SphinxThemeRtd') + ':/ALL/userhome/.local/share/virtualenvs/venv-y0waPz_e/lib/python2.7/site-packages/t3SphinxThemeRtd:ro '
+            + 't3docs/render-documentation makehtml '
+            + '-c make_latex 0 '
+            + '-c make_singlehtml 0 '
+            + '-c jobfile /CONFIG/jobfile.json '
+            + ';'
+          return command;
+        }
       }
     },
 
