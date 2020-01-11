@@ -150,10 +150,15 @@
             font-size: 90%;
             padding: .25em .5em;
             margin-bottom: ($spacer / 2);
-            background: theme-color-level('info', -11);
-            color: theme-color('info');
-            border-top: solid 3px theme-color('info');
             position: relative;
+            border-top: solid 3px theme-color('info');
+            background-color: theme-color-level('info', -11);
+            color: theme-color-level('info', 3);
+        }
+        dl dt {
+            border-top: 2px solid theme-color-level('light', 3);
+            background-color: theme-color('light');
+            color: color-yiq(theme-color('light'));
         }
         tt,
         code {
