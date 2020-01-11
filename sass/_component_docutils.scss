@@ -44,6 +44,7 @@ table.docutils {
     &:not(.field-list) {
         border: 0;
         @extend .table;
+        @extend .table-bordered;
         @extend .table-striped;
         thead {
             @extend .thead-light;
