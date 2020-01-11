@@ -165,7 +165,7 @@
             background-color: transparent;
             border: none;
             padding: 0;
-            font-size: inherit;
+            font-size: 100%;
         }
         .optional {
             padding: 0 .25em;
@@ -173,6 +173,9 @@
         .headerlink,
         .optional {
             color: $body-color;
+        }
+        .viewcode-link {
+            padding-left: 1em;
         }
     }
     dl.dl-parameters {
