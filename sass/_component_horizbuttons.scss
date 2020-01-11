@@ -10,6 +10,7 @@
 ul[class*="horizbuttons-"] {
     padding: 0;
     > li {
+        line-height: 2em;
         border-radius: $border-radius;
         display: inline;
         padding: ($spacer / 4) ($spacer / 2);
