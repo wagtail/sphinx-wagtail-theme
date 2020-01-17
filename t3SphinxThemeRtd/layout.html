@@ -9,18 +9,21 @@
 {%- set logo = "img/typo3-logo.svg" -%}
 {%- set urlTypo3Documentation = "https://docs.typo3.org" -%}
 
-{%- set css_files = [] -%}
-{%- set css_files = css_files + ["_static/css/webfonts.css"] -%}
-{%- set css_files = css_files + ["_static/css/fontawesome.css"] -%}
+{%- set css_files = css_files + ['_static/css/webfonts.css'] -%}
+{%- set css_files = css_files + ['_static/css/fontawesome.css'] -%}
 
-{%- set script_files = [] -%}
-{%- set script_files = script_files + ["_static/js/jquery.min.js"] -%}
+{%- set blacklist_script_files = [] -%}
+{%- set blacklist_script_files = blacklist_script_files + ['_static/jquery.js'] -%}
+{%- set blacklist_script_files = blacklist_script_files + ['_static/underscore.js'] -%}
+{%- set blacklist_script_files = blacklist_script_files + ['_static/doctools.js'] -%}
+{%- set blacklist_script_files = blacklist_script_files + ['_static/language_data.js'] -%}
+
+{%- set script_files = script_files + ['_static/js/jquery.min.js'] -%}
 {%- set script_files = script_files + ['_static/js/underscore.min.js'] -%}
 {%- set script_files = script_files + ['_static/js/doctools.min.js'] -%}
-{%- set script_files = script_files + ["_static/js/popper.min.js"] -%}
-{%- set script_files = script_files + ["_static/js/bootstrap.min.js"] -%}
-{%- set script_files = script_files + ["_static/js/theme.min.js"] -%}
-{%- set script_files = script_files + ["https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"] -%}
+{%- set script_files = script_files + ['_static/js/popper.min.js'] -%}
+{%- set script_files = script_files + ['_static/js/bootstrap.min.js'] -%}
+{%- set script_files = script_files + ['_static/js/theme.min.js'] -%}
 
 {#- SEARCH -#}
 {%- set script_files = script_files + ['_static/language_data.js'] -%}
@@ -212,7 +215,9 @@
             };
         </script>
         {%- for scriptfile in script_files %}
-            <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+            {% if scriptfile not in blacklist_script_files %}
+                <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+            {% endif %}
         {%- endfor %}
     {% endif %}
 
