@@ -132,7 +132,37 @@
      * Blockquote
      */
     blockquote {
-        margin-left: ($spacer * 2);
+        position: relative;
+        padding: $card-spacer-y $card-spacer-x;
+        padding-left: ($card-spacer-x + 2.5rem);
+        border: $card-border-width solid $card-border-color;
+        border-radius: $card-border-radius;
+        box-shadow: $box-shadow-sm;
+        background: $card-bg;
+        &:before {
+            border-top-left-radius: $card-border-radius;
+            border-bottom-left-radius: $card-border-radius;
+            text-align: center;
+            user-select: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 2.5rem;
+            height: 100%;
+            width: 2.5rem;
+            color: $card-cap-color;
+            background-color: $card-cap-bg;
+            content: '"';
+        }
+        .attribution {
+            font-size: 80%;
+            font-style: italic;
+        }
+        > div {
+            > *:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 
     /**
