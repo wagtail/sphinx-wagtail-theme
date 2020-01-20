@@ -1,0 +1,8 @@
+{% if next or prev %}
+    {% if prev %}
+        <a class="no-focus" accesskey="p" href="{{ prev.link|e }}" tabindex="-1"></a>
+    {% endif %}
+    {% if next %}
+        <a class="no-focus" accesskey="n" href="{{ next.link|e }}" tabindex="-1"></a>
+    {% endif %}
+{%- endif %}

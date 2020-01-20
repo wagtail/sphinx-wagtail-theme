@@ -190,61 +190,10 @@ Setup minimal development environment
 
 4. Compile::
 
-      yarn run default
+      yarn build
 
-Use local theme
----------------
+5. Serve::
 
-Once changes were made to the theme and were compiled, these changes have to be
-tested. Most probably there is already a manual where these changes should be tested.
-Therefore it's possible to build the TYPO3 Documentation Docker container using the
-local version of the theme. This can then be used to render the manual to test
-changes made to the theme.
-
-There is also an example documentation and local development setup without Docker. In
-case that suits better, follow the "Render provided Sphinx with theme" approach in
-next section. Otherwise follow the next steps.
-
-1. Follow instructions at
-   https://github.com/t3docs/docker-render-documentation/blob/master/CONTRIBUTING.rst#test-changes-to-docker-image-locally
-   to build the docker container.
-
-2. There you'll find also instructions how to include a local version of the theme to
-   test changes.
-
-Render provided Sphinx with theme
----------------------------------
-
-Follow "Setup minimal development environment" and run the following additional steps:
-
-1. Install `Sphinx <http://sphinx-doc.org/>`__.
-   It is a good idea - but not a requirement - to install into a `virtual environment
-   <https://virtualenv.pypa.io/en/latest/>`__::
-
-      # Maybe activate virtualenv first. Then:
-
-      pip install sphinx
-
-2. You may want to add the `Livereload Addons <http://livereload.com/>`__ to your
-   Firefox and Chrome browser.
-
-3. If you want to compile an example documentation using the new assets run the
-   following Grunt task, make sure you're in your virtual environment::
-
-      ./node_modules/.bin/grunt assets
-
-   Or, maybe even better, run Grunt in the background::
-
-      ./node_modules/.bin/grunt &
-
-This default task will do the following **very cool things that make it worth the trouble**.
-
-1. It'll run sphinx and build the demo_docs.
-2. It'll watch for changes to the Sass files and build css from the changes.
-3. It'll rebuild the sphinx demo_docs anytime it notices a change to .rst, .html, .js
-   or .css files.
-4. It'll start a local web server at localhost:1919.
-5. It'll show the demo_docs in the browser.
-6. It'll refresh the browser for localhost:1919 automatically if LiveReload is enabled.
+      yarn serve
 
 End of README.

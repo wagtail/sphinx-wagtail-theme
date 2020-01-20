@@ -1,75 +1,61 @@
 <footer>
-  {% if next or prev %}
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      {% if next %}
-        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="Accesskey Alt(+Shift)+n" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      {% endif %}
-      {% if prev %}
-        <a href="{{ prev.link|e }}" class="btn btn-neutral" title="Accesskey Alt(+Shift)+p" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      {% endif %}
+    <div class="frame frame-ruler-before frame-background-dark">
+        <div class="frame-container">
+            <div class="frame-inner">
+
+                {%- if theme_docstypo3org -%}
+                {%-
+                    if theme_project_home
+                    or theme_project_contact
+                    or theme_project_discussions
+                    or theme_project_issues
+                    or theme_project_repository
+                -%}
+                <ul class="footer-simplemenu">
+                    {%- if theme_project_home -%}
+                    <li><a href="{{ theme_project_home|e }}" title="Home"><span>Home</span></a></li>
+                    {%- endif -%}
+                    {%- if theme_project_contact -%}
+                    <li><a href="{{ theme_project_contact|e }}" title="Contact"><span>Contact</span></a></li>
+                    {%- endif -%}
+                    {%- if theme_project_discussions -%}
+                    <li><a href="{{ theme_project_discussions|e }}" title="Discussions"><span>Discussions</span></a></li>
+                    {%- endif -%}
+                    {%- if theme_project_issues -%}
+                    <li><a href="{{ theme_project_issues|e }}" title="Issues"><span>Issues</span></a></li>
+                    {%- endif -%}
+                    {%- if theme_project_repository -%}
+                    <li><a href="{{ theme_project_repository|e }}" title="Repository"><span>Repository</span></a></li>
+                    {%- endif -%}
+                </ul>
+                {%- endif -%}
+                {%- endif -%}
+
+                <div class="footer-additional">
+                    {%- if theme_show_last_updated and last_updated -%}
+                    <p class="text-center">Last rendered on {{ last_updated }}</p>
+                    {%- endif -%}
+                </div>
+
+                <div class="footer-meta">
+                    {%- if theme_show_copyright -%}
+                    <div class="footer-meta-copyright">
+                        {%- if hasdoc('Copyright') -%}
+                        <a href="{{ pathto('Copyright') }}">&copy; Copyright {{ copyright }}</a>
+                        {%- elif hasdoc('copyright') -%}
+                        <a href="{{ pathto('copyright') }}">&copy; Copyright {{ copyright }}</a>
+                        {%- else -%}
+                        &copy; Copyright {{ copyright }}
+                        {%- endif -%}
+                    </div>
+                    {%- endif %}
+                    <ul class="footer-meta-navigation">
+                        <li><a href="https://typo3.org/legal-notice" rel="nofollow" target="_blank" title="Legal Notice">Legal Notice</a></li>
+                        <li><a href="https://typo3.org/privacy-policy" rel="nofollow" target="_blank" title="Privacy Policy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
     </div>
-  {% endif %}
-
-  <hr/>
-
-  <div class="contentinfo">
-
-    {%- if show_source and has_source and sourcename %}
-      <p class="show_source">
-        <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">
-          <span class="fa fa-binoculars"></span>&#32;View page source
-        </a>
-      </p>
-    {%- endif %}
-
-    {%- if theme_show_copyright %}
-      <p class="show_copyright">
-        {%- if hasdoc('Copyright') %}
-          <a href="{{ pathto('Copyright') }}">
-            &copy; Copyright {{ copyright }}
-          </a>
-        {%- elif hasdoc('copyright') %}
-          <a href="{{ pathto('copyright') }}">
-            &copy; Copyright {{ copyright }}
-          </a>
-        {%- else %}
-            &copy; Copyright {{ copyright }}
-        {%- endif %}
-      </p>
-    {%- endif %}
-
-    {%- if theme_show_last_updated and last_updated%}
-      <p class="last_updated">
-        Last rendered on {{ last_updated }}
-      </p>
-    {%- endif %}
-
-    {%- if theme_show_sphinx %}
-      <p class="show_sphinx">
-        Built with <a href="http://sphinx-doc.org/" target="_blank">Sphinx</a> and
-        <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd" target="_blank">t3SphinxThemeRtd.</a>
-        Report theme issues <a href="https://github.com/TYPO3-Documentation/t3SphinxThemeRtd/issues" target="_blank">here.</a>
-      </p>
-    {%- endif %}
-
-    {%- if theme_show_revision and theme_github_revision_msg %}
-      <p class="show_revision">
-        Revision {{ theme_github_revision_msg }}
-      </p>
-    {%- endif %}
-
-
-    {%- if theme_show_legalinfo %}
-      <p class="show_legalinfo">
-        <a href="https://typo3.org/legal-info/" rel="nofollow">
-          <span class="fa fa-legal"></span>&#32;Legal Info
-        </a>
-      </p>
-    {%- endif %}
-
-
-
-
-  </div>
-
 </footer>

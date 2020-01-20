@@ -1,0 +1,15 @@
+.align-center {
+    @extend .text-center;
+}
+.with-border {
+    @extend .border;
+}
+.with-shadow {
+    @extend .shadow-sm;
+}
+.no-focus {
+    outline: none !important;
+}
+.cc {
+    clear: both;
+}

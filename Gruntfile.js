@@ -1,136 +1,271 @@
-module.exports = function(grunt) {
+const path = require('path');
+const sass = require('node-sass');
+
+module.exports = function (grunt) {
+
+  /**
+   * Grunt task to remove source map comment
+   */
+  grunt.registerMultiTask('removesourcemap', 'Grunt task to remove sourcemp comment from files', function () {
+    var done = this.async(),
+      files = this.filesSrc.filter(function (file) {
+        return grunt.file.isFile(file);
+      }),
+      counter = 0;
+    this.files.forEach(function (file) {
+      file.src.filter(function (filepath) {
+        var content = grunt.file.read(filepath).replace(/\/\/# sourceMappingURL=\S+/, '');
+        grunt.file.write(file.dest, content);
+        grunt.log.success('Source file "' + filepath + '" was processed.');
+        counter++;
+        if (counter >= files.length) done(true);
+      });
+    });
+  });
+
+  /**
+   * Grunt task for modernizr
+   */
+  grunt.registerMultiTask("modernizr", "Respond to your user’s browser features.", function () {
+    var options = this.options(),
+      done = this.async(),
+      modernizr = require("modernizr"),
+      dest = this.data.dest;
+    modernizr.build(options, function (output) {
+      grunt.file.write(dest, output);
+      done();
+    });
+  });
+
+  /**
+   * Project configuration.
+   */
   grunt.initConfig({
-    open : {
-      dev: {
-        path: 'http://localhost:1919'
-      }
-    },
+    pkg: grunt.file.readJSON('package.json'),
 
-    connect: {
-      server: {
-        options: {
-          port: 1919,
-          base: 'demo_docs/build',
-          livereload: true
-        }
-      }
-    },
-
+    // copy
     copy: {
       fonts: {
         files: [
-          // includes files within path
-          {expand: true, flatten: true, src: ['node_modules/font-awesome/fonts/*'], dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-
-          // {src: ['node_modules/fontface-source-sans-pro/scss/source-sans-pro.scss'], dest: 'sass/_source-sans-pro.scss'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/EOT/*-It*' ],     dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/EOT/*Bold*' ],    dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/EOT/*Regular*' ], dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/eot/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/OTF/*-It*' ],     dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/otf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/OTF/*Bold*' ],    dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/otf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/OTF/*Regular*' ], dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/otf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/TTF/*-It*' ],     dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/ttf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/TTF/*Bold*' ],    dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/ttf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/TTF/*Regular*' ], dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/ttf/',  filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/WOFF/OTF/*-It*'],     dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/woff/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/WOFF/OTF/*Bold*'],    dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/woff/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['node_modules/fontface-source-sans-pro/fonts/WOFF/OTF/*Regular*'], dest: 't3SphinxThemeRtd/static/fonts/SourceSansPro/woff/', filter: 'isFile'},
-
-          {src: ['node_modules/source-code-pro/EOT/SourceCodePro-Bold.eot'],              dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/eot/SourceCodePro-Bold.eot'},
-          {src: ['node_modules/source-code-pro/EOT/SourceCodePro-Regular.eot'],           dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/eot/SourceCodePro-Regular.eot'},
-          {src: ['node_modules/source-code-pro/OTF/SourceCodePro-Bold.otf'],              dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/otf/SourceCodePro-Bold.otf'},
-          {src: ['node_modules/source-code-pro/OTF/SourceCodePro-Regular.otf'],           dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/otf/SourceCodePro-Regular.otf'},
-          {src: ['node_modules/source-code-pro/SVG/SourceCodePro-Bold.svg'],              dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/svg/SourceCodePro-Bold.svg'},
-          {src: ['node_modules/source-code-pro/SVG/SourceCodePro-Regular.svg'],           dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/svg/SourceCodePro-Regular.svg'},
-          {src: ['node_modules/source-code-pro/TTF/SourceCodePro-Bold.ttf'],              dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/ttf/SourceCodePro-Bold.ttf'},
-          {src: ['node_modules/source-code-pro/TTF/SourceCodePro-Regular.ttf'],           dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/ttf/SourceCodePro-Regular.ttf'},
-          {src: ['node_modules/source-code-pro/WOFF/TTF/SourceCodePro-Bold.ttf.woff'],    dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/woff/SourceCodePro-Bold.woff'},
-          {src: ['node_modules/source-code-pro/WOFF/TTF/SourceCodePro-Regular.ttf.woff'], dest: 't3SphinxThemeRtd/static/fonts/SourceCodePro/woff/SourceCodePro-Regular.woff'},
-
-          // move local fonts into final path
-          {expand: true, flatten: true, src: ['fonts/local/*'], dest: 't3SphinxThemeRtd/static/fonts/', filter: 'isFile'},
-
-          {expand: true, flatten: true, src: ['node_modules/jquery/dist/*'], dest: 't3SphinxThemeRtd/static/', filter: 'isFile'}
-          // todo: jquery-ui!
-
+          {
+            expand: true,
+            cwd: 'node_modules/@fortawesome/fontawesome-free/webfonts',
+            src: ['**/*'],
+            dest: 't3SphinxThemeRtd/static/fonts/'
+          },
+          {
+            expand: true,
+            cwd: 'fonts',
+            src: ['**/*'],
+            dest: 't3SphinxThemeRtd/static/fonts/'
+          }
+        ]
+      },
+      libs: {
+        files: [
+          {
+            src: 'node_modules/jquery/dist/jquery.min.js',
+            dest: 't3SphinxThemeRtd/static/js/jquery.min.js'
+          },
+          {
+            src: 'node_modules/popper.js/dist/umd/popper.min.js',
+            dest: 't3SphinxThemeRtd/static/js/popper.min.js'
+          },
+          {
+            src: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            dest: 't3SphinxThemeRtd/static/js/bootstrap.min.js'
+          }
         ]
       }
     },
 
+    // stylelint
+    stylelint: {
+      options: {
+        configFile: '.stylelintrc',
+        fix: true,
+      },
+      sass: ['sass/**/*.scss']
+    },
+
+    // sass
     sass: {
       options: {
-        sourceMap: true,
-        includePaths: [
-          'node_modules/bourbon/dist',
-          'node_modules/neat/app/assets/stylesheets',
-          'node_modules/font-awesome/scss',
-          'node_modules/wyrm/sass'
-        ]
-      },
-      dev: {
-        options: {
-          outputStyle: 'expanded'
-        },
-        files: {
-          't3SphinxThemeRtd/static/css/badge_only.css': 'sass/badge_only.sass',
-          't3SphinxThemeRtd/static/css/t3more.css': 'sass/t3more.sass',
-          't3SphinxThemeRtd/static/css/theme.css': 'sass/theme.sass',
-          't3SphinxThemeRtd/static/css/theme-no-fonts.css': 'sass/theme-no-fonts.sass'
-        }
+        implementation: sass,
+        outputStyle: 'compressed'
       },
       build: {
-        options: {
-          outputStyle: 'compressed'
-        },
         files: {
-          't3SphinxThemeRtd/static/css/badge_only.css': 'sass/badge_only.sass',
-          't3SphinxThemeRtd/static/css/t3more.css': 'sass/t3more.sass',
-          't3SphinxThemeRtd/static/css/theme.css': 'sass/theme.sass',
-          't3SphinxThemeRtd/static/css/theme-no-fonts.css': 'sass/theme-no-fonts.sass'
+          't3SphinxThemeRtd/static/css/theme.css': 'sass/theme.scss',
+          't3SphinxThemeRtd/static/css/webfonts.css': 'sass/webfonts.scss',
+          't3SphinxThemeRtd/static/css/fontawesome.css': 'sass/fontawesome.scss',
         }
       }
     },
 
-    exec: {
-      build_sphinx: {
-        cmd: './my-sphinx-build.sh demo_docs/source demo_docs/build'
+    // modernizr
+    modernizr: {
+      main: {
+        'dest': 't3SphinxThemeRtd/static/js/modernizr.min.js',
+        'options': {
+          'options': [
+            'domPrefixes',
+            'prefixes',
+            'addTest',
+            'hasEvent',
+            'mq',
+            'prefixedCSSValue',
+            'testAllProps',
+            'testProp',
+            'testStyles',
+            'setClasses'
+          ],
+          'feature-detects': [
+            'custom-elements',
+            'history',
+            'pointerevents',
+            'postmessage',
+            'webgl',
+            'websockets',
+            'css/animations',
+            'css/columns',
+            'css/flexbox',
+            'elem/picture',
+            'img/sizes',
+            'img/srcset',
+            'workers/webworkers'
+          ]
+        }
       }
     },
 
-    clean: {
-      build: ["demo_docs/build"],
-      fonts: ["t3SphinxThemeRtd/static/fonts"]
+    // uglify
+    uglify: {
+      options: {
+        output: {
+          comments: false
+        }
+      },
+      autocomplete: {
+        src: 'node_modules/autocompleter/autocomplete.js',
+        dest: 't3SphinxThemeRtd/static/js/autocomplete.min.js'
+      },
+      underscore: {
+        src: 'node_modules/underscore/underscore.js',
+        dest: 't3SphinxThemeRtd/static/js/underscore.min.js'
+      },
+      modernizr: {
+        src: 't3SphinxThemeRtd/static/js/modernizr.min.js',
+        dest: 't3SphinxThemeRtd/static/js/modernizr.min.js'
+      },
+      // SOURCE: https://github.com/sphinx-doc/sphinx/blob/master/sphinx/themes/basic/static/doctools.js
+      doctools: {
+        src: 'js/doctools.js',
+        dest: 't3SphinxThemeRtd/static/js/doctools.min.js'
+      },
+      // SOURCE: https://github.com/sphinx-doc/sphinx/blob/master/sphinx/themes/basic/static/searchtools.js
+      searchtools: {
+        src: 'js/searchtools.js',
+        dest: 't3SphinxThemeRtd/static/js/searchtools.min.js'
+      },
+      theme: {
+        src: 'js/theme.js',
+        dest: 't3SphinxThemeRtd/static/js/theme.min.js'
+      },
     },
 
+    // remmove sourcemaps of used dist files
+    removesourcemap: {
+      contrib: {
+        files: {
+          't3SphinxThemeRtd/static/js/jquery.min.js': 't3SphinxThemeRtd/static/js/jquery.min.js',
+          't3SphinxThemeRtd/static/js/bootstrap.min.js': 't3SphinxThemeRtd/static/js/bootstrap.min.js',
+          't3SphinxThemeRtd/static/js/popper.min.js': 't3SphinxThemeRtd/static/js/popper.min.js'
+        }
+      }
+    },
+
+    // exec
+    exec: {
+      build_sphinx: {
+        command: () => {
+          systemSpecific = '';
+          switch (process.platform) {
+            case 'linux':
+              systemSpecific = '--user=$(id -u):$(id -g) ';
+              break;
+          }
+          command = 'docker run --rm '
+            + systemSpecific
+            + '--volume ' + path.resolve((grunt.option('source') ? grunt.option('source') : './node_modules/TYPO3CMS-Guide-HowToDocument')) + ':/PROJECT/:ro '
+            + '--volume ' + path.resolve('./config') + ':/CONFIG/:ro '
+            + '--volume ' + path.resolve('./build') + ':/RESULT/ '
+            + '--volume ' + path.resolve('./t3SphinxThemeRtd') + ':/ALL/userhome/.local/share/virtualenvs/venv-y0waPz_e/lib/python2.7/site-packages/t3SphinxThemeRtd:ro '
+            + 't3docs/render-documentation makehtml '
+            + '-c make_latex 0 '
+            + '-c make_singlehtml 0 '
+            + '-c jobfile /CONFIG/jobfile.json '
+            + ';'
+          return command;
+        }
+      }
+    },
+
+    // build
+    clean: {
+      build: ['build/*', '!build/.gitignore'],
+      css: ['t3SphinxThemeRtd/static/css'],
+      fonts: ['t3SphinxThemeRtd/static/fonts'],
+      js: ['t3SphinxThemeRtd/static/js'],
+    },
+
+    // watch
     watch: {
       /* Compile sass changes into theme directory */
       sass: {
-        files: ['sass/*.sass', 'sass/*.scss', 'node_modules/**/*.sass'],
-        tasks: ['sass:dev']
+        files: [
+          'sass/*.sass',
+          'sass/*.scss',
+          'node_modules/**/*.sass',
+          'node_modules/**/*.scss',
+        ],
+        tasks: ['sass']
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
-        files: ['t3SphinxThemeRtd/**/*', 'demo_docs/**/*.rst', 'demo_docs/**/*.py'],
-        tasks: ['clean:build','exec:build_sphinx']
+        files: [
+          't3SphinxThemeRtd/**/*',
+        ],
+        tasks: ['clean:build', 'exec']
       },
       /* live-reload the demo_docs if sphinx re-builds */
       livereload: {
-        files: ['demo_docs/build/**/*'],
+        files: [
+          'build/**/*'
+        ],
         options: { livereload: true }
       }
     }
 
   });
 
+  /**
+   * Load tasks
+   */
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-stylelint');
 
-  grunt.registerTask('default', ['clean:build', 'clean:fonts', 'copy:fonts', 'sass:build']);
-  grunt.registerTask('build', ['clean:build', 'clean:fonts', 'copy:fonts', 'sass:build', 'exec:build_sphinx']);
-  grunt.registerTask('full', ['clean:build', 'clean:fonts', 'copy:fonts', 'sass:dev', 'exec:build_sphinx', 'connect', 'open', 'watch']);
+  /**
+   * Register tasks
+   */
+  grunt.registerTask('update', ['copy', 'modernizr']);
+  grunt.registerTask('js', ['uglify']);
+  grunt.registerTask('default', ['clean', 'update', 'stylelint', 'sass', 'js', 'removesourcemap']);
+  grunt.registerTask('build', ['default', 'exec']);
+  grunt.registerTask('render', ['clean:build', 'exec']);
 };

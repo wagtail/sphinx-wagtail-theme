@@ -1,0 +1,98 @@
+//
+// Colors
+// --------------------------------------------------
+$white:             #ffffff;
+$gray-100:          #f2f2f2;
+$gray-200:          #e9e9e9;
+$gray-300:          #dedede;
+$gray-400:          #cecece;
+$gray-500:          #ababab;
+$gray-600:          #6c6c6c;
+$gray-700:          #494949;
+$gray-800:          #313131;
+$gray-900:          #212121;
+$black:             #000000;
+
+$primary:           #ff8700;
+$success:           #5cb85c;
+$info:              #5bc0de;
+$warning:           #f0ad4e;
+$danger:            #d9534f;
+
+$link-color:                   $primary;
+$link-hover-color:             darken($link-color, 15%);
+$link-alternate-color:         #ffffff;
+$link-alternate-hover-color:   darken($link-alternate-color, 15%);
+
+$yiq-contrasted-threshold: 160;
+
+//
+// Code Colors
+// --------------------------------------------------
+$code-color:        #ff5370;
+$code-color-file:   hsl(328, 100%, 50%);
+$code-color-html:   hsl(275, 100%, 40%);
+$code-color-js:     hsl(128, 100%, 20%);
+$code-color-method: hsl(210, 100%, 35%);
+$code-color-php:    hsl(210, 100%, 35%);
+$code-color-py:     hsl(210, 100%, 50%);
+$code-color-ts:     hsl(12, 100%, 20%);
+$code-color-yaml:   hsl(170, 80%, 30%);
+
+//
+// Fonts
+// --------------------------------------------------
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+$font-family-monospace: 'Source Code Pro', monospace;
+$font-weight-bold: 600;
+
+$h1-font-size: 2em;
+$h2-font-size: 1.75em;
+$h3-font-size: 1.5em;
+$h4-font-size: 1.25em;
+$h5-font-size: 1em;
+$h6-font-size: .85em;
+
+$headings-font-weight: $font-weight-bold;
+$headings-margin-bottom: .5em;
+
+//
+// Components
+// --------------------------------------------------
+$box-shadow-sm: 0 2px 2px 0 rgba(0, 0, 0, .15);
+
+//
+// Cards
+// --------------------------------------------------
+$card-spacer-y: 1.25rem;
+$card-spacer-x: 1.25rem;
+
+//
+// Table
+// --------------------------------------------------
+$table-bg:          $white;
+
+//
+// Grid
+// --------------------------------------------------
+$grid-gutter-width: 40px;
+
+//
+// Base 16 Scheme
+// --------------------------------------------------
+$base16-base00:     #212121;
+$base16-base01:     #2e3c43;
+$base16-base02:     #314549;
+$base16-base03:     #546e7a;
+$base16-base04:     #b2ccd6;
+$base16-base05:     #eeffff;
+$base16-base06:     #eeffff;
+$base16-base07:     #ffffff;
+$base16-base08:     #f07178;
+$base16-base09:     #f78c6c;
+$base16-base0A:     #ffcb6b;
+$base16-base0B:     #c3e88d;
+$base16-base0C:     #89ddff;
+$base16-base0D:     #82aaff;
+$base16-base0E:     #c792ea;
+$base16-base0F:     #ff5370;
