@@ -174,7 +174,7 @@ module.exports = function (grunt) {
       },
     },
 
-    // remmove sourcemaps of used dist files
+    // remove sourcemaps from dist files
     removesourcemap: {
       contrib: {
         files: {
