@@ -3,7 +3,7 @@ from pkg_resources import get_distribution, DistributionNotFound
 
 try:
     release = get_distribution('sphinx_typo3_theme').version
-    VERSION = release.split('.')[:2]
+    VERSION = release.split('.')[:3]
     __version__ = '.'.join(str(v) for v in VERSION)
     __version_full__ = release
 except DistributionNotFound:
