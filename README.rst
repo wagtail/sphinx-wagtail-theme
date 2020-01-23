@@ -1,7 +1,7 @@
 
-==============================
-A new theme for Docs.TYPO3.Org
-==============================
+===============================
+Sphinx Theme for docs.typo3.org
+===============================
 
 :Project:  sphinx_typo3_theme
 :Team:     TYPO3 Documentation Team
