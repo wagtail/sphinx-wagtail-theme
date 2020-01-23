@@ -90,56 +90,12 @@ your ``conf.py`` file:
     html_theme = "sphinx_typo3_theme"
 
 
-Special Information for TYPO3 Users
------------------------------------
-
-1. Disable or remove any existing "TYPO3 codeblock"
-
-   If the "TYPO3 codeblock" is part of your ``conf.py`` file
-   then you need to remove or disable that code.
-   You can do that easily by writing ``if 0`` instead of ``if 1``.
-
-   .. figure:: Documentation/Images/disable-typo3-codeblock.png
-      :alt: How to disable an existing TYPO3 codeblock in conf.py
-
-      Disable any "TYPO3 codeblock" in your ``conf.py`` by
-      writing ``if 0``.
-
-2. Once the "TYPO3 codeblock" is disabled the old `t3sphinx module
-   <https://git.typo3.org/Documentation/RestTools.git/tree/HEAD:/ExtendingSphinxForTYPO3/src/t3sphinx>`__
-   IS NOT used any more. So you finally are being freed from old ballast
-   and some of those old and annoying errors are gone. Rendering of Sphinx Json
-   format will just work fine with the new theme.
-
-3. On the other hand: Since the ``t3sphinx module`` isn't loaded any more
-   there is no processing of Yaml files for configuration at the moment. This
-   means, at least for now:
-
-   - You have to use a ``conf.py`` file for configuration.
-   - You need to move all necessary settings from possible ``GlobalSettings.yml``
-     and ``Settings.yml`` files into the ``conf.py``.
-
-4. Maybe we add Yaml processing in the future. At the moment this doesn't exist.
-
-5. **To quickly get going:** Feel free to copy from this
-   `Typoscript Reference conf.py example file
-   <Documentation/Examples/TyposcriptReferenceExample-conf.py>`__.
-   The relevant parts are at the end.
-
 Contributing or modifying the theme
 ===================================
 
-This chapter is taken from the `original README <https://github.com/snide/sphinx_rtd_theme>`__
-(and then modified)::
+If you would like to help improve the, theme feel free to fork this project
+and create a pull request when you're happy with your changes.
 
-The ``sphinx_typo3_theme`` is primarily a `Sass <http://sass-lang.com/>`__ project that
-requires a few other Sass libraries. We are using yarn to
-manage these dependencies and Sass to build the css. The good news is that there is
-a nice set of `Grunt <http://gruntjs.com/>`__ operations that will not only load
-these dependencies, but watch for changes, rebuild the sphinx demo docs and build
-a distributable version of the theme. The bad news is this means you'll need to
-set up your environment similar to that of a front-end developer (versus that of
-a python developer). That means installing `Node <https://nodejs.org/>`__.
 
 Setup minimal development environment
 -------------------------------------
