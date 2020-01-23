@@ -1,4 +1,4 @@
-import os
+from os import path
 
 VERSION = (3, 6, 17)
 
@@ -7,7 +7,7 @@ __version_full__ = __version__
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
-    theme_path = os.path.abspath(os.path.dirname(__file__))
+    theme_path = path.abspath(path.dirname(__file__))
     return [theme_path]
 
 def setup(app):
