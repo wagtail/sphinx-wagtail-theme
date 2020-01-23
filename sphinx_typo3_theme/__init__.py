@@ -1,4 +1,4 @@
-from os import path
+from os
 
 VERSION = (3, 6, 17)
 
