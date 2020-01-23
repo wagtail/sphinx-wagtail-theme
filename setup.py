@@ -20,11 +20,15 @@ setup(
     packages=['sphinx_typo3_theme'],
     package_data={'sphinx_typo3_theme': ['*.*']},
     include_package_data=True,
+    use_scm_version=True,
     entry_points = {
         'sphinx.html_themes': [
             'sphinx_typo3_theme = sphinx_typo3_theme',
         ]
     },
+    setup_requires=[
+        'setuptools_scm'
+    ],
     install_requires=[
        'sphinx'
     ],

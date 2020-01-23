@@ -12,13 +12,7 @@ A new theme for Docs.TYPO3.Org
            which are kind of a "stresstest" and demonstrate what's possible and
            how the theme can be used.
 
-This work builds on top of v0.1.8 of `https://github.com/snide/sphinx_rtd_theme
-<https://github.com/snide/sphinx_rtd_theme>`__.
-
-Find notes about the state of development `in this blogpost
-<http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html>`__.
-
-Navigate this page:
+Table of contents:
 
 .. default-role:: code
 

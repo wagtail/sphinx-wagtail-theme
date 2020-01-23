@@ -1,8 +1,0 @@
-3.6.17
-
-Update files:
-
-- CHANGELOG.txt
-- sphinx_typo3_theme/__init__.py
-- sphinx_typo3_theme/static/sphinx_typo3_theme-3.6.17.txt
-
