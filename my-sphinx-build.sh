@@ -7,5 +7,5 @@ sphinx-build $1 $2
 
 if ((1)); then
 	mv $2/_static $2/__static
-	ln -s $(pwd)/t3SphinxThemeRtd/static $2/_static
+	ln -s $(pwd)/sphinx_typo3_theme/static $2/_static
 fi

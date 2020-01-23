@@ -3,7 +3,7 @@
 A new theme for Docs.TYPO3.Org
 ==============================
 
-:Project:  t3SphinxThemeRtd
+:Project:  sphinx_typo3_theme
 :Team:     TYPO3 Documentation Team
 :Author:   Martin Bless <martin.bless@typo3.org>
 :License:  MIT
@@ -37,16 +37,16 @@ Install the Theme Using PIP
 `PIP <https://pip.pypa.io/en/stable/>`__ is the
 `Python <https://www.python.org/>`__ packet manager for
 `PyPi <https://pypi.python.org/pypi>`__.
-'t3SphinxThemeRtd' is provided by the TYPO3 Documentation Team
+'sphinx_typo3_theme' is provided by the TYPO3 Documentation Team
 and available from PyPi.
 
 Installation with ``pip``::
 
    # fetch from PyPi and install latest version:
-   pip install --upgrade t3SphinxThemeRtd
+   pip install --upgrade sphinx-typo3-theme
 
    # if required for your system, run a superuser:
-   pip install --upgrade t3SphinxThemeRtd
+   pip install --upgrade sphinx-typo3-theme
 
 For your interest: Some quick examples of ``pip`` usage::
 
@@ -55,13 +55,13 @@ For your interest: Some quick examples of ``pip`` usage::
    pip --help
 
    # install locally for this user only
-   pip install --upgrade --user t3SphinxThemeRtd
+   pip install --upgrade --user sphinx-typo3-theme
 
    # uninstall - no matter if installed by PIP or setup.py:
-   pip uninstall t3SphinxThemeRtd
+   pip uninstall sphinx_typo3_theme
 
    # search PyPi, the Python packet index
-   pip search t3SphinxThemeRtd
+   pip search sphinx_typo3_theme
    pip search sphinx
 
 
@@ -70,8 +70,8 @@ Install directly using 'setup.py'
 
 To install directly from the package::
 
-   git clone https://github.com/TYPO3-Documentation/t3SphinxThemeRtd.git
-   cd t3SphinxThemeRtd
+   git clone git@github.com:TYPO3-Documentation/sphinx_typo3_theme.git
+   cd sphinx_typo3_theme
    (sudo) python setup.py install
 
    # or install locally in user's home:
@@ -85,22 +85,22 @@ In the ``conf.py`` file of your documentation project:
 
 Load the module::
 
-   import t3SphinxThemeRtd
+   import sphinx_typo3_theme
 
 Choose the theme::
 
-   html_theme = "t3SphinxThemeRtd"
+   html_theme = "sphinx_typo3_theme"
 
 Set the theme path::
 
-   html_theme_path = [t3SphinxThemeRtd.get_html_theme_path()]
+   html_theme_path = [sphinx_typo3_theme.get_html_theme_path()]
 
 Or, if that's better in your case, add the theme path to to the
 list of already defined paths::
 
    html_theme_path = []
    # ...
-   html_theme_path.append(t3SphinxThemeRtd.get_html_theme_path())
+   html_theme_path.append(sphinx_typo3_theme.get_html_theme_path())
 
 
 Special Information for TYPO3 Users
@@ -166,7 +166,7 @@ Contributing or modifying the theme
 This chapter is taken from the `original README <https://github.com/snide/sphinx_rtd_theme>`__
 (and then modified)::
 
-The ``t3SphinxThemeRtd`` is primarily a `Sass <http://sass-lang.com/>`__ project that
+The ``sphinx_typo3_theme`` is primarily a `Sass <http://sass-lang.com/>`__ project that
 requires a few other Sass libraries. We are using yarn to
 manage these dependencies and Sass to build the css. The good news is that there is
 a nice set of `Grunt <http://gruntjs.com/>`__ operations that will not only load

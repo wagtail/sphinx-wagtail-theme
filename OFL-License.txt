@@ -1,7 +1,7 @@
-t3SphinxThemeRtd/static/fonts/Inconsolata-Bold.ttf
-t3SphinxThemeRtd/static/fonts/Lato-Bold.ttf
-t3SphinxThemeRtd/static/fonts/Inconsolata.ttf
-t3SphinxThemeRtd/static/fonts/Lato-Regular.ttf
+sphinx_typo3_theme/static/fonts/Inconsolata-Bold.ttf
+sphinx_typo3_theme/static/fonts/Lato-Bold.ttf
+sphinx_typo3_theme/static/fonts/Inconsolata.ttf
+sphinx_typo3_theme/static/fonts/Lato-Regular.ttf
 fonts/local/Inconsolata-Bold.ttf
 fonts/local/Lato-Bold.ttf
 fonts/local/Inconsolata.ttf
@@ -33,7 +33,7 @@ with others.
 
 The OFL allows the licensed fonts to be used, studied, modified and
 redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded, 
+fonts, including any derivative works, can be bundled, embedded,
 redistributed and/or sold with any software provided that any reserved
 names are not used by derivative works. The fonts and derivatives,
 however, cannot be released under any other type of license. The

@@ -1,24 +1,24 @@
 # -*- coding: utf-8 -*-
-"""`t3SphinxThemeRtd` lives on `Github`_.
+"""`sphinx_typo3_theme` lives on `Github`_.
 
-.. _github: https://github.com/TYPO3-Documentation/t3SphinxThemeRtd
+.. _github: https://github.com/TYPO3-Documentation/sphinx_typo3_theme
 
 """
 from setuptools import setup
-from t3SphinxThemeRtd import __version__
+from sphinx_typo3_theme import __version__
 
 setup(
-    name='t3SphinxThemeRtd',
+    name='sphinx_typo3_theme',
     version=__version__,
-    url='https://github.com/TYPO3-Documentation/t3SphinxThemeRtd',
+    url='https://github.com/TYPO3-Documentation/sphinx_typo3_theme',
     license='MIT',
     author='Martin Bless',
     author_email='martin.bless@mbless.de',
     description='Docs.TYPO3.Org theme for Sphinx, starting 2015.',
     long_description=open('README.rst').read(),
     zip_safe=False,
-    packages=['t3SphinxThemeRtd'],
-    package_data={'t3SphinxThemeRtd': ['*.*']},
+    packages=['sphinx_typo3_theme'],
+    package_data={'sphinx_typo3_theme': ['*.*']},
     include_package_data=True,
     install_requires=open('requirements.txt').read().splitlines(),
     classifiers=[

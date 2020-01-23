@@ -1,7 +1,7 @@
 fonts/local/RobotoSlab-Bold.ttf
 fonts/local/RobotoSlab-Regular.tt
-t3SphinxThemeRtd/static/fonts/RobotoSlab-Bold.ttf
-t3SphinxThemeRtd/static/fonts/RobotoSlab-Regular.tt
+sphinx_typo3_theme/static/fonts/RobotoSlab-Bold.ttf
+sphinx_typo3_theme/static/fonts/RobotoSlab-Regular.tt
 
 
                                  Apache License

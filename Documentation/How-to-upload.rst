@@ -12,10 +12,10 @@ sudo pip install --upgrade setuptools
 sudo pip install --upgrade twine
 
 # remove old files
-rm -rf /home/marble/Repositories/github.com/TYPO3-Documentation/t3SphinxThemeRtd/dist/*
+rm -rf /home/marble/Repositories/github.com/TYPO3-Documentation/sphinx_typo3_theme/dist/*
 
 # go to project
-cd /home/marble/Repositories/github.com/TYPO3-Documentation/t3SphinxThemeRtd
+cd /home/marble/Repositories/github.com/TYPO3-Documentation/sphinx_typo3_theme
 
 # build
 python3 setup.py sdist bdist_wheel

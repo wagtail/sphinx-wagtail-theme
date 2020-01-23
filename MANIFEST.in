@@ -1,4 +1,4 @@
 include *.txt
 include LICENSE
-recursive-include t3SphinxThemeRtd *
-recursive-include t3SphinxThemeRtd *.*
+recursive-include sphinx_typo3_theme *
+recursive-include sphinx_typo3_theme *.*

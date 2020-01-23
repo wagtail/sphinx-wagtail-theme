@@ -39,7 +39,7 @@ def htmlPageContext(app, pagename, templatename, context, doctree):
     #     #pprint.pprint(app.env.config)
 
 # The following function 'setup()' is the requirement for
-# a Sphinx extension. By having this we can use 't3SphinxThemeRtd'
+# a Sphinx extension. By having this we can use 'sphinx_typo3_theme'
 # as sphinx extension as well.
 
 def setup(app):

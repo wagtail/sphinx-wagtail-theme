@@ -373,15 +373,15 @@ if 0 and "TYPO3 specific":
 
 #=================================================
 #
-# t3SphinxThemeRtd
+# sphinx_typo3_theme
 #
 #-------------------------------------------------
 
-import t3SphinxThemeRtd
+import sphinx_typo3_theme
 
-html_theme_path.append(t3SphinxThemeRtd.get_html_theme_path())
+html_theme_path.append(sphinx_typo3_theme.get_html_theme_path())
 
-html_theme = 't3SphinxThemeRtd'
+html_theme = 'sphinx_typo3_theme'
 
 project   = u'TypoScript Reference'
 copyright = u' 2000-2015'
