@@ -56,7 +56,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             cwd: 'fonts',
-            src: ['**/*'],
+            src: ['**/*', '!**/*.txt'],
             dest: 'sphinx_typo3_theme/static/fonts/'
           }
         ]

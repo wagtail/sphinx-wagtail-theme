@@ -1,23 +1,8 @@
-sphinx_typo3_theme/static/fonts/Inconsolata-Bold.ttf
-sphinx_typo3_theme/static/fonts/Lato-Bold.ttf
-sphinx_typo3_theme/static/fonts/Inconsolata.ttf
-sphinx_typo3_theme/static/fonts/Lato-Regular.ttf
-fonts/local/Inconsolata-Bold.ttf
-fonts/local/Lato-Bold.ttf
-fonts/local/Inconsolata.ttf
-fonts/local/Lato-Regular.ttf
-
-
-
-Copyright (c) <dates>, <Copyright Holder> (<URL|email>),
-with Reserved Font Name <Reserved Font Name>.
-Copyright (c) <dates>, <additional Copyright Holder> (<URL|email>),
-with Reserved Font Name <additional Reserved Font Name>.
-Copyright (c) <dates>, <additional Copyright Holder> (<URL|email>).
+Copyright 2010, 2012 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license is copied below, and is also available with a FAQ at:
-http://scripts.sil.org/OFL
+
+This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
 
 
 -----------------------------------------------------------
