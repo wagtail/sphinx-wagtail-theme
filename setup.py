@@ -4,12 +4,11 @@
 .. _github: https://github.com/TYPO3-Documentation/sphinx_typo3_theme
 
 """
+from io import open
 from setuptools import setup
-from sphinx_typo3_theme import __version__
 
 setup(
     name='sphinx_typo3_theme',
-    version=__version__,
     url='https://github.com/TYPO3-Documentation/sphinx_typo3_theme',
     license='MIT',
     author='Martin Bless',
@@ -18,10 +17,12 @@ setup(
     long_description=open('README.rst').read(),
     zip_safe=False,
     packages=['sphinx_typo3_theme'],
-    package_data={'sphinx_typo3_theme': ['*.*']},
+    package_data={
+        'sphinx_typo3_theme': ['*.*']
+    },
     include_package_data=True,
     use_scm_version=True,
-    entry_points = {
+    entry_points={
         'sphinx.html_themes': [
             'sphinx_typo3_theme = sphinx_typo3_theme',
         ]
