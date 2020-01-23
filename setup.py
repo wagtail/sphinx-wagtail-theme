@@ -15,7 +15,7 @@ setup(
     author='Martin Bless',
     author_email='martin.bless@mbless.de',
     description='Sphinx TYPO3 theme for docs.typo3.org, starting 2015.',
-    long_description=open('README.rst', encoding='utf-8').read(),
+    long_description=open('README.rst').read(),
     zip_safe=False,
     packages=['sphinx_typo3_theme'],
     package_data={'sphinx_typo3_theme': ['*.*']},
