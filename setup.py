@@ -16,17 +16,26 @@ setup(
     description='Sphinx TYPO3 theme for docs.typo3.org, starting 2015.',
     long_description=open('README.rst').read(),
     zip_safe=False,
-    packages=['sphinx_typo3_theme'],
-    package_data={
-        'sphinx_typo3_theme': ['*.*']
-    },
-    include_package_data=True,
-    use_scm_version=True,
-    entry_points={
+    entry_points = {
         'sphinx.html_themes': [
             'sphinx_typo3_theme = sphinx_typo3_theme',
         ]
     },
+    packages=[
+        'sphinx_typo3_theme'
+    ],
+    package_data={
+        'sphinx_typo3_theme': [
+            'theme.conf',
+            '*.html',
+            'static/css/*.css',
+            'static/fonts/*.*'
+            'static/img/*.*',
+            'static/js/*.js',
+        ]
+    },
+    include_package_data=True,
+    use_scm_version=True,
     setup_requires=[
         'setuptools_scm'
     ],
