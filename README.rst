@@ -12,6 +12,9 @@ Sphinx Theme for docs.typo3.org
            which are kind of a "stresstest" and demonstrate what's possible and
            how the theme can be used.
 
+.. image:: img/screenshot.png?raw=true
+   :alt: Sphinx TYPO3 Theme Screenshot
+
 Table of contents:
 
 .. default-role:: code
