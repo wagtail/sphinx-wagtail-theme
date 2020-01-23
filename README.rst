@@ -58,10 +58,10 @@ For your interest: Some quick examples of ``pip`` usage::
    pip install --upgrade --user sphinx-typo3-theme
 
    # uninstall - no matter if installed by PIP or setup.py:
-   pip uninstall sphinx_typo3_theme
+   pip uninstall sphinx-typo3-theme
 
    # search PyPi, the Python packet index
-   pip search sphinx_typo3_theme
+   pip search sphinx-typo3-theme
    pip search sphinx
 
 
@@ -139,27 +139,6 @@ Special Information for TYPO3 Users
    <Documentation/Examples/TyposcriptReferenceExample-conf.py>`__.
    The relevant parts are at the end.
 
-
-To be done
-==========
-
-Check this `list in the blogpost
-<http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html#to-be-done>`__
-
-
-Already done
-------------
-
-Check this `list in the blogpost
-<http://mbless.de/blog/2015/06/16/a-new-theme-for-docs-typo3-org.html#already-done>`__
-
-
-How the Table of Contents builds
-================================
-
-Read about this in the `original README <https://github.com/snide/sphinx_rtd_theme>`__.
-
-
 Contributing or modifying the theme
 ===================================
 
@@ -195,5 +174,3 @@ Setup minimal development environment
 5. Serve::
 
       yarn serve
-
-End of README.
