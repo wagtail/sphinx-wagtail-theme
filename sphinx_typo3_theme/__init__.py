@@ -1,4 +1,4 @@
-from os import path
+import os
 
 VERSION = (3, 6, 17)
 
@@ -7,8 +7,12 @@ __version_full__ = __version__
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
-    theme_path = path.abspath(path.dirname(__file__))
-    return [theme_path]
+    cur_dir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    return cur_dir
+
+def htmlPageContext(app, pagename, templatename, context, doctree):
+    template = app.builder.env.metadata.get(pagename, {}).get('template')
+    return template
 
 def setup(app):
-    app.add_html_theme('sphinx_typo3_theme', path.abspath(path.dirname(__file__)))
+    app.connect('html-page-context', htmlPageContext)
