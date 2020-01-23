@@ -69,32 +69,25 @@ To install directly from the package::
    (sudo) python setup.py install
 
    # or install locally in user's home:
-   python setup.py --user install
+   python setup.py install --user
 
 
 Usage
 =====
 
-In the ``conf.py`` file of your documentation project:
+To use the theme in your Sphinx project, you will need to add the following to
+your ``conf.py`` file:
 
-Load the module::
+.. code:: python
 
-   import sphinx_typo3_theme
+    import sphinx_typo3_theme
 
-Choose the theme::
+    extensions = [
+        ...
+        "sphinx_typo3_theme",
+    ]
 
-   html_theme = "sphinx_typo3_theme"
-
-Set the theme path::
-
-   html_theme_path = [sphinx_typo3_theme.get_html_theme_path()]
-
-Or, if that's better in your case, add the theme path to to the
-list of already defined paths::
-
-   html_theme_path = []
-   # ...
-   html_theme_path.append(sphinx_typo3_theme.get_html_theme_path())
+    html_theme = "sphinx_typo3_theme"
 
 
 Special Information for TYPO3 Users
