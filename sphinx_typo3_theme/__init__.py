@@ -1,4 +1,5 @@
 import os
+import json
 from pkg_resources import get_distribution, DistributionNotFound
 
 try:
@@ -19,16 +20,16 @@ def get_theme_version():
     """Return the theme version"""
     return __version__
 
-def update_context(app, pagename, templatename, context, doctree):
-    context['typo3_theme_version'] = __version__
-    context['typo3_theme_version_full'] = __version_full__
+def _config_inited(app, config):
+    config.html_theme_options['version'] = __version__
+    config.html_theme_options['version_full'] = __version_full__
 
 def setup(app):
+    app.connect('config-inited', _config_inited)
     # add_html_theme is new in Sphinx 1.6+
     if hasattr(app, "add_html_theme"):
         theme_path = os.path.abspath(os.path.dirname(__file__))
         app.add_html_theme("sphinx_typo3_theme", theme_path)
-    app.connect('html-page-context', update_context)
     return {
         'version': __version__,
         'version_full': __version_full__,
