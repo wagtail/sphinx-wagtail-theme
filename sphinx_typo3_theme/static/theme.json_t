@@ -1,0 +1,27 @@
+{
+    "name": "sphinx_typo3_theme",
+    "version": "{{ theme_version }}",
+    "version_full": "{{ theme_version_full }}",
+    "options": {
+        "docstypo3org": "{{ theme_docstypo3org }}",
+        "github_branch": "{{ theme_github_branch }}",
+        "github_commit_hash": "{{ theme_github_commit_hash }}",
+        "github_repository": "{{ theme_github_repository }}",
+        "github_revision_msg": "{{ theme_github_revision_msg }}",
+        "github_sphinx_locale": "{{ theme_github_sphinx_locale }}",
+        "is_homepage": "{{ theme_is_homepage }}",
+        "logo": "{{ theme_logo }}",
+        "path_to_documentation_dir": "{{ theme_path_to_documentation_dir }}",
+        "project_contact": "{{ theme_project_contact }}",
+        "project_discussions": "{{ theme_project_discussions }}",
+        "project_has_defaults_cfg": "{{ theme_project_has_defaults_cfg }}",
+        "project_has_overrides_cfg": "{{ theme_project_has_overrides_cfg }}",
+        "project_has_settings_cfg": "{{ theme_project_has_settings_cfg }}",
+        "project_home": "{{ theme_project_home }}",
+        "project_issues": "{{ theme_project_issues }}",
+        "project_repository": "{{ theme_project_repository }}",
+        "show_copyright": "{{ theme_show_copyright }}",
+        "show_last_updated": "{{ theme_show_last_updated }}",
+        "show_sourcelink": "{{ theme_show_sourcelink }}"
+    }
+}

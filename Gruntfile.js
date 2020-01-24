@@ -51,13 +51,13 @@ module.exports = function (grunt) {
             expand: true,
             cwd: 'node_modules/@fortawesome/fontawesome-free/webfonts',
             src: ['**/*'],
-            dest: 't3SphinxThemeRtd/static/fonts/'
+            dest: 'sphinx_typo3_theme/static/fonts/'
           },
           {
             expand: true,
             cwd: 'fonts',
-            src: ['**/*'],
-            dest: 't3SphinxThemeRtd/static/fonts/'
+            src: ['**/*', '!**/*.txt'],
+            dest: 'sphinx_typo3_theme/static/fonts/'
           }
         ]
       },
@@ -65,15 +65,15 @@ module.exports = function (grunt) {
         files: [
           {
             src: 'node_modules/jquery/dist/jquery.min.js',
-            dest: 't3SphinxThemeRtd/static/js/jquery.min.js'
+            dest: 'sphinx_typo3_theme/static/js/jquery.min.js'
           },
           {
             src: 'node_modules/popper.js/dist/umd/popper.min.js',
-            dest: 't3SphinxThemeRtd/static/js/popper.min.js'
+            dest: 'sphinx_typo3_theme/static/js/popper.min.js'
           },
           {
             src: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
-            dest: 't3SphinxThemeRtd/static/js/bootstrap.min.js'
+            dest: 'sphinx_typo3_theme/static/js/bootstrap.min.js'
           }
         ]
       }
@@ -96,9 +96,9 @@ module.exports = function (grunt) {
       },
       build: {
         files: {
-          't3SphinxThemeRtd/static/css/theme.css': 'sass/theme.scss',
-          't3SphinxThemeRtd/static/css/webfonts.css': 'sass/webfonts.scss',
-          't3SphinxThemeRtd/static/css/fontawesome.css': 'sass/fontawesome.scss',
+          'sphinx_typo3_theme/static/css/theme.css': 'sass/theme.scss',
+          'sphinx_typo3_theme/static/css/webfonts.css': 'sass/webfonts.scss',
+          'sphinx_typo3_theme/static/css/fontawesome.css': 'sass/fontawesome.scss',
         }
       }
     },
@@ -106,7 +106,7 @@ module.exports = function (grunt) {
     // modernizr
     modernizr: {
       main: {
-        'dest': 't3SphinxThemeRtd/static/js/modernizr.min.js',
+        'dest': 'sphinx_typo3_theme/static/js/modernizr.min.js',
         'options': {
           'options': [
             'domPrefixes',
@@ -148,29 +148,29 @@ module.exports = function (grunt) {
       },
       autocomplete: {
         src: 'node_modules/autocompleter/autocomplete.js',
-        dest: 't3SphinxThemeRtd/static/js/autocomplete.min.js'
+        dest: 'sphinx_typo3_theme/static/js/autocomplete.min.js'
       },
       underscore: {
         src: 'node_modules/underscore/underscore.js',
-        dest: 't3SphinxThemeRtd/static/js/underscore.min.js'
+        dest: 'sphinx_typo3_theme/static/js/underscore.min.js'
       },
       modernizr: {
-        src: 't3SphinxThemeRtd/static/js/modernizr.min.js',
-        dest: 't3SphinxThemeRtd/static/js/modernizr.min.js'
+        src: 'sphinx_typo3_theme/static/js/modernizr.min.js',
+        dest: 'sphinx_typo3_theme/static/js/modernizr.min.js'
       },
       // SOURCE: https://github.com/sphinx-doc/sphinx/blob/master/sphinx/themes/basic/static/doctools.js
       doctools: {
         src: 'js/doctools.js',
-        dest: 't3SphinxThemeRtd/static/js/doctools.min.js'
+        dest: 'sphinx_typo3_theme/static/js/doctools.min.js'
       },
       // SOURCE: https://github.com/sphinx-doc/sphinx/blob/master/sphinx/themes/basic/static/searchtools.js
       searchtools: {
         src: 'js/searchtools.js',
-        dest: 't3SphinxThemeRtd/static/js/searchtools.min.js'
+        dest: 'sphinx_typo3_theme/static/js/searchtools.min.js'
       },
       theme: {
         src: 'js/theme.js',
-        dest: 't3SphinxThemeRtd/static/js/theme.min.js'
+        dest: 'sphinx_typo3_theme/static/js/theme.min.js'
       },
     },
 
@@ -178,9 +178,9 @@ module.exports = function (grunt) {
     removesourcemap: {
       contrib: {
         files: {
-          't3SphinxThemeRtd/static/js/jquery.min.js': 't3SphinxThemeRtd/static/js/jquery.min.js',
-          't3SphinxThemeRtd/static/js/bootstrap.min.js': 't3SphinxThemeRtd/static/js/bootstrap.min.js',
-          't3SphinxThemeRtd/static/js/popper.min.js': 't3SphinxThemeRtd/static/js/popper.min.js'
+          'sphinx_typo3_theme/static/js/jquery.min.js': 'sphinx_typo3_theme/static/js/jquery.min.js',
+          'sphinx_typo3_theme/static/js/bootstrap.min.js': 'sphinx_typo3_theme/static/js/bootstrap.min.js',
+          'sphinx_typo3_theme/static/js/popper.min.js': 'sphinx_typo3_theme/static/js/popper.min.js'
         }
       }
     },
@@ -200,7 +200,7 @@ module.exports = function (grunt) {
             + '--volume ' + path.resolve((grunt.option('source') ? grunt.option('source') : './node_modules/TYPO3CMS-Guide-HowToDocument')) + ':/PROJECT/:ro '
             + '--volume ' + path.resolve('./config') + ':/CONFIG/:ro '
             + '--volume ' + path.resolve('./build') + ':/RESULT/ '
-            + '--volume ' + path.resolve('./t3SphinxThemeRtd') + ':/ALL/userhome/.local/share/virtualenvs/venv-y0waPz_e/lib/python2.7/site-packages/t3SphinxThemeRtd:ro '
+            + '--volume ' + path.resolve('./sphinx_typo3_theme') + ':/ALL/userhome/.local/share/virtualenvs/venv-y0waPz_e/lib/python2.7/site-packages/t3SphinxThemeRtd:ro '
             + 't3docs/render-documentation makehtml '
             + '-c make_latex 0 '
             + '-c make_singlehtml 0 '
@@ -214,9 +214,9 @@ module.exports = function (grunt) {
     // build
     clean: {
       build: ['build/*', '!build/.gitignore'],
-      css: ['t3SphinxThemeRtd/static/css'],
-      fonts: ['t3SphinxThemeRtd/static/fonts'],
-      js: ['t3SphinxThemeRtd/static/js'],
+      css: ['sphinx_typo3_theme/static/css'],
+      fonts: ['sphinx_typo3_theme/static/fonts'],
+      js: ['sphinx_typo3_theme/static/js'],
     },
 
     // watch
@@ -234,7 +234,7 @@ module.exports = function (grunt) {
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
         files: [
-          't3SphinxThemeRtd/**/*',
+          'sphinx_typo3_theme/**/*',
         ],
         tasks: ['clean:build', 'exec']
       },

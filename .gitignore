@@ -6,6 +6,7 @@
 .coverage
 .ruby-version
 .tox
+.eggs/
 dist/
 node_modules/
 bower_components/
