@@ -100,14 +100,14 @@ your ``conf.py`` file:
 
 .. code:: python
 
-    import sphinx_typo3_theme
+   import sphinx_typo3_theme
 
-    extensions = [
-        ...
-        "sphinx_typo3_theme",
-    ]
+   extensions = [
+       ...
+       "sphinx_typo3_theme",
+   ]
 
-    html_theme = "sphinx_typo3_theme"
+   html_theme = "sphinx_typo3_theme"
 
 
 Contributing or modifying the theme
@@ -124,19 +124,19 @@ Setup minimal development environment
 
 2. Install Yarn::
 
-      npm install yarn
+   npm install yarn
 
 3. Install project dependencies::
 
-      yarn install
+   yarn install
 
 4. Compile::
 
-      yarn build
+   yarn build
 
 5. Serve::
 
-      yarn serve
+   yarn serve
 
 
 Usage on docs.typo3.org
