@@ -38,9 +38,9 @@ jobs:
         id: get-version
         run: |
           if [[ "$GITHUB_REF" == *"refs/tags"* ]]; then
-            echo ::set-output name=version::echo $(echo ${GITHUB_REF#refs/tags/} | sed 's/v//g')
+            echo ::set-output name=version::$(echo ${GITHUB_REF#refs/tags/} | sed 's/v//g')
           else
-            echo ::set-output name=version::echo $(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')
+            echo ::set-output name=version::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')
           fi
       - name: Download asset artifact
         uses: actions/download-artifact@v1
