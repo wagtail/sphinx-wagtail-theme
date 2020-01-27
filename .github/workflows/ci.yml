@@ -17,6 +17,9 @@ jobs:
       - name: Build
         run: |
           yarn build
+      - name: Status
+        run: |
+          git status | grep -q "nothing to commit, working tree clean"
       - name: Archive Demo
         uses: actions/upload-artifact@v1
         with:
