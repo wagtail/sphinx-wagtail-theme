@@ -1,46 +1,37 @@
-"""Sphinx ReadTheDocs theme.
-
-From https://github.com/ryan-roemer/sphinx-bootstrap-theme.
+"""Sphinx TYPO3 theme for docs.typo3.org.
 
 """
+
+import json
 import os
 
-VERSION = (3, 6, 17)
+with open('static/theme_info.json') as f1:
+    theme_info = json.load(f1)
 
-__version__ = ".".join(str(v) for v in VERSION)
-__version_full__ = __version__
-
+__version__ = theme_info['theme_version_core']
 
 def get_html_theme_path():
-    """Return list of HTML theme paths."""
-    cur_dir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-    return cur_dir
+    """Return absolute path of the installed theme module."""
+
+    return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 
 def htmlPageContext(app, pagename, templatename, context, doctree):
-    # Here we check the document's metadata for a 'template' specification.
-    # You may set that this in reST AT THE VERY TOP of the reST source
-    # as ':template: sitemap.html' for example
+    """Inspect reST page metadata possibly select a custom template file.
 
-    template = app.builder.env.metadata.get(pagename, {}).get('template')
-    return template
+    A field field list near the top of a reST source file is passed on by
+    Sphinx as file metadata. Here we are looking for a meta field 'template'.
+    If found it specifies the html template file for the page. For example, a
+    line `:template: sitemap.html' right at the beginning of a reST file will
+    tell Sphinx to use the template file `sitemap.html` for this page instead
+    of the default template file `page.html`.
 
-    # if 'sitemap' in pagename.lower():
-    #     env = app.builder.env
-    #     import pprint
-    #     pprint.pprint(dir(env))
-    #     pprint.pprint(env.metadata)
-    #     pprint.pprint({'context': context})
-    #     pprint.pprint({'doctree': doctree})
-    #     pprint.pprint({'app': app})
-    #     pprint.pprint({'pagename': pagename})
-    #     pprint.pprint({'templatename': templatename})
-    #     pprint.pprint({'template': template})
-    #     #pprint.pprint(app.env.config)
+    """
 
-# The following function 'setup()' is the requirement for
-# a Sphinx extension. By having this we can use 't3SphinxThemeRtd'
-# as sphinx extension as well.
+    return app.builder.env.metadata.get(pagename, {}).get('template')
+
 
 def setup(app):
+    """Setup functionality called by Sphinx"""
+
     app.connect('html-page-context', htmlPageContext)
