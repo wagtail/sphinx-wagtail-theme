@@ -40,20 +40,22 @@
 
                 <div class="footer-meta">
                     {%- if theme_show_copyright -%}
-                    <div class="footer-meta-copyright">
-                        {%- if hasdoc('Copyright') -%}
-                        <a href="{{ pathto('Copyright') }}">&copy; Copyright {{ copyright }}</a>
-                        {%- elif hasdoc('copyright') -%}
-                        <a href="{{ pathto('copyright') }}">&copy; Copyright {{ copyright }}</a>
-                        {%- else -%}
-                        &copy; Copyright {{ copyright }}
-                        {%- endif -%}
-                    </div>
+                        <div class="footer-meta-copyright">
+                            {%- if hasdoc('Copyright') -%}
+                            <a href="{{ pathto('Copyright') }}">&copy; Copyright {{ copyright }}</a>
+                            {%- elif hasdoc('copyright') -%}
+                            <a href="{{ pathto('copyright') }}">&copy; Copyright {{ copyright }}</a>
+                            {%- else -%}
+                            &copy; Copyright {{ copyright }}
+                            {%- endif -%}
+                        </div>
                     {%- endif %}
-                    <ul class="footer-meta-navigation">
-                        <li><a href="https://typo3.org/legal-notice" rel="nofollow" target="_blank" title="Legal Notice">Legal Notice</a></li>
-                        <li><a href="https://typo3.org/privacy-policy" rel="nofollow" target="_blank" title="Privacy Policy">Privacy Policy</a></li>
-                    </ul>
+                    {% if theme_docstypo3org -%}
+                        <ul class="footer-meta-navigation">
+                            <li><a href="https://typo3.org/legal-notice" rel="nofollow" target="_blank" title="Legal Notice">Legal Notice</a></li>
+                            <li><a href="https://typo3.org/privacy-policy" rel="nofollow" target="_blank" title="Privacy Policy">Privacy Policy</a></li>
+                        </ul>
+                    {%- endif %}
                 </div>
 
             </div>
