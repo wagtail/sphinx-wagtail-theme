@@ -16,6 +16,16 @@ Sphinx Theme for docs.typo3.org
    :alt: Sphinx TYPO3 Theme Screenshot
 
 
+Table of contents:
+
+.. default-role:: code
+
+.. contents::
+   :local:
+   :depth: 3
+   :backlinks: top
+
+
 Status
 ======
 
@@ -30,17 +40,6 @@ Status
 .. image:: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/Python%20Package/badge.svg?branch=master
    :alt: Python Package
    :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3A%22Python+Package%22
-
-
-Table of contents
-=================
-
-.. default-role:: code
-
-.. contents::
-   :local:
-   :depth: 3
-   :backlinks: top
 
 
 Installation
