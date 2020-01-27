@@ -96,7 +96,7 @@ Usage
 =====
 
 To use the theme in your Sphinx project, you will need to add the following to
-your ``conf.py`` file:
+your ``conf.py`` and add ``sphinx_typo3_theme`` to your `requirements.txt` file:
 
 .. code:: python
 
@@ -124,19 +124,19 @@ Setup minimal development environment
 
 2. Install Yarn::
 
-   npm install yarn
+    npm install yarn
 
 3. Install project dependencies::
 
-   yarn install
+    yarn install
 
 4. Compile::
 
-   yarn build
+    yarn build
 
 5. Serve::
 
-   yarn serve
+    yarn serve
 
 
 Usage on docs.typo3.org
