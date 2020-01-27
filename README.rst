@@ -32,7 +32,8 @@ Status
    :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3A%22Python+Package%22
 
 
-Table of contents:
+Table of contents
+=================
 
 .. default-role:: code
 
