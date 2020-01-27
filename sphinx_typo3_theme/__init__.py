@@ -5,13 +5,14 @@
 import json
 import os
 
-with open('static/theme_info.json') as f1:
+f1path = os.path.join(os.path.dirname(__file__), 'static/theme_info.json' )
+with open(f1path) as f1:
     theme_info = json.load(f1)
 
 __version__ = theme_info['theme_version_core']
 
 def get_html_theme_path():
-    """Return absolute path of the installed theme module."""
+    """Return absolute path to parent folder of installed theme."""
 
     return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
