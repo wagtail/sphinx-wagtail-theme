@@ -1,12 +1,16 @@
 name: CDN
 
-on: [push]
+on:
+  push:
+    branches: [master]
+  release:
+    types: [created]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -29,3 +33,19 @@ jobs:
         with:
           name: assets
           path: sphinx_typo3_theme/static
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Download production artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: dist
+          path: universe/dist
+      - name: Upload to Azure
+        env:
+          AZURE_STORAGE_ACCOUNT: ${{ secrets.AZURE_ACCOUNT }}
+          AZURE_STORAGE_KEY: ${{ secrets.AZURE_KEY }}
+        run: |
+          az storage blob upload-batch --source . --destination ${{ secrets.AZURE_CONTAINER }}
