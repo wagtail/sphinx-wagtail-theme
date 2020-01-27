@@ -1,37 +1,46 @@
-import os
-import json
-from pkg_resources import get_distribution, DistributionNotFound
+"""Sphinx ReadTheDocs theme.
 
-try:
-    release = get_distribution('sphinx_typo3_theme').version
-    VERSION = release.split('.')[:3]
-    __version__ = '.'.join(str(v) for v in VERSION)
-    __version_full__ = release
-except DistributionNotFound:
-    VERSION = (0, 0, 0)
-    __version__ = '.'.join(str(v) for v in VERSION)
-    __version_full__ = __version__
+From https://github.com/ryan-roemer/sphinx-bootstrap-theme.
+
+"""
+import os
+
+VERSION = (3, 6, 17)
+
+__version__ = ".".join(str(v) for v in VERSION)
+__version_full__ = __version__
+
 
 def get_html_theme_path():
     """Return list of HTML theme paths."""
-    return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    cur_dir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    return cur_dir
 
-def get_theme_version():
-    """Return the theme version"""
-    return __version__
 
-def _config_inited(app, config):
-    config.html_theme_options['version'] = __version__
-    config.html_theme_options['version_full'] = __version_full__
+def htmlPageContext(app, pagename, templatename, context, doctree):
+    # Here we check the document's metadata for a 'template' specification.
+    # You may set that this in reST AT THE VERY TOP of the reST source
+    # as ':template: sitemap.html' for example
+
+    template = app.builder.env.metadata.get(pagename, {}).get('template')
+    return template
+
+    # if 'sitemap' in pagename.lower():
+    #     env = app.builder.env
+    #     import pprint
+    #     pprint.pprint(dir(env))
+    #     pprint.pprint(env.metadata)
+    #     pprint.pprint({'context': context})
+    #     pprint.pprint({'doctree': doctree})
+    #     pprint.pprint({'app': app})
+    #     pprint.pprint({'pagename': pagename})
+    #     pprint.pprint({'templatename': templatename})
+    #     pprint.pprint({'template': template})
+    #     #pprint.pprint(app.env.config)
+
+# The following function 'setup()' is the requirement for
+# a Sphinx extension. By having this we can use 't3SphinxThemeRtd'
+# as sphinx extension as well.
 
 def setup(app):
-    app.connect('config-inited', _config_inited)
-    # add_html_theme is new in Sphinx 1.6+
-    if hasattr(app, "add_html_theme"):
-        theme_path = os.path.abspath(os.path.dirname(__file__))
-        app.add_html_theme("sphinx_typo3_theme", theme_path)
-    return {
-        'version': __version__,
-        'version_full': __version_full__,
-        'parallel_read_safe': True
-    }
+    app.connect('html-page-context', htmlPageContext)
