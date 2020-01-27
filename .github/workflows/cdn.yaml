@@ -1,0 +1,31 @@
+name: CDN
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Install
+        run: |
+          yarn install
+      - name: Build Frontend
+        run: |
+          yarn frontend
+      - name: Status
+        run: |
+          git status | grep -q "nothing to commit, working tree clean"
+      - name: Cleanup
+        run: |
+          rm sphinx_typo3_theme/static/language_data.js_t
+          rm sphinx_typo3_theme/static/theme.json_t
+      - name: Archive asset artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: assets
+          path: sphinx_typo3_theme/static
