@@ -120,3 +120,17 @@ Setup minimal development environment
 5. Serve::
 
       yarn serve
+
+
+Usage on docs.typo3.org
+=======================
+
+All static assets contained in this theme will be uploaded also to the
+TYPO3 CDN. The master branch as well as released are available on the CDN
+starting with version `4.0.1`.
+
+.. code::
+
+   https://typo3.azureedge.net/typo3documentation/theme/<theme>/<branch|version>/css/theme.css
+   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
+   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.0.1/css/theme.css
