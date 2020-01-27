@@ -15,6 +15,23 @@ Sphinx Theme for docs.typo3.org
 .. image:: https://raw.githubusercontent.com/TYPO3-Documentation/sphinx_typo3_theme/master/img/screenshot.png
    :alt: Sphinx TYPO3 Theme Screenshot
 
+
+Status
+======
+
+.. image:: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/CI/badge.svg?branch=master
+   :alt: CI
+   :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3ACI
+
+.. image:: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/CDN/badge.svg?branch=master
+   :alt: CDN Deployment
+   :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3ACDN
+
+.. image:: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/Python%20Package/badge.svg?branch=master
+   :alt: Python Package
+   :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3A%22Python+Package%22
+
+
 Table of contents:
 
 .. default-role:: code
