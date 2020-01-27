@@ -1,0 +1,61 @@
+name: CDN
+
+on:
+  push:
+    branches:
+      - master
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Install
+        run: |
+          yarn install
+      - name: Build Frontend
+        run: |
+          yarn frontend
+      - name: Status
+        run: |
+          git status | grep -q "nothing to commit, working tree clean"
+      - name: Cleanup
+        run: |
+          rm sphinx_typo3_theme/static/language_data.js_t
+          rm sphinx_typo3_theme/static/theme.json_t
+      - name: Archive asset artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: assets
+          path: sphinx_typo3_theme/static
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Get the version
+        id: get-version
+        run: |
+          if [[ "$GITHUB_REF" == *"refs/tags"* ]]; then
+            echo ::set-output name=version::$(echo ${GITHUB_REF#refs/tags/} | sed 's/v//g')
+          else
+            echo ::set-output name=version::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')
+          fi
+      - name: Download asset artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: assets
+          path: theme/sphinx_typo3_theme/${{ steps.get-version.outputs.version }}
+      - name: Upload to Azure
+        env:
+          AZURE_STORAGE_ACCOUNT: ${{ secrets.AZURE_ACCOUNT }}
+          AZURE_STORAGE_KEY: ${{ secrets.AZURE_KEY }}
+        run: |
+          az storage blob upload-batch --source . --destination ${{ secrets.AZURE_CONTAINER }}
