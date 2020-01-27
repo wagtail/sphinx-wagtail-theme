@@ -1,6 +1,12 @@
 name: CDN
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  release:
+    types:
+      - created
 
 jobs:
   build:
@@ -47,8 +53,9 @@ jobs:
         with:
           name: assets
           path: theme/sphinx_typo3_theme/${{ steps.get-version.outputs.version }}
-      - name: Archive cdn artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: cdn
-          path: .
+      - name: Upload to Azure
+        env:
+          AZURE_STORAGE_ACCOUNT: ${{ secrets.AZURE_ACCOUNT }}
+          AZURE_STORAGE_KEY: ${{ secrets.AZURE_KEY }}
+        run: |
+          az storage blob upload-batch --source . --destination ${{ secrets.AZURE_CONTAINER }}
