@@ -10,8 +10,8 @@ on:
 
 jobs:
   build:
-    if: github.repository == TYPO3-Documentation/sphinx_typo3_theme
     runs-on: ubuntu-latest
+    if: github.repository == 'TYPO3-Documentation/sphinx_typo3_theme'
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 12.x
