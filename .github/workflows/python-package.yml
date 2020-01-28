@@ -65,6 +65,8 @@ jobs:
         run: |
           cd repository
           python setup.py install
+          python -c "import sphinx_typo3_theme; print('Version: ' + sphinx_typo3_theme.__version__)"
+          python -c "import sphinx_typo3_theme; print('Version Full: ' + sphinx_typo3_theme.__version_full__)"
       - name: Installed Modules
         run: pip list
       - name: Sphinx Quickstart
@@ -105,6 +107,8 @@ jobs:
       - name: Install Theme
         run: |
           pip install $(find package -name "*.tar.gz")
+          python -c "import sphinx_typo3_theme; print('Version: ' + sphinx_typo3_theme.__version__)"
+          python -c "import sphinx_typo3_theme; print('Version Full: ' + sphinx_typo3_theme.__version_full__)"
       - name: Installed Modules
         run: pip list
       - name: Sphinx Quickstart
