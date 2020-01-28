@@ -61,7 +61,7 @@ jobs:
         run: pip install $(find package -name "*.tar.gz")
       - name: Install Sphinx
         run: |
-          pip install -U sphinx
+          pip install sphinx
       - name: Sphinx Quickstart
         run: |
           sphinx-quickstart --project PROJECT --author AUTHOR --sep --extensions sphinx_typo3_theme --no-use-make-mode --quiet
