@@ -184,6 +184,12 @@ Python Package
 2. `package`
    Builds an installable package of the module and provides it as downloadable artifact.
 
+3. `sphinx-quickstart-local`
+   Builds a sphinx quickstart documentation and uses the current checkout as theme
+
+4. `sphinx-quickstart-package`
+   Builds a sphinx quickstart documentation and uses the artifact from stept  `package` as theme
+
 This workflow is executed on every `push` or `pull_request`.
 
 
