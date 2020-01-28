@@ -65,7 +65,8 @@ jobs:
           python setup.py install --quiet
           result=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
           expected=0.0.1
-          echo Result: $result && echo Expected: $expected && [ $result != $expected ] && exit 1
+          echo Result: $result && echo Expected: $expected
+          [ "$result" != "$expected" ] && exit 1
       - name: Check 1.0
         run: |
           git tag | xargs git tag -d
@@ -73,7 +74,8 @@ jobs:
           python setup.py install --quiet
           result=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
           expected=1.0.0
-          echo Result: $result && echo Expected: $expected && [ $result != $expected ] && exit 1
+          echo Result: $result && echo Expected: $expected
+          [ "$result" != "$expected" ] && exit 1
 
   sphinx-quickstart-local:
     runs-on: ubuntu-latest
