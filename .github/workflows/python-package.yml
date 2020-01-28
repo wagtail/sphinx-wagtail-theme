@@ -49,6 +49,7 @@ jobs:
           path: dist
 
   sphinx-quickstart-package:
+    needs: [package]
     runs-on: ubuntu-latest
     steps:
       - name: Download package
