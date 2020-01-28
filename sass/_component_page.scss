@@ -31,29 +31,29 @@
  * Main
  */
 .page-main {
+    display: flex;
     flex-grow: 1;
 }
 .page-main-inner {
     display: flex;
+    flex-flow: wrap column;
     max-width: 100%;
     width: map-get($container-max-widths, 'xl');
     padding: 0 ($grid-gutter-width / 2);
     margin: 0 auto;
-    flex-wrap: wrap;
     position: relative;
     @include media-breakpoint-up(lg) {
-        flex-wrap: nowrap;
+        flex-flow: nowrap row;
     }
 }
 .page-main-navigation {
-    flex-grow: 1;
+    flex-grow: 0;
     margin-left: -($grid-gutter-width / 2);
     margin-right: -($grid-gutter-width / 2);
     padding: ($grid-gutter-width / 2);
     border-bottom: 1px solid rgba(0, 0, 0, .15);
     @include media-breakpoint-up(lg) {
         padding: ($spacer * 2) 0;
-        flex-grow: 0;
         flex-shrink: 0;
         width: 15rem;
         margin: 0;

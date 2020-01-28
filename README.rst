@@ -12,8 +12,9 @@ Sphinx Theme for docs.typo3.org
            which are kind of a "stresstest" and demonstrate what's possible and
            how the theme can be used.
 
-.. image:: img/screenshot.png?raw=true
+.. image:: https://raw.githubusercontent.com/TYPO3-Documentation/sphinx_typo3_theme/master/img/screenshot.png
    :alt: Sphinx TYPO3 Theme Screenshot
+
 
 Table of contents:
 
@@ -23,6 +24,22 @@ Table of contents:
    :local:
    :depth: 3
    :backlinks: top
+
+
+Status
+======
+
+.. image:: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/CI/badge.svg?branch=master
+   :alt: CI
+   :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3ACI
+
+.. image:: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/CDN/badge.svg?branch=master
+   :alt: CDN Deployment
+   :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3ACDN
+
+.. image:: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/Python%20Package/badge.svg?branch=master
+   :alt: Python Package
+   :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3A%22Python+Package%22
 
 
 Installation
@@ -79,18 +96,18 @@ Usage
 =====
 
 To use the theme in your Sphinx project, you will need to add the following to
-your ``conf.py`` file:
+your ``conf.py`` and add ``sphinx_typo3_theme`` to your `requirements.txt` file:
 
 .. code:: python
 
-    import sphinx_typo3_theme
+   import sphinx_typo3_theme
 
-    extensions = [
-        ...
-        "sphinx_typo3_theme",
-    ]
+   extensions = [
+       ...
+       "sphinx_typo3_theme",
+   ]
 
-    html_theme = "sphinx_typo3_theme"
+   html_theme = "sphinx_typo3_theme"
 
 
 Contributing or modifying the theme
@@ -107,16 +124,30 @@ Setup minimal development environment
 
 2. Install Yarn::
 
-      npm install yarn
+    npm install yarn
 
 3. Install project dependencies::
 
-      yarn install
+    yarn install
 
 4. Compile::
 
-      yarn build
+    yarn build
 
 5. Serve::
 
-      yarn serve
+    yarn serve
+
+
+Usage on docs.typo3.org
+=======================
+
+All static assets contained in this theme will be uploaded also to the
+TYPO3 CDN. The master branch as well as released are available on the CDN
+starting with version `4.0.1`.
+
+.. code::
+
+   https://typo3.azureedge.net/typo3documentation/theme/<theme>/<branch|version>/css/theme.css
+   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
+   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.0.1/css/theme.css
