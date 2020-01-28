@@ -58,12 +58,16 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: "3.x"
-      - name: Install
+      - name: Install Dependencies
         run: |
           pip install --upgrade pip
           pip install sphinx
-          python repository/setup.py install
-          pip list
+      - name: Install Theme
+        run: |
+          cd repository
+          python setup.py install
+      - name: Installed Modules
+        run: pip list
       - name: Sphinx Quickstart
         run: |
           sphinx-quickstart --project PROJECT --author AUTHOR --sep --extensions sphinx_typo3_theme --no-use-make-mode --quiet
@@ -90,12 +94,15 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: "3.x"
-      - name: Install
+      - name: Install Dependencies
         run: |
           pip install --upgrade pip
-          pip install $(find package -name "*.tar.gz")
           pip install sphinx
-          pip list
+      - name: Install Theme
+        run: |
+          pip install $(find package -name "*.tar.gz")
+      - name: Installed Modules
+        run: pip list
       - name: Sphinx Quickstart
         run: |
           sphinx-quickstart --project PROJECT --author AUTHOR --sep --extensions sphinx_typo3_theme --no-use-make-mode --quiet
