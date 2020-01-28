@@ -56,7 +56,7 @@ setup(
     long_description=open('README.rst', encoding='utf-8').read(),
     zip_safe=False,
     cmdclass={'build_py': our_build},
-    entry_points = {
+    entry_points={
         'sphinx.html_themes': [
             'sphinx_typo3_theme = sphinx_typo3_theme',
         ]
