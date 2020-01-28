@@ -45,7 +45,7 @@ jobs:
       - name: Archive Module
         uses: actions/upload-artifact@v1
         with:
-          name: dist
+          name: package-dist
           path: dist
 
   sphinx-quickstart-package:
@@ -55,7 +55,7 @@ jobs:
       - name: Download package
         uses: actions/download-artifact@v1
         with:
-          name: dist
+          name: package-dist
           path: package
       - name: Install Package
         run: pip install $(find package -name "*.tar.gz")
