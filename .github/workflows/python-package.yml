@@ -1,13 +1,13 @@
 name: Python Package
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
+        python-version: [3.6, 3.7, 3.8]
 
     steps:
       - uses: actions/checkout@v2
@@ -45,5 +45,73 @@ jobs:
       - name: Archive Module
         uses: actions/upload-artifact@v1
         with:
-          name: dist
+          name: package-dist
           path: dist
+
+  sphinx-quickstart-local:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: 'repository'
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.x"
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install sphinx
+      - name: Install Theme
+        run: |
+          cd repository
+          python setup.py install
+      - name: Installed Modules
+        run: pip list
+      - name: Sphinx Quickstart
+        run: |
+          sphinx-quickstart --project PROJECT --author AUTHOR --sep --extensions sphinx_typo3_theme --no-use-make-mode --quiet
+          sed -i 's/alabaster/sphinx_typo3_theme/g' source/conf.py
+      - name: Sphinx Build
+        run: |
+          sphinx-build -b html source build
+      - name: Archive Module
+        uses: actions/upload-artifact@v1
+        with:
+          name: sphinx-quickstart-local
+          path: build
+
+  sphinx-quickstart-package:
+    needs: [package]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download package
+        uses: actions/download-artifact@v1
+        with:
+          name: package-dist
+          path: package
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.x"
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install sphinx
+      - name: Install Theme
+        run: |
+          pip install $(find package -name "*.tar.gz")
+      - name: Installed Modules
+        run: pip list
+      - name: Sphinx Quickstart
+        run: |
+          sphinx-quickstart --project PROJECT --author AUTHOR --sep --extensions sphinx_typo3_theme --no-use-make-mode --quiet
+          sed -i 's/alabaster/sphinx_typo3_theme/g' source/conf.py
+      - name: Sphinx Build
+        run: |
+          sphinx-build -b html source build
+      - name: Archive Module
+        uses: actions/upload-artifact@v1
+        with:
+          name: sphinx-quickstart-package
+          path: build
