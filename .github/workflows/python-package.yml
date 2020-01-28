@@ -47,3 +47,29 @@ jobs:
         with:
           name: dist
           path: dist
+
+  sphinx-quickstart-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download package
+        uses: actions/download-artifact@v1
+        with:
+          name: dist
+          path: package
+      - name: Install Package
+        run: pip install $(find package -name "*.tar.gz")
+      - name: Install Sphinx
+        run: |
+          pip install -U sphinx
+      - name: Sphinx Quickstart
+        run: |
+          sphinx-quickstart --project PROJECT --author AUTHOR --sep --extensions sphinx_typo3_theme --no-use-make-mode --quiet
+          sed -i 's/alabaster/sphinx_typo3_theme/g' source/conf.py
+      - name: Sphinx Build
+        run: |
+          sphinx-build -b html source build
+      - name: Archive Module
+        uses: actions/upload-artifact@v1
+        with:
+          name: sphinx-quickstart-package
+          path: build
