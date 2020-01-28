@@ -110,6 +110,20 @@ your ``conf.py`` and add ``sphinx_typo3_theme`` to your `requirements.txt` file:
    html_theme = "sphinx_typo3_theme"
 
 
+Usage on docs.typo3.org
+=======================
+
+All static assets contained in this theme will be uploaded also to the
+TYPO3 CDN. The master branch as well as released are available on the CDN
+starting with version `4.0.1`.
+
+.. code::
+
+   https://typo3.azureedge.net/typo3documentation/theme/<theme>/<branch|version>/css/theme.css
+   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
+   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.0.1/css/theme.css
+
+
 Contributing or modifying the theme
 ===================================
 
@@ -139,15 +153,67 @@ Setup minimal development environment
     yarn serve
 
 
-Usage on docs.typo3.org
-=======================
+Workflows (GitHub Actions)
+==========================
 
-All static assets contained in this theme will be uploaded also to the
-TYPO3 CDN. The master branch as well as released are available on the CDN
-starting with version `4.0.1`.
+Continous Integration (CI)
+--------------------------
 
-.. code::
+`.github/workflows/ci.yml`
 
-   https://typo3.azureedge.net/typo3documentation/theme/<theme>/<branch|version>/css/theme.css
-   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
-   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.0.1/css/theme.css
+1. `build-frontend`
+   Ensure that the frontend dependencies can be installed and build. After execution it checks that
+   there are no changes uncommitted in the working directory.
+
+2. `build-render`
+   Ensure that the theme can be used with the current container. It builds an example documentation
+   and serves it as an artifact, to manually verify the rendered result. After execution it checks
+   that there are no changes uncommitted in the working directory.
+
+This workflow is executed on every `push` or `pull_request`.
+
+
+Python Package
+--------------
+
+`.github/workflows/python-package.yml`
+
+1. `build`
+   Install the `requirements` defined in `requirements.txt` and lint included python files.
+
+2. `package`
+   Builds an installable package of the module and provides it as downloadable artifact.
+
+This workflow is executed on every `push` or `pull_request`.
+
+
+Publish Python Package
+----------------------
+
+`.github/workflows/python-publish.yml`
+
+1. `deploy`
+   Build Package and Publish to https://pypi.org/
+
+This workflow is executed on every `release`.
+
+
+Content Delivery Network (CDN)
+------------------------------
+
+`.github/workflows/cdn.yml`
+
+1. `build`
+   Prepare and provide an usable artifact to be deployed to the CDN.
+
+2. `deploy`
+   Extract the current version number or branch name from `GITHUB_REF` and uses this as identifier
+   to store the assets on the TYPO3 Azure CDN.
+
+   .. code::
+
+      https://typo3.azureedge.net/typo3documentation/theme/<theme>/<branch|version>/css/theme.css
+      https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
+      https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.0.1/css/theme.css
+
+This workflow is executed on every `push` to the `master` branch and `release`.
