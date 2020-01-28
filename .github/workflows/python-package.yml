@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
+        python-version: [3.6, 3.7, 3.8]
 
     steps:
       - uses: actions/checkout@v2
@@ -57,11 +57,15 @@ jobs:
         with:
           name: package-dist
           path: package
-      - name: Install Package
-        run: pip install $(find package -name "*.tar.gz")
-      - name: Install Sphinx
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.x"
+      - name: Install
         run: |
+          pip install $(find package -name "*.tar.gz")
           pip install sphinx
+          pip list
       - name: Sphinx Quickstart
         run: |
           sphinx-quickstart --project PROJECT --author AUTHOR --sep --extensions sphinx_typo3_theme --no-use-make-mode --quiet
