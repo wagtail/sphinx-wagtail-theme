@@ -59,7 +59,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install setuptools wheel
-      - name: Check no version
+      - name: Check No Tag > "0.0.1"
         run: |
           git tag | xargs git tag -d
           python setup.py install --quiet
@@ -69,13 +69,24 @@ jobs:
           if [ "$result" != "$expected" ]; then
             exit 1
           fi
-      - name: Check 1.0
+      - name: Check Tag "1.0" > "1.0.0"
         run: |
           git tag | xargs git tag -d
           git tag 1.0
           python setup.py install --quiet
           result=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
           expected=1.0.0
+          echo Result: $result && echo Expected: $expected
+          if [ "$result" != "$expected" ]; then
+            exit 1
+          fi
+      - name: Check Tag "v4.3.11" > "4.3.11"
+        run: |
+          git tag | xargs git tag -d
+          git tag v4.3.11
+          python setup.py install --quiet
+          result=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
+          expected=4.3.11
           echo Result: $result && echo Expected: $expected
           if [ "$result" != "$expected" ]; then
             exit 1
