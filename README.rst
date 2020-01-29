@@ -1,26 +1,19 @@
 
-===============================
-Sphinx Theme for docs.typo3.org
-===============================
+=====================================
+Sphinx TYPO3 theme for docs.typo3.org
+=====================================
 
 :Project:  sphinx_typo3_theme
 :Team:     TYPO3 Documentation Team
-:Author:   Martin Bless <martin.bless@typo3.org>
+:Main curator: Martin Bless <martin.bless@typo3.org>
 :License:  MIT
-:Demo:     See this demo docs `t3SphinxThemeRtdDemoDocs
-           <https://docs.typo3.org/typo3cms/drafts/github/TYPO3-Documentation/t3SphinxThemeRtdDemoDocs/>`__
-           which are kind of a "stresstest" and demonstrate what's possible and
-           how the theme can be used.
+:Authors:  `List of authors <AUTHORS.rst>`_
 
 .. image:: https://raw.githubusercontent.com/TYPO3-Documentation/sphinx_typo3_theme/master/img/screenshot.png
-   :alt: Sphinx TYPO3 Theme Screenshot
+   :alt: Sphinx TYPO3 theme screenshot
 
 
-Table of contents:
-
-.. default-role:: code
-
-.. contents::
+.. contents:: This page
    :local:
    :depth: 3
    :backlinks: top
@@ -42,36 +35,50 @@ Status
    :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3A%22Python+Package%22
 
 
+Demo manual to demonstrate html rendering
+=========================================
+
+There is a demo manual `t3SphinxThemeRtdDemoDocs`_
+under construction. It serves as a "stress test" for this `sphinx_typo3_theme`
+and tries to use as many reStructuredText examples as possible and covered by
+the theme. **Documentation writers** may want to have a look at those pages to
+understand what reST markup can be used and what the visual effect will be.
+**Theme contributors** should use the demo manual for testing and *visually*
+check the rendering.
+
+.. _pip: https://pip.pypa.io/en/stable/
+.. _pypi: https://pypi.org/
+.. _python: https://www.python.org/
+.. _sphinx: https://www.sphinx-doc.org/
+.. _sphinx_typo3_theme: https://pypi.org/project/sphinx-typo3-theme/
+.. _t3SphinxThemeRtdDemoDocs: https://docs.typo3.org/typo3cms/drafts/github/TYPO3-Documentation/t3SphinxThemeRtdDemoDocs/
+.. _typo3 documentation team: https://typo3.org/community/teams/documentation/
+
+
 Installation
 ============
 
 Install the Theme Using PIP
 ---------------------------
 
-`PIP <https://pip.pypa.io/en/stable/>`__ is the
-`Python <https://www.python.org/>`__ packet manager for
-`PyPi <https://pypi.python.org/pypi>`__.
-'sphinx_typo3_theme' is provided by the TYPO3 Documentation Team
-and available from PyPi.
+PIP_ is a Python_ packet manager for PyPi_.
+sphinx_typo3_theme_ is a Sphinx_ theme provided by the
+`TYPO3 Documentation Team`_ available from PyPi.
 
-Installation with ``pip``::
+Installation::
 
-   # fetch from PyPi and install latest version:
+   # fetch from PyPi and install latest version
    pip install --upgrade sphinx-typo3-theme
 
-   # if required for your system, run a superuser:
-   pip install --upgrade sphinx-typo3-theme
+Some quick examples of ``pip`` usage::
 
-For your interest: Some quick examples of ``pip`` usage::
-
-   # find help
    pip install --help
    pip --help
 
-   # install locally for this user only
+   # install locally for the current user only
    pip install --upgrade --user sphinx-typo3-theme
 
-   # uninstall - no matter if installed by PIP or setup.py:
+   # uninstall
    pip uninstall sphinx-typo3-theme
 
    # search PyPi, the Python packet index
@@ -79,78 +86,91 @@ For your interest: Some quick examples of ``pip`` usage::
    pip search sphinx
 
 
-Install directly using 'setup.py'
----------------------------------
-
-To install directly from the package::
-
-   git clone git@github.com:TYPO3-Documentation/sphinx_typo3_theme.git
-   cd sphinx_typo3_theme
-   (sudo) python setup.py install
-
-   # or install locally in user's home:
-   python setup.py install --user
-
-
 Usage
 =====
 
-To use the theme in your Sphinx project, you will need to add the following to
-your ``conf.py`` and add ``sphinx_typo3_theme`` to your `requirements.txt` file:
+To use the theme in your Sphinx project, you will need to add these lines to
+``conf.py``:
 
 .. code:: python
 
    import sphinx_typo3_theme
-
-   extensions = [
-       ...
-       "sphinx_typo3_theme",
-   ]
-
    html_theme = "sphinx_typo3_theme"
+   html_theme_path = [].append(sphinx_typo3_theme.get_html_theme_path())
+
+
+TYPO3 documentation docker container
+====================================
+
+The container will use this theme for rendering automatically.
 
 
 Usage on docs.typo3.org
 =======================
 
-All static assets contained in this theme will be uploaded also to the
-TYPO3 CDN. The master branch as well as released are available on the CDN
-starting with version `4.0.1`.
+The theme data of each release will be automatically uploaded to the TYPO3
+content delivery network (CDN). The general url is::
 
-.. code::
+   # NAME=sphinx_typo3_theme
+   https://typo3.azureedge.net/typo3documentation/theme/<NAME>/<BRANCH|VERSION>/css/theme.css
 
-   https://typo3.azureedge.net/typo3documentation/theme/<theme>/<branch|version>/css/theme.css
-   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
+For example, to access the `4.0.1` release, write::
+
    https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.0.1/css/theme.css
 
+To access the latest use the branch name instead of the version number::
 
-Contributing or modifying the theme
-===================================
-
-If you would like to help improve the, theme feel free to fork this project
-and create a pull request when you're happy with your changes.
+   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
 
 
-Setup minimal development environment
--------------------------------------
+Contribute
+==========
+
+If you would like to contribute and to help improve the theme feel free to fork
+this project and create a pull request when you're happy with your changes.
+
+You may as well check the `list of issues
+<https://github.com/TYPO3-Documentation/sphinx_typo3_theme/issues>`_ to see
+whether somebody else is already addressing your problem. If not, don't
+hesitate to create a new issue for your problem.
+
+Frontend development
+--------------------
+
+Setup minimal development environment:
 
 1. Install Node
 
 2. Install Yarn::
 
-    npm install yarn
+      npm install yarn
 
 3. Install project dependencies::
 
-    yarn install
+      yarn install
 
 4. Compile::
 
-    yarn build
+      yarn build
 
 5. Serve::
 
-    yarn serve
+      yarn serve
+
+
+Python packaging
+----------------
+
+Make sure you have `python3`, `pip`, `setuptools`.
+
+1. Update Python packages::
+
+      pip install --user --upgrade pip
+      pip install --user --upgrade setuptools
+
+2. Build 'wheel' distribution packages for Linux or Mac and for Windows::
+
+      python3 setup.py sdist bdist_wheel
 
 
 Workflows (GitHub Actions)
@@ -162,13 +182,16 @@ Continous Integration (CI)
 `.github/workflows/ci.yml`
 
 1. `build-frontend`
-   Ensure that the frontend dependencies can be installed and build. After execution it checks that
-   there are no changes uncommitted in the working directory.
+
+   Ensure that the frontend dependencies can be installed and build. Ensure
+   that the working directory is clean - there must not be any uncommitted
+   changes.
 
 2. `build-render`
-   Ensure that the theme can be used with the current container. It builds an example documentation
-   and serves it as an artifact, to manually verify the rendered result. After execution it checks
-   that there are no changes uncommitted in the working directory.
+
+   Ensure that the theme can be found and used by Sphinx.
+   ((to be added: builds an example documentation, keeps it as an artifact
+   for manual inspection)). Ensure the the working dir is clean.
 
 This workflow is executed on every `push` or `pull_request`.
 
@@ -178,17 +201,28 @@ Python Package
 
 `.github/workflows/python-package.yml`
 
+
 1. `build`
-   Install the `requirements` defined in `requirements.txt` and lint included python files.
+
+   Lint the Python files.
+
 
 2. `package`
-   Builds an installable package of the module and provides it as downloadable artifact.
+
+   Build an installable package of the module and provide it as downloadable
+   artifact.
+
 
 3. `sphinx-quickstart-local`
-   Builds a sphinx quickstart documentation and uses the current checkout as theme
+
+   Build a minimal sample documentation obtained from `sphinx-quickstart`
+   with the theme version of the current checkout. ((?))
+
 
 4. `sphinx-quickstart-package`
-   Builds a sphinx quickstart documentation and uses the artifact from step `package` as theme
+
+   Build a minimal sample documentation obtained from `sphinx-quickstart`
+   with the theme version (artifact) of step `package` as theme.
 
 This workflow is executed on every `push` or `pull_request`.
 
@@ -199,7 +233,8 @@ Publish Python Package
 `.github/workflows/python-publish.yml`
 
 1. `deploy`
-   Build Package and Publish to https://pypi.org/
+
+   Build package and publish as sphinx_typo3_theme_ at PyPi_.
 
 This workflow is executed on every `release`.
 
@@ -210,16 +245,13 @@ Content Delivery Network (CDN)
 `.github/workflows/cdn.yml`
 
 1. `build`
+
    Prepare and provide an usable artifact to be deployed to the CDN.
 
+
 2. `deploy`
-   Extract the current version number or branch name from `GITHUB_REF` and uses this as identifier
-   to store the assets on the TYPO3 Azure CDN.
 
-   .. code::
-
-      https://typo3.azureedge.net/typo3documentation/theme/<theme>/<branch|version>/css/theme.css
-      https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
-      https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.0.1/css/theme.css
+   Extract the current version number or branch name from `GITHUB_REF` and use
+   it as identifier in the url on the TYPO3 Azure CDN.
 
 This workflow is executed on every `push` to the `master` branch and `release`.
