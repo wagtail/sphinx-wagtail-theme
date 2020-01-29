@@ -73,7 +73,8 @@ jobs:
           echo >> source/conf.py
           echo 'html_theme = "sphinx_typo3_theme"' >> source/conf.py
           echo 'import sphinx_typo3_theme' >> source/conf.py
-          echo 'html_theme_path = [].append(sphinx_typo3_theme.get_html_theme_path())' >> source/conf.py
+          echo 'html_theme_path = []' >> source/conf.py
+          echo 'html_theme_path.append(sphinx_typo3_theme.get_html_theme_path())' >> source/conf.py
           cat source/conf.py
       - name: Sphinx Build
         run: |
@@ -112,7 +113,8 @@ jobs:
           echo >> source/conf.py
           echo 'html_theme = "sphinx_typo3_theme"' >> source/conf.py
           echo 'import sphinx_typo3_theme' >> source/conf.py
-          echo 'html_theme_path = [].append(sphinx_typo3_theme.get_html_theme_path())' >> source/conf.py
+          echo 'html_theme_path = []' >> source/conf.py
+          echo 'html_theme_path.append(sphinx_typo3_theme.get_html_theme_path())' >> source/conf.py
           cat source/conf.py
       - name: Sphinx Build
         run: |
