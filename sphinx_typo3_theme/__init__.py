@@ -18,7 +18,7 @@ def get_html_theme_path():
     return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 
-def htmlPageContext(app, pagename, templatename, context, doctree):
+def _htmlPageContext(app, pagename, templatename, context, doctree):
     """Inspect reST page metadata possibly select a custom template file.
 
     A field field list near the top of a reST source file is passed on by
@@ -33,7 +33,20 @@ def htmlPageContext(app, pagename, templatename, context, doctree):
     return app.builder.env.metadata.get(pagename, {}).get('template')
 
 
+def _add_html_theme_options(app, config):
+    """Make the theme_version available in html templates."""
+
+    config.html_theme_options['theme_version'] = __version__
+
 def setup(app):
     """Setup functionality called by Sphinx"""
 
-    app.connect('html-page-context', htmlPageContext)
+    app.connect('html-page-context', _htmlPageContext)
+    app.connect('config-inited', _config_inited)
+    if hasattr(app, 'add_html_theme'):
+        app.add_html_theme("sphinx_typo3_theme",
+                           get_html_theme_path())
+    return {
+        'version': __version__,
+        'parallel_read_safe': True
+    }
