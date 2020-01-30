@@ -96,7 +96,8 @@ To use the theme in your Sphinx project, you will need to add these lines to
 
    import sphinx_typo3_theme
    html_theme = "sphinx_typo3_theme"
-   html_theme_path = [].append(sphinx_typo3_theme.get_html_theme_path())
+   html_theme_path = []
+   html_theme_path.append(sphinx_typo3_theme.get_html_theme_path())
 
 
 TYPO3 documentation docker container
