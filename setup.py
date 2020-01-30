@@ -9,6 +9,7 @@ import json
 import os
 import sys
 import time
+from distutils import dir_util
 from setuptools import setup
 from setuptools.command.build_py import build_py
 
@@ -44,7 +45,7 @@ class our_build(build_py):
             info['theme_version_pre_release'] = pre_release
             target_dir = os.path.join(self.build_lib,
                                       'sphinx_typo3_theme/static')
-            os.makedirs(target_dir, exist_ok=True)
+            dir_util.mkpath(target_dir)
             with open(os.path.join(target_dir, 'theme_info.json'), 'w') as f2:
                 json.dump(info, f2, indent=2, sort_keys=True)
 
