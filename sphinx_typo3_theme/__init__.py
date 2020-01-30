@@ -27,7 +27,7 @@ def get_theme_mtime():
 def get_theme_name():
     """Return the name of the theme."""
 
-    return theme_info['name']
+    return theme_info['theme_name']
 
 
 def _htmlPageContext(app, pagename, templatename, context, doctree):
