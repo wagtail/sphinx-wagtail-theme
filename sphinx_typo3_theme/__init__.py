@@ -35,8 +35,12 @@ def _htmlPageContext(app, pagename, templatename, context, doctree):
     of the default template file `page.html`.
 
     """
-
     return app.builder.env.metadata.get(pagename, {}).get('template')
+
+def _config_inited(app, config):
+    """Make {{ theme_version }} available in html templates."""
+
+    config.html_theme_options['theme_version'] = __version__
 
 
 def _add_html_theme_options(app, config):
