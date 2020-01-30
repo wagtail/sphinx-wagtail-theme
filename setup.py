@@ -7,6 +7,7 @@
 
 import json
 import os
+import time
 from setuptools import setup
 from setuptools.command.build_py import build_py
 
@@ -25,6 +26,7 @@ class our_build(build_py):
             info['theme_name'] = meta.get_name()
             info['theme_version_scm'] = ver = meta.get_version()
             info['theme_version_core'] = '.'.join(ver.split('.')[0:3])
+            info['theme_mtime'] = str(int(time.time()))
             L = ver.split('+', 1)
             if len(L) > 1:
                 ver, build = L
