@@ -7,9 +7,12 @@
 
 import json
 import os
+import sys
 import time
 from setuptools import setup
 from setuptools.command.build_py import build_py
+
+PY2 = sys.version_info[0] < 3
 
 class our_build(build_py):
 
@@ -47,6 +50,11 @@ class our_build(build_py):
 
         build_py.run(self)
 
+if PY2:
+    long_description = open('README.rst').read().decode('utf-8', 'replace')
+else:
+    long_description = open('README.rst', encoding='utf-8').read()
+
 
 setup(
     name='sphinx_typo3_theme',
@@ -55,7 +63,7 @@ setup(
     author='Martin Bless',
     author_email='martin.bless@mbless.de',
     description='Sphinx TYPO3 theme for docs.typo3.org, restarting 2020.',
-    long_description=open('README.rst', encoding='utf-8').read(),
+    long_description=long_description,
     zip_safe=False,
     cmdclass={'build_py': our_build},
     entry_points={
