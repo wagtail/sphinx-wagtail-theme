@@ -24,6 +24,12 @@ def get_theme_mtime():
     return int(theme_info['theme_mtime'])
 
 
+def get_theme_name():
+    """Return the name of the theme."""
+
+    return theme_info['name']
+
+
 def _htmlPageContext(app, pagename, templatename, context, doctree):
     """Inspect reST page metadata possibly select a custom template file.
 
