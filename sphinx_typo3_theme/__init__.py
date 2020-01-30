@@ -18,6 +18,12 @@ def get_html_theme_path():
     return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 
+def get_theme_mtime():
+    """Return the timestamp of the build as integer."""
+
+    return int(theme_info['theme_mtime'])
+
+
 def _htmlPageContext(app, pagename, templatename, context, doctree):
     """Inspect reST page metadata possibly select a custom template file.
 
