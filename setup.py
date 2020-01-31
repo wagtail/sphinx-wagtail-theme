@@ -22,6 +22,8 @@ class our_build(build_py):
 
         """
 
+        build_py.run(self)
+
         if not self.dry_run:
             meta = self.distribution.metadata
             build = ''
@@ -49,7 +51,13 @@ class our_build(build_py):
             with open(os.path.join(target_dir, 'theme_info.json'), 'w') as f2:
                 json.dump(info, f2, indent=2, sort_keys=True)
 
-        build_py.run(self)
+            theme_conf = os.path.join(self.build_lib,
+                                      'sphinx_typo3_theme/theme.conf')
+            with open(theme_conf) as f1:
+                data = f1.read().replace('unknown_version',
+                                         info['theme_version_core'])
+            with open(theme_conf, 'w') as f2:
+                f2.write(data)
 
 if PY2:
     long_description = open('README.rst').read().decode('utf-8', 'replace')
