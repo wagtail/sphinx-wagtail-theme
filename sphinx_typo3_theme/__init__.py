@@ -48,7 +48,6 @@ def update_context(app, pagename, templatename, context, doctree):
     `page.html`.
 
     """
-    context["theme_version"] = __version__
     return app.builder.env.metadata.get(pagename, {}).get('template')
 
 
