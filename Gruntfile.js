@@ -201,7 +201,7 @@ module.exports = function (grunt) {
             + '--volume ' + path.resolve('./config') + ':/CONFIG/:ro '
             + '--volume ' + path.resolve('./build') + ':/RESULT/ '
             + '--volume ' + path.resolve('./sphinx_typo3_theme') + ':/ALL/venv/.venv/local/lib/python2.7/site-packages/sphinx_typo3_theme:ro '
-            + 't3docs/render-documentation makehtml '
+            + 't3docs/render-documentation:develop makehtml '
             + '-c make_latex 0 '
             + '-c make_singlehtml 0 '
             + '-c jobfile /CONFIG/jobfile.json '
