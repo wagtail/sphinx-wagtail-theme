@@ -200,7 +200,7 @@ module.exports = function (grunt) {
             + '--volume ' + path.resolve((grunt.option('source') ? grunt.option('source') : './node_modules/TYPO3CMS-Guide-HowToDocument')) + ':/PROJECT/:ro '
             + '--volume ' + path.resolve('./config') + ':/CONFIG/:ro '
             + '--volume ' + path.resolve('./build') + ':/RESULT/ '
-            + '--volume ' + path.resolve('./sphinx_typo3_theme') + ':/ALL/userhome/.local/share/virtualenvs/venv-y0waPz_e/lib/python2.7/site-packages/t3SphinxThemeRtd:ro '
+            + '--volume ' + path.resolve('./sphinx_typo3_theme') + ':/ALL/venv/.venv/local/lib/python2.7/site-packages/sphinx_typo3_theme:ro '
             + 't3docs/render-documentation makehtml '
             + '-c make_latex 0 '
             + '-c make_singlehtml 0 '
