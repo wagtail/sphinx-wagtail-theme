@@ -4,8 +4,66 @@
 .. _github: https://github.com/TYPO3-Documentation/sphinx_typo3_theme
 
 """
-from io import open
+
+import json
+import os
+import sys
+import time
+from distutils import dir_util
 from setuptools import setup
+from setuptools.command.build_py import build_py
+
+PY2 = sys.version_info[0] < 3
+
+class our_build(build_py):
+
+    def run(self):
+        """Overwrite static/theme_info.json and fill in build version data.
+
+        """
+
+        build_py.run(self)
+
+        if not self.dry_run:
+            meta = self.distribution.metadata
+            build = ''
+            pre_release = ''
+            info = {}
+            info['theme_name'] = meta.get_name()
+            info['theme_version_scm'] = ver = meta.get_version()
+            info['theme_version_core'] = '.'.join(ver.split('.')[0:3])
+            info['theme_mtime'] = str(int(time.time()))
+            L = ver.split('+', 1)
+            if len(L) > 1:
+                ver, build = L
+            L = ver.split('-', 1)
+            if len(L) > 1:
+                ver, pre_release = L
+            elif not pre_release:
+                L = ver.split('.', 4)
+                if len(L) > 3:
+                    pre_release = L[3]
+            info['theme_version_build'] = build
+            info['theme_version_pre_release'] = pre_release
+            target_dir = os.path.join(self.build_lib,
+                                      'sphinx_typo3_theme/static')
+            dir_util.mkpath(target_dir)
+            with open(os.path.join(target_dir, 'theme_info.json'), 'w') as f2:
+                json.dump(info, f2, indent=2, sort_keys=True)
+
+            theme_conf = os.path.join(self.build_lib,
+                                      'sphinx_typo3_theme/theme.conf')
+            with open(theme_conf) as f1:
+                data = f1.read().replace('unknown_version',
+                                         info['theme_version_core'])
+            with open(theme_conf, 'w') as f2:
+                f2.write(data)
+
+if PY2:
+    long_description = open('README.rst').read().decode('utf-8', 'replace')
+else:
+    long_description = open('README.rst', encoding='utf-8').read()
+
 
 setup(
     name='sphinx_typo3_theme',
@@ -13,10 +71,11 @@ setup(
     license='MIT',
     author='Martin Bless',
     author_email='martin.bless@mbless.de',
-    description='Sphinx TYPO3 theme for docs.typo3.org, starting 2015.',
-    long_description=open('README.rst').read(),
+    description='Sphinx TYPO3 theme for docs.typo3.org, restarting 2020.',
+    long_description=long_description,
     zip_safe=False,
-    entry_points = {
+    cmdclass={'build_py': our_build},
+    entry_points={
         'sphinx.html_themes': [
             'sphinx_typo3_theme = sphinx_typo3_theme',
         ]
@@ -28,20 +87,13 @@ setup(
         'sphinx_typo3_theme': [
             'theme.conf',
             '*.html',
-            'static/css/*.css',
-            'static/fonts/*.*'
-            'static/img/*.*',
-            'static/js/*.js',
+            'static/*',
         ]
     },
     include_package_data=True,
     use_scm_version=True,
     setup_requires=[
-        'wheel',
         'setuptools_scm'
-    ],
-    install_requires=[
-       'sphinx'
     ],
     tests_require=[
         'pytest',
