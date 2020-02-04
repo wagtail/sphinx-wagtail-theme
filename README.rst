@@ -96,8 +96,7 @@ To use the theme in your Sphinx project, you will need to add these lines to
 
    import sphinx_typo3_theme
    html_theme = "sphinx_typo3_theme"
-   html_theme_path = []
-   html_theme_path.append(sphinx_typo3_theme.get_html_theme_path())
+   html_theme_path = [sphinx_typo3_theme.get_html_theme_path()]
 
 
 TYPO3 documentation docker container
@@ -171,7 +170,7 @@ Make sure you have `python3`, `pip`, `setuptools`.
 
 2. Build 'wheel' distribution packages for Linux or Mac and for Windows::
 
-      python3 setup.py sdist bdist_wheel
+      python3 setup.py bdist_wheel
 
 
 Workflows (GitHub Actions)
