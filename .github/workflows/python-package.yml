@@ -3,186 +3,152 @@ name: Python Package
 on: [push, pull_request]
 
 jobs:
-  build:
+  lint-code:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8]
-
+        python-version: [2.7, 3.x]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Upgrade pip
+      - name: Python version
+        run: python --version
+      - name: Pip install
         run: |
           python -m pip install --upgrade pip
+          pip install flake8
       - name: Lint with flake8
         run: |
-          pip install flake8
           # stop the build if there are Python syntax errors or undefined names
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-  package:
+  build-package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Fetch all tags
+        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: "3.6"
-      - name: Install dependencies
+          python-version: "3.x"
+      - name: Python version
+        run: python --version
+      - name: Pip install
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install setuptools_scm
+          pip install wheel
+      - name: Show scm_version
+        run: |
+          python -m setuptools_scm
+      - name: Maybe set tag 99.88.77
+        run: |
+          scm_version=$(python -c "import setuptools_scm as st;print('.'.join(st.get_version().split('.')[:3]))")
+          validstr=$(echo "$scm_version" | sed -e 's/[1-9][0-9]*\.\(0\|[1-9][0-9]*\)\.\(0\|[1-9][0-9]*\)/valid/')
+          echo Found scm_version:${scm_version}: && echo validates to validstr:${validstr}:
+          if [ ! "$validstr" = "valid" ]; then
+             echo Create tag '99.88.77'
+             git tag | xargs git tag -d
+             git tag 99.88.77
+             git tag
+          else
+             echo Given version looks ok.
+          fi
       - name: Build sdist
-        run: |
-          python setup.py sdist
+        run: python setup.py sdist
       - name: Build bdist_wheel
-        run: |
-          python setup.py bdist_wheel
-      - name: Archive Module
+        run: python setup.py bdist_wheel
+      - name: Remove sdist package
+        run: find dist -name "*.tar.gz" -delete
+      - name: Archive module
         uses: actions/upload-artifact@v1
         with:
           name: package-dist
           path: dist
 
-  version-checks:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: "3.x"
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - name: Check "no tag" != "0.0.1"
-        run: |
-          git tag | xargs git tag -d
-          python setup.py install --quiet
-          result=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
-          expected=0.0.1
-          echo Result: $result && echo Expected: $expected
-          if [ "$result" != "$expected" ]; then
-            echo THIS WOULD BE exit 1
-          fi
-      - name: Check Tag "1.0" != "1.0.0"
-        run: |
-          git tag | xargs git tag -d
-          git tag 1.0
-          python setup.py install --quiet
-          result=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
-          expected=1.0.0
-          echo Result: $result && echo Expected: $expected
-          if [ "$result" != "$expected" ]; then
-            echo THIS WOULD BE exit 1
-          fi
-      - name: Check Tag "v4.3.11" != "4.3.11"
-        run: |
-          git tag | xargs git tag -d
-          git tag v4.3.11
-          python setup.py install --quiet
-          result=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
-          expected=4.3.11
-          echo Result: $result && echo Expected: $expected
-          if [ "$result" != "$expected" ]; then
-            exit 1
-          fi
-      - name: Check valid semver_core like "4.0.3"
-        run: |
-          git tag | xargs git tag -d
-          git tag v4.3.11
-          python setup.py install --quiet
-          found=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
-          expected=4.3.11
-          validstr="$(echo "$result" | sed -e 's/[1-9][0-9]*\.\(0\|[1-9][0-9]\+\)\.\(0\|[1-9][0-9]*\)/valid/')"
-          echo Expected: $expected && echo Found: $result && echo validstr: $validstr
-          if [ "$validstr" != "valid" ]; then
-            echo Expecting legal version like <major>.<minor>.<patch> with major >= 1, no leading zeros
-            exit 1
-          fi
-
-  sphinx-quickstart-local:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          path: 'repository'
-      - name: Set up Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: "3.x"
-      - name: Install Dependencies
-        run: |
-          pip install --upgrade pip
-          pip install sphinx
-      - name: Install Theme
-        run: |
-          cd repository
-          python setup.py install
-          python -c "import sphinx_typo3_theme; print('Version: ' + sphinx_typo3_theme.__version__)"
-          python -c "import sphinx_typo3_theme; print('Version Full: ' + sphinx_typo3_theme.__version_full__)"
-      - name: Installed Modules
-        run: pip list
-      - name: Sphinx Quickstart
-        run: |
-          sphinx-quickstart --project PROJECT --author AUTHOR --sep --extensions sphinx_typo3_theme --no-use-make-mode --quiet
-          echo >> source/conf.py
-          echo 'html_theme = "sphinx_typo3_theme"' >> source/conf.py
-          echo 'import sphinx_typo3_theme' >> source/conf.py
-          echo 'html_theme_path = [sphinx_typo3_theme.get_html_theme_path()]' >> source/conf.py
-          cat source/conf.py
-      - name: Sphinx Build
-        run: |
-          sphinx-build -b html source build
-      - name: Archive Module
-        uses: actions/upload-artifact@v1
-        with:
-          name: sphinx-quickstart-local
-          path: build
-
-  sphinx-quickstart-package:
-    needs: [package]
+  validate-version:
+    needs: [build-package]
     runs-on: ubuntu-latest
     steps:
       - name: Download package
         uses: actions/download-artifact@v1
         with:
           name: package-dist
-          path: package
+          path: packages
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
           python-version: "3.x"
-      - name: Install Dependencies
+      - name: Python version
+        run: python --version
+      - name: Upgrade pip
+        run: pip install --upgrade pip
+      - name: Install theme
+        run:  pip install $(find packages -name "*.whl")
+      - name: Validate theme_version
         run: |
-          pip install --upgrade pip
-          pip install sphinx
-      - name: Install Theme
+          theme_version=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
+          validstr=$(echo "$theme_version" | sed -e 's/[1-9][0-9]*\.\(0\|[1-9][0-9]*\)\.\(0\|[1-9][0-9]*\)/valid/')
+          echo Installed theme_version:${theme_version}: && echo validates to validstr:${validstr}:
+          if [ "$validstr" != "valid" ]; then
+            echo Invalid theme_version. Expecting a legal version like
+            echo '<major>.<minor>.<patch> with major >= 1 and no leading zeros'
+            exit 1
+          fi
+
+  sphinx-quickstart:
+    needs: [build-package]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [2.7, 3.x]
+    steps:
+      - name: Download package
+        uses: actions/download-artifact@v1
+        with:
+          name: package-dist
+          path: packages
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Python version
+        run: python --version
+      - name: Upgrade pip
+        run: pip install --upgrade pip
+      - name: Install Sphinx
+        run: pip install sphinx
+      - name: Install theme
+        run: pip install $(find packages -name "*.whl")
+      - name: Display theme_version
         run: |
-          pip install $(find package -name "*.tar.gz")
-          python -c "import sphinx_typo3_theme; print('Version: ' + sphinx_typo3_theme.__version__)"
-      - name: Installed Modules
+          theme_version=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
+          echo theme_version: ${theme_version}
+      - name: Installed modules
         run: pip list
-      - name: Sphinx Quickstart
+      - name: Sphinx quickstart
         run: |
           sphinx-quickstart --project PROJECT --author AUTHOR --sep --extensions sphinx_typo3_theme --no-use-make-mode --quiet
           echo >> source/conf.py
           echo 'html_theme = "sphinx_typo3_theme"' >> source/conf.py
           echo 'import sphinx_typo3_theme' >> source/conf.py
           echo 'html_theme_path = [sphinx_typo3_theme.get_html_theme_path()]' >> source/conf.py
+          echo 'source/conf.py'
           cat source/conf.py
-      - name: Sphinx Build
+      - name: Sphinx build
         run: |
           sphinx-build -b html source build
-      - name: Archive Module
+      - name: Archive build
         uses: actions/upload-artifact@v1
         with:
-          name: sphinx-quickstart-package
+          name: sphinx-quickstart-${{ matrix.python-version }}
           path: build
