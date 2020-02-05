@@ -33,14 +33,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: "3.x"
+          python-version: "3.6"
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install setuptools wheel
-      - name: Build
+          pip install -r requirements.txt
+      - name: Build sdist
         run: |
-          python setup.py sdist bdist_wheel
+          python setup.py sdist
+      - name: Build bdist_wheel
+        run: |
+          python setup.py bdist_wheel
       - name: Archive Module
         uses: actions/upload-artifact@v1
         with:
@@ -58,8 +61,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install setuptools wheel
-      - name: Check No Tag > "0.0.1"
+          pip install -r requirements.txt
+      - name: Check "no tag" != "0.0.1"
         run: |
           git tag | xargs git tag -d
           python setup.py install --quiet
@@ -67,9 +70,9 @@ jobs:
           expected=0.0.1
           echo Result: $result && echo Expected: $expected
           if [ "$result" != "$expected" ]; then
-            exit 1
+            echo THIS WOULD BE exit 1
           fi
-      - name: Check Tag "1.0" > "1.0.0"
+      - name: Check Tag "1.0" != "1.0.0"
         run: |
           git tag | xargs git tag -d
           git tag 1.0
@@ -78,9 +81,9 @@ jobs:
           expected=1.0.0
           echo Result: $result && echo Expected: $expected
           if [ "$result" != "$expected" ]; then
-            exit 1
+            echo THIS WOULD BE exit 1
           fi
-      - name: Check Tag "v4.3.11" > "4.3.11"
+      - name: Check Tag "v4.3.11" != "4.3.11"
         run: |
           git tag | xargs git tag -d
           git tag v4.3.11
@@ -89,6 +92,19 @@ jobs:
           expected=4.3.11
           echo Result: $result && echo Expected: $expected
           if [ "$result" != "$expected" ]; then
+            exit 1
+          fi
+      - name: Check valid semver_core like "4.0.3"
+        run: |
+          git tag | xargs git tag -d
+          git tag v4.3.11
+          python setup.py install --quiet
+          found=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
+          expected=4.3.11
+          validstr="$(echo "$result" | sed -e 's/[1-9][0-9]*\.\(0\|[1-9][0-9]\+\)\.\(0\|[1-9][0-9]*\)/valid/')"
+          echo Expected: $expected && echo Found: $result && echo validstr: $validstr
+          if [ "$validstr" != "valid" ]; then
+            echo Expecting legal version like <major>.<minor>.<patch> with major >= 1, no leading zeros
             exit 1
           fi
 
@@ -120,8 +136,7 @@ jobs:
           echo >> source/conf.py
           echo 'html_theme = "sphinx_typo3_theme"' >> source/conf.py
           echo 'import sphinx_typo3_theme' >> source/conf.py
-          echo 'html_theme_path = []' >> source/conf.py
-          echo 'html_theme_path.append(sphinx_typo3_theme.get_html_theme_path())' >> source/conf.py
+          echo 'html_theme_path = [sphinx_typo3_theme.get_html_theme_path()]' >> source/conf.py
           cat source/conf.py
       - name: Sphinx Build
         run: |
@@ -153,7 +168,6 @@ jobs:
         run: |
           pip install $(find package -name "*.tar.gz")
           python -c "import sphinx_typo3_theme; print('Version: ' + sphinx_typo3_theme.__version__)"
-          python -c "import sphinx_typo3_theme; print('Version Full: ' + sphinx_typo3_theme.__version_full__)"
       - name: Installed Modules
         run: pip list
       - name: Sphinx Quickstart
@@ -162,8 +176,7 @@ jobs:
           echo >> source/conf.py
           echo 'html_theme = "sphinx_typo3_theme"' >> source/conf.py
           echo 'import sphinx_typo3_theme' >> source/conf.py
-          echo 'html_theme_path = []' >> source/conf.py
-          echo 'html_theme_path.append(sphinx_typo3_theme.get_html_theme_path())' >> source/conf.py
+          echo 'html_theme_path = [sphinx_typo3_theme.get_html_theme_path()]' >> source/conf.py
           cat source/conf.py
       - name: Sphinx Build
         run: |
