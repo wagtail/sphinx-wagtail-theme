@@ -91,9 +91,7 @@ setup(
         ]
     },
     include_package_data=True,
-    use_scm_version={
-        "version_scheme": "python-simplified-semver"
-    },
+    use_scm_version=True,
     setup_requires=[
         'setuptools_scm'
     ],
