@@ -202,27 +202,29 @@ Python Package
 `.github/workflows/python-package.yml`
 
 
-1. `build`
+1. `lint-code`
 
    Lint the Python files.
 
 
-2. `package`
+2. `build-package`
 
-   Build an installable package of the module and provide it as downloadable
-   artifact.
-
-
-3. `sphinx-quickstart-local`
-
-   Build a minimal sample documentation obtained from `sphinx-quickstart`
-   with the theme version of the current checkout. ((?))
+   Build an installable and downloadable package of the module. It is provided
+   as an artifact. This step sets the version number within the package.
 
 
-4. `sphinx-quickstart-package`
+3. `validate-version`
 
-   Build a minimal sample documentation obtained from `sphinx-quickstart`
-   with the theme version (artifact) of step `package` as theme.
+   Validate that the package has a valid version number in the form of
+   `<major>.<minor>.<patch>`. Example: `99.88.77`. Three numbers are expected,
+   the `major` part must be greater `0` and leading zeros are forbidden. The
+   version is obtained from repository tags.
+
+
+4. `sphinx-quickstart`
+
+   Render a minimal sample documentation project created by
+   `sphinx-quickstart` as html and provide the result as artifact.
 
 This workflow is executed on every `push` or `pull_request`.
 
@@ -255,3 +257,11 @@ Content Delivery Network (CDN)
    it as identifier in the url on the TYPO3 Azure CDN.
 
 This workflow is executed on every `push` to the `master` branch and `release`.
+
+
+Releases
+========
+
+Make sure the release tags look like '0.0.0' or 'v0.0.0'. All three numbers
+are required.
+
