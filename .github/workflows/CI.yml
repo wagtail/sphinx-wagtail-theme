@@ -315,8 +315,13 @@ jobs:
           name: assets-for-cdn
           path: sphinx_typo3_theme/static
       - name: TODO Upload to Azure.
-        # Let's upload to ../<branch>/ and ../<version2>
+        # TODO
+        # Please upload whenever we have 'passed-all-tests'
         # Do this only if version1 > 0 and version1 < 99
+        # For 4.1.x upload to:
+        # (1) https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
+        # (2) https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4/css/theme.css  (outputs.version1)
+        # (3) https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.1/css/theme.css  (outputs.version2)
         if: 1
         env:
           AZURE_STORAGE_ACCOUNT: ${{ secrets.AZURE_ACCOUNT }}
@@ -361,6 +366,7 @@ jobs:
             exit 1
           fi
 
+
   upload-to-pypi:
     needs: [assert-good-release-version]
     if: github.event_name == 'release' && github.event.action == 'published'
@@ -381,6 +387,8 @@ jobs:
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        # TODO
+        # Try out an activate real upload
         run: |
           echo TODO: Upload from 'path: packages' here
           echo twine upload packages/*
