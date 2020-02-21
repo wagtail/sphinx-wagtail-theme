@@ -155,7 +155,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.x]
+        python-version: [2.7, 3.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -184,7 +184,7 @@ jobs:
       - name: Archive build
         uses: actions/upload-artifact@v1
         with:
-          name: rendered-docs-of-sphinx_typo3_theme-Python-${{ matrix.python-version }}
+          name: docs-rendered-with-Python-${{ matrix.python-version }}
           path: docs/_build/html
 
 
@@ -395,7 +395,7 @@ jobs:
         mode: ['online']
         manual: [
           ['Writing Documentation', 'TYPO3-Documentation/TYPO3CMS-Guide-HowToDocument'],
-          ['Theme Demo Docs', 'typo3-documentation/t3SphinxThemeRtdDemoDocs']]
+          ['Stress Test Demo', 'typo3-documentation/t3SphinxThemeRtdDemoDocs']]
     steps:
       - name: Download our Sphinx extension
         uses: actions/download-artifact@v1
