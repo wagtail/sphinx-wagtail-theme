@@ -1,5 +1,0 @@
-flake8
-pytest
-setuptools
-setuptools_scm
-wheel
