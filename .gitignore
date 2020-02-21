@@ -10,7 +10,6 @@
 .idea
 .ruby-version
 .tox
-/build
 /Pipfile*
 /yarn-error.log
 bower_components/
@@ -18,3 +17,6 @@ dist/
 docs/_build
 node_modules/
 npm-debug.log
+
+/build/*
+!/build/.gitkeep
