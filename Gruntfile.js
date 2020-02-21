@@ -204,7 +204,7 @@ module.exports = function (grunt) {
             + 't3docs/render-documentation:develop makehtml '
             + '-c make_latex 0 '
             + '-c make_singlehtml 0 '
-            + '-c jobfile /CONFIG/jobfile.json '
+            + '-c jobfile /CONFIG/jobfile-online.json '
             + ';'
           return command;
         }
