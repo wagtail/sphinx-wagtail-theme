@@ -2,102 +2,99 @@
 """`sphinx_typo3_theme` lives on `Github`_.
 
 .. _github: https://github.com/TYPO3-Documentation/sphinx_typo3_theme
-
 """
 
 import json
 import os
+import re
+import setuptools_scm
 import sys
 import time
 from distutils import dir_util
 from setuptools import setup
-from setuptools.command.build_py import build_py
 
-PY2 = sys.version_info[0] < 3
+PY3 = sys.version_info[0] >= 3
+setup_requirements = ['setuptools_scm']
+test_requirements = []
 
-class our_build(build_py):
+our_version_info_target_dir = 'sphinx_typo3_theme/static'
+our_version_info_file_name = '_version_info_GENERATED'
+scm_version_info_target_dir = 'sphinx_typo3_theme/static'
+scm_version_write_to = os.path.join(scm_version_info_target_dir,
+                                    '_version_GENERATED.py')
 
-    def run(self):
-        """Overwrite static/theme_info.json and fill in build version data.
 
-        """
+def scm_version_as_dict(ver):
+    build = ''
+    pre_release = ''
+    info = {}
+    info['version_scm'] = ver
+    info['version_scm_core'] = '.'.join(ver.split('.')[0:3])
+    info['build_mtime'] = str(int(time.time()))
+    parts = ver.split('+', 1)
+    if len(parts) > 1:
+        ver, build = parts
+    parts = ver.split('-', 1)
+    if len(parts) > 1:
+        ver, pre_release = parts
+    elif not pre_release:
+        parts = ver.split('.', 4)
+        if len(parts) > 3:
+            pre_release = parts[3]
+    info['version_scm_build'] = build
+    info['version_scm_pre_release'] = pre_release
+    return info
 
-        build_py.run(self)
 
-        if not self.dry_run:
-            meta = self.distribution.metadata
-            build = ''
-            pre_release = ''
-            info = {}
-            info['theme_name'] = meta.get_name()
-            info['theme_version_scm'] = ver = meta.get_version()
-            info['theme_version_core'] = '.'.join(ver.split('.')[0:3])
-            info['theme_mtime'] = str(int(time.time()))
-            L = ver.split('+', 1)
-            if len(L) > 1:
-                ver, build = L
-            L = ver.split('-', 1)
-            if len(L) > 1:
-                ver, pre_release = L
-            elif not pre_release:
-                L = ver.split('.', 4)
-                if len(L) > 3:
-                    pre_release = L[3]
-            info['theme_version_build'] = build
-            info['theme_version_pre_release'] = pre_release
-            target_dir = os.path.join(self.build_lib,
-                                      'sphinx_typo3_theme/static')
-            dir_util.mkpath(target_dir)
-            with open(os.path.join(target_dir, 'theme_info.json'), 'w') as f2:
-                json.dump(info, f2, indent=2, sort_keys=True)
+def version_info_to_file(info, target_dir, file_name, ext):
+    if ext not in ['.py', '.json']:
+        sys.exit(1)
+    dir_util.mkpath(target_dir)
+    target_file = os.path.join(target_dir, file_name) + ext
+    with open(target_file, 'w') as f2:
+        if ext == '.py':
+            f2.write('version_info = (\n')
+        json.dump(info, f2, indent=2, sort_keys=True)
+        if ext == '.py':
+            f2.write('\n)\n')
 
-            theme_conf = os.path.join(self.build_lib,
-                                      'sphinx_typo3_theme/theme.conf')
-            with open(theme_conf) as f1:
-                data = f1.read().replace('unknown_version',
-                                         info['theme_version_core'])
-            with open(theme_conf, 'w') as f2:
-                f2.write(data)
 
-if PY2:
-    long_description = open('README.rst').read().decode('utf-8', 'replace')
+info = scm_version_as_dict(setuptools_scm.get_version())
+info['module_name'] = 'sphinx_typo3_theme'
+target_dir = scm_version_info_target_dir
+version_info_to_file(info, target_dir, our_version_info_file_name, '.py')
+version_info_to_file(info, target_dir, our_version_info_file_name, '.json')
+
+if PY3:
+    with open('README.rst', encoding='utf-8') as readme_file:
+        readme = readme_file.read()
+    with open('HISTORY.rst', encoding='utf-8') as history_file:
+        history = history_file.read()
 else:
-    long_description = open('README.rst', encoding='utf-8').read()
+    with open('README.rst') as readme_file:
+        readme = readme_file.read().decode('utf-8', 'replace')
+    with open('HISTORY.rst') as history_file:
+        history = history_file.read().decode('utf-8', 'replace')
 
+readme = re.compile('^.. BADGES_START.*^.. BADGES_END', re.M | re.S).sub('', readme)
 
 setup(
     name='sphinx_typo3_theme',
     url='https://github.com/TYPO3-Documentation/sphinx_typo3_theme',
-    license='MIT',
+    license='MIT license',
     author='Martin Bless',
     author_email='martin.bless@mbless.de',
     description='Sphinx TYPO3 theme for docs.typo3.org, restarting 2020.',
-    long_description=long_description,
-    zip_safe=False,
-    cmdclass={'build_py': our_build},
-    entry_points={
-        'sphinx.html_themes': [
-            'sphinx_typo3_theme = sphinx_typo3_theme',
-        ]
-    },
-    packages=[
-        'sphinx_typo3_theme'
-    ],
-    package_data={
-        'sphinx_typo3_theme': [
-            'theme.conf',
-            '*.html',
-            'static/*',
-        ]
-    },
+    long_description=readme + '\n\n' + history,
     include_package_data=True,
-    use_scm_version=True,
-    setup_requires=[
-        'setuptools_scm'
-    ],
-    tests_require=[
-        'pytest',
-    ],
+    packages=['sphinx_typo3_theme'],
+    setup_requires=setup_requirements,
+    tests_require=test_requirements,
+    use_scm_version={
+        'write_to': scm_version_write_to,
+        'fallback_version': '99.88.77',
+    },
+    zip_safe=False,
     classifiers=[
         'Framework :: Sphinx',
         'Framework :: Sphinx :: Theme',
