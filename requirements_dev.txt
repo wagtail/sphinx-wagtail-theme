@@ -1,5 +1,7 @@
 flake8
+pip
 pytest
 setuptools
 setuptools_scm
+sphinx
 wheel

@@ -1,15 +1,16 @@
-"""Sphinx TYPO3 theme for docs.typo3.org.
+"""Sphinx TYPO3 theme for docs.typo3.org."""
 
-"""
-
-import json
 import os
 
-f1path = os.path.join(os.path.dirname(__file__), 'static/theme_info.json')
-with open(f1path) as f1:
-    theme_info = json.load(f1)
+try:
+    from .static._version_GENERATED import version as __version__
+except ImportError:
+    __version__ = '99.88.77'
 
-__version__ = theme_info['theme_version_core']
+try:
+    from .static._version_info_GENERATED import version_info
+except ImportError:
+    version_info = {}
 
 
 def get_html_theme_path():
@@ -21,13 +22,13 @@ def get_html_theme_path():
 def get_theme_mtime():
     """Return the timestamp of the build as integer."""
 
-    return int(theme_info['theme_mtime'])
+    return int(version_info.get('build_mtime', 0))
 
 
 def get_theme_name():
     """Return the name of the theme."""
 
-    return theme_info['theme_name']
+    return version_info['module_name']
 
 
 def update_context(app, pagename, templatename, context, doctree):
