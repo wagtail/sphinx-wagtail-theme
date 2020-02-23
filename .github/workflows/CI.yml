@@ -338,6 +338,12 @@ jobs:
     if: github.event_name == 'release' && github.event.action == 'published'
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.x"
+      - run: python --version
+      - run: pip install --upgrade pip twine
       - name: Download wheel
         uses: actions/download-artifact@v1
         with:
