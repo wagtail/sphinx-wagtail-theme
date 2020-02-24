@@ -42,6 +42,7 @@ def update_context(app, pagename, templatename, context, doctree):
     `template`. If so, we expect the value of that entry to be the name of a
     template file that should be used for rendering instead of the default
     template `page.html`.
+
     A field field list near the top of a reST source file is passed on by
     Sphinx as file metadata. For example, a line `:template: sitemap.html'
     right at the beginning of a reST file will tell Sphinx to use the template
@@ -56,8 +57,8 @@ def setup(app):
     """Setup functionality called by Sphinx"""
     app.connect('html-page-context', update_context)
     if hasattr(app, 'add_html_theme'):
-        app.add_html_theme("sphinx_typo3_theme",
-                           get_html_theme_path())
+        theme_path = os.path.abspath(os.path.dirname(__file__))
+        app.add_html_theme("sphinx_typo3_theme", theme_path)
     # unconfirmed: just assuming that parallel_write_safe is ok
     return {
         "version": __version__,
