@@ -254,7 +254,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python --version
       - run: pip install --upgrade pip
-      - run: pip install --upgrade pytest
+      - run: pip install --upgrade pytest twine
       - name: Install from wheel
         run: pip install $(find packages -name "*.whl")
       - name: Assert is importable, show version
@@ -265,6 +265,7 @@ jobs:
       - name: make test TODO Make this work
         if: 0
         run: make test
+      - run: twine check packages/*
 
 
   passed-all-tests:
