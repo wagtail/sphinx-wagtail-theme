@@ -26,7 +26,7 @@ todo_include_todos = False
 
 # -- Options for HTML output -------------------------------------------
 html_theme = 'alabaster'
-html_static_path = ['_static']
+html_static_path = []
 # -- Options for HTMLHelp output ---------------------------------------
 htmlhelp_basename = 'sphinx_typo3_themedoc'
 # -- Options for LaTeX output ------------------------------------------
@@ -58,16 +58,14 @@ try:
 except:
     is_imported = False
 if is_imported:
-    version = '.'.join(sphinx_typo3_theme.__version__.split('.')[0:2])
-    # The full version, including alpha/beta/rc tags.
+    version = sphinx_typo3_theme.__version__
     release = sphinx_typo3_theme.__version__
     html_theme = 'sphinx_typo3_theme'
-    html_static_path = []
     try:
-        html_theme_path
+        html_theme_options
     except NameError:
-        html_theme_path = []
-    html_theme_path.insert(0, sphinx_typo3_theme.get_html_theme_path())
+        html_theme_options = {}
+    html_theme_options['version'] = sphinx_typo3_theme.__version__
 
 
 

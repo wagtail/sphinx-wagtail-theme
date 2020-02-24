@@ -81,12 +81,6 @@ passed-all-tests
    This is a sentinal job to indicate whether the build is good for usage or
    not. A pull-request may only be merged if this job succeeds.
 
-upload-to-cdn
-   Needs: [passed-all-tests].
-
-   Whenever the build succeeds the resulting assets should be uploaded to the
-   content delivery network.
-
 assert-good-release-version
    Needs: [passed-all-tests]. Only run for release events.
 
@@ -98,6 +92,12 @@ upload-to-pypi
 
    Upload a new release to PyPi, the Python packet index.
 
+upload-to-cdn
+   Needs: [upload-to-pypi].
+
+   After uploading to PyPi the asset folder 'static' is uploaded to the content
+   delivery network.
+
 use-docker-container
    Needs: [passed-all-tests].
 
@@ -108,21 +108,17 @@ use-docker-container
 Uploads to the CDN
 ==================
 
-The theme data of each merge will automatically be uploaded to the TYPO3
-content delivery network (CDN). The general url is::
+The static theme data of each release on PyPi will automatically be uploaded to
+the TYPO3 content delivery network (CDN). The general url is::
 
-   https://typo3.azureedge.net/typo3documentation/theme/<NAME>/<BRANCH|MAJOR|MAJOR.MINOR>/css/theme.css
+   https://typo3.azureedge.net/typo3documentation/theme/<NAME>/<BRANCH|MAJOR.MINOR.PATCH>/css/theme.css
+
+For example, to access `4.3.2` data, write::
+
+   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.3.2/css/theme.css
 
 
-For example, to access the latest patch version of `4.1.x`, write this::
-
-   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.1/css/theme.css
-
-To access the latest version of `4.x.x`, write::
-
-   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4/css/theme.css
-
-To access the latest version use the branch name instead of the version number::
+To access the latest version of branch 'master' write::
 
    https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
 
