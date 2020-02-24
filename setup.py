@@ -86,6 +86,7 @@ setup(
     author_email='martin.bless@mbless.de',
     description='Sphinx TYPO3 theme for docs.typo3.org, restarting 2020.',
     long_description=readme + '\n\n' + history,
+    long_description_content_type='text/x-rst',
     include_package_data=True,
     packages=['sphinx_typo3_theme'],
     setup_requires=setup_requirements,

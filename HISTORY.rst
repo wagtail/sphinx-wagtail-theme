@@ -2,10 +2,10 @@
 History
 =======
 
-4.1.0 (2020-02-23)
-------------------
+4.1.0 (2020-02-24)
+==================
 
-Codename "Good to go" release
+"Let's start" release
 
 * Elaborate workflow
 * Add Makefile
@@ -17,6 +17,6 @@ Codename "Good to go" release
 
 
 0.1.0 (2020-01-01)
-------------------
+==================
 
 *  Starting development.

@@ -56,6 +56,12 @@ Rebuild and install from Python wheel package::
    make test-import
 
 
+To find out whether the created wheel package passes the `twine check` test and
+can be uploaded to PyPi run::
+
+   make build test
+
+
 .. _venv: https://docs.python.org/3/library/venv.html
 
 

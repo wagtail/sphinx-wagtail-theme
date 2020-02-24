@@ -4,4 +4,5 @@ pytest
 setuptools
 setuptools_scm
 sphinx
+twine
 wheel
