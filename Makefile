@@ -61,10 +61,12 @@ clean: clean-project ## Clean all, except frontend
 
 .PHONY: clean-build
 clean-build: ##- Remove build artifacts
-	rm -fr build/
-	rm -fr dist/
-	rm -fr .eggs/
-	find . -name '*.egg-info' -exec rm -fr {} +
+	rm -rf build/
+	mkdir -p build
+	touch build/.gitkeep
+	rm -rf dist/
+	rm -rf .eggs/
+	find . -name '*.egg-info' -exec rm -rf {} +
 	find . -name '*.egg' -exec rm -f {} +
 
 
@@ -77,7 +79,7 @@ clean-pyc: ##- Remove Python file artifacts
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
-	find . -name '__pycache__' -exec rm -fr {} +
+	find . -name '__pycache__' -exec rm -rf {} +
 
 
 .PHONY: clean-project
@@ -86,10 +88,10 @@ clean-project: clean-build clean-pyc clean-test ##- Remove all build, test, cove
 
 .PHONY: clean-test
 clean-test: ##- Remove test and coverage artifacts
-	rm -fr .tox/
+	rm -rf .tox/
 	rm -f .coverage
-	rm -fr htmlcov/
-	rm -fr .pytest_cache
+	rm -rf htmlcov/
+	rm -rf .pytest_cache
 
 
 .PHONY: coverage
@@ -179,6 +181,7 @@ setup-python: ##- Setup Python modules
 .PHONY: test
 test: ## Run Python tests quickly with pytest
 	pytest
+	if [ -d dist ]; then find dist -name *.whl -exec twine check {} +; fi
 
 
 .PHONY: test-tox

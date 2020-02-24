@@ -141,8 +141,6 @@ jobs:
       - run: python -m setuptools_scm
       - run: python setup.py sdist bdist_wheel
       - name: Remove sdist package
-        # Maybe remove source package?
-        if: 0
         run: find dist -name "*.tar.gz" -delete
       - name: Archive wheel
         uses: actions/upload-artifact@v1
@@ -256,7 +254,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python --version
       - run: pip install --upgrade pip
-      - run: pip install --upgrade pytest
+      - run: pip install --upgrade pytest twine
       - name: Install from wheel
         run: pip install $(find packages -name "*.whl")
       - name: Assert is importable, show version
@@ -267,6 +265,7 @@ jobs:
       - name: make test TODO Make this work
         if: 0
         run: make test
+      - run: twine check packages/*
 
 
   passed-all-tests:
@@ -349,9 +348,8 @@ jobs:
         with:
           name: bdist-wheel-package
           path: packages
-      - run: |
-          the_package=$(find packages -name "*.whl")
-          echo "the package is: '"${the_package}"'"
+      - run: find packages
+      - run: twine check packages/*
       - name: Publish on PyPi
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
