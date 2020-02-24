@@ -386,12 +386,15 @@ jobs:
            find sphinx_typo3_theme/static -name __init__.py -delete
            find sphinx_typo3_theme/static -name *_t -delete
       - name: Prepare upload folder
-        run: |
-          mkdir -p cdn/theme/sphinx_typo3_theme/
-          cp -r sphinx_typo3_theme/static  cdn/theme/sphinx_typo3_theme/${{ steps.get-version.outputs.version3 }}
+        run:  mkdir -p cdn/theme/sphinx_typo3_theme/
+      # example: https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.3.2/css/theme.css
+      - name: Provide as x.x.x
+        run:  cp -r sphinx_typo3_theme/static  cdn/theme/sphinx_typo3_theme/${{ steps.get-version.outputs.version3 }}
+      # example: https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
+      - name: Provide as <branch>
+        run:  cp -r sphinx_typo3_theme/static  cdn/theme/sphinx_typo3_theme/${GITHUB_REF#refs/heads/}
       - run: find .
       - name: Upload to Azure
-        # example: https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.3.2/css/theme.css
         env:
           AZURE_STORAGE_ACCOUNT: ${{ secrets.AZURE_ACCOUNT }}
           AZURE_STORAGE_KEY: ${{ secrets.AZURE_KEY }}
