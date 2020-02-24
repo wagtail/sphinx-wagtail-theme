@@ -96,6 +96,8 @@ setup(
         'fallback_version': '99.88.77',
     },
     zip_safe=False,
+    entry_points={'sphinx.html_themes': ['sphinx_typo3_theme = '
+                                         'sphinx_typo3_theme']},
     classifiers=[
         'Framework :: Sphinx',
         'Framework :: Sphinx :: Theme',
