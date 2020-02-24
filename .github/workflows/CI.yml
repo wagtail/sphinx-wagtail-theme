@@ -219,10 +219,8 @@ jobs:
           sphinx-quickstart --project PROJECT --author AUTHOR --sep \
              --extensions ${html_theme} --no-use-make-mode --quiet
           echo >> source/conf.py
-          echo 'html_theme = "'${html_theme}'"' >> source/conf.py
-          echo 'import '${html_theme} >> source/conf.py
-          echo 'html_theme_path = ['${html_theme}'.get_html_theme_path()]' >> source/conf.py
           echo 'extensions.append("'${html_theme}'")' >> source/conf.py
+          echo 'html_theme = "'${html_theme}'"' >> source/conf.py
           echo 'source/conf.py'
           cat source/conf.py
       - name: Sphinx build
