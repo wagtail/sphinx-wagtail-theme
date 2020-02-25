@@ -62,11 +62,6 @@ if is_imported:
     version = sphinx_typo3_theme.__version__
     release = sphinx_typo3_theme.__version__
     html_theme = 'sphinx_typo3_theme'
-    try:
-        html_theme_options
-    except NameError:
-        html_theme_options = {}
-    html_theme_options['version'] = sphinx_typo3_theme.__version__
 
 
 

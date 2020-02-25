@@ -6,6 +6,7 @@ Next release
 ============
 
 * Update documentation
+* Have {{ theme_version }} in page context
 
 4.1.2 (2020-02-25)
 ==================
