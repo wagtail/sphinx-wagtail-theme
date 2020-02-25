@@ -10,9 +10,9 @@ Sphinx TYPO3 theme for docs.typo3.org
 .. image:: https://raw.githubusercontent.com/typo3-documentation/sphinx_typo3_theme/master/img/screenshot.png
    :alt: Sphinx TYPO3 theme screenshot
 
-.. image:: https://github.com/typo3-documentation/sphinx_typo3_theme/workflows/CI/badge.svg?branch=master
+.. image:: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/CI/badge.svg
    :alt: CI
-   :target: https://github.com/typo3-ocumentation/sphinx_typo3_theme/actions?query=workflow%3ACI
+   :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3ACI
 
 .. BADGES_END
 
@@ -22,14 +22,16 @@ provides the theme.
 * Maintainer: Martin Bless <martin.bless@mbless.de>
 * Provided by the TYPO3 documentation team.
 * Free software: MIT license
-* Documentation: See docs/ folder
 * Authors: See AUTHORS.rst
+* Repository: https://github.com/TYPO3-Documentation/sphinx_typo3_theme
+* Documentation: See docs/ folder and https://typo3-documentation.github.io/sphinx_typo3_theme/
+
 
 Credits
 -------
 
-`Benjamin Kott`_ has created this theme from scratch without dependencies
-to Sphinx themes or the `ReadTheDocs theme`_. Thanks a lot, great work!
+`Benjamin Kott`_ has created this theme from scratch without dependencies to
+Sphinx themes or the `ReadTheDocs theme`_. Thank you very much, great work!
 
 The ancestor of this package is `t3SphinxThemeRtd`_ which had been developed
 by `Martin Bless`_ as a derivative of the ReadTheDocs theme.
@@ -38,6 +40,7 @@ by `Martin Bless`_ as a derivative of the ReadTheDocs theme.
 .. _Martin Bless: martin.bless@mbless.de
 .. _ReadTheDocs theme: https://github.com/readthedocs/sphinx_rtd_theme
 .. _t3SphinxThemeRtd: https://github.com/typo3-documentation/t3SphinxThemeRtd
+
 
 Releasing
 ---------

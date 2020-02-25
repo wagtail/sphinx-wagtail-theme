@@ -2,6 +2,11 @@
 History
 =======
 
+Next release
+============
+
+* Update documentation
+
 4.1.2 (2020-02-25)
 ==================
 
