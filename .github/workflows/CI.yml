@@ -15,9 +15,6 @@ jobs:
   some-context-vars:
     runs-on: ubuntu-latest
     steps:
-      - name: Get branch name
-        id: get-branch-name
-        run: echo ::set-output name=branch-name::${GITHUB_REF#refs/heads/}
       - name: Get branch or version name from repo (howto)
         id: get-bv_name
         run: |
@@ -390,7 +387,7 @@ jobs:
         run:  cp -r sphinx_typo3_theme/static  cdn/theme/sphinx_typo3_theme/${{ steps.get-version.outputs.version3 }}
       # example: https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
       - name: Provide as <branch>
-        run:  cp -r sphinx_typo3_theme/static  cdn/theme/sphinx_typo3_theme/${GITHUB_REF#refs/heads/}
+        run:  cp -r sphinx_typo3_theme/static  cdn/theme/sphinx_typo3_theme/master
       - run: find .
       - name: Upload to Azure
         env:
