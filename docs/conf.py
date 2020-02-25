@@ -23,6 +23,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
+today_fmt = '%Y-%m-%d %H:%M'
 
 # -- Options for HTML output -------------------------------------------
 html_theme = 'alabaster'
@@ -61,11 +62,6 @@ if is_imported:
     version = sphinx_typo3_theme.__version__
     release = sphinx_typo3_theme.__version__
     html_theme = 'sphinx_typo3_theme'
-    try:
-        html_theme_options
-    except NameError:
-        html_theme_options = {}
-    html_theme_options['version'] = sphinx_typo3_theme.__version__
 
 
 
