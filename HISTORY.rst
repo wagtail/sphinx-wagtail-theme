@@ -2,6 +2,12 @@
 History
 =======
 
+4.1.2 (2020-02-25)
+==================
+
+* Fix workflow, adapt docs
+
+
 4.1.1 (2020-02-24)
 ==================
 
@@ -23,7 +29,6 @@ History
 * Add docs
 * Deploy docs to Github pages
 * Tune setup.py and 'version from repo' procedure
-
 
 
 0.1.0 (2020-01-01)

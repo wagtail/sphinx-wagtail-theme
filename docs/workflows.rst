@@ -118,7 +118,7 @@ For example, to access `4.3.2` data, write::
    https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.3.2/css/theme.css
 
 
-To access the latest version of branch 'master' write::
+To access the latest version insert 'master' for 'branch'::
 
    https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
 
