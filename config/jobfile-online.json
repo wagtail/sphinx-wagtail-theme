@@ -5,6 +5,6 @@
         }
     },
     "tctconfig": {
-        "replace_static_in_html": 0
+        "replace_static_in_html": 1
     }
 }
