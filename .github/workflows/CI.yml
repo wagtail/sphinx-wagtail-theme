@@ -430,7 +430,7 @@ jobs:
             -v $(pwd):/PROJECT:ro \
             -v $(pwd)/Documentation-GENERATED-temp:/RESULT \
             -v $(pwd)/WHEELS:/WHEELS \
-            t3docs/render-documentation:develop makehtml \
+            t3docs/render-documentation makehtml \
               -c make_singlehtml 1 \
               -c jobfile /RESULT/jobfile.json
 
