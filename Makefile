@@ -30,9 +30,11 @@ Start with the installation of Python and Node modules:
 Compile frontend changes:
    make frontend
 
-Build, import from package, test, render the docs and open in browser:
+Build, import from package, test, render the repo docs and open in browser:
    make install test-import docs
 
+See grunt help for more grunt commands:
+   grunt --help
 """)
 endef
 export PRINT_HELP_PYSCRIPT
