@@ -6,7 +6,6 @@
 {%- else %}
     {%- set titlesuffix = "" -%}
 {%- endif -%}
-{%- set logo = "img/typo3-logo.svg" -%}
 {%- set urlTypo3Documentation = "https://docs.typo3.org" -%}
 
 {%- set blacklist_script_files = [] -%}
@@ -100,7 +99,7 @@
         <div class="page-header">
             <div class="page-header-inner">
                 <a href="{{ urlTypo3Documentation }}" title="TYPO3 Documentation" class="logo">
-                    <img src="{{ pathto('_static/' + logo, 1) }}" width="484" height="130" alt="TYPO3 Logo" class="logo-image" />
+                    <img src="{{ pathto('_static/' + theme_logo, 1) }}" width="484" height="130" alt="TYPO3 Logo" class="logo-image" />
                 </a>
             </div>
         </div>
