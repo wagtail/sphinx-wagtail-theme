@@ -18,84 +18,84 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8" />
+{%- if metatags %}
     {{ metatags }}
+{%- endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="book-version" content="{{ version|striptags|e }}" />
     <meta name="book-release" content="{{ release|striptags|e }}" />
     <meta name="docsearch:name" content="{{ project|striptags|e }}" />
     <meta name="docsearch:version" content="{{ release|striptags|e }}" />
     <meta name="docsearch:package_type" content="{{ package_type|striptags|e }}" />
-
-    {% block htmltitle %}
-        <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
-    {% endblock %}
-    {% if favicon %}
-        <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
-    {% endif %}
-
+{% block htmltitle %}
+    <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+{% endblock %}
+{% if favicon %}
+    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
+{%- endif %}
     <link rel="stylesheet" type="text/css" href="{{ pathto('_static/' + style, 1) }}" />
     <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/webfonts.css', 1) }}" />
     <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/fontawesome.css', 1) }}" />
-    {%- for css in css_files %}
-        {%- if css|attr("filename") %}
-            {{ css_tag(css) }}
-        {%- else %}
-            <link rel="stylesheet" type="text/css" href="{{ pathto(css, 1) }}" />
-        {%- endif %}
-    {%- endfor %}
-
-    {%- block linktags %}
-        {%- if hasdoc('about') %}
-            <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
-        {%- endif %}
-        {%- if hasdoc('genindex') %}
-            <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
-        {%- endif %}
-        {%- if hasdoc('search') %}
-            <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
-        {%- endif %}
-        {%- if hasdoc('copyright') %}
-            <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
-        {%- endif %}
-        <link rel="top" title="{{ docstitle|e }}" href="{{ pathto(pagename) }}" />
-
-        {%- if parents %}
-            <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}" />
-        {%- endif %}
-        {%- if next %}
-            <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
-        {%- endif %}
-        {%- if prev %}
-            <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
-        {%- endif %}
-    {%- endblock %}
-    {%- block extrahead %}{% endblock %}
-
+{%- for css in css_files %}
+  {%- if css|attr("filename") %}
+    {{ css_tag(css) }}
+  {%- else %}
+    <link rel="stylesheet" type="text/css" href="{{ pathto(css, 1) }}" />
+  {%- endif %}
+{%- endfor %}
+<!-- linktags -->
+{%- block linktags %}
+  {%- if hasdoc('about') %}
+    <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+  {%- endif %}
+  {%- if hasdoc('genindex') %}
+    <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+  {%- endif %}
+  {%- if hasdoc('search') %}
+    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+  {%- endif %}
+  {%- if hasdoc('copyright') %}
+    <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+  {%- endif %}
+    <link rel="top" title="{{ docstitle|e }}" href="{{ pathto(pagename) }}" />
+  {%- if parents %}
+    <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}" />
+  {%- endif %}
+  {%- if next %}
+    <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+  {%- endif %}
+  {%- if prev %}
+    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+  {%- endif %}
+{% endblock -%}
+<!-- /linktags -->
+<!-- extrahead -->
+{%- block extrahead %}{% endblock -%}
+<!-- /extrahead -->
     <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
-
-    {% if theme_docstypo3org -%}
-        <!-- UNIVERSE BAR START -->
-        <script src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/webcomponents-loader.js"></script>
-        <script type="module" src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/typo3-universe.js"></script>
-        <!-- UNIVERSE BAR END -->
-    {% endif %}
-
+{% if theme_docstypo3org -%}
+<!-- UNIVERSE BAR START -->
+    <script src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/webcomponents-loader.js"></script>
+    <script type="module" src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/typo3-universe.js"></script>
+<!-- UNIVERSE BAR END -->
+{%- endif %}
 </head>
 
 <body>
 
     <div class="page">
-        {% if theme_docstypo3org -%}
-            <div class="page-topbar">
-                <div class="page-topbar-inner">
-                    <!-- UNIVERSE BAR START -->
-                    <typo3-universe active="documentation">
-                        <div style="display: block; height: 44px; background-color: #313131;"></div>
-                    </typo3-universe>
-                    <!-- UNIVERSE BAR END -->
-                </div>
+      {%- if theme_docstypo3org %}
+        <div class="page-topbar">
+            <div class="page-topbar-inner">
+                <!-- UNIVERSE BAR START -->
+                <typo3-universe active="documentation">
+                    <div style="display: block; height: 44px; background-color: #313131;"></div>
+                </typo3-universe>
+                <!-- UNIVERSE BAR END -->
             </div>
-        {% endif %}
+        </div>
+      {%- endif %}
+
         <div class="page-header">
             <div class="page-header-inner">
                 <a href="{{ urlTypo3Documentation }}" title="TYPO3 Documentation" class="logo">
@@ -106,7 +106,7 @@
 
         {% if theme_docstypo3org -%}
             <!--# include virtual="/includes/header.html" -->
-        {% endif %}
+        {%- endif %}
 
         <div class="page-main">
             <div class="page-main-inner">
@@ -182,54 +182,54 @@
 
         {% if theme_docstypo3org -%}
             <!--# include virtual="/includes/footer.html" -->
-        {% endif %}
+        {%- endif %}
 
         <div class="page-footer">
             {% include "footer.html" %}
         </div>
 
     </div>
-
-    {% if not embedded %}
-        <script type="text/javascript">
-            var DOCUMENTATION_OPTIONS = {
-                URL_ROOT: '{{ url_root }}',
-                VERSION: '{{ release|e }}',
-                COLLAPSE_INDEX: false,
-                FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
-                HAS_SOURCE: {{ has_source| lower }}
-            };
-        </script>
-        <script type="text/javascript" src="{{ pathto('_static/js/jquery.min.js', 1) }}"></script>
-        <script type="text/javascript" src="{{ pathto('_static/js/underscore.min.js', 1) }}"></script>
-        <script type="text/javascript" src="{{ pathto('_static/js/doctools.min.js', 1) }}"></script>
-        <script type="text/javascript" src="{{ pathto('_static/js/popper.min.js', 1) }}"></script>
-        <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1) }}"></script>
-        <script type="text/javascript" src="{{ pathto('_static/js/theme.min.js', 1) }}"></script>
-        {#- SEARCH -#}
-        <script type="text/javascript" src="{{ pathto('_static/language_data.js', 1) }}"></script>
-        <script type="text/javascript" src="{{ pathto('_static/js/searchtools.min.js', 1) }}"></script>
-        <script type="text/javascript" src="{{ pathto('_static/js/autocomplete.min.js', 1) }}"></script>
+{% if not embedded %}
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT: '{{ url_root }}',
+            VERSION: '{{ release|e }}',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
+            HAS_SOURCE: {{ has_source| lower }}
+        };
+    </script>
+    <script type="text/javascript" src="{{ pathto('_static/js/jquery.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/js/underscore.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/js/doctools.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/js/popper.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/js/theme.min.js', 1) }}"></script>
+    {#- SEARCH #}
+    <script type="text/javascript" src="{{ pathto('_static/language_data.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/js/searchtools.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/js/autocomplete.min.js', 1) }}"></script>
         {%- for scriptfile in script_files %}
-            {% if scriptfile not in blacklist_script_files %}
-                {{ js_tag(scriptfile) }}
-            {% endif %}
+            {%- if scriptfile not in blacklist_script_files %}
+    {{ js_tag(scriptfile) }}
+            {%- endif %}
         {%- endfor %}
-    {% endif %}
-
-    {#- SEARCH -#}
+{%- endif %}
+    {# SEARCH -#}
     <script type="text/javascript">
         jQuery(function() { Search.loadIndex("{{ pathto('searchindex.js', 1) }}"); });
     </script>
     <script type="text/javascript" id="searchindexloader"></script>
-
+<!-- scripts2 -->
     {%- block scripts2 %} {% endblock -%}
-    {%- block footer %} {% endblock %}
-
-    {% if theme_docstypo3org -%}
-        <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="R9wBKTwzv"></script>
-        <script type="text/plain" data-usercentrics="Matomo" src="/js/piwik.js"></script>
-    {%- endif -%}
+<!-- /scripts2 -->
+<!-- footer -->
+    {%- block footer %} {% endblock -%}
+<!-- /footer -->
+  {%- if theme_docstypo3org %}
+    <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="R9wBKTwzv"></script>
+    <script type="text/plain" data-usercentrics="Matomo" src="/js/piwik.js"></script>
+  {%- endif %}
 
 </body>
 </html>
