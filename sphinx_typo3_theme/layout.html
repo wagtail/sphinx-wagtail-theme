@@ -6,7 +6,6 @@
 {%- else %}
     {%- set titlesuffix = "" -%}
 {%- endif -%}
-{%- set urlTypo3Documentation = "https://docs.typo3.org" -%}
 
 {%- set blacklist_script_files = [] -%}
 {%- set blacklist_script_files = blacklist_script_files + ['_static/jquery.js'] -%}
@@ -100,11 +99,19 @@
 
         <div class="page-header">
             <div class="page-header-inner">
-                {%- block pageheader %}
-                <a href="{{ urlTypo3Documentation }}" title="TYPO3 Documentation" class="logo">
+                    {%- block pageheader %}
+                        {%- if theme_urlTypo3Documentation and theme_logo %}
+                <a href="{{ theme_urlTypo3Documentation }}" title="TYPO3 Documentation" class="logo">
                     <img src="{{ pathto('_static/' + theme_logo, 1) }}" width="484" height="130" alt="TYPO3 Logo" class="logo-image" />
                 </a>
-                {%- endblock %}
+                        {%- elif theme_logo_url and theme_logo %}
+                <a href="{{ theme_logo_url }}" title="Home" class="logo">
+                    <img src="{{ pathto('_static/' + theme_logo, 1) }}" alt="Logo" class="logo-image" />
+                </a>
+                        {%- elif theme_logo %}
+                <img src="{{ pathto('_static/' + theme_logo, 1) }}" alt="Logo" class="logo-image" />
+                        {%- endif %}
+                    {%- endblock %}
             </div>
         </div>
 
