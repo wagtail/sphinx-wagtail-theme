@@ -6,7 +6,7 @@
 	"devDependencies": {
 		"@fortawesome/fontawesome-free": "^5.13.0",
 		"TYPO3CMS-Guide-HowToDocument": "github:TYPO3-Documentation/TYPO3CMS-Guide-HowToDocument",
-		"autocompleter": "^6.0.1",
+		"autocompleter": "^6.0.3",
 		"bootstrap": "^4.4.1",
 		"connect-livereload": "^0.6.1",
 		"grunt": "^1.0.4",
