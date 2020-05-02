@@ -95,7 +95,9 @@ Javascript package management
 Use `yarn` for package management.
 
 To upgrade a Javascript package to a newer version use the following. This
-keeps `package.json` and `yarn.lock` in sync as the BOTH will be modified::
+keeps `package.json` and `yarn.lock` in sync as BOTH will be modified:
+
+.. code-block:: shell
 
    # ATTENTION: Select only those with reasonable version numbers.
    # Be very careful if the MAJOR number would change
