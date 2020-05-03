@@ -6,12 +6,18 @@
 {%- else %}
     {%- set titlesuffix = "" -%}
 {%- endif -%}
-
 {%- set blacklist_script_files = [] -%}
 {%- set blacklist_script_files = blacklist_script_files + ['_static/jquery.js'] -%}
 {%- set blacklist_script_files = blacklist_script_files + ['_static/underscore.js'] -%}
 {%- set blacklist_script_files = blacklist_script_files + ['_static/doctools.js'] -%}
 {%- set blacklist_script_files = blacklist_script_files + ['_static/language_data.js'] -%}
+{%- if logo is not defined -%} {%- set logo = theme_logo -%} {%- endif -%}
+{%- if logo_url is not defined -%} {%- set logo_url = theme_logo_url -%} {%- endif -%}
+{%- if logo_alt is not defined -%} {%- set logo_alt = theme_logo_alt -%} {%- endif -%}
+{%- if logo_title is not defined -%} {%- set logo_title = theme_logo_title -%} {%- endif -%}
+{%- if logo_width is not defined -%} {%- set logo_width = theme_logo_width -%} {%- endif -%}
+{%- if logo_height is not defined -%} {%- set logo_height = theme_logo_height -%} {%- endif -%}
+{%- if urlTypo3Documentation is not defined -%} {%- set urlTypo3Documentation = theme_urlTypo3Documentation -%} {%- endif -%}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -99,19 +105,29 @@
 
         <div class="page-header">
             <div class="page-header-inner">
-                    {%- block pageheader %}
-                        {%- if theme_urlTypo3Documentation and theme_logo %}
-                <a href="{{ theme_urlTypo3Documentation }}" title="TYPO3 Documentation" class="logo">
-                    <img src="{{ pathto('_static/' + theme_logo, 1) }}" width="484" height="130" alt="TYPO3 Logo" class="logo-image" />
-                </a>
-                        {%- elif theme_logo_url and theme_logo %}
-                <a href="{{ theme_logo_url }}" title="Home" class="logo">
-                    <img src="{{ pathto('_static/' + theme_logo, 1) }}" alt="Logo" class="logo-image" />
-                </a>
-                        {%- elif theme_logo %}
-                <img src="{{ pathto('_static/' + theme_logo, 1) }}" alt="Logo" class="logo-image" />
-                        {%- endif %}
-                    {%- endblock %}
+<!-- pageheader -->
+{%- block pageheader %}
+{%- if logo and logo != 'None' %}
+
+{%- if logo_url %}
+<a href="{{ logo_url }}" {% if logo_title %}title="{{ logo_title|e }}" {% endif %}class="logo">
+
+{%- endif %}
+    <img src="{{ pathto('_static/' + logo, 1) }}"
+         {%- if logo_width %} width="{{ logo_width|e }}"{% endif %}
+         {%- if logo_height %} height="{{ logo_height|e }}"{% endif %}
+         {%- if logo_alt %} alt="{{ logo_alt|e }}"{% endif %}
+         {%- if logo_title and not logo_url %} title="{{ logo_title|e }}"{% endif %}
+         {%- if 1 %} class="logo-image" />{% endif %}
+
+{%- if logo_url %}
+</a>
+
+{%- endif %}
+
+{%- endif %}
+{%- endblock %}
+<!-- pageheader -->
             </div>
         </div>
 
@@ -232,10 +248,10 @@
     </script>
     <script type="text/javascript" id="searchindexloader"></script>
 <!-- scripts2 -->
-    {%- block scripts2 %} {% endblock -%}
+    {%- block scripts2 %}{% endblock -%}
 <!-- /scripts2 -->
 <!-- footer -->
-    {%- block footer %} {% endblock -%}
+    {%- block footer %}{% endblock -%}
 <!-- /footer -->
   {%- if theme_docstypo3org %}
     <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="R9wBKTwzv"></script>
