@@ -32,10 +32,25 @@
                 {%- endif %}
                 {%- endif %}
                 <div class="footer-additional">
-                    {%- if theme_show_last_updated and last_updated -%}
-                    <p class="text-center">Last rendered on {{ last_updated }}</p>
-                    {%- endif -%}
-                    <p class="text-center"><a href="https://github.com/TYPO3-Documentation/sphinx_typo3_theme" rel="nofollow" target="_blank">TYPO3 Theme {{ theme_version }}</a></p>
+                    {%- if theme_show_last_modified and t3ctx.last_modified %}
+                    {%- if t3ctx.commit_url %}
+                    <p class="text-center">
+                        Last updated: <a href="{{ t3ctx.commit_url|e }}" rel="nofollow" target="_blank" title="Last commit">
+                           {{ t3ctx.last_modified|e }}
+                        </a>
+                    </p>
+                    {%- else %}
+                    <p class="text-center">Last updated: {{ t3ctx.last_modified|e }}</p>
+                    {%- endif %}
+                    {%- endif %}
+                    {%- if theme_show_last_updated and last_updated %}
+                    <p class="text-center">Last rendered: {{ last_updated|e }}</p>
+                    {%- endif %}
+                    <p class="text-center">
+                        <a href="https://github.com/TYPO3-Documentation/sphinx_typo3_theme" rel="nofollow" target="_blank">
+                            TYPO3 Theme {{ theme_version|e }}
+                        </a>
+                    </p>
                 </div>
                 <div class="footer-meta">
                     {%- if theme_show_copyright %}
