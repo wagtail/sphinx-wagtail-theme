@@ -34,7 +34,7 @@
 {% block htmltitle %}
     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
 {% endblock %}
-{% if favicon %}
+{%- if favicon %}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
 {%- endif %}
     <link rel="stylesheet" type="text/css" href="{{ pathto('_static/' + style, 1) }}" />
