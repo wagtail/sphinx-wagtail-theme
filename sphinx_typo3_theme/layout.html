@@ -132,7 +132,7 @@
 
 {%- endif %}
 {%- endblock %}
-<!-- pageheader -->
+<!-- /pageheader -->
             </div>
         </div>
 
@@ -181,32 +181,45 @@
                             </div>
                         </div>
                         <div class="toc-collapse">
-                            {%- if not theme_is_homepage and builder == 'html' -%}
-                                {%- include "searchbox.html" -%}
-                            {%- endif -%}
+                            {%- if not theme_is_homepage and builder == 'html' %}
+<!-- searchbox.html -->
+{%- include "searchbox.html" %}
+<!-- /searchbox.html -->
+                            {%- endif %}
                             <div class="toc" role="navigation" aria-label="main navigation">
-                                {% block menu %}
-                                    {% set toctree = toctree(maxdepth=8, collapse=False, includehidden=True, titles_only=True) %}
-                                    {% if toctree %}
+<!-- menu -->
+                                {%- block menu %}
+                                    {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=True, titles_only=True) -%}
+                                    {%- if toctree %}
                                         {{ toctree }}
-                                    {% else %}
+                                    {%- else %}
                                         {{ toc }}
-                                    {% endif %}
-                                {% endblock %}
+                                    {%- endif %}
+                                {%- endblock -%}
+<!-- /menu -->
                             </div>
                         </div>
                     </nav>
                 </div>
                 <div class="page-main-content">
                     <div class="rst-content">
-                        {% include "pager-hidden.html" %}
-                        {% include "breadcrumbs.html" %}
+<!-- pager-hidden.html -->
+{% include "pager-hidden.html" %}
+<!-- /pager-hidden.html -->
+<!-- breadcrumbs.html -->
+{% include "breadcrumbs.html" %}
+<!-- /breadcrumbs.html -->
                         <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
                             <div itemprop="articleBody">
-                                {% block body %}{% endblock %}
+<!-- body -->
+                                {%- block body %}
+                                {% endblock -%}
+<!-- /body -->
                             </div>
                         </div>
-                        {% include "pager.html" %}
+<!-- pager.html -->
+{% include "pager.html" %}
+<!-- /pager.html -->
                     </div>
                 </div>
             </div>
@@ -217,9 +230,10 @@
         {%- endif %}
 
         <div class="page-footer">
-            {% include "footer.html" %}
+<!-- footer.html -->
+{% include "footer.html" %}
+<!-- /footer.html -->
         </div>
-
     </div>
 {% if not embedded %}
     <script type="text/javascript">
@@ -255,9 +269,9 @@
 <!-- scripts2 -->
     {%- block scripts2 %}{% endblock -%}
 <!-- /scripts2 -->
-<!-- footer -->
-    {%- block footer %}{% endblock -%}
-<!-- /footer -->
+<!-- footer2 -->
+    {%- block footer2 %}{% endblock -%}
+<!-- /footer2 -->
   {%- if theme_docstypo3org %}
     <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="R9wBKTwzv"></script>
     <script type="text/plain" data-usercentrics="Matomo" src="/js/piwik.js"></script>
