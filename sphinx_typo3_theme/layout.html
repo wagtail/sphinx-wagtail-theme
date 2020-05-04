@@ -31,6 +31,12 @@
     <meta name="docsearch:package_type" content="{{ package_type|striptags|e }}" />
     <meta name="docsearch:release" content="{{ release|striptags|e }}" />
     <meta name="docsearch:version" content="{{ version|striptags|e }}" />
+{%- if t3ctx.last_updated_isoformat %}
+    <meta name="docsearch:modified" content="{{ t3ctx.last_updated_isoformat|e }}" />
+    <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+    <meta name="dc.modified" content="{{ t3ctx.last_updated_isoformat|e }}" />
+    <meta property="article:modified_time" content="{{ t3ctx.last_updated_isoformat|e }}" />
+{%- endif %}
 {% block htmltitle %}
     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
 {% endblock %}
