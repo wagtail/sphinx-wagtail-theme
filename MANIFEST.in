@@ -1,6 +1,9 @@
 include AUTHORS.rst
+include CONTRIBUTING.rst
 include HISTORY.rst
 include LICENSE
 include README.rst
+include USAGE.rst
+
 recursive-include sphinx_typo3_theme *.*
 recursive-exclude sphinx_typo3_theme .*.swp
