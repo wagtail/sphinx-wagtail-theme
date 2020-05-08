@@ -64,6 +64,15 @@ can be uploaded to PyPi run::
 
 .. _venv: https://docs.python.org/3/library/venv.html
 
+Grunt
+=====
+
+More commands are available by means of `grunt`. Run::
+
+   grunt --help
+
+and check the `gruntfile.js`.
+
 
 Theme stress test
 =================
@@ -79,3 +88,17 @@ check the rendering.
 .. _t3SphinxThemeRtdDemoDocs: https://docs.typo3.org/m/typo3/demo-t3SphinxThemeRtd/master/en-us/
 .. _sphinx_typo3_theme: https://github.com/typo3-documentation/sphinx_typo3_theme
 
+
+Javascript package management
+=============================
+
+Use `yarn` for package management.
+
+To upgrade a Javascript package to a newer version use the following. This
+keeps `package.json` and `yarn.lock` in sync as BOTH will be modified:
+
+.. code-block:: shell
+
+   # ATTENTION: Select only those with reasonable version numbers.
+   # Be very careful if the MAJOR number would change
+   yarn upgrade-interactive --latest

@@ -81,6 +81,7 @@ jobs:
           node-version: "12.x"
       - run: yarn install
       - run: yarn frontend
+      - run: git status
       - name: Assert clean working tree
         run: git status | grep -q "nothing to commit, working tree clean"
 
