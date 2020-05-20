@@ -98,7 +98,7 @@ clean-test: ##- Remove test and coverage artifacts
 
 .PHONY: coverage
 coverage: ##- Check code coverage quickly with default Python
-	coverage run --source src -m pytest
+	coverage run --source sphinx_typo3_theme -m pytest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
@@ -133,7 +133,7 @@ install-for-dev: clean uninstall ## Clean, uninstall and pip install -e for deve
 .PHONY: lint
 lint: ## Check Python style
 	flake8 *.py
-	flake8 src
+	flake8 sphinx_typo3_theme
 	flake8 tests
 
 
@@ -142,13 +142,13 @@ lm: lint-minimal
 lint-minimal: ## Check Python style for minimal standards (alias lm)
 	flake8 *.py  --count --select=E9,F63,F7,F82 --show-source --statistics
 	echo
-	flake8 src   --count --select=E9,F63,F7,F82 --show-source --statistics
+	flake8 sphinx_typo3_theme   --count --select=E9,F63,F7,F82 --show-source --statistics
 	echo
 	flake8 tests --count --select=E9,F63,F7,F82 --show-source --statistics
 	echo
 	flake8 *.py  --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 	echo
-	flake8 src   --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+	flake8 sphinx_typo3_theme   --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 	echo
 	flake8 tests --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 	echo
