@@ -8,6 +8,12 @@ Next release
 ...
 
 
+4.2.1 (2020-05-20)
+==================
+
+* Add PAGE CONTENTS above the menu of intra-page links
+
+
 4.2.0 (2020-05-08)
 ==================
 
