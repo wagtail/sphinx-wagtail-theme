@@ -83,7 +83,13 @@
      * Version Modified
      */
     .versionmodified {
+        background-color: hsl(26.5, 84.3%, 95%);
+        border-radius: 3px;
+        border: 1px solid hsl(26.5, 84.3%, 85%);
+        color: $code-color-ts;
         font-style: italic;
+        margin: 0 3px 0 0;
+        padding: 0 2px;
     }
 
     /**
