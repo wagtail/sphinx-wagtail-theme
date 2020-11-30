@@ -68,12 +68,15 @@
             margin-top: ($spacer * .5);
         }
     }
-    .toctree-wrapper ul.compact-list,
-    .toctree-wrapper ol.compact-list,
-    ul.simple.compact-list,
-    ol.simple.compact-list {
-        li + li {
-            margin-top: 0;
+    // https://github.com/TYPO3-Documentation/sphinx_typo3_theme/issues/91
+    @media (min-width: 992px) {
+        .toctree-wrapper ul.compact-list,
+        .toctree-wrapper ol.compact-list,
+        ul.simple.compact-list,
+        ol.simple.compact-list {
+            li + li {
+                margin-top: 0;
+            }
         }
     }
 
