@@ -67,6 +67,11 @@
         li + li {
             margin-top: ($spacer * .5);
         }
+        .compact-list {
+            li + li {
+                margin-top: 0;
+            }
+        }
     }
 
     /**
@@ -128,9 +133,6 @@
         display: block;
         .caption {
             font-size: $font-size-sm;
-            &:before {
-                content: 'Figure: ';
-            }
         }
     }
 
