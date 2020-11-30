@@ -1,4 +1,5 @@
-.align-center {
+.align-center,
+.centered {
     @extend .text-center;
 }
 .with-border {
@@ -12,4 +13,7 @@
 }
 .cc {
     clear: both;
+}
+.rubric {
+    font-weight: 700;
 }

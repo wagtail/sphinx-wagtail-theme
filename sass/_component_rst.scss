@@ -68,6 +68,19 @@
             margin-top: ($spacer * .5);
         }
     }
+    // https://github.com/TYPO3-Documentation/sphinx_typo3_theme/issues/91
+    @media (min-width: 992px) {
+        .compact-list > ul.simple,
+        .compact-list > ol.simple,
+        .toctree-wrapper.compact-list ul,
+        .toctree-wrapper.compact-list ol,
+        ul.simple.compact-list,
+        ol.simple.compact-list {
+            li + li {
+                margin-top: 0;
+            }
+        }
+    }
 
     /**
      * Keyboard Shortcuts
@@ -83,7 +96,13 @@
      * Version Modified
      */
     .versionmodified {
+        background-color: hsl(26.5, 84.3%, 95%);
+        border-radius: 3px;
+        border: 1px solid hsl(26.5, 84.3%, 85%);
+        color: $code-color-ts;
         font-style: italic;
+        margin: 0 3px 0 0;
+        padding: 0 2px;
     }
 
     /**
@@ -122,9 +141,6 @@
         display: block;
         .caption {
             font-size: $font-size-sm;
-            &:before {
-                content: 'Figure: ';
-            }
         }
     }
 
@@ -155,8 +171,9 @@
             content: '❝';
         }
         .attribution {
-            font-size: 80%;
+            font-size: 92%;
             font-style: italic;
+            text-align: right;
         }
         > div {
             > *:last-child {
@@ -242,5 +259,8 @@
         dd {
             margin-left: 0;
         }
+    }
+    .line-block > .line-block {
+        margin-left: 1.75em;
     }
 }

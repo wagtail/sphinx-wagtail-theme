@@ -8,6 +8,23 @@ Next release
 ...
 
 
+4.3.0 (2020-11-30)
+==================
+
+*  d605a2c Update .compact-list, only for screens >=992px
+*  e886449 Bring back .compact-list, remove Figure:
+*  f56aeea Fix indent of nested .line-block
+*  604eee1 Issue #14: Tweak $box-shadow-sm
+*  7d52ca8 Enable sourceMap in Gruntfile.js
+*  53012f5 Update yarn.lock - apply security updates reported by GitHub
+*  0ffa575 Update flake8 exclude - don't check ``*GENERATED*`` files
+*  1225ec1 Add styles .centered, .rubric - add css classes
+*  14eea54 Update style p.attribution - style attribution in blockquotes
+*  56bbb03 Update style .versionmodified - make 'versionadded' stick out
+*  0610ae2 [FEATURE] Issue #80: Breakpoint to allow width:99999px - use total
+   width for screens >= 1800px
+
+
 4.2.1 (2020-05-20)
 ==================
 
