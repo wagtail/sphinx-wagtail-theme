@@ -21,7 +21,7 @@ Next release
 *  0610ae2 [FEATURE] Issue #80: Breakpoint to allow width:99999px - use total
    width for screens >= 1800px
 *  f56aeea Fix indent of nested .line-block
-
+*  e886449 Bring back .compact-list, remove Figure:
 
 
 4.2.1 (2020-05-20)
