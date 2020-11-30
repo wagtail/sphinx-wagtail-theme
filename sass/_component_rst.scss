@@ -70,6 +70,8 @@
     }
     // https://github.com/TYPO3-Documentation/sphinx_typo3_theme/issues/91
     @media (min-width: 992px) {
+        .compact-list > ul.simple,
+        .compact-list > ol.simple,
         .toctree-wrapper.compact-list ul,
         .toctree-wrapper.compact-list ol,
         ul.simple.compact-list,
