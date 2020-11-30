@@ -67,10 +67,13 @@
         li + li {
             margin-top: ($spacer * .5);
         }
-        .compact-list {
-            li + li {
-                margin-top: 0;
-            }
+    }
+    .toctree-wrapper ul.compact-list,
+    .toctree-wrapper ol.compact-list,
+    ul.simple.compact-list,
+    ol.simple.compact-list {
+        li + li {
+            margin-top: 0;
         }
     }
 
