@@ -117,9 +117,10 @@
     }
 
     /**
-     * Images
+     * Images and objects
      */
-    img {
+    img,
+    object {
         display: inline-block;
         max-width: 100%;
         height: auto;
@@ -132,11 +133,12 @@
             margin-bottom: $spacer;
         }
     }
+    .plantuml object {
+        height: auto !important;
+    }
     .section > img,
     .section > a > img,
-    .figure img {
-        margin-bottom: $spacer;
-    }
+q    }
     .figure {
         display: block;
         .caption {
