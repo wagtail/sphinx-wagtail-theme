@@ -8,9 +8,16 @@ Next release
 ...
 
 
+4.3.1 (2020-12-01)
+==================
+
+*  e67d144 Use max-width:100% for PlantUML objects
+
+
 4.3.0 (2020-11-30)
 ==================
 
+*  5ac9115 v4.3.0
 *  d605a2c Update .compact-list, only for screens >=992px
 *  e886449 Bring back .compact-list, remove Figure:
 *  f56aeea Fix indent of nested .line-block
