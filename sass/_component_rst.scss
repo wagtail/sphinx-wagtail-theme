@@ -136,9 +136,9 @@
     .plantuml object {
         height: auto !important;
     }
-    .section > img,
-    .section > a > img,
-    .figure {
+    .figure,
+    .figure > img,
+    .figure > a > img {
         display: block;
         .caption {
             font-size: $font-size-sm;
