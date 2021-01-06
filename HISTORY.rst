@@ -2,13 +2,17 @@
 History
 =======
 
-Next release
-============
+
+4.4.2 (2021-06-01)
+==================
+
+*  8b1f5c3 Style index page genindex.html (issue #99)
+
 
 4.4.1 (2020-12-10)
 ==================
 
-*  5fb7837 Fix css for images and figures 
+*  5fb7837 Fix css for images and figures
 
 
 4.4.0 (2020-12-07)
