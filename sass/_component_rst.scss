@@ -264,4 +264,42 @@
     .line-block > .line-block {
         margin-left: 1.75em;
     }
+
+    /**
+     * Index page "genindex.html"
+     */
+    div.genindex-jumpbox {
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        margin: 1em 0;
+        padding: .4em;
+    }
+    div.modindex-jumpbox {
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        margin: 1em 0;
+        padding: .4em;
+    }
+    table.indextable {
+        width: 100%;
+        td {
+            text-align: left;
+            vertical-align: top;
+        }
+        ul {
+            margin-top: 0;
+            margin-bottom: 0;
+            list-style-type: none;
+        }
+        > tbody > tr > td > ul {
+            padding-left: 0;
+        }
+        tr.pcap {
+            height: 10px;
+        }
+        tr.cap {
+            margin-top: 10px;
+            background-color: transparent;
+        }
+    }
 }
