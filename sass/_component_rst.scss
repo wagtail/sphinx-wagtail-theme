@@ -68,6 +68,19 @@
             margin-top: ($spacer * .5);
         }
     }
+    // https://github.com/TYPO3-Documentation/sphinx_typo3_theme/issues/91
+    @media (min-width: 992px) {
+        .compact-list > ul.simple,
+        .compact-list > ol.simple,
+        .toctree-wrapper.compact-list ul,
+        .toctree-wrapper.compact-list ol,
+        ul.simple.compact-list,
+        ol.simple.compact-list {
+            li + li {
+                margin-top: 0;
+            }
+        }
+    }
 
     /**
      * Keyboard Shortcuts
@@ -104,9 +117,10 @@
     }
 
     /**
-     * Images
+     * Images and objects
      */
-    img {
+    img,
+    object {
         display: inline-block;
         max-width: 100%;
         height: auto;
@@ -119,18 +133,15 @@
             margin-bottom: $spacer;
         }
     }
-    .section > img,
-    .section > a > img,
-    .figure img {
-        margin-bottom: $spacer;
+    .plantuml object {
+        height: auto !important;
     }
-    .figure {
+    .figure,
+    .figure > img,
+    .figure > a > img {
         display: block;
         .caption {
             font-size: $font-size-sm;
-            &:before {
-                content: 'Figure: ';
-            }
         }
     }
 
@@ -248,6 +259,47 @@
         dt,
         dd {
             margin-left: 0;
+        }
+    }
+    .line-block > .line-block {
+        margin-left: 1.75em;
+    }
+
+    /**
+     * Index page "genindex.html"
+     */
+    div.genindex-jumpbox {
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        margin: 1em 0;
+        padding: .4em;
+    }
+    div.modindex-jumpbox {
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        margin: 1em 0;
+        padding: .4em;
+    }
+    table.indextable {
+        width: 100%;
+        td {
+            text-align: left;
+            vertical-align: top;
+        }
+        ul {
+            margin-top: 0;
+            margin-bottom: 0;
+            list-style-type: none;
+        }
+        > tbody > tr > td > ul {
+            padding-left: 0;
+        }
+        tr.pcap {
+            height: 10px;
+        }
+        tr.cap {
+            margin-top: 10px;
+            background-color: transparent;
         }
     }
 }
