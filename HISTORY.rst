@@ -2,8 +2,13 @@
 History
 =======
 
+4.4.3 (2021-01-20)
+==================
 
-4.4.2 (2021-06-01)
+*  37af740 Raise full width break point from 1800px to 2049px
+
+
+4.4.2 (2021-01-06)
 ==================
 
 *  8b1f5c3 Style index page genindex.html (issue #99)
