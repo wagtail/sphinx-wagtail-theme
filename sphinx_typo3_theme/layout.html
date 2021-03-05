@@ -127,7 +127,11 @@
 
 {%- if logo_url %}
 </a>
-
+<ol>
+    {% for link in theme_header_links.split(',') %}
+       <li> <a href="{{ link.split("|")[1] }}">{{ link.split("|")[0] }}</a></li>
+    {% endfor %}
+</ol>
 {%- endif %}
 
 {%- endif %}
