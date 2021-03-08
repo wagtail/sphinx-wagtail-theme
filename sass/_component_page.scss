@@ -7,20 +7,23 @@
 /**
  * Header
  */
-.page-header {
-    position: relative;
-    z-index: 1;
-    flex-grow: 0;
-    flex-shrink: 0;
-    background: #ffffff;
-    box-shadow: $box-shadow-sm;
+header * {
+    border: 1px solid black;
 }
-.page-header-inner {
-    max-width: 100%;
-    width: map-get($container-max-widths, 'xl');
-    margin: 0 auto;
-    padding: 0 ($grid-gutter-width / 2);
-}
+// .page-header {
+//     position: relative;
+//     z-index: 1;
+//     flex-grow: 0;
+//     flex-shrink: 0;
+//     background: #ffffff;
+//     box-shadow: $box-shadow-sm;
+// }
+// .page-header-inner {
+//     max-width: 100%;
+//     width: map-get($container-max-widths, 'xl');
+//     margin: 0 auto;
+//     padding: 0 ($grid-gutter-width / 2);
+// }
 
 /**
  * Main
