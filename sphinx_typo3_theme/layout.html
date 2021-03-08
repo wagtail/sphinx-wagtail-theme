@@ -92,44 +92,35 @@
 </head>
 
 <body>
-
     <div class="page">
-        <div class="page-header">
+        <header class="page-header">
             <div class="page-header-inner">
-<!-- pageheader -->
-{%- block pageheader %}
-{%- if logo and logo != 'None' %}
-
-{%- if logo_url %}
-<a href="{{ logo_url }}" {% if logo_title %}title="{{ logo_title|e }}" {% endif %}class="logo">
-
-{%- endif %}
-    <img src="{{ pathto('_static/' + logo, 1) }}"
-         {%- if logo_width %} width="{{ logo_width|e }}"{% endif %}
-         {%- if logo_height %} height="{{ logo_height|e }}"{% endif %}
-         {%- if logo_alt %} alt="{{ logo_alt|e }}"{% endif %}
-         {%- if logo_title and not logo_url %} title="{{ logo_title|e }}"{% endif %}
-         {%- if 1 %} class="logo-image" />{% endif %}
-
-{%- if logo_url %}
-</a>
-<ol>
-    {% for link in theme_header_links.split(',') %}
-       <li> <a href="{{ link.split("|")[1] }}">{{ link.split("|")[0] }}</a></li>
-    {% endfor %}
-</ol>
-{%- endif %}
-
-{%- endif %}
-{%- endblock %}
-<!-- /pageheader -->
+                {%- block pageheader %}
+                    {%- if logo and logo != 'None' %}
+                        {%- if logo_url %}
+                            <a href="{{ logo_url }}" {% if logo_title %}title="{{ logo_title|e }}"{% endif %} class="logo">
+                        {%- endif %}
+                        <img src="{{ pathto('_static/' + logo, 1) }}"
+                            {%- if logo_width %} width="{{ logo_width|e }}"{% endif %}
+                            {%- if logo_height %} height="{{ logo_height|e }}"{% endif %}
+                            {%- if logo_alt %} alt="{{ logo_alt|e }}"{% endif %}
+                            {%- if logo_title and not logo_url %} title="{{ logo_title|e }}"{% endif %}
+                            {%- if 1 %} class="logo-image"{% endif %}
+                        />
+                        {%- if logo_url %}
+                            </a>
+                        {%- endif %}
+                    {% endif %}
+                    <nav>
+                        <ul>
+                            {% for link in theme_header_links.split(',') %}
+                            <li> <a href="{{ link.split("|")[1] }}">{{ link.split("|")[0] }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                {%- endblock pageheader %}
             </div>
-        </div>
-
-        {% if theme_docstypo3org -%}
-            <!--# include virtual="/includes/header.html" -->
-        {%- endif %}
-
+        </header>
         <div class="page-main">
             <div class="page-main-inner">
                 <div class="page-main-navigation">
