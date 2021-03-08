@@ -92,21 +92,25 @@
 </head>
 
 <body>
-    <div class="page">
-        <header class="page-header">
-            <div class="page-header-inner">
+    <div class="page container">
+        <header class="page-header row">
+            <div class="page-header-inner col navbar">
                 {%- block pageheader %}
                     {%- if logo and logo != 'None' %}
                         {%- if logo_url %}
-                            <a href="{{ logo_url }}" {% if logo_title %}title="{{ logo_title|e }}"{% endif %} class="logo">
+                            <a href="{{ logo_url }}"
+                                {% if logo_title %}title="{{ logo_title|e }}"{% endif %}
+                                class="logo navbar-brand"
+                            >
                         {%- endif %}
                         <img src="{{ pathto('_static/' + logo, 1) }}"
                             {%- if logo_width %} width="{{ logo_width|e }}"{% endif %}
                             {%- if logo_height %} height="{{ logo_height|e }}"{% endif %}
                             {%- if logo_alt %} alt="{{ logo_alt|e }}"{% endif %}
                             {%- if logo_title and not logo_url %} title="{{ logo_title|e }}"{% endif %}
-                            {%- if 1 %} class="logo-image"{% endif %}
+                            class="{%- if 1 %}logo-image{% endif %} d-inline-block align-top"
                         />
+                        {{ logo_title }}
                         {%- if logo_url %}
                             </a>
                         {%- endif %}
