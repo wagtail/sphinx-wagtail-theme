@@ -96,8 +96,8 @@
         <header class="row bg-primary">
             <div class="col p-0" >
                 <div class="container">
-                    <nav class="navbar navbar-expand navbar-dark justify-content-between font-weight-bold">
-                        {%- block pageheader %}
+                    {%- block pageheader %}
+                        <nav class="navbar navbar-expand-md navbar-dark font-weight-bold">
                             {%- if logo and logo != 'None' %}
                                 {%- if logo_url %}
                                     <a href="{{ logo_url }}"
@@ -117,13 +117,18 @@
                                     </a>
                                 {%- endif %}
                             {% endif %}
-                            <ul class="navbar-nav">
-                                {% for link in theme_header_links.split(',') %}
-                                <li class="nav-item"><a class="nav-link"  href="{{ link.split("|")[1] }}">{{ link.split("|")[0] }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        {%- endblock pageheader %}
-                    </nav>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#wagtailMenuToggleable" aria-controls="wagtailMenuToggleable" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="wagtailMenuToggleable">
+                                <ul class="navbar-nav">
+                                    {% for link in theme_header_links.split(',') %}
+                                    <li class="nav-item"><a class="nav-link"  href="{{ link.split("|")[1] }}">{{ link.split("|")[0] }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </nav>
+                    {%- endblock pageheader %}
                 </div>
             </div>
         </header>
