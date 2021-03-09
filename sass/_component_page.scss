@@ -15,8 +15,12 @@ header * {
     background-color: $primary;
 }
 .navbar a {
-    color: $white;
+    color: $link-alternate-color;
 }
+.navbar a:hover {
+    color: $link-alternate-hover-color;
+}
+
 // .page-header-inner {
 //     max-width: 100%;
 //     width: map-get($container-max-widths, 'xl');
