@@ -96,7 +96,7 @@
         <header class="row bg-primary">
             <div class="col p-0" >
                 <div class="container">
-                    <nav class="navbar navbar-expand navbar-dark justify-content-between">
+                    <nav class="navbar navbar-expand navbar-dark justify-content-between font-weight-bold">
                         {%- block pageheader %}
                             {%- if logo and logo != 'None' %}
                                 {%- if logo_url %}
@@ -110,9 +110,9 @@
                                     {%- if logo_height %} height="{{ logo_height|e }}"{% endif %}
                                     {%- if logo_alt %} alt="{{ logo_alt|e }}"{% endif %}
                                     {%- if logo_title and not logo_url %} title="{{ logo_title|e }}"{% endif %}
-                                    class="{%- if 1 %}logo-image{% endif %} d-inline-block align-top"
+                                    class="{%- if 1 %}logo-image{% endif %} d-inline-block align-top mr-2"
                                 />
-                                {{ logo_title }}
+                                <span class="logo-title" >{{ logo_title }}</span>
                                 {%- if logo_url %}
                                     </a>
                                 {%- endif %}
