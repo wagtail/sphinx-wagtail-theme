@@ -10,23 +10,6 @@
 header * {
     border: 1px solid white;
 }
-.page-header {
-    color: $white;
-    background-color: $primary;
-}
-.navbar a {
-    color: $link-alternate-color;
-}
-.navbar a:hover {
-    color: $link-alternate-hover-color;
-}
-
-// .page-header-inner {
-//     max-width: 100%;
-//     width: map-get($container-max-widths, 'xl');
-//     margin: 0 auto;
-//     padding: 0 ($grid-gutter-width / 2);
-// }
 
 /**
  * Main
