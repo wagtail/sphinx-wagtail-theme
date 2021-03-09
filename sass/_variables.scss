@@ -42,8 +42,10 @@ $code-color-yaml:   hsl(170, 80%, 30%);
 //
 // Fonts
 // --------------------------------------------------
-$font-family-sans-serif: 'Source Sans Pro', sans-serif;
-$font-family-monospace: 'Source Code Pro', monospace;
+// $font-family-sans-serif: 'Source Sans Pro', sans-serif;
+$font-family-sans-serif: "Apercu Pro", arial, helvetica, sans-serif;
+// $font-family-monospace: 'Source Code Pro', monospace;
+$font-family-monospace: monospace,courier,times,serif;
 $font-weight-bold: 600;
 
 $h1-font-size: 2em;
