@@ -8,16 +8,15 @@
  * Header
  */
 header * {
-    border: 1px solid black;
+    border: 1px solid white;
 }
-// .page-header {
-//     position: relative;
-//     z-index: 1;
-//     flex-grow: 0;
-//     flex-shrink: 0;
-//     background: #ffffff;
-//     box-shadow: $box-shadow-sm;
-// }
+.page-header {
+    color: $white;
+    background-color: $primary;
+}
+.navbar a {
+    color: $white;
+}
 // .page-header-inner {
 //     max-width: 100%;
 //     width: map-get($container-max-widths, 'xl');
