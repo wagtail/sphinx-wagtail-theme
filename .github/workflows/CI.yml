@@ -199,7 +199,7 @@ jobs:
         run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)"
       - name: Assert is importable and show version_info
         run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.version_info)"
-      - run: python tests/test_python_sphinx_wagtail_theme.py
+      - run: pytest
       - name: make test TODO Make this work
         if: 0
         run: make test
