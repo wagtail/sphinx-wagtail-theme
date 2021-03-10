@@ -2,7 +2,7 @@ flake8
 pip
 pytest
 setuptools
-setuptools_scm
 sphinx
 twine
 wheel
+zest.releaser
