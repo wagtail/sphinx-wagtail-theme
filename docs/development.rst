@@ -102,3 +102,25 @@ keeps `package.json` and `yarn.lock` in sync as BOTH will be modified:
    # ATTENTION: Select only those with reasonable version numbers.
    # Be very careful if the MAJOR number would change
    yarn upgrade-interactive --latest
+
+
+Release process
+===============
+
+Checklist:
+
+    - AUTHORS.rst is updated
+    - HISTORY.rst (change log) is updated
+    - Everything is committed, clean checkout
+    - ~/.pypirc has a username and password (token)
+
+``` bash
+[pypi]
+  username = __token__
+  password = pypi-*****
+```
+
+With an active virtual environment:
+
+    pip install -r requirements_dev.txt
+    fullrelease  # answer the questions
