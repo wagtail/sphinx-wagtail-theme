@@ -7,7 +7,7 @@ Sphinx TYPO3 theme for docs.typo3.org
 =====================================
 .. BADGES_START
 
-.. image:: https://raw.githubusercontent.com/typo3-documentation/sphinx_typo3_theme/master/img/screenshot.png
+.. image:: https://raw.githubusercontent.com/typo3-documentation/sphinx_typo3_theme/main/img/screenshot.png
    :alt: Sphinx TYPO3 theme screenshot
 
 .. image:: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/CI/badge.svg
@@ -16,7 +16,7 @@ Sphinx TYPO3 theme for docs.typo3.org
 
 .. BADGES_END
 
-Sphinx TYPO3 theme contains all files required to build a Sphinx extension that
+Sphinx Wagtail theme contains all files required to build a Sphinx extension that
 provides the theme.
 
 * Maintainer: Martin Bless <martin.bless@mbless.de>
