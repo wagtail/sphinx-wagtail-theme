@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = sphinx_typo3_theme
+SPHINXPROJ    = sphinx_wagtail_theme
 SOURCEDIR     = .
 BUILDDIR      = _build
 

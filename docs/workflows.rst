@@ -20,7 +20,7 @@ these events:
 A repository_dispatch event can be created like this::
 
    curl -X POST \
-      https://api.github.com/repos/typo3-documentation/sphinx_typo3_theme/dispatches \
+      https://api.github.com/repos/typo3-documentation/sphinx_wagtail_theme/dispatches \
       -H 'Accept: application/vnd.github.everest-preview+json' \
       -H 'Authorization: token 08abthis9is6notdafreal3token02030a75675e' \
       --data '{"event_type": "CI.yml-webhook"}
@@ -115,10 +115,10 @@ the TYPO3 content delivery network (CDN). The general url is::
 
 For example, to access `4.3.2` data, write::
 
-   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/4.3.2/css/theme.css
+   https://typo3.azureedge.net/typo3documentation/theme/sphinx_wagtail_theme/4.3.2/css/theme.css
 
 
 To access the latest version insert 'master' for 'branch'::
 
-   https://typo3.azureedge.net/typo3documentation/theme/sphinx_typo3_theme/master/css/theme.css
+   https://typo3.azureedge.net/typo3documentation/theme/sphinx_wagtail_theme/master/css/theme.css
 

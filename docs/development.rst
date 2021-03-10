@@ -78,7 +78,7 @@ Theme stress test
 =================
 
 There is a demo manual `t3SphinxThemeRtdDemoDocs`_
-under construction. It serves as a "stress test" for this `sphinx_typo3_theme`_
+under construction. It serves as a "stress test" for this `sphinx_wagtail_theme`_
 and tries to use as many reStructuredText examples as possible and covered by
 the theme. **Documentation writers** may want to have a look at those pages to
 understand what reST markup can be used and what the visual effect will be.
@@ -86,7 +86,7 @@ understand what reST markup can be used and what the visual effect will be.
 check the rendering.
 
 .. _t3SphinxThemeRtdDemoDocs: https://docs.typo3.org/m/typo3/demo-t3SphinxThemeRtd/master/en-us/
-.. _sphinx_typo3_theme: https://github.com/typo3-documentation/sphinx_typo3_theme
+.. _sphinx_wagtail_theme: https://github.com/typo3-documentation/sphinx_wagtail_theme
 
 
 Javascript package management
