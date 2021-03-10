@@ -93,6 +93,7 @@
 		"../../../node_modules/bootstrap/scss/utilities/_text.scss",
 		"../../../node_modules/bootstrap/scss/utilities/_visibility.scss",
 		"../../../node_modules/bootstrap/scss/_print.scss",
+		"../../../sass/_fonts.scss",
 		"../../../sass/_component_page.scss",
 		"../../../sass/_component_footer.scss",
 		"../../../sass/_component_logo.scss",
