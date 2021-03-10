@@ -19,6 +19,7 @@ dist/
 docs/_build
 node_modules/
 npm-debug.log
+/.vscode
 
 /build/*
 !/build/.gitkeep
