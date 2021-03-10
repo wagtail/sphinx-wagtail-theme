@@ -2,7 +2,7 @@
 History
 =======
 
-5.0.0-a0 (unreleased)
+5.0.0-a0 (2021-03-10)
 =====================
 
 * Rename Sphinx Typo3 Theme to Sphinx Wagtail Theme
