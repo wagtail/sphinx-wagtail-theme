@@ -11,8 +11,8 @@ extensions = [
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-project = 'Sphinx TYPO3 theme'
-copyright = "2020, TYPO3 documentation team"
+project = 'Sphinx Wagtail theme'
+copyright = "2020, Wagtail documentation team"
 author = "Martin Bless"
 # The short X.Y version.
 version = '0.0'
@@ -34,19 +34,19 @@ htmlhelp_basename = 'sphinx_wagtail_themedoc'
 latex_elements = {}
 latex_documents = [
     (master_doc, 'sphinx_wagtail_theme.tex',
-     'Sphinx TYPO3 theme documentation',
+     'Sphinx Wagtail theme documentation',
      'Martin Bless', 'manual'),
 ]
 # -- Options for manual page output ------------------------------------
 man_pages = [
     (master_doc, 'sphinx_wagtail_theme',
-     'Sphinx TYPO3 theme documentation',
+     'Sphinx Wagtail theme documentation',
      [author], 1)
 ]
 # -- Options for Texinfo output ----------------------------------------
 texinfo_documents = [
     (master_doc, 'sphinx_wagtail_theme',
-     'Sphinx TYPO3 theme documentation',
+     'Sphinx Wagtail theme documentation',
      author,
      'sphinx_wagtail_theme',
      'One line description of project.',

@@ -3,8 +3,8 @@
 Overview
 ========
 
-Sphinx TYPO3 theme for docs.typo3.org
-=====================================
+Sphinx Wagtail theme for docs.wagtail.io
+========================================
 .. BADGES_START
 
 .. image:: https://raw.githubusercontent.com/wagtail/sphinx_wagtail_theme/main/img/screenshot.png

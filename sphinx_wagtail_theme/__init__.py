@@ -1,4 +1,4 @@
-"""Sphinx TYPO3 theme for docs.typo3.org."""
+"""Sphinx Wagtail theme for docs.wagtail.io"""
 
 import os
 
