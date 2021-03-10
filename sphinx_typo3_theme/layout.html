@@ -92,55 +92,47 @@
 </head>
 
 <body>
-
-    <div class="page">
-      {%- if theme_docstypo3org %}
-        <div class="page-topbar">
-            <div class="page-topbar-inner">
-                {%- block pagetopbar %}
-                <!-- UNIVERSE BAR START -->
-                <typo3-universe active="documentation">
-                    <div style="display: block; height: 44px; background-color: #313131;"></div>
-                </typo3-universe>
-                <!-- UNIVERSE BAR END -->
-                {%- endblock %}
+    <div class="page container-fluid">
+        <header class="row bg-primary">
+            <div class="col p-0" >
+                <div class="container">
+                    {%- block pageheader %}
+                        <nav class="navbar navbar-expand-md navbar-dark font-weight-bold">
+                            {%- if logo and logo != 'None' %}
+                                {%- if logo_url %}
+                                    <a href="{{ logo_url }}"
+                                        {% if logo_title %}title="{{ logo_title|e }}"{% endif %}
+                                        class="logo navbar-brand"
+                                    >
+                                {%- endif %}
+                                <img src="{{ pathto('_static/' + logo, 1) }}"
+                                    {%- if logo_width %} width="{{ logo_width|e }}"{% endif %}
+                                    {%- if logo_height %} height="{{ logo_height|e }}"{% endif %}
+                                    {%- if logo_alt %} alt="{{ logo_alt|e }}"{% endif %}
+                                    {%- if logo_title and not logo_url %} title="{{ logo_title|e }}"{% endif %}
+                                    class="{%- if 1 %}logo-image{% endif %} d-inline-block align-top mr-2"
+                                />
+                                <span class="logo-title" >{{ logo_title }}</span>
+                                {%- if logo_url %}
+                                    </a>
+                                {%- endif %}
+                            {% endif %}
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#wagtailMenuToggleable" aria-controls="wagtailMenuToggleable" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="wagtailMenuToggleable">
+                                <ul class="navbar-nav">
+                                    {% for link in theme_header_links.split(',') %}
+                                    <li class="nav-item"><a class="nav-link"  href="{{ link.split("|")[1] }}">{{ link.split("|")[0] }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </nav>
+                    {%- endblock pageheader %}
+                </div>
             </div>
-        </div>
-      {%- endif %}
-
-        <div class="page-header">
-            <div class="page-header-inner">
-<!-- pageheader -->
-{%- block pageheader %}
-{%- if logo and logo != 'None' %}
-
-{%- if logo_url %}
-<a href="{{ logo_url }}" {% if logo_title %}title="{{ logo_title|e }}" {% endif %}class="logo">
-
-{%- endif %}
-    <img src="{{ pathto('_static/' + logo, 1) }}"
-         {%- if logo_width %} width="{{ logo_width|e }}"{% endif %}
-         {%- if logo_height %} height="{{ logo_height|e }}"{% endif %}
-         {%- if logo_alt %} alt="{{ logo_alt|e }}"{% endif %}
-         {%- if logo_title and not logo_url %} title="{{ logo_title|e }}"{% endif %}
-         {%- if 1 %} class="logo-image" />{% endif %}
-
-{%- if logo_url %}
-</a>
-
-{%- endif %}
-
-{%- endif %}
-{%- endblock %}
-<!-- /pageheader -->
-            </div>
-        </div>
-
-        {% if theme_docstypo3org -%}
-            <!--# include virtual="/includes/header.html" -->
-        {%- endif %}
-
-        <div class="page-main">
+        </header>
+        <div class="page-main container">
             <div class="page-main-inner">
                 <div class="page-main-navigation">
                     <nav>
@@ -253,7 +245,7 @@
             <!--# include virtual="/includes/footer.html" -->
         {%- endif %}
 
-        <div class="page-footer">
+        <div class="page-footer container">
 <!-- footer.html -->
 {% include "footer.html" %}
 <!-- /footer.html -->

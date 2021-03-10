@@ -3,28 +3,17 @@
     flex-direction: column;
     min-height: 100vh;
 }
-.page-topbar {
-    position: relative;
-    flex-grow: 0;
-    flex-shrink: 0;
-}
 
 /**
  * Header
  */
-.page-header {
-    position: relative;
-    z-index: 1;
-    flex-grow: 0;
-    flex-shrink: 0;
-    background: #ffffff;
-    box-shadow: $box-shadow-sm;
-}
-.page-header-inner {
-    max-width: 100%;
-    width: map-get($container-max-widths, 'xl');
-    margin: 0 auto;
-    padding: 0 ($grid-gutter-width / 2);
+header {
+    .navbar-brand {
+        font-size: $h3-font-size;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        color: $link-alternate-color;
+    }
 }
 
 /**
