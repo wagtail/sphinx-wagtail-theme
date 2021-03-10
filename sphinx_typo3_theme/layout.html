@@ -211,6 +211,8 @@
 <!-- breadcrumbs.html -->
 {% include "breadcrumbs.html" %}
 <!-- /breadcrumbs.html -->
+                    <div class="row justify-content-between">
+                      <div class="col col-md-8">
                         <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
                             <div itemprop="articleBody">
 <!-- body -->
@@ -222,7 +224,27 @@
 <!-- pager.html -->
 {% include "pager.html" %}
 <!-- /pager.html -->
+</div>
+
+<!-- right toc -->
+                            {% if display_toc and not hidetoc %}
+                              <nav class="col-3 d-none d-md-block">
+                                <div class="toc-open">
+                                  <div class="toc" role="navigation" aria-label="main navigation">
+                                    <p class="caption"><span class="caption-text">Page contents</span></p>
+                                    {{ toc }}
+                                  </div>
+                                </div>
+                              </nav>
+                            {% endif %}
+<!-- /right toc -->
+
                     </div>
+</div>
+
+
+
+
                 </div>
             </div>
         </div>
