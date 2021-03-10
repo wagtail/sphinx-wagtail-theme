@@ -10,7 +10,7 @@ Welcome to "Sphinx TYPO3 theme" documentation!
 ==============================================
 
 .. image:: https://raw.githubusercontent.com/wagtail/sphinx_wagtail_theme/master/img/screenshot.png
-   :alt: Sphinx TYPO3 theme screenshot
+   :alt: Sphinx Wagtail theme screenshot
 
 .. toctree::
    :caption: Contents:
