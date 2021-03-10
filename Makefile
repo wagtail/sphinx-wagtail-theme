@@ -202,5 +202,5 @@ test-import: ## Verify the extension is install and can be imported
 .PHONY: uninstall ui
 ui: uninstall
 uninstall: ##- Uninstall the extension
-	pip uninstall -y sphinx-typo3-theme
+	pip uninstall -y sphinx-wagtail-theme
 

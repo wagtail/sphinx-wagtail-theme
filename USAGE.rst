@@ -2,7 +2,7 @@
 Usage
 =====
 
-Select the "Sphinx TYPO3 theme" in the `conf.py` file of a Sphinx project like
+Select the "Sphinx Wagtail theme" in the `conf.py` file of a Sphinx project like
 so::
 
    # include the theme in the list of extensions to be loaded
