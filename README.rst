@@ -16,7 +16,7 @@ Sphinx TYPO3 theme for docs.typo3.org
 
 .. BADGES_END
 
-Sphinx TYPO3 theme contains all files required to build a Sphinx extension that
+Sphinx Wagtail theme contains all files required to build a Sphinx extension that
 provides the theme.
 
 * Maintainer: Martin Bless <martin.bless@mbless.de>
