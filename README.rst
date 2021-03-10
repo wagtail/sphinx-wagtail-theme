@@ -3,16 +3,16 @@
 Overview
 ========
 
-Sphinx TYPO3 theme for docs.typo3.org
-=====================================
+Sphinx Wagtail theme for docs.wagtail.io
+========================================
 .. BADGES_START
 
-.. image:: https://raw.githubusercontent.com/typo3-documentation/sphinx_typo3_theme/main/img/screenshot.png
+.. image:: https://raw.githubusercontent.com/wagtail/sphinx_wagtail_theme/main/img/screenshot.png
    :alt: Sphinx TYPO3 theme screenshot
 
-.. image:: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/CI/badge.svg
+.. image:: https://github.com/wagtail/sphinx_wagtail_theme/workflows/CI/badge.svg
    :alt: CI
-   :target: https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3ACI
+   :target: https://github.com/wagtail/sphinx_wagtail_theme/actions?query=workflow%3ACI
 
 .. BADGES_END
 
@@ -23,8 +23,7 @@ provides the theme.
 * Provided by the TYPO3 documentation team.
 * Free software: MIT license
 * Authors: See AUTHORS.rst
-* Repository: https://github.com/TYPO3-Documentation/sphinx_typo3_theme
-* Documentation: See docs/ folder and https://typo3-documentation.github.io/sphinx_typo3_theme/
+* Repository: https://github.com/wagtail/sphinx_wagtail_theme
 
 
 Credits

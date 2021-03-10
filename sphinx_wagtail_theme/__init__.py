@@ -1,4 +1,4 @@
-"""Sphinx TYPO3 theme for docs.typo3.org."""
+"""Sphinx Wagtail theme for docs.wagtail.io"""
 
 import os
 
@@ -59,7 +59,7 @@ def setup(app):
     app.connect('html-page-context', update_context)
     if hasattr(app, 'add_html_theme'):
         theme_path = os.path.abspath(os.path.dirname(__file__))
-        app.add_html_theme("sphinx_typo3_theme", theme_path)
+        app.add_html_theme("sphinx_wagtail_theme", theme_path)
     # unconfirmed: just assuming that parallel_write_safe is ok
     return {
         "version": __version__,

@@ -11,8 +11,8 @@ extensions = [
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-project = 'Sphinx TYPO3 theme'
-copyright = "2020, TYPO3 documentation team"
+project = 'Sphinx Wagtail theme'
+copyright = "2020, Wagtail documentation team"
 author = "Martin Bless"
 # The short X.Y version.
 version = '0.0'
@@ -29,39 +29,39 @@ today_fmt = '%Y-%m-%d %H:%M'
 html_theme = 'alabaster'
 html_static_path = []
 # -- Options for HTMLHelp output ---------------------------------------
-htmlhelp_basename = 'sphinx_typo3_themedoc'
+htmlhelp_basename = 'sphinx_wagtail_themedoc'
 # -- Options for LaTeX output ------------------------------------------
 latex_elements = {}
 latex_documents = [
-    (master_doc, 'sphinx_typo3_theme.tex',
-     'Sphinx TYPO3 theme documentation',
+    (master_doc, 'sphinx_wagtail_theme.tex',
+     'Sphinx Wagtail theme documentation',
      'Martin Bless', 'manual'),
 ]
 # -- Options for manual page output ------------------------------------
 man_pages = [
-    (master_doc, 'sphinx_typo3_theme',
-     'Sphinx TYPO3 theme documentation',
+    (master_doc, 'sphinx_wagtail_theme',
+     'Sphinx Wagtail theme documentation',
      [author], 1)
 ]
 # -- Options for Texinfo output ----------------------------------------
 texinfo_documents = [
-    (master_doc, 'sphinx_typo3_theme',
-     'Sphinx TYPO3 theme documentation',
+    (master_doc, 'sphinx_wagtail_theme',
+     'Sphinx Wagtail theme documentation',
      author,
-     'sphinx_typo3_theme',
+     'sphinx_wagtail_theme',
      'One line description of project.',
      'Miscellaneous'),
 ]
 # -- what we are doing -------------------------------------------------
 try:
-    import sphinx_typo3_theme
+    import sphinx_wagtail_theme
     is_imported = True
 except:
     is_imported = False
 if is_imported:
-    version = sphinx_typo3_theme.__version__
-    release = sphinx_typo3_theme.__version__
-    html_theme = 'sphinx_typo3_theme'
+    version = sphinx_wagtail_theme.__version__
+    release = sphinx_wagtail_theme.__version__
+    html_theme = 'sphinx_wagtail_theme'
 
 
 

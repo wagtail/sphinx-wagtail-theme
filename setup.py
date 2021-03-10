@@ -16,9 +16,9 @@ from setuptools import setup
 # setup_requirements = ['setuptools_scm']
 # test_requirements = []
 
-# our_version_info_target_dir = 'sphinx_typo3_theme/static'
+# our_version_info_target_dir = 'sphinx_wagtail_theme/static'
 # our_version_info_file_name = '_version_info_GENERATED'
-# scm_version_info_target_dir = 'sphinx_typo3_theme/static'
+# scm_version_info_target_dir = 'sphinx_wagtail_theme/static'
 # scm_version_write_to = os.path.join(scm_version_info_target_dir,
 #                                     '_version_GENERATED.py')
 
@@ -59,7 +59,7 @@ from setuptools import setup
 
 
 # info = scm_version_as_dict(setuptools_scm.get_version())
-# info['module_name'] = 'sphinx_typo3_theme'
+# info['module_name'] = 'sphinx_wagtail_theme'
 # target_dir = scm_version_info_target_dir
 # version_info_to_file(info, target_dir, our_version_info_file_name, '.py')
 # version_info_to_file(info, target_dir, our_version_info_file_name, '.json')
@@ -82,7 +82,7 @@ setup(
     long_description=readme + '\n\n' + history,
     long_description_content_type='text/x-rst',
     include_package_data=True,
-    packages=['sphinx_typo3_theme'],
+    packages=['sphinx_wagtail_theme'],
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*',
     # setup_requires=setup_requirements,
     # tests_require=test_requirements,
@@ -91,8 +91,8 @@ setup(
     #     'fallback_version': '99.88.77',
     # },
     zip_safe=False,
-    entry_points={'sphinx.html_themes': ['sphinx_typo3_theme = '
-                                         'sphinx_typo3_theme']},
+    entry_points={'sphinx.html_themes': ['sphinx_wagtail_theme = '
+                                         'sphinx_wagtail_theme']},
     classifiers=[
         'Framework :: Sphinx',
         'Framework :: Sphinx :: Theme',

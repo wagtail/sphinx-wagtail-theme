@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=sphinx_typo3_theme
+set SPHINXPROJ=sphinx_wagtail_theme
 
 if "%1" == "" goto help
 

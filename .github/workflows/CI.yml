@@ -111,7 +111,7 @@ jobs:
         run: pip install $(find packages -name "*.whl")
       - name: Assert importable, show version
         run: |
-          our_version=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
+          our_version=$(python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)")
           echo our version: ${our_version}
       - name: Render repo docs
         run: |
@@ -150,12 +150,12 @@ jobs:
         run: pip install $(find packages -name "*.whl")
       - name: Assert importable, show version
         run: |
-          our_version=$(python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)")
+          our_version=$(python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)")
           echo our version: ${our_version}
       - run: pip list
       - name: Sphinx quickstart
         run: |
-          html_theme=sphinx_typo3_theme
+          html_theme=sphinx_wagtail_theme
           sphinx-quickstart --project PROJECT --author AUTHOR --sep \
              --extensions ${html_theme} --no-use-make-mode --quiet
           echo >> source/conf.py
@@ -193,13 +193,13 @@ jobs:
       - run: python --version
       - run: pip install --upgrade pip
       - run: pip install --upgrade pytest twine
-      - name: Install from wheel
-        run: pip install $(find packages -name "*.whl")
+      - name: Install
+        run: pip install -e .
       - name: Assert is importable, show version
-        run: python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.__version__)"
+        run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)"
       - name: Assert is importable and show version_info
-        run: python -c "import sphinx_typo3_theme; print(sphinx_typo3_theme.version_info)"
-      - run: python tests/test_python_sphinx_typo3_theme.py
+        run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.version_info)"
+      - run: pytest
       - name: make test TODO Make this work
         if: 0
         run: make test

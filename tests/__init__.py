@@ -1,1 +1,1 @@
-"""Unit test package for sphinx_typo3_theme."""
+"""Unit test package for sphinx_wagtail_theme."""
