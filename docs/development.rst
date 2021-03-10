@@ -109,18 +109,18 @@ Release process
 
 Checklist:
 
-    - AUTHORS.rst is updated
-    - HISTORY.rst (change log) is updated
-    - Everything is committed, clean checkout
-    - ~/.pypirc has a username and password (token)
-
-``` bash
-[pypi]
-  username = __token__
-  password = pypi-*****
-```
+- AUTHORS.rst is updated
+- HISTORY.rst (change log) is updated
+- Everything is committed, clean checkout
+- ~/.pypirc has a username and password (token)
 
 With an active virtual environment:
 
-    pip install -r requirements_dev.txt
-    fullrelease  # answer the questions
+.. code-block:: shell
+
+    python -m pip install -r requirements_dev.txt
+    make clean
+    fullrelease
+    python -m pip install --upgrade build
+    python -m build
+    python -m twine upload --repository pypi dist/*

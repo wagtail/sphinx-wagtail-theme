@@ -14,18 +14,6 @@ def get_html_theme_path():
     return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 
-def get_theme_mtime():
-    """Return the timestamp of the build as integer."""
-
-    return int(version_info.get('build_mtime', 0))
-
-
-def get_theme_name():
-    """Return the name of the theme."""
-
-    return version_info['module_name']
-
-
 def update_context(app, pagename, templatename, context, doctree):
     """Update the rendering context for a page.
 
