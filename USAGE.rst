@@ -2,8 +2,7 @@
 Usage
 =====
 
-Select the "Sphinx Wagtail theme" in the `conf.py` file of a Sphinx project like
-so::
+Select the "Sphinx Wagtail theme" in the `conf.py` file of a Sphinx project::
 
    # include the theme in the list of extensions to be loaded
    extensions = ['sphinx_wagtail_theme', …]
@@ -18,7 +17,7 @@ The following snippet should always work if appended at the end of `conf.py`::
 
    try:
       extensions
-   except: NameError
+   except NameError:
       extensions = []
 
    extensions.append('sphinx_wagtail_theme')

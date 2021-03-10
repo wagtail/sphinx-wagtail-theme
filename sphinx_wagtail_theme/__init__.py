@@ -1,16 +1,11 @@
-"""Sphinx Wagtail theme for docs.wagtail.io"""
+"""Sphinx Wagtail theme"""
 
 import os
+import pkg_resources
 
-try:
-    from .static._version_GENERATED import version as __version__
-except ImportError:
-    __version__ = '99.88.77'
 
-try:
-    from .static._version_info_GENERATED import version_info
-except ImportError:
-    version_info = {}
+__version__ = pkg_resources.require("sphinx_wagtail_theme")[0].version
+__version_full__ = __version__
 
 
 def get_html_theme_path():
