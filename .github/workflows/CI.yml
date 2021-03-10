@@ -273,8 +273,7 @@ jobs:
 
   publish-gh-pages:
     needs: [passed-all-tests]
-    if: (github.event_name == 'push' && github.event.ref == 'refs/heads/master')
-      || (github.event_name == 'push' && github.repository == 'marble/dummyrepo')
+    if: (github.event_name == 'push' && github.event.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -285,11 +284,10 @@ jobs:
           name: docs-rendered-for-gh-pages
           path: site
       - name: Publish
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_REPO_ACCESS }}
-          BRANCH: gh-pages
-          FOLDER: site
+          branch: gh-pages
+          folder: site
 
 
   assert-good-release-version:
