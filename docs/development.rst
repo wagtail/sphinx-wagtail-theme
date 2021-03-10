@@ -121,6 +121,3 @@ With an active virtual environment:
     python -m pip install -r requirements_dev.txt
     make clean
     fullrelease
-    python -m pip install --upgrade build
-    python -m build
-    python -m twine upload --repository pypi dist/*
