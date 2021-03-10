@@ -3,7 +3,7 @@ import sphinx_wagtail_theme
 
 def test_theme_info():
     """Test imported stuff."""
-    sphinx_wagtail_theme.version == "99.88.77"
+    sphinx_wagtail_theme.__version__ == "99.88.77"
     # build_mtime = version_info['build_mtime']
     # assert int(build_mtime) > 1580000000
     # module_name = version_info['module_name']
