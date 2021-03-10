@@ -2,6 +2,13 @@
 History
 =======
 
+5.0.0-a0 (unreleased)
+=====================
+
+* Rename Sphinx Typo3 Theme to Sphinx Wagtail Theme
+* Add initial Wagtail styling
+* Initial setup of Wagtail theme CI and release
+
 4.4.3 (2021-01-20)
 ==================
 
