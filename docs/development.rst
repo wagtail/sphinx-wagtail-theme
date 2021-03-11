@@ -64,15 +64,6 @@ can be uploaded to PyPi run::
 
 .. _venv: https://docs.python.org/3/library/venv.html
 
-Grunt
-=====
-
-More commands are available by means of `grunt`. Run::
-
-   grunt --help
-
-and check the `gruntfile.js`.
-
 
 Theme stress test
 =================

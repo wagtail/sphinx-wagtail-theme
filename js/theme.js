@@ -1,4 +1,7 @@
 // T3Docs
+import '../sass/theme.scss';
+import autocomplete from 'autocompleter'
+import $ from 'jquery';
 
 // Ensure our own namespace
 if (typeof window.T3Docs === 'undefined') {
@@ -91,7 +94,7 @@ $(document).ready(function () {
     versionOptions.innerHTML = '';
     versionOptions.appendChild(options);
   }
-  versionNode = document.getElementById("toc-version");
+  let versionNode = document.getElementById("toc-version");
   if (versionNode) {
     versionNode.addEventListener('click', function () {
       versionWrapper = document.getElementById("toc-version-wrapper");

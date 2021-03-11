@@ -32,9 +32,6 @@ Compile frontend changes:
 
 Build, import from package, test, render the repo docs and open in browser:
    make install test-import docs
-
-See grunt help for more grunt commands:
-   grunt --help
 """)
 endef
 export PRINT_HELP_PYSCRIPT
@@ -74,8 +71,7 @@ clean-build: ##- Remove build artifacts
 
 .PHONY: clean-frontend
 clean-frontend: ## Clean frontend files
-	grunt clean
-
+	rm -rf sphinx_wagtail_theme/static/dist
 
 clean-pyc: ##- Remove Python file artifacts
 	find . -name '*.pyc' -exec rm -f {} +
@@ -116,7 +112,7 @@ docs: ## Regenerate Sphinx HTML documentation, including API docs
 
 .PHONY: frontend
 frontend: ## Compile frontend files
-	grunt frontend
+	yarn run frontend
 
 
 .PHONY: install
