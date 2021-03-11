@@ -44,8 +44,8 @@
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
 {%- endif %}
     <link rel="stylesheet" type="text/css" href="{{ pathto('_static/' + style, 1) }}" />
-    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/webfonts.css', 1) }}" />
-    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/fontawesome.css', 1) }}" />
+    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/dist/webfonts.css', 1) }}" />
+    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/dist/fontawesome.css', 1) }}" />
 {%- for css in css_files %}
   {%- if css|attr("filename") %}
     {{ css_tag(css) }}
@@ -82,7 +82,6 @@
 <!-- extrahead -->
 {%- block extrahead %}{% endblock -%}
 <!-- /extrahead -->
-    <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 {% if theme_docstypo3org -%}
 <!-- UNIVERSE BAR START -->
     <script src="https://typo3.azureedge.net/typo3infrastructure/universe/dist/webcomponents-loader.js"></script>
@@ -261,16 +260,14 @@
             HAS_SOURCE: {{ has_source| lower }}
         };
     </script>
-    <script type="text/javascript" src="{{ pathto('_static/js/jquery.min.js', 1) }}"></script>
-    <script type="text/javascript" src="{{ pathto('_static/js/underscore.min.js', 1) }}"></script>
-    <script type="text/javascript" src="{{ pathto('_static/js/doctools.min.js', 1) }}"></script>
-    <script type="text/javascript" src="{{ pathto('_static/js/popper.min.js', 1) }}"></script>
-    <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1) }}"></script>
-    <script type="text/javascript" src="{{ pathto('_static/js/theme.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/dist/jquery.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/dist/theme.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/dist/vendor.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/dist/underscore.min.js', 1) }}"></script>
     {#- SEARCH #}
     <script type="text/javascript" src="{{ pathto('_static/language_data.js', 1) }}"></script>
-    <script type="text/javascript" src="{{ pathto('_static/js/searchtools.min.js', 1) }}"></script>
-    <script type="text/javascript" src="{{ pathto('_static/js/autocomplete.min.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/dist/doctools.js', 1) }}"></script>
+    <script type="text/javascript" src="{{ pathto('_static/dist/searchtools.js', 1) }}"></script>
         {%- for scriptfile in script_files %}
             {%- if scriptfile not in blacklist_script_files %}
     {{ js_tag(scriptfile) }}
