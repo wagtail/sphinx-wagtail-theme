@@ -24,8 +24,8 @@
 		"webpack-cli": "^4.5.0"
 	},
 	"scripts": {
-		"watch": "webpack --config=webpack.config.js --watch",
-		"frontend": "webpack --config=webpack.config.js",
+		"watch": "webpack --config=webpack.config.js --mode=development --watch",
+		"frontend": "webpack --config=webpack.config.js --mode=development",
 		"build": "webpack --config=webpack.config.js --mode=production"
 	},
 	"engines": {
