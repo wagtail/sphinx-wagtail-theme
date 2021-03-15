@@ -29,7 +29,7 @@
 		"build": "webpack --config=webpack.config.js --mode=production"
 	},
 	"engines": {
-		"node": ">=12",
+		"node": ">=14",
 		"yarn": ">= 1.0.0"
 	}
 }
