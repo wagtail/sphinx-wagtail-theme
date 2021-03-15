@@ -94,7 +94,7 @@ $(document).ready(function () {
     versionOptions.innerHTML = '';
     versionOptions.appendChild(options);
   }
-  let versionNode = document.getElementById("toc-version");
+  var versionNode = document.getElementById("toc-version");
   if (versionNode) {
     versionNode.addEventListener('click', function () {
       versionWrapper = document.getElementById("toc-version-wrapper");
