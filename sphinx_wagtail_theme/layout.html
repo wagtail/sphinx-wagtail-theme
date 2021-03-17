@@ -129,34 +129,6 @@
                     <nav>
                         <input type="checkbox" id="toggleToc" class="toc-checkbox">
                         <div class="toc-header">
-                            {%- if not theme_is_homepage -%}
-                                <div class="toc-title">
-                                    <a class="toc-title-project" href="{{ pathto(master_doc) }}">{{ project|e }}</a>
-                                    {%- if theme_docstypo3org -%}
-                                        {%- if release -%}
-                                            <div class="toc-version-wrapper" id="toc-version-wrapper">
-                                                <div id="toc-version" class="toc-version">
-                                                    <span class="toc-version-prefix">Release:</span>
-                                                    <span class="toc-version-number">{{ release|e }}</span>
-                                                </div>
-                                                <div id="toc-version-options" class="toc-version-options">
-                                                    <p><span class="fa fa-spinner fa-spin"></span> Loading data.</p>
-                                                </div>
-                                            </div>
-                                        {%- elif version -%}
-                                            <div class="toc-version-wrapper" id="toc-version-wrapper">
-                                                <div id="toc-version" class="toc-version">
-                                                    <span class="toc-version-prefix">Version:</span>
-                                                    <span class="toc-version-number">{{ version|e }}</span>
-                                                </div>
-                                                <div id="toc-version-options" class="toc-version-options">
-                                                    <p><span class="fa fa-spinner fa-spin"></span> Loading data.</p>
-                                                </div>
-                                            </div>
-                                        {%- endif -%}
-                                    {%- endif -%}
-                                </div>
-                            {%- endif -%}
                             <div class="toc-actions">
                                 <label for="toggleToc" class="toc-toggle">
                                     Menu
