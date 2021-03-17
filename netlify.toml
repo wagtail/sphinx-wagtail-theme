@@ -1,0 +1,5 @@
+# Settings in the [build] context are global and are applied to all contexts
+# unless otherwise overridden by more specific contexts.
+[build]
+  publish = "docs/_build/html"
+  command = "yarn build && make install && make docs"
