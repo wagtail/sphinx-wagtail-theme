@@ -38,6 +38,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.7
+      - run: pip install wheel
       - run: python setup.py bdist_wheel
       - uses: actions/upload-artifact@v1
         with:
@@ -58,7 +59,7 @@ jobs:
           python-version: 3.7
       - run: pip install sphinx
       - run: pip install $(find packages -name "*.whl")
-      - run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)"
+      - run:
       - run: non_interactive=1 make docs
 
 
@@ -111,5 +112,10 @@ jobs:
           python-version: 3.7
       - run: pip install --upgrade pip pytest twine
       - run: pip install -e .
+      - name: Assert is importable, show version
+        run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)"
       - run: pytest
+      - name: make test TODO Make this work
+        if: 0
+        run: make test
       - run: twine check packages/*
