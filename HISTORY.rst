@@ -2,7 +2,7 @@
 History
 =======
 
-5.0.0-a1 (unreleased)
+5.0.0-a1 (2021-03-17)
 =====================
 
 - Clean up and simplify CI build
