@@ -8,7 +8,6 @@ module.exports = {
   entry: {
     theme: path.resolve(__dirname, "js/theme.js"),
     fontawesome: path.resolve(__dirname, "sass/fontawesome.scss"),
-    webfonts: path.resolve(__dirname, "sass/webfonts.scss"),
   },
   output: {
     path: path.resolve(__dirname, "sphinx_wagtail_theme/static/dist"),
