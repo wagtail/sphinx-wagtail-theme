@@ -79,7 +79,7 @@
     <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 </head>
 <body>
-    <div class="page container-fluid">
+    <div class="container-fluid">
         <header class="row bg-primary">
             <div class="col p-0" >
                 <div class="container">
@@ -119,9 +119,9 @@
                 </div>
             </div>
         </header>
-        <div class="page-main container">
-            <div class="page-main-inner">
-                <div class="page-main-navigation">
+        <div class="container">
+            <div class="row">
+                <aside class="col-auto border-right">
                     <nav>
                         <input type="checkbox" id="toggleToc" class="toc-checkbox">
                         <div class="toc-header">
@@ -145,8 +145,8 @@
                             </div>
                         </div>
                     </nav>
-                </div>
-                <div class="page-main-content">
+                </aside>
+                <main class="col">
                     <div class="rst-content">
                         {% include "pager-hidden.html" %}
                         {% include "breadcrumbs.html" %}
@@ -161,18 +161,18 @@
                                 {% include "pager.html" %}
                             </div>
                             {% if display_toc and not hidetoc %}
-                              <nav class="col-3 d-none d-md-block">
+                            <nav class="col-3 d-none d-md-block">
                                 <div class="toc-open">
-                                  <div class="toc" role="navigation" aria-label="main navigation">
+                                <div class="toc" role="navigation" aria-label="main navigation">
                                     <p class="caption"><span class="caption-text">Page contents</span></p>
                                     {{ toc }}
-                                  </div>
                                 </div>
-                              </nav>
+                                </div>
+                            </nav>
                             {% endif %}
                         </div>
                     </div>
-                </div>
+                </main>
             </div>
         </div>
         <div class="page-footer container">
