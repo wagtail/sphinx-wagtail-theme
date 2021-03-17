@@ -5,7 +5,7 @@ History
 5.0.0-a2 (unreleased)
 =====================
 
-- Nothing changed yet.
+- Include `/static/dist`
 
 
 5.0.0-a1 (2021-03-17)
