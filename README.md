@@ -1,4 +1,4 @@
-# Sphinx Wagtail theme [![CI status](https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/CI/badge.svg)](https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3ACI) [![Netlify Status](https://api.netlify.com/api/v1/badges/82ecbf01-a706-4e92-8457-8a8726ca2123/deploy-status)](https://app.netlify.com/sites/sphinx-wagtail-theme/deploys)
+# [Sphinx Wagtail theme](https://sphinx-wagtail-theme.netlify.app/) [![CI status](https://github.com/TYPO3-Documentation/sphinx_typo3_theme/workflows/CI/badge.svg)](https://github.com/TYPO3-Documentation/sphinx_typo3_theme/actions?query=workflow%3ACI) [![Netlify Status](https://api.netlify.com/api/v1/badges/82ecbf01-a706-4e92-8457-8a8726ca2123/deploy-status)](https://app.netlify.com/sites/sphinx-wagtail-theme/deploys)
 
 Sphinx Wagtail theme contains all files required to build a Sphinx extension that provides the theme.
 
