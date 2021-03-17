@@ -3,15 +3,12 @@
 Authors
 =======
 
-sphinx_wagtail_theme is written and maintained by Martin Bless
-<martin.bless@mbless.de>.
+- Thibaud Colas
+- Storm Heg
+- Tibor Leupold
+- Coen van der Kamp
 
-Major developer is Benjamin Kott <benjamin.kott@outlook.com> who created the
-whole frontend part from scratch and contributed workflows.
+Sphinx Wagtail theme is based on Sphinx Typo3 theme written by:
 
-Other contributors, listed alphabetically, are:
-
-*  ((some body -- thing contributed))
-*  ((next one --- thing yet to come))
-
-Many thanks for all contributions!
+- Martin Bless
+- Benjamin Kott

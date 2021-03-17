@@ -5,8 +5,13 @@ History
 5.0.0-a1 (unreleased)
 =====================
 
-- Nothing changed yet.
-
+- Clean up and simplify CI build
+- Add Netlify build configuration
+- Use sass package instead of node-sass
+- Set webpack mode as cli option
+- Use Node.js 14
+- Use webpack instead of grunt
+- Clean up layout
 
 5.0.0-a0 (2021-03-10)
 =====================
