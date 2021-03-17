@@ -109,6 +109,6 @@ With an active virtual environment:
 
 .. code-block:: shell
 
-    python -m pip install -r requirements_dev.txt
+    python -m pip install -r requirements.txt
     make clean
     fullrelease

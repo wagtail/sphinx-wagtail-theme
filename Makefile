@@ -173,7 +173,7 @@ setup-frontend: ##- Setup node modules
 .PHONY: setup-python
 setup-python: ##- Setup Python modules
 	pip install -U pip
-	pip install -U -r requirements_dev.txt
+	pip install -U -r requirements.txt
 
 
 .PHONY: test
