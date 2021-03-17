@@ -1,15 +1,10 @@
 name: CI
 
 on:
-#  release:
-#    types:
-#      - published
   push:
-    branches-ignore:
-      - "gh-pages"
+    branches:
+      - main
   pull_request:
-#  repository_dispatch:
-
 
 jobs:
 
@@ -17,33 +12,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Get Node.js 14.x
-        uses: actions/setup-node@v1
+      - id: nvm
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+      - uses: actions/setup-node@v2-beta
         with:
-          node-version: "14.x"
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
       - run: yarn install
       - run: yarn frontend
-      - run: git status
-      - name: Assert clean working tree
-        run: git status | grep -q "nothing to commit, working tree clean"
-
 
   lint:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.x]
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+      - uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
-      - run: python --version
-      - run: pip install --upgrade pip
-      - run: pip install --upgrade flake8
+          python-version: 3.7
+      - run: pip install --upgrade pip flake8
       - run: make lint-minimal
-
 
   build:
     runs-on: ubuntu-latest
@@ -55,10 +40,9 @@ jobs:
           fetch-depth: 0
       - name: Fetch all tags
         run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-      - name: Set up Python
-        uses: actions/setup-python@v1
+      - uses: actions/setup-python@v2
         with:
-          python-version: "3.x"
+          python-version: 3.7
       - run: python --version
       - run: pip install --upgrade pip
       - run: pip install --upgrade setuptools_scm wheel pytest
@@ -87,7 +71,6 @@ jobs:
         with:
           name: bdist-wheel-package
           path: dist
-
 
   make-docs:
     needs: [build]
@@ -171,9 +154,6 @@ jobs:
   make-test:
     needs: [build]
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.x]
     steps:
       - uses: actions/checkout@v2
       - name: Download wheel
@@ -181,15 +161,11 @@ jobs:
         with:
           name: bdist-wheel-package
           path: packages
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+      - uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
-      - run: python --version
-      - run: pip install --upgrade pip
-      - run: pip install --upgrade pytest twine
-      - name: Install
-        run: pip install -e .
+          python-version: 3.7
+      - run: pip install --upgrade pip pytest twine
+      - run: pip install -e .
       - name: Assert is importable, show version
         run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)"
       - run: pytest
@@ -197,10 +173,3 @@ jobs:
         if: 0
         run: make test
       - run: twine check packages/*
-
-
-  passed-all-tests:
-    needs: [make-docs, make-test, sphinx-quickstart]
-    runs-on: ubuntu-latest
-    steps:
-      - run: true
