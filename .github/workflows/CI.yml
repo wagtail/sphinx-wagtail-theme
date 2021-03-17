@@ -29,11 +29,21 @@ jobs:
           name: bdist-wheel-package
           path: dist
 
-  make-docs:
-    needs: [build]
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - run: pip install pytest flake8
+      - run: make lint-minimal
+      - run: pytest
+
+  sphinx-quickstart:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/download-artifact@v1
         with:
           name: bdist-wheel-package
@@ -43,59 +53,14 @@ jobs:
           python-version: 3.7
       - run: pip install sphinx
       - run: pip install $(find packages -name "*.whl")
-      - run: non_interactive=1 make docs
-
-
-  sphinx-quickstart:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download wheel
-        uses: actions/download-artifact@v1
-        with:
-          name: bdist-wheel-package
-          path: packages
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.7
-      - run: pip install sphinx
-      - run: pip install $(find packages -name "*.whl")
-      - name: Sphinx quickstart
-        run: |
+      - name: Assert is importable, show version
+        run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)"
+      - run: |
           html_theme=sphinx_wagtail_theme
           sphinx-quickstart --project PROJECT --author AUTHOR --sep \
              --extensions ${html_theme} --no-use-make-mode --quiet
           echo >> source/conf.py
           echo 'extensions.append("'${html_theme}'")' >> source/conf.py
           echo 'html_theme = "'${html_theme}'"' >> source/conf.py
-          echo 'source/conf.py'
           cat source/conf.py
-      - name: Sphinx build
-        run: |
-          sphinx-build -b html -A version=faked/offline source build
-      - name: Upload
-        uses: actions/upload-artifact@v1
-        with:
-          name: sphinx-quickstart
-          path: build
-
-  test:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Download wheel
-        uses: actions/download-artifact@v1
-        with:
-          name: bdist-wheel-package
-          path: packages
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.7
-      - run: pip install pytest twine flake8
-      - run: make lint-minimal
-      - run: pip install -e .
-      - name: Assert is importable, show version
-        run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)"
-      - run: pytest
-      - run: twine check packages/*
+          sphinx-build -b html -A version=test source build
