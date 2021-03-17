@@ -27,47 +27,19 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.7
-      - run: pip install --upgrade pip flake8
+      - run: pip install flake8
       - run: make lint-minimal
 
   build:
     runs-on: ubuntu-latest
-    needs: [yarn-frontend, lint]
+    needs: [yarn-frontend]
     steps:
-      - name: Checkout non-shallow
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Fetch all tags
-        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
           python-version: 3.7
-      - run: python --version
-      - run: pip install --upgrade pip
-      - run: pip install --upgrade setuptools_scm wheel pytest
-      - run: echo TODO pytest
-      - run: python -m setuptools_scm
-      - name: Maybe set tag 99.88.77
-        run: |
-          scm_version=$(python -c "import setuptools_scm as st;print('.'.join(st.get_version().split('.')[:3]))")
-          validstr=$(echo "$scm_version" | sed -e 's/[1-9][0-9]*\.\(0\|[1-9][0-9]*\)\.\(0\|[1-9][0-9]*\)/valid/')
-          echo Found scm_version:${scm_version}: && echo validates to validstr:${validstr}:
-          if [ ! "$validstr" = "valid" ]; then
-             newtag=v99.88.77
-             echo Create tag "$newtag"
-             git tag | xargs git tag -d
-             git tag "$newtag"
-             git tag
-          else
-             echo Given version is "$scm_version" and looks ok.
-          fi
-      - run: python -m setuptools_scm
-      - run: python setup.py sdist bdist_wheel
-      - name: Remove sdist package
-        run: find dist -name "*.tar.gz" -delete
-      - name: Archive wheel
-        uses: actions/upload-artifact@v1
+      - run: python setup.py bdist_wheel
+      - uses: actions/upload-artifact@v1
         with:
           name: bdist-wheel-package
           path: dist
@@ -76,61 +48,34 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Download wheel
-        uses: actions/download-artifact@v1
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v1
         with:
           name: bdist-wheel-package
           path: packages
-      - name: Set up Python
-        uses: actions/setup-python@v1
+      - uses: actions/setup-python@v2
         with:
-          python-version: 3.x
-      - run: python --version
-      - run: pip install --upgrade pip
-      - run: pip install --upgrade sphinx
-      - name: Install from wheel
-        run: pip install $(find packages -name "*.whl")
-      - name: Assert importable, show version
-        run: |
-          our_version=$(python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)")
-          echo our version: ${our_version}
-      - name: Render repo docs
-        run: |
-          non_interactive=1 make docs
-          touch docs/_build/html/.nojekyll
+          python-version: 3.7
+      - run: pip install sphinx
+      - run: pip install $(find packages -name "*.whl")
+      - run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)"
+      - run: non_interactive=1 make docs
 
 
   sphinx-quickstart:
     needs: [build]
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        mode: [
-          ['online', '-A docstypo3org=yes -A version=faked/online '],
-          ['offline', '-A version=faked/offline']]
-        python-version: [3.x]
     steps:
       - name: Download wheel
         uses: actions/download-artifact@v1
         with:
           name: bdist-wheel-package
           path: packages
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+      - uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
-      - run: python --version
-      - run: pip install --upgrade pip
-      - run: pip install --upgrade sphinx
-      - name: Install from wheel
-        run: pip install $(find packages -name "*.whl")
-      - name: Assert importable, show version
-        run: |
-          our_version=$(python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)")
-          echo our version: ${our_version}
-      - run: pip list
+          python-version: 3.7
+      - run: pip install sphinx
+      - run: pip install $(find packages -name "*.whl")
       - name: Sphinx quickstart
         run: |
           html_theme=sphinx_wagtail_theme
@@ -143,11 +88,11 @@ jobs:
           cat source/conf.py
       - name: Sphinx build
         run: |
-          sphinx-build -b html ${{ matrix.mode[1] }} source build
+          sphinx-build -b html -A version=faked/offline source build
       - name: Upload
         uses: actions/upload-artifact@v1
         with:
-          name: sphinx-quickstart-${{ matrix.python-version }}-mode-${{ matrix.mode[0] }}
+          name: sphinx-quickstart
           path: build
 
 
@@ -166,10 +111,5 @@ jobs:
           python-version: 3.7
       - run: pip install --upgrade pip pytest twine
       - run: pip install -e .
-      - name: Assert is importable, show version
-        run: python -c "import sphinx_wagtail_theme; print(sphinx_wagtail_theme.__version__)"
       - run: pytest
-      - name: make test TODO Make this work
-        if: 0
-        run: make test
       - run: twine check packages/*
