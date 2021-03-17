@@ -109,9 +109,12 @@ With an active virtual environment:
 
 .. code-block:: shell
 
+    python -m pip install --upgrade -r requirements.txt
     make clean
     make clean-frontend
     yarn
     yarn build
-    python -m pip install -r requirements.txt
-    fullrelease
+    prerelease
+    python -m build
+    python -m twine upload --repository pypi dist/*
+    postrelease
