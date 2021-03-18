@@ -16,7 +16,6 @@
 {%- if logo_title is not defined -%} {%- set logo_title = theme_logo_title -%} {%- endif -%}
 {%- if logo_width is not defined -%} {%- set logo_width = theme_logo_width -%} {%- endif -%}
 {%- if logo_height is not defined -%} {%- set logo_height = theme_logo_height -%} {%- endif -%}
-{%- set t3ctx = t3ctx or {} -%}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -29,12 +28,6 @@
     <meta name="docsearch:package_type" content="{{ package_type|striptags|e }}" />
     <meta name="docsearch:release" content="{{ release|striptags|e }}" />
     <meta name="docsearch:version" content="{{ version|striptags|e }}" />
-    {%- if t3ctx.last_modified_isoformat %}
-        <meta name="docsearch:modified" content="{{ t3ctx.last_modified_isoformat|e }}" />
-        <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
-        <meta name="dc.modified" content="{{ t3ctx.last_modified_isoformat|e }}" />
-        <meta property="article:modified_time" content="{{ t3ctx.last_modified_isoformat|e }}" />
-    {%- endif %}
     {% block htmltitle %}
         <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     {% endblock %}
