@@ -108,7 +108,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-auto">
-                    <aside id="collapseSidebar" class="collapse d-md-block">
+                    <aside id="collapseSidebar" class="collapse d-md-block pt-3">
                         <nav>
                             <div>
                                 {%- if not theme_is_homepage and builder == 'html' %}
@@ -124,11 +124,11 @@
                                 </div>
                             </div>
                         </nav>
+                        <div class="d-md-none border-bottom">
+                        </div>
                     </aside>
-                    <div class="d-md-none border-bottom">
-                    </div>
                 </div>
-                <main class="col">
+                <main class="col pt-3">
                     <div class="rst-content">
                         {% include "pager-hidden.html" %}
                         {% include "breadcrumbs.html" %}
