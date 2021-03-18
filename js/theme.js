@@ -2,6 +2,7 @@
 import '../sass/theme.scss';
 import autocomplete from 'autocompleter'
 import $ from 'jquery';
+import 'bootstrap';
 
 // Ensure our own namespace
 if (typeof window.T3Docs === 'undefined') {
