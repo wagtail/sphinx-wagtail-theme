@@ -97,7 +97,9 @@
                             <div class="collapse navbar-collapse justify-content-end" id="wagtailMenuToggleable">
                                 <ul class="navbar-nav">
                                     {% for link in theme_header_links.split(',') %}
-                                    <li class="nav-item"><a class="nav-link"  href="{{ link.split("|")[1] }}">{{ link.split("|")[0] }}</a></li>
+                                        {% set link_text=link.split("|")[0] %}
+                                        {% set link_url=link.split("|")[1] %}
+                                        <li class="nav-item"><a class="nav-link"  href="{{ link_url }}">{{ link_text }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
