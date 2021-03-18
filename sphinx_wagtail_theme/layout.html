@@ -70,38 +70,36 @@
         <header class="row bg-primary">
             <div class="col p-0" >
                 <div class="container">
-                    {%- block pageheader %}
-                        <nav class="navbar navbar-expand-lg navbar-dark font-weight-bold">
-                            {%- if theme_logo and theme_logo != 'None' %}
-                                {%- if theme_logo_url %}
-                                    <a href="{{ theme_logo_url }}"
-                                        {% if theme_logo_alt %}title="{{ theme_logo_alt|e }}"{% endif %}
-                                        class="logo navbar-brand"
-                                    >
-                                {%- endif %}
-                                <img src="{{ pathto('_static/' + theme_logo, 1) }}"
-                                    {%- if theme_logo_width %} width="{{ theme_logo_width|e }}"{% endif %}
-                                    {%- if theme_logo_height %} height="{{ theme_logo_height|e }}"{% endif %}
-                                    {%- if theme_logo_alt %} alt="{{ theme_logo_alt|e }}"{% endif %}
-                                    {%- if theme_logo_title and not theme_logo_url %} title="{{ theme_logo_title|e }}"{% endif %}
-                                    class="{%- if 1 %}logo-image{% endif %} d-inline-block align-top mr-2"
-                                />
-                                <span class="logo-title" >{{ theme_project_name }}</span>
-                                {%- if theme_logo_url %}
-                                    </a>
-                                {%- endif %}
-                            {% endif %}
-                            <div class="collapse navbar-collapse justify-content-end">
-                                <ul class="navbar-nav">
-                                    {% for link in theme_header_links.split(',') %}
-                                        {% set link_text=link.split("|")[0] %}
-                                        {% set link_url=link.split("|")[1] %}
-                                        <li class="nav-item"><a class="nav-link"  href="{{ link_url }}">{{ link_text }}</a></li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </nav>
-                    {%- endblock pageheader %}
+                    <nav class="navbar navbar-expand-lg navbar-dark font-weight-bold">
+                        {%- if theme_logo and theme_logo != 'None' %}
+                            {%- if theme_logo_url %}
+                                <a href="{{ theme_logo_url }}"
+                                    {% if theme_logo_alt %}title="{{ theme_logo_alt|e }}"{% endif %}
+                                    class="logo navbar-brand"
+                                >
+                            {%- endif %}
+                            <img src="{{ pathto('_static/' + theme_logo, 1) }}"
+                                {%- if theme_logo_width %} width="{{ theme_logo_width|e }}"{% endif %}
+                                {%- if theme_logo_height %} height="{{ theme_logo_height|e }}"{% endif %}
+                                {%- if theme_logo_alt %} alt="{{ theme_logo_alt|e }}"{% endif %}
+                                {%- if theme_logo_title and not theme_logo_url %} title="{{ theme_logo_title|e }}"{% endif %}
+                                class="{%- if 1 %}logo-image{% endif %} d-inline-block align-top mr-2"
+                            />
+                            <span class="logo-title" >{{ theme_project_name }}</span>
+                            {%- if theme_logo_url %}
+                                </a>
+                            {%- endif %}
+                        {% endif %}
+                        <div class="collapse navbar-collapse justify-content-end">
+                            <ul class="navbar-nav">
+                                {% for link in theme_header_links.split(',') %}
+                                    {% set link_text=link.split("|")[0] %}
+                                    {% set link_url=link.split("|")[1] %}
+                                    <li class="nav-item"><a class="nav-link"  href="{{ link_url }}">{{ link_text }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </header>
