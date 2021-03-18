@@ -10,12 +10,6 @@
 {%- set blacklist_script_files = blacklist_script_files + ['_static/underscore.js'] -%}
 {%- set blacklist_script_files = blacklist_script_files + ['_static/doctools.js'] -%}
 {%- set blacklist_script_files = blacklist_script_files + ['_static/language_data.js'] -%}
-{%- if not logo -%} {%- set logo = theme_logo -%} {%- endif -%}
-{%- if logo_url is not defined -%} {%- set logo_url = theme_logo_url -%} {%- endif -%}
-{%- if logo_alt is not defined -%} {%- set logo_alt = theme_logo_alt -%} {%- endif -%}
-{%- if logo_title is not defined -%} {%- set logo_title = theme_logo_title -%} {%- endif -%}
-{%- if logo_width is not defined -%} {%- set logo_width = theme_logo_width -%} {%- endif -%}
-{%- if logo_height is not defined -%} {%- set logo_height = theme_logo_height -%} {%- endif -%}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -78,22 +72,22 @@
                 <div class="container">
                     {%- block pageheader %}
                         <nav class="navbar navbar-expand-md navbar-dark font-weight-bold">
-                            {%- if logo and logo != 'None' %}
-                                {%- if logo_url %}
-                                    <a href="{{ logo_url }}"
-                                        {% if logo_title %}title="{{ logo_title|e }}"{% endif %}
+                            {%- if theme_logo and theme_logo != 'None' %}
+                                {%- if theme_logo_url %}
+                                    <a href="{{ theme_logo_url }}"
+                                        {% if theme_logo_alt %}title="{{ theme_logo_alt|e }}"{% endif %}
                                         class="logo navbar-brand"
                                     >
                                 {%- endif %}
-                                <img src="{{ pathto('_static/' + logo, 1) }}"
-                                    {%- if logo_width %} width="{{ logo_width|e }}"{% endif %}
-                                    {%- if logo_height %} height="{{ logo_height|e }}"{% endif %}
-                                    {%- if logo_alt %} alt="{{ logo_alt|e }}"{% endif %}
-                                    {%- if logo_title and not logo_url %} title="{{ logo_title|e }}"{% endif %}
+                                <img src="{{ pathto('_static/' + theme_logo, 1) }}"
+                                    {%- if theme_logo_width %} width="{{ theme_logo_width|e }}"{% endif %}
+                                    {%- if theme_logo_height %} height="{{ theme_logo_height|e }}"{% endif %}
+                                    {%- if theme_logo_alt %} alt="{{ theme_logo_alt|e }}"{% endif %}
+                                    {%- if theme_logo_title and not theme_logo_url %} title="{{ theme_logo_title|e }}"{% endif %}
                                     class="{%- if 1 %}logo-image{% endif %} d-inline-block align-top mr-2"
                                 />
-                                <span class="logo-title" >{{ logo_title }}</span>
-                                {%- if logo_url %}
+                                <span class="logo-title" >{{ theme_project_name }}</span>
+                                {%- if theme_logo_url %}
                                     </a>
                                 {%- endif %}
                             {% endif %}
