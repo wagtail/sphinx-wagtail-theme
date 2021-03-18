@@ -34,18 +34,18 @@
                 {%- endif %}
                 <p>
                     <a class="text-light" href="https://github.com/wagtail/sphinx_wagtail_theme" rel="nofollow" target="_blank">
-                        Sphinx Wagtail Theme {{ theme_version|e }}
+                        {{ theme_project_name }} {{ theme_version|e }}
                     </a>
                 </p>
             </div>
             {%- if theme_show_copyright %}
             <div class="text-center">
                 {%- if hasdoc('Copyright') %}
-                <a href="{{ pathto('Copyright') }}">&copy; Copyright {{ copyright }}</a>
+                    <a href="{{ pathto('Copyright') }}">&copy; Copyright {{ copyright }}</a>
                 {%- elif hasdoc('copyright') %}
-                <a href="{{ pathto('copyright') }}">&copy; Copyright {{ copyright }}</a>
+                    <a href="{{ pathto('copyright') }}">&copy; Copyright {{ copyright }}</a>
                 {%- else %}
-                &copy; Copyright {{ copyright }}
+                    &copy; Copyright {{ copyright }}
                 {%- endif %}
             </div>
             {%- endif %}
