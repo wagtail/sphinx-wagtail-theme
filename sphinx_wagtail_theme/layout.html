@@ -98,37 +98,36 @@
                                 {% endfor %}
                             </ul>
                         </div>
+                        <button class="btn btn-primary d-md-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                     </nav>
                 </div>
             </div>
         </header>
         <div class="container">
             <div class="row">
-                <aside class="col-auto border-right">
-                    <nav>
-                        <input type="checkbox" id="toggleToc" class="toc-checkbox">
-                        <div class="toc-header">
-                            <div class="toc-actions">
-                                <label for="toggleToc" class="toc-toggle">
-                                    Menu
-                                </label>
+                <div class="col-12 col-md-auto">
+                    <aside id="collapseSidebar" class="collapse d-md-block">
+                        <nav>
+                            <div>
+                                {%- if not theme_is_homepage and builder == 'html' %}
+                                    {%- include "searchbox.html" %}
+                                {%- endif %}
+                                <div class="toc" role="navigation" aria-label="main navigation">
+                                    {%- block menu %}
+                                        {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=True, titles_only=True) -%}
+                                        {%- if toctree %}
+                                            {{ toctree }}
+                                        {%- endif %}
+                                    {%- endblock -%}
+                                </div>
                             </div>
-                        </div>
-                        <div class="toc-collapse">
-                            {%- if not theme_is_homepage and builder == 'html' %}
-                                {%- include "searchbox.html" %}
-                            {%- endif %}
-                            <div class="toc" role="navigation" aria-label="main navigation">
-                                {%- block menu %}
-                                    {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=True, titles_only=True) -%}
-                                    {%- if toctree %}
-                                        {{ toctree }}
-                                    {%- endif %}
-                                {%- endblock -%}
-                            </div>
-                        </div>
-                    </nav>
-                </aside>
+                        </nav>
+                    </aside>
+                    <div class="d-md-none border-bottom">
+                    </div>
+                </div>
                 <main class="col">
                     <div class="rst-content">
                         {% include "pager-hidden.html" %}
@@ -177,6 +176,7 @@
             };
         </script>
         <script type="text/javascript" src="{{ pathto('_static/dist/jquery.min.js', 1) }}"></script>
+        <script type="text/javascript" src="{{ pathto('_static/dist/bootstrap.bundle.min.js', 1) }}"></script>
         <script type="text/javascript" src="{{ pathto('_static/dist/theme.js', 1) }}"></script>
         <script type="text/javascript" src="{{ pathto('_static/dist/vendor.js', 1) }}"></script>
         <script type="text/javascript" src="{{ pathto('_static/dist/underscore.min.js', 1) }}"></script>
