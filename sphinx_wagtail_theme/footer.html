@@ -29,17 +29,6 @@
                 </nav>
             {%- endif %}
             <div class="text-center">
-                {%- if theme_show_last_modified and t3ctx.last_modified %}
-                {%- if t3ctx.commit_url %}
-                <p>
-                    Last updated: <a href="{{ t3ctx.commit_url|e }}" rel="nofollow" target="_blank" title="Last commit">
-                        {{ t3ctx.last_modified|e }}
-                    </a>
-                </p>
-                {%- else %}
-                <p>Last updated: {{ t3ctx.last_modified|e }}</p>
-                {%- endif %}
-                {%- endif %}
                 {%- if theme_show_last_updated and last_updated %}
                 <p>Last rendered: {{ last_updated|e }}</p>
                 {%- endif %}
