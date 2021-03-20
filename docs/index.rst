@@ -6,8 +6,8 @@
 
 .. BADGES_END
 
-Welcome to "Sphinx TYPO3 theme" documentation!
-==============================================
+Welcome to "Sphinx Wagtail theme" documentation!
+================================================
 
 .. image:: https://raw.githubusercontent.com/wagtail/sphinx_wagtail_theme/main/img/screenshot.png
    :alt: Sphinx Wagtail theme screenshot
