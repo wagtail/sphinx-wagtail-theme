@@ -2,7 +2,7 @@
 # unless otherwise overridden by more specific contexts.
 [build]
   publish = "docs/_build/html"
-  command = "yarn build && pip install -e . && make docs"
+  command = "npm run build && pip install -e . && make docs"
 
 [build.environment]
   PYTHON_VERSION = "3.7"

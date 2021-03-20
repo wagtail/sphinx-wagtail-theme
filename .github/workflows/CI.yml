@@ -17,8 +17,8 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: "${{ steps.nvm.outputs.NVMRC }}"
-      - run: yarn install
-      - run: yarn frontend
+      - run: npm install
+      - run: npm run frontend
       - uses: actions/setup-python@v2
         with:
           python-version: 3.7
