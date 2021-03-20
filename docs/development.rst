@@ -6,7 +6,7 @@
 Development
 ===========
 
-For local development you need a system with Node v12.x, Yarn, Python3, Git and
+For local development you need a system with Node v14.x, Yarn, Python3, Git and
 make. It is strongly recommended to use a Python virtual environment (`venv`_).
 The build process derives the version from repository data, so it's necessary
 to clone the repository and not just download a single snapshot.
