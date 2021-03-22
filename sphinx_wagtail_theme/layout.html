@@ -98,8 +98,8 @@
     </header>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-auto">
-                <aside id="collapseSidebar" class="collapse d-md-block pt-3">
+            <aside class="col-12 col-md-auto">
+                <div id="collapseSidebar" class="collapse d-md-block pt-3">
                     <nav>
                         <div>
                             {%- if not theme_is_homepage and builder == 'html' %}
@@ -116,34 +116,34 @@
                         </div>
                     </nav>
                     <div class="d-md-none border-bottom">
+                        {# Bottom border for mobile (above content, needs to be expanded.) #}
                     </div>
-                </aside>
-            </div>
+                </div>
+            </aside>
             <main class="col pt-3">
-                <div class="rst-content">
-                    {% include "pager-hidden.html" %}
-                    {% include "breadcrumbs.html" %}
-                    <div class="row justify-content-between">
-                        <div class="col col-md-8">
-                            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-                                <div itemprop="articleBody">
-                                    {%- block body %}
-                                    {% endblock -%}
-                                </div>
-                            </div>
-                            {% include "pager.html" %}
-                        </div>
-                        {% if display_toc and not hidetoc %}
-                        <nav class="col-3 d-none d-md-block">
-                            <div class="toc-open">
-                            <div class="toc" role="navigation" aria-label="main navigation">
-                                <p class="caption"><span class="caption-text">Page contents</span></p>
-                                {{ toc }}
-                            </div>
-                            </div>
-                        </nav>
-                        {% endif %}
+                <div class="row">
+                    <div class="col-12">
+                        {% include "pager-hidden.html" %}
+                        {% include "breadcrumbs.html" %}
                     </div>
+                </div>
+                <div class="row flex-lg-row-reverse">
+                    {% if display_toc and not hidetoc %}
+                        <nav class="col-12 col-lg-4 pb-4">
+                            <p class="font-weight-bold">Page contents</p>
+                            {{ toc }}
+                        </nav>
+                    {% endif %}
+                    <div class="col-12 col-lg-8">
+                        <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                            <div itemprop="articleBody">
+                                {%- block body %}
+                                {% endblock -%}
+                            </div>
+                        </div>
+                        {% include "pager.html" %}
+                    </div>
+                </div>
                 </div>
             </main>
         </div>
