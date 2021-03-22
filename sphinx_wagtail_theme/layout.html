@@ -58,106 +58,102 @@
     {%- block extrahead %}{% endblock -%}
 </head>
 <body>
-    <div class="container-fluid">
-        <header class="row bg-primary">
-            <div class="col p-0" >
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-dark font-weight-bold">
-                        {%- if theme_logo and theme_logo != 'None' %}
-                            {%- if theme_logo_url %}
-                                <a href="{{ theme_logo_url }}"
-                                    {% if theme_logo_alt %}title="{{ theme_logo_alt|e }}"{% endif %}
-                                    class="logo navbar-brand"
-                                >
-                            {%- endif %}
-                            <img src="{{ pathto('_static/' + theme_logo, 1) }}"
-                                {%- if theme_logo_width %} width="{{ theme_logo_width|e }}"{% endif %}
-                                {%- if theme_logo_height %} height="{{ theme_logo_height|e }}"{% endif %}
-                                {%- if theme_logo_alt %} alt="{{ theme_logo_alt|e }}"{% endif %}
-                                {%- if theme_logo_title and not theme_logo_url %} title="{{ theme_logo_title|e }}"{% endif %}
-                                class="{%- if 1 %}logo-image{% endif %} d-inline-block align-top mr-2"
-                            />
-                            <span class="logo-title" >{{ theme_project_name }}</span>
-                            {%- if theme_logo_url %}
-                                </a>
-                            {%- endif %}
-                        {% endif %}
-                        <div class="collapse navbar-collapse justify-content-end">
-                            <ul class="navbar-nav">
-                                {% for link in theme_header_links.split(',') %}
-                                    {% set link_text=link.split("|")[0] %}
-                                    {% set link_url=link.split("|")[1] %}
-                                    <li class="nav-item"><a class="nav-link"  href="{{ link_url }}">{{ link_text }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <button class="btn btn-primary d-md-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </nav>
-                </div>
-            </div>
-        </header>
+    <header class="container-fluid bg-primary">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-auto">
-                    <aside id="collapseSidebar" class="collapse d-md-block pt-3">
-                        <nav>
-                            <div>
-                                {%- if not theme_is_homepage and builder == 'html' %}
-                                    {%- include "searchbox.html" %}
-                                {%- endif %}
-                                <div class="toc" role="navigation" aria-label="main navigation">
-                                    {%- block menu %}
-                                        {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=True, titles_only=True) -%}
-                                        {%- if toctree %}
-                                            {{ toctree }}
-                                        {%- endif %}
-                                    {%- endblock -%}
+            <nav class="navbar navbar-expand-lg navbar-dark font-weight-bold">
+                {%- if theme_logo and theme_logo != 'None' %}
+                    {%- if theme_logo_url %}
+                        <a href="{{ theme_logo_url }}"
+                            {% if theme_logo_alt %}title="{{ theme_logo_alt|e }}"{% endif %}
+                            class="logo navbar-brand"
+                        >
+                    {%- endif %}
+                    <img src="{{ pathto('_static/' + theme_logo, 1) }}"
+                        {%- if theme_logo_width %} width="{{ theme_logo_width|e }}"{% endif %}
+                        {%- if theme_logo_height %} height="{{ theme_logo_height|e }}"{% endif %}
+                        {%- if theme_logo_alt %} alt="{{ theme_logo_alt|e }}"{% endif %}
+                        {%- if theme_logo_title and not theme_logo_url %} title="{{ theme_logo_title|e }}"{% endif %}
+                        class="{%- if 1 %}logo-image{% endif %} d-inline-block align-top mr-2"
+                    />
+                    <span class="logo-title" >{{ theme_project_name }}</span>
+                    {%- if theme_logo_url %}
+                        </a>
+                    {%- endif %}
+                {% endif %}
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav">
+                        {% for link in theme_header_links.split(',') %}
+                            {% set link_text=link.split("|")[0] %}
+                            {% set link_url=link.split("|")[1] %}
+                            <li class="nav-item"><a class="nav-link"  href="{{ link_url }}">{{ link_text }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <button class="btn btn-primary d-md-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-auto">
+                <aside id="collapseSidebar" class="collapse d-md-block pt-3">
+                    <nav>
+                        <div>
+                            {%- if not theme_is_homepage and builder == 'html' %}
+                                {%- include "searchbox.html" %}
+                            {%- endif %}
+                            <div class="toc" role="navigation" aria-label="main navigation">
+                                {%- block menu %}
+                                    {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=True, titles_only=True) -%}
+                                    {%- if toctree %}
+                                        {{ toctree }}
+                                    {%- endif %}
+                                {%- endblock -%}
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="d-md-none border-bottom">
+                    </div>
+                </aside>
+            </div>
+            <main class="col pt-3">
+                <div class="rst-content">
+                    {% include "pager-hidden.html" %}
+                    {% include "breadcrumbs.html" %}
+                    <div class="row justify-content-between">
+                        <div class="col col-md-8">
+                            <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                                <div itemprop="articleBody">
+                                    {%- block body %}
+                                    {% endblock -%}
                                 </div>
+                            </div>
+                            {% include "pager.html" %}
+                        </div>
+                        {% if display_toc and not hidetoc %}
+                        <nav class="col-3 d-none d-md-block">
+                            <div class="toc-open">
+                            <div class="toc" role="navigation" aria-label="main navigation">
+                                <p class="caption"><span class="caption-text">Page contents</span></p>
+                                {{ toc }}
+                            </div>
                             </div>
                         </nav>
-                        <div class="d-md-none border-bottom">
-                        </div>
-                    </aside>
-                </div>
-                <main class="col pt-3">
-                    <div class="rst-content">
-                        {% include "pager-hidden.html" %}
-                        {% include "breadcrumbs.html" %}
-                        <div class="row justify-content-between">
-                            <div class="col col-md-8">
-                                <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-                                    <div itemprop="articleBody">
-                                        {%- block body %}
-                                        {% endblock -%}
-                                    </div>
-                                </div>
-                                {% include "pager.html" %}
-                            </div>
-                            {% if display_toc and not hidetoc %}
-                            <nav class="col-3 d-none d-md-block">
-                                <div class="toc-open">
-                                <div class="toc" role="navigation" aria-label="main navigation">
-                                    <p class="caption"><span class="caption-text">Page contents</span></p>
-                                    {{ toc }}
-                                </div>
-                                </div>
-                            </nav>
-                            {% endif %}
-                        </div>
+                        {% endif %}
                     </div>
-                </main>
-            </div>
-        </div>
-        <footer class="row bg-primary text-light">
-            <div class="col p-0" >
-                <div class="container">
-                    {% include "footer.html" %}
                 </div>
-            </div>
-        </footer>
+            </main>
+        </div>
     </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            {% include "footer.html" %}
+        </div>
+    </footer>
+
     {% if not embedded %}
         <script type="text/javascript">
             var DOCUMENTATION_OPTIONS = {
