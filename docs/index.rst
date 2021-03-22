@@ -13,7 +13,6 @@ Welcome to "Sphinx Wagtail theme" documentation!
    :alt: Sphinx Wagtail theme screenshot
 
 .. toctree::
-   :caption: Contents:
    :maxdepth: 2
    :titlesonly:
 
