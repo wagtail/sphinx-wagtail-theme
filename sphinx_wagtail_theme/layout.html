@@ -29,8 +29,8 @@
         <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
     {%- endif %}
     <link rel="stylesheet" type="text/css" href="{{ pathto('_static/' + style, 1) }}" />
-    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/webfonts.css', 1) }}" />
-    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/fontawesome.css', 1) }}" />
+    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/dist/webfonts.css', 1) }}" />
+    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/dist/fontawesome.css', 1) }}" />
     {%- for css in css_files %}
         {%- if css|attr("filename") %}
             {{ css_tag(css) }}
