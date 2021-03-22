@@ -114,27 +114,26 @@
                 </div>
             </aside>
             <main class="col pt-3">
-                <div class="row">
+                <header class="row">
                     <div class="col-12">
                         {% include "breadcrumbs.html" %}
                         {%- if pagename != "search" -%}
                             {% include "source-buttons.html" %}
                         {% endif %}
                     </div>
-                </div>
+                </header>
                 <div class="row">
-                    <div class="col order-last order-lg-first">
+                    <article class="col order-last order-lg-first">
                         {%- block body %}
                         {% endblock -%}
                         {% include "pager.html" %}
-                    </div>
+                    </article>
                     {% if display_toc and not hidetoc %}
                         <nav class="col-12 col-lg-3 pb-4 toc">
                             <p class="font-weight-bold">Page contents</p>
                             {{ toc }}
                         </nav>
                     {% endif %}
-                </div>
                 </div>
             </main>
         </div>
