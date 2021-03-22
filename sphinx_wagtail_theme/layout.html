@@ -99,16 +99,14 @@
         <div class="row">
             <aside class="col-12 col-md-auto">
                 <div id="collapseSidebar" class="collapse d-md-block pt-3">
-                    <nav>
-                        {%- if not theme_is_homepage and builder == 'html' %}
-                            {%- include "searchbox.html" %}
+                    {%- if not theme_is_homepage and builder == 'html' %}
+                        {%- include "searchbox.html" %}
+                    {%- endif %}
+                    <nav class="toc mt-3">
+                        {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=False, titles_only=True) -%}
+                        {%- if toctree %}
+                            {{ toctree }}
                         {%- endif %}
-                        <div class="toc" role="navigation" aria-label="main navigation">
-                            {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=False, titles_only=True) -%}
-                            {%- if toctree %}
-                                {{ toctree }}
-                            {%- endif %}
-                        </div>
                     </nav>
                     <div class="d-md-none border-bottom">
                         {# Bottom border for mobile (above content, needs to be expanded.) #}
