@@ -1,9 +1,9 @@
-<div class="breadcrumb-bar" role="navigation" aria-label="breadcrumbs navigation">
-    <ol class="breadcrumb">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
         <li class="breadcrumb-item"><a href="{{ pathto(master_doc) }}">Start</a></li>
         {%- for doc in parents %}
             <li class="breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
         {%- endfor %}
         <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
     </ol>
-</div>
+</nav>

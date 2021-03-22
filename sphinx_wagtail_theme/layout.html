@@ -114,14 +114,21 @@
                 </div>
             </aside>
             <main class="col pt-3">
-                <header class="row">
-                    <div class="col-12">
+                <header class="row align-items-baseline">
+                    <div class="col">
                         {% include "breadcrumbs.html" %}
-                        {%- if pagename != "search" -%}
-                            {% include "source-buttons.html" %}
-                        {% endif %}
                     </div>
+                    {%- if pagename != "search" -%}
+                        <div class="col-auto">
+                            {% include "source-buttons.html" %}
+                        </div>
+                    {% endif %}
                 </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100">
+                    </div>
+                </div>
                 <div class="row">
                     <article class="col order-last order-lg-first">
                         {%- block body %}
