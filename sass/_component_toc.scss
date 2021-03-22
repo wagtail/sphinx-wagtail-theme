@@ -23,12 +23,6 @@
     justify-content: space-between;
 }
 .toc {
-    margin: $spacer 0;
-    display: block;
-    .caption {
-        font-weight: bold;
-        margin: 0;
-    }
     a {
         position: relative;
         display: block;
