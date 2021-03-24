@@ -6,7 +6,7 @@
 Development
 ===========
 
-For local development you need a system with Node v12.x, Yarn, Python3, Git and
+For local development you need a system with Node v12.x, npm, Python3, Git and
 make. It is strongly recommended to use a Python virtual environment (`venv`_).
 The build process derives the version from repository data, so it's necessary
 to clone the repository and not just download a single snapshot.
@@ -83,16 +83,7 @@ check the rendering.
 Javascript package management
 =============================
 
-Use `yarn` for package management.
-
-To upgrade a Javascript package to a newer version use the following. This
-keeps `package.json` and `yarn.lock` in sync as BOTH will be modified:
-
-.. code-block:: shell
-
-   # ATTENTION: Select only those with reasonable version numbers.
-   # Be very careful if the MAJOR number would change
-   yarn upgrade-interactive --latest
+Use `npm` for package management.
 
 
 Release process
@@ -112,8 +103,8 @@ With an active virtual environment:
     python -m pip install --upgrade -r requirements.txt
     make clean
     make clean-frontend
-    yarn
-    yarn build
+    npm install
+    npm run build
     prerelease
     python -m build
     python -m twine upload --repository pypi dist/*
