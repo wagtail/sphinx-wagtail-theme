@@ -84,28 +84,3 @@ Javascript package management
 =============================
 
 Use `npm` for package management.
-
-
-Release process
-===============
-
-Checklist:
-
-- AUTHORS.rst is updated
-- HISTORY.rst (change log) is updated
-- Everything is committed, clean checkout
-- ~/.pypirc has a username and password (token)
-
-With an active virtual environment:
-
-.. code-block:: shell
-
-    python -m pip install --upgrade -r requirements.txt
-    make clean
-    make clean-frontend
-    npm install
-    npm run build
-    prerelease
-    python -m build
-    python -m twine upload --repository pypi dist/*
-    postrelease
