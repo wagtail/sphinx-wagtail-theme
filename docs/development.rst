@@ -6,7 +6,7 @@
 Development
 ===========
 
-For local development you need a system with Node v12.x, NPM, Python3, Git and
+For local development you need a system with Node v12.x, npm, Python3, Git and
 make. It is strongly recommended to use a Python virtual environment (`venv`_).
 The build process derives the version from repository data, so it's necessary
 to clone the repository and not just download a single snapshot.
@@ -103,7 +103,7 @@ With an active virtual environment:
     python -m pip install --upgrade -r requirements.txt
     make clean
     make clean-frontend
-    npm
+    npm install
     npm run build
     prerelease
     python -m build
