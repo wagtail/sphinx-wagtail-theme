@@ -2,7 +2,7 @@
 History
 =======
 
-5.0.0-a3 (unreleased)
+5.0.0-a3 (2021-03-28)
 =====================
 
 - Remove unused SCSS components
