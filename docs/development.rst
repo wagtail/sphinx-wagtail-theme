@@ -6,6 +6,7 @@
 Development
 ===========
 
+
 For local development you need a system with Node v14.x, Yarn, Python3, Git and
 make. It is strongly recommended to use a Python virtual environment (`venv`_).
 The build process derives the version from repository data, so it's necessary
@@ -83,38 +84,4 @@ check the rendering.
 Javascript package management
 =============================
 
-Use `yarn` for package management.
-
-To upgrade a Javascript package to a newer version use the following. This
-keeps `package.json` and `yarn.lock` in sync as BOTH will be modified:
-
-.. code-block:: shell
-
-   # ATTENTION: Select only those with reasonable version numbers.
-   # Be very careful if the MAJOR number would change
-   yarn upgrade-interactive --latest
-
-
-Release process
-===============
-
-Checklist:
-
-- AUTHORS.rst is updated
-- HISTORY.rst (change log) is updated
-- Everything is committed, clean checkout
-- ~/.pypirc has a username and password (token)
-
-With an active virtual environment:
-
-.. code-block:: shell
-
-    python -m pip install --upgrade -r requirements.txt
-    make clean
-    make clean-frontend
-    yarn
-    yarn build
-    prerelease
-    python -m build
-    python -m twine upload --repository pypi dist/*
-    postrelease
+Use `npm` for package management.

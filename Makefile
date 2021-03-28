@@ -112,7 +112,7 @@ docs: ## Regenerate Sphinx HTML documentation, including API docs
 
 .PHONY: frontend
 frontend: ## Compile frontend files
-	yarn run frontend
+	npm run frontend
 
 
 .PHONY: install
@@ -167,7 +167,7 @@ setup: setup-python setup-frontend ## Setup all
 
 .PHONY: setup-frontend
 setup-frontend: ##- Setup node modules
-	yarn install
+	npm install
 
 
 .PHONY: setup-python
