@@ -5,8 +5,48 @@ History
 5.0.0-a3 (unreleased)
 =====================
 
-- Nothing changed yet.
-
+- Remove unused SCSS components
+- Add vertical space around content header hr
+- Add search bar style as per design
+- Only show source buttons on large displays
+- Simplify pagination bootstrap use
+- Light github button
+- Update breadcumb sep and start
+- Implement breadcrumbs with bootstrap
+- Use semantic elements for body content
+- Split breadcrumbs and source buttons
+- Remove hidden pager, it never rendered anything.
+- Simplify sidebar structure
+- Add toc class but remove unneeded styles
+- Remove toctree title
+- Simplify TOC ordering
+- Fix TOC positioning for pages without TOC
+- Simplify toc positioning with bootstrap
+- Use root as logo link
+- Ensure responsive images
+- Simplify header and footer structure
+- Move sidebar toggle to header
+- Import bootstrap in theme.js
+- Remove pageheader block definition
+- Hide header links below large screens
+- Implement footer links like header links
+- Simplify header link implementation
+- Remove unused variables
+- Fix use of theme options
+- Remove typo3 specific variables
+- Use Bootstrap for header, main and footer
+- Remove page content from main nav
+- Change theme name in footer
+- Remove typo3 analytics scripts
+- Remove commented elements
+- Remove theme title from sidebar nav
+- Remove typo3 universe bar
+- Update screenshot
+- Document node version 14
+- Move release process to readme
+- Netlify for build previews
+- Switch from yarn to npm (#58)
+- Fix CI urls
 
 5.0.0-a2 (2021-03-17)
 =====================
