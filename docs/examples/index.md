@@ -16,4 +16,5 @@ These examples are using Markdown with reStructuredText mixed in, instead of pur
    headings
    inline-styles
    lists
+   paragraphs
 ```
