@@ -20,9 +20,8 @@ Welcome to "Sphinx Wagtail theme" documentation!
    installation
    usage
    development
-   workflows
-   examples/index
    contributing
+   examples/index
    authors
    history
 
