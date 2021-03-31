@@ -1,6 +1,8 @@
 import os
 import sys
 
+from recommonmark.transform import AutoStructify
+
 import sphinx_wagtail_theme
 
 sys.path.insert(0, os.path.abspath('..'))
@@ -59,3 +61,16 @@ texinfo_documents = [
      'One line description of project.',
      'Miscellaneous'),
 ]
+
+github_doc_root = 'https://github.com/wagtail/sphinx_wagtail_theme/tree/main/docs'
+def setup(app):
+    app.add_config_value(
+        'recommonmark_config',
+        {
+            'url_resolver': lambda url: github_doc_root + url,
+            'enable_auto_toc_tree': True,
+            'enable_eval_rst': True,
+        },
+        True
+    )
+    app.add_transform(AutoStructify)
