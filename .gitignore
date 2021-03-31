@@ -24,3 +24,5 @@ npm-debug.log
 /build/*
 !/build/.gitkeep
 venv/
+env/
+.env/
