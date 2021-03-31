@@ -10,5 +10,6 @@ This is mainly going to be helpful to develop the theme itself.
    :maxdepth: 2
    :titlesonly:
 
+   headings
    admonitions
 ```
