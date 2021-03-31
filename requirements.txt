@@ -4,6 +4,7 @@ pip
 pytest
 setuptools
 sphinx
+recommonmark
 twine
 wheel
 zest.releaser

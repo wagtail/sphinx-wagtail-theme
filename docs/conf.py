@@ -9,9 +9,14 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx_wagtail_theme',
-    ]
+    'recommonmark',
+]
 templates_path = ['_templates']
-source_suffix = '.rst'
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
 master_doc = 'index'
 project = 'Sphinx Wagtail theme'
 copyright = "2020, Wagtail contributors"

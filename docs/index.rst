@@ -21,7 +21,7 @@ Welcome to "Sphinx Wagtail theme" documentation!
    usage
    development
    workflows
-   modules
+   examples/index
    contributing
    authors
    history
