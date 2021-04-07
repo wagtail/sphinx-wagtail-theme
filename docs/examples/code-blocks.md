@@ -7,11 +7,27 @@ Frequently used syntaxes are: `python`, `css`, `html`, `html+django`, `javascrip
 ## Python
 
 ```python
-INSTALLED_APPS = [
-    ...
-    "wagtail.core",
-    ...
-]
+def is_divisible(number, divisor):
+    remainder = number % divisor
+    if remainder == 0:
+        return True
+    else:
+        return False
+
+
+def fizzbuzz_concat(number):
+    reply = ""
+    if is_divisible(number, 3):
+        reply = reply + "Fizz"
+    if is_divisible(number, 5):
+        reply = reply + "Buzz"
+    if reply:
+        return reply
+    else:
+        return number
+
+for number in range(1, 100):
+    print(fizzbuzz_concat(number))
 ```
 
 ## CSS
@@ -49,8 +65,44 @@ a {
 
 ## Javascript
 
-```javascript
-document.write(<p>Directly created element</p>)
+```js
+function isDivisible (dividend, divisior) {
+  const rest = dividend % divisior
+  if (rest === 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
+exports.isDivisible = isDivisible
+
+function numToFizzBuzz (num) {
+  let response = ''
+  if (isDivisible(num, 3)) {
+    response += 'Fizz'
+  }
+  if (isDivisible(num, 5)) {
+    response += 'Buzz'
+  }
+  if (!response) {
+    response = num.toString()
+  }
+  return response
+}
+
+exports.numToFizzBuzz = numToFizzBuzz
+
+function fizzbuzz (start = 1, end = 100) {
+  const fizzbuzzArray = []
+  for (let i = start; i <= end; i++) {
+    const numString = numToFizzBuzz(i)
+    fizzbuzzArray.push(numString)
+  }
+  return fizzbuzzArray
+}
+
+exports.fizzbuzz = fizzbuzz
 ```
 
 ## Console
