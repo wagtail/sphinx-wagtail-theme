@@ -8,3 +8,6 @@ Images are hard to keep up-to-date as documentation evolves, but can be worthwhi
 - Use absolute paths for image files so they are more portable.
 
 ![A wagtail standing on the ground](/img/wagtail.jpg)
+
+Images should be responsive.
+This is something we should handle in the styling. 
