@@ -21,6 +21,7 @@ These examples are using Markdown with reStructuredText mixed in, instead of pur
    lists
    paragraphs
    progressive-disclosure
+   rst-page
    tables
    tables-of-content
    version-changes
