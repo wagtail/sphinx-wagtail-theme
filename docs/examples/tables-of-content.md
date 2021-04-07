@@ -1,4 +1,4 @@
-# Tables of content
+# Tables of Content
 
 You can create tables of content with `toctree` and `contents` as reStructuredText embeds.
 

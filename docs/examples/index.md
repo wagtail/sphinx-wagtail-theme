@@ -22,4 +22,5 @@ These examples are using Markdown with reStructuredText mixed in, instead of pur
    paragraphs
    tables
    tables-of-content
+   version-changes
 ```
