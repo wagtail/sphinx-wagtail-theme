@@ -21,4 +21,5 @@ These examples are using Markdown with reStructuredText mixed in, instead of pur
    lists
    paragraphs
    tables
+   tables-of-content
 ```
