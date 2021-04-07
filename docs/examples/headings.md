@@ -14,3 +14,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 ## Heading with `code` in it
 
 I guess this will come up, so we should style for it.
+
+## `code-only-heading`
+
+This will probably come up as well.
