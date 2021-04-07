@@ -15,6 +15,7 @@ These examples are using Markdown with reStructuredText mixed in, instead of pur
    code-blocks
    headings
    inline-styles
+   images
    links
    lists
    paragraphs
