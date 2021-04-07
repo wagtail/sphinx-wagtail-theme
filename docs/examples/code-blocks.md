@@ -50,7 +50,7 @@ a {
 
 ## Django (Template)
 
-```django+html
+```html+django
 <body>
     <main class="page-content">
         <h1>An example heading</h1>
