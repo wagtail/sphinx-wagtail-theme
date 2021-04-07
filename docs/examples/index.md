@@ -12,6 +12,7 @@ These examples are using Markdown with reStructuredText mixed in, instead of pur
    :titlesonly:
 
    admonitions
+   autodoc
    code-blocks
    headings
    inline-styles
