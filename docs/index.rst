@@ -21,9 +21,9 @@ Welcome to "Sphinx Wagtail theme" documentation!
    usage
    development
    contributing
-   examples/index
    authors
    history
+   examples/index
 
 Indices and tables
 ==================
