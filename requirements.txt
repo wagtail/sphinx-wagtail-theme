@@ -8,3 +8,5 @@ recommonmark
 twine
 wheel
 zest.releaser
+# Pin because of https://github.com/readthedocs/recommonmark/issues/220
+docutils==0.16 
