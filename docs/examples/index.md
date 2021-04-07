@@ -20,6 +20,7 @@ These examples are using Markdown with reStructuredText mixed in, instead of pur
    links
    lists
    paragraphs
+   progressive-disclosure
    tables
    tables-of-content
    version-changes
