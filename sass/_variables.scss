@@ -14,6 +14,7 @@ $gray-900:          #212121;
 $black:             #000000;
 
 $indigo:            #251657;
+$bright-green: 		#3beccd;
 
 $primary:           $indigo;
 $success:           #5cb85c;
@@ -21,10 +22,12 @@ $info:              #5bc0de;
 $warning:           #f0ad4e;
 $danger:            #d9534f;
 
-$link-color:                   $primary;
-$link-hover-color:             darken($link-color, 15%);
-$link-alternate-color:         #ffffff;
-$link-alternate-hover-color:   darken($link-alternate-color, 15%);
+$link-color: $primary;
+$link-hover-color: darken($link-color, 15%);
+$link-border-color: $bright-green;
+$link-border-hover-color: darken($bright-green, 15%);
+$link-alternate-color: #ffffff;
+$link-alternate-hover-color: darken($link-alternate-color, 15%);
 
 $yiq-contrasted-threshold: 160;
 
