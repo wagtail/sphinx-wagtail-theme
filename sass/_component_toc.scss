@@ -9,6 +9,11 @@
         padding-right: 1.5em;
         text-decoration: none;
     }
+
+    li:not(.toctree-l1) a {
+        border: none;
+    }
+
     ul {
         padding-left: $size-3;
         list-style-type: none;
