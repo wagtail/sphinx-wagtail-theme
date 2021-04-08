@@ -19,6 +19,7 @@ These examples are using Markdown with reStructuredText mixed in, instead of pur
    images
    links
    lists
+   nesting/index
    paragraphs
    progressive-disclosure
    rst-page
