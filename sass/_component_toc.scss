@@ -93,6 +93,9 @@
         padding-bottom: $spacer;
         border-bottom: 1px solid rgba(0, 0, 0, .15);
     }
+    ul.current li:not(.current) ul {
+        display: none;
+    }
 }
 .toc-title-project {
     display: block;
