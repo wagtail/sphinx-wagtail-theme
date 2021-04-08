@@ -98,12 +98,14 @@
                     {%- if not theme_is_homepage and builder == 'html' %}
                         {%- include "searchbox.html" %}
                     {%- endif %}
-                    <nav class="toc mt-3">
-                        {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=False, titles_only=True) -%}
-                        {%- if toctree %}
-                            {{ toctree }}
-                        {%- endif %}
-                    </nav>
+                    <div class="site-toc">
+                        <nav class="toc mt-3">
+                            {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=False, titles_only=True) -%}
+                            {%- if toctree %}
+                                {{ toctree }}
+                            {%- endif %}
+                        </nav>
+                    </div>
                     <div class="d-lg-none border-bottom">
                         {# Bottom border for mobile (above content, needs to be expanded.) #}
                     </div>
