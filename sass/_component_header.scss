@@ -1,4 +1,10 @@
 header {
+	.navbar {
+		a {
+			border: none;
+		}
+	}
+
     .navbar-brand {
         font-size: $h3-font-size;
     }

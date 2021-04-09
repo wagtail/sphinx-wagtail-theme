@@ -2,26 +2,30 @@
 .toc {
     a {
         position: relative;
-        display: block;
-        color: inherit;
+        display: inline-block;
         line-height: 1.25;
         padding: ($spacer / 4) 0;
-        padding-right: 1.5em;
         text-decoration: none;
     }
+
+    li {
+        margin: $size-1 0;
+    }
+
+    li:not(.toctree-l1) a {
+        border: none;
+    }
+
     ul {
         padding-left: $size-3;
         list-style-type: none;
     }
-    li {
-        border-radius: $border-radius;
-        overflow: hidden;
-    }
+
     .toctree-expand {
         position: absolute;
         display: block;
         top: (($spacer / 4) + ($font-size-base * 1.25 / 2));
-        right: 0;
+        left: -$size-6;
         transform: translate(0, -50%);
         height: 1em;
         width: 1em;
@@ -72,6 +76,10 @@
 }
 
 .site-toc .toc {
+    ul {
+        padding-left: $size-6;
+    }
+
     ul > li ul {
         display: none;
     }
