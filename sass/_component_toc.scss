@@ -8,6 +8,10 @@
         text-decoration: none;
     }
 
+    li {
+        margin: $size-4 0;
+    }
+
     li:not(.toctree-l1) a {
         border: none;
     }
