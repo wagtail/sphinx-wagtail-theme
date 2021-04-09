@@ -1,43 +1,12 @@
-// div[class^='highlight-'] {
-//     overflow-x: auto;
-//     margin-bottom: $spacer;
-//     pre {
-//         margin: 0;
-//         display: block;
-//         overflow: auto;
-//     }
-// }
-// .linenodiv,
-// .highlight {
-//     pre {
-//         color: $base16-base06;
-//         padding: $spacer;
-//         border-radius: $border-radius;
-//         background-color: $base16-base00;
-//     }
-// }
-// .linenodiv {
-//     pre {
-//         background-color: lighten($base16-base00, 5%);
-//         border-right: 1px solid lighten($base16-base00, 10%);
-//         border-top-right-radius: 0;
-//         border-bottom-right-radius: 0;
-//     }
-// }
-// .highlighttable {
-//     width: 100%;
-//     td {
-//         padding: 0;
-//         &.code {
-//             width: 100%;
-//         }
-//     }
-//     .highlight pre {
-//         border-top-left-radius: 0;
-//         border-bottom-left-radius: 0;
-//     }
-// }
 pre {
+    padding: $size-5;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+    color: $base16-base07;
+    background-color: $indigo;
+
     .hll { background-color: $base16-base02; }
     .c { color: $base16-base05; } /* Comment */
     .c1 { color: $base16-base05; } /* Comment.Single */
@@ -74,7 +43,7 @@ pre {
     .sx { color: $base16-base0D; } /* Literal.String.Other */
     .n { color: $base16-base07; } /* Name */
     .na { color: $base16-base0B; } /* Name.Attribute */
-    .nb { color: $base16-base07; } /* Name.Builtin */
+    .nb { color: $base16-base08; } /* Name.Builtin */
     .nc { color: $base16-base0A; } /* Name.Class */
     .nd { color: $base16-base0C; } /* Name.Decorator */
     .ne { color: $base16-base08; } /* Name.Exception */
@@ -85,7 +54,7 @@ pre {
     .no { color: $base16-base08; } /* Name.Constant */
     .nt { color: $base16-base0C; } /* Name.Tag */
     .nv { color: $base16-base08; } /* Name.Variable */
-    .nx { color: $base16-base0B; } /* Name.Other */
+    .nx { color: $base16-base07; } /* Name.Other */
     .py { color: $base16-base07; } /* Name.Property */
     .bp { color: $base16-base07; } /* Name.Builtin.Pseudo */
     .vc { color: $base16-base08; } /* Name.Variable.Class */
