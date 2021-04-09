@@ -2,11 +2,9 @@
 .toc {
     a {
         position: relative;
-        display: block;
-        color: inherit;
+        display: inline-block;
         line-height: 1.25;
         padding: ($spacer / 4) 0;
-        padding-right: 1.5em;
         text-decoration: none;
     }
 
