@@ -52,3 +52,6 @@ indent_size = 2
 # .htaccess
 [{_.htaccess,.htaccess}]
 indent_style = tab
+
+[Makefile]
+indent_style = tab
