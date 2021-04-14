@@ -5,8 +5,26 @@ History
 5.0.0-a4 (unreleased)
 =====================
 
-- Nothing changed yet.
-
+- Remove http-server from devDependencies
+- Remove bootstrap.bundle.min.js from layout
+- Makefile: add missing requirements.txt install step
+- Fix: Autodoc white text
+- Explicitly define col widths
+- Fix: Link style
+- Fix: Page toc levels
+- Pin docutils to 0.16 because of recommonmark issue
+- Revert "Remove obsolete pages"
+- Remove obsolete pages
+- Fix Django code snippet declaration
+- Extend python and js code block examples
+- Add reStructuredText page from Wagtail Docs
+- Add progressive disclosure example page
+- Add code only heading to examples
+- Move example to end of index
+- Add version change metadata example page
+- Add example pages
+- Add additional configuration for markdown support
+- Add other typical venv folder names to gitignore
 
 5.0.0-a3 (2021-03-28)
 =====================
