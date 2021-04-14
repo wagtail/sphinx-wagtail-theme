@@ -2,7 +2,7 @@
 History
 =======
 
-5.0.0-a4 (unreleased)
+5.0.0-a4 (2021-04-14)
 =====================
 
 - Remove http-server from devDependencies
