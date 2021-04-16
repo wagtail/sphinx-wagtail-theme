@@ -1,55 +1,260 @@
 {%- extends "!layout.html" %}
 
-{#
-
-This template exists as a way to implement a version menu without changing what
-the theme normally renders the menu on local builds and on builds on Read the
-Docs. This is for local testing purposes only.
-
+{# This template exists as a way to implement a version menu without changing what the theme normally renders the menu on local builds and on builds on Read the Docs.
+This is for local testing purposes only.
 #}
 
+{% block extra_head %}
+    <link
+        rel="stylesheet"
+        href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css"
+        type="text/css"
+    />
+{% endblock extra_head %}
+
 {% block footer2 %}
-  {% if not READTHEDOCS %}
-    <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-      <span class="rst-current-version" data-toggle="rst-current-version">
-        <span class="fa fa-book"> Read the Docs</span>
-        v: latest
-        <span class="fa fa-caret-down"></span>
-      </span>
-      <div class="rst-other-versions">
-        <dl>
-          <dt>{{ _('Versions') }}</dt>
-          {% if test_versions %}
-            {% for version in test_versions %}
-            <dd><a href="#">{{ version }}</a></dd>
-            {% endfor %}
-          {% else %}
-            <dd><a href="#">latest</a></dd>
-            <dd><a href="#">1.0</a></dd>
-            <dd><a href="#">1.1</a></dd>
-          {% endif %}
-        </dl>
-        <dl>
-          <dt>{{ _('Downloads') }}</dt>
-          <dd><a href="#">PDF</a></dd>
-          <dd><a href="#">ePub</a></dd>
-          <dd><a href="#">HTML</a></dd>
-        </dl>
-        <dl>
-          {# Translators: The phrase "Read the Docs" is not translated #}
-          <dt>{{ _('On Read the Docs') }}</dt>
-            <dd>
-              <a href="#">{{ _('Project Home') }}</a>
-            </dd>
-            <dd>
-              <a href="#">{{ _('Builds') }}</a>
-            </dd>
-        </dl>
-        <dl>
-          <dt>Debug</dt>
-          <dd><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></dd>
-        </dl>
-      </div>
-    </div>
-  {% endif %}
+    <script
+        async="async"
+        type="text/javascript"
+        src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"
+    ></script>
+    {% if not READTHEDOCS %}
+        <div
+            class="rst-versions shift-up"
+            data-toggle="rst-versions"
+            role="note"
+            aria-label="versions"
+        >
+            <span class="rst-current-version" data-toggle="rst-current-version">
+                <span class="fa fa-book"> Read the Docs</span>
+                v: stable
+                <span class="fa fa-caret-down"></span>
+            </span>
+            <div class="rst-other-versions">
+                <!-- Inserted RTD Footer -->
+
+                <div class="injected">
+                    <dl>
+                        <dt>Versions</dt>
+
+                        <dd><a href="https://docs.wagtail.io/en/latest/">latest</a></dd>
+
+                        <strong>
+                            <dd>
+                                <a href="https://docs.wagtail.io/en/stable/">stable</a>
+                            </dd>
+                        </strong>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v2.12.3/">v2.12.3</a>
+                        </dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v2.12.2/">v2.12.2</a>
+                        </dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v2.12.1/">v2.12.1</a>
+                        </dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.12/">v2.12</a></dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v2.11.3/">v2.11.3</a>
+                        </dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v2.11.2/">v2.11.2</a>
+                        </dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v2.11.1/">v2.11.1</a>
+                        </dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.11/">v2.11</a></dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v2.10.2/">v2.10.2</a>
+                        </dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v2.10.1/">v2.10.1</a>
+                        </dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.10/">v2.10</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.9.3/">v2.9.3</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.9.2/">v2.9.2</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.9.1/">v2.9.1</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.9/">v2.9</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.8.2/">v2.8.2</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.8.1/">v2.8.1</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.8/">v2.8</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.7.1/">v2.7.1</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.7/">v2.7</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.6.3/">v2.6.3</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.6.2/">v2.6.2</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.6.1/">v2.6.1</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.6/">v2.6</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.5.2/">v2.5.2</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.4/">v2.4</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.3/">v2.3</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.2.2/">v2.2.2</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.1.3/">v2.1.3</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v2.0.2/">v2.0.2</a></dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v1.13.4/">v1.13.4</a>
+                        </dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v1.12.6/">v1.12.6</a>
+                        </dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v1.11.1/">v1.11.1</a>
+                        </dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v1.10.1/">v1.10.1</a>
+                        </dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v1.9.1/">v1.9.1</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v1.8.2/">v1.8.2</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v1.7/">v1.7</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v1.6.3/">v1.6.3</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v1.5.3/">v1.5.3</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v1.4.6/">v1.4.6</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v1.3.1/">v1.3.1</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v1.2/">v1.2</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v1.1/">v1.1</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v1.0/">v1.0</a></dd>
+
+                        <dd>
+                            <a href="https://docs.wagtail.io/en/v0.8.10/">v0.8.10</a>
+                        </dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v0.7/">v0.7</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v0.6/">v0.6</a></dd>
+
+                        <dd><a href="https://docs.wagtail.io/en/v0.5/">v0.5</a></dd>
+                    </dl>
+
+                    <dl>
+                        <dt>Downloads</dt>
+
+                        <dd>
+                            <a href="//docs.wagtail.io/_/downloads/en/stable/pdf/"
+                                >PDF</a
+                            >
+                        </dd>
+
+                        <dd>
+                            <a href="//docs.wagtail.io/_/downloads/en/stable/htmlzip/"
+                                >HTML</a
+                            >
+                        </dd>
+
+                        <dd>
+                            <a href="//docs.wagtail.io/_/downloads/en/stable/epub/"
+                                >Epub</a
+                            >
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <!-- These are kept as relative links for internal installs that are http -->
+                        <dt>On Read the Docs</dt>
+                        <dd>
+                            <a href="//readthedocs.org/projects/wagtail/"
+                                >Project Home</a
+                            >
+                        </dd>
+                        <dd>
+                            <a href="//readthedocs.org/projects/wagtail/builds/"
+                                >Builds</a
+                            >
+                        </dd>
+                        <dd>
+                            <a href="//readthedocs.org/projects/wagtail/downloads/"
+                                >Downloads</a
+                            >
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <dt>On GitHub</dt>
+                        <dd>
+                            <a
+                                href="https://github.com/wagtail/wagtail/blob/16c34fd6e155a73fd5f148b2ef647e0b9dbacc44/docs/index.rst"
+                                >View</a
+                            >
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <dt>Search</dt>
+                        <dd>
+                            <div style="padding: 6px">
+                                <form
+                                    id="flyout-search-form"
+                                    class="wy-form"
+                                    target="_blank"
+                                    action="//readthedocs.org/projects/wagtail/search/"
+                                    method="get"
+                                >
+                                    <input
+                                        type="text"
+                                        name="q"
+                                        placeholder="Search docs"
+                                    />
+                                </form>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <hr />
+
+                    <small>
+                        <span
+                            >Hosted by
+                            <a href="https://readthedocs.org">Read the Docs</a></span
+                        >
+                        <span> · </span>
+                        <a href="https://docs.readthedocs.io/page/privacy-policy.html"
+                            >Privacy Policy</a
+                        >
+                    </small>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
