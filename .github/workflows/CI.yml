@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: "${{ steps.nvm.outputs.NVMRC }}"
       - run: npm install
-      - run: npm run frontend
+      - run: npm run build
       - uses: actions/setup-python@v2
         with:
           python-version: 3.7
@@ -28,6 +28,10 @@ jobs:
         with:
           name: bdist-wheel-package
           path: dist
+      - uses: actions/upload-artifact@v1
+        with:
+          name: static-files
+          path: sphinx_wagtail_theme/static/dist/
 
   test:
     runs-on: ubuntu-latest
@@ -64,3 +68,20 @@ jobs:
           echo 'html_theme = "'${html_theme}'"' >> source/conf.py
           cat source/conf.py
           sphinx-build -b html -A version=test source build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: static-files
+          path: sphinx_wagtail_theme/static/dist/
+      - run: grep -F -v 'dist' .gitignore > .gitignore.tmp && mv .gitignore.tmp .gitignore
+      - uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: .
+          clean: true
