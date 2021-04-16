@@ -5,8 +5,11 @@ History
 5.0.0-a5 (unreleased)
 =====================
 
-- Nothing changed yet.
-
+- Fix version picker (#90)
+- Revert "Finish deleting Read the Docs integration. Fix #54"
+- Remove unused theme options
+- Simplify Github url, always edit main
+- Pin Sphinx version to match Read the Docs (#93)
 
 5.0.0-a4 (2021-04-14)
 =====================
