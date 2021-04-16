@@ -1,0 +1,183 @@
+{%- set url_root = pathto('', 1) -%}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif -%}
+{%- if not embedded and docstitle %}
+    {%- set titlesuffix = " &mdash; "|safe + docstitle|e -%}
+{%- else %}
+    {%- set titlesuffix = "" -%}
+{%- endif -%}
+{%- set blacklist_script_files = [] -%}
+{%- set blacklist_script_files = blacklist_script_files + ['_static/jquery.js'] -%}
+{%- set blacklist_script_files = blacklist_script_files + ['_static/underscore.js'] -%}
+{%- set blacklist_script_files = blacklist_script_files + ['_static/doctools.js'] -%}
+{%- set blacklist_script_files = blacklist_script_files + ['_static/language_data.js'] -%}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    {%- if metatags %}
+        {{ metatags }}
+    {%- endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="docsearch:name" content="{{ project|striptags|e }}" />
+    <meta name="docsearch:package_type" content="{{ package_type|striptags|e }}" />
+    <meta name="docsearch:release" content="{{ release|striptags|e }}" />
+    <meta name="docsearch:version" content="{{ version|striptags|e }}" />
+    {% block htmltitle %}
+        <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+    {% endblock %}
+    {%- if favicon %}
+        <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
+    {%- endif %}
+    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/' + style, 1) }}" />
+    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/dist/webfonts.css', 1) }}" />
+    <link rel="stylesheet" type="text/css" href="{{ pathto('_static/dist/fontawesome.css', 1) }}" />
+    {%- block linktags %}
+        {%- if hasdoc('about') %}
+            <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+        {%- endif %}
+        {%- if hasdoc('genindex') %}
+            <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+        {%- endif %}
+        {%- if hasdoc('search') %}
+            <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+        {%- endif %}
+        {%- if hasdoc('copyright') %}
+            <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+        {%- endif %}
+            <link rel="top" title="{{ docstitle|e }}" href="{{ pathto(pagename) }}" />
+        {%- if parents %}
+            <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}" />
+        {%- endif %}
+        {%- if next %}
+            <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+        {%- endif %}
+        {%- if prev %}
+            <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+        {%- endif %}
+    {% endblock -%}
+    {%- block extrahead %}{% endblock -%}
+</head>
+<body>
+    <header class="container-fluid bg-primary">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark font-weight-bold px-0">
+                {%- if theme_logo and theme_logo != 'None' %}
+                    <a href="{{ theme_logo_url }}"
+                        {% if theme_logo_alt %}title="{{ theme_logo_alt|e }}"{% endif %}
+                        class="logo navbar-brand"
+                    >
+                        <img src="{{ pathto('_static/' + theme_logo, 1) }}"
+                            {%- if theme_logo_width %} width="{{ theme_logo_width|e }}"{% endif %}
+                            {%- if theme_logo_height %} height="{{ theme_logo_height|e }}"{% endif %}
+                            {%- if theme_logo_alt %} alt="{{ theme_logo_alt|e }}"{% endif %}
+                            {%- if theme_logo_title and not theme_logo_url %} title="{{ theme_logo_title|e }}"{% endif %}
+                            class="d-inline-block mr-2"
+                        />
+                        {{ theme_project_name }}
+                    </a>
+                {% endif %}
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav">
+                        {% for link in theme_header_links.split(',') %}
+                            {% set link_text=link.split("|")[0] %}
+                            {% set link_url=link.split("|")[1] %}
+                            <li class="nav-item"><a class="nav-link"  href="{{ link_url }}">{{ link_text }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <button class="btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <aside class="col-12 col-lg-3">
+                <div id="collapseSidebar" class="collapse d-lg-block pt-5">
+                    {%- if not theme_is_homepage and builder == 'html' %}
+                        {%- include "searchbox.html" %}
+                    {%- endif %}
+                    <div class="site-toc">
+                        <nav class="toc mt-3">
+                            {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=False, titles_only=True) -%}
+                            {%- if toctree %}
+                                {{ toctree }}
+                            {%- endif %}
+                        </nav>
+                    </div>
+                    <div class="d-lg-none border-bottom">
+                        {# Bottom border for mobile (above content, needs to be expanded.) #}
+                    </div>
+                </div>
+            </aside>
+            <main class="col-12 col-lg-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        {% include "breadcrumbs.html" %}
+                    </div>
+                    {%- if pagename != "search" -%}
+                        <div class="col-auto d-none d-lg-block">
+                            {% include "source-buttons.html" %}
+                        </div>
+                    {% endif %}
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <article class="col-12 col-lg-9 order-last order-lg-first">
+                        {%- block body %}
+                        {% endblock -%}
+                        {% include "pager.html" %}
+                    </article>
+                    {% if display_toc and not hidetoc %}
+                        <nav class="col-12 col-lg-3 pb-4 toc">
+                            <p class="font-weight-bold">Page contents</p>
+                            {{ toc }}
+                        </nav>
+                    {% endif %}
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            {% include "footer.html" %}
+        </div>
+    </footer>
+
+    {% if not embedded %}
+        <script type="text/javascript">
+            var DOCUMENTATION_OPTIONS = {
+                URL_ROOT: '{{ url_root }}',
+                VERSION: '{{ release|e }}',
+                COLLAPSE_INDEX: false,
+                FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
+                HAS_SOURCE: {{ has_source| lower }}
+            };
+        </script>
+        <script type="text/javascript" src="{{ pathto('_static/dist/jquery.min.js', 1) }}"></script>
+        <script type="text/javascript" src="{{ pathto('_static/dist/theme.js', 1) }}"></script>
+        <script type="text/javascript" src="{{ pathto('_static/dist/vendor.js', 1) }}"></script>
+        <script type="text/javascript" src="{{ pathto('_static/dist/underscore.min.js', 1) }}"></script>
+        {#- SEARCH #}
+        <script type="text/javascript" src="{{ pathto('_static/language_data.js', 1) }}"></script>
+        <script type="text/javascript" src="{{ pathto('_static/dist/doctools.js', 1) }}"></script>
+        <script type="text/javascript" src="{{ pathto('_static/dist/searchtools.js', 1) }}"></script>
+            {%- for scriptfile in script_files %}
+                {%- if scriptfile not in blacklist_script_files %}
+        {{ js_tag(scriptfile) }}
+                {%- endif %}
+            {%- endfor %}
+    {%- endif %}
+    <script type="text/javascript">
+        jQuery(function() { Search.loadIndex("{{ pathto('searchindex.js', 1) }}"); });
+    </script>
+    <script type="text/javascript" id="searchindexloader"></script>
+    {%- block scripts2 %}{% endblock -%}
+    {%- block footer2 %}{% endblock -%}
+</body>
+</html>

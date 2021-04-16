@@ -1,0 +1,15 @@
+a {
+	border-bottom: 2px solid;
+	color: $link-color;
+	border-color: $link-border-color;
+
+	&:hover {
+		color: $link-hover-color;
+		border-color: $link-border-hover-color;
+		text-decoration: none;
+	}
+
+	&:visited {
+		color: $link-hover-color;
+	}
+}

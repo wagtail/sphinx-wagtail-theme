@@ -1,0 +1,36 @@
+{%- block footer -%}
+    <div class="row">
+        <div class="col p-4">
+            <nav>
+                <ul class="nav justify-content-center mb-2">
+                    {% for link in theme_footer_links.split(',') %}
+                        {% set link_text=link.split("|")[0] %}
+                        {% set link_url=link.split("|")[1] %}
+                        <li class="nav-item"><a class="nav-link text-light"  href="{{ link_url }}">{{ link_text }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+            <div class="text-center">
+                {%- if theme_show_last_updated and last_updated %}
+                <p>Last rendered: {{ last_updated|e }}</p>
+                {%- endif %}
+                <p>
+                    <a class="text-light" href="https://github.com/wagtail/sphinx_wagtail_theme" rel="nofollow" target="_blank">
+                        {{ theme_project_name }} {{ theme_version|e }}
+                    </a>
+                </p>
+            </div>
+            {%- if theme_show_copyright %}
+            <div class="text-center">
+                {%- if hasdoc('Copyright') %}
+                    <a href="{{ pathto('Copyright') }}">&copy; Copyright {{ copyright }}</a>
+                {%- elif hasdoc('copyright') %}
+                    <a href="{{ pathto('copyright') }}">&copy; Copyright {{ copyright }}</a>
+                {%- else %}
+                    &copy; Copyright {{ copyright }}
+                {%- endif %}
+            </div>
+            {%- endif %}
+        </div>
+    </div>
+{%- endblock %}

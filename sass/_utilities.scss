@@ -1,0 +1,19 @@
+.align-center,
+.centered {
+    @extend .text-center;
+}
+.with-border {
+    @extend .border;
+}
+.with-shadow {
+    @extend .shadow-sm;
+}
+.no-focus {
+    outline: none !important;
+}
+.cc {
+    clear: both;
+}
+.rubric {
+    font-weight: 700;
+}

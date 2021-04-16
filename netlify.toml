@@ -1,0 +1,8 @@
+# Settings in the [build] context are global and are applied to all contexts
+# unless otherwise overridden by more specific contexts.
+[build]
+  publish = "docs/_build/html"
+  command = "npm run build && pip install -e . && make docs"
+
+[build.environment]
+  PYTHON_VERSION = "3.7"

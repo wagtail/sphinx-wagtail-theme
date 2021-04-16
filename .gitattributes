@@ -1,0 +1,15 @@
+# Enforce checkout with lf consistent over all plattforms
+*.conf      text eol=lf
+*.css       text eol=lf
+*.html      text eol=lf
+*.js        text eol=lf
+*.js_t      text eol=lf
+*.json      text eol=lf
+*.json_t    text eol=lf
+*.py        text eol=lf
+*.md        text eol=lf
+*.scss      text eol=lf
+*.svg       text eol=lf
+*.txt       text eol=lf
+*.yaml      text eol=lf
+*.yml       text eol=lf

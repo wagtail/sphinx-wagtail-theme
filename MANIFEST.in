@@ -1,0 +1,9 @@
+include AUTHORS.rst
+include CONTRIBUTING.rst
+include HISTORY.rst
+include LICENSE
+include README.md
+include USAGE.rst
+
+recursive-include sphinx_wagtail_theme *.*
+recursive-exclude sphinx_wagtail_theme .*.swp

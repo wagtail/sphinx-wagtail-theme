@@ -1,0 +1,86 @@
+
+.toc {
+    a {
+        position: relative;
+        display: inline-block;
+        line-height: 1.25;
+        padding: ($spacer / 4) 0;
+        text-decoration: none;
+    }
+
+    li {
+        margin: $size-1 0;
+    }
+
+    li:not(.toctree-l1) a {
+        border: none;
+    }
+
+    ul {
+        padding-left: $size-3;
+        list-style-type: none;
+    }
+
+    .toctree-expand {
+        position: absolute;
+        display: block;
+        top: (($spacer / 4) + ($font-size-base * 1.25 / 2));
+        left: -$size-6;
+        transform: translate(0, -50%);
+        height: 1em;
+        width: 1em;
+        background-color: theme-color('light');
+        border-radius: $border-radius;
+        &:after,
+        &:before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+        }
+        &:after {
+            width: 10px;
+            height: 0;
+            border-top: 2px solid;
+            transform: translate(-50%, -50%);
+        }
+        &:before {
+            width: 0;
+            height: 10px;
+            border-left: 2px solid;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .current > a {
+        color: theme-color('primary');
+        > .toctree-expand {
+            background-color: theme-color('primary');
+            color: color-yiq(theme-color('primary'));
+            &:before {
+                display: none;
+            }
+        }
+    }
+    > ul {
+        padding-left: 0;
+        .current {
+            > ul {
+                display: block !important;
+            }
+        }
+    }
+    > ul:not(:last-child) {
+        padding-bottom: $spacer;
+        border-bottom: 1px solid rgba(0, 0, 0, .15);
+    }
+}
+
+.site-toc .toc {
+    ul {
+        padding-left: $size-6;
+    }
+
+    ul > li ul {
+        display: none;
+    }
+}
