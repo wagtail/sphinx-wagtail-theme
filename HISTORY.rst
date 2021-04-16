@@ -2,7 +2,13 @@
 History
 =======
 
-5.0.0-a5 (unreleased)
+5.0.0-a6 (unreleased)
+=====================
+
+- Nothing changed yet.
+
+
+5.0.0-a5 (2021-04-16)
 =====================
 
 - Fix version picker (#90)
