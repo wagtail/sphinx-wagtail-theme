@@ -14,6 +14,10 @@ These overrides are necessary to make the version picker work with the Sphinx Wa
     // font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
     z-index: 400;
 
+    &.shift-up .rst-other-versions {
+        display: block;
+    }
+
     a {
         color: #2980b9;
         text-decoration: none;
@@ -97,36 +101,32 @@ These overrides are necessary to make the version picker work with the Sphinx Wa
 //     color: #000;
 // }
 
-// .rst-versions.shift-up .rst-other-versions {
-//     display: block;
-// }
+.rst-versions .rst-other-versions {
+    font-size: 90%;
+    padding: 12px;
+    color: gray;
+    display: none;
+}
 
-// .rst-versions .rst-other-versions {
-//     font-size: 90%;
-//     padding: 12px;
-//     color: gray;
-//     display: none;
-// }
+.rst-versions .rst-other-versions hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 20px 0;
+    padding: 0;
+    border-top: solid 1px #413d3d;
+}
 
-// .rst-versions .rst-other-versions hr {
-//     display: block;
-//     height: 1px;
-//     border: 0;
-//     margin: 20px 0;
-//     padding: 0;
-//     border-top: solid 1px #413d3d;
-// }
+.rst-versions .rst-other-versions dd {
+    display: inline-block;
+    margin: 0;
+}
 
-// .rst-versions .rst-other-versions dd {
-//     display: inline-block;
-//     margin: 0;
-// }
-
-// .rst-versions .rst-other-versions dd a {
-//     display: inline-block;
-//     padding: 6px;
-//     color: #fcfcfc;
-// }
+.rst-versions .rst-other-versions dd a {
+    display: inline-block;
+    padding: 6px;
+    color: #fcfcfc;
+}
 
 // .rst-versions.rst-badge {
 //     /* width: auto; */
@@ -137,6 +137,7 @@ These overrides are necessary to make the version picker work with the Sphinx Wa
 //     /* max-width: 300px; */
 //     /* max-height: 90%; */
 // }
+
 // .rst-versions.rst-badge .icon-book {
 //     float: none;
 //     line-height: 30px;
