@@ -75,6 +75,10 @@
     }
 }
 
+.page-toc {
+    font-size: ($font-size-base * 0.875);
+}
+
 .site-toc .toc {
     ul {
         padding-left: $size-6;
