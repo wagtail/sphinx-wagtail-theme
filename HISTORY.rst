@@ -5,8 +5,9 @@ History
 5.0.0-a7 (unreleased)
 =====================
 
+- De-emphasize page TOC (#98)
+- Add hidetoc, in the rst, on the first line set `:hidetoc: 1` (#97)
 - Take the full width of the view port (#94)
-- Add hidetoc, in the rst, on the first line set `:hidetoc: 1` #
 
 5.0.0-a6 (2021-04-18)
 =====================
