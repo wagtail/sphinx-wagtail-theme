@@ -5,8 +5,8 @@ History
 5.0.0-a6 (unreleased)
 =====================
 
-- Nothing changed yet.
-
+- Position search
+- Add footer block
 
 5.0.0-a5 (2021-04-16)
 =====================
