@@ -10,6 +10,12 @@
 {%- set blacklist_script_files = blacklist_script_files + ['_static/underscore.js'] -%}
 {%- set blacklist_script_files = blacklist_script_files + ['_static/doctools.js'] -%}
 {%- set blacklist_script_files = blacklist_script_files + ['_static/language_data.js'] -%}
+{%- set hidetoc = '' %}
+{%- if meta is defined %}
+    {%- if 'hidetoc' in meta.keys() %}
+        {%- set hidetoc = meta.get('hidetoc') %}
+    {%- endif %}
+{%- endif %}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
