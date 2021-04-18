@@ -2,7 +2,7 @@
 History
 =======
 
-5.0.0-a6 (unreleased)
+5.0.0-a6 (2021-04-18)
 =====================
 
 - Position search
