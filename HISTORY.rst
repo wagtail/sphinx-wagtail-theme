@@ -2,8 +2,14 @@
 History
 =======
 
-5.0.0-a7 (unreleased)
-=====================
+5.0.1 (unreleased)
+==================
+
+- Nothing changed yet.
+
+
+5.0.0 (2021-04-18)
+==================
 
 - De-emphasize page TOC (#98)
 - Add hidetoc, in the rst, on the first line set `:hidetoc: 1` (#97)
