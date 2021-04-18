@@ -2,11 +2,17 @@
 History
 =======
 
-5.0.0-a6 (unreleased)
+5.0.0-a7 (unreleased)
 =====================
 
 - Nothing changed yet.
 
+
+5.0.0-a6 (2021-04-18)
+=====================
+
+- Position search
+- Add footer block
 
 5.0.0-a5 (2021-04-16)
 =====================
