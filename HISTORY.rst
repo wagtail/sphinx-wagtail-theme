@@ -2,7 +2,7 @@
 History
 =======
 
-5.0.2 (unreleased)
+5.0.2 (2021-04-19)
 ==================
 
 - Do not render html structure if header/footer link var is empty (#101)
