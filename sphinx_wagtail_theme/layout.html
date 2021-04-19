@@ -82,15 +82,17 @@
                         {{ theme_project_name }}
                     </a>
                 {% endif %}
-                <div class="collapse navbar-collapse justify-content-end">
-                    <ul class="navbar-nav">
-                        {% for link in theme_header_links.split(',') %}
-                            {% set link_text=link.split("|")[0] %}
-                            {% set link_url=link.split("|")[1] %}
-                            <li class="nav-item"><a class="nav-link"  href="{{ link_url }}">{{ link_text }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
+                {% if theme_header_links %}
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav">
+                            {% for link in theme_header_links.split(',') %}
+                                {% set link_text=link.split("|")[0] %}
+                                {% set link_url=link.split("|")[1] %}
+                                <li class="nav-item"><a class="nav-link"  href="{{ link_url }}">{{ link_text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
                 <button class="btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
                     <span class="navbar-toggler-icon"></span>
                 </button>
