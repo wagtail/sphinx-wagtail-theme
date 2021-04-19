@@ -2,7 +2,7 @@
 History
 =======
 
-5.0.1 (unreleased)
+5.0.1 (2021-04-19)
 ==================
 
 - Hide (confusing) theme version from footer
