@@ -2,7 +2,7 @@
 History
 =======
 
-5.0.3 (unreleased)
+5.0.3 (2021-04-19)
 ==================
 
 - Only wrap search scripts with search block
