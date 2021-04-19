@@ -157,6 +157,7 @@
         </div>
     </footer>
 
+    {%- block search %}
     {% if not embedded %}
         <script type="text/javascript">
             var DOCUMENTATION_OPTIONS = {
@@ -185,6 +186,7 @@
         jQuery(function() { Search.loadIndex("{{ pathto('searchindex.js', 1) }}"); });
     </script>
     <script type="text/javascript" id="searchindexloader"></script>
+    {% endblock -%}
     {%- block scripts2 %}{% endblock -%}
     {%- block footer %}{% endblock -%}
     {%- block footer2 %}{% endblock -%}
