@@ -5,8 +5,7 @@ History
 5.0.1 (unreleased)
 ==================
 
-- Nothing changed yet.
-
+- Hide (confusing) theme version from footer
 
 5.0.0 (2021-04-18)
 ==================
