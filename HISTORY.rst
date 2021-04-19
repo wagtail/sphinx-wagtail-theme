@@ -5,8 +5,8 @@ History
 5.0.2 (unreleased)
 ==================
 
-- Nothing changed yet.
-
+- Do not render html structure if header/footer link var is empty (#101)
+- Wrap search scripts in search block (#102)
 
 5.0.1 (2021-04-19)
 ==================
