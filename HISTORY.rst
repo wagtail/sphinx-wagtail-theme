@@ -5,7 +5,7 @@ History
 5.0.3 (unreleased)
 ==================
 
-- Nothing changed yet.
+- Only wrap search scripts with search block
 
 
 5.0.2 (2021-04-19)
