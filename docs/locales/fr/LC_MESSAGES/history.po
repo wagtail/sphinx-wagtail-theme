@@ -1,0 +1,864 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# 2b805b0194c94e1ca62d1ed77123ae9f
+#: ../../../HISTORY.rst:3
+msgid "History"
+msgstr ""
+
+# 2ab3d6c6937f4c09a583c1fd0f5b30ac
+#: ../../../HISTORY.rst:6
+msgid "5.0.4 (unreleased)"
+msgstr ""
+
+# 73c7da73d62247c589d2419ee2b9b507
+#: ../../../HISTORY.rst:8
+msgid "Nothing changed yet."
+msgstr ""
+
+# d536f33eb43543f7908c798c3492cf1c
+#: ../../../HISTORY.rst:12
+msgid "5.0.3 (2021-04-19)"
+msgstr ""
+
+# a0cc57b9b6c643db9af45880531d9a64
+#: ../../../HISTORY.rst:14
+msgid "Only wrap search scripts with search block"
+msgstr ""
+
+# cd79527756e24d7cbac756459b877f11
+#: ../../../HISTORY.rst:18
+msgid "5.0.2 (2021-04-19)"
+msgstr ""
+
+# 16e9343b8fd7463ba4c14aa8a6117c1e
+#: ../../../HISTORY.rst:20
+msgid "Do not render html structure if header/footer link var is empty (#101)"
+msgstr ""
+
+# 26f86a9921a84224bfdf2ba3d348581d
+#: ../../../HISTORY.rst:21
+msgid "Wrap search scripts in search block (#102)"
+msgstr ""
+
+# 2498add8f8da4301b4dbd1363fd9b058
+#: ../../../HISTORY.rst:24
+msgid "5.0.1 (2021-04-19)"
+msgstr ""
+
+# b28eabbb40d848c0a5333dedbce0e861
+#: ../../../HISTORY.rst:26
+msgid "Hide (confusing) theme version from footer"
+msgstr ""
+
+# 338a8d505c924abb8d6085f773f613d8
+#: ../../../HISTORY.rst:29
+msgid "5.0.0 (2021-04-18)"
+msgstr ""
+
+# 72407e1c618c441891509403b8b1482c
+#: ../../../HISTORY.rst:31
+msgid "De-emphasize page TOC (#98)"
+msgstr ""
+
+# a2f58da115154aa48cf3ce1a8ee5a85a
+#: ../../../HISTORY.rst:32
+msgid "Add hidetoc, in the rst, on the first line set `:hidetoc: 1` (#97)"
+msgstr ""
+
+# 8bb3a65788c543379885fef264e62c58
+#: ../../../HISTORY.rst:33
+msgid "Take the full width of the view port (#94)"
+msgstr ""
+
+# b45c83bbc61241c78ff172051f15ddfe
+#: ../../../HISTORY.rst:36
+msgid "5.0.0-a6 (2021-04-18)"
+msgstr ""
+
+# f9015e6525694d52bd98a14ee885eef3
+#: ../../../HISTORY.rst:38
+msgid "Position search"
+msgstr ""
+
+# 9b18f4f1ea7c4945875d87b28e9fb56a
+#: ../../../HISTORY.rst:39
+msgid "Add footer block"
+msgstr ""
+
+# ce913c05bfd847cab85b2098496440e2
+#: ../../../HISTORY.rst:42
+msgid "5.0.0-a5 (2021-04-16)"
+msgstr ""
+
+# fa33ab73c018484a9171f8e3fe123252
+#: ../../../HISTORY.rst:44
+msgid "Fix version picker (#90)"
+msgstr ""
+
+# a3b047c07efe42c09b5cbc59d5f7c7d7
+#: ../../../HISTORY.rst:45
+msgid "Revert \"Finish deleting Read the Docs integration. Fix #54\""
+msgstr ""
+
+# 85059cc76dfb4facaa604643fb601dc0
+#: ../../../HISTORY.rst:46
+msgid "Remove unused theme options"
+msgstr ""
+
+# 8a56972d1372440ea22950a977d2df9e
+#: ../../../HISTORY.rst:47
+msgid "Simplify Github url, always edit main"
+msgstr ""
+
+# e2b69e52b30245fd9281122579925703
+#: ../../../HISTORY.rst:48
+msgid "Pin Sphinx version to match Read the Docs (#93)"
+msgstr ""
+
+# 3a82494df8cf4c7894a9e29688631cbe
+#: ../../../HISTORY.rst:51
+msgid "5.0.0-a4 (2021-04-14)"
+msgstr ""
+
+# 2d7ec30537a241fcae31dd0d47304d4d
+#: ../../../HISTORY.rst:53
+msgid "Remove http-server from devDependencies"
+msgstr ""
+
+# 378510bc54e0488fbb523ddcf9c25793
+#: ../../../HISTORY.rst:54
+msgid "Remove bootstrap.bundle.min.js from layout"
+msgstr ""
+
+# 305efc361ebb437caf50d749f5dc5c2c
+#: ../../../HISTORY.rst:55
+msgid "Makefile: add missing requirements.txt install step"
+msgstr ""
+
+# ce887f32c6444c9b8e0dabad79e730bf
+#: ../../../HISTORY.rst:56
+msgid "Fix: Autodoc white text"
+msgstr ""
+
+# 2bd5096260774df9a6ebf4bbf52a9666
+#: ../../../HISTORY.rst:57
+msgid "Explicitly define col widths"
+msgstr ""
+
+# fc939144225944439c0e2a3aed90674f
+#: ../../../HISTORY.rst:58
+msgid "Fix: Link style"
+msgstr ""
+
+# ba23b5028be349ed8517f29002d002f9
+#: ../../../HISTORY.rst:59
+msgid "Fix: Page toc levels"
+msgstr ""
+
+# b0386254b4d847bd861ed8f269a86be0
+#: ../../../HISTORY.rst:60
+msgid "Pin docutils to 0.16 because of recommonmark issue"
+msgstr ""
+
+# f23dc608fb45425dbcf2a8f9401317e3
+#: ../../../HISTORY.rst:61
+msgid "Revert \"Remove obsolete pages\""
+msgstr ""
+
+# 5622e6faa3894d578296b3fd4577b66e
+#: ../../../HISTORY.rst:62
+msgid "Remove obsolete pages"
+msgstr ""
+
+# fb958c3636744c14b979eccc4fac14f5
+#: ../../../HISTORY.rst:63
+msgid "Fix Django code snippet declaration"
+msgstr ""
+
+# 4b8d32cacbef4c1598f68464c51fd11b
+#: ../../../HISTORY.rst:64
+msgid "Extend python and js code block examples"
+msgstr ""
+
+# 0b7c1783cc924bb49aa0e4b318d411a5
+#: ../../../HISTORY.rst:65
+msgid "Add reStructuredText page from Wagtail Docs"
+msgstr ""
+
+# 6d9893f6ae224354bbc3a0d39cde3f88
+#: ../../../HISTORY.rst:66
+msgid "Add progressive disclosure example page"
+msgstr ""
+
+# 5e3c8c6f8b374fa4b2488c7b701a2369
+#: ../../../HISTORY.rst:67
+msgid "Add code only heading to examples"
+msgstr ""
+
+# b7c611721a7946bbb2243ac1f675de3b
+#: ../../../HISTORY.rst:68
+msgid "Move example to end of index"
+msgstr ""
+
+# 0f01f50feccd44cdbc3e538dee531f13
+#: ../../../HISTORY.rst:69
+msgid "Add version change metadata example page"
+msgstr ""
+
+# 5064f0ded90149359381188bb7dcef20
+#: ../../../HISTORY.rst:70
+msgid "Add example pages"
+msgstr ""
+
+# 02fbe84eb4534d99af75e260734942db
+#: ../../../HISTORY.rst:71
+msgid "Add additional configuration for markdown support"
+msgstr ""
+
+# 8de0140002224684b278f6cbe80f5c2f
+#: ../../../HISTORY.rst:72
+msgid "Add other typical venv folder names to gitignore"
+msgstr ""
+
+# 407272d3d8f94b2a8f62141823885a79
+#: ../../../HISTORY.rst:75
+msgid "5.0.0-a3 (2021-03-28)"
+msgstr ""
+
+# be253f78b47544bab518c25cfbc316b7
+#: ../../../HISTORY.rst:77
+msgid "Remove unused SCSS components"
+msgstr ""
+
+# 76cfc6442ebb49c08d3473715a4a341f
+#: ../../../HISTORY.rst:78
+msgid "Add vertical space around content header hr"
+msgstr ""
+
+# e018058d861245eab89eed796b8dd742
+#: ../../../HISTORY.rst:79
+msgid "Add search bar style as per design"
+msgstr ""
+
+# 40334cbc68fe491995fd771131d67303
+#: ../../../HISTORY.rst:80
+msgid "Only show source buttons on large displays"
+msgstr ""
+
+# 7a0dd372396d4657ae3cff42a3a32d34
+#: ../../../HISTORY.rst:81
+msgid "Simplify pagination bootstrap use"
+msgstr ""
+
+# d28e9752c92f4254b08c257d0009abf8
+#: ../../../HISTORY.rst:82
+msgid "Light github button"
+msgstr ""
+
+# 5a084b87998c43eb8eeef3e64d44612f
+#: ../../../HISTORY.rst:83
+msgid "Update breadcumb sep and start"
+msgstr ""
+
+# 5d3fb35f9a014af19a003c24752bfc84
+#: ../../../HISTORY.rst:84
+msgid "Implement breadcrumbs with bootstrap"
+msgstr ""
+
+# b55af69995c643e19152710a61688575
+#: ../../../HISTORY.rst:85
+msgid "Use semantic elements for body content"
+msgstr ""
+
+# b179bc4978d846b8bb25ddcc54c40b29
+#: ../../../HISTORY.rst:86
+msgid "Split breadcrumbs and source buttons"
+msgstr ""
+
+# 1e02346ebe33492c997b6a79abae8562
+#: ../../../HISTORY.rst:87
+msgid "Remove hidden pager, it never rendered anything."
+msgstr ""
+
+# 9d833e56d4794ef584fbd8c4f1a6a1ba
+#: ../../../HISTORY.rst:88
+msgid "Simplify sidebar structure"
+msgstr ""
+
+# 87bedabe668f4c95859187f50d74eadb
+#: ../../../HISTORY.rst:89
+msgid "Add toc class but remove unneeded styles"
+msgstr ""
+
+# 0404db9cd60e44748c2f0994ffecc98b
+#: ../../../HISTORY.rst:90
+msgid "Remove toctree title"
+msgstr ""
+
+# f1595ac284b24f10a5046b359f30ac62
+#: ../../../HISTORY.rst:91
+msgid "Simplify TOC ordering"
+msgstr ""
+
+# 13068c398ffb4810ac7b1c96e011e605
+#: ../../../HISTORY.rst:92
+msgid "Fix TOC positioning for pages without TOC"
+msgstr ""
+
+# 19224e9f919c487ebbca6a8b3046ca26
+#: ../../../HISTORY.rst:93
+msgid "Simplify toc positioning with bootstrap"
+msgstr ""
+
+# cb83ada2b44147718e09decf9a20d59f
+#: ../../../HISTORY.rst:94
+msgid "Use root as logo link"
+msgstr ""
+
+# a65235b53ee449f8b32ffda2a494919c
+#: ../../../HISTORY.rst:95
+msgid "Ensure responsive images"
+msgstr ""
+
+# 20a2ef0fb2e7496da3be42e188873618
+#: ../../../HISTORY.rst:96
+msgid "Simplify header and footer structure"
+msgstr ""
+
+# 71eb9b8757f74e3e8cad6f1eb83cb497
+#: ../../../HISTORY.rst:97
+msgid "Move sidebar toggle to header"
+msgstr ""
+
+# 4d9e003c695b45cf954d243879181fe7
+#: ../../../HISTORY.rst:98
+msgid "Import bootstrap in theme.js"
+msgstr ""
+
+# 5974a37ba564494dae6d0f6c6bb64dab
+#: ../../../HISTORY.rst:99
+msgid "Remove pageheader block definition"
+msgstr ""
+
+# 8351dcae5c584e608f3e648452bd3e59
+#: ../../../HISTORY.rst:100
+msgid "Hide header links below large screens"
+msgstr ""
+
+# e8104dce15544e9b95429add5e94c757
+#: ../../../HISTORY.rst:101
+msgid "Implement footer links like header links"
+msgstr ""
+
+# c4fd008396c146f592823a803c6954fc
+#: ../../../HISTORY.rst:102
+msgid "Simplify header link implementation"
+msgstr ""
+
+# b5c48b8320cf42f6b40c60f1c065c759
+#: ../../../HISTORY.rst:103
+msgid "Remove unused variables"
+msgstr ""
+
+# e79efd165f654269ad243a196cbe27ff
+#: ../../../HISTORY.rst:104
+msgid "Fix use of theme options"
+msgstr ""
+
+# 8f86142551744c2e83a9fbd5ac254388
+#: ../../../HISTORY.rst:105
+msgid "Remove typo3 specific variables"
+msgstr ""
+
+# 482b797a76a743119942a2ead27c8022
+#: ../../../HISTORY.rst:106
+msgid "Use Bootstrap for header, main and footer"
+msgstr ""
+
+# eb917bcae62b4149ae6c543d2ffd2f25
+#: ../../../HISTORY.rst:107
+msgid "Remove page content from main nav"
+msgstr ""
+
+# 1d7f4992f1f44e72a350552b47fa6f64
+#: ../../../HISTORY.rst:108
+msgid "Change theme name in footer"
+msgstr ""
+
+# 3e478cb1e7d54f5cb9b2e9ef6799d849
+#: ../../../HISTORY.rst:109
+msgid "Remove typo3 analytics scripts"
+msgstr ""
+
+# aa308644dcf242ce9d58ac31c5ca3f6b
+#: ../../../HISTORY.rst:110
+msgid "Remove commented elements"
+msgstr ""
+
+# f92acea69ce84d36a4b7e30ebf2ca266
+#: ../../../HISTORY.rst:111
+msgid "Remove theme title from sidebar nav"
+msgstr ""
+
+# abf446b70607449bbb87530af71621ee
+#: ../../../HISTORY.rst:112
+msgid "Remove typo3 universe bar"
+msgstr ""
+
+# e58472bb4a084a0c85c86d2b8e766c3c
+#: ../../../HISTORY.rst:113
+msgid "Update screenshot"
+msgstr ""
+
+# 71a5197a173344329dd39884625e160a
+#: ../../../HISTORY.rst:114
+msgid "Document node version 14"
+msgstr ""
+
+# 674ff9b6f34b495d92712e500539e02d
+#: ../../../HISTORY.rst:115
+msgid "Move release process to readme"
+msgstr ""
+
+# 1472260d7ccc4ea8a95cfb14c62669a6
+#: ../../../HISTORY.rst:116
+msgid "Netlify for build previews"
+msgstr ""
+
+# 306d1618c83a48eea27442b740d615a9
+#: ../../../HISTORY.rst:117
+msgid "Switch from yarn to npm (#58)"
+msgstr ""
+
+# 1b72e048659440eda5116e572e1e3800
+#: ../../../HISTORY.rst:118
+msgid "Fix CI urls"
+msgstr ""
+
+# 8f79370b6679402196218143a83a3235
+#: ../../../HISTORY.rst:121
+msgid "5.0.0-a2 (2021-03-17)"
+msgstr ""
+
+# 5342fd19b13e405480f9d81382f22418
+#: ../../../HISTORY.rst:123
+msgid "Include `/static/dist`"
+msgstr ""
+
+# b161722872204691888ebfb692dea01d
+#: ../../../HISTORY.rst:127
+msgid "5.0.0-a1 (2021-03-17)"
+msgstr ""
+
+# a3e0ef230cb24e2e8d9deb4313999698
+#: ../../../HISTORY.rst:129
+msgid "Clean up and simplify CI build"
+msgstr ""
+
+# 52f305bcc108400a8050b1d6cd420101
+#: ../../../HISTORY.rst:130
+msgid "Add Netlify build configuration"
+msgstr ""
+
+# 8b3d67a78ec24fac9e7aa53909e576f9
+#: ../../../HISTORY.rst:131
+msgid "Use sass package instead of node-sass"
+msgstr ""
+
+# 40f8a4432f8f49efa96c623685cccc9c
+#: ../../../HISTORY.rst:132
+msgid "Set webpack mode as cli option"
+msgstr ""
+
+# e6ad4a3bf7e9480da3bc9f7147a885bd
+#: ../../../HISTORY.rst:133
+msgid "Use Node.js 14"
+msgstr ""
+
+# 8b4865a3e814441a9a50fbdfd4b959df
+#: ../../../HISTORY.rst:134
+msgid "Use webpack instead of grunt"
+msgstr ""
+
+# e1434e85d3a6426693132333da0b6f72
+#: ../../../HISTORY.rst:135
+msgid "Clean up layout"
+msgstr ""
+
+# 0ac11a661ba44946b58df242a918d57a
+#: ../../../HISTORY.rst:138
+msgid "5.0.0-a0 (2021-03-10)"
+msgstr ""
+
+# c2883b24ac6f4cf2ba9ab867df55b09f
+#: ../../../HISTORY.rst:140
+msgid "Rename Sphinx Typo3 Theme to Sphinx Wagtail Theme"
+msgstr ""
+
+# 8f7aa492657e4d2b8bad173fd4332d22
+#: ../../../HISTORY.rst:141
+msgid "Add initial Wagtail styling"
+msgstr ""
+
+# 61e62c28d79b4f38bd2f129f51116270
+#: ../../../HISTORY.rst:142
+msgid "Initial setup of Wagtail theme CI and release"
+msgstr ""
+
+# 5d1619d58abf4e58b202ffb154798b02
+#: ../../../HISTORY.rst:145
+msgid "4.4.3 (2021-01-20)"
+msgstr ""
+
+# 4d9b320258c843eeba0a3b86b10e8bab
+#: ../../../HISTORY.rst:147
+msgid "37af740 Raise full width break point from 1800px to 2049px"
+msgstr ""
+
+# 10dd691fdedf4df08d5b72755cd2a4a6
+#: ../../../HISTORY.rst:151
+msgid "4.4.2 (2021-01-06)"
+msgstr ""
+
+# df095b8ce87645d4946e52de0fc8de18
+#: ../../../HISTORY.rst:153
+msgid "8b1f5c3 Style index page genindex.html (issue #99)"
+msgstr ""
+
+# 37838260308e497b98e80dd62afdf1e1
+#: ../../../HISTORY.rst:157
+msgid "4.4.1 (2020-12-10)"
+msgstr ""
+
+# 3e4e8560a66e48deb9627d4f405721c4
+#: ../../../HISTORY.rst:159
+msgid "5fb7837 Fix css for images and figures"
+msgstr ""
+
+# e12c57266adb48499d3662cc2d7bfad9
+#: ../../../HISTORY.rst:163
+msgid "4.4.0 (2020-12-07)"
+msgstr ""
+
+# 9c440b1afaab403391bf7fb0ff47d658
+#: ../../../HISTORY.rst:165
+msgid "daf6211 [FEATURE] Provide for Sphinx extension sphinx-tabs"
+msgstr ""
+
+# 6229cffb00b2446382aa25dc6efa94e1
+#: ../../../HISTORY.rst:169
+msgid "4.3.1 (2020-12-01)"
+msgstr ""
+
+# d3757bd12cf14ebb8cbdf0906198e775
+#: ../../../HISTORY.rst:171
+#, python-format
+msgid "e67d144 Use max-width:100% for PlantUML objects"
+msgstr ""
+
+# a3401ccebec64977850c7b877ccfd898
+#: ../../../HISTORY.rst:175
+msgid "4.3.0 (2020-11-30)"
+msgstr ""
+
+# 637b7ef63de9469dbba55debdac00af2
+#: ../../../HISTORY.rst:177
+msgid "5ac9115 v4.3.0"
+msgstr ""
+
+# 1580eef8358c410b85b40f2544f1bfbf
+#: ../../../HISTORY.rst:178
+msgid "d605a2c Update .compact-list, only for screens >=992px"
+msgstr ""
+
+# 7134236fb0ad4e3bb6769e8d069f5f87
+#: ../../../HISTORY.rst:179
+msgid "e886449 Bring back .compact-list, remove Figure:"
+msgstr ""
+
+# 60256174cec443e8948ae7204feb571f
+#: ../../../HISTORY.rst:180
+msgid "f56aeea Fix indent of nested .line-block"
+msgstr ""
+
+# 7258e91f341f479eadaef12c33e30b51
+#: ../../../HISTORY.rst:181
+msgid "604eee1 Issue #14: Tweak $box-shadow-sm"
+msgstr ""
+
+# c540421a900d431c91bff86454e8376e
+#: ../../../HISTORY.rst:182
+msgid "7d52ca8 Enable sourceMap in Gruntfile.js"
+msgstr ""
+
+# 55efe3d3f52a474c86ec1acefb5d3e2a
+#: ../../../HISTORY.rst:183
+msgid "53012f5 Update yarn.lock - apply security updates reported by GitHub"
+msgstr ""
+
+# 283ddc43e49b46a3a952b8c11ae67207
+#: ../../../HISTORY.rst:184
+msgid "0ffa575 Update flake8 exclude - don't check ``*GENERATED*`` files"
+msgstr ""
+
+# dadfc7c42674424085182649d08c69ba
+#: ../../../HISTORY.rst:185
+msgid "1225ec1 Add styles .centered, .rubric - add css classes"
+msgstr ""
+
+# 849af33540864855a88c7193d2eb6fec
+#: ../../../HISTORY.rst:186
+msgid "14eea54 Update style p.attribution - style attribution in blockquotes"
+msgstr ""
+
+# 1c1fdd8c7fbc465caa410ccae6594924
+#: ../../../HISTORY.rst:187
+msgid "56bbb03 Update style .versionmodified - make 'versionadded' stick out"
+msgstr ""
+
+# 6b1c675396f443ea82b722f6e087e98f
+#: ../../../HISTORY.rst:188
+msgid ""
+"0610ae2 [FEATURE] Issue #80: Breakpoint to allow width:99999px - use "
+"total width for screens >= 1800px"
+msgstr ""
+
+# b2261ecb96d24f96b4e3c2809f8c8dc1
+#: ../../../HISTORY.rst:193
+msgid "4.2.1 (2020-05-20)"
+msgstr ""
+
+# eba57d4e89934e5088bad9ae1c645d16
+#: ../../../HISTORY.rst:195
+msgid "Add PAGE CONTENTS above the menu of intra-page links"
+msgstr ""
+
+# 57f3cc79e7dc435c82add05ae9b3e7ab
+#: ../../../HISTORY.rst:199
+msgid "4.2.0 (2020-05-08)"
+msgstr ""
+
+# 379f2e1aa064472ead7b44a651cdd606
+#: ../../../HISTORY.rst:201
+msgid "Overview"
+msgstr ""
+
+# 86ce5db6a42045d4becc2bfd3eecd85b
+#: ../../../HISTORY.rst:203
+msgid ""
+"If used with Sphinx extension `sphinxcontrib-gitloginfo "
+"<https://github.com/TYPO3-Documentation/sphinxcontrib-gitloginfo/>`_ meta"
+" tags with the 'last modified' date may now be added to the page html "
+"head section. A 'Last updated' line can be shown in the footer with a "
+"link to the latest commit."
+msgstr ""
+
+# 150cc8c939b44cdb959009969605f155
+#: ../../../HISTORY.rst:209
+msgid ""
+"For search result pages a link will appear to deselect hightlighting of "
+"search text hits."
+msgstr ""
+
+# fcdb233d23d34bd0873c003ebc238ad2
+#: ../../../HISTORY.rst:212
+msgid "The intra page menu is now appended to the left menu column of the page."
+msgstr ""
+
+# 11165ff2383f40ad9ff61598177d4cfb
+#: ../../../HISTORY.rst:214
+msgid "The logo is now defineable in the theme configuration file `theme.conf`."
+msgstr ""
+
+# d2b6ba8868284beb952dea1aed1e3899
+#: ../../../HISTORY.rst:216
+msgid "Some commits:"
+msgstr ""
+
+# 560bba4e2b7240a2a115f2fbe4a1c235
+#: ../../../HISTORY.rst:218
+msgid ""
+"d5cc051 [BUGFIX] Supply missing options in theme.conf to remove warnings "
+"about non existing theme options"
+msgstr ""
+
+# e426e5afe2534ea69c48806b11a383a4
+#: ../../../HISTORY.rst:220
+msgid ""
+"a69e91b [FEATURE] Always show table of contents {{ toc }} to get back "
+"\"the third level\" in the page menu"
+msgstr ""
+
+# d8d5e9328aa64f978066cd1347ed6d78
+#: ../../../HISTORY.rst:222
+msgid "e5f8b9c [FEATURE] Add date_last_modified and commit_url to footer"
+msgstr ""
+
+# b49567d2b364447b8a88aaec1f969145
+#: ../../../HISTORY.rst:223
+msgid ""
+"14c3f6a Update whitespace control in html templates to further beautify "
+"the indentation of generated html"
+msgstr ""
+
+# 0e886b9033e24eae990e83ed79dd61a9
+#: ../../../HISTORY.rst:225
+msgid "4da72be [FEATURE] Add last_updated_isoformat to meta data in html head"
+msgstr ""
+
+# 3611126880d5467eaf6f73ec00a97974
+#: ../../../HISTORY.rst:226
+msgid "e1061a2 [TASK] Update docsearch meta tags"
+msgstr ""
+
+# 80fa1ff020184e769e51bdbc3bf8408d
+#: ../../../HISTORY.rst:227
+msgid "a6605e0 [FEATURE] Make logo defineable in theme.conf"
+msgstr ""
+
+# feb688bf69af48569895de8e6941dbd0
+#: ../../../HISTORY.rst:228
+msgid "9b25042, 54d580e Improve page template \"layout.html\""
+msgstr ""
+
+# 0a092376d74b4f1eadd83ae29b1f79b0
+#: ../../../HISTORY.rst:229
+msgid "cfb7081 Update documentation"
+msgstr ""
+
+# b60beb345aed48348244ecef2eab4cac
+#: ../../../HISTORY.rst:230
+msgid "5f8cd43 Upgrade Javascript packages"
+msgstr ""
+
+# d92d6ed465884e2e9d2bf5f3dd124362
+#: ../../../HISTORY.rst:231
+msgid ""
+"cbeac0c Have link \"Hide Search Matches\" appear on a page with the "
+"search result to turn off the highlighting of the hits of the searched "
+"text"
+msgstr ""
+
+# 40d359c4a48f4197a4446c0b5cbcd6a2
+#: ../../../HISTORY.rst:236
+msgid "4.1.3 (2020-02-25)"
+msgstr ""
+
+# 5a92ef912dd64b5a942bee235dc3b2d3
+#: ../../../HISTORY.rst:238
+msgid "Update documentation"
+msgstr ""
+
+# 6054d398080f4f11be57a72b8caf052f
+#: ../../../HISTORY.rst:239
+msgid "Have {{ theme_version }} in page context"
+msgstr ""
+
+# 0074f5f0e4c848dd9112e485e750aeeb
+#: ../../../HISTORY.rst:243
+msgid "4.1.2 (2020-02-25)"
+msgstr ""
+
+# b5b8b37a45294fb4965535362f2688ff
+#: ../../../HISTORY.rst:245
+msgid "Fix workflow, adapt docs"
+msgstr ""
+
+# 7628b0a8cba14e5db11a202c4a58412a
+#: ../../../HISTORY.rst:249
+msgid "4.1.1 (2020-02-24)"
+msgstr ""
+
+# 69b2e1d999d6486babec3d4edb73f755
+#: ../../../HISTORY.rst:251
+msgid "a907b05 Update documentation"
+msgstr ""
+
+# 93fbd8086d7d46ccb687b72c50109ad0
+#: ../../../HISTORY.rst:252
+msgid "f6e0b22 Update python_requires in setup.py"
+msgstr ""
+
+# dfd0a19e21f54d769a9d26d11fc8521d
+#: ../../../HISTORY.rst:253
+msgid "94e0f8f Make installation via entry_points work"
+msgstr ""
+
+# 7e7d72c9f4ff494a940640f0787943c3
+#: ../../../HISTORY.rst:254
+msgid "4282600 Simplify conf.py in workflow"
+msgstr ""
+
+# bf416caaeabd44fbbf904fff58d901e4
+#: ../../../HISTORY.rst:255
+msgid "a06ddbb Upload to CDN with as well"
+msgstr ""
+
+# 3a5186a7777445d99455d09e42e0e8a3
+#: ../../../HISTORY.rst:259
+msgid "4.1.0 (2020-02-24)"
+msgstr ""
+
+# 0af31d55fb4841f2897d6af12d708f0f
+#: ../../../HISTORY.rst:261
+msgid "\"Let's start\" release"
+msgstr ""
+
+# 9ff9aeae6fcd4ad8aa69874ee7817a01
+#: ../../../HISTORY.rst:263
+msgid "Elaborate workflow"
+msgstr ""
+
+# 650976307a684ccfb012142af2e10644
+#: ../../../HISTORY.rst:264
+msgid "Add Makefile"
+msgstr ""
+
+# f366f0017507453a83f41daea122570c
+#: ../../../HISTORY.rst:265
+msgid "Add Python unit test"
+msgstr ""
+
+# af8982d5d18c4a76b4de0a38f2d73ed1
+#: ../../../HISTORY.rst:266
+msgid "Add docs"
+msgstr ""
+
+# 9479903ca8584cec8720254cabbbcdf0
+#: ../../../HISTORY.rst:267
+msgid "Deploy docs to Github pages"
+msgstr ""
+
+# b0836cf8b331481d9b06fa6efb63f275
+#: ../../../HISTORY.rst:268
+msgid "Tune setup.py and 'version from repo' procedure"
+msgstr ""
+
+# 7aef367acdc840bb8a0def99438ef16c
+#: ../../../HISTORY.rst:272
+msgid "0.1.0 (2020-01-01)"
+msgstr ""
+
+# 288943bbabd9485284a19c5dbc8a7e06
+#: ../../../HISTORY.rst:274
+msgid "Starting development."
+msgstr ""
+

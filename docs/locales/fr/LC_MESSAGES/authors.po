@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# 008cbe643e0d47828616550c9421912d
+#: ../../../AUTHORS.rst:4
+msgid "Authors"
+msgstr "Auteurs"
+
+# 0e98e24bdc154fe8aa089c006527fdd4
+#: ../../../AUTHORS.rst:6
+msgid "Thibaud Colas"
+msgstr ""
+
+# e9634604a2a344d9bd657e4efe51f68e
+#: ../../../AUTHORS.rst:7
+msgid "Storm Heg"
+msgstr ""
+
+# cadaf020ce80437e9ddfa55b90725a0c
+#: ../../../AUTHORS.rst:8
+msgid "Tibor Leupold"
+msgstr ""
+
+# 8646e2f64e0d4ffe866211c1aba4debf
+#: ../../../AUTHORS.rst:9
+msgid "Coen van der Kamp"
+msgstr ""
+
+# 608f7d8be6bf4c97bea21e93be8fe577
+#: ../../../AUTHORS.rst:11
+msgid "Sphinx Wagtail theme is based on Sphinx Typo3 theme written by:"
+msgstr "Sphinx Wagtail thème est basé sur Sphinx Typo3 thème écri par:"
+
+# 2a679394c18f42368f763315811f376a
+#: ../../../AUTHORS.rst:13
+msgid "Martin Bless"
+msgstr ""
+
+# b5f3028611744cb6bc4e0f908f269e5f
+#: ../../../AUTHORS.rst:14
+msgid "Benjamin Kott"
+msgstr ""
+

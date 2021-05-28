@@ -1,0 +1,352 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# 79a3dcf92d1b47c08e4a07f97d1557e6
+#: ../../examples/autodoc.md:1
+msgid "Autodoc"
+msgstr ""
+
+# 77cccaa426b74f5b93a64f16e59109a2
+#: ../../examples/autodoc.md:3
+msgid ""
+"With its autodoc feature, Sphinx supports writing documentation in Python"
+" docstrings for subsequent integration in the project’s documentation "
+"pages. This is a very powerful feature which we highly recommend using to"
+" document Wagtail’s APIs."
+msgstr ""
+
+# 43d51ed2712641ecb9ce6c50f443b759
+#: ../../examples/autodoc.md:6
+msgid ""
+"For Sphinx (actually, the Python interpreter that executes Sphinx) to "
+"find your module, it must be importable. That means that the module or "
+"the package must be in one of the directories on sys.path – adapt your "
+"sys.path in the configuration file accordingly."
+msgstr ""
+
+# 41bbee285ec64d67b669f5f15270af89
+#: ../../examples/autodoc.md:9
+msgid ""
+"The following uses a flake8 module as an example, because flake8 is "
+"installed in the theme development environment and had many docstings."
+msgstr ""
+
+# fc539719c7fd42f08e3c42c910693179
+#: ../../examples/autodoc.md:11
+msgid "flake8.main.application"
+msgstr ""
+
+# d464b90ef1094e219f2e4f249cf9d6ab
+#: flake8.main.application:1 of
+msgid "Module containing the application logic for Flake8."
+msgstr ""
+
+# fad432bc1eb64a7299ab0a34b52ac050
+#: flake8.main.application.Application:1 of
+msgid "Abstract our application into a class."
+msgstr ""
+
+# cdd39f9b69da4ee599827cac9602865d
+#: flake8.main.application.Application.args:1 of
+msgid "The left over arguments that were not parsed by :attr:`option_manager`"
+msgstr ""
+
+# 0a8ec4afd39b41759986899228cc73f6
+#: flake8.main.application.Application.catastrophic_failure:1 of
+msgid ""
+"Whether or not something catastrophic happened and we should exit with a "
+"non-zero status code"
+msgstr ""
+
+# 78803c65811c43e7ac7aa2d1629f6b4a
+#: flake8.main.application.Application.check_plugins:1 of
+msgid "The instance of :class:`flake8.plugins.manager.Checkers`"
+msgstr ""
+
+# ba6044e6f0e14a0ba12abe0fd4a71e9d
+#: flake8.main.application.Application.end_time:1 of
+msgid "The timestamp when the Application finished reported errors."
+msgstr ""
+
+# 8e564760376f4b2d98efbdd1c9e61b9f
+#: flake8.main.application.Application.exit:1 of
+msgid "Handle finalization and exiting the program."
+msgstr ""
+
+# b9569829c01445e2ad622c073e2bffd5
+#: flake8.main.application.Application.exit:3 of
+msgid ""
+"This should be the last thing called on the application instance. It will"
+" check certain options and exit appropriately."
+msgstr ""
+
+# 9e8aaa2a7051413fa495c4c9a56bae09
+#: flake8.main.application.Application.file_checker_manager:1 of
+msgid ""
+"The :class:`flake8.checker.Manager` that will handle running all of the "
+"checks selected by the user."
+msgstr ""
+
+# b85b9225ba674d05a11dc838f72fe571
+#: flake8.main.application.Application.find_plugins:1 of
+msgid "Find and load the plugins for this application."
+msgstr ""
+
+# bb35376c135f48b99f8e53f7a0846546
+#: flake8.main.application.Application.find_plugins:3 of
+msgid ""
+"Set the :attr:`check_plugins` and :attr:`formatting_plugins` attributes "
+"based on the discovered plugins found."
+msgstr ""
+
+# 2b6c070e38df40a8b45d9ad28219b7b8
+# 008c86aaaa5a4c729585b98e0cd9c453
+# f2732b6d44f441468c38db7234baa243
+# d4f499ad15c4461cb9f446c3db280d33
+#: flake8.main.application.Application.find_plugins
+#: flake8.main.application.Application.parse_configuration_and_cli
+#: flake8.main.application.Application.parse_preliminary_options
+#: flake8.main.application.Application.run_checks of
+msgid "Parameters"
+msgstr ""
+
+# 1e97dd45f29e4ccd848c16f3ee4a6e0b
+# a19f3280a6a4430c89fd7f498c769a76
+#: flake8.main.application.Application.find_plugins:6
+#: flake8.main.application.Application.parse_configuration_and_cli:3 of
+msgid "The finder for finding and reading configuration files."
+msgstr ""
+
+# 6f0c00f4c79a451f91481a6165f51dfc
+#: flake8.main.application.Application.formatter:1 of
+msgid "The user-selected formatter from :attr:`formatting_plugins`"
+msgstr ""
+
+# 88e436d111c247cfa95fc0e15497bc3b
+#: flake8.main.application.Application.formatter_for:1 of
+msgid "Retrieve the formatter class by plugin name."
+msgstr ""
+
+# 4c72d587e9d64b8f9f48a08d71f4da3c
+#: flake8.main.application.Application.formatting_plugins:1 of
+msgid "The instance of :class:`flake8.plugins.manager.ReportFormatters`"
+msgstr ""
+
+# 61bac31e9dde455f98a1b874b315dcd6
+#: flake8.main.application.Application.guide:1 of
+msgid ""
+"The :class:`flake8.style_guide.StyleGuideManager` built from the user's "
+"options"
+msgstr ""
+
+# 079736b23fe04e4c9442cdeea7f9223b
+#: flake8.main.application.Application.initialize:1 of
+msgid "Initialize the application to be run."
+msgstr ""
+
+# 1df4c20a31ae4d798ab2727f6717cccb
+#: flake8.main.application.Application.initialize:3 of
+msgid ""
+"This finds the plugins, registers their options, and parses the command-"
+"line arguments."
+msgstr ""
+
+# 6c6423ea32474a6e9356a061a80e2020
+#: flake8.main.application.Application.make_file_checker_manager:1 of
+msgid "Initialize our FileChecker Manager."
+msgstr ""
+
+# 38c783d1c90a4a2daa8862201c29d226
+#: flake8.main.application.Application.make_formatter:1 of
+msgid "Initialize a formatter based on the parsed options."
+msgstr ""
+
+# 885fd0f612bb49f6a423a7003d26c65a
+#: flake8.main.application.Application.make_guide:1 of
+msgid "Initialize our StyleGuide."
+msgstr ""
+
+# d50c151511184f11a00e1f306a52fc10
+#: flake8.main.application.Application.option_manager:1 of
+msgid ""
+"The instance of :class:`flake8.options.manager.OptionManager` used to "
+"parse and handle the options and arguments passed by the user"
+msgstr ""
+
+# 33bdd32401d748d69c7743c7a22e4981
+#: flake8.main.application.Application.options:1 of
+msgid ""
+"The user-supplied options parsed into an instance of "
+":class:`argparse.Namespace`"
+msgstr ""
+
+# 45de18deab004cef890c4238d54d7ed1
+#: flake8.main.application.Application.parse_configuration_and_cli:1 of
+msgid "Parse configuration files and the CLI options."
+msgstr ""
+
+# cd20b08a58174bf48d13ea89206a05ff
+# 61b6c3bafc6a492488bedd88cd366c2b
+#: flake8.main.application.Application.parse_configuration_and_cli:5
+#: flake8.main.application.Application.parse_preliminary_options:10 of
+msgid "Command-line arguments passed in directly."
+msgstr ""
+
+# a276fc29dec64708aca6f59a5b3ad4cd
+#: flake8.main.application.Application.parse_preliminary_options:1 of
+msgid "Get preliminary options from the CLI, pre-plugin-loading."
+msgstr ""
+
+# dd7b08490ef140b4a0ff17549e800657
+#: flake8.main.application.Application.parse_preliminary_options:3 of
+msgid ""
+"We need to know the values of a few standard options so that we can "
+"locate configuration files and configure logging."
+msgstr ""
+
+# 7368e89473cf4c0fa0a7b8abcbfaab51
+#: flake8.main.application.Application.parse_preliminary_options:6 of
+msgid ""
+"Since plugins aren't loaded yet, there may be some as-yet-unknown "
+"options; we ignore those for now, they'll be parsed later when we do real"
+" option parsing."
+msgstr ""
+
+# 470d1f08ab31417cb6fa24b6c1990f34
+#: flake8.main.application.Application.parse_preliminary_options of
+msgid "Returns"
+msgstr ""
+
+# f03b14b7e996425bab084cb8b47dd614
+#: flake8.main.application.Application.parse_preliminary_options:12 of
+msgid "Populated namespace and list of remaining argument strings."
+msgstr ""
+
+# aa625eab20a14a7aa60b26d9d7325e3a
+#: flake8.main.application.Application.parse_preliminary_options of
+msgid "Return type"
+msgstr ""
+
+# 8737fb40fda4443682ca6baf13f29c7e
+#: flake8.main.application.Application.parsed_diff:1 of
+msgid "The parsed diff information"
+msgstr ""
+
+# debe9c2e70e845bc831ae813b49a7cf8
+#: flake8.main.application.Application.prelim_arg_parser:1 of
+msgid ""
+"The prelimary argument parser for handling options required for obtaining"
+" and parsing the configuration file."
+msgstr ""
+
+# 97228fdb8f9c4b7f88e5d04d129b0658
+#: flake8.main.application.Application.program:1 of
+msgid "The name of the program being run"
+msgstr ""
+
+# 7f36a85d2c764133b56ad3f2dddc354d
+#: flake8.main.application.Application.register_plugin_options:1 of
+msgid "Register options provided by plugins to our option manager."
+msgstr ""
+
+# 9291b64ff43f4e10b0b982881ff50ecc
+#: flake8.main.application.Application.report:1 of
+msgid "Report errors, statistics, and benchmarks."
+msgstr ""
+
+# a12b40c204704696abcfdbe02795d928
+#: flake8.main.application.Application.report_benchmarks:1 of
+msgid "Aggregate, calculate, and report benchmarks for this run."
+msgstr ""
+
+# 976d5e0c546c4006bb677389cf913378
+#: flake8.main.application.Application.report_errors:1 of
+msgid "Report all the errors found by flake8 3.0."
+msgstr ""
+
+# 75f9dae46d044d2398953285f47b6839
+#: flake8.main.application.Application.report_errors:3 of
+msgid ""
+"This also updates the :attr:`result_count` attribute with the total "
+"number of errors, warnings, and other messages found."
+msgstr ""
+
+# 364a7e3e7da14d93b795dcb88f2d9521
+#: flake8.main.application.Application.report_statistics:1 of
+msgid "Aggregate and report statistics from this run."
+msgstr ""
+
+# c1fec9eba6a34dfbbb944c4610ec175e
+#: flake8.main.application.Application.result_count:1 of
+msgid ""
+"The number of errors, warnings, and other messages after running flake8 "
+"and taking into account ignored errors and lines."
+msgstr ""
+
+# fb069d5753ca48a0b48164ca95226318
+#: flake8.main.application.Application.run:1 of
+msgid "Run our application."
+msgstr ""
+
+# 3db22bfb33eb4c9fbdcdb1f330ee237e
+#: flake8.main.application.Application.run:3 of
+msgid ""
+"This method will also handle KeyboardInterrupt exceptions for the "
+"entirety of the flake8 application. If it sees a KeyboardInterrupt it "
+"will forcibly clean up the :class:`~flake8.checker.Manager`."
+msgstr ""
+
+# 29681875e62f4290a620a0fd09d0bf76
+#: flake8.main.application.Application.run_checks:1 of
+msgid "Run the actual checks with the FileChecker Manager."
+msgstr ""
+
+# 3224d7752c0f4841bd6b47b3bbd052c5
+#: flake8.main.application.Application.run_checks:3 of
+msgid ""
+"This method encapsulates the logic to make a "
+":class:`~flake8.checker.Manger` instance run the checks it is managing."
+msgstr ""
+
+# 14467904f64542f7a0a3a49ed0687b7e
+#: flake8.main.application.Application.run_checks:7 of
+msgid "List of filenames to process"
+msgstr ""
+
+# 01c3e60f72354780b32ac55631147f04
+#: flake8.main.application.Application.running_against_diff:1 of
+msgid "Whether the program is processing a diff or not"
+msgstr ""
+
+# e238c12b43fa41f29151303bfd3e0848
+#: flake8.main.application.Application.start_time:1 of
+msgid "The timestamp when the Application instance was instantiated."
+msgstr ""
+
+# 001dd59cbaa74267a1427b6faf6a6ea6
+#: flake8.main.application.Application.total_result_count:1 of
+msgid "The total number of errors before accounting for ignored errors and lines."
+msgstr ""
+
+# 5f599f6503c7434a98757e2a579c4377
+#: flake8.main.application.Application.version:1 of
+msgid "The version of the program being run"
+msgstr ""
+

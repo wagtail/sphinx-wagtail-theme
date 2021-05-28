@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# ec103ec34f884d8f82fb4e3af9d90b55
+#: ../../examples/headings.md:1
+msgid "Headings"
+msgstr ""
+
+# 6dab495304944c538e086cc9971ea08a
+# 81d7873f372f4dffb3b699d3a10a90a8
+# 66bb0d8b10754ec6b9a3d6b901b27526
+#: ../../examples/headings.md:3 ../../examples/headings.md:7
+#: ../../examples/headings.md:11
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting "
+"industry. Lorem Ipsum has been the industry's standard dummy text ever "
+"since the 1500s, when an unknown printer took a galley of type and "
+"scrambled it to make a type specimen book. It has survived not only five "
+"centuries, but also the leap into electronic typesetting, remaining "
+"essentially unchanged. It was popularised in the 1960s with the release "
+"of Letraset sheets containing Lorem Ipsum passages, and more recently "
+"with desktop publishing software like Aldus PageMaker including versions "
+"of Lorem Ipsum."
+msgstr ""
+
+# 9529020a8c6441c094d0dee8b888c385
+#: ../../examples/headings.md:5
+msgid "Heading level 2"
+msgstr ""
+
+# 89f8f16db11a4a60990dc606c5d6ed3b
+#: ../../examples/headings.md:9
+msgid "Heading level 3"
+msgstr ""
+
+# 6a5ba74f537649b990fbe64ffc55e805
+#: ../../examples/headings.md:14
+msgid "Heading with code in it"
+msgstr ""
+
+# 8d26ddcb879f422ca313a460424d0f9a
+#: ../../examples/headings.md:16
+msgid "I guess this will come up, so we should style for it."
+msgstr ""
+
+# 2731e3a511a742cb91368c28a50d2a53
+#: ../../examples/headings.md:18
+msgid "code-only-heading"
+msgstr ""
+
+# 5f662ab9039b428a90988d7287c4475d
+#: ../../examples/headings.md:20
+msgid "This will probably come up as well."
+msgstr ""
+

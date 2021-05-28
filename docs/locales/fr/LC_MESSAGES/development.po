@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# 3bddac6875e943efaba4a580fa6eaebf
+#: ../../development.rst:7
+msgid "Development"
+msgstr ""
+
+# 329cc5fd68e64cc6b28cc31f00cf6b4d
+#: ../../development.rst:10
+msgid ""
+"For local development you need a system with Node v14.x, Yarn, Python3, "
+"Git and make. It is strongly recommended to use a Python virtual "
+"environment (`venv`_). The build process derives the version from "
+"repository data, so it's necessary to clone the repository and not just "
+"download a single snapshot."
+msgstr ""
+
+# 71840792171b4ca59cd1a47b8189fe31
+#: ../../development.rst:15
+msgid "Start with `make`::"
+msgstr ""
+
+# 11c67bbab6f64baf96234e412cf6659f
+#: ../../development.rst:20
+msgid "Install requirements and fulfill Python and Node demands (repeatable)::"
+msgstr ""
+
+# b78a495d3a484e7bb124013206079ee0
+#: ../../development.rst:24
+msgid "When doing frontend development compile your changes at any time::"
+msgstr ""
+
+# d6fb9eeedfd94e3aab2b3ce94da4b8ca
+#: ../../development.rst:28
+msgid "Build and install the package::"
+msgstr ""
+
+# 8782a302a5be4fb3aefc1f850c490d5f
+#: ../../development.rst:32
+msgid ""
+"Don't forget to update the docs. Render the documentation and show in "
+"browser::"
+msgstr ""
+
+# 6ba53890f550465ba6dee68d277d7d32
+#: ../../development.rst:36
+msgid "Without opening the browser::"
+msgstr ""
+
+# 2d46b8d514c446aaa5436c22c717c69d
+#: ../../development.rst:40
+msgid ""
+"Check the Python code. The CI workflow requires `lint-minimal` to "
+"succeed::"
+msgstr ""
+
+# 590d1281fa1442dd85ac564f5d7f2ae1
+#: ../../development.rst:48
+msgid "Run Python unit tests::"
+msgstr ""
+
+# 3c13f5fb5cfe4e9ca809b1a19bc7d29d
+#: ../../development.rst:52
+msgid "Rebuild and install from Python wheel package::"
+msgstr ""
+
+# 2131fec16ec54bc6b293969f96421966
+#: ../../development.rst:60
+msgid ""
+"To find out whether the created wheel package passes the `twine check` "
+"test and can be uploaded to PyPi run::"
+msgstr ""
+
+# c3a41478af624e98b107d9f5a36ac5ea
+#: ../../development.rst:70
+msgid "Theme stress test"
+msgstr ""
+
+# 8c2bf36522764d5498d43444c6fae6c1
+#: ../../development.rst:72
+msgid ""
+"There is a demo manual `t3SphinxThemeRtdDemoDocs`_ under construction. It"
+" serves as a \"stress test\" for this `sphinx_wagtail_theme`_ and tries "
+"to use as many reStructuredText examples as possible and covered by the "
+"theme. **Documentation writers** may want to have a look at those pages "
+"to understand what reST markup can be used and what the visual effect "
+"will be. **Theme contributors** should use the demo manual for testing "
+"and *visually* check the rendering."
+msgstr ""
+
+# bb5b3f0539a2491da3b8c772fa7f63cc
+#: ../../development.rst:85
+msgid "Javascript package management"
+msgstr ""
+
+# c34c24de57bd4ba2a743e7744da248cd
+#: ../../development.rst:87
+msgid "Use `npm` for package management."
+msgstr ""
+
