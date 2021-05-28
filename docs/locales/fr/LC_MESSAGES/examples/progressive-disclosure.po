@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# b2f4b5ad8d07475f89742268e1f62768
+#: ../../examples/progressive-disclosure.md:1
+msgid "Progressive Disclosure"
+msgstr ""
+
+# ebce0b447aef4d32a4322e55b5c0a6f4
+#: ../../examples/progressive-disclosure.md:3
+msgid ""
+"We can add supplementary information in documentation with the HTML "
+"<details> element. This relies on HTML syntax, which can be hard to "
+"author consistently, so keep this type of formatting to a minimum."
+msgstr ""
+
+# 5760c061c7454cdfa6cd9693e146e492
+#: ../../examples/progressive-disclosure.md:9
+msgid "This will be visible when expanding the content."
+msgstr ""
+

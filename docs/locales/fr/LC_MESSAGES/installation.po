@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# 1a4af1ef19d6402c825e8ec9dd4deabb
+#: ../../installation.rst:5
+msgid "Installation"
+msgstr ""
+
+# 5439c69db6e24350b566a23e817b7665
+#: ../../installation.rst:9
+msgid "Stable release"
+msgstr ""
+
+# 6dd61a62272743259ac950e46248f41d
+#: ../../installation.rst:11
+msgid "To install Sphinx Wagtail theme, run this command in your terminal:"
+msgstr ""
+
+# 4dc65249ece34a97a756393b20b826af
+#: ../../installation.rst:17
+msgid ""
+"This is the preferred method to install Sphinx Wagtail theme, as it will "
+"always install the most recent stable release."
+msgstr ""
+

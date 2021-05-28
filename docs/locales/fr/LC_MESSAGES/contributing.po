@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# d28eeb330ff14cb08c3acafd53eb7fd8
+#: ../../../CONTRIBUTING.rst:3
+msgid "Contributing"
+msgstr "Contribuer"
+
+# 5fdd8904468344f9aa16a6c99a1b0b24
+#: ../../../CONTRIBUTING.rst:5
+msgid "This repository handles the theme for docs.wagtail.io."
+msgstr "Ce dépôt se charge du thème de docs.wagtail.io."
+
+# fe9957868c8e40f18e4b814f48881d6f
+#: ../../../CONTRIBUTING.rst:9
+msgid "Theme development"
+msgstr "Développement du thème"
+
+# fa5183e883144e729deb7038e1df38c2
+#: ../../../CONTRIBUTING.rst:11
+msgid ""
+"If you would like to contribute and to help improve the theme feel free "
+"to fork this project and create a pull request when you're happy with "
+"your changes."
+msgstr ""
+"Si vous souhaitez contribuer et aider à améliorer le thème vous êtes libre de"
+"dupliquer ce projet et créer une requête de tirage quand vous êtes satisfait de"
+"vos changements."
+
+# 126553d019bc410489fd0e5a27f6d1c0
+#: ../../../CONTRIBUTING.rst:14
+msgid ""
+"You may as well check the `list of issues "
+"<https://github.com/wagtail/sphinx_wagtail_theme/issues>`_ to see whether"
+" somebody else is already addressing your problem. If not, don't hesitate"
+" to create a new issue for your problem."
+msgstr ""
+"Vous pouvez aussi consulter la `liste de problèmes"
+"<https://github.com/wagtail/sphinx_wagtail_theme/issues>`_ pour voir si"
+" quelqu’un d’autre est déjà entrain de s’occuper de votre problème. Sinon, n’hésitez pas"
+" à créer une nouvelle entrée pour votre problème."
+
+# afed6413b9924bd6839c0d0e3b8fc268
+#: ../../../CONTRIBUTING.rst:19
+msgid "See also :ref:`About development <development>` in this documentation."
+msgstr "Voir aussi :ref:`À propos du développement <development>` dans cette documentation."
+
+# aa8d507245c84c709b772a008780a02f
+#: ../../../CONTRIBUTING.rst:23
+msgid "Contribute to Wagtail Documentation"
+msgstr "Contribuer à la documentation de Wagtail"
+
+# 8eb84c15eb4144c48779e658bf4cbc98
+#: ../../../CONTRIBUTING.rst:26
+msgid "Create Issues"
+msgstr "Créer des entrées de problèmes"
+
+# 300363bfc75a4573997d80054bac1c70
+#: ../../../CONTRIBUTING.rst:28
+msgid ""
+"Issues on the documentation theme: "
+"https://github.com/wagtail/sphinx_wagtail_theme/issues Issues on the "
+"documentation contents: https://github.com/wagtail/wagtail/issues"
+msgstr ""
+"Problèmes avec le thème de la documentation: "
+"https://github.com/wagtail/sphinx_wagtail_theme/issues Problèmes avec le"
+"contenu de la documentation: https://github.com/wagtail/wagtail/issues"

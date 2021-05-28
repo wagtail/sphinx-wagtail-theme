@@ -74,3 +74,9 @@ def setup(app):
         True
     )
     app.add_transform(AutoStructify)
+
+
+# https://docs.readthedocs.io/en/stable/guides/manage-translations.html#create-translatable-files
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-gettext_uuid
+gettext_uuid = True
+gettext_compact = False

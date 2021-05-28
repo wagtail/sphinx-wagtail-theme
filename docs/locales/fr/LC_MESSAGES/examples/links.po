@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# 0e1947cf6a7c4647b2d97ff344f6e6c5
+#: ../../examples/links.md:1
+msgid "Links"
+msgstr ""
+
+# c56b6cb220e34a2f88a97eb45f1ade43
+#: ../../examples/links.md:3
+msgid ""
+"Links are fundamental in documentation. Use internal links to tie your "
+"content to other docs, and external links as needed. Pick relevant text "
+"for links, so readers know where they will land."
+msgstr ""
+
+# 46f28d5474584ecd831cb2001d56847f
+#: ../../examples/links.md:6
+msgid "External Links"
+msgstr ""
+
+# 58bf886bed2043c395de06e057449de6
+#: ../../examples/links.md:8
+msgid "An external link."
+msgstr ""
+
+# cbf832731e9442e69cc680dc23c8e923
+#: ../../examples/links.md:10
+msgid "Internal Links"
+msgstr ""
+
+# 6106d37c2ee848e3a667e18b8a974d68
+#: ../../examples/links.md:12
+msgid "An internal link to another document."
+msgstr ""
+
+# f0aa22d4a3ab48429285680d0ddc2dba
+#: ../../examples/links.md:14
+msgid "Reference Links"
+msgstr ""
+
+# 80340d627615488baad9993663b2e6a9
+#: ../../examples/links.md:16
+msgid ""
+"Reference links rely on creating a reference in reStructuredText. Prefer "
+"linking to the whole document if at all possible, otherwise create a "
+"reference by embedding reStructuredText with eval_rst like so:"
+msgstr ""
+
+# 02468b48ca8549389229ee2b3a8d74f6
+#: ../../examples/links.md:26
+msgid "A link to a reference."
+msgstr ""
+
+# 8987ee5b86584f388bab2a2e84822c5b
+#: ../../examples/links.md:28
+msgid "Links Over Code"
+msgstr ""
+
+# 8abe87bcff7b4808b41aa4d9b75ffdff
+#: ../../examples/links.md:30
+msgid "When using inline code as the text for a link it is hard to see."
+msgstr ""
+
+# 9c88a1dbc07e4ef09a462052afafedaf
+#: ../../examples/links.md:32
+msgid "Unless, we can take special care of that in the styling."
+msgstr ""
+

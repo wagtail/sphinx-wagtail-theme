@@ -5,6 +5,7 @@ pytest
 setuptools
 # Pin sphinx to the version used by read the docs: https://docs.readthedocs.io/en/stable/intro/import-guide.html#building-your-documentation
 sphinx==1.8.5
+sphinx-intl==2.0.1
 recommonmark
 twine
 wheel

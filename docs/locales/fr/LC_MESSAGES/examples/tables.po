@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# 3b0051c8e6da4689a7be815e19b8f61e
+#: ../../examples/tables.md:1
+msgid "Tables"
+msgstr ""
+
+# a00c48ecd7c24b568bb78511591199e9
+#: ../../examples/tables.md:3
+msgid ""
+"Only use tables when needed, with the “simple” reStructuredText syntax, "
+"which is hard enough to format as it is."
+msgstr ""
+
+# 829b1759a4b64772847cb4552451da19
+#: ../../examples/tables.md:2
+msgid "Browser"
+msgstr ""
+
+# ed1e4346ee104b68b556b80c1ad0e341
+#: ../../examples/tables.md:2
+msgid "Device/OS"
+msgstr ""
+
+# 372502e0cf724e9481486e7e1b58cd06
+#: ../../examples/tables.md:4
+msgid "Stock browser"
+msgstr ""
+
+# 2f72adb8ba6d4d1c9b9f3e697ddbb0d4
+#: ../../examples/tables.md:4
+msgid "Android"
+msgstr ""
+
+# bd7c0034b7874c57a7d6affa6c83f9fd
+#: ../../examples/tables.md:5
+msgid "IE"
+msgstr ""
+
+# 6e05a2355798447c9b7f9acd880a48e3
+#: ../../examples/tables.md:5
+msgid "Desktop"
+msgstr ""
+
+# 859207bc3cad4797b6a87d91fecb8bdc
+#: ../../examples/tables.md:6
+msgid "Safari"
+msgstr ""
+
+# 1a3836490fc241b7b9aa7ccb95fdb228
+#: ../../examples/tables.md:6
+msgid "Windows"
+msgstr ""
+

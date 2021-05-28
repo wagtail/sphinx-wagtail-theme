@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Wagtail contributors
+# This file is distributed under the same license as the Sphinx Wagtail
+# theme package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Sphinx Wagtail theme 5.0.0a1.dev0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-28 15:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+# ed0f2df6b4564c40a7d76faf023189d3
+#: ../../index.rst:10
+msgid "Welcome to \"Sphinx Wagtail theme\" documentation!"
+msgstr "Bienvenue à la documentation du \"thème Sphinx Wagtail\"!"
+
+# f17519631a514b3382279ceaa3beeb32
+#: ../../index.rst:29
+msgid "Indices and tables"
+msgstr "Index et tables"
+
+# 2a25e2295e2440bb95f094cbda9918c6
+#: ../../index.rst:30
+msgid ":ref:`genindex`"
+msgstr ""
+
+# 6aef2275ff314b569e5b57d12ade6cde
+#: ../../index.rst:31
+msgid ":ref:`modindex`"
+msgstr ""
+
+# baa45c269b664eb58e64a47edba5ebe2
+#: ../../index.rst:32
+msgid ":ref:`search`"
+msgstr ""
+
+# 1316a13ce87e4f04a6302a8d3cb4386d
+#: ../../index.rst:34
+msgid "Documentation rendered: |today|"
+msgstr "Documentation générée: |today|"
+
