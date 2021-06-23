@@ -107,7 +107,7 @@
                         {%- include "searchbox.html" %}
                     {%- endif %}
                     <div class="site-toc">
-                        <nav class="toc mt-3">
+                        <nav class="toc mt-3" aria-label="Main menu">
                             {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=False, titles_only=True) -%}
                             {%- if toctree %}
                                 {{ toctree }}
@@ -142,8 +142,8 @@
                         {% include "pager.html" %}
                     </article>
                     {% if display_toc and not hidetoc %}
-                        <nav class="col-12 col-lg-3 pb-4 toc page-toc">
-                            <p class="font-weight-bold">Page contents</p>
+                        <nav class="col-12 col-lg-3 pb-4 toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
                             {{ toc }}
                         </nav>
                     {% endif %}
