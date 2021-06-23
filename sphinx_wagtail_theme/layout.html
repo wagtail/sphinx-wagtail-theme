@@ -66,7 +66,7 @@
 <body>
     <header class="container-fluid bg-primary">
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-dark font-weight-bold px-0">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
                 {%- if theme_logo and theme_logo != 'None' %}
                     <a href="{{ theme_logo_url }}"
                         {% if theme_logo_alt %}title="{{ theme_logo_alt|e }}"{% endif %}
@@ -77,7 +77,7 @@
                             {%- if theme_logo_height %} height="{{ theme_logo_height|e }}"{% endif %}
                             {%- if theme_logo_alt %} alt="{{ theme_logo_alt|e }}"{% endif %}
                             {%- if theme_logo_title and not theme_logo_url %} title="{{ theme_logo_title|e }}"{% endif %}
-                            class="d-inline-block mr-2"
+                            class="logo-img"
                         />
                         {{ theme_project_name }}
                     </a>
@@ -93,10 +93,11 @@
                         </ul>
                     </div>
                 {% endif %}
-                <button class="btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
                     <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-text">Menu</span>
                 </button>
-            </nav>
+            </div>
         </div>
     </header>
     <div class="container-fluid">
