@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col p-4">
             {% if theme_footer_links %}
-                <nav>
+                <nav aria-label="Footer">
                     <ul class="nav justify-content-center mb-2">
                         {% for link in theme_footer_links.split(',') %}
                             {% set link_text=link.split("|")[0] %}
