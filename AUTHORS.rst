@@ -3,6 +3,7 @@
 Authors
 =======
 
+- Scott Cranfill
 - Thibaud Colas
 - Storm Heg
 - Tibor Leupold
