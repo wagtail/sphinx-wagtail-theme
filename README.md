@@ -25,6 +25,8 @@ With an active virtual environment:
     npm install
     npm run build
     prerelease
+    git tag -a N.N.N -m "N.N.N"                                                                                       ✘ PIPE  sphinx_wagtail_theme  14.16.0 23:21:46
+    git push origin N.N.N
     python -m build
     python -m twine upload --repository pypi dist/*
     postrelease
