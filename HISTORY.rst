@@ -2,7 +2,13 @@
 History
 =======
 
-5.0.4 (unreleased)
+5.0.5 (unreleased)
+==================
+
+- Nothing changed yet.
+
+
+5.0.4 (2021-06-28)
 ==================
 
 - Fix some simple accessibility issues (#109). Fixes #103
