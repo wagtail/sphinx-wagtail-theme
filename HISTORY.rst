@@ -5,14 +5,13 @@ History
 5.0.4 (unreleased)
 ==================
 
-- Nothing changed yet.
-
+- Fix some simple accessibility issues (#109). Fixes #103
+- Trial translated documentation setup
 
 5.0.3 (2021-04-19)
 ==================
 
 - Only wrap search scripts with search block
-
 
 5.0.2 (2021-04-19)
 ==================
