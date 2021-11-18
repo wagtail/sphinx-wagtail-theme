@@ -17,7 +17,7 @@
     {%- endif %}
 {%- endif %}
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" {% if language is not none %}lang="{{ language }}"{% endif %}>
 <head>
     <meta charset="utf-8" />
     {%- if metatags %}
