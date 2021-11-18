@@ -159,6 +159,8 @@
     </footer>
 
     {% if not embedded %}
+        {#- For Sphinx<4 compatibility -#}
+        {%- if "_static/documentation_options.js" not in script_files %}
         <script type="text/javascript">
             var DOCUMENTATION_OPTIONS = {
                 URL_ROOT: '{{ url_root }}',
@@ -168,6 +170,7 @@
                 HAS_SOURCE: {{ has_source| lower }}
             };
         </script>
+        {%- endif %}
         <script type="text/javascript" src="{{ pathto('_static/dist/jquery.min.js', 1) }}"></script>
         <script type="text/javascript" src="{{ pathto('_static/dist/theme.js', 1) }}"></script>
         <script type="text/javascript" src="{{ pathto('_static/dist/vendor.js', 1) }}"></script>
