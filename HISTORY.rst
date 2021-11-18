@@ -5,7 +5,10 @@ History
 5.0.5 (unreleased)
 ==================
 
-- Nothing changed yet.
+- Make navigation sticky (#110)
+- Don't load webfonts.css since it's been removed and 404s. (#111)
+- Remove invalidly named file path (#112)
+- Fix sphinx-based search (#113)
 
 
 5.0.4 (2021-06-28)
