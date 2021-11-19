@@ -5,17 +5,13 @@
 {%- else %}
     {%- set titlesuffix = "" -%}
 {%- endif -%}
-{%- set blacklist_script_files = [] -%}
-{%- set blacklist_script_files = blacklist_script_files + ['_static/jquery.js'] -%}
-{%- set blacklist_script_files = blacklist_script_files + ['_static/underscore.js'] -%}
-{%- set blacklist_script_files = blacklist_script_files + ['_static/doctools.js'] -%}
-{%- set blacklist_script_files = blacklist_script_files + ['_static/language_data.js'] -%}
 {%- set hidetoc = '' %}
 {%- if meta is defined and meta %}
     {%- if 'hidetoc' in meta.keys() %}
         {%- set hidetoc = meta.get('hidetoc') %}
     {%- endif %}
 {%- endif %}
+{%- set sphinx_version_info = sphinx_version.split('.') | map('int') | list -%}
 <!DOCTYPE html>
 <html class="no-js" {% if language is not none %}lang="{{ language }}"{% endif %}>
 <head>
@@ -158,33 +154,20 @@
         </div>
     </footer>
 
-    {% if not embedded %}
-        {#- For Sphinx<4 compatibility -#}
-        {%- if "_static/documentation_options.js" not in script_files %}
-        <script type="text/javascript">
-            var DOCUMENTATION_OPTIONS = {
-                URL_ROOT: '{{ url_root }}',
-                VERSION: '{{ release|e }}',
-                COLLAPSE_INDEX: false,
-                FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
-                HAS_SOURCE: {{ has_source| lower }}
-            };
-        </script>
-        {%- endif %}
-        <script type="text/javascript" src="{{ pathto('_static/dist/jquery.min.js', 1) }}"></script>
+    {%- if not embedded %}
+        {#- Sphinx >=1.8.0 has this as an external js file. Sphinx 4.0 includes in in script_files #}
+        {%- if sphinx_version_info[0] < 4 %}
+        <script id="documentation_options" data-url_root="{{ url_root }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+        {%- endif -%}
+        {%- for scriptfile in script_files %}
+        {{ js_tag(scriptfile) }}
+        {%- endfor %}
         <script type="text/javascript" src="{{ pathto('_static/dist/theme.js', 1) }}"></script>
         <script type="text/javascript" src="{{ pathto('_static/dist/vendor.js', 1) }}"></script>
-        <script type="text/javascript" src="{{ pathto('_static/dist/underscore.min.js', 1) }}"></script>
-        <script type="text/javascript" src="{{ pathto('_static/language_data.js', 1) }}"></script>
-        <script type="text/javascript" src="{{ pathto('_static/dist/doctools.js', 1) }}"></script>
-            {%- for scriptfile in script_files %}
-                {%- if scriptfile not in blacklist_script_files %}
-        {{ js_tag(scriptfile) }}
-                {%- endif %}
-            {%- endfor %}
     {%- endif %}
     {%- block search %}
-        <script type="text/javascript" src="{{ pathto('_static/dist/searchtools.js', 1) }}"></script>
+        <script type="text/javascript" src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+        <script type="text/javascript" src="{{ pathto('_static/language_data.js', 1) }}"></script>
         <script type="text/javascript">
             jQuery(function() { Search.loadIndex("{{ pathto('searchindex.js', 1) }}"); });
         </script>

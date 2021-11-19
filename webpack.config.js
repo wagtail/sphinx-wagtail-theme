@@ -59,45 +59,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
-    new CopyPlugin({
-      // Copy files without processing by webpack.
-      patterns: [
-        {
-          from: path.resolve(__dirname, "node_modules/jquery/dist/jquery.min.js"),
-          to: path.resolve(
-            __dirname,
-            "sphinx_wagtail_theme/static/dist/jquery.min.js"
-          ),
-        },
-        {
-          from: path.resolve(
-            __dirname,
-            "node_modules/underscore/underscore-min.js"
-          ),
-          to: path.resolve(
-            __dirname,
-            "sphinx_wagtail_theme/static/dist/underscore.min.js"
-          ),
-        },
-        {
-          from: path.resolve(__dirname, "js/doctools.js"),
-          to: path.resolve(
-            __dirname,
-            "sphinx_wagtail_theme/static/dist/doctools.js"
-          ),
-        },
-        {
-          from: path.resolve(__dirname, "js/searchtools.js"),
-          to: path.resolve(
-            __dirname,
-            "sphinx_wagtail_theme/static/dist/searchtools.js"
-          ),
-        },
-      ],
-    }),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-    }),
   ],
 };
