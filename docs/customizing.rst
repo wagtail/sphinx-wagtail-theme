@@ -4,29 +4,6 @@ Customizing
 The following code snippets can be set in ``conf.py`` to customize the
 appearance of your docs.
 
-Show Copyright in Footer
-------------------------
-
-This is a built-in Sphinx feature which will show the copyright notice in the
-footer of your docs.
-
-.. code-block:: python
-
-   copyright = "2021, My Company Inc."
-   html_show_copyright = True
-
-Show Date Last Updated
-----------------------
-
-This is a built-in Sphinx feature which will show the date the docs were last
-rendered in the footer of your docs. Format strings for Python's
-`strftime() <https://docs.python.org/3/library/time.html#time.strftime>`_
-are valid here. To disable, set to ``None``
-
-.. code-block:: python
-
-   html_last_updated_fmt = "%b %d, %Y"
-
 Project Name & Logo
 -------------------
 
@@ -63,7 +40,7 @@ As such it should point to your docs folder in your default branch.
 Header & Footer Links
 ---------------------
 
-These will be shown in the dark blue bars at the top and bottom of the page.
+These will be shown in the bars at the top and bottom of the page.
 
 Note that each setting is one long string, with entries separated by commas
 within the string. Each comma-separated entry uses a pipe ``|`` character to
@@ -79,3 +56,26 @@ separate page title (left of pipe) from URL (right of pipe).
            "Legal|http://example.com/dev/null",
        ]),
     )
+
+Show Copyright in Footer
+------------------------
+
+This is a built-in Sphinx feature which will show the copyright notice in the
+footer of your docs.
+
+.. code-block:: python
+
+   copyright = "2021, My Company Inc."
+   html_show_copyright = True
+
+Show Date Last Updated
+----------------------
+
+This is a built-in Sphinx feature which will show the date the docs were last
+rendered in the footer of your docs. Format strings for Python's
+`strftime() <https://docs.python.org/3/library/time.html#time.strftime>`_
+are valid here. To disable, set to ``None``
+
+.. code-block:: python
+
+   html_last_updated_fmt = "%b %d, %Y"
