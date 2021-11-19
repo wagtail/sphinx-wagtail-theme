@@ -119,7 +119,7 @@
                     </div>
                 </div>
             </aside>
-            <main class="col-12 col-lg-9 pt-5">
+            <div class="col-12 col-lg-9 pt-5">
                 <header class="row align-items-baseline">
                     <div class="col">
                         {% include "breadcrumbs.html" %}
@@ -136,11 +136,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <article class="col-12 col-lg-9 order-last order-lg-first" role="main">
+                    <main class="col-12 col-lg-9 order-last order-lg-first" role="main">
                         {%- block body %}
                         {% endblock -%}
                         {% include "pager.html" %}
-                    </article>
+                    </main>
                     {% if display_toc and not hidetoc %}
                         <nav class="col-12 col-lg-3 pb-4 toc page-toc" aria-labelledby="page-toc-heading">
                             <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
@@ -148,7 +148,7 @@
                         </nav>
                     {% endif %}
                 </div>
-            </main>
+            </div>
         </div>
     </div>
     <footer class="container-fluid bg-primary text-light">
