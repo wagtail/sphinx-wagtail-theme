@@ -1,0 +1,54 @@
+.versionadded,
+.versionchanged,
+.deprecated {
+    margin: $spacer 0;
+    padding: $spacer;
+    box-shadow: $box-shadow-sm;
+    border-radius: $border-radius;
+    overflow: hidden;
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+.versionmodified {
+    display: block;
+    padding: ($spacer / 2) $spacer;
+    margin: -$spacer;
+    margin-bottom: $spacer;
+    &:before {
+        @include fa-icon;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-right: ($spacer / 2);
+    }
+}
+.versionadded {
+    background-color: theme-color-level('info', -11);
+    .versionmodified {
+        color: color-yiq(theme-color('info'));
+        background-color: theme-color('info');
+        &:before {
+            content: fa-content($fa-var-info-circle);
+        }
+    }
+}
+.versionchanged {
+    background-color: theme-color-level('warning', -11);
+    .versionmodified {
+        color: color-yiq(theme-color('warning'));
+        background-color: theme-color('warning');
+        &:before {
+            content: fa-content($fa-var-exclamation-triangle);
+        }
+    }
+}
+.deprecated {
+    background-color: theme-color-level('danger', -11);
+    .versionmodified {
+        color: color-yiq(theme-color('danger'));
+        background-color: theme-color('danger');
+        &:before {
+            content: fa-content($fa-var-exclamation-triangle);
+        }
+    }
+}
