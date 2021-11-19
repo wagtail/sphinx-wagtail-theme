@@ -13,7 +13,7 @@
                 </nav>
             {% endif %}
             <div class="text-center">
-                {%- if theme_show_last_updated and last_updated %}
+                {%- if last_updated %}
                 <p>Last rendered: {{ last_updated|e }}</p>
                 {%- endif %}
                 <p style="display: none">
@@ -22,7 +22,7 @@
                     </a>
                 </p>
             </div>
-            {%- if theme_show_copyright %}
+            {%- if show_copyright %}
             <div class="text-center">
                 {%- if hasdoc('Copyright') %}
                     <a href="{{ pathto('Copyright') }}">&copy; Copyright {{ copyright }}</a>
