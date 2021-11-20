@@ -15,6 +15,7 @@
     padding: ($spacer / 2) $spacer;
     margin: -$spacer;
     margin-bottom: $spacer;
+    font-weight: $font-weight-bold;
     &:before {
         @include fa-icon;
         font-family: 'Font Awesome 5 Free';
@@ -23,10 +24,10 @@
     }
 }
 .versionadded {
-    background-color: theme-color-level('info', -11);
+    background-color: theme-color-level('success', -11);
     .versionmodified {
-        color: color-yiq(theme-color('info'));
-        background-color: theme-color('info');
+        color: color-yiq(theme-color('success'));
+        background-color: theme-color('success');
         &:before {
             content: fa-content($fa-var-info-circle);
         }

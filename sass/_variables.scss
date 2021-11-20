@@ -17,10 +17,10 @@ $indigo:            #251657;
 $bright-green: 		#3beccd;
 
 $primary:           $indigo;
-$success:           #5cb85c;
-$info:              #5bc0de;
+$success:           #006363;
+$info:              #3f428b;
 $warning:           #f0ad4e;
-$danger:            #d9534f;
+$danger:            #a72925;
 
 
 $link-color: $primary;
@@ -36,7 +36,7 @@ $yiq-contrasted-threshold: 160;
 //
 // Code Colors
 // --------------------------------------------------
-$code-color:        #ee0028;
+$code-color:        $danger;
 $code-color-file:   hsl(328, 100%, 50%);
 $code-color-html:   hsl(275, 100%, 40%);
 $code-color-js:     hsl(128, 100%, 20%);

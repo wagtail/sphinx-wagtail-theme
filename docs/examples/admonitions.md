@@ -28,6 +28,9 @@
 ```eval_rst note:: Notes can provide complementary information.
 ```
 
+```eval_rst seealso:: The world is your oyster.
+```
+
 ```eval_rst tip:: Speak softly and carry a big stick; you will go far.
 ```
 
