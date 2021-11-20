@@ -19,6 +19,7 @@ Welcome to "Sphinx Wagtail theme" documentation!
    readme
    installation
    usage
+   customizing
    development
    contributing
    authors
