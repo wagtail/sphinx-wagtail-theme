@@ -23,9 +23,14 @@
             cursor: pointer;
         }
     }
+    .group {
+        font-weight: $font-weight-bold;
+        font-size: 0.85em;
+        background-color: $gray-100;
+    }
     .selected {
-        color: color-yiq(theme-color('primary'));
-        background-color: theme-color('primary');
+        color: color-yiq($yellow);
+        background-color: $yellow;
     }
 }
 

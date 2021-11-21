@@ -1,8 +1,6 @@
 // T3Docs
 import '../sass/theme.scss';
 import autocomplete from 'autocompleter'
-import $ from 'jquery';
-import 'bootstrap';
 
 // Ensure our own namespace
 if (typeof window.T3Docs === 'undefined') {
@@ -59,63 +57,78 @@ document.addEventListener('DOMContentLoaded', function () {
     autocomplete({
       input: searchinput,
       fetch: function (text, update) {
+        // Populate autocomplete suggestions from the Sphinx `Search` object.
         if (typeof window.T3Docs.autocomplete === 'undefined') {
           window.T3Docs.autocomplete = new Array();
-          Object.keys(Search._index.terms).forEach(function (item, index) {
-            window.T3Docs.autocomplete[index] = { label: item };
+          // Add page titles first.
+          Object.keys(Search._index.titles).forEach(function (item) {
+            window.T3Docs.autocomplete.push({
+              label: Search._index.titles[item],
+              docname: Search._index.docnames[item],
+              group: "Pages",
+            });
+          });
+          // Add autodoc/code terms second.
+          Object.keys(Search._index.objects).forEach(function (item) {
+            Object.keys(Search._index.objects[item]).forEach(function (subitem) {
+              window.T3Docs.autocomplete.push({
+                label: `${item}.${subitem}`,
+                group: "Code reference"
+              });
+            });
+          });
+          // Add terms third (they are not necessarily real words, but stems of
+          // words used by the search algorithm, so are minimally helpful).
+          Object.keys(Search._index.terms).forEach(function (item) {
+            window.T3Docs.autocomplete.push({
+              label: item,
+              group: "Suggested term"
+            });
           });
         }
         var suggestions = window.T3Docs.autocomplete.filter(function (entry) {
-          return entry.label.toLowerCase().startsWith(text.toLowerCase());
+          return entry.label.toLowerCase().includes(text.toLowerCase());
         });
         update(suggestions);
       },
-      minLength: 4,
-      emptyMsg: 'No elements found',
+      minLength: 3,
       render: function (item) {
         var div = document.createElement("div");
         div.textContent = item.label;
         return div;
       },
+      customize: function(input, inputRect, container, maxHeight) {
+        // Do not force same width as input box - allow it to go wider.
+        container.style.minWidth = inputRect.width + "px";
+        container.style.width = "auto";
+      },
       onSelect: function (item) {
-        searchinput.value = item.label;
-        searchform.submit();
-      }
-    });
-  }
-});
-
-
-// Version Selector
-$(document).ready(function () {
-  function setVersionContent(content) {
-    options = document.createElement('dl');
-    options.innerHTML = content;
-    versionOptions = document.getElementById("toc-version-options");
-    versionOptions.innerHTML = '';
-    versionOptions.appendChild(options);
-  }
-  var versionNode = document.getElementById("toc-version");
-  if (versionNode) {
-    versionNode.addEventListener('click', function () {
-      versionWrapper = document.getElementById("toc-version-wrapper");
-      versionWrapper.classList.toggle('toc-version-wrapper-active');
-      versionOptions = document.getElementById("toc-version-options");
-      if (!versionOptions.dataset.ready) {
-        versionsUri = 'https://docs.typo3.org/services/ajaxversions.php?url=' + encodeURI(document.URL);
-        $.ajax({
-          url: versionsUri,
-          success: function (result) {
-            setVersionContent(result);
-            versionOptions = document.getElementById("toc-version-options");
-            versionOptions.dataset.ready = true;
-          },
-          error: function () {
-            setVersionContent('<p>No data available.</p>');
-            versionOptions = document.getElementById("toc-version-options");
-            versionOptions.dataset.ready = true;
+        // If they selected a page, disable search form and go straight to it.
+        if(item.docname !== undefined) {
+          searchform.onsubmit = function(){ return false };
+          // Figure out the URL from the docname.
+          // Mostly taken from Sphinx's searchtools.js
+          var linkUrl;
+          if (DOCUMENTATION_OPTIONS.BUILDER === "dirhtml") {
+            var dirname = item.docname + "/";
+            if (dirname.match(/\/index\/$/)) {
+              dirname = dirname.substring(0, dirname.length-6);
+            } else if (dirname == 'index/') {
+              dirname = '';
+            }
+            linkUrl = DOCUMENTATION_OPTIONS.URL_ROOT + dirname;
+          } else {
+            // normal html builders
+            linkUrl = DOCUMENTATION_OPTIONS.URL_ROOT + item.docname + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
           }
-        });
+          // Go to the URL.
+          window.location.href = linkUrl;
+        }
+        // Otherwise submit the query.
+        else {
+          searchinput.value = item.label;
+          searchform.submit();
+        }
       }
     });
   }
