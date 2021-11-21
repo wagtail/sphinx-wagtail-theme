@@ -16,6 +16,7 @@
     background-clip: padding-box;
     border: $input-border-width solid $input-border-color;
     box-shadow: $box-shadow-sm;
+    z-index: 10000;
     > div {
         padding: $input-padding-y $input-padding-x;
         &:not(.empty) {
