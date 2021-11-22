@@ -8,7 +8,7 @@
 // - Horizontal Buttons
 //
 .admonition {
-    background-color: theme-color-level('dark', -11);
+    background-color: theme-color-level('info', -11);
     margin: $spacer 0;
     padding: $spacer;
     box-shadow: $box-shadow-sm;
@@ -23,8 +23,9 @@
     padding: ($spacer / 2) $spacer;
     margin: -$spacer;
     margin-bottom: $spacer;
-    color: color-yiq(theme-color('dark'));
-    background-color: theme-color('dark');
+    color: color-yiq(theme-color('info'));
+    background-color: theme-color('info');
+    font-weight: $font-weight-bold;
     &:before {
         @include fa-icon;
         content: fa-content($fa-var-info-circle);
