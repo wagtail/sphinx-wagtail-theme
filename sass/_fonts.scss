@@ -1,57 +1,60 @@
-@font-face {
-    font-family: "Apercu Pro";
-    font-display: swap;
-    src: url("../fonts/apercu/apercu-light-pro.woff2");
-    font-weight: 300;
+@font-face{
+    font-family: 'Source Sans 3';
+    font-stretch: normal;
     font-style: normal;
-}
-@font-face {
-    font-family: "Apercu Pro";
-    font-display: swap;
-    src: url("../fonts/apercu/apercu-regular-pro.woff2");
     font-weight: 400;
-    font-style: normal;
+    src: url('../fonts/source-sans/SourceSans3-Regular.ttf.woff2') format('woff2');
 }
-@font-face {
-    font-family: "Apercu Pro";
-    font-display: swap;
-    src: url("../fonts/apercu/apercu-bold-pro.woff2");
+
+@font-face{
+    font-family: 'Source Sans 3';
+    font-stretch: normal;
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/source-sans/SourceSans3-It.ttf.woff2') format('woff2');
+}
+
+@font-face{
+    font-family: 'Source Sans 3';
+    font-stretch: normal;
+    font-style: normal;
     font-weight: 700;
-    font-style: normal;
+    src: url('../fonts/source-sans/SourceSans3-Bold.ttf.woff2') format('woff2');
 }
-@font-face {
-    font-family: "Apercu Pro";
-    font-display: swap;
-    src: url("../fonts/apercu/apercu-black-pro.woff2");
-    font-weight: 900;
-    font-style: normal;
+
+@font-face{
+    font-family: 'Source Sans 3';
+    font-stretch: normal;
+    font-style: italic;
+    font-weight: 700;
+    src: url('../fonts/source-sans/SourceSans3-BoldIt.ttf.woff2') format('woff2');
 }
 
 @font-face {
     font-family: "Source Code Pro";
-    font-display: swap;
-    src: url("../fonts/source-code-pro/SourceCodePro-Regular.ttf");
-    font-weight: 400;
+    font-stretch: normal;
     font-style: normal;
-}
-@font-face {
-    font-family: "Source Code Pro";
-    font-display: swap;
-    src: url("../fonts/source-code-pro/SourceCodePro-Italic.ttf");
     font-weight: 400;
-    font-style: italic;
+    src: url("../fonts/source-code-pro/SourceCodePro-Regular.ttf.woff2");
 }
 @font-face {
     font-family: "Source Code Pro";
-    font-display: swap;
-    src: url("../fonts/source-code-pro/SourceCodePro-Bold.ttf");
-    font-weight: 700;
+    font-stretch: normal;
+    font-style: italic;
+    font-weight: 400;
+    src: url("../fonts/source-code-pro/SourceCodePro-It.ttf.woff2");
+}
+@font-face {
+    font-family: "Source Code Pro";
+    font-stretch: normal;
     font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/source-code-pro/SourceCodePro-Bold.ttf.woff2");
 }
 @font-face {
     font-family: "Source Code Pro";
-    font-display: swap;
-    src: url("../fonts/source-code-pro/SourceCodePro-BoldItalic.ttf");
-    font-weight: 700;
+    font-stretch: normal;
     font-style: italic;
+    font-weight: 700;
+    src: url("../fonts/source-code-pro/SourceCodePro-BoldIt.ttf.woff2");
 }
