@@ -105,7 +105,7 @@ relevant rules:
    /* Import from Google Fonts, a CDN, or files in your _static folder.
       This Google Fonts import provides its own `@font-face` CSS;
       if providing your own font files, you'll also need to
-      provide your own @font-face` code. */
+      provide your own `@font-face` code. */
    @import url("https://fonts.googleapis.com/css2?family=Roboto");
 
    /* Main font used throughout the docs. */
@@ -117,3 +117,33 @@ relevant rules:
    pre, code, kbd, samp {
      font-family: "Courier New", monospace;
    }
+
+Custom Sidebars
+---------------
+
+To add a custom sidebar (for example, add a link to sponsor your project),
+create a custom HTML template and specify it in ``conf.py``:
+
+.. code-block:: python
+
+   # Add any relative paths that contain templates.
+   templates_path = ["_templates"]
+
+   # Custom sidebar templates, must be a dictionary that maps document names
+   # to template names. The theme default is just searchbox and globaltoc.
+   html_sidebars = {"**": [
+       "searchbox.html",
+       "globaltoc.html",
+       "custom.html",    # Your template here
+   ]}
+
+Then in ``_templates/custom.html``:
+
+.. code-block:: html
+
+   <p>
+     Sponsor my project!
+     <a href="http://example.com">Here's the link</a>
+   </p>
+
+Read more about `Sidebars in Sphinx <https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars>`_
