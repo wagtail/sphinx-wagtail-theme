@@ -79,3 +79,41 @@ are valid here. To disable, set to ``None``
 .. code-block:: python
 
    html_last_updated_fmt = "%b %d, %Y"
+
+Custom Fonts & CSS
+------------------
+
+The theme ships with Adobe's Source Sans and Source Code Pro fonts.
+You can change these, or any other style of the docs, with a custom CSS file.
+
+Enable custom static files in ``conf.py``:
+
+.. code-block:: python
+
+   # These folders are copied to the documentation's HTML output.
+   html_static_path = ["_static"]
+
+   # These paths are either relative to html_static_path
+   # or fully qualified paths (eg. https://...).
+   html_css_files = ["custom.css"]
+
+Then in your ``_static/custom.css`` file, import a font and override the
+relevant rules:
+
+.. code-block:: css
+
+   /* Import from Google Fonts, a CDN, or files in your _static folder.
+      This Google Fonts import provides its own `@font-face` CSS;
+      if providing your own font files, you'll also need to
+      provide your own @font-face` code. */
+   @import url("https://fonts.googleapis.com/css2?family=Roboto");
+
+   /* Main font used throughout the docs. */
+   body {
+     font-family: "Roboto", sans-serif;
+   }
+
+   /* Code snippets. */
+   pre, code, kbd, samp {
+     font-family: "Courier New", monospace;
+   }
