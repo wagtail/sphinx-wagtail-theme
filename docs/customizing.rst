@@ -102,7 +102,10 @@ relevant rules:
 
 .. code-block:: css
 
-   /* Import from Google Fonts, a CDN, or files in your _static folder. */
+   /* Import from Google Fonts, a CDN, or files in your _static folder.
+      This Google Fonts import provides its own `@font-face` CSS;
+      if providing your own font files, you'll also need to
+      provide your own @font-face` code. */
    @import url("https://fonts.googleapis.com/css2?family=Roboto");
 
    /* Main font used throughout the docs. */
