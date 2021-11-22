@@ -83,8 +83,8 @@ are valid here. To disable, set to ``None``
 Custom Fonts & CSS
 ------------------
 
-The theme ships with Adobe's Source Sans and Source Code Pro fonts. However you
-can change these, or any other style of the docs, with a custom CSS file.
+The theme ships with Adobe's Source Sans and Source Code Pro fonts.
+You can change these, or any other style of the docs, with a custom CSS file.
 
 Enable custom static files in ``conf.py``:
 
