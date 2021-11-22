@@ -29,8 +29,19 @@
         background-color: $gray-100;
     }
     .selected {
-        color: color-yiq($yellow);
-        background-color: $yellow;
+        color: color-yiq($search);
+        background-color: $search;
+    }
+    .selected::after {
+        border-radius: $border-radius;
+        border: 1px solid color-yiq($search);
+        content: "Enter ↵";
+        float: right;
+        font-size: 0.75em;
+        line-height: 1;
+        padding: $input-padding-y/2 $input-padding-x/2;
+        margin-top: $input-padding-y/2;
+        margin-left: $input-padding-x/2;
     }
 }
 
@@ -38,8 +49,8 @@
  * Highlight
  */
 .highlighted {
-    color: color-yiq($yellow) !important;
-    background-color: $yellow !important;
+    color: color-yiq($search) !important;
+    background-color: $search !important;
 }
 
 /**
