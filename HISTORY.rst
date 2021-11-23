@@ -7,8 +7,22 @@ History
 
 - Make navigation sticky (#110)
 - Don't load webfonts.css since it's been removed and 404s. (#111)
-- Remove invalidly named file path (#112)
+- Remove invalidly named file path preventing git clone on Windows (#112)
 - Fix sphinx-based search (#113)
+- Use sphinx-provided JavaScript files (documentation_options.js) (#114)
+- Use language specified by Sphinx in HTML tag. (#116)
+- Use ``<main>`` tag for body content (#117)
+- Fix copyright and date in footer (#118)
+- New Customizing doc (#118)
+- Style version added/changed/deprecated directives (#119)
+- Increase contrast of admonitions to WCAG AAA, inline code to AA (#121)
+- Replace "Apercu Pro" font with "Source Sans" (#122)
+- Search autocomplete improvements (#123)
+- Allow customizing the sidebar (#124)
+
+See new `customizing docs
+<https://sphinx-wagtail-theme.readthedocs.io/en/latest/customizing.html>`_ for
+info on how to change fonts, sidebars, etc. in this version.
 
 
 5.0.4 (2021-06-28)
