@@ -27,7 +27,6 @@ version = sphinx_wagtail_theme.__version__
 release = sphinx_wagtail_theme.__version__
 language = None
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'requirements.txt']
-pygments_style = None
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 today_fmt = '%Y-%m-%d %H:%M'
