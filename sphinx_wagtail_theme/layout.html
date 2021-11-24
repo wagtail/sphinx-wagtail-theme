@@ -110,14 +110,9 @@
         <div class="row">
             <aside class="col-12 col-lg-3">
                 <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5">
-                    {%- if sidebars != None %}
-                        {%- for sidebartemplate in sidebars %}
-                        {%- include sidebartemplate %}
-                        {%- endfor %}
-                    {%- else %}
-                        {%- include "searchbox.html" %}
-                        {%- include "globaltoc.html" %}
-                    {%- endif %}
+                    {%- for sidebartemplate in sidebars %}
+                    {%- include sidebartemplate %}
+                    {%- endfor %}
                     <div class="d-lg-none border-bottom">
                         {# Bottom border for mobile (above content, needs to be expanded.) #}
                     </div>
