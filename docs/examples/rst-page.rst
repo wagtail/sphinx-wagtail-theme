@@ -1,10 +1,9 @@
-
 .. _model_recipes:
 
 Page in reStructuredText
 ========================
 
-This page is directly from the Wagtail docs. 
+This page is directly from the Wagtail docs.
 This page is included because as of now (April 2021), the Wagtail docs are not completely converted to Markdown.
 
 
@@ -202,7 +201,7 @@ Here, ``blog_entries.filter(tags__name=tag)`` follows the ``tags`` relation on `
 
 Iterating through ``page.tags.all`` will display each tag associated with ``page``, while the links back to the index make use of the filter option added to the ``BlogIndexPage`` model. A Django query could also use the ``tagged_items`` related name field to get ``BlogPage`` objects associated with a tag.
 
-The same approach can be used to add tagging to non-page models managed through :ref:`snippets` and :doc:`/reference/contrib/modeladmin/index`. In this case, the model must inherit from ``modelcluster.models.ClusterableModel`` to be compatible with ``ClusterTaggableManager``.
+The same approach can be used to add tagging to non-page models managed through :doc:`/index`. In this case, the model must inherit from ``modelcluster.models.ClusterableModel`` to be compatible with ``ClusterTaggableManager``.
 
 
 Custom tag models
