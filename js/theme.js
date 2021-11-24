@@ -1,6 +1,7 @@
 // T3Docs
 import '../sass/theme.scss';
 import autocomplete from 'autocompleter'
+import 'bootstrap';
 
 // Ensure our own namespace
 if (typeof window.T3Docs === 'undefined') {
