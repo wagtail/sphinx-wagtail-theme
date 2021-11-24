@@ -11,6 +11,7 @@ History
 - Fix sphinx-based search (#113)
 - Use sphinx-provided JavaScript files (documentation_options.js) (#114)
 - Use language specified by Sphinx in HTML tag. (#116)
+  - **NOTE** You should set ``language = "en"`` in your project's ``conf.py``
 - Use ``<main>`` tag for body content (#117)
 - Fix copyright and date in footer (#118)
 - New Customizing doc (#118)
@@ -19,6 +20,7 @@ History
 - Replace "Apercu Pro" font with "Source Sans" (#122)
 - Search autocomplete improvements (#123)
 - Allow customizing the sidebar (#124)
+- Fix appearance of links within code blocks (#127)
 
 See new `customizing docs
 <https://sphinx-wagtail-theme.readthedocs.io/en/latest/customizing.html>`_ for
