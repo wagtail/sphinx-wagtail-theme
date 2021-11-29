@@ -118,11 +118,12 @@ relevant rules:
      font-family: "Courier New", monospace;
    }
 
-Custom Sidebars
----------------
+Customize the Sidebar
+---------------------
 
-To add a custom sidebar (for example, add a link to sponsor your project),
-create a custom HTML template and specify it in ``conf.py``:
+To change the contents of the sidebar, create a custom HTML template and specify
+it in ``conf.py``. For example, let's add a link to sponsor your project below
+the table of contents tree:
 
 .. code-block:: python
 
@@ -130,7 +131,8 @@ create a custom HTML template and specify it in ``conf.py``:
    templates_path = ["_templates"]
 
    # Custom sidebar templates, must be a dictionary that maps document names
-   # to template names. The theme default is just searchbox and globaltoc.
+   # to template names. "**" will apply the templates to all pages.
+   # The theme default is just searchbox and globaltoc.
    html_sidebars = {"**": [
        "searchbox.html",
        "globaltoc.html",
@@ -146,4 +148,4 @@ Then in ``_templates/custom.html``:
      <a href="http://example.com">Here's the link</a>
    </p>
 
-Read more about `Sidebars in Sphinx <https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars>`_
+Read more about `customizing the sidebar in Sphinx <https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars>`_
