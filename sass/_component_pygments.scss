@@ -75,4 +75,11 @@ pre {
     .gp { font-weight: $font-weight-bold; } /* Generic.Prompt */
     .gs { font-weight: $font-weight-bold; } /* Generic.Strong */
     .gu { font-weight: $font-weight-bold; } /* Generic.Subheading */
+
+    // Anchors within pre tag, e.g. from autodoc modules.
+    a {
+        color: $base16-base07;
+        &:hover, &:visited:hover { color: darken($base16-base07, 10%); }
+        &:visited { color: $base16-base07; }
+    }
 }
