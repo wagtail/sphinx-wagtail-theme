@@ -16,7 +16,6 @@ Welcome to "Sphinx Wagtail theme" documentation!
    :maxdepth: 2
    :titlesonly:
 
-   readme
    installation
    usage
    customizing

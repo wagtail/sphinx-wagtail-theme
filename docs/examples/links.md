@@ -9,7 +9,7 @@ An [external link](https://wwww.example.com).
 
 ## Internal Links
 
-An [internal link to another document](/examples).
+An [internal link to another document](../examples/index).
 
 ## Reference Links
 
@@ -27,6 +27,6 @@ A [link to a reference](this_is_the_reference_point).
 
 ## Links Over Code
 
-When using inline `code` as the text for a [`link`](/) it is hard to see.
+When using inline `code` as the text for a [`link`](index) it is hard to see.
 
 Unless, we can take special care of that in the styling.
