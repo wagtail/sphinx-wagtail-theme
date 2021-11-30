@@ -110,17 +110,9 @@
         <div class="row">
             <aside class="col-12 col-lg-3">
                 <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5">
-                    {%- if not theme_is_homepage and builder == 'html' %}
-                        {%- include "searchbox.html" %}
-                    {%- endif %}
-                    <div class="site-toc">
-                        <nav class="toc mt-3" aria-label="Main menu">
-                            {%- set toctree = toctree(maxdepth=8, collapse=False, includehidden=False, titles_only=True) -%}
-                            {%- if toctree %}
-                                {{ toctree }}
-                            {%- endif %}
-                        </nav>
-                    </div>
+                    {%- for sidebartemplate in sidebars %}
+                    {%- include sidebartemplate %}
+                    {%- endfor %}
                     <div class="d-lg-none border-bottom">
                         {# Bottom border for mobile (above content, needs to be expanded.) #}
                     </div>
