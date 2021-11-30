@@ -78,14 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
               });
             });
           });
-          // Add terms third (they are not necessarily real words, but stems of
-          // words used by the search algorithm, so are minimally helpful).
-          Object.keys(Search._index.terms).forEach(function (item) {
-            window.T3Docs.autocomplete.push({
-              label: item,
-              group: "Suggested term"
-            });
-          });
         }
         var suggestions = window.T3Docs.autocomplete.filter(function (entry) {
           return entry.label.toLowerCase().includes(text.toLowerCase());
