@@ -1,22 +1,14 @@
 {% if next or prev -%}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {%- if prev %}
-                <li class="page-item">
-                    <a class="page-link" href="{{ prev.link|e }}" title="Accesskey Alt(+Shift)+p">
-                        Previous
-                        <strong class="d-block">{{ prev.title }}</strong>
-                    </a>
-                </li>
-            {%- endif %}
-            {%- if next %}
-                <li class="page-item">
-                    <a class="page-link" href="{{ next.link|e }}" title="Accesskey Alt(+Shift)+n">
-                        Next
-                        <strong class="d-block">{{ next.title }}</strong>
-                    </a>
-                </li>
-            {% endif %}
-        </ul>
-    </nav>
+<nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    {%- if prev %}
+    <a class="float-left" href="{{ prev.link|e }}" title="{{ _('Previous') }}">
+        <span aria-hidden="true" class="mr-1">←</span> {{ prev.title }}
+    </a>
+    {%- endif %}
+    {%- if next %}
+    <a class="float-right" href="{{ next.link|e }}" title="{{ _('Next') }}">
+        {{ next.title }} <span aria-hidden="true" class="ml-1">→</span>
+    </a>
+    {%- endif %}
+</nav>
 {%- endif %}
