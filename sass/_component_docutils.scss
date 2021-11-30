@@ -6,15 +6,6 @@
 }
 
 /**
-* Sections
-*/
-.section {
-    @include clearfix;
-    margin-top: ($spacer * 2.5);
-    margin-bottom: ($spacer * 2.5);
-}
-
-/**
 * Headerlink
 */
 .headerlink {
@@ -61,4 +52,34 @@ table.docutils {
         margin-bottom: 0;
     }
     margin-bottom: $spacer;
+}
+
+// Figures
+.figure {
+    img {
+        border-radius: $border-radius;
+        box-shadow: $box-shadow-sm;
+        margin-bottom: $paragraph-margin-bottom / 2;
+    }
+    .caption {
+        color: $text-muted;
+        font-style: italic;
+    }
+}
+
+// Quotes
+blockquote {
+    border-left: 4px solid $gray-100;
+    padding-left: $spacer;
+    margin: ($paragraph-margin-bottom * 2) 0;
+    .attribution {
+        color: $blockquote-small-color;
+    }
+}
+
+// Add ample spacing between sub-headings within the doc.
+main {
+    h2, h3, h4, h5, h6 {
+        margin-top: $headings-margin-bottom * 3;
+    }
 }
