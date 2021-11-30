@@ -72,7 +72,7 @@
     }
     a {
         @include font-size($h4-font-size);
-        display: block;
+        display: inline-block;
         margin-bottom: $headings-margin-bottom;
         font-family: $headings-font-family;
         font-weight: $headings-font-weight;
