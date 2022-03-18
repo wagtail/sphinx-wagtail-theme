@@ -5,8 +5,8 @@ History
 5.0.5 (unreleased)
 ==================
 
-- Nothing changed yet.
-
+- Feature: massively improved autocomplete (`#123 <https://github.com/wagtail/sphinx_wagtail_theme/pull/123>`_).
+- Clean-up: remove unused Typo3 version selector code (`#123 <https://github.com/wagtail/sphinx_wagtail_theme/pull/123>`_).
 
 5.0.4 (2021-06-28)
 ==================
