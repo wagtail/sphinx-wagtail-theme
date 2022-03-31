@@ -9,6 +9,7 @@ History
 - Clean-up: remove unused Typo3 version selector code (`#123 <https://github.com/wagtail/sphinx_wagtail_theme/pull/123>`_).
 - Update node version usage from v14 to v16 (`#132 <https://github.com/wagtail/sphinx_wagtail_theme/pull/132>`_).
 - Fix issue where core styles for content such as autodoc were not being used (Paarth Agarwal)
+- Update colours for success/info/warning admonitions to match reference designs (Paarth Agarwal)
 
 5.0.4 (2021-06-28)
 ==================
