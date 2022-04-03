@@ -23,7 +23,7 @@ Welcome to "Sphinx Wagtail theme" documentation!
    examples/index
    contributing
    authors
-   changelog
+   Changelog <changelog>
 
 Indices and tables
 ==================

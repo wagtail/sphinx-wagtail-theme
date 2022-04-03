@@ -1,5 +1,8 @@
-# Changelog
+```{include} ../CHANGELOG.md
 
-```eval_rst
-.. include:: ../CHANGELOG.md
+```
+
+```{eval-rst}
+.. toctree::
+   :hidden:
 ```
