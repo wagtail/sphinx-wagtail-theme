@@ -22,7 +22,7 @@ Welcome to "Sphinx Wagtail theme" documentation!
    development
    examples/index
    contributing
-   authors
+   contributors
    Changelog <changelog>
 
 Indices and tables
