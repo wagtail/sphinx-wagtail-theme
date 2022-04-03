@@ -8,6 +8,7 @@ Authors
 - Storm Heg
 - Tibor Leupold
 - Coen van der Kamp
+- Paarth Agarwal
 
 Sphinx Wagtail theme is based on Sphinx Typo3 theme written by:
 
