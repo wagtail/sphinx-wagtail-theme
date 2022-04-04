@@ -1,8 +1,6 @@
 import os
 import sys
 
-from recommonmark.transform import AutoStructify
-
 import sphinx_wagtail_theme
 
 sys.path.insert(0, os.path.abspath('..'))
@@ -11,7 +9,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx_wagtail_theme',
-    'recommonmark',
+    'myst_parser',
 ]
 templates_path = ['_templates']
 source_suffix = {
@@ -21,7 +19,7 @@ source_suffix = {
 }
 master_doc = 'index'
 project = 'Sphinx Wagtail theme'
-copyright = "2020, Wagtail contributors"
+copyright = "2022, Wagtail contributors"
 author = "Wagtail"
 # The short X.Y version.
 version = sphinx_wagtail_theme.__version__
@@ -63,17 +61,9 @@ texinfo_documents = [
 ]
 
 github_doc_root = 'https://github.com/wagtail/sphinx_wagtail_theme/tree/main/docs'
+
 def setup(app):
-    app.add_config_value(
-        'recommonmark_config',
-        {
-            'url_resolver': lambda url: github_doc_root + url,
-            'enable_auto_toc_tree': True,
-            'enable_eval_rst': True,
-        },
-        True
-    )
-    app.add_transform(AutoStructify)
+    pass
 
 
 # https://docs.readthedocs.io/en/stable/guides/manage-translations.html#create-translatable-files

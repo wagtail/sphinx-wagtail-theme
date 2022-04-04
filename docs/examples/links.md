@@ -11,16 +11,20 @@ An [external link](https://wwww.example.com).
 
 An [internal link to another document](../examples/index).
 
+(this_is_the_reference_point)=
+
 ## Reference Links
 
-Reference links rely on creating a reference in reStructuredText. Prefer linking to the whole document if at all possible, otherwise create a reference by embedding reStructuredText with `eval_rst` like so:
+Reference links (links to a target within a page) rely on the page having a reference created, this can be added as follows:
 
-    ```eval_rst
-    .. _this_is_the_reference_point:
-    ```
+```md
+(this_is_the_reference_point)=
+```
 
-```eval_rst
-.. _this_is_the_reference_point:
+The reference can be linked to, with a custom label, using the Markdown link syntax as follows:
+
+```md
+A [link to a reference](this_is_the_reference_point).
 ```
 
 A [link to a reference](this_is_the_reference_point).

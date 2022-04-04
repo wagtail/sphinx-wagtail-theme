@@ -20,10 +20,10 @@ Welcome to "Sphinx Wagtail theme" documentation!
    usage
    customizing
    development
-   contributing
-   authors
-   history
    examples/index
+   contributing
+   contributors
+   Changelog <changelog>
 
 Indices and tables
 ==================

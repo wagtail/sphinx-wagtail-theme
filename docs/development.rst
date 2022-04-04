@@ -35,7 +35,7 @@ Don't forget to update the docs. Render the documentation and show in browser::
 
 Without opening the browser::
 
-   non_interactive=1  make docs
+   non_interactive=1 make docs
 
 Check the Python code. The CI workflow requires `lint-minimal` to succeed::
 
