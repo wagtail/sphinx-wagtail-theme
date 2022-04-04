@@ -22,8 +22,8 @@ Welcome to "Sphinx Wagtail theme" documentation!
    development
    examples/index
    contributing
-   authors
-   changelog
+   contributors
+   Changelog <changelog>
 
 Indices and tables
 ==================

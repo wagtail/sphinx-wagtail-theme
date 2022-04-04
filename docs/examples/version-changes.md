@@ -5,22 +5,16 @@ Use as appropriate.
 
 These should probably stand out a bit, since it is imporant information.
 
-```eval_rst
-.. versionadded:: 2.11
+```{versionadded} 2.11
+Feature X is brand new!
 
-    Feature X is brand new!
-
-    Second line.
+Second line.
 ```
 
-```eval_rst
-.. versionchanged:: 2.11
-
-    Feature X was changed to feature Y.
+```{versionchanged} 2.11
+Feature X was changed to feature Y.
 ```
 
-```eval_rst
-.. deprecated:: 2.11
-
-    Feature X has been removed.
+```{deprecated} 2.11
+Feature X has been removed.
 ```
