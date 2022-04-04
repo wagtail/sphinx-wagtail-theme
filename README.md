@@ -9,6 +9,7 @@ Sphinx Wagtail theme contains all files required to build a Sphinx extension tha
 -   [Repository](https://github.com/wagtail/sphinx_wagtail_theme)
 -   [Documentation](https://sphinx-wagtail-theme.netlify.app/)
 -   [Security](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/SECURITY.md)
+-   [Changelog](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/CHANGELOG.md)
 -   Supports Python > 3.7
 
 ## Installation
@@ -46,7 +47,7 @@ html_theme = 'sphinx_wagtail_theme'
 Checklist:
 
 -   AUTHORS.rst is updated
--   HISTORY.rst (change log) is updated
+-   CHANGELOG.md is updated
 -   Everything is committed, clean checkout
 -   ~/.pypirc has a username and password (token)
 -   Add a git tag and a Github release once completed
