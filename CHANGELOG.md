@@ -51,6 +51,7 @@ See new [customising docs](https://sphinx-wagtail-theme.readthedocs.io/en/latest
 -   Update node version usage from v14 to v16 ([#132](https://github.com/wagtail/sphinx_wagtail_theme/pull/132))
 -   Replace "Apercu Pro" font with "Source Sans" ([#122](https://github.com/wagtail/sphinx_wagtail_theme/pull/122))
 -   Update colours for success/info/warning admonitions to match reference designs (Paarth Agarwal [#137](https://github.com/wagtail/sphinx_wagtail_theme/pull/137))
+-   Migrate from `recommonmark` to [`MyST Parser`](https://myst-parser.readthedocs.io/) for markdown usage in documentation ([#142](https://github.com/wagtail/sphinx_wagtail_theme/pull/142))
 
 ### Fixed
 
@@ -63,6 +64,7 @@ See new [customising docs](https://sphinx-wagtail-theme.readthedocs.io/en/latest
 -   Increase contrast of admonitions to WCAG AAA, inline code to AA ([#121](https://github.com/wagtail/sphinx_wagtail_theme/pull/121))
 -   Fix appearance of links within code blocks ([#127](https://github.com/wagtail/sphinx_wagtail_theme/pull/127))
 -   Fix issue where core styles for content such as autodoc were not being used (Paarth Agarwal [#136](https://github.com/wagtail/sphinx_wagtail_theme/pull/136))
+-   Fix build issue due to jinja2 compatibility ([#142](https://github.com/wagtail/sphinx_wagtail_theme/pull/142))
 
 ## [5.0.4] - 2021-06-28
 
