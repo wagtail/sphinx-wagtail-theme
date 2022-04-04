@@ -13,6 +13,7 @@ $gray-800:          #313131;
 $gray-900:          #212121;
 $black:             #000000;
 
+$teal:              #007d7e;
 $indigo:            #251657;
 $bright-green: 		#3beccd;
 
@@ -25,7 +26,8 @@ $search:            #ffe69c;
 
 
 $link-color: $primary;
-$link-hover-color: darken($link-color, 15%);
+$link-hover-color: $teal;
+$link-active-color: darken($teal, 15%);
 $link-border-color: $bright-green;
 $link-border-hover-color: darken($bright-green, 15%);
 $link-alternate-color: #ffffff;
