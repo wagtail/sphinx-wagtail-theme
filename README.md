@@ -5,7 +5,7 @@
 Sphinx Wagtail theme contains all files required to build a Sphinx extension that provides the theme.
 
 -   [MIT license](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/LICENSE)
--   [AUTHORS](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/AUTHORS.rst)
+-   [Contributors](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/CONTRIBUTORS.md)
 -   [Repository](https://github.com/wagtail/sphinx_wagtail_theme)
 -   [Documentation](https://sphinx-wagtail-theme.netlify.app/)
 -   [Security](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/SECURITY.md)
