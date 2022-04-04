@@ -46,7 +46,7 @@ html_theme = 'sphinx_wagtail_theme'
 
 Checklist:
 
--   AUTHORS.rst is updated
+-   CONTRIBUTORS.md is updated
 -   CHANGELOG.md is updated
 -   Everything is committed, clean checkout
 -   ~/.pypirc has a username and password (token)
