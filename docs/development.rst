@@ -29,13 +29,13 @@ Build and install the package::
 
    make install
 
-Don't forget to update the docs. Render the documentation and show in browser::
+Don't forget to update the docs. Render the documentation::
 
    make docs
 
-Without opening the browser::
+Serve build docs locally::
 
-   non_interactive=1 make docs
+   make serve
 
 Check the Python code. The CI workflow requires `lint-minimal` to succeed::
 
