@@ -8,6 +8,7 @@
 -   Paarth Agarwal
 -   Vince Salvo
 -   LB (Ben) Johnston
+-   Paarth Agarwal
 
 ## Sphinx Typo3 theme
 
