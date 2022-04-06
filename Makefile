@@ -109,6 +109,11 @@ docs: ## Regenerate Sphinx HTML documentation, including API docs
 	$(MAKE) -C docs html
 
 
+.PHONY: serve
+serve: ## Serve docs at http://localhost:8000
+	python -m http.server --directory ./docs/_build/html
+
+
 .PHONY: frontend
 frontend: ## Compile frontend files
 	npm run frontend
