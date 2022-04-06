@@ -66,19 +66,13 @@ can be uploaded to PyPi run::
 .. _venv: https://docs.python.org/3/library/venv.html
 
 
-Theme stress test
-=================
+Example pages
+=============
 
-There is a demo manual `t3SphinxThemeRtdDemoDocs`_
-under construction. It serves as a "stress test" for this `sphinx_wagtail_theme`_
-and tries to use as many reStructuredText examples as possible and covered by
-the theme. **Documentation writers** may want to have a look at those pages to
-understand what reST markup can be used and what the visual effect will be.
-**Theme contributors** should use the demo manual for testing and *visually*
-check the rendering.
+When working on the theme it is often going to be helpful to know the impact of your changes.
+The :doc:`examples section <examples/index>` should be helpful for this.
 
-.. _t3SphinxThemeRtdDemoDocs: https://docs.typo3.org/m/typo3/demo-t3SphinxThemeRtd/master/en-us/
-.. _sphinx_wagtail_theme: https://github.com/typo3-documentation/sphinx_wagtail_theme
+When you are adding new elements or styles that are not part of the examples, please make sure to add them.
 
 
 Javascript package management
