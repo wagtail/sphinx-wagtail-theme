@@ -101,10 +101,7 @@ coverage: ##- Check code coverage quickly with default Python
 
 
 .PHONY: docs
-docs: ## Regenerate Sphinx HTML documentation, including API docs
-# 	rm -f docs/sphinx_wagtail_theme.rst
-# 	rm -f docs/modules.rst
-# 	sphinx-apidoc -o docs/ sphinx_wagtail_theme
+docs: ## Regenerate Sphinx HTML documentation
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 
