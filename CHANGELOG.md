@@ -48,6 +48,9 @@ See new [customising docs](https://sphinx-wagtail-theme.readthedocs.io/en/latest
 
 ### Changed
 
+-   Ignore pyenv python-version file ([#146](https://github.com/wagtail/sphinx_wagtail_theme/pull/146))
+-   Clean-up make file ([#150](https://github.com/wagtail/sphinx_wagtail_theme/pull/150))
+-   Update development instructions ([#149](https://github.com/wagtail/sphinx_wagtail_theme/pull/149))
 -   Update node version usage from v14 to v16 ([#132](https://github.com/wagtail/sphinx_wagtail_theme/pull/132))
 -   Replace "Apercu Pro" font with "Source Sans" ([#122](https://github.com/wagtail/sphinx_wagtail_theme/pull/122))
 -   Update colours for success/info/warning admonitions to match reference designs (Paarth Agarwal [#137](https://github.com/wagtail/sphinx_wagtail_theme/pull/137))
