@@ -16,6 +16,8 @@ $black:             #000000;
 $teal:              #007d7e;
 $indigo:            #251657;
 $bright-green: 		#3beccd;
+$bright-green-700: darken($bright-green, 15%);
+$bright-green-900: darken($bright-green, 30%);
 
 $primary:           $indigo;
 $success:           #a456c9;
@@ -26,12 +28,14 @@ $search:            #ffe69c;
 
 
 $link-color: $primary;
-$link-hover-color: $teal;
-$link-active-color: darken($teal, 15%);
 $link-border-color: $bright-green;
-$link-border-hover-color: darken($bright-green, 15%);
+$link-hover-color: $bright-green-700;
+$link-active-color: $bright-green-900;
+$link-border-active-color: $bright-green-900;
+
 $link-alternate-color: #ffffff;
 $link-alternate-hover-color: darken($link-alternate-color, 15%);
+
 $table-bg:          $white;
 
 $yiq-contrasted-threshold: 160;

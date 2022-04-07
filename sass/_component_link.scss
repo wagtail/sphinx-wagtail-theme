@@ -3,13 +3,14 @@ a {
 	color: $link-color;
 	border-color: $link-border-color;
 
+    &:focus,
 	&:hover {
 		color: $link-hover-color;
-		border-color: $link-border-hover-color;
 		text-decoration: none;
 	}
 
     &:active {
         color: $link-active-color;
+		border-color: $link-border-active-color;
     }
 }
