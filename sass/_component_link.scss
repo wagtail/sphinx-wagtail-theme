@@ -1,15 +1,18 @@
 a {
-	border-bottom: 2px solid;
-	color: $link-color;
-	border-color: $link-border-color;
+    color: $link-color;
+    text-decoration: 2px solid underline;
+    text-decoration-color: $link-border-color;
+    text-underline-offset: 3px;
 
-	&:hover {
-		color: $link-hover-color;
-		border-color: $link-border-hover-color;
-		text-decoration: none;
-	}
+    &:focus,
+    &:hover {
+        color: $link-hover-color;
+        // This is necessary because of some weird `hover` mixin in bootstrap.
+        text-decoration: 2px solid underline;
+    }
 
-	&:visited {
-		color: $link-hover-color;
-	}
+    &:active {
+        color: $link-active-color;
+        text-decoration: 2px solid underline;
+    }
 }
