@@ -11,6 +11,8 @@
 
 // components
 @import "component_admotion";
+@import "component_figure";
+@import "component_quotes";
 @import "component_bignums";
 @import "component_docutils";
 @import "component_footer";
@@ -19,7 +21,6 @@
 @import "component_link";
 @import "component_math";
 @import "component_pygments";
-@import "component_rst";
 @import "component_search";
 @import "component_sphinx_tabs";
 @import "component_toc";
