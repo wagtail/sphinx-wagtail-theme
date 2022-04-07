@@ -58,6 +58,7 @@ See new [customising docs](https://sphinx-wagtail-theme.readthedocs.io/en/latest
 
 ### Fixed
 
+-   Fix link states ([#152](https://github.com/wagtail/sphinx_wagtail_theme/pull/152))
 -   Remove unused Typo3 version selector code ([#123](https://github.com/wagtail/sphinx_wagtail_theme/pull/123))
 -   Don't load webfonts.css since it's been removed and 404s ([#111](https://github.com/wagtail/sphinx_wagtail_theme/pull/111))
 -   Remove invalidly named file path preventing git clone on Windows ([#112](https://github.com/wagtail/sphinx_wagtail_theme/pull/112))
