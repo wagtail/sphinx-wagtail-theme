@@ -9,10 +9,6 @@ a {
 		text-decoration: none;
 	}
 
-	&:visited {
-		color: $link-hover-color;
-	}
-    
     &:active {
         color: $link-active-color;
     }
