@@ -1,0 +1,9 @@
+// Quotes
+blockquote {
+    border-left: 4px solid $gray-100;
+    padding-left: $spacer;
+    margin: ($paragraph-margin-bottom * 2) 0;
+    .attribution {
+        color: $blockquote-small-color;
+    }
+}
