@@ -69,6 +69,7 @@ See new [customising docs](https://sphinx-wagtail-theme.readthedocs.io/en/latest
 -   Fix appearance of links within code blocks ([#127](https://github.com/wagtail/sphinx_wagtail_theme/pull/127))
 -   Fix issue where core styles for content such as autodoc were not being used (Paarth Agarwal [#136](https://github.com/wagtail/sphinx_wagtail_theme/pull/136))
 -   Fix build issue due to jinja2 compatibility ([#142](https://github.com/wagtail/sphinx_wagtail_theme/pull/142))
+-   Fix issue where Sphinx default pygments styles were being imported but not required ([#151](https://github.com/wagtail/sphinx_wagtail_theme/pull/151))
 
 ## [5.0.4] - 2021-06-28
 
