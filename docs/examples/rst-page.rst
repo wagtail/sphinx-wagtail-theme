@@ -14,7 +14,11 @@ Wagtail defaults to serving :class:`~wagtail.core.models.Page`-derived models by
 
 Consider this example from the Wagtail demo site's ``models.py``, which serves an ``EventPage`` object as an iCal file if the ``format`` variable is set in the request:
 
+
+## Python emphasize
+
 .. code-block:: python
+   :emphasize-lines: 15-17
 
     class EventPage(Page):
         ...

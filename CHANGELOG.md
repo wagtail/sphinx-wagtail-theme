@@ -32,7 +32,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [5.1.1] - YYYY-MM-DD
 
-Nothing new yet.
+### Fixed
+
+-   Fix code highlight, exclude pygments css from layout ([#154](https://github.com/wagtail/sphinx_wagtail_theme/pull/154))
 
 ## [5.1.0] - 2022-04-07
 

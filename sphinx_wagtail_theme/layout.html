@@ -30,14 +30,22 @@
     {%- if favicon %}
         <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
     {%- endif %}
+
+    {#- Include our own stylesheets -#}
+    {%- if sphinx_version_info[0] < 4 %}
     <link rel="stylesheet" type="text/css" href="{{ pathto('_static/' + style, 1) }}" />
+    {%- endif %}
     <link rel="stylesheet" type="text/css" href="{{ pathto('_static/dist/fontawesome.css', 1) }}" />
+    {#- Include stylesheets from sphinx (e.g. user custom css #}
     {%- for css in css_files %}
+    {#- Block pygments css; we are manually including ours in theme.css instead #}
+    {%- if css not in ["_static/pygments.css"] %}
       {%- if css|attr("filename") %}
       {{ css_tag(css) }}
       {%- else %}
       <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
       {%- endif %}
+    {%- endif %}
     {%- endfor %}
     {%- block linktags %}
         {%- if hasdoc('about') %}
