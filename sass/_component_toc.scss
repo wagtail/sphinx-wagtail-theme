@@ -5,7 +5,6 @@
         display: inline-block;
         line-height: 1.25;
         padding: ($spacer / 4) 0;
-        text-decoration: none;
     }
 
     li {
@@ -13,7 +12,7 @@
     }
 
     li:not(.toctree-l1) a {
-        border: none;
+        text-decoration: none;
     }
 
     ul {
