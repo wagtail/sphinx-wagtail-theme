@@ -21,14 +21,14 @@ happening in the image to the reader. Figures and their captions have some
 slight styling to help them stand out from surrounding text --- this is
 especially useful for screenshots which can easily blend in to the page.
 
-```eval_rst
+```{figure} /img/wagtail.jpg
+---
+alt: A wagtail standing on the ground
+---
 
-.. figure:: /img/wagtail.jpg
-    :alt: A wagtail standing on the ground
-
-    (This is the caption) Wagtails are a group of passerine birds that form the
-    genus Motacilla in the family Motacillidae. Here we observe a wagtail in its
-    natural habitat, standing on the ground.
+(This is the caption) Wagtails are a group of passerine birds that form the
+genus Motacilla in the family Motacillidae. Here we observe a wagtail in its
+natural habitat, standing on the ground.
 ```
 
 You can see that the caption helps further illuminate and provides a link to the
