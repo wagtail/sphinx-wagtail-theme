@@ -6,15 +6,6 @@
 }
 
 /**
-* Sections
-*/
-.section {
-    @include clearfix;
-    margin-top: ($spacer * 2.5);
-    margin-bottom: ($spacer * 2.5);
-}
-
-/**
 * Headerlink
 */
 .headerlink {
@@ -61,4 +52,11 @@ table.docutils {
         margin-bottom: 0;
     }
     margin-bottom: $spacer;
+}
+
+// Add ample spacing between sub-headings within the doc.
+main {
+    h2, h3, h4, h5, h6 {
+        margin-top: $headings-margin-bottom * 3;
+    }
 }

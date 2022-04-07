@@ -21,6 +21,7 @@ lists
 nesting/index
 paragraphs
 progressive-disclosure
+quotes
 rst-page
 tables
 tables-of-content
