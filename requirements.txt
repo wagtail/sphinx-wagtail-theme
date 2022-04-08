@@ -1,3 +1,7 @@
+# Install package into itself.
+-e .
+
+# Install development tooling
 build
 flake8
 pip
