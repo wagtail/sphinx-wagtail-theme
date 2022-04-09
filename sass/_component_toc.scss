@@ -13,6 +13,7 @@
 
     li:not(.toctree-l1) a {
         text-decoration: none;
+        color: $gray-600;
     }
 
     ul {
