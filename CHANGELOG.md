@@ -35,8 +35,15 @@ All notable changes to this project will be documented in this file.
 -   ...
 
 -->
+## [5.1.2] - YYYY-MM-DD
 
-## [5.1.1] - YYYY-MM-DD
+### Fixed
+
+-   De-emphasize page table of contents [#159](https://github.com/wagtail/sphinx_wagtail_theme/pull/159)
+-   Fix links not styled properly in Safari [#160](https://github.com/wagtail/sphinx_wagtail_theme/pull/160)
+)
+
+## [5.1.1] - 2022-04-07
 
 ### Fixed
 
