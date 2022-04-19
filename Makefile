@@ -58,6 +58,11 @@ build-project: clean-project ##- Build Sphinx extension
 .PHONY: clean
 clean: clean-project ## Clean all, except frontend
 
+
+.PHONY: clean-project
+clean-project: clean-build clean-pyc clean-test clean-docs ## Remove all build, test, coverage and Python artifacts
+
+
 .PHONY: clean-build
 clean-build: ##- Remove build artifacts
 	rm -rf build/
@@ -79,20 +84,18 @@ clean-pyc: ##- Remove Python file artifacts
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -rf {} +
 
-.PHONY: clean-docs
-clean-docs: ## Clean build docs
-	rm -rf docs/_build
-
-.PHONY: clean-project
-clean-project: clean-build clean-pyc clean-test clean-docs ##- Remove all build, test, coverage and Python artifacts
-
-
 .PHONY: clean-test
 clean-test: ##- Remove test and coverage artifacts
 	rm -rf .tox/
 	rm -f .coverage
 	rm -rf htmlcov/
 	rm -rf .pytest_cache
+
+
+.PHONY: clean-docs
+clean-docs: ##- Remove previously built docs
+	rm -rf ./docs/_build
+	rm -rf ./rtd-venv
 
 
 .PHONY: coverage
@@ -134,9 +137,9 @@ install: clean build uninstall ## Build Sphinx extension and install from packag
 	find dist -name "*.whl" -print0 | xargs -0 pip install --upgrade
 
 
-.PHONY: install-for-dev ifd
-ifd: install-for-dev
-install-for-dev: clean uninstall ## Clean, uninstall and pip install -e for development (alias ifd)
+.PHONY: install-for-development ifd
+ifd: install-for-development
+install-for-development: clean uninstall ## Clean, uninstall and pip install -e for development (alias ifd)
 	pip install -r requirements-dev.txt
 	pip install -e .
 

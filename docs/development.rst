@@ -29,6 +29,10 @@ Build and install the package::
 
    make install
 
+Build and install the package for development::
+
+   make install-for-development
+
 Don't forget to update the docs. Render the documentation::
 
    make docs

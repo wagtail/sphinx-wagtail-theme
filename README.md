@@ -41,7 +41,7 @@ html_theme = 'sphinx_wagtail_theme'
 -   Show all available tasks via `make`
 -   Run `make setup` to install the dependencies
 -   Run `make frontend` to build the frontend assets
--   Run `make install-for-dev` to build the theme package and install it in editable mode
+-   Run `make install-for-development` to build the theme package and install it in editable mode
 -   Run `make docs` to build the theme docs, which also serve as the example docs to develop the theme
 -   Run `make serve` to serve the theme docs at http://localhost:8000
 
