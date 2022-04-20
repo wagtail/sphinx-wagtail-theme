@@ -1,0 +1,10 @@
+-r ./requirements.txt
+build
+docutils
+flake8
+pip
+pytest
+setuptools
+twine
+wheel
+zest.releaser

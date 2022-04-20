@@ -124,7 +124,7 @@ install: clean build uninstall ## Build Sphinx extension and install from packag
 .PHONY: install-for-dev ifd
 ifd: install-for-dev
 install-for-dev: clean uninstall ## Clean, uninstall and pip install -e for development (alias ifd)
-	pip install -r requirements.txt
+	pip install -r requirements-dev.txt
 	pip install -e .
 
 
