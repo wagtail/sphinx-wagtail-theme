@@ -4,6 +4,7 @@ docutils
 flake8
 pip
 pytest
+selenium
 setuptools
 twine
 wheel
