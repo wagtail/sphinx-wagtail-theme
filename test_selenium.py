@@ -2,6 +2,7 @@ from http import server
 import pathlib
 import threading
 
+import percy
 from selenium import webdriver
 
 
@@ -35,6 +36,10 @@ def main():
     print("Server thread running. Starting client requests...")
     driver = webdriver.Firefox()
     driver.get("http://localhost:8000")
+
+    driver.implicitly_wait(3)
+    percy.percy_snapshot(driver, "Docs homepage")
+
     driver.quit()
     print("Client done.")
 
