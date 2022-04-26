@@ -9,6 +9,11 @@ BASE_DIR = pathlib.Path(__file__).parent.resolve()
 DOCS_BUILD_DIR = BASE_DIR / "docs/_build/html/"
 
 
+class DocsHTTPRequestHandler(server.SimpleHTTPRequestHandler):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, directory=str(DOCS_BUILD_DIR), **kwargs)
+
+
 def main():
     if not DOCS_BUILD_DIR.exists():
         print(
@@ -18,8 +23,8 @@ def main():
         exit(1)
 
 
-    handler_class=server.BaseHTTPRequestHandler
-    server_address = ('', 8000)
+    handler_class = DocsHTTPRequestHandler
+    server_address = ('127.0.0.1', 8000)
 
     httpd = server.HTTPServer(server_address, handler_class)
 
@@ -27,17 +32,15 @@ def main():
     server_deamon = True
     server_thread.start()
 
-    print("Hello")
+    print("Server thread running. Starting client requests...")
+    driver = webdriver.Firefox()
+    driver.get("http://localhost:8000")
+    driver.quit()
+    print("Client done.")
 
     httpd.shutdown()
+    print("Server done.")
 
-
-
-# driver = webdriver.Firefox()
-
-# driver.get("http://localhost:8000")
-
-# driver.quit()
 
 if __name__ == "__main__":
     main()
