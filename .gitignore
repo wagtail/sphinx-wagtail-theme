@@ -27,3 +27,5 @@ venv/
 env/
 .env/
 .python-version
+
+geckodriver.log
