@@ -79,9 +79,12 @@ clean-pyc: ##- Remove Python file artifacts
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -rf {} +
 
+.PHONY: clean-docs
+clean-docs: ## Clean build docs
+	rm -rf docs/_build
 
 .PHONY: clean-project
-clean-project: clean-build clean-pyc clean-test ##- Remove all build, test, coverage and Python artifacts
+clean-project: clean-build clean-pyc clean-test clean-docs ##- Remove all build, test, coverage and Python artifacts
 
 
 .PHONY: clean-test
