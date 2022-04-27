@@ -4,6 +4,7 @@ import threading
 
 import percy
 from selenium import webdriver
+from selenium.webdriver.firefox import options as firefox_options
 
 
 BASE_DIR = pathlib.Path(__file__).parent.resolve()
@@ -34,7 +35,9 @@ def main():
     server_thread.start()
 
     print("Server thread running. Starting client requests...")
-    driver = webdriver.Firefox()
+    options = firefox_options.Options()
+    options.headless = True
+    driver = webdriver.Firefox(options=options)
     driver.get("http://localhost:8000")
 
     driver.implicitly_wait(3)
