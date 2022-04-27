@@ -52,7 +52,7 @@ jobs:
         with:
           python-version: 3.7
       - name: Setup Firefox and geckodriver
-        uses: SeleniumHQ/selenium/setup-firefox@03f11b234e0c93ff670d0716fc813b782b91e4d1
+        uses: ./.github/actions/setup-firefox
       - run: make setup
       - run: make install-for-dev
       - run: make docs
