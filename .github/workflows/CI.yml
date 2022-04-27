@@ -53,8 +53,8 @@ jobs:
           python-version: 3.7
       - run: make setup
       - run: make install-for-dev
+      - run: make docs
       - name: Percy Test
-        # run: npx @percy/cli snapshot _site/ # or any directory such as public/
         run: make test-visual
 
   sphinx-quickstart:
