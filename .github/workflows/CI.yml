@@ -44,6 +44,19 @@ jobs:
       - run: make lint-minimal
       - run: pytest
 
+  test-visual:
+   runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - run: make setup
+      - run: make install-for-development
+      - name: Percy Test
+        # run: npx @percy/cli snapshot _site/ # or any directory such as public/
+        run: make test-visual
+
   sphinx-quickstart:
     needs: [build]
     runs-on: ubuntu-latest
