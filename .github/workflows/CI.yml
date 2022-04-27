@@ -46,6 +46,8 @@ jobs:
 
   test-visual:
     runs-on: ubuntu-latest
+    env:
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v2
