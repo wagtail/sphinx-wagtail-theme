@@ -52,7 +52,7 @@ jobs:
         with:
           python-version: 3.7
       - run: make setup
-      - run: make install-for-development
+      - run: make install-for-dev
       - name: Percy Test
         # run: npx @percy/cli snapshot _site/ # or any directory such as public/
         run: make test-visual
