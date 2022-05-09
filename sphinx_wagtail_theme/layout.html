@@ -147,9 +147,11 @@
                         {% include "pager.html" %}
                     </div>
                     {% if display_toc and not hidetoc %}
-                    <nav class="col-12 col-lg-3 pb-4 toc page-toc" aria-labelledby="page-toc-heading">
+                    <nav class="col-12 col-lg-3 pb-4">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
                         <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
                         {{ toc }}
+                    </div>
                     </nav>
                     {% endif %}
                 </div>
