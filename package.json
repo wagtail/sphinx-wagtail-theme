@@ -18,8 +18,7 @@
 		"@fortawesome/fontawesome-free": "^5.13.0",
 		"autocompleter": "^6.0.3",
 		"bootstrap": "^4.4.1",
-		"jquery": "^3.5.1",
-		"popper.js": "^1.16.1"
+		"jquery": "^3.5.1"
 	},
 	"scripts": {
 		"start": "npm run watch",
