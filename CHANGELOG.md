@@ -2,17 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-5.1.2 (unreleased)
-------------------
-
-- Nothing changed yet.
-
-
-5.1.1 (2022-04-07)
-
-<!-- TEMPLATE - Copy for new releases
-
-## [x.y.z] - YYYY-MM-DD
+## [unreleased] - YYYY-MM-DD
 
 ### Added
 
@@ -20,7 +10,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
--   ...
+-   Distinguished the caption text visually from the body text ([#166](https://github.com/wagtail/sphinx_wagtail_theme/pull/166))
 
 ### Removed
 
@@ -28,20 +18,8 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
--   ...
-
-### Security
-
--   ...
-
--->
-## [5.1.2] - YYYY-MM-DD
-
-### Fixed
-
--   De-emphasize page table of contents [#159](https://github.com/wagtail/sphinx_wagtail_theme/pull/159)
--   Fix links not styled properly in Safari [#160](https://github.com/wagtail/sphinx_wagtail_theme/pull/160)
-)
+-   De-emphasize page table of contents ([#159](https://github.com/wagtail/sphinx_wagtail_theme/pull/159))
+-   Fix links not styled properly in Safari ([#160](https://github.com/wagtail/sphinx_wagtail_theme/pull/160))
 
 ## [5.1.1] - 2022-04-07
 
@@ -320,3 +298,29 @@ Some commits:
 ## [0.1.0] - 2020-01-01
 
 -   Starting development.
+
+<!-- TEMPLATE - Copy for new releases
+
+## [x.y.z] - YYYY-MM-DD
+
+### Added
+
+-   ...
+
+### Changed
+
+-   ...
+
+### Removed
+
+-   ...
+
+### Fixed
+
+-   ...
+
+### Security
+
+-   ...
+
+-->
