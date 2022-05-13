@@ -7,7 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox import options as firefox_options
 
 
-BASE_DIR = pathlib.Path(__file__).parent.resolve()
+BASE_DIR = pathlib.Path(__file__).parent.parent.resolve()
 DOCS_BUILD_DIR = BASE_DIR / "docs/_build/html/"
 
 

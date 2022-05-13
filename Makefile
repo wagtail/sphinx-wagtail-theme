@@ -197,9 +197,9 @@ test-import: ## Verify the extension is install and can be imported
 	python3 -c "import sphinx_wagtail_theme as m; print(m.__version__)"
 	python3 -c "import sphinx_wagtail_theme as m, pprint; pprint.pprint(m.version_info)"
 
-.PHONY: test-visual
-test-visual: ## Run visual regression tests
-	./node_modules/.bin/percy exec -- python test_selenium.py
+.PHONY: test-visual-regression
+test-visual-regression: ## Run visual regression tests
+	./node_modules/.bin/percy exec -- python tests/test_visual_regression.py
 
 .PHONY: uninstall ui
 ui: uninstall
