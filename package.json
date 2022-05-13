@@ -16,6 +16,7 @@
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.13.0",
+		"@percy/cli": "^1.1.4",
 		"autocompleter": "^6.0.3",
 		"bootstrap": "^4.4.1",
 		"jquery": "^3.5.1"
