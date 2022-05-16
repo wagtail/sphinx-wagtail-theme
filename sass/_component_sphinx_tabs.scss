@@ -1,54 +1,62 @@
 .rst-content {
+  /** Sphinx extension sphinx-tabs */
+  .sphinx-tabs {
+    margin-bottom: 2em;
+  }
 
-    /**
-     * Sphinx extension sphinx-tabs
-     */
-    .sphinx-tabs {
-        margin-bottom: 2em;
-    }
-    .sphinx-tabs:last-child {
-        margin-bottom: 1em;
-    }
-    .sphinx-tabs .sphinx-menu .item p {
-        margin: 0;
-    }
-    .sphinx-tabs .sphinx-menu a.item {
-        color: $body-color !important;
-    }
-    .sphinx-tabs .sphinx-menu {
-        border-bottom-color: rgba(0, 0, 0, .25) !important;
-        display: flex;
-        flex-flow: row wrap;
-    }
-    .sphinx-tabs .sphinx-menu a.active.item {
-        border-color: rgba(0, 0, 0, .25) !important;
-    }
-    .sphinx-tab {
-        border-color: rgba(0, 0, 0, .25) !important;
-        box-sizing: border-box;
-    }
-    .sphinx-tab.tab.active {
-        margin-bottom: 0;
-    }
-    // Code tabs don't need the code-block border
-    .code-tab.tab {
-        padding: .4em !important;
-    }
-    .code-tab.tab div[class^='highlight'] {
-        border: none;
-    }
+  .sphinx-tabs:last-child {
+    margin-bottom: 1em;
+  }
 
-    /* Probably sphinx 1.8.5 inserts these .docutils.container that are in
+  .sphinx-tabs .sphinx-menu .item p {
+    margin: 0;
+  }
+
+  .sphinx-tabs .sphinx-menu a.item {
+    color: $body-color !important;
+  }
+
+  .sphinx-tabs .sphinx-menu {
+    border-bottom-color: rgba(0, 0, 0, 0.25) !important;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .sphinx-tabs .sphinx-menu a.active.item {
+    border-color: rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .sphinx-tab {
+    border-color: rgba(0, 0, 0, 0.25) !important;
+    box-sizing: border-box;
+  }
+
+  .sphinx-tab.tab.active {
+    margin-bottom: 0;
+  }
+  // Code tabs don't need the code-block border
+  .code-tab.tab {
+    padding: 0.4em !important;
+  }
+
+  .code-tab.tab div[class^="highlight"] {
+    border-color: transparent;
+  }
+
+  /* Probably sphinx 1.8.5 inserts these .docutils.container that are in
        conflict with our grid. We need to fix wrong styles here. */
-    .sphinx-tabs .docutils.container {
-        margin: 0;
-        width: auto;
-    }
-    .sphinx-tabs.docutils.container {
-        max-width: 100%;
-        padding: 0;
-    }
-    .sphinx-tabs .top.tabular.menu.docutils.container {
-        padding: 0;
-    }
+
+  .sphinx-tabs .docutils.container {
+    margin: 0;
+    width: auto;
+  }
+
+  .sphinx-tabs.docutils.container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .sphinx-tabs .top.tabular.menu.docutils.container {
+    padding: 0;
+  }
 }

@@ -1,62 +1,72 @@
 /**
 * Misc
 */
+
 .clear-both {
-    clear: both;
+  clear: both;
 }
 
 /**
 * Headerlink
 */
+
 .headerlink {
-    position: relative;
-    font-size: .65em;
-    visibility: hidden;
-    top: -.15em;
-    &:after {
-        @include fa-icon;
-        content: fa-content($fa-var-link);
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        margin-left: -.35em;
-    }
-    &:hover {
-        text-decoration: none;
-    }
+  position: relative;
+  font-size: 0.65em;
+  visibility: hidden;
+  top: -0.15em;
+
+  &:after {
+    @include icon-base;
+    content: fa-content($fa-var-link);
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
 }
+
 *:hover > .headerlink:after {
-    visibility: visible;
+  visibility: visible;
 }
 
 /**
 * Tables
 */
+
 table.docutils {
-    &:not(.field-list) {
-        border: 0;
-        @extend .table;
-        @extend .table-bordered;
-        @extend .table-striped;
-        thead {
-            @extend .thead-light;
-        }
+  &:not(.field-list) {
+    border: 0;
+    @extend .table;
+    @extend .table-bordered;
+    @extend .table-striped;
+
+    thead {
+      @extend .thead-light;
     }
-    &.field-list {
-        .field-name {
-            padding-right: 1rem;
-        }
+  }
+
+  &.field-list {
+    .field-name {
+      padding-right: 1rem;
     }
+  }
 }
+
 .table-responsive {
-    table.docutils {
-        margin-bottom: 0;
-    }
-    margin-bottom: $spacer;
+  table.docutils {
+    margin-bottom: 0;
+  }
+  margin-bottom: $spacer;
 }
 
 // Add ample spacing between sub-headings within the doc.
 main {
-    h2, h3, h4, h5, h6 {
-        margin-top: $headings-margin-bottom * 3;
-    }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: $headings-margin-bottom * 3;
+  }
 }
