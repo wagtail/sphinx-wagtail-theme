@@ -38,10 +38,29 @@ def main():
     options = firefox_options.Options()
     options.headless = True
     driver = webdriver.Firefox(options=options)
-    driver.get("http://localhost:8000")
 
-    driver.implicitly_wait(3)
-    percy.percy_snapshot(driver, "Docs homepage")
+    def take_snapshot(url, title):
+        print(f"Taking snapshot of {title} at: {url}")
+        driver.get(url)
+        driver.implicitly_wait(2)
+        percy.percy_snapshot(driver, title)
+
+    pages = [
+        ("http://localhost:8000", "Homepage"),
+        ("http://localhost:8000/examples/admonitions.html", "Admonitions"),
+        ("http://localhost:8000/examples/autodoc.html", "Autodoc"),
+        ("http://localhost:8000/examples/code-blocks.html", "Code blocks"),
+        ("http://localhost:8000/examples/headings.html", "Headings"),
+        ("http://localhost:8000/examples/images.html", "Images"),
+        ("http://localhost:8000/examples/links.html", "Links"),
+        ("http://localhost:8000/examples/lists.html", "Lists"),
+        ("http://localhost:8000/examples/paragraphs.html", "Paragraphs"),
+        ("http://localhost:8000/examples/rst-page.html", "Restructured Text"),
+    ]
+
+    for page in pages:
+        take_snapshot(page[0], page[1])
+
 
     driver.quit()
     print("Client done.")
