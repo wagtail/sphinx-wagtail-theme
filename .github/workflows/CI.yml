@@ -57,6 +57,7 @@ jobs:
         uses: ./.github/actions/setup-firefox
       - run: make setup
       - run: make install-for-dev
+      - run: make frontend
       - run: make docs
       - name: Percy Test
         run: make test-visual-regression
