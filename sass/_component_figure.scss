@@ -1,11 +1,12 @@
 // Figures
 figure {
-    img {
-        border-radius: $border-radius;
-        box-shadow: $box-shadow-sm;
-        margin-bottom: $paragraph-margin-bottom / 2;
-    }
-    .caption-text {
-        color: $text-muted;
-    }
+  img {
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-sm;
+    margin-bottom: $paragraph-margin-bottom / 2;
+  }
+
+  .caption-text {
+    color: $text-muted;
+  }
 }

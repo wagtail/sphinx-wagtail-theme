@@ -1,33 +1,38 @@
 header {
-    > .container-fluid {
-        padding: 0;
-    }
-    .navbar {
-        padding: 0.75rem 0;
-        flex-wrap: unset;
-    }
-    .navbar-brand {
-        display: flex;
-        padding: 0;
-        text-decoration: none;
-        margin-right: 0;
-        font-size: $h3-font-size;
-        line-height: 1.2;
-        white-space: unset;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .logo-img {
-        flex-shrink: 0;
-        margin-right: 0.75rem;
-        // The lines below are an adjustment to compensate for the way the brand typeface baseline sits a bit too high.
-        position: relative;
-        top: -1px;
-    }
-    .navbar-dark .navbar-nav .nav-link {
-        color: $link-alternate-color;
-    }
-    .navbar-toggler-text {
-        @include sr-only;
-    }
+  > .container-fluid {
+    padding: 0;
+  }
+
+  .navbar {
+    padding: 0.75rem 0;
+    flex-wrap: unset;
+  }
+
+  .navbar-brand {
+    display: flex;
+    padding: 0;
+    text-decoration: none;
+    margin-right: 0;
+    font-size: $h3-font-size;
+    line-height: 1.2;
+    white-space: unset;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-img {
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+    // The lines below are an adjustment to compensate for the way the brand typeface baseline sits a bit too high.
+    position: relative;
+    top: -1px;
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: $link-alternate-color;
+  }
+
+  .navbar-toggler-text {
+    @include sr-only;
+  }
 }
