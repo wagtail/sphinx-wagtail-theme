@@ -78,7 +78,10 @@
 
 .page-toc {
     font-size: ($font-size-base * 0.875);
+    padding-top: 2.4rem;
     color: $gray-700;
+    max-height: 100vh;
+    overflow-y: auto;
 
     a {
         color: $gray-600;
