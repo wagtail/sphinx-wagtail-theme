@@ -122,7 +122,7 @@ which will be ignored by git.
    ./.venv/Scripts/Activate.ps1
 
    # Install dependencies
-   pip install -r requirements.txt
+   pip install -r requirements-dev.txt
 
 Install the the NPM dependencies:
 
