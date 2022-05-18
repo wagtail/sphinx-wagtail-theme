@@ -1,6 +1,9 @@
 a {
     color: $link-color;
     text-decoration: 2px solid underline;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
     text-decoration-color: $link-border-color;
     text-underline-offset: 3px;
 
@@ -9,10 +12,12 @@ a {
         color: $link-hover-color;
         // This is necessary because of some weird `hover` mixin in bootstrap.
         text-decoration: 2px solid underline;
+        text-decoration-color: currentcolor;
     }
 
     &:active {
         color: $link-active-color;
         text-decoration: 2px solid underline;
+        text-decoration-color: currentcolor;
     }
 }

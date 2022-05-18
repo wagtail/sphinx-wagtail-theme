@@ -1,16 +1,3 @@
-# Install package into itself.
--e .
-
-# Install development tooling
-build
-flake8
-pip
-pytest
-setuptools
 sphinx
 sphinx-intl
 myst_parser
-twine
-wheel
-zest.releaser
-docutils

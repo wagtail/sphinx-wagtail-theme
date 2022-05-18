@@ -43,6 +43,12 @@ Build and install the package
 
    make install
 
+Build and install the package for development
+
+.. code-block:: text
+
+   make install-for-development
+
 Don't forget to update the docs. Render the documentation
 
 .. code-block:: text
