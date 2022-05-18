@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 
 -   Distinguished the caption text visually from the body text ([#166](https://github.com/wagtail/sphinx_wagtail_theme/pull/166))
 -   Clean up frontend dependences ([#168](https://github.com/wagtail/sphinx_wagtail_theme/pull/168))
+-   `make install-for-dev` has been changed to `make install-for-development` and explicit development requirements have been added ([#162](https://github.com/wagtail/sphinx_wagtail_theme/pull/162))
 
 ### Removed
 
@@ -21,6 +22,7 @@ All notable changes to this project will be documented in this file.
 
 -   De-emphasize page table of contents ([#159](https://github.com/wagtail/sphinx_wagtail_theme/pull/159))
 -   Fix links not styled properly in Safari ([#160](https://github.com/wagtail/sphinx_wagtail_theme/pull/160))
+-   Fix issue where RTD build would not work since the adoption of MYst Parser ([#162](https://github.com/wagtail/sphinx_wagtail_theme/pull/162))
 
 ## [5.1.1] - 2022-04-07
 

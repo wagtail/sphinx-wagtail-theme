@@ -24,14 +24,12 @@ def main():
         )
         exit(1)
 
-
     handler_class = DocsHTTPRequestHandler
     server_address = ('127.0.0.1', 8000)
 
     httpd = server.HTTPServer(server_address, handler_class)
 
     server_thread = threading.Thread(target=httpd.serve_forever)
-    server_deamon = True
     server_thread.start()
 
     print("Server thread running. Starting client requests...")
@@ -60,7 +58,6 @@ def main():
 
     for page in pages:
         take_snapshot(page[0], page[1])
-
 
     driver.quit()
     print("Client done.")
