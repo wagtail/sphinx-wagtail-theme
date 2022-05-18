@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 -   Distinguished the caption text visually from the body text ([#166](https://github.com/wagtail/sphinx_wagtail_theme/pull/166))
+-   Clean up frontend dependences ([#168](https://github.com/wagtail/sphinx_wagtail_theme/pull/168))
 
 ### Removed
 
