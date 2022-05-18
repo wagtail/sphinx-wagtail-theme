@@ -79,9 +79,12 @@ clean-pyc: ##- Remove Python file artifacts
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -rf {} +
 
+.PHONY: clean-docs
+clean-docs: ## Clean build docs
+	rm -rf docs/_build
 
 .PHONY: clean-project
-clean-project: clean-build clean-pyc clean-test ##- Remove all build, test, coverage and Python artifacts
+clean-project: clean-build clean-pyc clean-test clean-docs ##- Remove all build, test, coverage and Python artifacts
 
 
 .PHONY: clean-test
@@ -124,7 +127,7 @@ install: clean build uninstall ## Build Sphinx extension and install from packag
 .PHONY: install-for-dev ifd
 ifd: install-for-dev
 install-for-dev: clean uninstall ## Clean, uninstall and pip install -e for development (alias ifd)
-	pip install -r requirements.txt
+	pip install -r requirements-dev.txt
 	pip install -e .
 
 
@@ -194,6 +197,9 @@ test-import: ## Verify the extension is install and can be imported
 	python3 -c "import sphinx_wagtail_theme as m; print(m.__version__)"
 	python3 -c "import sphinx_wagtail_theme as m, pprint; pprint.pprint(m.version_info)"
 
+.PHONY: test-visual-regression
+test-visual-regression: ## Run visual regression tests
+	./node_modules/.bin/percy exec -- python tests/test_visual_regression.py
 
 .PHONY: uninstall ui
 ui: uninstall

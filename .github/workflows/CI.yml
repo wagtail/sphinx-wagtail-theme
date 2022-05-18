@@ -40,9 +40,27 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.7
-      - run: pip install -e . pytest flake8
+      - run: make install-for-dev
       - run: make lint-minimal
-      - run: pytest
+      - run: make test
+
+  visual-regression-tests:
+    runs-on: ubuntu-latest
+    env:
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Setup Firefox and geckodriver
+        uses: ./.github/actions/setup-firefox
+      - run: make setup
+      - run: make install-for-dev
+      - run: make frontend
+      - run: make docs
+      - name: Percy Test
+        run: make test-visual-regression
 
   sphinx-quickstart:
     needs: [build]
