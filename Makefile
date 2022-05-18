@@ -109,6 +109,16 @@ docs: ## Regenerate Sphinx HTML documentation
 	$(MAKE) -C docs html
 
 
+.PHONY: rtd-docs
+rtd-docs: ## Build the docs like Readthedocs does.
+	python3.7 -m venv "./rtd-venv"
+	./rtd-venv/bin/python -m pip install --upgrade --no-cache-dir pip "setuptools<58.3.0"
+	./rtd-venv/bin/python -m pip install --upgrade --no-cache-dir "mock==1.0.1" "pillow==5.4.1" "alabaster>=0.7,<0.8,!=0.7.5" "commonmark==0.8.1" "recommonmark==0.5.0" "sphinx" "sphinx-rtd-theme" "readthedocs-sphinx-ext<2.2"
+	./rtd-venv/bin/python -m pip install --exists-action=w --no-cache-dir -r docs/requirements.txt
+	# This had to be modified to use the ./docs/ dir instead of cwd.
+	./rtd-venv/bin/python -m sphinx -T -E -b html -d ./docs/_build/doctrees -D language=en ./docs ./docs/_build/html
+	rm -rf "./rtd-venv"
+
 .PHONY: serve
 serve: ## Serve docs at http://localhost:8000
 	python -m http.server --directory ./docs/_build/html
