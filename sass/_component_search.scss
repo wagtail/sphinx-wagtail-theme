@@ -3,6 +3,8 @@
  */
 #collapseSidebar {
     padding-top: 2.4rem !important;
+    max-height: 100vh;
+    overflow-y:auto;
 }
 #searchbox {
     margin-bottom: 2rem;
