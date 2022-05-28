@@ -1,108 +1,114 @@
 .toc {
-    a {
-        position: relative;
-        display: inline-block;
-        line-height: 1.25;
-        padding: ($spacer / 4) 0;
+  a {
+    position: relative;
+    display: inline-block;
+    line-height: 1.25;
+    padding: ($spacer / 4) 0;
+  }
+
+  li {
+    margin: $size-1 0;
+  }
+
+  li:not(.toctree-l1) a {
+    text-decoration: none;
+  }
+
+  ul {
+    padding-left: $size-3;
+    list-style-type: none;
+  }
+
+  .toctree-expand {
+    position: absolute;
+    display: block;
+    top: (($spacer / 4) + ($font-size-base * 1.25 / 2));
+    left: -$size-6;
+    transform: translate(0, -50%);
+    height: 1em;
+    width: 1em;
+    background-color: theme-color("light");
+    border-radius: $border-radius;
+
+    &:after,
+    &:before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
     }
 
-    li {
-        margin: $size-1 0;
+    &:after {
+      width: 10px;
+      height: 0;
+      border-top: 2px solid;
+      transform: translate(-50%, -50%);
     }
 
-    li:not(.toctree-l1) a {
-        text-decoration: none;
+    &:before {
+      width: 0;
+      height: 10px;
+      border-left: 2px solid;
+      transform: translate(-50%, -50%);
     }
+  }
 
-    ul {
-        padding-left: $size-3;
-        list-style-type: none;
-    }
+  .current > a {
+    color: theme-color("primary");
 
-    .toctree-expand {
-        position: absolute;
-        display: block;
-        top: (($spacer / 4) + ($font-size-base * 1.25 / 2));
-        left: -$size-6;
-        transform: translate(0, -50%);
-        height: 1em;
-        width: 1em;
-        background-color: theme-color('light');
-        border-radius: $border-radius;
-        &:after,
-        &:before {
-            position: absolute;
-            content: '';
-            top: 50%;
-            left: 50%;
-        }
-        &:after {
-            width: 10px;
-            height: 0;
-            border-top: 2px solid;
-            transform: translate(-50%, -50%);
-        }
-        &:before {
-            width: 0;
-            height: 10px;
-            border-left: 2px solid;
-            transform: translate(-50%, -50%);
-        }
-    }
+    > .toctree-expand {
+      background-color: theme-color("primary");
+      color: color-yiq(theme-color("primary"));
 
-    .current > a {
-        color: theme-color('primary');
-        > .toctree-expand {
-            background-color: theme-color('primary');
-            color: color-yiq(theme-color('primary'));
-            &:before {
-                display: none;
-            }
-        }
+      &:before {
+        display: none;
+      }
     }
+  }
 
-    > ul {
-        padding-left: 0;
-        .current {
-            > ul {
-                display: block !important;
-            }
-        }
-    }
+  > ul {
+    padding-left: 0;
 
-    > ul:not(:last-child) {
-        padding-bottom: $spacer;
-        border-bottom: 1px solid rgba(0, 0, 0, .15);
+    .current {
+      > ul {
+        display: block !important;
+      }
     }
+  }
+
+  > ul:not(:last-child) {
+    padding-bottom: $spacer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
 }
 
 .page-toc {
-    font-size: ($font-size-base * 0.875);
-    padding-top: 2.4rem;
-    color: $gray-700;
-    max-height: 100vh;
-    overflow-y: auto;
+  font-size: ($font-size-base * 0.875);
+  padding-top: 2.4rem;
+  color: $gray-700;
+  max-height: 100vh;
+  overflow-y: auto;
 
-    a {
-        color: $gray-600;
+  a {
+    color: $gray-600;
 
-        &:hover,
-        &:focus {
-            color: $link-hover-color;
-        }
-
-        &:active {
-            color: $link-active-color;
-        }
+    &:hover,
+    &:focus {
+      color: $link-hover-color;
     }
+
+    &:active {
+      color: $link-active-color;
+    }
+  }
 }
 
 .site-toc .toc {
-    ul {
-        padding-left: $size-6;
-    }
+  ul {
+    padding-left: $size-6;
+  }
 
-    ul > li ul {
-        display: none;
-    }
+  ul > li ul {
+    display: none;
+  }
 }

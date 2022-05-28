@@ -1,19 +1,20 @@
 .align-center,
 .centered {
-    @extend .text-center;
+  @extend .text-center;
 }
+
 .with-border {
-    @extend .border;
+  @extend .border;
 }
+
 .with-shadow {
-    @extend .shadow-sm;
+  @extend .shadow-sm;
 }
-.no-focus {
-    outline: none !important;
-}
+
 .cc {
-    clear: both;
+  clear: both;
 }
+
 .rubric {
-    font-weight: 700;
+  font-weight: $font-weight-bold;
 }

@@ -1,10 +1,10 @@
 {
-    "Overrides_cfg": {
-        "html_theme_options": {
-            "docstypo3org": "yes"
-        }
-    },
-    "tctconfig": {
-        "replace_static_in_html": 1
+  "Overrides_cfg": {
+    "html_theme_options": {
+      "docstypo3org": "yes"
     }
+  },
+  "tctconfig": {
+    "replace_static_in_html": 1
+  }
 }

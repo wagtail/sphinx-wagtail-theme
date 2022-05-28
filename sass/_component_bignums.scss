@@ -1,132 +1,156 @@
-//
+// ----
 // Colors are matching Read the Docs
 // DO NOT ADJUST
-//
+// ----
 // Similar:
 // - Admotion
 // - Bignums
 // - Horizontal Buttons
-//
+// ----
 $bignum-normal: 1.15rem !default;
-$bignum-xxl:    1.5rem !default;
+$bignum-xxl: 1.5rem !default;
 
 /**
  * Bignums
  */
+
 .bignums {
-    padding: 0;
-    counter-reset: li-counter;
-    > li {
-        list-style: none;
-        position: relative;
-        padding: $spacer;
-        padding-left: (($bignum-normal * 2.5) + $spacer);
-        padding-top: $spacer + ($bignum-normal * .25);
-        background-color: theme-color-level('dark', -11);
-        min-height: (($bignum-normal * 2) + $spacer * 2);
-        border-radius: $border-radius;
-        > .first {
-            font-weight: $font-weight-bold;
-            font-size: $bignum-normal;
-        }
-        *:last-child {
-            margin-bottom: 0;
-        }
-        &:before {
-            font-size: $bignum-normal;
-            display: block;
-            position: absolute;
-            top: $spacer;
-            left: $spacer;
-            height: 2em;
-            width: 2em;
-            line-height: 2em;
-            text-align: center;
-            background-color: theme-color('dark');
-            color: color-yiq(theme-color('dark'));
-            border-radius: 50%;
-            content: counter(li-counter, decimal);
-            counter-increment: li-counter;
-            font-weight: $font-weight-bold;
-        }
-        + li {
-            margin-top: $spacer;
-        }
+  padding: 0;
+  counter-reset: li-counter;
+
+  > li {
+    list-style: none;
+    position: relative;
+    padding: $spacer;
+    padding-left: (($bignum-normal * 2.5) + $spacer);
+    padding-top: $spacer + ($bignum-normal * 0.25);
+    background-color: theme-color-level("dark", -11);
+    min-height: (($bignum-normal * 2) + $spacer * 2);
+    border-radius: $border-radius;
+
+    > .first {
+      font-weight: $font-weight-bold;
+      font-size: $bignum-normal;
     }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      font-size: $bignum-normal;
+      display: block;
+      position: absolute;
+      top: $spacer;
+      left: $spacer;
+      height: 2em;
+      width: 2em;
+      line-height: 2em;
+      text-align: center;
+      background-color: theme-color("dark");
+      color: color-yiq(theme-color("dark"));
+      border-radius: 50%;
+      content: counter(li-counter, decimal);
+      counter-increment: li-counter;
+      font-weight: $font-weight-bold;
+    }
+
+    + li {
+      margin-top: $spacer;
+    }
+  }
 }
+
 .bignums-hint,
 .bignums-note {
-    @extend .bignums;
-    > li {
-        background-color: theme-color-level('info', -11);
-        &:before {
-            background-color: theme-color('info');
-            color: color-yiq(theme-color('info'));
-        }
+  @extend .bignums;
+
+  > li {
+    background-color: theme-color-level("info", -11);
+
+    &:before {
+      background-color: theme-color("info");
+      color: color-yiq(theme-color("info"));
     }
+  }
 }
+
 .bignums-caution,
 .bignums-warning,
 .bignums-attention {
-    @extend .bignums;
-    > li {
-        background-color: theme-color-level('warning', -11);
-        &:before {
-            background-color: theme-color('warning');
-            color: color-yiq(theme-color('warning'));
-        }
+  @extend .bignums;
+
+  > li {
+    background-color: theme-color-level("warning", -11);
+
+    &:before {
+      background-color: theme-color("warning");
+      color: color-yiq(theme-color("warning"));
     }
+  }
 }
+
 .bignums-important,
 .bignums-seealso,
 .bignums-tip {
-    @extend .bignums;
-    > li {
-        background-color: theme-color-level('success', -11);
-        &:before {
-            background-color: theme-color('success');
-            color: color-yiq(theme-color('success'));
-        }
+  @extend .bignums;
+
+  > li {
+    background-color: theme-color-level("success", -11);
+
+    &:before {
+      background-color: theme-color("success");
+      color: color-yiq(theme-color("success"));
     }
+  }
 }
+
 .bignums-danger,
 .bignums-error {
-    @extend .bignums;
-    > li {
-        background-color: theme-color-level('danger', -11);
-        &:before {
-            background-color: theme-color('danger');
-            color: color-yiq(theme-color('danger'));
-        }
+  @extend .bignums;
+
+  > li {
+    background-color: theme-color-level("danger", -11);
+
+    &:before {
+      background-color: theme-color("danger");
+      color: color-yiq(theme-color("danger"));
     }
+  }
 }
 
 /**
  * Bignums XXL
  */
+
 .bignums-xxl {
-    @extend .bignums;
-    > li {
-        padding: 0;
-        padding-left: ($bignum-xxl * 2.5);
-        padding-top: ($bignum-xxl * .25);
-        background-color: transparent;
-        min-height: ($bignum-xxl * 2);
-        > .first {
-            font-size: $bignum-xxl;
-        }
-        &:before {
-            font-size: $bignum-xxl;
-            top: 0;
-            left: 0;
-        }
-        + li {
-            border-top: 1px solid rgba(0, 0, 0, .15);
-            margin-top: $spacer + ($bignum-xxl * .25);
-            padding-top: $spacer + ($bignum-xxl * .25);
-            &:before {
-                top: $spacer;
-            }
-        }
+  @extend .bignums;
+
+  > li {
+    padding: 0;
+    padding-left: ($bignum-xxl * 2.5);
+    padding-top: ($bignum-xxl * 0.25);
+    background-color: transparent;
+    min-height: ($bignum-xxl * 2);
+
+    > .first {
+      font-size: $bignum-xxl;
     }
+
+    &:before {
+      font-size: $bignum-xxl;
+      top: 0;
+      left: 0;
+    }
+
+    + li {
+      border-top: 1px solid rgba(0, 0, 0, 0.15);
+      margin-top: $spacer + ($bignum-xxl * 0.25);
+      padding-top: $spacer + ($bignum-xxl * 0.25);
+
+      &:before {
+        top: $spacer;
+      }
+    }
+  }
 }

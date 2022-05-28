@@ -16,9 +16,13 @@ trim_trailing_whitespace = true
 [*.{ts,js}]
 indent_size = 2
 
+# CSS/SCSSS-Files
+[*.{css,scss}]
+indent_size = 2
+
 # JSON-Files
 [*.json]
-indent_style = tab
+indent_size = 2
 
 # ReST-Files
 [*.rst]
