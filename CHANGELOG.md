@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
--   Page table of contents made sticky and scrollable([#167](https://github.com/wagtail/sphinx_wagtail_theme/pull/167))
+-   Page table of contents made sticky and scrollable ([#167](https://github.com/wagtail/sphinx_wagtail_theme/pull/167))
 
 ### Changed
 
