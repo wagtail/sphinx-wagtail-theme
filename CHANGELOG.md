@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 -   Page table of contents made sticky and scrollable ([#167](https://github.com/wagtail/sphinx_wagtail_theme/pull/167))
+-   Stylelint checks are now functional and included in CI, these now extend `@wagtail/stylelint-config-wagtail` ([#173](https://github.com/wagtail/sphinx_wagtail_theme/pull/173))
 
 ### Changed
 
