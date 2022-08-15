@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": ["@wagtail/eslint-config-wagtail"],
+  "env": { "browser": true },
+  "globals": {
+    "DOCUMENTATION_OPTIONS": "readonly",
+    "Search": "readonly"
+  },
+  "rules": {
+    "no-plusplus": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_index"] }],
+    "vars-on-top": "off"
+  }
+}
