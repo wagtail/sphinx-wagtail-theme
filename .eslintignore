@@ -1,0 +1,8 @@
+node_modules
+*.min.js
+**/lib/
+public/
+coverage/
+**/vendor/
+docs/_build
+sphinx_wagtail_theme/static
