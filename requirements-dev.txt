@@ -1,4 +1,7 @@
--r ./requirements.txt
+# Install package into itself.
+-e .
+
+# Development tooling
 build
 docutils
 flake8
