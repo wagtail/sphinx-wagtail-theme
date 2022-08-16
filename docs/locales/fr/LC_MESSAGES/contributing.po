@@ -25,8 +25,8 @@ msgstr "Contribuer"
 
 # 5fdd8904468344f9aa16a6c99a1b0b24
 #: ../../../CONTRIBUTING.rst:5
-msgid "This repository handles the theme for docs.wagtail.io."
-msgstr "Ce dépôt se charge du thème de docs.wagtail.io."
+msgid "This repository handles the theme for docs.wagtail.org."
+msgstr "Ce dépôt se charge du thème de docs.wagtail.org."
 
 # fe9957868c8e40f18e4b814f48881d6f
 #: ../../../CONTRIBUTING.rst:9
