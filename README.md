@@ -42,11 +42,12 @@ html_theme = 'sphinx_wagtail_theme'
 
 Checklist:
 
--   CONTRIBUTORS.md is updated
--   CHANGELOG.md is updated
--   Everything is committed, clean checkout
--   ~/.pypirc has a username and password (token)
--   Add a git tag and a Github release once completed
+-   [ ] `CONTRIBUTORS.md` is updated
+-   [ ] `CHANGELOG.md` is updated
+-   [ ] `setup.cfg` is updated (see `version`)
+-   [ ] Everything is committed, clean checkout
+-   [ ] `~/.pypirc` has a username and password (token)
+-   [ ] Add a git tag and a Github release once completed
 
 With an active virtual environment:
 
@@ -54,7 +55,7 @@ With an active virtual environment:
 python -m pip install --upgrade -r requirements.txt
 make clean
 make clean-frontend
-npm install
+npm ci
 npm run build
 prerelease
 git tag -a N.N.N -m "N.N.N"
