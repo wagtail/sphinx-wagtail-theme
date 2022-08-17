@@ -1,0 +1,16 @@
+/* Add additional spacing between sections using semantic section elements */
+section {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Workaround for https://github.com/executablebooks/MyST-Parser/issues/533 */
+li > p {
+  margin-bottom: 0;
+}
+
+/* override bootstrap's outline: 0 and force a high contrast outline on all focusable elements */
+*:focus {
+  outline: 3px solid $focus-outline !important;
+  outline-offset: 1px;
+}
