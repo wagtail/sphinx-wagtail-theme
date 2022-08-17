@@ -2,10 +2,12 @@
 Usage
 =====
 
-Select the "Sphinx Wagtail theme" in the `conf.py` file of a Sphinx project::
+Select the "Sphinx Wagtail theme" in the ``conf.py`` file of a Sphinx project:
+
+.. code-block:: python
 
    # include the theme in the list of extensions to be loaded
-   extensions = ['sphinx_wagtail_theme', …]
+   extensions = ['sphinx_wagtail_theme', ...]
 
    # select the theme
    html_theme = 'sphinx_wagtail_theme'
@@ -13,7 +15,9 @@ Select the "Sphinx Wagtail theme" in the `conf.py` file of a Sphinx project::
 
 For developers:
 
-The following snippet should always work if appended at the end of `conf.py`::
+The following snippet should always work if appended at the end of ``conf.py``:
+
+.. code-block:: python
 
    try:
       extensions
