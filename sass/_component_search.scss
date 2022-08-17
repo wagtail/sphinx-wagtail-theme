@@ -1,15 +1,25 @@
+@use "sass:map";
+
 /**
- * Search box
+ * Sidebar with search box
  */
 
-.collapse {
-  padding-top: 2.4rem !important;
-  max-height: 100vh;
-  overflow-y: auto;
+.sidebar-container {
+  @extend .border-right;
+
+  border-right-style: hidden; // hide by default on small devices
+
+  /* stylelint-disable-next-line scss/media-feature-value-dollar-variable */
+  @media screen and (min-width: map.get($grid-breakpoints, "lg")) {
+    max-width: $size-13;
+    border-right-style: solid;
+  }
 }
 
-.searchbox {
-  margin-bottom: 2rem;
+.collapse {
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /**
