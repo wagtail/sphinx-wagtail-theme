@@ -6,14 +6,11 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
--   Page table of contents made sticky and scrollable ([#167](https://github.com/wagtail/sphinx_wagtail_theme/pull/167))
--   Stylelint checks are now functional and included in CI, these now extend `@wagtail/stylelint-config-wagtail` ([#173](https://github.com/wagtail/sphinx_wagtail_theme/pull/173))
+-   ...
 
 ### Changed
 
--   Distinguished the caption text visually from the body text ([#166](https://github.com/wagtail/sphinx_wagtail_theme/pull/166))
--   Clean up frontend dependences ([#168](https://github.com/wagtail/sphinx_wagtail_theme/pull/168))
--   `make install-for-dev` has been changed to `make install-for-development` and explicit development requirements have been added ([#162](https://github.com/wagtail/sphinx_wagtail_theme/pull/162))
+-   ...
 
 ### Removed
 
@@ -21,9 +18,33 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+-   ...
+
+### Security
+
+-   ...
+
+## [5.2.0] - 2022-08-17
+
+### Added
+
+-   Page table of contents made sticky and scrollable ([#167](https://github.com/wagtail/sphinx_wagtail_theme/pull/167))
+-   Stylelint checks are now functional and included in CI, these now extend `@wagtail/stylelint-config-wagtail` ([#173](https://github.com/wagtail/sphinx_wagtail_theme/pull/173))
+-   Adopt eslint with shared Wagtail project rules ([#180](https://github.com/wagtail/sphinx_wagtail_theme/pull/180))
+-   Add build instructions for Windows ([#157](https://github.com/wagtail/sphinx_wagtail_theme/pull/157))
+
+### Changed
+
+-   Distinguished the caption text visually from the body text ([#166](https://github.com/wagtail/sphinx_wagtail_theme/pull/166))
+-   Clean up frontend dependences ([#168](https://github.com/wagtail/sphinx_wagtail_theme/pull/168))
+-   `make install-for-dev` has been changed to `make install-for-development` and explicit development requirements have been added ([#162](https://github.com/wagtail/sphinx_wagtail_theme/pull/162))
+
+### Fixed
+
 -   De-emphasize page table of contents ([#159](https://github.com/wagtail/sphinx_wagtail_theme/pull/159))
 -   Fix links not styled properly in Safari ([#160](https://github.com/wagtail/sphinx_wagtail_theme/pull/160))
 -   Fix issue where RTD build would not work since the adoption of MYst Parser ([#162](https://github.com/wagtail/sphinx_wagtail_theme/pull/162))
+-   Fix scrolling issues on shorter viewports with a long table of contents ([#178](https://github.com/wagtail/sphinx_wagtail_theme/pull/178))
 
 ## [5.1.1] - 2022-04-07
 
