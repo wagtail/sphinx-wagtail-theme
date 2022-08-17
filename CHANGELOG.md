@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.2.1 (unreleased)] - YYYY-MM-DD
+
+### Added
+
+-   Nothing changed yet
+
+### Changed
+
+-   ...
+
+### Removed
+
+-   ...
+
+### Fixed
+
+-   ...
+
+### Security
+
+-   ...
+
 ## [5.2.0] - 2022-08-17
 
 ### Added
