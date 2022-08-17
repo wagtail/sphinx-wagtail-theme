@@ -25,7 +25,7 @@ author = "Wagtail"
 version = sphinx_wagtail_theme.__version__
 # The full version, including alpha/beta/rc tags.
 release = sphinx_wagtail_theme.__version__
-language = None
+language = "en"
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'requirements.txt']
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
