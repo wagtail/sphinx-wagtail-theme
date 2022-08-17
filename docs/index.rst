@@ -9,8 +9,9 @@
 Welcome to "Sphinx Wagtail theme" documentation!
 ================================================
 
-.. image:: https://raw.githubusercontent.com/wagtail/sphinx_wagtail_theme/main/img/screenshot.png
-   :alt: Sphinx Wagtail theme screenshot
+This is the Sphinx theme used for the official Wagtail docs. All Wagtail-related
+projects are welcome and encouraged to also use this theme! To see what this
+theme looks like, checkout our :doc:`examples <examples/index>`.
 
 .. toctree::
    :maxdepth: 2
