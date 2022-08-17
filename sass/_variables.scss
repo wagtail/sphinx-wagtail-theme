@@ -17,7 +17,7 @@ $gray-900: #212121;
 $black: #000;
 
 $teal: #007d7e;
-$indigo: #251657;
+$indigo: #2e1f5e;
 $bright-green: #3beccd;
 $bright-green-700: color.adjust($bright-green, $lightness: -15%);
 $bright-green-900: color.adjust($bright-green, $lightness: -30%);
@@ -86,9 +86,54 @@ $base16-base0F: #ff5370;
 // Fonts
 // --------------------------------------------------
 
-$font-family-sans-serif: "Source Sans 3", sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-monospace: "Source Code Pro", monospace;
+$font-family-sans-serif:
+  // iOS Safari, macOS Safari, macOS Firefox
+  "-apple-system",
+  // macOS Chrome
+  "BlinkMacSystemFont",
+  // Windows - for all browsers on Windows 7+ (putting Segoe UI before system-ui ensures Segoe UI will be rendered for different languages)
+  "Segoe UI",
+  "system-ui",
+  // Targets Android and newer Chrome OS. (If Roboto is installed on your windows computer Segoe UI will take precedence.)
+  "Roboto",
+  // A common fallback font for older macOS
+  "Helvetica Neue",
+  // Very old Windows versions (special shout-out to whoever is using windows 95)
+  "Arial",
+  // A last resort if all else fails, just give us something without serifs :)
+  sans-serif,
+  // All the emojis 👋🙂
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji";
+
+$font-family-monospace:
+  // iOS Safari, MacOS Safari
+  "ui-monospace",
+  "Menlo",
+  "Monaco",
+  // Windows,
+  "Cascadia Mono",
+  "Segoe UI Mono",
+  // Linux
+  "Roboto Mono",
+  "Oxygen Mono",
+  "Ubuntu Monospace",
+  // Android
+  "Source Code Pro",
+  // Firefox
+  "Fira Mono",
+  // Last resort Android/others
+  "Droid Sans Mono",
+  "Courier New",
+  monospace,
+  // All the emojis 👋🙂
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji";
+
 $font-weight-bold: 700;
 
 $h1-font-size: 2em;
