@@ -2,7 +2,7 @@
 Contributing
 ============
 
-This repository handles the theme for docs.wagtail.io.
+This repository handles the theme for docs.wagtail.org.
 
 
 Theme development
