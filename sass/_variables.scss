@@ -24,7 +24,7 @@ $bright-green-900: color.adjust($bright-green, $lightness: -30%);
 
 $primary: $indigo;
 $success: #a456c9;
-$info: #007d7e;
+$info: $teal;
 $warning: #2f128d;
 $danger: #a72925;
 $search: #ffe69c;
@@ -46,6 +46,15 @@ $table-bg: $white;
 $yiq-contrasted-threshold: 160;
 
 $focus-outline: #1f7e9a;
+
+$darkmode-color: rgba(255, 255, 255, 0.8);
+$darkmode-color-darker: rgba(255, 255, 255, 0.6);
+$darkmode-bg: color.adjust($primary, $lightness: -15%);
+$darkmode-bg-lighter: color.adjust($primary, $lightness: -10%);
+$darkmode-danger: color.adjust($danger, $lightness: -25%);
+$darkmode-info: color.adjust($info, $lightness: -15%);
+$darkmode-success: color.adjust($success, $lightness: -30%);
+$darkmode-warning: color.adjust($warning, $lightness: -18%);
 
 // --------------------------------------------------
 // Code Colors
@@ -104,35 +113,27 @@ $font-family-sans-serif:
   sans-serif,
   // All the emojis 👋🙂
   "Apple Color Emoji",
-  "Segoe UI Emoji",
-  "Segoe UI Symbol",
-  "Noto Color Emoji";
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 $font-family-monospace:
   // iOS Safari, MacOS Safari
-  "ui-monospace",
-  "Menlo",
-  "Monaco",
+  "ui-monospace", "Menlo", "Monaco",
   // Windows,
   "Cascadia Mono",
   "Segoe UI Mono",
   // Linux
   "Roboto Mono",
-  "Oxygen Mono",
-  "Ubuntu Monospace",
+  "Oxygen Mono", "Ubuntu Monospace",
   // Android
   "Source Code Pro",
   // Firefox
   "Fira Mono",
   // Last resort Android/others
   "Droid Sans Mono",
-  "Courier New",
-  monospace,
+  "Courier New", monospace,
   // All the emojis 👋🙂
   "Apple Color Emoji",
-  "Segoe UI Emoji",
-  "Segoe UI Symbol",
-  "Noto Color Emoji";
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 $font-weight-bold: 700;
 

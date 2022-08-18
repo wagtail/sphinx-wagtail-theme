@@ -1,0 +1,118 @@
+/// Small overrides to support dark mode.
+///
+/// If a component needs more significant rules other than simple
+/// background/foreground overrides, implement the relevant dark mode code in
+/// the component's scss file.
+
+
+// Utilities during light mode.
+.dark-only {
+  display: none;
+}
+
+.light-only {
+  display: unset;
+}
+
+// Global dark mode overrides.
+body.theme-dark {
+  color: $darkmode-color;
+  background-color: $darkmode-bg;
+
+  a {
+    color: $darkmode-color;
+
+    &:focus,
+    &:hover {
+      color: $link-hover-color;
+      // This is necessary because of some weird `hover` mixin in bootstrap.
+      text-decoration: 2px solid underline;
+      text-decoration-color: currentcolor;
+    }
+  }
+
+  // Utilities during dark mode.
+  .dark-only {
+    display: unset;
+  }
+
+  .light-only {
+    display: none;
+  }
+
+  // Table of contents
+  .toc .current > a {
+    color: $white;
+  }
+
+  .page-toc {
+    color: inherit;
+
+    a {
+      color: $darkmode-color-darker;
+    }
+  }
+
+  .toc .toctree-expand {
+    background-color: $primary;
+  }
+
+  // Images
+  figure .caption-text {
+    color: $darkmode-color-darker;
+  }
+
+  // Breadcrumbs
+  .breadcrumb-item.active {
+    color: $darkmode-color-darker;
+  }
+
+  // Search
+  .autocomplete {
+    background-color: $darkmode-bg;
+
+    .group {
+      background-color: $darkmode-bg;
+      color: $darkmode-color-darker;
+    }
+  }
+
+  // Re-define light Bootstrap elements.
+  .btn-light {
+    color: color-yiq($darkmode-bg-lighter);
+    background-color: $darkmode-bg-lighter;
+    border-color: $primary;
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active, {
+      color: color-yiq($primary);
+      background-color: $primary;
+    }
+  }
+
+  .form-control {
+    color: color-yiq($darkmode-bg-lighter);
+    background-color: $darkmode-bg-lighter;
+    border-color: $primary;
+  }
+
+  .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgb(211 211 211 / 50%)
+  }
+
+  .form-control::placeholder {
+    color: $darkmode-color-darker;
+  }
+
+  .input-group-text {
+    color: $darkmode-color-darker;
+    border-color: $primary;
+
+    &.bg-white {
+      background-color: $darkmode-bg-lighter !important;
+    }
+  }
+}

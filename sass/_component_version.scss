@@ -56,9 +56,32 @@
   .versionmodified {
     color: color-yiq(theme-color("danger"));
     background-color: theme-color("danger");
+    border-radius: unset;
+    box-shadow: unset;
 
     &:before {
       content: fa-content($fa-var-exclamation-triangle);
     }
+  }
+}
+
+// For dark mode, use darker background colors.
+body.theme-dark {
+  .versionchanged {
+    background-color: $darkmode-warning;
+  }
+
+  .deprecated {
+    background-color: $darkmode-danger;
+
+    // Need to override this to be the same as above, due to how the class names
+    // are generated in the docs.
+    .versionmodified {
+      background-color: theme-color("danger");
+    }
+  }
+
+  .versionadded {
+    background-color: $darkmode-success;
   }
 }
