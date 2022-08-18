@@ -2,27 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
-## [5.2.1 (unreleased)] - YYYY-MM-DD
+## [5.3.0] - 2022-08-20
 
 ### Added
 
--   Nothing changed yet
+-   Add Dark mode 🧛 - you can now feel more at home with the Wagtail docs if you choose to in your device preferences or manually (Vince Salvino)
+-   Add layout scss to fix some global style issues (LB (Ben) Johnston)
+-   Add a consistent and high contrast focus outline to focusable (tabbable) elements (LB (Ben) Johnston, Vince Salvino)
 
 ### Changed
 
--   ...
+-   Use variable for the `max-width` of the version picker in styles (LB (Ben) Johnston)
+-   Sidebar will have a right border (when on the side) and a maximum width on large breakpoints (LB (Ben) Johnston)
+-   Set language to `en` for this project's documentation (Vince Salvino)
+-   Docs buttons such as View source, Edit source, and Dark mode will now show on small devices (Vince Salvino, LB (Ben) Johnston)
+-   Ensure the table of contents expand button can be focused with a keyboard (LB (Ben) Johnston)
 
 ### Removed
 
--   ...
+-   Source Code Pro is no longer included in this theme, instead the Wagtail system font stack is used (Vince Salvino)
 
 ### Fixed
 
--   ...
-
-### Security
-
--   ...
+-   Fix gap after content within admonitions, avoid styling every last element inside, only the container (LB (Ben) Johnston)
+-   Resolve issues with sidebar container and overflow scroll, add padding so that visible scrollbars (Windows) does not cut into content (LB (Ben) Johnston)
+-   Avoid using coded styles when bootstrap utility classes are suitable in the sidebar & search box (LB (Ben) Johnston)
+-   Fix documentation syntax error in example `conf.py` (Vince Salvino)
+-   Avoid hard-coding the `/` for the root path to the logo as documentation may not be served at the root path (Vince Salvino)
+-   Fix focus outline on search box so (Vince Salvino)
 
 ## [5.2.0] - 2022-08-17
 
