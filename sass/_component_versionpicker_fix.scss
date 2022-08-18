@@ -7,7 +7,7 @@ These overrides are necessary to make the version picker work with the Sphinx Wa
   position: fixed;
   bottom: 50px;
   right: 50px;
-  max-width: 300px;
+  max-width: $modal-sm;
   max-height: calc(100vh - 50px);
   overflow-y: auto;
   background: #1f1d1d;
