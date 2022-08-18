@@ -83,3 +83,32 @@
     content: fa-content($fa-var-info-circle);
   }
 }
+
+// For dark mode, use darker background colors.
+body.theme-dark {
+  .admonition {
+    background-color: $darkmode-info;
+
+    &.hint,
+    &.note {
+      background-color: $darkmode-info;
+    }
+
+    &.caution,
+    &.warning,
+    &.attention {
+      background-color: $darkmode-warning;
+    }
+
+    &.danger,
+    &.error {
+      background-color: $darkmode-danger;
+    }
+
+    &.important,
+    &.seealso,
+    &.tip {
+      background-color: $darkmode-success;
+    }
+  }
+}

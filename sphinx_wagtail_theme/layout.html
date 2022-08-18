@@ -127,11 +127,18 @@
                     <div class="col">
                         {% include "breadcrumbs.html" %}
                     </div>
-                    {%- if pagename != "search" -%}
-                        <div class="col-auto d-none d-lg-block">
-                            {% include "source-buttons.html" %}
-                        </div>
-                    {% endif %}
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>{{ _('JavaScript is required to toggle light/dark mode.') }}.</p>
+                        </noscript>
+                        <button id="wagtail-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> {{ _('Light mode') }}</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> {{ _('Dark mode') }}</span>
+                        </button>
+                        {%- if pagename != "search" -%}
+                        {% include "source-buttons.html" %}
+                        {% endif %}
+                    </div>
                 </header>
                 <div class="row" >
                     <div class="col-12">
