@@ -78,7 +78,7 @@
         <div class="container-fluid">
             <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
                 {%- if theme_logo and theme_logo != 'None' %}
-                    <a href="{{ theme_logo_url }}"
+                    <a href="{{ theme_logo_url | default(pathto(master_doc), true) }}"
                         {% if theme_logo_alt %}title="{{ theme_logo_alt|e }}"{% endif %}
                         class="logo navbar-brand"
                     >
@@ -86,7 +86,7 @@
                             {%- if theme_logo_width %} width="{{ theme_logo_width|e }}"{% endif %}
                             {%- if theme_logo_height %} height="{{ theme_logo_height|e }}"{% endif %}
                             {%- if theme_logo_alt %} alt="{{ theme_logo_alt|e }}"{% endif %}
-                            {%- if theme_logo_title and not theme_logo_url %} title="{{ theme_logo_title|e }}"{% endif %}
+                            {%- if theme_logo_title %} title="{{ theme_logo_title|e }}"{% endif %}
                             class="logo-img"
                         />
                         {{ theme_project_name }}
