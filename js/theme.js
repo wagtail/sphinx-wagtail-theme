@@ -63,32 +63,37 @@ function updateDarkMode(event, { isInitial = false } = {}) {
  */
 updateDarkMode(null, { isInitial: true });
 
-// Inject collapsible menu
-function toggleCurrent(event) {
-  event.preventDefault();
-  var link = event.currentTarget.parentElement;
-  var element = link.parentElement;
-  var siblings =
-    element.parentElement.parentElement.querySelectorAll("li.current");
-  for (var i = 0; i < siblings.length; i++) {
-    if (siblings[i] !== element) {
-      siblings[i].classList.remove("current");
-    }
-  }
-  element.classList.toggle("current");
-}
-
+/**
+ * Inject collapsible menu
+ */
 function makeMenuExpandable() {
-  var toc = document.querySelector(".toc");
-  var links = toc.getElementsByTagName("a");
-  for (var i = 0; i < links.length; i++) {
-    if (links[i].nextSibling) {
-      var expand = document.createElement("span");
-      expand.classList.add("toctree-expand");
-      expand.addEventListener("click", toggleCurrent, true);
-      links[i].prepend(expand);
-    }
+  function toggleCurrent(event) {
+    const expandButton = event.currentTarget;
+    const element = expandButton.parentElement;
+    const siblings =
+      element.parentElement.parentElement.querySelectorAll("li.current");
+
+    siblings.forEach((sibling) => {
+      if (sibling !== element) {
+        sibling.classList.remove("current");
+      }
+    });
+
+    element.classList.toggle("current");
   }
+
+  const toc = document.querySelector(".toc");
+  const links = Array.from(toc.getElementsByTagName("a"));
+  const template = document.querySelector("[data-toggle-item-template]");
+  const templateChild = template.content.firstElementChild;
+
+  links.forEach((link) => {
+    if (link.nextSibling) {
+      const expandButton = templateChild.cloneNode(true);
+      expandButton.addEventListener("click", toggleCurrent, true);
+      link.before(expandButton);
+    }
+  });
 }
 
 makeMenuExpandable();
