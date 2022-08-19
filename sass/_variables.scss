@@ -1,39 +1,42 @@
 @use "sass:color";
 
 // --------------------------------------------------
-// Colors
+// Colors.
+// Follow style guide: https://www.figma.com/community/file/1098619062654073532
 // --------------------------------------------------
 
-$white: #fff;
-$gray-100: #f2f2f2;
-$gray-200: #e9e9e9;
-$gray-300: #dedede;
-$gray-400: #cecece;
-$gray-500: #ababab;
-$gray-600: #6c6c6c;
-$gray-700: #494949;
-$gray-800: #313131;
-$gray-900: #212121;
-$black: #000;
+$white:    #fff;
+$gray-100: #f6f6f8;
+$gray-200: #e0e0e0;
+$gray-300: #c8c8c8;
+$gray-400: #c8c8c8;
+$gray-500: #929292;
+$gray-600: #929292;
+$gray-700: #5c5c5c;
+$gray-800: #5c5c5c;
+$gray-900: #262626;
+$black:    #000;
 
-$teal: #007d7e;
-$indigo: #2e1f5e;
-$bright-green: #3beccd;
-$bright-green-700: color.adjust($bright-green, $lightness: -15%);
-$bright-green-900: color.adjust($bright-green, $lightness: -30%);
+$teal-100: #f2fcfc;
+$teal-200: #80d7d8;
+$teal-300: #00b0b1;
+$teal-400: #007d7e;
+$teal-500: #005b5e;
+$teal-600: #004345;
 
-$primary: $indigo;
-$success: #a456c9;
-$info: $teal;
-$warning: #2f128d;
-$danger: #a72925;
-$search: #ffe69c;
+$primary:  #2e1f5e;
+$success:  #1b8666;
+$info:     #1f7e9a;
+$warning:  #faa500;
+$danger:   #cd4444;
+
+$search:   $teal-200;
 
 $link-color: $primary;
-$link-border-color: $bright-green;
-$link-hover-color: $bright-green-700;
-$link-active-color: $bright-green-900;
-$link-border-active-color: $bright-green-900;
+$link-border-color: $teal-300;
+$link-hover-color: $teal-300;
+$link-active-color: $teal-300;
+$link-border-active-color: $teal-300;
 
 $link-alternate-color: #fff;
 $link-alternate-hover-color: color.adjust(
@@ -45,16 +48,12 @@ $table-bg: $white;
 
 $yiq-contrasted-threshold: 160;
 
-$focus-outline: #1f7e9a;
+$focus-outline: $teal-300;
 
 $darkmode-color: rgba(255, 255, 255, 0.8);
 $darkmode-color-darker: rgba(255, 255, 255, 0.6);
 $darkmode-bg: color.adjust($primary, $lightness: -15%);
-$darkmode-bg-lighter: color.adjust($primary, $lightness: -10%);
-$darkmode-danger: color.adjust($danger, $lightness: -25%);
-$darkmode-info: color.adjust($info, $lightness: -15%);
-$darkmode-success: color.adjust($success, $lightness: -30%);
-$darkmode-warning: color.adjust($warning, $lightness: -18%);
+$darkmode-bg-lighter: color.adjust($primary, $lightness: -10%, $saturation: -10%);
 
 // --------------------------------------------------
 // Code Colors
