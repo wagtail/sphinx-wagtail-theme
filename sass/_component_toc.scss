@@ -1,6 +1,5 @@
 .toc {
   a {
-    position: relative;
     display: inline-block;
     line-height: 1.25;
     padding: ($spacer / 4) 0;
@@ -8,6 +7,11 @@
 
   li {
     margin: $size-1 0;
+
+    &[class^="toctree-"] {
+      // ensure the toctree-expand button can be positioned
+      position: relative;
+    }
   }
 
   li:not(.toctree-l1) a {
@@ -23,7 +27,7 @@
     position: absolute;
     display: block;
     top: (($spacer / 4) + ($font-size-base * 1.25 / 2));
-    left: -$size-6;
+    left: -$size-5;
     transform: translate(0, -50%);
     height: 1em;
     width: 1em;
