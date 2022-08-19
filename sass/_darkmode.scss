@@ -4,7 +4,6 @@
 /// background/foreground overrides, implement the relevant dark mode code in
 /// the component's scss file.
 
-
 // Utilities during light mode.
 .dark-only {
   display: none;
@@ -19,6 +18,7 @@ body.theme-dark {
   color: $darkmode-color;
   background-color: $darkmode-bg;
 
+  .btn-link,
   a {
     color: $darkmode-color;
 
@@ -67,6 +67,15 @@ body.theme-dark {
     color: $darkmode-color-darker;
   }
 
+  // Quotes
+  blockquote {
+    border-color: $darkmode-bg-lighter;
+
+    .attribution {
+      color: $darkmode-color-darker;
+    }
+  }
+
   // Search
   .autocomplete {
     background-color: $darkmode-bg;
@@ -74,6 +83,32 @@ body.theme-dark {
     .group {
       background-color: $darkmode-bg;
       color: $darkmode-color-darker;
+    }
+  }
+
+  // Borders
+  hr,
+  .border,
+  .border-top,
+  .border-right,
+  .border-bottom,
+  .border-left,
+  .search li {
+    border-color: $darkmode-bg-lighter !important;
+    border-width: 2px !important;
+  }
+
+  // Tables
+  table.docutils {
+    &:not(.field-list) {
+      border: 0;
+      @extend .table-dark;
+      @extend .table-bordered;
+      @extend .table-striped;
+
+      thead {
+        @extend .thead-dark;
+      }
     }
   }
 
@@ -87,7 +122,7 @@ body.theme-dark {
     &:focus,
     &:focus-within,
     &:not(:disabled):not(.disabled):active,
-    &:not(:disabled):not(.disabled).active, {
+    &:not(:disabled):not(.disabled).active {
       color: color-yiq($primary);
       background-color: $primary;
     }
@@ -100,7 +135,7 @@ body.theme-dark {
   }
 
   .form-control:focus {
-    box-shadow: 0 0 0 0.2rem rgb(211 211 211 / 50%)
+    box-shadow: 0 0 0 0.2rem rgb(211 211 211 / 50%);
   }
 
   .form-control::placeholder {
@@ -114,5 +149,9 @@ body.theme-dark {
     &.bg-white {
       background-color: $darkmode-bg-lighter !important;
     }
+  }
+
+  code {
+    color: $darkmode-code;
   }
 }
