@@ -31,8 +31,4 @@ header {
   .navbar-dark .navbar-nav .nav-link {
     color: $link-alternate-color;
   }
-
-  .navbar-toggler-text {
-    @include sr-only;
-  }
 }
