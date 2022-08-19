@@ -6,7 +6,7 @@
 -   Tibor Leupold
 -   Coen van der Kamp
 -   Paarth Agarwal
--   Vince Salvo
+-   Vince Salvino
 -   LB (Ben) Johnston
 
 ## Sphinx Typo3 theme

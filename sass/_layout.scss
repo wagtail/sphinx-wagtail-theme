@@ -13,4 +13,5 @@ li > p {
 *:focus {
   outline: 3px solid $focus-outline !important;
   outline-offset: 1px;
+  box-shadow: none;
 }
