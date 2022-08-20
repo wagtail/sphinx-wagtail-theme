@@ -41,11 +41,13 @@ $link-alternate-hover-color: color.adjust(
   $lightness: -15%
 );
 
-$table-bg: $white;
-
 $yiq-contrasted-threshold: 160;
 
 $focus-outline: #1f7e9a;
+
+// --------------------------------------------------
+// Dark mode colors
+// --------------------------------------------------
 
 $darkmode-color: rgba(255, 255, 255, 0.8);
 $darkmode-color-darker: rgba(255, 255, 255, 0.6);
@@ -55,6 +57,10 @@ $darkmode-danger: color.adjust($danger, $lightness: -25%);
 $darkmode-info: color.adjust($info, $lightness: -15%);
 $darkmode-success: color.adjust($success, $lightness: -30%);
 $darkmode-warning: color.adjust($warning, $lightness: -18%);
+$darkmode-code: #fe587c;
+
+$table-dark-color: $darkmode-color;
+$table-dark-bg: $darkmode-bg;
 
 // --------------------------------------------------
 // Code Colors
