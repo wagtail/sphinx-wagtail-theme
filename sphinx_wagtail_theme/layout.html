@@ -76,6 +76,7 @@
 <body>
     <script type="text/javascript" src="{{ pathto('_static/dist/blocking.js', 1) }}"></script>
     <header class="container-fluid bg-primary">
+        <a class="btn btn-sm btn-light skip-to-content-link" href="#main">{{ _('Skip to content') }}</a>
         <div class="container-fluid">
             <div class="navbar navbar-expand-lg navbar-dark font-weight-bold">
                 {%- if theme_logo and theme_logo != 'None' %}
@@ -106,7 +107,7 @@
                 {% endif %}
                 <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
                     <span class="navbar-toggler-icon"></span>
-                    <span class="sr-only">Menu</span>
+                    <span class="sr-only">{{ _('menu') }}</span>
                 </button>
             </div>
         </div>
@@ -148,7 +149,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
-                        <main role="main">
+                        <main role="main" id="main">
                             {%- block body %}
                             {% endblock -%}
                         </main>
