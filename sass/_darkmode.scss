@@ -20,14 +20,12 @@ body.theme-dark {
 
   .btn-link,
   a {
+    // reminder - Safari does NOT support shorthand for text-decoration
     color: $darkmode-color;
 
     &:focus,
     &:hover {
       color: $link-hover-color;
-      // This is necessary because of some weird `hover` mixin in bootstrap.
-      text-decoration: 2px solid underline;
-      text-decoration-color: currentcolor;
     }
   }
 
