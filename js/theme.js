@@ -48,7 +48,7 @@ function updateDarkMode(event, { isInitial = false } = {}) {
   }
 
   // set applied mode to the DOM
-  document.body.className = applyMode === DARK ? "theme-dark" : "";
+  document.body.classList.toggle("theme-dark", applyMode === DARK);
 
   // only store value if already stored OR was triggered by an actual click
   if (savedThemeMode || event) {
