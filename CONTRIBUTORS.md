@@ -8,6 +8,7 @@
 -   Paarth Agarwal
 -   Vince Salvino
 -   LB (Ben) Johnston
+-   Kartik Kankurte
 
 ## Sphinx Typo3 theme
 
