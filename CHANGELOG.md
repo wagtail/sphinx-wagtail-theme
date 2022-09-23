@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
--   ...
+-   Update page contents (right sidebar) to ensure horizontal scrollbars do not appear (Kartik Kankurte)
 
 ### Removed
 
