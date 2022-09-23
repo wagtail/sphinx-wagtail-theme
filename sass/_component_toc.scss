@@ -1,6 +1,7 @@
 .toc {
   a {
-    display: inline-block;
+    display: inherit;
+    overflow-wrap: break-word;
     line-height: 1.25;
     padding: ($spacer / 4) 0;
   }
