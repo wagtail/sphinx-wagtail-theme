@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.3.1] - YYYY-MM-DD
+
+### Added
+
+-   ...
+
+### Changed
+
+-   ...
+
+### Removed
+
+-   ...
+
+### Fixed
+
+-   Resolve further issues with links in Safari not showing correctly, especially in dark mode (LB (Ben) Johnston)
+-   Ensure that the dark mode toggle does not clear existing body classes (LB (Ben) Johnston)
+
+### Security
+
+-   ...
+
 ## [5.3.0] - 2022-08-20
 
 ### Added
