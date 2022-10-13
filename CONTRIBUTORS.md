@@ -9,6 +9,7 @@
 -   Vince Salvino
 -   LB (Ben) Johnston
 -   Kartik Kankurte
+-   Mohammad Areeb
 
 ## Sphinx Typo3 theme
 

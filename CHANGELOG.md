@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
--   ...
+-   Add ability to copy code snippets using `sphinx_copybutton` (Mohammad Areeb)
 
 ### Changed
 
