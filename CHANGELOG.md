@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [5.3.1] - YYYY-MM-DD
+## [5.3.1] - 2022-10-14
 
 ### Added
 
