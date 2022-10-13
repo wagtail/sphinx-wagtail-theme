@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   devtool: "source-map",
   entry: {
+    blocking: path.resolve(__dirname, "js/blocking.js"),
     theme: path.resolve(__dirname, "js/theme.js"),
     fontawesome: path.resolve(__dirname, "sass/fontawesome.scss"),
   },
