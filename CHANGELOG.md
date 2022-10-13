@@ -12,18 +12,11 @@ All notable changes to this project will be documented in this file.
 
 -   Update page contents (right sidebar) to ensure horizontal scrollbars do not appear (Kartik Kankurte)
 
-### Removed
-
--   ...
-
 ### Fixed
 
 -   Resolve further issues with links in Safari not showing correctly, especially in dark mode (LB (Ben) Johnston)
 -   Ensure that the dark mode toggle does not clear existing body classes (LB (Ben) Johnston)
-
-### Security
-
--   ...
+-   Fix issue where dark mode theme would flash incorrectly on load (LB (Ben) Johnston)
 
 ## [5.3.0] - 2022-08-20
 
