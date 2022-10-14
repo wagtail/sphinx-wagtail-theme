@@ -11,8 +11,7 @@ These overrides are necessary to make the version picker work with the Sphinx Wa
   max-height: calc(100vh - 50px);
   overflow-y: auto;
   background: #1f1d1d;
-  // font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
-  z-index: 400;
+  z-index: 1050;
 
   &.shift-up .rst-other-versions {
     display: block;
