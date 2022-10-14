@@ -1,18 +1,14 @@
-// reminder - Safari does NOT support shorthand for text-decoration
 a {
+  // additional reset necessary because of some weird `hover` mixin in bootstrap.
+  text-decoration: underline;
+
+  // base link styles
+  // reminder - Safari does NOT support shorthand for text-decoration
   color: $link-color;
   text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  text-decoration-style: solid;
   text-decoration-color: $link-border-color;
-
-  &,
-  &:focus,
-  &:hover,
-  &:active {
-    // additional reset necessary because of some weird `hover` mixin in bootstrap.
-    text-decoration: underline;
-    text-decoration-style: solid;
-    text-decoration-thickness: 2px;
-  }
 
   &:focus,
   &:hover {
