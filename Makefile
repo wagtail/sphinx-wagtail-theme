@@ -208,7 +208,7 @@ test-tox: ##- Run tests on every Python version with tox
 .PHONY: test-import
 test-import: ## Verify the extension is install and can be imported
 	python3 -c "import sphinx_wagtail_theme as m; print(m.__version__)"
-	python3 -c "import sphinx_wagtail_theme as m, pprint; pprint.pprint(m.version_info)"
+	python3 -c "import sphinx_wagtail_theme as m, pprint; pprint.pprint(m.__version_full__)"
 
 .PHONY: test-visual-regression
 test-visual-regression: ## Run visual regression tests
