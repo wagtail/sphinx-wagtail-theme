@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.3.2] - YYYY-MM-DD
+
+### Added
+
+-   Add search input attributes for better search compatibility with screen readers and mobile devices (LB (Ben) Johnston)
+
+### Changed
+
+-   ...
+
+### Removed
+
+-   ...
+
+### Fixed
+
+-   Fix `make test-import` to correctly use the `__version_full__` value (Andy Chosak)
+-   Ensure version picker correctly shows above right sidebar (LB (Ben) Johnston)
+
+### Security
+
+-   ...
+
 ## [5.3.1] - 2022-10-13
 
 ### Added
