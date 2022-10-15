@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 -   Add search input attributes for better search compatibility with screen readers and mobile devices (LB (Ben) Johnston)
+-   Add skip to main content link for keyboard only and screen reader users (LB (Ben) Johnston)
 
 ### Changed
 
@@ -20,6 +21,7 @@ All notable changes to this project will be documented in this file.
 
 -   Fix `make test-import` to correctly use the `__version_full__` value (Andy Chosak)
 -   Ensure version picker correctly shows above right sidebar (LB (Ben) Johnston)
+-   Fix underline colour regression to ensure it is not the same as the link colour (LB (Ben) Johnston)
 
 ### Security
 
