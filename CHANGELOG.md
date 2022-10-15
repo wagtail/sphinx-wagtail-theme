@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
--   ...
+-   Add search input attributes for better search compatibility with screen readers and mobile devices (LB (Ben) Johnston)
 
 ### Changed
 
@@ -18,7 +18,8 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
--   ...
+-   Fix `make test-import` to correctly use the `__version_full__` value (Andy Chosak)
+-   Ensure version picker correctly shows above right sidebar (LB (Ben) Johnston)
 
 ### Security
 
