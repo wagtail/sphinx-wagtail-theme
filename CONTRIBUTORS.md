@@ -10,6 +10,7 @@
 -   LB (Ben) Johnston
 -   Kartik Kankurte
 -   Mohammad Areeb
+-   Andy Chosak
 
 ## Sphinx Typo3 theme
 
