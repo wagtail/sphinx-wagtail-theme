@@ -40,7 +40,7 @@
      <tr{% if grouptype == 2 %} class="cg-{{ groupid.current() }}"{% endif %}>
        <td>{% if grouptype == 1 -%}
          <img src="{{ pathto('_static/minus.png', 1) }}" class="toggler"
-              id="toggle-{{ groupid.next() }}" style="display: none" alt="-" />
+              id="toggle-{{ groupid.next() }}" style="display: none" alt="-" decoding="async" loading="lazy" />
            {%- endif %}</td>
        <td>{% if grouptype == 2 %}&#160;&#160;&#160;{% endif %}
        {% if page %}<a href="{{ pathto(page) }}#{{ anchor }}">{% endif -%}
