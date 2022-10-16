@@ -89,7 +89,7 @@
                             {%- if theme_logo_height %} height="{{ theme_logo_height|e }}"{% endif %}
                             {%- if theme_logo_alt %} alt="{{ theme_logo_alt|e }}"{% endif %}
                             {%- if theme_logo_title %} title="{{ theme_logo_title|e }}"{% endif %}
-                            class="logo-img"
+                            class="logo-img" decoding="async" loading="lazy"
                         />
                         {{ theme_project_name }}
                     </a>
