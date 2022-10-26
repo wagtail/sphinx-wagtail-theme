@@ -59,6 +59,8 @@ texinfo_documents = [
      'One line description of project.',
      'Miscellaneous'),
 ]
+# -- Options for images ------------------------------------------------
+--image-loading = 'lazy'
 
 github_doc_root = 'https://github.com/wagtail/sphinx_wagtail_theme/tree/main/docs'
 
