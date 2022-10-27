@@ -4,36 +4,26 @@ dl.class {
   }
 }
 
-// colour highlighting for the classes
-dl.class {
-    span.sig-prename.descclassname {
-        color: $black;
-    }    
-}
-
+// colour highlighting for the classes and methods
 
 html.no-js {
     div.row {
-        dl.class > dt {
-            font-weight: 700;
-            display: table;
-            margin: 0.25rem 0;
-            font-size: 90%;
-            line-height: normal;
-            background: $gray-100;
-            color: $indigo;
-            border-top: 3px solid $indigo;
-            padding: 0.25rem;
-            position: relative;
-        }
-    }
-}
-
-// colour highlighting for the methods
-
-html.no-js{
-    div.row{
         dl.class {
+            &  span.sig-prename.descclassname {
+                color: $black;
+            }  
+            & > dt {
+                font-weight: 700;
+                display: table;
+                margin: 0.25rem 0;
+                font-size: 90%;
+                line-height: normal;
+                background: $gray-100;
+                color: $indigo;
+                border-top: 3px solid $indigo;
+                padding: 0.25rem;
+                position: relative;
+            }
             &:not(.field-list) > dt {
                 display: table;
                 margin-bottom: 0.25rem;
@@ -42,6 +32,7 @@ html.no-js{
                 background: $gray-100;
                 color: $gray-600;
             }
-        }        
+        } 
     }
 }
+
