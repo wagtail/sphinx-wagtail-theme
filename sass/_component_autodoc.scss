@@ -1,32 +1,5 @@
-dd {
-    margin: 0 0 12px 24px;
-}
-
-// colour highlighting for the classes
-
-span.sig-prename.descclassname {
-    color: #000;
-}
-
-html.no-js .row dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)>dt {
-    font-weight: 700;
-    display: table;
-    margin: 6px 0;
-    font-size: 90%;
-    line-height: normal;
-    background: #f2f2f2;
-    color: #2e1f5e;
-    border-top: 3px solid #2e1f5e;
-    padding: 6px;
-    position: relative;
-}
-
-// colour highlighting for the methods
-    
-html.no-js .row dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) dl:not(.field-list)>dt {
-    margin-bottom: 6px;
-    border: none;
-    border-left: 3px solid #ccc;
-    background: #f0f0f0;
-    color: #555;
+dl.class {
+  .sig-object + dd {
+    margin: 0 0 0.5rem 1.5rem;
+  }
 }
