@@ -50,6 +50,12 @@ man_pages = [
      'Sphinx Wagtail theme documentation',
      [author], 1)
 ]
+<<<<<<< Updated upstream
+=======
+# -- Options for images ------------------------------------
+image_loading = "lazy"
+
+>>>>>>> Stashed changes
 # -- Options for Texinfo output ----------------------------------------
 texinfo_documents = [
     (master_doc, 'sphinx_wagtail_theme',
