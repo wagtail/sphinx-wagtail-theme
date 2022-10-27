@@ -5,14 +5,14 @@ dl.class {
 }
 
 // colour highlighting for the classes and methods
-
 html.no-js {
     div.row {
         dl.class {
-            &  span.sig-prename.descclassname {
+             span.sig-prename.descclassname {
                 color: $black;
-            }  
-            & > dt {
+            }
+
+            > dt {
                 font-weight: 700;
                 display: table;
                 margin: 0.25rem 0;
@@ -24,10 +24,10 @@ html.no-js {
                 padding: 0.25rem;
                 position: relative;
             }
+
             &:not(.field-list) > dt {
                 display: table;
                 margin-bottom: 0.25rem;
-                border: none;
                 border-left: 3px solid $gray-500;
                 background: $gray-100;
                 color: $gray-600;
