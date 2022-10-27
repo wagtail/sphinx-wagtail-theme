@@ -11,6 +11,7 @@
 -   Kartik Kankurte
 -   Mohammad Areeb
 -   Andy Chosak
+-   Temidayo Azeez
 
 ## Sphinx Typo3 theme
 
