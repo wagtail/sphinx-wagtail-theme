@@ -1,38 +1,31 @@
 dl.class {
-  .sig-object + dd {
-    margin: 0 0 0.5rem 1.5rem;
-  }
-}
+    .sig-object + dd {
+        margin: 0 0 0.5rem 1.5rem;
+    }
 
-// colour highlighting for the classes and methods
-html.no-js {
-    div.row {
-        dl.class {
-             .sig-prename {
-                color: $black;
-            }
+  // colour highlighting for the classes and methods
+    .sig-prename {
+        color: $black;
+    }
 
-            > dt {
-                font-weight: 700;
-                display: table;
-                margin: 0.25rem 0;
-                font-size: 90%;
-                line-height: normal;
-                background: $gray-100;
-                color: $indigo;
-                border-top: 3px solid $indigo;
-                padding: 0.25rem;
-                position: relative;
-            }
+    > dt {
+        font-weight: 700;
+        display: table;
+        margin: 0.25rem 0;
+        font-size: 90%;
+        line-height: normal;
+        background: $gray-100;
+        color: $indigo;
+        border-top: 3px solid $indigo;
+        padding: 0.25rem;
+        position: relative;
+    }
 
-            &:not(.field-list) > dt {
-                display: table;
-                margin-bottom: 0.25rem;
-                border-left: 3px solid $gray-500;
-                background: $gray-100;
-                color: $gray-600;
-            }
-        } 
+    &:not(.field-list) > dt {
+        display: table;
+        margin-bottom: 0.25rem;
+        border-left: 3px solid $gray-500;
+        background: $gray-100;
+        color: $gray-600;
     }
 }
-
