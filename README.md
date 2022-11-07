@@ -1,6 +1,6 @@
-# [Sphinx Wagtail theme](https://sphinx-wagtail-theme.netlify.app/)
+# [Sphinx Wagtail theme](https://sphinx-wagtail-theme.vercel.app/)
 
-[![CI status](https://github.com/wagtail/sphinx_wagtail_theme/workflows/CI/badge.svg)](https://github.com/wagtail/sphinx_wagtail_theme/actions?query=workflow%3ACI) [![Netlify Status](https://api.netlify.com/api/v1/badges/82ecbf01-a706-4e92-8457-8a8726ca2123/deploy-status)](https://app.netlify.com/sites/sphinx-wagtail-theme/deploys) [![PyPI version](https://badge.fury.io/py/sphinx-wagtail-theme.svg)](https://badge.fury.io/py/sphinx-wagtail-theme) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI status](https://github.com/wagtail/sphinx_wagtail_theme/workflows/CI/badge.svg)](https://github.com/wagtail/sphinx_wagtail_theme/actions?query=workflow%3ACI) [![PyPI version](https://badge.fury.io/py/sphinx-wagtail-theme.svg)](https://badge.fury.io/py/sphinx-wagtail-theme) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Sphinx Wagtail theme contains all files required to build a Sphinx extension that provides the theme.
 
@@ -68,3 +68,5 @@ postrelease
 ## Credits
 
 [Sphinx Wagtail theme](https://github.com/wagtail/sphinx_wagtail_theme) is based on [Sphinx Typo3 theme](https://github.com/TYPO3-Documentation/sphinx_typo3_theme) which is based on [t3SphinxThemeRtd](https://github.com/typo3-documentation/t3SphinxThemeRtd) which is based on the [Read the Docs Sphinx theme](https://github.com/readthedocs/sphinx_rtd_theme).
+
+Thank you to [Vercel](https://vercel.com/?utm_source=wagtail&utm_campaign=oss) for hosting the theme’s preview sites.
