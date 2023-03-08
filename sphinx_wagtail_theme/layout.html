@@ -20,10 +20,6 @@
         {{ metatags }}
     {%- endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="docsearch:name" content="{{ project|striptags|e }}" />
-    <meta name="docsearch:package_type" content="{{ package_type|striptags|e }}" />
-    <meta name="docsearch:release" content="{{ release|striptags|e }}" />
-    <meta name="docsearch:version" content="{{ version|striptags|e }}" />
     {% block htmltitle %}
         <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     {% endblock %}
