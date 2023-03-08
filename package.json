@@ -21,8 +21,7 @@
     "@wagtail/eslint-config-wagtail": "^0.4.0",
     "autocompleter": "^6.0.3",
     "bootstrap": "^4.4.1",
-    "eslint": "^8.16.0",
-    "jquery": "^3.5.1"
+    "eslint": "^8.16.0"
   },
   "scripts": {
     "start": "npm run watch",
