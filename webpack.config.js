@@ -13,9 +13,6 @@ module.exports = {
     publicPath: "",
     filename: "[name].js",
   },
-  externals: {
-    jquery: "window.$",
-  },
   module: {
     rules: [
       {
