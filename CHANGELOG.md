@@ -2,27 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
-## [5.3.3] - YYYY-MM-DD
+## [6.0.0] - 2023-03-09
 
 ### Added
 
 -   Add basic styling of `autodoc` generated methods for readability (Temidayo Azeez)
 
-### Changed
-
--   ...
-
 ### Removed
 
--   ...
+-   Remove Algolia DocSearch meta tags (Thibaud Colas)
+-   Remove jQuery loading by default (LB (Ben) Johnston)
 
-### Fixed
+### Upgrade considerations
 
--   ...
+For projects relying on Algolia DocSearch meta tags, make sure to add back the `docsearch:version` tag in your project:
 
-### Security
-
--   ...
+```html
+<meta name="docsearch:version" content="{{ version|striptags|e }}" />
+```
 
 ## [5.3.2] - 2022-10-16
 
