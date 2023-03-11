@@ -47,7 +47,8 @@ Checklist:
 -   [ ] `setup.cfg` is updated (see `version`)
 -   [ ] Everything is committed, clean checkout
 -   [ ] `~/.pypirc` has a username and password (token)
--   [ ] Add a git tag and a GitHub release once completed
+-   [ ] Add a git tag at the release commit with the formst `X.Y.Z`
+-   [ ] Create a GitHub release against that tag with the title format `vX.Y.Z`
 
 With an active virtual environment:
 
