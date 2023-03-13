@@ -20,7 +20,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@wagtail/eslint-config-wagtail": "^0.4.0",
     "autocompleter": "^6.0.3",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^5.0.0",
     "eslint": "^8.16.0"
   },
   "scripts": {
