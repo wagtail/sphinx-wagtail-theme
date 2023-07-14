@@ -2,3 +2,4 @@ sphinx
 sphinx-intl
 myst_parser
 sphinx_copybutton
+urllib3>=2.0.3
