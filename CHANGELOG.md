@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 
 -   Ensure names in code use monospace fonts (LB (Ben) Johnston)
 -   Ensure code copy button is always visible (LB (Ben) Johnston)
+-   Ensure the version picker can be closed easily on small devices (LB (Ben) Johnston)
 
 ### Removed
 

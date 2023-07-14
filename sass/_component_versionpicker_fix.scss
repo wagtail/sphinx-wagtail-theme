@@ -8,13 +8,12 @@ These overrides are necessary to make the version picker work with the Sphinx Wa
   bottom: 50px;
   right: 50px;
   max-width: $modal-sm;
-  max-height: calc(100vh - 50px);
   overflow-y: auto;
   background: #1f1d1d;
   z-index: 1050;
 
-  &.shift-up .rst-other-versions {
-    display: block;
+  &.shift-up {
+    max-height: calc(100vh - 50px);
   }
 
   a {
