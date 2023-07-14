@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 /**
  * Sidebar with search box
@@ -10,7 +10,7 @@
   border-right-style: hidden; // hide by default on small devices
 
   /* stylelint-disable-next-line scss/media-feature-value-dollar-variable */
-  @media screen and (min-width: map.get($grid-breakpoints, "lg")) {
+  @media screen and (min-width: map.get($grid-breakpoints, 'lg')) {
     max-width: $size-13;
     border-right-style: solid;
   }
@@ -55,7 +55,7 @@
   .selected:after {
     border-radius: $border-radius;
     border: 1px solid color-yiq($search);
-    content: "Enter ↵";
+    content: 'Enter ↵';
     float: inline-end;
     font-size: 0.75em;
     line-height: 1;

@@ -8,7 +8,7 @@
   li {
     margin: $size-1 0;
 
-    &[class^="toctree-"] {
+    &[class^='toctree-'] {
       // ensure the toctree-expand button can be positioned
       position: relative;
     }
@@ -31,13 +31,13 @@
     transform: translate(0, -50%);
     height: 1em;
     width: 1em;
-    background-color: theme-color("light");
+    background-color: theme-color('light');
     border-radius: $border-radius;
 
     &:after,
     &:before {
       position: absolute;
-      content: "";
+      content: '';
       top: 50%;
       left: 50%;
     }
@@ -58,11 +58,11 @@
   }
 
   .current > a {
-    color: theme-color("primary");
+    color: theme-color('primary');
 
     > .toctree-expand {
-      background-color: theme-color("primary");
-      color: color-yiq(theme-color("primary"));
+      background-color: theme-color('primary');
+      color: color-yiq(theme-color('primary'));
 
       &:before {
         display: none;

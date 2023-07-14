@@ -13,9 +13,9 @@
  * @param {boolean?} options.isInitial - if true the current value will be resolved & set NOT toggled
  */
 function updateThemeMode(event, { isInitial = false } = {}) {
-  const DARK = "dark";
-  const LIGHT = "light";
-  const STORAGE_KEY = "wagtail-theme";
+  const DARK = 'dark';
+  const LIGHT = 'light';
+  const STORAGE_KEY = 'wagtail-theme';
 
   let currentMode;
   let applyMode;
@@ -26,7 +26,7 @@ function updateThemeMode(event, { isInitial = false } = {}) {
     savedThemeMode = localStorage.getItem(STORAGE_KEY);
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.warn("Unable to read theme from localStorage", error);
+    console.warn('Unable to read theme from localStorage', error);
   }
 
   // find the current mode from existing storage or browser preference
@@ -36,7 +36,7 @@ function updateThemeMode(event, { isInitial = false } = {}) {
   } else {
     // fall back on browser media for first toggle
     const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme:dark)"
+      '(prefers-color-scheme:dark)',
     ).matches;
 
     currentMode = prefersDarkMode ? DARK : LIGHT;
@@ -50,7 +50,7 @@ function updateThemeMode(event, { isInitial = false } = {}) {
   }
 
   // set applied mode to the DOM
-  document.body.classList.toggle("theme-dark", applyMode === DARK);
+  document.body.classList.toggle('theme-dark', applyMode === DARK);
 
   // only store value if already stored OR was triggered by an actual click
   if (savedThemeMode || event) {
@@ -58,7 +58,7 @@ function updateThemeMode(event, { isInitial = false } = {}) {
       localStorage.setItem(STORAGE_KEY, applyMode);
     } catch (error) {
       // eslint-disable-next-line no-console
-      console.warn("Unable to store theme in localStorage", error);
+      console.warn('Unable to store theme in localStorage', error);
     }
   }
 }
@@ -73,6 +73,6 @@ updateThemeMode(null, { isInitial: true });
 /**
  * Set up event listener for other manual toggling.
  */
-document.addEventListener("theme:toggle-theme-mode", updateThemeMode, {
+document.addEventListener('theme:toggle-theme-mode', updateThemeMode, {
   passive: true,
 });
