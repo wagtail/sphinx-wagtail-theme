@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 -   Ensure names in code use monospace fonts (LB (Ben) Johnston)
+-   Ensure code copy button is always visible (LB (Ben) Johnston)
 
 ### Removed
 
