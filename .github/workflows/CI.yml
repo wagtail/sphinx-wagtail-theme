@@ -15,7 +15,7 @@ jobs:
         run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
       - run: npm install
       - run: npm run build
       - uses: actions/setup-python@v2

@@ -1,34 +1,34 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  devtool: "source-map",
+  devtool: 'source-map',
   entry: {
-    blocking: path.resolve(__dirname, "js/blocking.js"),
-    theme: path.resolve(__dirname, "js/theme.js"),
-    fontawesome: path.resolve(__dirname, "sass/fontawesome.scss"),
+    blocking: path.resolve(__dirname, 'js/blocking.js'),
+    theme: path.resolve(__dirname, 'js/theme.js'),
+    fontawesome: path.resolve(__dirname, 'sass/fontawesome.scss'),
   },
   output: {
-    path: path.resolve(__dirname, "sphinx_wagtail_theme/static/dist"),
-    filename: "[name].js",
+    path: path.resolve(__dirname, 'sphinx_wagtail_theme/static/dist'),
+    filename: '[name].js',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: ['babel-loader'],
       },
       {
         test: /\.(s?)css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(eot|ttf|woff|woff2|svg)$/,
         use: {
-          loader: "file-loader",
+          loader: 'file-loader',
           options: {
-            name: "assets/[name].[ext]",
+            name: 'assets/[name].[ext]',
           },
         },
       },
@@ -44,15 +44,15 @@ module.exports = {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendor",
-          chunks: "all",
+          name: 'vendor',
+          chunks: 'all',
         },
       },
     },
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: '[name].css',
     }),
   ],
 };

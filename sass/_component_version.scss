@@ -25,11 +25,11 @@
 }
 
 .versionadded {
-  background-color: theme-color-level("success", -11);
+  background-color: theme-color-level('success', -11);
 
   .versionmodified {
-    color: color-yiq(theme-color("success"));
-    background-color: theme-color("success");
+    color: color-yiq(theme-color('success'));
+    background-color: theme-color('success');
 
     &:before {
       content: fa-content($fa-var-info-circle);
@@ -38,11 +38,11 @@
 }
 
 .versionchanged {
-  background-color: theme-color-level("warning", -11);
+  background-color: theme-color-level('warning', -11);
 
   .versionmodified {
-    color: color-yiq(theme-color("warning"));
-    background-color: theme-color("warning");
+    color: color-yiq(theme-color('warning'));
+    background-color: theme-color('warning');
 
     &:before {
       content: fa-content($fa-var-exclamation-triangle);
@@ -51,11 +51,11 @@
 }
 
 .deprecated {
-  background-color: theme-color-level("danger", -11);
+  background-color: theme-color-level('danger', -11);
 
   .versionmodified {
-    color: color-yiq(theme-color("danger"));
-    background-color: theme-color("danger");
+    color: color-yiq(theme-color('danger'));
+    background-color: theme-color('danger');
     border-radius: unset;
     box-shadow: unset;
 
@@ -77,7 +77,7 @@ body.theme-dark {
     // Need to override this to be the same as above, due to how the class names
     // are generated in the docs.
     .versionmodified {
-      background-color: theme-color("danger");
+      background-color: theme-color('danger');
     }
   }
 

@@ -24,7 +24,7 @@ $bignum-xxl: 1.5rem !default;
     padding: $spacer;
     padding-left: (($bignum-normal * 2.5) + $spacer);
     padding-top: $spacer + ($bignum-normal * 0.25);
-    background-color: theme-color-level("dark", -11);
+    background-color: theme-color-level('dark', -11);
     min-height: (($bignum-normal * 2) + $spacer * 2);
     border-radius: $border-radius;
 
@@ -47,8 +47,8 @@ $bignum-xxl: 1.5rem !default;
       width: 2em;
       line-height: 2em;
       text-align: center;
-      background-color: theme-color("dark");
-      color: color-yiq(theme-color("dark"));
+      background-color: theme-color('dark');
+      color: color-yiq(theme-color('dark'));
       border-radius: 50%;
       content: counter(li-counter, decimal);
       counter-increment: li-counter;
@@ -66,11 +66,11 @@ $bignum-xxl: 1.5rem !default;
   @extend .bignums;
 
   > li {
-    background-color: theme-color-level("info", -11);
+    background-color: theme-color-level('info', -11);
 
     &:before {
-      background-color: theme-color("info");
-      color: color-yiq(theme-color("info"));
+      background-color: theme-color('info');
+      color: color-yiq(theme-color('info'));
     }
   }
 }
@@ -81,11 +81,11 @@ $bignum-xxl: 1.5rem !default;
   @extend .bignums;
 
   > li {
-    background-color: theme-color-level("warning", -11);
+    background-color: theme-color-level('warning', -11);
 
     &:before {
-      background-color: theme-color("warning");
-      color: color-yiq(theme-color("warning"));
+      background-color: theme-color('warning');
+      color: color-yiq(theme-color('warning'));
     }
   }
 }
@@ -96,11 +96,11 @@ $bignum-xxl: 1.5rem !default;
   @extend .bignums;
 
   > li {
-    background-color: theme-color-level("success", -11);
+    background-color: theme-color-level('success', -11);
 
     &:before {
-      background-color: theme-color("success");
-      color: color-yiq(theme-color("success"));
+      background-color: theme-color('success');
+      color: color-yiq(theme-color('success'));
     }
   }
 }
@@ -110,11 +110,11 @@ $bignum-xxl: 1.5rem !default;
   @extend .bignums;
 
   > li {
-    background-color: theme-color-level("danger", -11);
+    background-color: theme-color-level('danger', -11);
 
     &:before {
-      background-color: theme-color("danger");
-      color: color-yiq(theme-color("danger"));
+      background-color: theme-color('danger');
+      color: color-yiq(theme-color('danger'));
     }
   }
 }

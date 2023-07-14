@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 -   Add basic styling of `autodoc` generated methods for readability (Temidayo Azeez)
+-   Add Prettier formatting and checks (LB (Ben) Johnston)
 
 ### Fixed
 

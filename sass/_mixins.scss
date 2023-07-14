@@ -2,7 +2,7 @@
   @include fa-icon;
   content: fa-content($fa-var-info-circle);
   /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   margin-right: ($spacer / 2);
 }
