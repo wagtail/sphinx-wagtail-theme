@@ -8,10 +8,18 @@ All notable changes to this project will be documented in this file.
 
 -   Add basic styling of `autodoc` generated methods for readability (Temidayo Azeez)
 
+### Fixed
+
+-   Ensure names in code use monospace fonts (LB (Ben) Johnston)
+
 ### Removed
 
 -   Remove Algolia DocSearch meta tags (Thibaud Colas)
 -   Remove jQuery loading by default (LB (Ben) Johnston)
+
+### Changed
+
+-   Upgrade frontend build dependencies (LB (Ben) Johnston)
 
 ### Upgrade considerations
 
