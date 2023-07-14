@@ -7,7 +7,7 @@
 // - Horizontal Buttons
 // ----
 .admonition {
-  background-color: theme-color-level("info", -11);
+  background-color: theme-color-level('info', -11);
   margin: $spacer 0;
   padding: $spacer;
   box-shadow: $box-shadow-sm;
@@ -20,22 +20,22 @@
 
   &.hint,
   &.note {
-    background-color: theme-color-level("info", -11);
+    background-color: theme-color-level('info', -11);
 
     .admonition-title {
-      color: color-yiq(theme-color("info"));
-      background-color: theme-color("info");
+      color: color-yiq(theme-color('info'));
+      background-color: theme-color('info');
     }
   }
 
   &.caution,
   &.warning,
   &.attention {
-    background-color: theme-color-level("warning", -11);
+    background-color: theme-color-level('warning', -11);
 
     .admonition-title {
-      color: color-yiq(theme-color("warning"));
-      background-color: theme-color("warning");
+      color: color-yiq(theme-color('warning'));
+      background-color: theme-color('warning');
 
       &:before {
         content: fa-content($fa-var-exclamation-triangle);
@@ -45,11 +45,11 @@
 
   &.danger,
   &.error {
-    background-color: theme-color-level("danger", -11);
+    background-color: theme-color-level('danger', -11);
 
     .admonition-title {
-      color: color-yiq(theme-color("danger"));
-      background-color: theme-color("danger");
+      color: color-yiq(theme-color('danger'));
+      background-color: theme-color('danger');
 
       &:before {
         content: fa-content($fa-var-exclamation-triangle);
@@ -60,11 +60,11 @@
   &.important,
   &.seealso,
   &.tip {
-    background-color: theme-color-level("success", -11);
+    background-color: theme-color-level('success', -11);
 
     .admonition-title {
-      color: color-yiq(theme-color("success"));
-      background-color: theme-color("success");
+      color: color-yiq(theme-color('success'));
+      background-color: theme-color('success');
     }
   }
 }
@@ -74,8 +74,8 @@
   padding: ($spacer / 2) $spacer;
   margin: -$spacer;
   margin-bottom: $spacer;
-  color: color-yiq(theme-color("info"));
-  background-color: theme-color("info");
+  color: color-yiq(theme-color('info'));
+  background-color: theme-color('info');
   font-weight: $font-weight-bold;
 
   &:before {
