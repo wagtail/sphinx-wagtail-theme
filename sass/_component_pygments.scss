@@ -115,7 +115,7 @@ pre {
     color: $base16-base0D;
   }
 
-  /* stylelint-disable-next-line selector-type-no-unknown */
+  /* stylelint-disable-next-line selector-type-no-unknown, selector-class-pattern */
   literal.String.Char .sd {
     color: $base16-base04;
   } /* Literal.String.Doc */

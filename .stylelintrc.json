@@ -5,6 +5,8 @@
     "no-descending-specificity": null,
     "property-disallowed-list": null,
     "scale-unlimited/declaration-strict-value": null,
-    "scss/at-extend-no-missing-placeholder": null
+    "scss/at-extend-no-missing-placeholder": null,
+    "selector-max-combinators": 4,
+    "selector-max-specificity": "1,3,0"
   }
 }
