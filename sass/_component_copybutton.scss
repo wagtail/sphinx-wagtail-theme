@@ -1,0 +1,5 @@
+// Ensure copy button is always visible
+.pre ~ button.copybtn,
+pre ~ button.copybtn {
+  opacity: 1;
+}
