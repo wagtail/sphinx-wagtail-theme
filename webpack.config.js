@@ -10,7 +10,6 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "sphinx_wagtail_theme/static/dist"),
-    publicPath: "",
     filename: "[name].js",
   },
   module: {
