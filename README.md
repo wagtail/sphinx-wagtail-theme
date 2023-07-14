@@ -10,7 +10,7 @@ Sphinx Wagtail theme contains all files required to build a Sphinx extension tha
 -   [Documentation](https://sphinx-wagtail-theme.netlify.app/)
 -   [Security](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/SECURITY.md)
 -   [Changelog](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/CHANGELOG.md)
--   Supports Python > 3.7
+-   Supports Python >= 3.8
 
 ## Installation
 

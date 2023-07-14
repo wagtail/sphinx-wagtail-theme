@@ -19,10 +19,12 @@ All notable changes to this project will be documented in this file.
 
 -   Remove Algolia DocSearch meta tags (Thibaud Colas)
 -   Remove jQuery loading by default (LB (Ben) Johnston)
+-   Officially drop support for Pythong 3.7 (LB (Ben) Johnston)
 
 ### Changed
 
 -   Upgrade frontend build dependencies (LB (Ben) Johnston)
+-   Upgrade build tooling to latest GitHub actions and Python 3.10 (LB (Ben) Johnston)
 
 ### Upgrade considerations
 
