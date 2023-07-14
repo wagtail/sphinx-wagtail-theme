@@ -26,3 +26,8 @@ li > p {
     transform: translateY(0%);
   }
 }
+
+
+pre, .pre {
+  font-family: $font-family-monospace;
+}
