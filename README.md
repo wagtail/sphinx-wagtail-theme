@@ -7,7 +7,7 @@ Sphinx Wagtail theme contains all files required to build a Sphinx extension tha
 -   [MIT license](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/LICENSE)
 -   [Contributors](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/CONTRIBUTORS.md)
 -   [Repository](https://github.com/wagtail/sphinx_wagtail_theme)
--   [Documentation](https://sphinx-wagtail-theme.netlify.app/)
+-   [Documentation](https://sphinx-wagtail-theme.readthedocs.io/en/latest/)
 -   [Security](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/SECURITY.md)
 -   [Changelog](https://github.com/wagtail/sphinx_wagtail_theme/blob/main/CHANGELOG.md)
 -   Supports Python >= 3.8
