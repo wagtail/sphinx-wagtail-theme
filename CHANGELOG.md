@@ -2,11 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.0.0] - 2023-03-09
+## [6.1.0] - 2023-07-19
 
 ### Added
 
--   Add basic styling of `autodoc` generated methods for readability (Temidayo Azeez)
 -   Add Prettier formatting and checks (LB (Ben) Johnston)
 
 ### Fixed
@@ -17,14 +16,23 @@ All notable changes to this project will be documented in this file.
 
 ### Removed
 
--   Remove Algolia DocSearch meta tags (Thibaud Colas)
--   Remove jQuery loading by default (LB (Ben) Johnston)
--   Officially drop support for Pythong 3.7 (LB (Ben) Johnston)
+-   Officially drop support for Python 3.7 (LB (Ben) Johnston)
 
 ### Changed
 
 -   Upgrade frontend build dependencies (LB (Ben) Johnston)
 -   Upgrade build tooling to latest GitHub actions and Python 3.10 (LB (Ben) Johnston)
+
+## [6.0.0] - 2023-03-09
+
+### Added
+
+-   Add basic styling of `autodoc` generated methods for readability (Temidayo Azeez)
+
+### Removed
+
+-   Remove Algolia DocSearch meta tags (Thibaud Colas)
+-   Remove jQuery loading by default (LB (Ben) Johnston)
 
 ### Upgrade considerations
 
