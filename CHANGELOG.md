@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.1.1] - 2023-07-19
+
+### Fixed
+
+-   Fix regression with icon fonts not loading correctly (LB (Ben) Johnston)
+
 ## [6.1.0] - 2023-07-19
 
 ### Added
