@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
--   ...
+-   Update client-side development dependencies (LB (Ben) Johnston)
 
 ### Removed
 
