@@ -39,7 +39,7 @@
     "lint": "npm run lint:js && npm run lint:css"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "prettier": {
     "singleQuote": true,
