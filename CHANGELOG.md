@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 -   Update `favicon` usage to be the new Sphinx variable `favicon_url` & add default favicon (Sahil Jangra)
+-   Avoid using pkgresources module for generating version, replace with use importlib.metadata (Salvo Polizzi)
 
 ### Security
 
