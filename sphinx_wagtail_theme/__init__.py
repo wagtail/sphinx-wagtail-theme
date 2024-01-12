@@ -1,10 +1,9 @@
 """Sphinx Wagtail theme"""
 
 import os
-import pkg_resources
+from importlib.metadata import version
 
-
-__version__ = pkg_resources.require("sphinx_wagtail_theme")[0].version
+__version__ = version('sphinx_wagtail_theme')
 __version_full__ = __version__
 
 
