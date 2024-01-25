@@ -18,7 +18,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
--   ...
+-   Update `favicon` usage to be the new Sphinx variable `favicon_url` & add default favicon (Sahil Jangra)
 
 ### Security
 
