@@ -35,6 +35,7 @@ today_fmt = '%Y-%m-%d %H:%M'
 # -- Options for HTML output -------------------------------------------
 html_theme = 'sphinx_wagtail_theme'
 html_static_path = []
+html_favicon = 'favicon.ico'
 # -- Options for HTMLHelp output ---------------------------------------
 htmlhelp_basename = 'sphinx_wagtail_themedoc'
 # -- Options for LaTeX output ------------------------------------------
