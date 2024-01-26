@@ -23,8 +23,8 @@
     {% block htmltitle %}
         <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     {% endblock %}
-    {%- if favicon %}
-        <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
+    {%- if favicon_url %}
+        <link rel="shortcut icon" href="{{ pathto(favicon_url, 1) }}" />
     {%- endif %}
 
     {#- Include our own stylesheets -#}

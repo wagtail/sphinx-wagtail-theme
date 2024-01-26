@@ -12,6 +12,7 @@
 -   Mohammad Areeb
 -   Andy Chosak
 -   Temidayo Azeez
+-   Sahil Jangra
 
 ## Sphinx Typo3 theme
 
