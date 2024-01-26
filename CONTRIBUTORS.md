@@ -13,6 +13,7 @@
 -   Andy Chosak
 -   Temidayo Azeez
 -   Sahil Jangra
+-   Salvo Polizzi
 
 ## Sphinx Typo3 theme
 
