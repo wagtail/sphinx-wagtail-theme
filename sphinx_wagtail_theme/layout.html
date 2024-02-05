@@ -24,7 +24,7 @@
         <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     {% endblock %}
     {%- if favicon_url %}
-        <link rel="shortcut icon" href="{{ pathto(favicon_url, 1) }}" />
+        <link rel="shortcut icon" href="{{ favicon_url }}" />
     {%- endif %}
 
     {#- Include our own stylesheets -#}
