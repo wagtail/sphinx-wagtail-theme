@@ -2,27 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.3.0] - Unreleased
-
-### Added
-
--   ...
-
-### Changed
-
--   ...
-
-### Removed
-
--   ...
+## [6.3.0] - 2024-03-01
 
 ### Fixed
 
--   ...
-
-### Security
-
--   ...
+-   Fix favicon URL on pages other than the homepage (Sage Abdullah)
+-   Fix readthedocs deployment config (Sage Abdullah)
 
 ## [6.2.0] - 2024-01-30
 
