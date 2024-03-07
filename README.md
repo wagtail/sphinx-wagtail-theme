@@ -40,31 +40,16 @@ html_theme = 'sphinx_wagtail_theme'
 
 ### Release process
 
-Checklist:
+This section is for maintainer reference.
 
--   [ ] `CONTRIBUTORS.md` is updated
--   [ ] `CHANGELOG.md` is updated
--   [ ] `setup.cfg` is updated (see `version`)
--   [ ] Everything is committed, clean checkout
--   [ ] `~/.pypirc` has a username and password (token)
--   [ ] Add a git tag at the release commit with the format `X.Y.Z`
--   [ ] Create a GitHub release against that tag with the title format `vX.Y.Z`
+1. Check all relevant changes since the last release are documented in `CHANGELOG.md`
+2. Check if there are any new contributors and add them to `CONTRIBUTORS.md`
+3. Update the version number in `setup.cfg`. The version number should follow [Semantic Versioning](https://semver.org/).
+4. Commit and push the changes
+5. Create and push a new tag with the version number, prefixed with `v`. For example, `v1.2.3`
+6. In the GitHub repository, create a new release against the tag you just pushed.
+7. Once the release is created, the CI will automatically publish the new version to PyPI.
 
-With an active virtual environment:
-
-```sh
-python -m pip install --upgrade -r requirements.txt
-make clean
-make clean-frontend
-npm ci
-npm run build
-prerelease
-git tag -a N.N.N -m "N.N.N"
-git push origin N.N.N
-python -m build
-python -m twine upload --repository pypi dist/*
-postrelease
-```
 
 ## Credits
 
