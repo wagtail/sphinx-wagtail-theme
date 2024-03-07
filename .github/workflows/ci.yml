@@ -26,8 +26,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: make setup
-      - run: make install-for-development
+      - run: make install-python
       - run: make lint-python
       - run: make test
 
@@ -45,9 +44,10 @@ jobs:
         with:
           python-version: '3.12'
       - uses: browser-actions/setup-firefox@v1
-      - run: make setup
-      - run: make install-for-development
-      - run: make frontend
+      - run: make install-python
+      - run: npm ci
+      # Check against the dist version of the frontend, as it would be appear when deployed
+      - run: make frontend-dist
       - run: make docs
       - name: Percy Test
         run: make test-visual-regression

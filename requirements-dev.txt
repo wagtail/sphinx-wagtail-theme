@@ -11,5 +11,4 @@ pytest
 selenium
 setuptools
 twine
-wheel
 zest.releaser

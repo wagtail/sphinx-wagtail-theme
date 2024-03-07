@@ -25,13 +25,13 @@ for target, help in hits:
 	print("%-20s %s" % (target, help))
 print("""
 Start with the installation of Python and Node modules:
-   make setup
+   make install
 
 Compile frontend changes:
    make frontend
 
-Build, import from package, test, render the repo docs and open in browser:
-   make install test-import docs
+Build example docs and open in browser:
+   make docs serve
 """)
 endef
 export PRINT_HELP_PYSCRIPT
@@ -44,70 +44,58 @@ help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
 
+.PHONY: install
+install: install-python install-frontend ## Install all
+
+
+.PHONY: install-frontend
+install-frontend: ##- Install node modules
+	npm install
+
+
+.PHONY: install-python
+install-python: ##- Install Python modules
+	pip install -U pip
+	pip install -U -r requirements.txt
+	pip install -U -r requirements-dev.txt
+
+
 .PHONY: build
-build: clean build-project ## Build all, except frontend
-
-
-.PHONY: build-project
-build-project: clean-project ##- Build Sphinx extension
-	python setup.py sdist
-	python setup.py bdist_wheel
+build: clean frontend-dist ##- Build Sphinx extension
+	python -m build
 	ls -l dist
 
 
 .PHONY: clean
-clean: clean-project ## Clean all, except frontend
+clean: ##- Remove all build, test and Python artifacts
+	# Build frontend files
+	rm -rf sphinx_wagtail_theme/static/dist
 
-
-.PHONY: clean-project
-clean-project: clean-build clean-pyc clean-test clean-docs ## Remove all build, test, coverage and Python artifacts
-
-
-.PHONY: clean-build
-clean-build: ##- Remove build artifacts
+	# Python build artifacts
 	rm -rf build/
-	mkdir -p build
-	touch build/.gitkeep
 	rm -rf dist/
 	rm -rf .eggs/
 	find . -name '*.egg-info' -exec rm -rf {} +
 	find . -name '*.egg' -exec rm -f {} +
 
+	# Clean build docs
+	rm -rf ./docs/_build
+	rm -rf ./rtd-venv
 
-.PHONY: clean-frontend
-clean-frontend: ## Clean frontend files
-	rm -rf sphinx_wagtail_theme/static/dist
+	# Python test artifacts
+	rm -rf .tox/
+	rm -rf htmlcov/
+	rm -rf .pytest_cache
 
-clean-pyc: ##- Remove Python file artifacts
+	# Python artifacts
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -rf {} +
 
-.PHONY: clean-test
-clean-test: ##- Remove test and coverage artifacts
-	rm -rf .tox/
-	rm -f .coverage
-	rm -rf htmlcov/
-	rm -rf .pytest_cache
-
-
-.PHONY: clean-docs
-clean-docs: ##- Remove previously built docs
-	rm -rf ./docs/_build
-	rm -rf ./rtd-venv
-
-
-.PHONY: coverage
-coverage: ##- Check code coverage quickly with default Python
-	coverage run --source sphinx_wagtail_theme -m pytest
-	coverage report -m
-	coverage html
-	$(BROWSER) htmlcov/index.html
-
 
 .PHONY: docs
-docs: ## Regenerate Sphinx HTML documentation
+docs: ## Build Sphinx HTML documentation
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 
@@ -122,6 +110,7 @@ rtd-docs: ## Build the docs like Readthedocs does.
 	./rtd-venv/bin/python -m sphinx -T -E -b html -d ./docs/_build/doctrees -D language=en ./docs ./docs/_build/html
 	rm -rf "./rtd-venv"
 
+
 .PHONY: serve
 serve: ## Serve docs at http://localhost:8000
 	python -m http.server --directory ./docs/_build/html
@@ -132,16 +121,21 @@ frontend: ## Compile frontend files
 	npm run frontend
 
 
-.PHONY: install
-install: clean build uninstall ## Build Sphinx extension and install from package
-	find dist -name "*.whl" -print0 | xargs -0 pip install --upgrade
+.PHONY: frontend-dist
+frontend-dist: ##- Build frontend files for distribution
+	npm run build
 
 
-.PHONY: install-for-development ifd
-ifd: install-for-development
-install-for-development: clean uninstall ## Clean, uninstall and pip install -e for development (alias ifd)
-	pip install -r requirements-dev.txt
-	pip install -e .
+.PHONY: watch
+watch:
+	npm run watch
+
+
+
+.PHONY: watchdocs
+watchdocs: docs ##- Redo 'docs' and watch for changes (=make sd)
+	pip install watchdog
+	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
 
 .PHONY: lint
@@ -160,54 +154,12 @@ lint-frontend:
 	npm run lint
 
 
-.PHONY: release
-release: dist ##- Clean, build and upload a release
-	echo TO BE DONE: twine upload dist/*
-
-
-.PHONY: servedocs sd
-sd: servedocs
-servedocs: docs ##- Redo 'docs' and watch for changes (=make sd)
-	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
-
-
-.PHONY: setup
-setup: setup-python setup-frontend ## Setup all
-
-
-.PHONY: setup-frontend
-setup-frontend: ##- Setup node modules
-	npm install
-
-
-.PHONY: setup-python
-setup-python: ##- Setup Python modules
-	pip install -U pip
-	pip install -U -r requirements.txt
-
-
 .PHONY: test
-test: ## Run Python tests quickly with pytest
+test:
 	pytest
-	if [ -d dist ]; then find dist -name *.whl -exec twine check {} +; fi
 
-
-.PHONY: test-tox
-test-tox: ##- Run tests on every Python version with tox
-	tox
-
-
-.PHONY: test-import
-test-import: ## Verify the extension is install and can be imported
-	python3 -c "import sphinx_wagtail_theme as m; print(m.__version__)"
-	python3 -c "import sphinx_wagtail_theme as m, pprint; pprint.pprint(m.__version_full__)"
 
 .PHONY: test-visual-regression
 test-visual-regression: ## Run visual regression tests
 	./node_modules/.bin/percy exec -- python tests/test_visual_regression.py
-
-.PHONY: uninstall ui
-ui: uninstall
-uninstall: ##- Uninstall the extension
-	pip uninstall -y sphinx-wagtail-theme
 

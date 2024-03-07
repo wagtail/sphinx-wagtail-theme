@@ -2,11 +2,6 @@
 *.egg
 *.egg-info
 *.pyc
-*.sass-cache
-*GENERATED*
-*NOT_VERSIONED*
-.coverage
-.eggs/
 .idea
 .ruby-version
 .tox
@@ -22,7 +17,7 @@ npm-debug.log
 /.vscode
 
 /build/*
-!/build/.gitkeep
+rtd-env/
 venv/
 env/
 .env/
