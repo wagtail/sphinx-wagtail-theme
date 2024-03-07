@@ -63,6 +63,7 @@ install-python: ##- Install Python modules
 .PHONY: build
 build: clean frontend-dist ##- Build Sphinx extension
 	python -m build
+	twine check dist/*
 	ls -l dist
 
 
