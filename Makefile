@@ -145,27 +145,19 @@ install-for-development: clean uninstall ## Clean, uninstall and pip install -e 
 
 
 .PHONY: lint
-lint: ## Check Python style
+lint: lint-python lint-frontend ##- Run all linters
+
+
+.PHONY: lint-python
+lint-python:
 	flake8 *.py
 	flake8 sphinx_wagtail_theme
 	flake8 tests
 
 
-.PHONY: lint-minimal lm
-lm: lint-minimal
-lint-minimal: ## Check Python style for minimal standards (alias lm)
-	flake8 *.py  --count --select=E9,F63,F7,F82 --show-source --statistics
-	echo
-	flake8 sphinx_wagtail_theme   --count --select=E9,F63,F7,F82 --show-source --statistics
-	echo
-	flake8 tests --count --select=E9,F63,F7,F82 --show-source --statistics
-	echo
-	flake8 *.py  --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-	echo
-	flake8 sphinx_wagtail_theme   --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-	echo
-	flake8 tests --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-	echo
+.PHONY: lint-frontend
+lint-frontend:
+	npm run lint
 
 
 .PHONY: release
