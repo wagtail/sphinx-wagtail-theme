@@ -6,9 +6,6 @@ build
 docutils
 flake8
 percy-selenium
-pip
 pytest
 selenium
-setuptools
 twine
-zest.releaser
