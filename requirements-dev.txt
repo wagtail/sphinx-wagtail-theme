@@ -5,6 +5,7 @@
 build
 docutils
 flake8
+black>=24,<=25
 percy-selenium
 pytest
 selenium

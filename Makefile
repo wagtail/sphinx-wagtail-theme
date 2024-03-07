@@ -132,7 +132,6 @@ watch:
 	npm run watch
 
 
-
 .PHONY: watchdocs
 watchdocs: docs ##- Redo 'docs' and watch for changes (=make sd)
 	pip install watchdog
@@ -145,6 +144,7 @@ lint: lint-python lint-frontend ##- Run all linters
 
 .PHONY: lint-python
 lint-python:
+	black --check sphinx_wagtail_theme docs/ tests/
 	flake8 *.py
 	flake8 sphinx_wagtail_theme
 	flake8 tests
@@ -153,6 +153,20 @@ lint-python:
 .PHONY: lint-frontend
 lint-frontend:
 	npm run lint
+
+
+.PHONY: format
+format: format-python format-frontend ##- Run all formatters
+
+
+.PHONY: format-python
+format-python:
+	black sphinx_wagtail_theme docs/ tests/
+
+
+.PHONY: format-frontend
+format-frontend:
+	npm run format
 
 
 .PHONY: test
