@@ -25,7 +25,7 @@ def main():
         exit(1)
 
     handler_class = DocsHTTPRequestHandler
-    server_address = ('127.0.0.1', 8000)
+    server_address = ("127.0.0.1", 8000)
 
     httpd = server.HTTPServer(server_address, handler_class)
 
