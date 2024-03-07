@@ -37,11 +37,14 @@ jobs:
       PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Setup Firefox and geckodriver
-        uses: ./.github/actions/setup-firefox
+      - uses: browser-actions/setup-firefox@v1
       - run: make setup
       - run: make install-for-development
       - run: make frontend
