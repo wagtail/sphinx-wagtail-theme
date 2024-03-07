@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.4.0] - Unreleased
+
+### Added
+
+-   ...
+
+### Changed
+
+-   ...
+
+### Removed
+
+-   ...
+
+### Fixed
+
+-   ...
+
+### Security
+
+-   ...
+
 ## [6.3.0] - 2024-03-01
 
 ### Fixed
