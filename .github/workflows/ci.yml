@@ -87,20 +87,3 @@ jobs:
           echo 'html_theme = "'${html_theme}'"' >> source/conf.py
           cat source/conf.py
           sphinx-build -b html -A version=test source build
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v2
-        with:
-          name: static-files
-          path: sphinx_wagtail_theme/static/dist/
-      - run: grep -F -v 'dist' .gitignore > .gitignore.tmp && mv .gitignore.tmp .gitignore
-      - uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: gh-pages
-          folder: .
-          clean: true
