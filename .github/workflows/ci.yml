@@ -7,7 +7,18 @@ on:
   pull_request:
 
 jobs:
-  test:
+  frontend_qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: make frontend
+      - run: make lint-frontend
+      - run: make test
+
+  python_qa:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,8 +27,7 @@ jobs:
           python-version: '3.12'
       - run: make setup
       - run: make install-for-development
-      - run: make lint-minimal
-      - run: npm run lint
+      - run: make lint-python
       - run: make test
 
   visual-regression-tests:
