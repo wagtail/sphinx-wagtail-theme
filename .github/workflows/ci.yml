@@ -14,9 +14,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: make frontend
+          cache: 'npm'
+      - run: npm ci
       - run: make lint-frontend
-      - run: make test
+      - run: make frontend
 
   python_qa:
     runs-on: ubuntu-latest
