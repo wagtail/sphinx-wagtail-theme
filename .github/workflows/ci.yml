@@ -7,31 +7,6 @@ on:
   pull_request:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - id: nvm
-        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
-      - run: npm install
-      - run: npm run build
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - run: pip install wheel
-      - run: python setup.py bdist_wheel
-      - uses: actions/upload-artifact@v1
-        with:
-          name: bdist-wheel-package
-          path: dist
-      - uses: actions/upload-artifact@v1
-        with:
-          name: static-files
-          path: sphinx_wagtail_theme/static/dist/
-
   test:
     runs-on: ubuntu-latest
     steps:
