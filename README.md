@@ -1,4 +1,4 @@
-# [Sphinx Wagtail theme](https://sphinx-wagtail-theme.vercel.app/)
+# [Sphinx Wagtail theme](https://sphinx-wagtail-theme.readthedocs.io/)
 
 [![CI status](https://github.com/wagtail/sphinx_wagtail_theme/workflows/CI/badge.svg)](https://github.com/wagtail/sphinx_wagtail_theme/actions?query=workflow%3ACI) [![PyPI version](https://badge.fury.io/py/sphinx-wagtail-theme.svg)](https://badge.fury.io/py/sphinx-wagtail-theme) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
