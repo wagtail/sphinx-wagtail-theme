@@ -4,7 +4,7 @@ import threading
 
 import percy
 from selenium import webdriver
-from selenium.webdriver.firefox import options as firefox_options
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 
 BASE_DIR = pathlib.Path(__file__).parent.parent.resolve()
@@ -25,7 +25,7 @@ def main():
         exit(1)
 
     handler_class = DocsHTTPRequestHandler
-    server_address = ('127.0.0.1', 8000)
+    server_address = ("127.0.0.1", 8000)
 
     httpd = server.HTTPServer(server_address, handler_class)
 
@@ -33,8 +33,8 @@ def main():
     server_thread.start()
 
     print("Server thread running. Starting client requests...")
-    options = firefox_options.Options()
-    options.headless = True
+    options = FirefoxOptions()
+    options.add_argument("--headless")
     driver = webdriver.Firefox(options=options)
 
     def take_snapshot(url, title):
