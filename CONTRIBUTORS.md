@@ -15,6 +15,7 @@
 -   Sage Abdullah
 -   Sahil Jangra
 -   Salvo Polizzi
+-   Osaf AliSayed
 
 ## Sphinx Typo3 theme
 

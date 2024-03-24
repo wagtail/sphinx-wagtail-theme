@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
--   ...
+-   Use new Wagtail logo variant for favicon and other logos (Osaf AliSayed)
 
 ### Changed
 
