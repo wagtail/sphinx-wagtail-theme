@@ -18,7 +18,7 @@ for the theme.
    # These are options specifically for the Wagtail Theme.
    html_theme_options = dict(
        project_name = "My Project",
-       logo = "img/wagtail-logo-new.svg",
+       logo = "img/wagtail-logo-circle.svg",
        logo_alt = "Wagtail",
        logo_height = 59,
        logo_url = "/",
