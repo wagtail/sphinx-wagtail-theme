@@ -5,11 +5,8 @@
 build
 docutils
 flake8
+black>=24,<=25
 percy-selenium
-pip
 pytest
 selenium
-setuptools
 twine
-wheel
-zest.releaser

@@ -10,7 +10,7 @@ build:
     nodejs: '20'
   jobs:
     post_install:
-      - make setup-frontend
+      - make install-frontend
     pre_build:
       - make frontend
 

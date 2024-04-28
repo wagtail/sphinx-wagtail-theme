@@ -7,7 +7,7 @@ Development
 ===========
 
 
-For local development you need a system with Node v18.x, Python3, and Git.
+For local development you need a system with Node v20.x, Python3, and Git.
 It is strongly recommended to use a Python virtual environment (`venv`_).
 The build process derives the version from repository data, so it's necessary
 to clone the repository and not just download a single snapshot.
@@ -29,25 +29,13 @@ Install requirements and fulfill Python and Node demands (repeatable)
 
 .. code-block:: text
 
-   make setup
+   make install
 
 When doing frontend development compile your changes at any time
 
 .. code-block:: text
 
    make frontend
-
-Build and install the package
-
-.. code-block:: text
-
-   make install
-
-Build and install the package for development
-
-.. code-block:: text
-
-   make install-for-development
 
 Don't forget to update the docs. Render the documentation
 
@@ -61,30 +49,17 @@ Serve build docs locally
 
    make serve
 
-Check the Python code. The CI workflow requires ``lint-minimal`` to succeed
+Check the Python code and CSS/JS against the styleguide.
 
 .. code-block:: shell
 
-   # for local use
    make lint
-
-   # used in the workflow
-   make lint-minimal
 
 Run Python unit tests
 
 .. code-block:: text
 
    make test
-
-Rebuild and install from Python wheel package
-
-.. code-block:: shell
-
-   make install
-
-   # then verify the module can be imported and used
-   make test-import
 
 
 To find out whether the created wheel package passes the `twine check` test and
@@ -106,7 +81,7 @@ rather than using the shortcuts in the Makefile. Assume the commands below are
 all run in PowerShell. These instructions will also work on Mac or Linux without
 make installed as well.
 
-First, be sure to install Python 3, and Node 18.
+First, be sure to install Python 3, and Node 20.
 `fnm <https://github.com/Schniz/fnm>`_ is really useful for
 managing multiple versions of Node on Windows.
 
