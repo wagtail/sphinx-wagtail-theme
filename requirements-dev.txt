@@ -1,6 +1,9 @@
 # Install package into itself.
 -e .
 
+# Install main requirements.
+-r requirements.txt
+
 # Development tooling
 build
 docutils

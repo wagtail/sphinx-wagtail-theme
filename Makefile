@@ -56,7 +56,6 @@ install-frontend: ##- Install node modules
 .PHONY: install-python
 install-python: ##- Install Python modules
 	pip install -U pip
-	pip install -U -r requirements.txt
 	pip install -U -r requirements-dev.txt
 
 
@@ -177,4 +176,3 @@ test:
 .PHONY: test-visual-regression
 test-visual-regression: ## Run visual regression tests
 	./node_modules/.bin/percy exec -- python tests/test_visual_regression.py
-
