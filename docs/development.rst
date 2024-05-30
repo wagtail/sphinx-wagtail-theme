@@ -7,7 +7,7 @@ Development
 ===========
 
 
-For local development you need a system with Node v18.x, Python3, and Git.
+For local development you need a system with Node v20.x, Python3, and Git.
 It is strongly recommended to use a Python virtual environment (`venv`_).
 The build process derives the version from repository data, so it's necessary
 to clone the repository and not just download a single snapshot.
@@ -106,7 +106,7 @@ rather than using the shortcuts in the Makefile. Assume the commands below are
 all run in PowerShell. These instructions will also work on Mac or Linux without
 make installed as well.
 
-First, be sure to install Python 3, and Node 18.
+First, be sure to install Python 3, and Node 20.
 `fnm <https://github.com/Schniz/fnm>`_ is really useful for
 managing multiple versions of Node on Windows.
 
