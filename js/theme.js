@@ -66,9 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Sphinx compatibility.
   // Prior to Sphinx 7.2, URL_ROOT was part of DOCUMENTATION_OPTIONS.
-  let URL_ROOT = DOCUMENTATION_OPTIONS.URL_ROOT;
-  if (URL_ROOT === undefined) {
+  let URL_ROOT = "";
+  // Sphinx >= 7.2
+  if (document.documentElement.dataset.content_root) {
     URL_ROOT = document.documentElement.dataset.content_root;
+  }
+  // Sphinx < 7.2
+  else if (typeof DOCUMENTATION_OPTIONS.URL_ROOT !== 'undefined') {
+    URL_ROOT = DOCUMENTATION_OPTIONS.URL_ROOT;
   }
 
   // Search.
