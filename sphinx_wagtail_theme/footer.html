@@ -12,16 +12,6 @@
                     </ul>
                 </nav>
             {% endif %}
-            <div class="text-center">
-                {%- if last_updated %}
-                <p>Last updated: {{ last_updated|e }}</p>
-                {%- endif %}
-                <p style="display: none">
-                    <a class="text-light" href="https://github.com/wagtail/sphinx_wagtail_theme" rel="nofollow" target="_blank">
-                        Wagtail Sphinx Theme {{ theme_version|e }}
-                    </a>
-                </p>
-            </div>
             {%- if show_copyright %}
             <div class="text-center">
                 {%- if hasdoc('Copyright') %}
@@ -30,6 +20,21 @@
                     <a href="{{ pathto('copyright') }}">&copy; Copyright {{ copyright }}</a>
                 {%- else %}
                     &copy; Copyright {{ copyright }}
+                {%- endif %}
+            </div>
+            {%- endif %}
+            {%- if last_updated or show_sphinx %}
+            <div class="text-center text-white-50 font-italic mt-3">
+                {%- if last_updated %}
+                <small>Last updated: {{ last_updated|e }}</small>
+                {%- endif %}
+                {%- if show_sphinx %}
+                <small>
+                    Created using
+                    <a href="https://github.com/wagtail/sphinx_wagtail_theme" rel="nofollow" target="_blank">
+                        Sphinx Wagtail Theme {{ theme_version|e }}
+                    </a>
+                </small>
                 {%- endif %}
             </div>
             {%- endif %}
