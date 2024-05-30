@@ -13,7 +13,7 @@
 {%- endif %}
 {%- set sphinx_version_info = sphinx_version.split('.') | map('int') | list -%}
 <!DOCTYPE html>
-<html class="no-js" {% if language is not none %}lang="{{ language }}"{% endif %}>
+<html class="no-js" {% if language is not none %}lang="{{ language }}"{% endif %} data-content_root="{{ content_root }}">
 <head>
     <meta charset="utf-8" />
     {%- if metatags %}

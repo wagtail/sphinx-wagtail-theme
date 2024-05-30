@@ -64,6 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
       document.dispatchEvent(new CustomEvent('theme:toggle-theme-mode', event));
     });
 
+  // Sphinx compatibility.
+  // Prior to Sphinx 7.2, URL_ROOT was part of DOCUMENTATION_OPTIONS.
+  let URL_ROOT = DOCUMENTATION_OPTIONS.URL_ROOT;
+  if (URL_ROOT === undefined) {
+    URL_ROOT = document.documentElement.dataset.content_root;
+  }
+
   // Search.
   var searchform = document.getElementById('search-form');
   var searchinput = document.getElementById('searchinput');
@@ -126,13 +133,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (dirname === 'index/') {
               dirname = '';
             }
-            linkUrl = DOCUMENTATION_OPTIONS.URL_ROOT + dirname;
+            linkUrl = URL_ROOT + dirname;
           } else {
             // normal html builders
             linkUrl =
-              DOCUMENTATION_OPTIONS.URL_ROOT +
-              item.docname +
-              DOCUMENTATION_OPTIONS.FILE_SUFFIX;
+              URL_ROOT + item.docname + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
           }
           // Go to the URL.
           window.location.href = linkUrl;
