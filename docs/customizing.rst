@@ -80,6 +80,15 @@ are valid here. To disable, set to ``None``
 
    html_last_updated_fmt = "%b %d, %Y"
 
+Show Sphinx Theme in Footer
+---------------------------
+
+This built-in Sphinx feature will toggle on or off the "Created using Sphinx Wagtail Theme" in footer. By default it is on. To disable, set to ``False``. Useful if you want to see what version your docs are built with, or want to promote the project.
+
+.. code-block:: python
+
+   html_show_sphinx = False
+
 Custom Fonts & CSS
 ------------------
 
