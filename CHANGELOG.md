@@ -7,10 +7,11 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 -   Use new Wagtail logo variant for favicon and other logos (Osaf AliSayed)
+-   Set up GitHub Actions for publishing new releases using PyPI's trusted publishing (Storm Heg)
 
 ### Changed
 
--   ...
+-   Clean up development and release instructions and format codebase with Black (Storm Heg)
 
 ### Removed
 
