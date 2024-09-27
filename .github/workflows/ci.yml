@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  frontend_qa:
+  qa:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,22 +15,19 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-      - run: npm ci
-      - run: make lint-frontend
-      - run: make frontend
-
-  python_qa:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
+      - run: npm ci
+      - run: make lint-frontend
+      - run: make frontend
       - run: make install-python
       - run: make lint-python
       - run: make test
 
   visual-regression-tests:
+    needs: qa
     runs-on: ubuntu-latest
     env:
       PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
