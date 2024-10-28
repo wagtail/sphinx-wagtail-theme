@@ -40,6 +40,7 @@ def update_context(app, pagename, templatename, context, doctree):
 def setup(app):
     """Setup functionality called by Sphinx"""
     app.connect("html-page-context", update_context)
+    app.setup_extension("sphinx_copybutton")
     if hasattr(app, "add_html_theme"):
         theme_path = os.path.abspath(os.path.dirname(__file__))
         app.add_html_theme("sphinx_wagtail_theme", theme_path)
