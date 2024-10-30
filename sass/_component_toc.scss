@@ -57,18 +57,20 @@
     }
   }
 
-  .current > a {
-    color: theme-color('primary');
-
-    > .toctree-expand {
-      background-color: theme-color('primary');
-      color: color-yiq(theme-color('primary'));
-
-      &:before {
-        display: none;
+    .current > {
+      a {
+        color: theme-color('primary');
+      }
+  
+      .toctree-expand {
+        background-color: theme-color('primary');
+        color: color-yiq(theme-color('primary'));
+  
+        &:before {
+          display: none;
+        }
       }
     }
-  }
 
   > ul {
     padding-left: 0;
