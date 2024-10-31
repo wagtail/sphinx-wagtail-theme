@@ -2,28 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.4.0] - Unreleased
+## [6.4.0] - 2024-10-31
 
 ### Added
 
 -   Use new Wagtail logo variant for favicon and other logos (Osaf AliSayed)
 -   Set up GitHub Actions for publishing new releases using PyPI's trusted publishing (Storm Heg)
+-   Update docs and requirements-dev.txt to reflect actual build instructions (Vince Salvino)
+-   Toggle to show/hide theme version in docs (Vince Salvino)
+-   Show sphinx theme version for better debugging (Vince Salvino)
 
 ### Changed
 
 -   Clean up development and release instructions and format codebase with Black (Storm Heg)
-
-### Removed
-
--   ...
+-   Update frontend tooling to use Node 20 (LB (Ben) Johnston)
 
 ### Fixed
 
--   ...
-
-### Security
-
--   ...
+-   Fix sidebar expand icons not changing with interactions #297 (#298) (Ayaan)
+-   Automatically install sphinx-copybutton (#294) (Sage Abdullah)
+-   Fix table of contents sidebar overlapping with EthicalAds placement (#295) (Sage Abdullah)
+-   Fix search bug with Sphinx>=7.2 (#291) (Vince Salvino)
 
 ## [6.3.0] - 2024-03-01
 
