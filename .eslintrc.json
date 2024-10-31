@@ -1,6 +1,9 @@
 {
   "root": true,
   "extends": ["@wagtail/eslint-config-wagtail"],
+  "parserOptions": {
+    "ecmaVersion": 2022
+  },
   "env": { "browser": true },
   "globals": {
     "DOCUMENTATION_OPTIONS": "readonly",
