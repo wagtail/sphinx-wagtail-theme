@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Sphinx compatibility.
   // Prior to Sphinx 7.2, URL_ROOT was part of DOCUMENTATION_OPTIONS.
-  let URL_ROOT = "";
+  let URL_ROOT = '';
   // Sphinx >= 7.2
   if (document.documentElement.dataset.content_root) {
     URL_ROOT = document.documentElement.dataset.content_root;
@@ -155,4 +155,13 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   }
+});
+
+document.addEventListener('readthedocs-addons-data-ready', () => {
+  // Trigger the Read the Docs Addons Search modal when clicking on "Search docs" input from the topnav.
+  document
+    .querySelector("[role='search'] input")
+    ?.addEventListener('focusin', () => {
+      document.dispatchEvent(new CustomEvent('readthedocs-search-show'));
+    });
 });
