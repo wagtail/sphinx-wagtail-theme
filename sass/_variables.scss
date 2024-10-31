@@ -208,3 +208,19 @@ $grid-gutter-width: 40px;
 // --------------------------------------------------
 
 $medium-width: 768px;
+
+// --------------------------------------------------
+// Z-index
+// https://getbootstrap.com/docs/4.6/layout/overview/#z-index
+// Lower the default z-index values to avoid conflicts with EthicalAds placement
+// on readthedocs.org.
+// See also: https://github.com/readthedocs/ethical-ad-client/pull/196
+// --------------------------------------------------
+
+$zindex-dropdown: 10;
+$zindex-sticky: 20;
+$zindex-fixed: 30;
+$zindex-modal-backdrop: 40;
+$zindex-modal: 50;
+$zindex-popover: 60;
+$zindex-tooltip: 70;
