@@ -1,4 +1,3 @@
 sphinx
 sphinx-intl
 myst_parser
-sphinx_copybutton
