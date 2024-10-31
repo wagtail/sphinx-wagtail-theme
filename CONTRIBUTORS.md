@@ -16,6 +16,7 @@
 -   Sahil Jangra
 -   Salvo Polizzi
 -   Osaf AliSayed
+-   Ayaan Qadri
 
 ## Sphinx Typo3 theme
 

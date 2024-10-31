@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
--   Fix sidebar expand icons not changing with interactions #297 (#298) (Ayaan)
+-   Fix sidebar expand icons not changing with interactions #297 (#298) (Ayaan Qadri)
 -   Automatically install sphinx-copybutton (#294) (Sage Abdullah)
 -   Fix table of contents sidebar overlapping with EthicalAds placement (#295) (Sage Abdullah)
 -   Fix search bug with Sphinx>=7.2 (#291) (Vince Salvino)
