@@ -31,7 +31,7 @@ jobs:
           python-version: 3.12
 
       - name: Install dependencies
-        run: make setup-python
+        run: make install-python
 
       - name: Build package distributions
         run: make build
