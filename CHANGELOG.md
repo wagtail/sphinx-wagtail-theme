@@ -18,7 +18,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
--   ...
+-   Fix color of theme and Sphinx links in footer in light mode (Sage Abdullah)
 
 ### Security
 
