@@ -18,3 +18,27 @@
 .rubric {
   font-weight: $font-weight-bold;
 }
+
+.gap-0 {
+  gap: 0 !important;
+}
+
+.gap-1 {
+  gap: $spacer * .25 !important;
+}
+
+.gap-2 {
+  gap: $spacer * .5 !important;
+}
+
+.gap-3 {
+  gap: $spacer !important;
+}
+
+.gap-4 {
+  gap: $spacer * 1.5 !important;
+}
+
+.gap-5 {
+  gap: $spacer * 3 !important;
+}
