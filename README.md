@@ -42,13 +42,14 @@ html_theme = 'sphinx_wagtail_theme'
 
 This section is for maintainer reference.
 
-1. Check all relevant changes since the last release are documented in `CHANGELOG.md`
+1. Check all relevant changes since the last release are documented and the release date is filled in `CHANGELOG.md`
 2. Check if there are any new contributors and add them to `CONTRIBUTORS.md`
 3. Update the version number in `setup.cfg`. The version number should follow [Semantic Versioning](https://semver.org/).
 4. Commit and push the changes
 5. Create and push a new tag with the version number, prefixed with `v`. For example, `v1.2.3`
 6. In the GitHub repository, create a new release against the tag you just pushed.
 7. Once the release is created, the CI will automatically publish the new version to PyPI.
+8. Update the version number in `setup.cfg` to the next minor version and append `.dev0` to it. For example, `6.6.0.dev0`. Then, add a new section to `CHANGELOG.md` for the next release.
 
 ## Credits
 
