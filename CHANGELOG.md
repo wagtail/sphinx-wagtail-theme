@@ -4,25 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [6.5.0] - Unreleased
 
-### Added
-
--   ...
-
 ### Changed
 
--   ...
-
-### Removed
-
--   ...
+-   Update frontend tooling to use Node 22 (LB (Ben) Johnston)
 
 ### Fixed
 
 -   Fix color of theme and Sphinx links in footer in light mode (Sage Abdullah)
-
-### Security
-
--   ...
 
 ## [6.4.0] - 2024-11-01
 
