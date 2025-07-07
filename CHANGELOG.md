@@ -18,7 +18,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
--   ...
+-   Fix theme button overlapping in smaller devices (Ayaan Qadri)
 
 ### Security
 
