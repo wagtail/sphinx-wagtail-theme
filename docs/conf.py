@@ -10,6 +10,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx_wagtail_theme",
     "myst_parser",
+    "sphinx_llms_txt",
 ]
 templates_path = ["_templates"]
 source_suffix = {
