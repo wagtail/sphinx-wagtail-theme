@@ -3,5 +3,3 @@
 
 # Install development version of the theme
 -e .
-
-sphinx-llms-txt
