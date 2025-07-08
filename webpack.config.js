@@ -25,11 +25,9 @@ module.exports = {
       },
       {
         test: /\.(eot|ttf|woff|woff2|svg)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: 'assets/[name].[ext]',
-          },
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext]',
         },
       },
     ],
