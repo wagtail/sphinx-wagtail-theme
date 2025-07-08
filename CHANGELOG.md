@@ -10,7 +10,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
--   ...
+-   Upgrade css-loader from v5 to v6.11.0 to use latest stable version
+-   Replace file-loader with webpack's built-in asset modules for better performance
 
 ### Removed
 
