@@ -11,15 +11,8 @@
 {% set title = indextitle %}
 {% block extrahead %}
 {{ super() }}
-{% if not embedded and collapse_index %}
-    <script>
-      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
-    </script>
-{% endif %}
 {% endblock %}
 {% block body %}
-
-   {%- set groupid = idgen() %}
 
    <h1>{{ indextitle }}</h1>
 
@@ -38,10 +31,7 @@
      {%- for (name, grouptype, page, anchor, extra, qualifier, description)
              in entries %}
      <tr{% if grouptype == 2 %} class="cg-{{ groupid.current() }}"{% endif %}>
-       <td>{% if grouptype == 1 -%}
-         <img src="{{ pathto('_static/minus.png', 1) }}" class="toggler"
-              id="toggle-{{ groupid.next() }}" style="display: none" alt="-" />
-           {%- endif %}</td>
+       <td></td>
        <td>{% if grouptype == 2 %}&#160;&#160;&#160;{% endif %}
        {% if page %}<a href="{{ pathto(page) }}#{{ anchor }}">{% endif -%}
        <code class="xref">{{ name|e }}</code>
