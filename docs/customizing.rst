@@ -37,6 +37,21 @@ As such it should point to your docs folder in your default branch.
        github_url = "https://github.com/wagtail/sphinx_wagtail_theme/blob/main/docs/"
    )
 
+Breadcrumb Navigation
+---------------------
+
+You can customize the top-level item in the breadcrumb navigation. By default,
+it displays the project name, but you can set a custom value.
+
+.. code-block:: python
+
+   html_theme_options = dict(
+       breadcrumbs_root = "Documentation"
+   )
+
+If no ``breadcrumbs_root`` is specified, the theme will use the ``project`` name 
+from your Sphinx configuration as the breadcrumb root.
+
 Header & Footer Links
 ---------------------
 
