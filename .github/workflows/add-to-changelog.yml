@@ -1,0 +1,53 @@
+name: Add to Changelog
+
+# Testing AI development tools - see:
+# - https://github.blog/ai-and-ml/generative-ai/automate-your-project-with-github-models-in-actions/
+# - https://github.com/wagtail/sphinx-wagtail-theme/issues/313gre
+
+on:
+  pull_request:
+    types:
+      - closed
+
+permissions:
+  pull-requests: read
+  issues: write
+  contents: read
+  models: read
+
+jobs:
+  add_to_changelog:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install gh-models extension
+        run: gh extension install https://github.com/github/gh-models
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Summarize pull request and append to release issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |-
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+      
+          # Fetch PR and save to a file
+          gh pr view "$PR_NUMBER" --json title,body,comments,reviews > pr.json
+          
+          # Generate a summary using the model by reading from file
+          cat pr.json | gh models run xai/grok-3-mini \
+            "Given the following pull request information, generate a single, clear, and concise one-line changelog entry that summarizes the main change (feature, fix, or bug) introduced by this PR. Use neutral, user-facing language and avoid technical jargon or internal references. Only write the line, with no additional introduction or explanation text." > summary.md
+      
+          # Fetch release issue number
+          RELEASE_ISSUE=$(gh issue list --label release --limit 1 --json number --jq '.[0].number')
+      
+          # Fetch current release issue body
+          RELEASE_ISSUE_BODY=$(gh issue view "$RELEASE_ISSUE" --json body --jq '.body')
+      
+          # Append summary to release issue body
+          FORMATTED_LINE="- $(cat summary.md) (#$PR_NUMBER)"
+          NEW_BODY="${RELEASE_ISSUE_BODY}"$'\n'"$FORMATTED_LINE"
+      
+          # Update the release issue with the new body
+          gh issue edit "$RELEASE_ISSUE" --body "$NEW_BODY"
