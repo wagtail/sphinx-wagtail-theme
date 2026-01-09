@@ -37,14 +37,15 @@
 @import '../node_modules/bootstrap/scss/media';
 @import '../node_modules/bootstrap/scss/list-group';
 @import '../node_modules/bootstrap/scss/close';
-// Read the Docs Addons compatibility issue.
+// Read the Docs Addons compatibility issues - remove unused components.
 // See https://github.com/readthedocs/addons/issues/413.
+// See https://github.com/readthedocs/addons/issues/666.
 // @import '../node_modules/bootstrap/scss/toasts';
-@import '../node_modules/bootstrap/scss/modal';
-@import '../node_modules/bootstrap/scss/tooltip';
-@import '../node_modules/bootstrap/scss/popover';
-@import '../node_modules/bootstrap/scss/carousel';
-@import '../node_modules/bootstrap/scss/spinners';
+// @import '../node_modules/bootstrap/scss/modal';
+// @import '../node_modules/bootstrap/scss/tooltip';
+// @import '../node_modules/bootstrap/scss/popover';
+// @import '../node_modules/bootstrap/scss/carousel';
+// @import '../node_modules/bootstrap/scss/spinners';
 @import '../node_modules/bootstrap/scss/utilities';
 @import '../node_modules/bootstrap/scss/print';
 
