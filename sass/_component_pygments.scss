@@ -6,7 +6,7 @@ pre {
   font-size: 14px;
   color: $base16-base07;
   background-color: $indigo;
-
+  
   .hll {
     background-color: $base16-base02;
   }
@@ -284,4 +284,7 @@ pre {
       color: $base16-base07;
     }
   }
+}
+.highlight .hll {
+  background-color: color.adjust($base16-base03);
 }
