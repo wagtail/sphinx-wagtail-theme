@@ -286,5 +286,5 @@ pre {
   }
 }
 .highlight .hll {
-  background-color: color.adjust($base16-base03);
+  background-color: color.adjust($base16-base03, $alpha: -0.4);
 }
