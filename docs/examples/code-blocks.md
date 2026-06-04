@@ -110,3 +110,21 @@ exports.fizzbuzz = fizzbuzz;
 ```console
 $ ./manage.py runserver 0:8000
 ```
+
+## Emphasize lines
+
+Use the `emphasize-lines` option with the `code-block` directive to highlight specific lines.
+
+```{code-block} python
+:emphasize-lines: 3, 5, 7-8
+
+def fizzbuzz(number):
+    reply = ""
+    if number % 3 == 0:
+        reply += "Fizz"
+    if number % 5 == 0:
+        reply += "Buzz"
+    if not reply:
+        return number
+    return reply
+```
