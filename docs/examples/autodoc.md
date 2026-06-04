@@ -6,11 +6,11 @@ This is a very powerful feature which we highly recommend using to document Wagt
 For Sphinx (actually, the Python interpreter that executes Sphinx) to find your module, it must be importable.
 That means that the module or the package must be in one of the directories on `sys.path` – adapt your `sys.path` in the configuration file accordingly.
 
-The following uses a `flake8` module as an example, because `flake8` is installed in the theme development environment and had many docstings.
+The following uses a `sphinx` module as an example, because `sphinx` is installed in the theme development environment and has many docstings.
 
-## `flake8.main.application`
+## `sphinx.application`
 
 ```{eval-rst}
-.. automodule:: flake8.main.application
+.. automodule:: sphinx.application
    :members:
 ```
