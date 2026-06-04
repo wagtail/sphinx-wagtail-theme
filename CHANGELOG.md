@@ -2,28 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
-## [6.6.0] - Unreleased
+## [6.6.0] - 2026-06-04
 
 ### Added
 
--   ...
+-   Add examples for code blocks with emphasize-lines (Sage Abdullah)
 
 ### Changed
 
 -   Upgrade css-loader from v5 to v6.11.0 to use latest stable version
 -   Replace file-loader with webpack's built-in asset modules for better performance
-
-### Removed
-
--   ...
+-   Use latest versions of Ubuntu, Python, and Node.js for RTD builds (Sage Abdullah)
 
 ### Fixed
 
 -   Fix theme button overlapping in smaller devices (Ayaan Qadri)
-
-### Security
-
--   ...
+-   Remove inline scripts and styles from domainindex.html template (Thibaud Colas)
+-   Fix code highlight styles not being applied on Sphinx 9+ (Sage Abdullah)
 
 ## [6.5.0] - 2025-02-20
 
