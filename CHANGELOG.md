@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+### Fixed
+
+-   Fix duplicate banner landmark by replacing inner `<header>` with `<div>` (accessibility)
+
 ## [6.6.0] - 2026-06-04
 
 ### Added
