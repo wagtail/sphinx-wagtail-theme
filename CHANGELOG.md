@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+### Fixed
+
+-   Fix duplicate banner landmark by replacing inner `<header>` with `<div>` (accessibility)
+-   Fix WCAG AA color contrast on important/seealso/tip admonition titles (#326)
+
 ## [6.6.0] - 2026-06-04
 
 ### Added
