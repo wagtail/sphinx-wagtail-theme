@@ -23,7 +23,7 @@ $bright-green-700: color.adjust($bright-green, $lightness: -15%);
 $bright-green-900: color.adjust($bright-green, $lightness: -30%);
 
 $primary: $indigo;
-$success: #a456c9;
+$success: color.adjust(#a456c9, $lightness: -3%); // Darkened for WCAG AA contrast (≥4.5:1) with white text
 $info: $teal;
 $warning: #2f128d;
 $danger: #a72925;
