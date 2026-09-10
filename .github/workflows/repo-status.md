@@ -14,8 +14,6 @@ permissions:
   discussions: read
   issues: read
   pull-requests: read
-
-  copilot-requests: write
 network: defaults
 
 tools:
@@ -41,6 +39,7 @@ source: githubnext/agentics/workflows/repo-status.md@4bc8419fad05e6b032741cbfd18
 # Repo Status
 
 Create an upbeat daily status report for the repo as a GitHub issue.
+Requires the repository secret `COPILOT_GITHUB_TOKEN` to authenticate the Copilot engine.
 
 ## What to include
 
