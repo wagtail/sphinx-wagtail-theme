@@ -31,3 +31,7 @@ pre,
 .pre {
   font-family: $font-family-monospace;
 }
+
+.rst-content {
+  max-width: 90ch;
+}
