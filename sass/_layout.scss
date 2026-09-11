@@ -31,3 +31,12 @@ pre,
 .pre {
   font-family: $font-family-monospace;
 }
+
+.rst-content {
+  > p,
+  > blockquote,
+  li > p,
+  dd > p {
+    max-width: 90ch;
+  }
+}
