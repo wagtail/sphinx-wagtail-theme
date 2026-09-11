@@ -34,7 +34,15 @@ pre,
 
 .rst-content {
   p,
-  blockquote {
+  blockquote,
+  li,
+  dd {
     max-width: 90ch;
+  }
+
+  li > ul,
+  li > ol,
+  li > dl {
+    max-width: none;
   }
 }
