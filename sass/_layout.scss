@@ -33,22 +33,10 @@ pre,
 }
 
 .rst-content {
-  p,
-  blockquote,
-  li,
-  dd {
+  > p,
+  > blockquote,
+  li > p,
+  dd > p {
     max-width: 90ch;
-  }
-
-  li > ul,
-  li > ol,
-  li > dl,
-  li > pre,
-  li > table,
-  li > figure,
-  li > img,
-  li > div.highlight,
-  li > div[class*='highlight-'] {
-    max-width: none;
   }
 }
